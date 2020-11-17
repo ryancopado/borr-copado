@@ -1,0 +1,396 @@
+<apex:page showHeader="false" sidebar="false" tabStyle="Account" standardController="Account" extensions="CustomerPortalController">
+     <style>
+.button{
+     background-color: #4D90D9;
+    background-image: -moz-linear-gradient(center top , #FFFFFF);
+    border: 1px solid #FFFFFF;
+    color: #DDDDDD !important;
+    text-align:center;
+    font-size:15px
+}
+
+ body button, body .x-btn, body .btn, body .btnDisabled, body .btnCancel{
+           
+    -webkit-border-radius: 6px;  
+    -moz-border-radius: 6px;  
+    border-radius: 6px;  
+  
+    /* Border Shadow */  
+    -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,5);  
+    -moz-box-shadow: 1px 2px 2px rgba(0,0,0,6);  
+    box-shadow: 1px 2px 2px rgba(0,0,0,6);  
+  
+    color: #ffffff;  
+    background: rgba(0,0,0,0.3);  
+    display: inline-block; 
+    font-weight: bold; 
+    font-size:11px;
+    width:50p;    
+    padding: 05px 05px 05px 05px;  
+    margin:   05px 05px 05px 05px;  
+    outline: none;  
+    text-decoration: none; 
+              
+    
+}  
+
+</style>
+<style>
+body .bPageBlock .pbBody {
+padding: 0px;
+height: 100%;
+}
+</style>
+<script>
+
+    function projectid(proId){
+        var pro = proId;
+        chanageId(pro);
+        
+    }
+    
+</script>
+<apex:form id="idForm">
+     <apex:actionfunction name="chanageId" action="{!RebateRecords}" reRender="idForm,rebatesec,projectdoc" status="status" >   
+                 <apex:param assignTo="{!chanageRebateId}" value="" name="chanageRebateId"/>
+             </apex:actionfunction>
+             
+    <apex:pageBlock >
+    <apex:inputHidden value="{!Account.AcctSeed__Shipping_Contact__c}" />
+<table width="100%" height="100%" cellspacing="0" > <!-- style="width:1240px;height:900px">   background-color:white" -->
+	<tr bgcolor="#FFFFFF" style="height:10px" >
+		<td>
+		</td>
+		<td>
+		</td>
+		<td align="right" style="padding-right:3%;padding-top:1%;font-family:Arial Verdana,sans-serif;font-size:110%;font-weight:bold;" >
+			<apex:outputLink value="/secur/logout.jsp" id="theLogout">Logout</apex:outputLink>
+		</td>
+	</tr>
+    <tr bgcolor="#FFFFFF" style="height:100px" >
+       <td cellpadding="0px" bgcolor="#FFFFFF" style="background-repeat:no-repeat; background-image:url('{!$Resource.BorregoLogo}');">
+       </td>
+       <td align="center" style=" margin-top:3%; width:800px">   
+               <apex:commandButton immediate="true" value=" My System Summary" action="{!MySysSummary}" style="{!if(IsMySysSummaryRecord,'background: rgba(0,0,0,0.55);','')}"  rendered="{!if(Isdefaultpage==true,false,true)}"/>
+               <!-- <apex:commandButton immediate="true" value=" FAQ" action="{!CreateFAQ}" style="{!if(IsFAQpage,'background: rgba(0,0,0,0.55);','')}"    rendered="{!if(Isdefaultpage==true,false,true)}"/> -->
+               <!-- <apex:commandButton immediate="true" value=" Project Documents" action="{!ProjectDoc}" style="{!if(IsProjectDocpage,'background: rgba(0,0,0,0.55);','')}"  rendered="{!if(Isdefaultpage==true,false,true)}" /> -->
+               <apex:commandButton immediate="true" value=" Project Personnel" action="{!WhoToContact}" style="{!if(IsWhoToContactpage,'background: rgba(0,0,0,0.55);','')}"  rendered="{!if(Isdefaultpage==true,false,true)}"/> 
+               <apex:commandButton immediate="true" value=" Contact Us" action="{!ConatctUsPortal}"  style="{!if(IsconatctusportalPage,'background: rgba(0,0,0,0.55);','')}"   rendered="{!if(Isdefaultpage==true,false,true)}"/>  
+               <apex:commandButton immediate="true" value=" Cases and Service Visits"  action="{!CaseView}"  style="{!if(IsCaseViewPage || IsCaseDetailPage,'background: rgba(0,0,0,0.55);','')}" rendered="{!if(Isdefaultpage==true,false,true)}"/>
+<!--
+				<apex:commandLink value="Link" action="{!CaseDetailView}">
+					<apex:param name="caseId" value="5008000000KdwwM" assignTo="{!CaseDetailId}"/>
+				</apex:commandLink> 
+-->
+               <apex:commandButton immediate="true" value=" My Account"  action="{!AccountInformation}"  style="{!if(isAccountInfo,'background: rgba(0,0,0,0.55);','')}" rendered="{!if(Isdefaultpage==true,false,true)}" />
+               <apex:commandButton immediate="true" value=" FAQ" action="{!CreateFAQ}" style="{!if(IsFAQpage,'background: rgba(0,0,0,0.55);','')}"    rendered="{!if(Isdefaultpage==true,false,true)}"/>
+      </td>
+      <td width="17%" ><apex:outputField value="{!CurrentUser.Company_Logo__c}"/>
+      </td>
+ <!-- <td> <apex:commandButton value=" My Account "  action="{!AccountInformation}"  style="{!if(isAccountInfo,'background: rgba(0,0,0,0.55);','')}" </td>-->
+    </tr>
+        
+    <tr style="height:500px">
+    <!--background-image:url('{!$Resource.Gradient1}')-->
+        <td  style="background-color: #000000; width:13%; font-color:white; text-align:left; vertical-align:top">
+        
+            <apex:outputPanel rendered="{!IsProjectRecord}">
+               <br/> <h1 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Projects</h1><br/><br/>
+               
+              <apex:repeat value="{!ListOfProjects }" var="Project" >
+                  <apex:outputLink style="color:white;{!if(chanageRebateId==Project.Id,'color:#99CCFF','')}" 
+                  onclick="projectid('{!Project.Id}');return false;">{!Project.Name}</apex:outputLink><br/><br/>
+                  
+              </apex:repeat>
+            <apex:actionStatus startText="Please Wait..." id="status"></apex:actionStatus>
+            </apex:outputPanel>
+              
+        </td>
+        <td bgcolor="#FFFFFF" style="width:900px; vertical-align:top" >
+        
+        <apex:outputPanel style=" margin-top:2%; width:60%;padding:20px"  rendered="{!Isdefaultpage}">
+         
+        <div style="padding-left:5%;padding-right:5%;padding-top:3%;padding-bottom:15%;font-family:Arial Verdana,sans-serif;font-size:160%;">
+           
+                  
+           <p>Welcome to the Borrego Solar Systems Customer Portal!</p>
+
+           <p >Our Customer Portal is intended to provide you with 24/7 access to accurate and up-to-date information on your solar energy system. Please click on one of your organization's projects on the left-hand menu to get started.</p>
+            <p >For the fastest response to any questions or comments you may have about you solar energy system, please reach out to us via the 'Contact Us' tab within the Portal. </p>  
+            <p >Thank you for choosing Borrego Solar. Your business means a lot to us and we look forward to providing you with continual support in the years to come through the development of new and innovative resources.</p>            
+            <p style="text-align:left;">Sincerely,<br/>The Borrego Solar Team</p>
+         </div>f
+        </apex:outputPanel>
+                   
+            <apex:outputPanel style=" margin-top:5%; width:800px" rendered="{!IsMySysSummaryRecord}">
+
+                    <apex:pageBlockSection title="System Summary"  columns="1" collapsible="false">
+                        <!--<apex:outputtext label="Site Address" value="{!CurrentAccount.ShippingStreet},  {!CurrentAccount.ShippingCity},   {!CurrentAccount.ShippingState},   {!CurrentAccount.ShippingPostalCode}"/>-->
+                        <apex:outputtext label="Site Address" value="{!SelectedProject.Site_Street_AddressF__c},  {!SelectedProject.Site_CityF__c},   {!SelectedProject.Site_StateF__c},   {!SelectedProject.Site_Zip_CodeF__c}"/>
+                        <apex:outputField label="Current System Size" value="{!SelectedProject.Current_Project_System_Size2__c}"/>
+                        <apex:outputField value="{!SelectedProject.Utility_CompanyF__c}" />
+                        <apex:outputField label="Permission to Operate" value="{!SelectedProject.PTO_Date__c}"/>
+                        <!-- <apex:outputField label="Rebate Expiration Date" value="{!SelectedProject.Rebate_Expiration_Date__c}" rendered="{!isRebateAssignedTo}"/> -->
+                        <apex:outputText label="Service Contract Type" value="{!CurrentContractType}" rendered="{!CurrentContractType!=null}" />
+                        <apex:outputField rendered="{!SelectedProject.Performance_Reporting__c!=null}" value="{!SelectedProject.Performance_Reporting__c}"/>
+                        <!--
+                        <apex:outputField label="Project Manager" value="{!SelectedProject.Owner.Name} "/> 
+                        <apex:outputtext label="Site Superintendent" rendered="{!SelectedProject.Site_Superintendent__c!=null && SelectedProject.Site_Superintendent__c!=''}" value="{!SelectedProject.Site_Superintendent__c}"/>       
+                        <apex:outputtext label="Project Developer" value="{!SelectedProject.Project_Developer__c}"/>
+                        -->
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="Project Documents" collapsible="false" columns="1">
+						<apex:pageblockSectionItem >
+							System Documentation <apex:outputLink value="{!SelectedProject.Closeout_Document__c}" target="_blank" >{!SelectedProject.Closeout_Document__c} </apex:outputLink>
+						</apex:pageblockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="Products" collapsible="false" columns="0">
+                        <apex:pageBlockTable value="{!OppLineItemlist}" style="margin-left:5%; width:700px; text-align:left;" var="item">
+                            <apex:column value="{!item.Name}" headerValue="Name"/>
+                            <apex:column value="{!item.Quantity}" headerValue="Quantity"/>
+                            <apex:column value="{!item.Family}" headerValue="Component"/>
+                            <apex:column headerValue="Manufacturer" value=" {!item.Manufacturer}">
+                               
+                            </apex:column>    
+                            <apex:column value="{!item.Warranty}" headerValue="Warranty Terms (Yrs.)" style="text-align:center;"/>
+                           <!-- <apex:column value="{!item.PricebookEntry.Product2.Manufacturer_Data_Sheet__c}" headerValue="Manufacturer Product Page"/>-->
+                             <apex:column headerValue="Vendor Product Page" >
+                                 <!--<apex:outputLink value="{!item.VendorProduct}" id="theLink" target="_blank" >{!item.VendorProduct}</apex:outputLink>-->
+                                 <a id="theLink" name="theLink" href="{!item.VendorProduct}" target="_blank">{!item.VendorProduct}</a>
+                            </apex:column>
+                        </apex:pageBlockTable><br/><br/><br/><br/>
+                        
+                    </apex:pageBlockSection>
+                    
+               <!--     <apex:outputPanel style=" margin-top:5%; width:780px" id="rebatesec" rendered="{!IsRebateInforPage && SelectedProject .Rebate_Assigned_To__c=='System Owner'}">
+                        <apex:pageBlockSection title="Rebate information "  columns="1" collapsible="false" >
+                        <apex:outputField label="Rebate Program" value="{!SelectedProject .Rebate_ProgramF__c}"/>
+                        <apex:outputField label="Rebate Status" value="{!SelectedProject .Rebate_Status__c}" />
+                        <apex:outputField value="{!SelectedProject .Rebate_Id__c}"/>
+                        <apex:outputField value="{!SelectedProject .Rebate_Expiration_Date__c}"/>  
+                   
+                    </apex:pageBlockSection>
+                     </apex:outputPanel> -->
+
+            </apex:outputPanel>
+            <apex:outputPanel style=" margin-top:5%;" rendered="{!isAccountInfo }">
+                            
+                    <apex:pageBlockSection title="Account Information"  columns="1" collapsible="false">
+                    <!--<apex:outputField label="Parent Company Name" value="{!CurrentAccount.Parent.Name}" rendered="{!IsParent}"/>-->
+                    <apex:outputField label="Account Name" value="{!CurrentAccount.Name}" />
+                    <apex:outputtext label="Billing Address" value="{!CurrentAccount.BillingStreet}"/>
+                    <apex:pageBlockSectionItem > <apex:outputLabel ></apex:outputLabel><apex:outputtext value="{!CurrentAccount.BillingCity},  {!CurrentAccount.BillingState},  {!CurrentAccount.BillingPostalCode}"/></apex:pageBlockSectionItem>
+                    <apex:outputField label="Phone Number" value="{!CurrentAccount.phone}"/>
+                    <apex:outputField value="{!CurrentAccount.Website}"/><br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b>Need to change your contact information?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Please submit updated contact information via the 'Contact Us' tab. </b>
+                     
+                    </apex:pageBlockSection>
+               
+                    <apex:pageBlockSection title="Contact" collapsible="false" columns="0">
+                        <apex:pageBlockTable value="{!Contacts}" style="margin-left:5px; width:700px; text-align:left;" var="item"><!--style="{!if(item.isPrimary==true,'background-color:yellow','')}"-->
+                            <apex:column headerValue="Name"> <apex:outputlabel value="{!item.Contact.Name}" />  </apex:column>
+                           <!-- <apex:column headerValue="Title"> <apex:outputlabel value="{!item.Contact.Title}" /> </apex:column>-->
+                            <apex:column headerValue="Email"> <apex:outputlabel value="{!item.Contact.email}" /> </apex:column>
+                            <apex:column headerValue="Phone"> <apex:outputlabel value="{!item.Contact.phone}" />  </apex:column>
+                        </apex:pageBlockTable>
+                        
+                    </apex:pageBlockSection>
+                
+                
+                    <!-- <apex:pageBlockSection title="FAQ" collapsible="false">
+                        <apex:pageBlockTable value="{!FAQlist}" style="margin-left:5%; width:700px; text-align:left;" var="item">
+                            <apex:column value="{!item.FAQ_Content__c}" headerValue="Name"/>
+                        </apex:pageBlockTable>
+                        
+                    </apex:pageBlockSection>-->
+            </apex:outputPanel>
+          
+                 
+                            <!--<apex:pageBlockSection title="FAQ" collapsible="false">
+                                    <apex:pageBlockTable value="{!FAQlist}" style="margin-left:5%; width:700px; text-align:left;" var="item">
+                                        <apex:column value="{!item.FAQ_Content__c}" headerValue="Name"/>
+                                    </apex:pageBlockTable>
+                                    
+                             </apex:pageBlockSection>-->
+<!--
+                         <c:FAQ_DataDriven rendered="{!IsFAQpage}" ></c:FAQ_DataDriven>
+                         <apex:outputPanel rendered="{!IsFAQpage}" ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                         </apex:outputPanel>
+-->
+						<apex:outputPanel rendered="{!IsFAQPage}" >
+							<c:FAQ_DataDriven faqlist="{!FAQlist}"></c:FAQ_DataDriven>
+						</apex:outputPanel>
+                         
+                        <apex:outputPanel rendered="{!IsCaseViewPage}" >
+                        	<!-- <apex:pageBlock > -->
+<!--
+                            	<c:CaseHistoryComponent caselist="{!Caselist}" ></c:CaseHistoryComponent>
+-->
+								
+								<apex:outputPanel style="margin-left:10%; margin-top:5%; width:100%" >
+									<apex:pageBlockSection title="Case History" collapsible="false">
+										<apex:pageBlockTable value="{!Caselist}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="item">
+											<apex:column >
+												<apex:facet name="header">Case Number</apex:facet>
+												<apex:commandLink value="{!item.CaseNumber}" action="{!CaseDetailView}">
+													<apex:param name="caseId" value="{!item.Id}" assignTo="{!CaseDetailId}"/>
+												</apex:commandLink>
+											</apex:column>
+
+											<apex:column value="{!item.Subject}" headerValue="Subject"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.Status}" headerValue="Status"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.Solution_in_Progress__c}" headerValue="In Progress" style="text-align:center;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.Component__c}" headerValue="Component"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.Reason}" headerValue="Reported Issue"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.Case_End_Date__c}" headerValue="Resolution Date"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<apex:column value="{!item.CreatedDate}" headerValue="Date Submitted"/>  
+											<apex:column value="{!item.owner.Name}" headerValue="Case Owner"/>
+										</apex:pageBlockTable>
+									</apex:pageBlockSection>
+								</apex:outputPanel>
+								
+								
+                            	<br/><br/>
+                            	<c:ServiceVisitComponent servicevisitlist="{!ServiceVisitlist}"></c:ServiceVisitComponent>
+                            <!-- </apex:pageBlock> -->
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!IsCaseDetailPage}" >
+<!--
+                        	<apex:pageBlock >
+                            	<c:CaseDetailComponent casedetail="{!CaseInfo}" commentlist="{!Comment_RelList}" servicelist="{!ServiceVisit_RelList}"></c:CaseDetailComponent>
+							</apex:pageBlock>
+-->
+							
+							<apex:outputPanel style="margin-left:10%; margin-top:5%; width:100%">
+   
+								<!-- <apex:sectionHeader title="Case" subtitle="{!CaseInfo.CaseNumber}"/> -->
+								<!-- <apex:pageBlock mode="detail"> -->
+			
+									<apex:pageBlockSection title="Case Detail" columns="2" collapsible="false">
+										<apex:outputField value="{!CaseInfo.CaseNumber}" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Case Owner" />
+											<apex:outputField value="{!CaseInfo.Owner.Name}" />
+										</apex:pageBlockSectionItem>
+										<apex:outputField value="{!CaseInfo.Portal_Inquiry_Type__c}" />
+										<apex:outputField value="{!CaseInfo.Technician__c}" />
+										<apex:outputField value="{!CaseInfo.Component__c}" />
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="Contact Name" />
+											<apex:outputField value="{!CaseInfo.Contact.Name}" />
+										</apex:pageBlockSectionItem>
+										<apex:outputField value="{!CaseInfo.Status}" />
+										<apex:outputField value="{!CaseInfo.Origin}" />
+										<apex:outputField value="{!CaseInfo.Reason}" />
+										<apex:outputField value="{!CaseInfo.Solution_in_Progress__c}" />
+										<apex:outputField value="{!CaseInfo.Subject}" />
+										<apex:outputField value="{!CaseInfo.Case_Start_Date__c}" />
+										<apex:outputField value="{!CaseInfo.Description}" />
+										<apex:outputField value="{!CaseInfo.Case_End_Date__c}" />
+									</apex:pageBlockSection>
+
+									<apex:pageBlockSection title="Case Comments" columns="1" collapsible="false">
+										<apex:pageBlockTable value="{!Comment_RelList}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="cl" >
+											<apex:column value="{!cl.CreatedBy.Name}" headerValue="Created By"/>
+											<apex:column value="{!cl.CreatedDate}" headerValue="Created Date"/>
+											<apex:column value="{!cl.CommentBody}" headerValue="Comment"/>
+										</apex:pageBlockTable>
+									</apex:pageBlockSection>
+
+									<apex:pageBlockSection title="Service Visits" columns="1" collapsible="false">
+										<apex:pageBlockTable value="{!CaseServiceVisits}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="sv" >
+											<apex:column value="{!sv.SVNumber}" headerValue="Number"/>
+											<apex:column value="{!sv.VisitDate}" headerValue="Date"/>
+											<apex:column value="{!sv.VisitReason}" headerValue="Reason"/>
+											<apex:column value="{!sv.PerformedBy}" headerValue="Performed By"/>
+											<apex:column value="{!sv.Notes}" headerValue="Notes"/>
+										</apex:pageBlockTable>
+									</apex:pageBlockSection>
+									
+									<apex:pageBlockSection title="Case History" columns="1" collapsible="false">
+										<apex:pageBlockTable value="{!CaseHistory_RelList}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="ch" >
+											<apex:column value="{!ch.CreatedDate}" headerValue="Date"/>
+											<apex:column value="{!ch.CreatedBy.Name}" headerValue="User"/>
+											<apex:column value="Changed {!ch.Field} from {!ch.OldValue} to {!ch.NewValue}" headerValue="Action" rendered="{!ch.NewValue!=null}"/>
+											<apex:column value="Changed {!ch.Field}" headerValue="Action" rendered="{!ch.NewValue==null}"/>
+										</apex:pageBlockTable>
+									</apex:pageBlockSection>
+			
+								<!-- </apex:pageBlock> -->
+							</apex:outputPanel>
+							
+                        </apex:outputPanel>
+                       
+                        <apex:outputPanel rendered="{!IsconatctusportalPage}" >
+                            <c:conatctUsPortalPage Accountid="{!If(SelectedProject!=null,SelectedProject.AcctSeed__Account__c,Accountid)}" Branch="{!SelectedProject.Branch__c}" Account="{!CurrentAccount}" ProjectID="{!SelectedProject .id}"></c:conatctUsPortalPage>
+                        </apex:outputPanel>
+                       
+                        <apex:outputPanel rendered="{!IsProjectDocpage}" id="projectdoc">
+                            <apex:include pageName="ProjectDocuments"/>
+                        </apex:outputPanel>
+                        
+                        <apex:outputPanel rendered="{!IsWhoToContactpage}" >
+                            <apex:include pageName="WhoToContactPage"/>              
+                        </apex:outputPanel>
+             
+            <br/>
+            <br/>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="Contact Us" action="{!ConatctUsPortal}" rendered="{!Not IsconatctusportalPage}"
+             style="text-align:right;{!if(IsconatctusportalPage,'background: rgba(0,0,0,0.65);','')}"   />
+             
+        </td>
+        <td width="15%" style="width:100px;background-image:url('{!$Resource.MaderaPanels}');  background-size:cover;"></td>
+        <!--style="background-image:url('{!$Resource.Gradient1}');"-->
+        
+        <!-- <td width="15%" style="width:100px;background-image:url('https://cs3.salesforce.com/resource/1342124667000/{!CurrentUser.Portal_Background_Image_Name__c}');  background-size:cover;"></td> -->
+<!-- 
+        <td align="center" valign="top" width="15%" >
+        	<apex:outputField value="{!CurrentUser.Company_Image__c}"/>
+		</td>
+-->
+<!--
+		<apex:outputPanel rendered="{!UseCustomerBackground=false}" >
+			<td width="15%" style="width:100px;background-image:url('{!$Resource.MaderaPanels}');  background-size:cover;"></td>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!UseCustomerBackground}" >
+			<td width="15%" style="width:100px;background-image:url('https://cs3.salesforce.com/resource/1342124667000/{!CurrentUser.Background_Name__c}');  background-size:cover;"></td>
+		</apex:outputPanel>
+-->
+    </tr>
+   
+     <tr bgcolor="#FFFFFF" style="border-color:white; border-style:solid;" >
+       <td bgcolor="#FFFFFF" >
+
+       </td>
+       <td align="center" style="width:60%;">   <br/><br/>
+         <table style="font-family: ff-meta-web-pro,sans-serif; color:#FFFFFF font-size:15px;"> 
+             <tr>
+                 <td style="padding-right:20px">  Borrego Solar Systems, Inc<br/></td>
+                 <td style="padding-left:20px;padding-right:20px"> <apex:outputLink value="http://www.borregosolar.com" target="_blank">www.borregosolar.com</apex:outputLink><br/></td>
+                 <td style="padding-left:20px">  888-898-6273</td>   
+            </tr>
+           
+         </table>
+<br/><br/><br/><br/>
+       </td>
+    </tr>
+
+</table>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

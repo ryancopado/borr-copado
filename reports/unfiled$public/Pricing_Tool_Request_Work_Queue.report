@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_71817618</developerName>
+        <masterLabel>Pricing Tool Request</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Pricing_Tool_Approval__c.Person_Responsible__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>John Innes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nawaf Hassan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Foss-Michaelis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Gebo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shaun O&apos;Leary</sourceValue>
+            </sourceValues>
+            <value>Pricing Tool Request</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Pricing_Tool_Approval__c.Person_Responsible__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Pricing_Tool_Approval__c.Request_Status__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_71817618</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Pricing_Tool_Approval__c.Person_Responsible__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ben foss-michaelis,john innes,jun zha,kevin gebo,nawaf hassan,shaun o&apos;leary</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Pricing_Tool_Approval__c.Request_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Completed,Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Pricing Tool Request Work Queue</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityCustomEntity$Pricing_Tool_Approval__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Pricing_Tool_Approval__c.Person_Responsible__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

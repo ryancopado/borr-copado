@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Component --></label>
+        <name>DMAPP__DM_DVLS_Component__c</name>
+        <relationshipLabel><!-- Component Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Overview of the quicklink / content item. 
+
+This is displayed to the user in the content item pop-up display. --></help>
+        <label><!-- Description --></label>
+        <name>DMAPP__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL to the associated file.
+
+Note that if this is a video file, you should not include the file extension (e.g. .flv) in the URL. Dealmaker assumes that you will provide the required file types for the various browsers. 
+(1) .mp4
+(2) .webm
+(3) .flv. --></help>
+        <label><!-- Link --></label>
+        <name>DMAPP__Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order in which the content item is displayed in the content item pop-up. --></help>
+        <label><!-- Order --></label>
+        <name>DMAPP__Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unique reference for the content item. This value is used when associating a content item with a component. --></help>
+        <label><!-- Ref ID --></label>
+        <name>DMAPP__Ref_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select what type the file is. Dealmaker will:
+- play &quot;video&quot; files in the video window.
+- provide a download link for the &quot;download&quot; files.
+- provide a hyperlink to the &quot;link&quot; destination. --></help>
+        <label><!-- Type --></label>
+        <name>DMAPP__Type__c</name>
+        <picklistValues>
+            <masterLabel>Download</masterLabel>
+            <translation><!-- Download --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excel</masterLabel>
+            <translation><!-- Excel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Image</masterLabel>
+            <translation><!-- Image --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Link</masterLabel>
+            <translation><!-- Link --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF</masterLabel>
+            <translation><!-- PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPT</masterLabel>
+            <translation><!-- PPT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word</masterLabel>
+            <translation><!-- Word --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZIP</masterLabel>
+            <translation><!-- ZIP --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

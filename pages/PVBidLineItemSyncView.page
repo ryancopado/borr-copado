@@ -1,0 +1,266 @@
+<!--
+PVBidLineItemSyncView.vfp: View designed to facilitate uni-directional synchronization of bid line items from PVBid to Salesforce. Line items are represented in Salesforce by
+Accounting Seed project tasks that live off of an Accounting Seed project. The project is associated with a Pricing Request, which is in turn used to associate a particular 
+project in Salesforce with a project/bid in PVBid.
+
+Once the synchronization has been invoked by clicking the button, appropriate line items from PVBid will be sync'd to Salesforce. 
+
+Dependencies: 
+jquery 3.3.1: JQuery "convenience" JavaScript library used for some sort and search functions.
+pvbid 1.1: Used to interact with PVBid via its supported JavaScript SDK
+
+
+-->
+<apex:page standardController="AcctSeed__Project__c" extensions="PVBidLineItemSyncExtension" showHeader="true" showChat="false" sidebar="true">
+    <style>
+        td{
+          padding: 10px;
+        }
+    </style>
+    <apex:form >
+        <apex:actionFunction name="addLineItems" action="{!addLineItems}" rerender="view"> 
+            <apex:param assignTo="{!componentIds}" name="componentIds" value="" />
+            <apex:param assignTo="{!costs}" name="costs" value="" />
+            <apex:param assignTo="{!titles}" name="titles" value="" />
+            <apex:param assignTo="{!fullSuccess}" name="fullSuccess" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="successCondition" action="{!successCondition}" rerender="view"> 
+        </apex:actionFunction>
+        <apex:actionFunction name="errorCondition" action="{!errorCondition}" rerender="view"> 
+        </apex:actionFunction>
+    </apex:form>
+    <apex:pageBlock >
+        <head>   
+            <script type="text/javascript" src="https://unpkg.com/pvbid-sdk@1.0/dist/pvbid.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script type="text/javascript"> 
+             
+                $(document).ready(function() {
+                    $('#errordiv').hide();
+                    
+                    var bidId = '{!bidId}';
+                    var projectId = '{!projectId}';
+                    
+                    // Comma-separated string of cost codes that exist within Salesforce. If it doesn't exist within Salesforce, don't process (except in special cases as outlined).
+                    var pvBidIdCSV = '{!availablePVBidCodes}';
+
+                    // Ensure that we're associated with a Pricing Request that has both a project and a bid ID. If we're not, we don't know what to sync, so we return an error.
+                    if (bidId == null || projectId == null || bidId == '' || projectId == '') {
+                        $('#bodydiv').text('Your Project record must contain both a BidId and a ProjectId in order to sync with PVBid. Please go back and enter a BidId and ProjectId into the record.');
+                        errorCondition ();
+                        return; 
+                    }
+
+                    // Asynchronously get a PVBid project. changed the token on 3/26/2020 MG
+                    const getPVBidData = async () => {
+                    const config = { token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjNhNGFmZTJkNmMxMzQ2ZDg0OGY0NzdmYjE1YzllM2JkY2E4N2UzODRmZmEwYmM1MzZjYWI2ODRiNDVhYmNjNGIyZWZmMzIxYzdlOWViMzE5In0.eyJhdWQiOiIyIiwianRpIjoiM2E0YWZlMmQ2YzEzNDZkODQ4ZjQ3N2ZiMTVjOWUzYmRjYTg3ZTM4NGZmYTBiYzUzNmNhYjY4NGI0NWFiY2M0YjJlZmYzMjFjN2U5ZWIzMTkiLCJpYXQiOjE1ODUyNTI5ODUsIm5iZiI6MTU4NTI1Mjk4NSwiZXhwIjoxNjE2Nzg4OTg1LCJzdWIiOiIyNTUiLCJzY29wZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtZGVmaW5pdGlvbnMiLCJtYW5hZ2UtYmlkcyJdfQ.AhnGmKkNSuFkvO-B6bpKDXQ_q8xbQ-LFiON_AUKLxggkXijQcEAhADqUPE5MnR_OHvzQ7MptGWNww1d8XXz4aNutANi93B1NCgBAL3RNNN4fsp76E_94HRDDrVrxtmmjucx9YVGFRyBzyIBcnhNWD8vQddZNe25OVq9bbV1Z3J9Gf-19OcaCgivpl1MZ76NU9PxUH6FByp9bKvkBHzvIimE-dDhbkfOn3L12WzazIeDEBxRaavI2lFX-VZV6XN0YxbBANaNCd_KXfItz-xg-U880lhG7nMwUxuHqhiAOi-5ecaZV7fnFf4UnkUQqhHwQEMamcUyTgAqsNUunRcHkQLSACYsnkFpdVbaUMI05GcKGIOg0zHWGCFAFNHWuvpW7CKOml1f_m6NM-L4fSO19Jo13KZMJdFWliBuE17xnqUTThhJ9rg9KfR6IjrrU9ZY65Wr5fIte6YtIoRk6qq16mHVr1v2YiMd2QHGFY_7Oj4YV_IeKyHTcJhZ9ihfDF3ky_cHE9dEhS0ULxrlUjZhszQrgbDLlD1FtX_dELAUaK7h6R5548bMKjkjIdq6fiM7wQOrsTEWsrkd5EkD2ZMNx_gfjMgkfChNmDkidF2iwmngxR-dOfOL1l4HUCTjOickjyFumTIXHSayJ-5moYpG25Qw2ow0k_F7asIWky9j1ru4" };
+                     
+                        const pvbid = PVBid.createContext(config);
+                        try {
+                            let project = await pvbid.getProject(projectId);
+                            return project;
+                        }
+                        catch (error) {
+                            console.log (error);   
+                            $('#bodydiv').text('Error retrieving your project from PVBid. Please ensure the ProjectId is correct. The error from PVBid is: ' + error.message);
+                            errorCondition ();
+                            return; 
+                        }
+                    }
+                    
+                    // Get the project, then process its bid line items.
+                    // Line items are returned via three CSV strings:
+                    // 1) PVBid definition Id
+                    // 2) Cost code id
+                    // 3) Cost code title
+                    getPVBidData ().then ((project) => {
+                        if (project) {
+                            let bid = project.bids[bidId];
+
+                            if (!bid) {
+                                $('#bodydiv').text('Error retrieving your bid from PVBid. Please ensure the BidId is correct for the given ProjectId.');
+                                errorCondition ();
+                                return; 
+                            }
+                            
+                            // Get the component groups. These contain the cost codes that we need for processing.
+                            var componentGroups = bid.entities.componentGroups();
+            
+                            var ccComponentGroupId = '';
+                          
+                            for (var key in componentGroups) { 
+                                if (componentGroups[key].title === 'Cost Codes') {
+                                    ccComponentGroupId = componentGroups[key].id;
+                                }
+                               
+                            }
+                            
+                            console.log('this is group' +ccComponentGroupId );
+                          
+            
+                            // Get all line items and then trim to just parents with cost.
+                            var lineItems = bid.entities.components();
+                            
+                            var csvIds = '';
+                            var csvCosts = '';
+                            var csvTitles = '';
+            
+                            // Special business requirement where we need to pass anything with this ID to the controller to handle.
+                            // See comments in controller for details on business requirement.
+                            pvBidIdCSV += '882';
+            
+                            // Create an array of ids that we can use to test to see whether the cost code is in Salesforce or not.
+                            var availablePVBidIds = pvBidIdCSV.split(',');  
+                            var invalidIds = [];
+                            var invalidCosts = [];
+                            var invalidTitles = [];
+            
+                            // Iterate through line items and keep them for synchronization if:
+                            // 1) It's a parent line item
+                            // 2) It has a non-zero cost
+                            // 3) Its component group in PVBid is grouped as a Cost Code
+                            // 4) Its cost code exists within Salesforce. If not, save the cost code so we can add to our error text and alert the user that some line items
+                            //    haven't been sync'd for this reason.
+                            for (var key in lineItems) { 
+                                if (lineItems[key].isParent() && lineItems[key].cost > 0 && lineItems[key].componentGroupId == ccComponentGroupId) {
+                                    if ($.inArray('' + lineItems[key].definitionId, availablePVBidIds) == -1) {
+                                        // There's a component listed that's not available in SFDC.
+                                        invalidIds.push (lineItems[key].definitionId);
+                                        invalidCosts.push (lineItems[key].cost);
+                                        invalidTitles.push (lineItems[key].title);
+                                        
+                                        console.log ('Unknown cost code found. Code=' +  lineItems[key].definitionId + ', title=' + lineItems[key].title);
+                                        console.log (lineItems[key]);
+                                    }
+                                    else {
+                                        totalCost = lineItems[key].cost + lineItems[key].tax;
+                                        csvIds += lineItems[key].definitionId + ',';
+                                        csvCosts += totalCost + ',';
+                                        csvTitles += lineItems[key].title + ',';
+                                        
+                                        console.log ('Adding line item. Code=' +  lineItems[key].definitionId + ', title=' + lineItems[key].title);
+                                    }
+                                } 
+                            }
+            
+                            // Handle special business cases
+                            // Per Jason:
+                            // OH/Indirect Costs: 06-1290 = ICOGS + Commission
+                            // Project Engineering: 01-1218 = Engineering ICOGS
+                            
+                <!-- This is the code for taking the metric value as per id -->
+                
+                
+                         var metricGroups = bid.entities.metrics();    
+                       let icogs = '';
+                        let engIcogs ='';
+                        let commission = '';
+                         
+                                   
+                            var icogsValue = 0;
+                            var engIcogsValue = 0;
+                            var commissionValue = 0;             
+                         
+                         
+                         for (var key1 in metricGroups ) { 
+                               
+                                if (metricGroups[key1].definitionId === 3319) {
+                                 
+                                icogs = metricGroups[key1].value;
+                                }
+                                if (metricGroups[key1].definitionId === 3963) {
+                                   // console.log('this is metricid' +metricGroups[key1].definitionId ); 
+                               engIcogs = metricGroups[key1].value;
+                                }
+                                if (metricGroups[key1].definitionId === 3397) {
+                                  // console.log('this is metricid' +metricGroups[key1].definitionId ); 
+                                  commission = metricGroups[key1].value;
+                                }
+                                
+                            }
+                            
+                            
+                    console.log('this is metric' +metricGroups );
+                  //   console.log('this is icogs ' +icogs  ); 
+                  //    console.log('this is eng' +engIcogs ); 
+                  //  console.log('this is comm' +commission ); 
+                         
+                 ///////////////////////// End of code ///////////////////////////
+                
+                         
+                          // changes made  in title for PVBId Req. on 7/30/2019 MG  for Engineering
+                //          let icogs = bid.entities.searchByTitle("metric", "ICOGS(part of OH/Indirect) $");
+                //          let engIcogs = bid.entities.searchByTitle("metric", "Engineering ICOGS(Project Engineering) $"); 
+                 //         let commission = bid.entities.searchByTitle("metric", "Commission (part of OH/Indirect)($)");
+                            
+                
+                            
+                             // var icogsValue = 0;
+                           // var engIcogsValue = 0;
+                            //var commissionValue = 0;
+                            
+                            icogsValue  =    icogs ;    
+                           engIcogsValue =  engIcogs ;
+                           commissionValue  =  commission ;                
+                            
+                            
+                          //  if (icogs && icogs[0])
+                          //    icogsValue = icogs[0].value;
+                          
+                         // if (engIcogs && engIcogs[0])
+                          //     engIcogsValue = engIcogs[0].value;
+            
+                           //if (commission && commission[0])
+                             // commissionValue = commission[0].value;
+                                
+                                console.log('value1' +icogsValue );
+                                console.log('value2' +engIcogsValue );
+                                console.log('value3' +commissionValue );
+                             //   console.log('this is metric' +metricGroups[01].value );
+                                
+            
+                            var indirectCosts = (icogsValue + commissionValue - engIcogsValue).toFixed(3);
+
+                            csvIds += '99999,99998,';
+                            csvCosts += indirectCosts + ',' + engIcogsValue.toFixed(3) + ',';
+                            csvTitles += 'Overhead/Indirect Costs,Project Engineering,';
+            
+                            var fullSuccess = true;
+            
+                            // Show summary of records we're not putting in to user.
+                            if (invalidIds.length > 0) {
+                                console.log ('complete with partial success');
+                                fullSuccess = false;
+                                
+                                var content = "<table><tr><td><b>Title</b></td><td><b>PVBid Id</b></td><td><b>Cost</b></td></b></tr>";
+                                for(i=0; i < invalidIds.length; i++){
+                                    content += '<tr><td>' + invalidTitles[i] + '</td><td>' + invalidIds[i] + '</td><td>' + invalidCosts[i].toFixed(2).toLocaleString() + '</td></tr>';
+                                }
+                                content += "</table>"
+
+                                $('#errorTable').append(content);
+                                $('#errordiv').show();
+                                $('#bodydiv').hide();
+                            }
+                            else {
+                                console.log ('complete with full success.');    
+                            }
+                            
+                            addLineItems(csvIds, csvCosts, csvTitles, fullSuccess);
+                        }
+                    });
+                });
+
+            </script>
+        </head> 
+        
+    <!-- Lightweight UI elements. "Please wait" for while the line items are being pulled down and a particular success header for when cost codes exist in PVBid but not Salesforce. -->
+    <body id="view">
+        <div id="bodydiv"><b>Please wait while your data is being synchronized from PVBid...</b></div>
+        <div id="errordiv">
+            <span><b>Your sync was partially successful. The following line items exist within your PVBid bid record without a corresponding cost code in Salesforce and were not added. All other line items were synchronized successfully.</b></span>
+            <div id="errorTable"></div>
+        </div>
+    </body> 
+    </apex:pageBlock>
+</apex:page>

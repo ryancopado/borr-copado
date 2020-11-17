@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>COO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>CreatedBy</field>
+        <field>Project__c</field>
+        <field>Link_to_Inspection_Checklist__c</field>
+        <field>RecordType</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Civil_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>kcorbett@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJd&apos;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Massachusetts Ops Approval</label>
+        <name>Massachusetts_Ops_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Internal_Civil_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJi&apos;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>New York Ops Approval</label>
+        <name>New_York_Ops_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Civil_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>bbarker@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND 
+( Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJY&apos;, 
+NOT ( OR (
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flush Mount&apos; ),
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flat Roof Tilt-Up&apos; ),  
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Roof&apos;)
+)))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>San Diego Ops Approval</label>
+        <name>San_Diego_Ops_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>bbarker@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND ( 
+Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJY&apos;, 
+OR (
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flush Mount&apos; ),
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flat Roof Tilt-Up&apos; ),  
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Roof&apos;)
+))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>San Diego Ops Approval - Roof</label>
+        <name>San_Diego_Ops_Approval_Roof</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Internal_Civil_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>tkeane@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND 
+( Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJT&apos;, 
+NOT ( OR (
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flush Mount&apos; ),
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flat Roof Tilt-Up&apos; ),  
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Roof&apos;)
+)))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Oakland Ops Approval</label>
+        <name>Oakland_Ops_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Internal_Structural_Contact__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Internal_Electrical_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Site_Super__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Senior_Design_Engineer__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>tkeane@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND ( 
+Project__r.Ops_Division__r.Id = &apos;a1O80000008AeJT&apos;, 
+OR (
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flush Mount&apos; ),
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Flat Roof Tilt-Up&apos; ),  
+ISPICKVAL( Project__r.Racking_Type__c, &apos;Roof&apos;)
+))</formula>
+        </entryCriteria>
+        <label>Oakland Ops Approval - Roof</label>
+        <name>Oakland_Ops_Approval_Roof</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Alerts/Inspection_Checklist_FINAL_Ready_for_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Inspection_Checklist__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Final</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Inspection_Final_Checklist_APPROVED</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Inspection_Final_Checklist_REJECTED</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Final Inspection Checklist3</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

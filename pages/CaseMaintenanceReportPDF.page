@@ -1,0 +1,356 @@
+<apex:page showHeader="false" standardController="Case" extensions="CaseMaintenanceReportController" renderAs="PDF" applyBodyTag="false" >
+    
+    <apex:stylesheet value="{!URLFOR($Resource.workorderform_style)}" />
+    
+	<head>
+		<style type="text/css" media="print">
+			@page {
+				margin : 80pt .5in .5in .5in;
+				@top-center {
+					content: element(header);
+				}
+				
+				@bottom-left {
+					content: element(footer);
+				}
+				
+				@bottom-right {
+					content: "Borrego Solar Systems Inc. - {!cmrCase.Site__r.Name}" ;
+        			display: block;
+					padding: 5px;
+        			font-family: Arial, Helvetica, sans-serif;
+					font-size: 10px;
+					font-weight: normal;
+					font-style: normal;
+					color: lightgray;
+    			}
+			}
+			
+			div.header {
+				padding: 5px;
+				position: running(header);
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			div.footer {
+				display: block;
+				padding: 5px;
+				position: running(footer);
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 10px;
+				font-weight: normal;
+				font-style: normal;
+				color: lightgray;
+			}
+			
+			.pagenumber:before {
+				content: counter(page);
+			}
+			
+			.pagecount:before {
+				content: counter(pages);
+			}
+		</style>
+	</head>
+	
+	<div class="header">
+		<!-- <div>This is the header ----------- and the date is {!TODAY()}</div> -->
+		
+		<table id="wof-table" width="100%" >
+			<tr>
+				<td width="50%">
+					<!-- 
+					<apex:image url="{!$Resource.borrego}" width="30%" height="30%" />
+					--> 
+					<apex:image url="{!DocumentLogoUrl}" width="30%" height="30%" />
+				</td>
+				<!-- <td width="50%" style="vertical-align:right;" > -->
+				<td width="50%" align="right" >
+					<div id="cmr-header-a" >
+						Maintenance Visit Report {!cmrCase.CaseNumber}
+					</div>
+					<div id="cmr-header-b" >
+						{!cmrCase.Site__r.Name}
+					</div>
+					<div id="cmr-header-c" >
+						Operations &#38; Maintenance Department
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<!-- 
+		<div >
+			<apex:image url="{!$Resource.borrego}" width="30%" height="30%" />
+		</div>
+		<div style="float:right;">
+			<div id="cmr-header-a" >
+				Case Maintenance Report
+			</div>
+			<div id="cmr-header-b" >
+				Case #: {!cmrCase.CaseNumber}
+			</div>
+		</div>
+		-->
+	</div>
+	
+	<div class="footer">
+		<div>Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+	</div>
+	
+	<div class="content">
+	
+	<table id="wof-table" width="100%" >
+        <tr>
+            <td style="vertical-align:top;" >
+                <apex:dataTable value="{!cmrCase}" var="cmrL">
+                    
+                    <apex:column width="125px" >
+                        <div id="wof-label" >
+                            Account Name:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Contact Name:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Contact Email:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Contact Phone:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                        </div>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <div id="wof-field" >
+                            <apex:outputText value="{!cmrL.Account.Name}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!cmrL.Contact.Name}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!cmrL.Contact.Email}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!cmrL.Contact.Phone}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                        </div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+
+            <td style="vertical-align:top;" >
+                <apex:dataTable value="{!cmrCase}" var="cmrR">
+                     
+                    <apex:column width="160px" style="vertical-align:top;" >
+                        <div id="wof-label" >
+                           	Manager:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Maintenance Type:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Date:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                        </div>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <div id="wof-field" >
+                            <apex:outputField value="{!cmrR.Owner.Name}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputField value="{!cmrR.Maintenance_Type__c}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputField value="{!cmrR.CreatedDate}" /><br />
+                        </div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+        </tr>
+		
+	</table>
+	
+	<br/>
+	<br/>
+	
+	<table id="wof-table" width="100%" >
+		<tr>
+			<td>
+				<div id="cmr-label" >
+					Performance Maintenance Introduction:<br />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td style="border: 1px solid black; padding: 5px;"> -->
+			<td style="padding: 5px;">
+				<div id="wof-field" >
+					<apex:outputField value="{!cmrCase.Performance_Maintenance_Introduction__c}" />
+					<br/>
+					<br/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<br/>
+	<br/>
+	
+	<table id="wof-table" width="100%" >
+		<tr>
+			<td>
+				<div id="cmr-label" >
+					Non-Conformance Summary:<br />
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<!-- <td style="border: 1px solid black; padding: 5px; vertical-align:top;"> -->
+			<td style="padding: 5px; vertical-align:top;">
+				<div id="wof-field" >
+				<apex:dataTable value="{!nonConformanceComponents}" var="ct" width="100%">
+					<apex:column style="page-break-inside:avoid; page-break-after:auto;">
+						<div id="cmr-sublabel" >
+							<apex:outputText value="Component: {!ct}" />
+						</div>
+						<br/>
+						<apex:dataTable value="{!nonConformanceMap[ct]}" var="mi" cellspacing="5px" >
+							<apex:column width="10px" style="vertical-align:top;">
+								<apex:outputText value=" " />
+							</apex:column>
+							<apex:column headerValue="Maintenance Item" width="250px" style="vertical-align:top;">
+								<apex:outputText value="{!mi.Item__c}" />
+							</apex:column>
+							<apex:column headerValue="Follow Up Required" width="150px" style="vertical-align:top;">
+								<apex:outputText value="{!mi.Follow_Up_Required__c}" />
+							</apex:column>
+							<apex:column headerValue="Notes" style="vertical-align:top;">
+								<apex:outputText value="{!mi.Notes__c}" />
+							</apex:column>
+						</apex:dataTable>
+						<br/>
+					</apex:column>
+				</apex:dataTable>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<br/>
+	<br/>
+	
+	<div style="page-break-before:always;"/>
+	<table id="wof-table" width="100%" style="page-break-after:auto;">
+		<!-- <tr style="page-break-inside:avoid; page-break-after:auto;" width="100%"> -->
+		<tr width="100%">
+			<td>
+				<div id="cmr-label" >
+					Component Summary:<br />
+				</div>
+			</td>
+		</tr>
+		
+		<!-- <tr style="page-break-inside:avoid; page-break-after:auto;" width="100%"> -->
+		<tr width="100%">
+			<td >
+				<div id="wof-field" >
+				<apex:dataTable value="{!cmpSummaryMapKeys}" var="key" cellspacing="5px" width="100%">
+					<!-- <apex:column style="border: 1px solid black; padding: 5px; vertical-align:top;"> -->
+					<apex:column style="padding: 5px; vertical-align:top;">
+						<div id="cmr-sublabel" >
+							<apex:outputText value="Component: {!key}" />
+						</div>
+						<br/>
+						<div id="wof-label" >
+							<apex:outputText value="Summary: " />
+						</div>
+						<apex:outputText value="{!cmpSummaryMap[key].cmp.Summary__c}" />
+						<br/>
+						<br/>
+						<div style="page-break-inside:avoid; page-break-after:auto;">
+						<div id="wof-label" >
+							<apex:outputText value="Images:" />
+						</div>
+						<br/>
+						<apex:dataTable value="{!cmpSummaryMap[key].cmpImages}" var="img" cellspacing="5px" width="100%">
+							<apex:column width="350px">
+								<apex:image url="/servlet/servlet.FileDownload?file={!img.imageLeftId}" width="300" height="300" rendered="{!img.imageLeftId != null}"/>
+							</apex:column>
+							<apex:column >
+								<apex:image url="/servlet/servlet.FileDownload?file={!img.imageRightId}" width="300" height="300" rendered="{!img.imageRightId != null}"/>
+							</apex:column>
+						</apex:dataTable>
+						</div>
+						<br/>
+						<div style="page-break-inside:avoid; page-break-after:auto;">
+						<div id="wof-label" >
+							<apex:outputText value="Checklist:" />
+						</div>
+						<apex:dataTable value="{!cmpSummaryMap[key].checklistItems}" var="mick" cellspacing="5px" width="100%">
+							<apex:column width="100%">
+								<strong><u><apex:outputText value="{!mick.Item__c}" /></u></strong>
+								<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u><apex:outputText value="Follow Up Required:" /></u>&nbsp;&nbsp;<apex:outputText value="{!mick.Follow_Up_Required__c}" />
+								<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u><apex:outputText value="Related Notes:" /></u>&nbsp;&nbsp;<apex:outputText value="{!mick.Notes__c}" />
+								<br/>
+								<br/>
+							</apex:column>
+						</apex:dataTable>
+						</div>
+					</apex:column>
+				</apex:dataTable>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<br/>
+	<br/>
+	
+	<div style="page-break-inside:avoid; page-break-after:auto;">
+	<table id="wof-table" width="100%" >
+		<tr>
+			<td>
+				<div id="cmr-label" >
+					Performance Maintenance Conclusion:<br />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td style="border: 1px solid black; padding: 5px;"> -->
+			<td style="padding: 5px;">
+				<div id="wof-field" >
+					<apex:outputField value="{!cmrCase.Performance_Maintenance_Conclusion__c}" />
+					<br/>
+					<br/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+	
+	</div>
+	
+</apex:page>

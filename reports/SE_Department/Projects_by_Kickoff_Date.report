@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_14587306</developerName>
+        <masterLabel>Eng Phase</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Project__c.Sites__r$Design_Stage__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>50% Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Site Use Permit Set</sourceValue>
+            </sourceValues>
+            <value>Dev Eng</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CD IFR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CD IFC</sourceValue>
+            </sourceValues>
+            <value>Ops Eng</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>As Built</sourceValue>
+            </sourceValues>
+            <value>Construction</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>AcctSeed__Project__c$Project_Kickoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Design_Stage__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Structural_Engineer__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Overall_Project_Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Complete_Site_Discovery_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Handoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$CD_Forecast_Release_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$CD_IFC_Release_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Mobilization_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$PTO_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Development_SDE__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Senior_Design_Engineer__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Branch__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Final_Contract_PriceProject__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Sites__r$Design_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New,Site Use Permit Set,50% Set,CD IFR,CD IFC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Project_Kickoff_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>10/1/2015</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Projects by Kickoff Date</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Sites_and_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Project__c$Project_Kickoff_Date__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c$X50_Forecast_Release_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

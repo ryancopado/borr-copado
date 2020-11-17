@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Avalara Account ID --></help>
+        <label><!-- Account ID --></label>
+        <name>AvaAcctSeed__AccountID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Checked, this is the AvaTax Setting record that will be referenced whenever Avalara is called (for Address Validation or Tax Calculation) --></help>
+        <label><!-- Active Avalara Setting --></label>
+        <name>AvaAcctSeed__Active_AvaTax_Setting__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Company Code that will be referenced in calls to Avalara. --></help>
+        <label><!-- Company Code --></label>
+        <name>AvaAcctSeed__CompanyCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the field from which the Tax Calculation will pull the Avalara Customer Code. --></help>
+        <label><!-- Customer Code Field --></label>
+        <name>AvaAcctSeed__Customer_Code_Field__c</name>
+        <picklistValues>
+            <masterLabel>Account Name</masterLabel>
+            <translation><!-- Account Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Number</masterLabel>
+            <translation><!-- Account Number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If this field is unchecked, Address Validation is disabled --></help>
+        <label><!-- Enable Address Validation --></label>
+        <name>AvaAcctSeed__Enable_Address_Validation__c</name>
+    </fields>
+    <fields>
+        <help><!-- If check box is enable, you can use Entity/Use Code in tax calculation --></help>
+        <label><!-- Enable Entity/Use Code --></label>
+        <name>AvaAcctSeed__Enable_Entity_Use_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this box is not checked, Tax Calculation is disabled --></help>
+        <label><!-- Enable Tax Calculation --></label>
+        <name>AvaAcctSeed__Enable_Tax_Calculation__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checkbox is enable then Tax Code will be mapped with item --></help>
+        <label><!-- Enable Tax Code Mapping --></label>
+        <name>AvaAcctSeed__Enable_Tax_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checkbox is enable then UPC will be pass as Item Code. You will have to write UPC in product if you want to pass UPC. --></help>
+        <label><!-- Enable UPC Code as ItemCode --></label>
+        <name>AvaAcctSeed__Enable_UPC_Code_as_ItemCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL Account --></label>
+        <name>AvaAcctSeed__GL_Account__c</name>
+        <relationshipLabel><!-- Avalara --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Avalara License Key --></help>
+        <label><!-- License Key --></label>
+        <name>AvaAcctSeed__License_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Latitude details for Avalara Tax Calculation --></help>
+        <label><!-- Latitude --></label>
+        <name>AvaAcctSeed__Origin_Address_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- Longitude details for Tax Calculation --></help>
+        <label><!-- Longitude --></label>
+        <name>AvaAcctSeed__Origin_Address_Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- Origin Street Address - up to three lines --></help>
+        <label><!-- Line Address --></label>
+        <name>AvaAcctSeed__Origin_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Origin City for Tax Calcs --></help>
+        <label><!-- City --></label>
+        <name>AvaAcctSeed__Origin_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- 2 char ISO Country Code for Origin Address --></help>
+        <label><!-- Country --></label>
+        <name>AvaAcctSeed__Origin_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zip or Postal Code for the Origin Address --></help>
+        <label><!-- Postal Code --></label>
+        <name>AvaAcctSeed__Origin_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- State or Province 2 char Abbreviation --></help>
+        <label><!-- Region --></label>
+        <name>AvaAcctSeed__Origin_Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Password Corresponding to User Name for this Avalara Account --></help>
+        <label><!-- Password --></label>
+        <name>AvaAcctSeed__Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return address in upper case --></label>
+        <name>AvaAcctSeed__Return_address_in_upper_case__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Product Code That will Be used for the Sales Tax Amount Line on the Invoice. --></help>
+        <label><!-- SalesTax Product Code --></label>
+        <name>AvaAcctSeed__ST_ProductCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the url used to access the Avalara Service.  
+Example: https://development.avalara.net --></help>
+        <label><!-- ServiceURL --></label>
+        <name>AvaAcctSeed__ServiceURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Schedule --></label>
+        <name>AvaAcctSeed__Tax_Schedule__c</name>
+        <picklistValues>
+            <masterLabel>AvaTax</masterLabel>
+            <translation><!-- AvaTax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AvaTaxPOD</masterLabel>
+            <translation><!-- AvaTaxPOD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AvaTaxPOS</masterLabel>
+            <translation><!-- AvaTaxPOS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Avalara User Name for access to avalara service.  Must have at Least &quot;Company Admin&quot; privileges in the Avalara Dashboard. --></help>
+        <label><!-- User Name --></label>
+        <name>AvaAcctSeed__UserName__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Checked, when an Address is validated, the proposed replacement will be presented for verification prior to actually replacing the record.  If not checked, the replacement is automagic --></help>
+        <label><!-- Verify Validated Addresses --></label>
+        <name>AvaAcctSeed__Verify_Validations__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Blank Value Not Allowed --></errorMessage>
+        <name>AvaAcctSeed__NOBlank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Blank Value Not Allowed --></errorMessage>
+        <name>AvaAcctSeed__NOBlankField</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Admin_Console_Production_Link --></label>
+        <name>AvaAcctSeed__Admin_Console_Production_Link</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Avalara_CertCapture --></label>
+        <name>AvaAcctSeed__Avalara_CertCapture</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Avalara_Community --></label>
+        <name>AvaAcctSeed__Avalara_Community</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CBTestConnect --></label>
+        <name>AvaAcctSeed__CBTestConnect</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CBValidateOrigin --></label>
+        <name>AvaAcctSeed__CBValidateOrigin</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Company --></label>
+        <name>AvaAcctSeed__Create_Company</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Tax_Profile --></label>
+        <name>AvaAcctSeed__Create_Tax_Profile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Help_Center --></label>
+        <name>AvaAcctSeed__Help_Center</name>
+    </webLinks>
+</CustomObjectTranslation>

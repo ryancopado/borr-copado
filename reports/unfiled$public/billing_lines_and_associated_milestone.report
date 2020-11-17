@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project_Task__c.Associated_Milestone__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project_Task__c.Billing_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CHILD_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AcctSeed__Project_Task__c.Billing_Line_Item</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>billing lines and associated milestone</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Project__c$AcctSeed__Project_Task__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project_Task__c.Billing_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

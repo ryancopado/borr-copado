@@ -1,0 +1,22 @@
+<apex:page showHeader="false"
+    sidebar="false"
+    showChat="false"
+    standardController="NVMStatsSF__NVM_Call_Summary__c"
+    extensions="NVMStatsSF.ConversationAnalyzerController" >
+    <apex:iframe src="{!CallRecordingUrl}"
+        id="conversationAnalyzer"
+        width="100%"
+        scrolling="true" />
+    <script>document.getElementById('conversationAnalyzer').height = window.innerHeight - 20;</script>
+    <script>
+    (function() { 
+        var windowOnresize = window.onresize;
+        window.onresize = function() {
+            if (windowOnresize) {
+                windowOnresize(); //don't trample the handler; intercept it
+            }
+            document.getElementById('conversationAnalyzer').height = window.innerHeight - 20;
+        };
+    }());
+    </script>
+</apex:page>

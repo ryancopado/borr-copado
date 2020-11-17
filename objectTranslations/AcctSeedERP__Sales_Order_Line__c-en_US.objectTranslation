@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Construction Requisition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Construction Requisitions</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeedERP__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <label><!-- AS Unit Price --></label>
+        <name>AS_Unit_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account listed on the Sales Order &quot;Customer&quot; field --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes from the Accounting Dept on this requisition- Used on Service Construction Requisitions only --></help>
+        <label><!-- Accounting Notes --></label>
+        <name>Accounting_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>AcctSeedERP__Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Branch</label>
+        <name>AcctSeedERP__GL_Account_Variable_1__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Account Variable 2 --></label>
+        <name>AcctSeedERP__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Sales Order Line (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Account Variable 3 --></label>
+        <name>AcctSeedERP__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Sales Order Line (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Account Variable 4 --></label>
+        <name>AcctSeedERP__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Sales Order Line (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manufacturing Order --></label>
+        <name>AcctSeedERP__Manufacturing_Order__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product Id --></label>
+        <name>AcctSeedERP__Opportunity_Product_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Major Component reqs, enter the exact product you are ordering. For all other reqs match the product name to the Line Item/Cost Code.   If that cannot be found enter Miscellaneous. --></help>
+        <label><!-- Product --></label>
+        <name>AcctSeedERP__Product__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Line Item/Cost Code where the cost should be allocated --></help>
+        <label>Line Item</label>
+        <name>AcctSeedERP__Project_Task__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project the req is associated with- automatically filled in when creating the req from the Project --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeedERP__Project__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- PO Line created from the req
+This is filled in when the req is converted to a PO --></help>
+        <label><!-- Purchase Order Line --></label>
+        <name>AcctSeedERP__Purchase_Order_Line__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity Allocated --></label>
+        <name>AcctSeedERP__Quantity_Allocated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Manufactured --></label>
+        <name>AcctSeedERP__Quantity_Manufactured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Needed --></label>
+        <name>AcctSeedERP__Quantity_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Ordered Manufacturing --></label>
+        <name>AcctSeedERP__Quantity_Ordered_Manufacturing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Ordered Supplier --></label>
+        <name>AcctSeedERP__Quantity_Ordered_Supplier__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity of the material needed
+For Sub reqs, always enter 1 --></help>
+        <label><!-- Quantity Ordered --></label>
+        <name>AcctSeedERP__Quantity_Ordered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Received Supplier --></label>
+        <name>AcctSeedERP__Quantity_Received_Supplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Shipped --></label>
+        <name>AcctSeedERP__Quantity_Shipped__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Order associated with the requisition
+Automatically gets entered when creating a req from the Project --></help>
+        <label><!-- Sales Order --></label>
+        <name>AcctSeedERP__Sales_Order__c</name>
+        <relationshipLabel>Construction Requisition</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeedERP__Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>AcctSeedERP__Unit_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional notes or information on the requisition- enter any clarifications or ordering information here --></help>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Party who should be backcharged for this expense- Must be listed as an account in Salesforce --></help>
+        <label><!-- Backcharge To --></label>
+        <name>Backcharge_To__c</name>
+        <relationshipLabel><!-- Construction Requisitions (Backcharge To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Should this charge be backcharged to someone else? If so, check this box and list the party to backcharge in the &quot;Backcharge To&quot; field --></help>
+        <label><!-- Backcharge --></label>
+        <name>Backcharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- updates field automatically via WF whenever Con Req is created with SF ID, used for roll ups. --></help>
+        <label><!-- Con Req Creator ID --></label>
+        <name>Con_Req_Creator_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Con Req Group --></label>
+        <name>Con_Req_Group__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Construction Req Link --></label>
+        <name>Construction_Req_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- SOL# for Service Requisitions
+Will be filled out upon Approval of the Requisition --></help>
+        <label><!-- Construction Req Name --></label>
+        <name>Construction_Req__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Code Number --></label>
+        <name>Cost_Code_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a lookup to a Borrego list of cost codes --></help>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+        <relationshipLabel><!-- Sales Order Line --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- used for roll ups and formulas only counts the record as one --></help>
+        <label><!-- Count of Record --></label>
+        <name>Count_of_Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Customer entered on the Sales Order. --></help>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the type of development cost for the construction requisition. --></help>
+        <label><!-- Development Cost Line Item --></label>
+        <name>Development_Cost_Line_Item__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes if the cost is during the development phase of the project- Driven by WIP Status on the Project --></help>
+        <label><!-- Development Cost --></label>
+        <name>Development_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineering SOL --></label>
+        <name>Engineering_SOL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated shipping/freight on the requisition --></help>
+        <label><!-- Freight --></label>
+        <name>Freight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hidden field set automatically by trigger. If True, means there is at least one attachment associated with the Sales Order Line record. --></help>
+        <label><!-- IsAttachment --></label>
+        <name>IsAttachment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locked --></label>
+        <name>Locked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material CR --></label>
+        <name>Material_CR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the PO will be a Not To Exceed PO. Enter an estimated amount that will true up once the final invoice is received. --></help>
+        <label><!-- Not To Exceed --></label>
+        <name>Not_To_Exceed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Notes whether or not the req is OK to Submit, providing details if needed --></help>
+        <label><!-- Ok to Submit --></label>
+        <name>Ok_to_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product --></label>
+        <name>Opportunity_Product__c</name>
+        <picklistValues>
+            <masterLabel>Option 1</masterLabel>
+            <translation><!-- Option 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Option 2</masterLabel>
+            <translation><!-- Option 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the Project Owner field on the Project --></help>
+        <label><!-- Project PM --></label>
+        <name>Project_PM__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Product --></label>
+        <name>Project_Product__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quote Line Item --></label>
+        <name>Quote_Line_Item__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Watts on the racking order
+Required when the req is for racking --></help>
+        <label><!-- Racking Watts --></label>
+        <name>Racking_Watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Budget- PO&apos;s- Construction Requisition Total --></help>
+        <label><!-- Remaining Available Budget --></label>
+        <name>Remaining_Available_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the item is needed or date the work will be performed --></help>
+        <label><!-- Requested Delivery Date --></label>
+        <name>Requested_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- RollUp Remaining Available Budget --></label>
+        <name>RollUp_Remaining_Available_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total of entered unit price X quantity + freight + sales tax + use tax. --></help>
+        <label><!-- SOLine Total --></label>
+        <name>SOLine_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is stamped with the rate on the Sales Tax Table from the Tax Group on the Project
+Will be 0 unless Material Requisition --></help>
+        <label><!-- Sales Tax Rate --></label>
+        <name>Sales_Tax_Rate_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a lookup to the Custom table to select tax rate for this Sale Order Line. --></help>
+        <label><!-- Sales Tax Rate Table --></label>
+        <name>Sales_Tax_Rate_Table__c</name>
+        <relationshipLabel><!-- Sales Order Line --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the quantity X unit cost X sales tax rate. Defaults to $0 for Sub and Other Costs --></help>
+        <label><!-- Sales Tax --></label>
+        <name>Sales_Tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- SF ID for related SV --></help>
+        <label><!-- Service Visit ID --></label>
+        <name>ServiceVisitID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Where product should be shipped or account the req is related to
+Must be an Account in Salesforce --></help>
+        <label><!-- Ship to Account --></label>
+        <name>Ship_to_Account__c</name>
+        <relationshipLabel><!-- Sales Order Line --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Status of the Req- automatically updated with the approval process --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- used by PVEngineers to classify the subvendor Account --></help>
+        <label><!-- Sub-vendor Account --></label>
+        <name>Sub_vendor_Account__c</name>
+        <relationshipLabel><!-- Construction Requisitions (Sub-vendor Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- choose the category of the requisition- Tax will be based upon this choice.   Need to match O&amp;M Tax Category list on APL and BL --></help>
+        <label><!-- Tax Category --></label>
+        <name>Tax_Category__c</name>
+        <picklistValues>
+            <masterLabel>Cell Modem Data Plan</masterLabel>
+            <translation><!-- Cell Modem Data Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Storage</masterLabel>
+            <translation><!-- Data Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Time/Travel - Internal</masterLabel>
+            <translation><!-- Drive Time/Travel - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Time/Travel - Sub-C</masterLabel>
+            <translation><!-- Drive Time/Travel - Sub-C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Output</masterLabel>
+            <translation><!-- Electronic Output --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Services</masterLabel>
+            <translation><!-- Engineering Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment Rental/Leases</masterLabel>
+            <translation><!-- Equipment Rental/Leases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insulation Testing</masterLabel>
+            <translation><!-- Insulation Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor - Internal</masterLabel>
+            <translation><!-- Labor - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor - Sub-C</masterLabel>
+            <translation><!-- Labor - Sub-C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Washing</masterLabel>
+            <translation><!-- Module Washing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional Extended Warranties</masterLabel>
+            <translation><!-- Optional Extended Warranties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts/Material</masterLabel>
+            <translation><!-- Parts/Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PeGu</masterLabel>
+            <translation><!-- PeGu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursable Expenses</masterLabel>
+            <translation><!-- Reimbursable Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;H</masterLabel>
+            <translation><!-- S&amp;H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Tax</masterLabel>
+            <translation><!-- Sales Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Contract</masterLabel>
+            <translation><!-- Service Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow Removal</masterLabel>
+            <translation><!-- Snow Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storage</masterLabel>
+            <translation><!-- Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vegetation Management</masterLabel>
+            <translation><!-- Vegetation Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Tax Group the project is in- determines the default tax rate on the req --></help>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Spent + Req --></label>
+        <name>Total_Spent_Req__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reporting for Service Reqs- notes what type of cost the req should be categorized under --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charge Back</masterLabel>
+            <translation><!-- Charge Back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty</masterLabel>
+            <translation><!-- Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty- Resi</masterLabel>
+            <translation><!-- Warranty- Resi --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a editable unit cost to be the POLine unit cost. --></help>
+        <label><!-- Unit Cost --></label>
+        <name>Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who to contact at the Vendor listed regarding the purchase
+Must be a Contact in Salesforce --></help>
+        <label><!-- Vendor Contact --></label>
+        <name>Vendor_Contact__c</name>
+        <relationshipLabel><!-- Construction Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Will pull through to the PO Line, prints on the PO --></help>
+        <label><!-- Vendor Description --></label>
+        <name>Vendor_Description_SOL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subcontractor or Material vendor
+Must be listed as a Vendor Account in Salesforce --></help>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- Sales Order Line (Vendor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Only used for module orders --></help>
+        <label><!-- Watts --></label>
+        <name>Watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order --></label>
+        <name>WorkOrder__c</name>
+        <relationshipLabel><!-- Sales Order Line --></relationshipLabel>
+    </fields>
+    <nameFieldLabel>Construction Requisition Name</nameFieldLabel>
+    <recordTypes>
+        <description><!-- For requesting Modules, Inverters, and Racking --></description>
+        <label><!-- Major Component --></label>
+        <name>Major_Component</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting minor component material (including DAS) --></description>
+        <label><!-- Minor Component --></label>
+        <name>Minor_Component</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For non-material costs (Permits, Other Costs, Bonds, etc) --></description>
+        <label><!-- Other Costs --></label>
+        <name>Other_Costs</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For Service Construction Requisitions --></description>
+        <label><!-- Service --></label>
+        <name>Service</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting subcontractors --></description>
+        <label><!-- Subcontractor --></label>
+        <name>Subcontractor</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The quantity shipped cannot be more than the quantity allocated --></errorMessage>
+        <name>AcctSeedERP__Allocated_Greater_Equal_Shipped</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A product can not be on back order as a manufactured item and a purchased item. --></errorMessage>
+        <name>AcctSeedERP__Both_Purchasing_And_Manufacturing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The quantity ordered cannot be less than the quantity allocated --></errorMessage>
+        <name>AcctSeedERP__Ordered_Greater_Equal_Allocated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Product_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeedERP__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- quantity must be greater than or equal to 0 --></errorMessage>
+        <name>AcctSeedERP__Quantity_Is_Positive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a Line Item with Record Type= Budget Line Item --></errorMessage>
+        <name>Budget_Line_Item_Lookup</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- All Construction Requisitions must be part of a Con Req Group. Please create the Con Req Group first, or associate this req to a CRG. --></errorMessage>
+        <name>CRG_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract associated with Con Req is either Expired or Paid Contract Complete. Please contact your O&amp;M administrator.   Only the Warranty Manager can create these types of CRG&apos;s. --></errorMessage>
+        <name>Contract_Expired_or_Complete</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Racking, Modules, and Inverters can be entered for a Major Component Requisition --></errorMessage>
+        <name>Correct_Products_for_Con_Reqs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot use Warranty as a Line Item for Billable Requisitions --></errorMessage>
+        <name>Line_Item_cannot_be_Warranty_if_Billable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the number of watts that will be installed on the racking --></errorMessage>
+        <name>Racking_Watts_Required_if_Racking_CR</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a sales order related to the selected Sales Order Line project. --></errorMessage>
+        <name>Sales_Order_Project_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot edit the Service Requisition after its been approved. --></errorMessage>
+        <name>Service_Req_Locked_No_Edit</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Add_Edit_Rows --></label>
+        <name>AcctSeedERP__Mass_Add_Edit_Rows</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Purchase_Orders --></label>
+        <name>Create_Purchase_Orders</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Major_Component --></label>
+        <name>Edit_Major_Component</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Con_Req_Group --></label>
+        <name>New_Con_Req_Group</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Con_Req_Group_Project --></label>
+        <name>New_Con_Req_Group_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Major_Sales_Order_Line --></label>
+        <name>New_Major_Sales_Order_Line</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Sales_Order_Line --></label>
+        <name>New_Sales_Order_Line</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Service_Sales_Order_Line --></label>
+        <name>New_Service_Sales_Order_Line</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Recall_Approved_Req --></label>
+        <name>Recall_Approved_Req</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Recalled_Approved_Req --></label>
+        <name>Recalled_Approved_Req</name>
+    </webLinks>
+</CustomObjectTranslation>

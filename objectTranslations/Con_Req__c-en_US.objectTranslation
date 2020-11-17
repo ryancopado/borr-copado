@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Change Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Change Orders</value>
+    </caseValues>
+    <fields>
+        <help><!-- updates with value in the field Amount of Project Change Order Total from related project. --></help>
+        <label><!-- AP Line CO Total --></label>
+        <name>AP_Line_CO_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project the CO is related to --></help>
+        <label><!-- Project --></label>
+        <name>ASProject__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Cost Total --></label>
+        <name>Additional_Cost_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter notes about the change order here
+Including any specifics around the cost breakdown or why you are submitting the CO --></help>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Also refers to Adjusted PO value. --></help>
+        <label><!-- Adjusted Contract Price --></label>
+        <name>Adjusted_Contract_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjusted Original Contract Price --></label>
+        <name>Adjusted_Original_Contract_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- New Adjusted System Size- will be blank if updating inverters or racking. Only calculates if updating modules --></help>
+        <label><!-- Adjusted System Size-old --></label>
+        <name>Adjusted_System_SizeCOConReq__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adjusted System Size = Current Project System Size + amount from this change order. Only a change in the number of modules will impact the Adjusted System Size. --></help>
+        <label><!-- Adjusted System Size --></label>
+        <name>Adjusted_System_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Requested Change --></label>
+        <name>Amount_Requested_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Requested Total --></label>
+        <name>Amount_Requested_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of CO
+Sub and Material CO only --></help>
+        <label><!-- Amount Requested --></label>
+        <name>Amount_Requested__c</name>
+    </fields>
+    <fields>
+        <help><!-- Message regarding approval status --></help>
+        <label><!-- Approval Status Message --></label>
+        <name>Approval_Status_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Change Order Total --></label>
+        <name>Approved_Change_Order_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the CO is a backcharge, who is the backcharge to? 
+Must be an Account in Salesforce
+Required if &quot;Backcharge&quot; checkbox is checked --></help>
+        <label><!-- Backcharge To --></label>
+        <name>Backcharge_To__c</name>
+        <relationshipLabel><!-- Change Orders (Backcharge To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Is the CO a backcharge? 
+Checked = yes (Backcharge To field is required)
+Not Checked = no --></help>
+        <label><!-- Backcharge --></label>
+        <name>Backcharge__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Line Item the Change Order is applied to --></help>
+        <label><!-- Budget Line Item --></label>
+        <name>Budget_Line_Item2__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Budget Line Item --></label>
+        <name>Budget_Line_Item__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- auto fills via a WF whenever status is changed, --></help>
+        <label><!-- CO Status Date Change --></label>
+        <name>COStatusDateChange__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change Order Number --></help>
+        <label><!-- CO # --></label>
+        <name>CO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of calendar days the project will be delayed due to Change Order --></help>
+        <label><!-- Calendar Days Delayed --></label>
+        <name>Calendar_Days_Delayed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cartage (%) --></label>
+        <name>Cartage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Order Notes --></label>
+        <name>Change_Order_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a number to identify this subcontractor change order.  Ideally this number will be unique for this project. --></help>
+        <label><!-- Change Order Number --></label>
+        <name>Change_Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Order Status --></label>
+        <name>Change_Order_Status__c</name>
+        <picklistValues>
+            <masterLabel>Aaron Approved</masterLabel>
+            <translation><!-- Aaron Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Partially Received</masterLabel>
+            <translation><!-- Material Partially Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Received In-Full</masterLabel>
+            <translation><!-- Material Received In-Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM Approved</masterLabel>
+            <translation><!-- PM Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment On Hold</masterLabel>
+            <translation><!-- Shipment On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment Scheduled</masterLabel>
+            <translation><!-- Shipment Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Vendor</masterLabel>
+            <translation><!-- Submitted to Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Received PO</masterLabel>
+            <translation><!-- Vendor Received PO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Shipped Material</masterLabel>
+            <translation><!-- Vendor Shipped Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of Customer CO
+Notes whether you are adding products, taking away products, changing contract price, or changing system size --></help>
+        <label><!-- Change Order Type --></label>
+        <name>Change_Order_Type__c</name>
+        <picklistValues>
+            <masterLabel>Add Product to Opportunity</masterLabel>
+            <translation><!-- Add Product to Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Price Change</masterLabel>
+            <translation><!-- Contract Price Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remove Product from Opportunity</masterLabel>
+            <translation><!-- Remove Product from Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Size or Product Change</masterLabel>
+            <translation><!-- System Size or Product Change --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Confirmed Ship Date --></label>
+        <name>Confirmed_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Amount of Current Change Order --></help>
+        <label><!-- Cost Breakdown Total --></label>
+        <name>Current_Change_Order_Subtotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Project System Size-OLD --></label>
+        <name>Current_Project_System_SizeCOConReq_New__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current size of the project, pulls from the Current Project System Size field on the Opportunity --></help>
+        <label><!-- Current Project System Size --></label>
+        <name>Current_Project_System_SizeCOConReq__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Unit Cost --></label>
+        <name>Current_Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who are you sending the CO to?
+Must be a Contact in Salesforce --></help>
+        <label><!-- Customer Contact --></label>
+        <name>Customer_Contact__c</name>
+        <relationshipLabel><!-- Change Orders (Customer Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Records the date the CO was approved. Used in reporting. --></help>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Needed --></label>
+        <name>Date_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Requested --></label>
+        <name>Date_Requested__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date CO was submitted for approval. Used in reporting. --></help>
+        <label><!-- Date Submitted for Approval --></label>
+        <name>Date_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prints out on CO
+Used to add more description around what the CO is for --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Development Line Item --></label>
+        <name>Development_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drive Rate --></label>
+        <name>Drive_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drive Time --></label>
+        <name>Drive_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup Summary of Total on Cost Breakdowns with ESD = TRUE --></help>
+        <label><!-- ESD Change Order Total --></label>
+        <name>ESD_Change_Order_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final amount of the CO, includes tax, additional costs, etc. --></help>
+        <label><!-- Final Change Order Amount --></label>
+        <name>Final_Change_Order_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- field changes value based on criteria around Change Order Status and other values --></help>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsLocked --></label>
+        <name>IsLocked__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is hidden and used to generate error at the time of approval process execution for vendor type &apos;Business&apos; --></help>
+        <label><!-- IsSubmitted --></label>
+        <name>IsSubmitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Job Number on Project --></help>
+        <label><!-- Job Number --></label>
+        <name>Job_Number2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Number --></label>
+        <name>Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Labor Total --></label>
+        <name>Labor_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total freight on affiliated PO 
+Used for Materials CO&apos;s only --></help>
+        <label><!-- Max Freight Allowance --></label>
+        <name>Max_Freight_Allowance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Misc. Materials (%) --></label>
+        <name>Misc_Materials__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product you are changing or removing from the Opportunity --></help>
+        <label><!-- Original Product-old --></label>
+        <name>New_ProductCOConReq__c</name>
+        <relationshipLabel><!-- Change Orders (Original Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Product that you would like to add to the Opportunity. --></help>
+        <label><!-- New Product --></label>
+        <name>New_Product__c</name>
+        <relationshipLabel><!-- Change Orders (New Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- New quantity of the product you are adding to the CO or Opportunity --></help>
+        <label><!-- New Quantity-old --></label>
+        <name>New_QuantityCOConReq__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the quantity of either the new product to be added or the existing product to be changed. --></help>
+        <label><!-- New Quantity --></label>
+        <name>New_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the PO will be a Not To Exceed PO. Enter an estimated amount that will true up once the final invoice is received. --></help>
+        <label><!-- Not To Exceed --></label>
+        <name>Not_To_Exceed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Admin Hours --></label>
+        <name>Office_Admin_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Admin Rate --></label>
+        <name>Office_Admin_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ok to Submit Change Order --></label>
+        <name>Ok_to_Submit_Change_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the CO ok to submit? --></help>
+        <label><!-- Ok to Submit --></label>
+        <name>Ok_to_Submit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Also refers to Original PO value. --></help>
+        <label><!-- Original Contract Price --></label>
+        <name>Original_Contract_Price2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Original Customer Contract price from the project &quot;Original Contract Price&quot; field. --></help>
+        <label><!-- Original Contract Price --></label>
+        <name>Original_Contract_Price3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Contract Price --></label>
+        <name>Original_Contract_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Original system size per the contract
+Pulls from the Original System Size on the Opportunity --></help>
+        <label><!-- Original Contract System Size --></label>
+        <name>Original_Contract_System_SizeCOConReq__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original OpportunityLineItemId --></label>
+        <name>Original_OpportunityLineItemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Product --></label>
+        <name>Original_Product__c</name>
+        <relationshipLabel><!-- Change Orders (Original Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Original ProjectProductId --></label>
+        <name>Original_ProjectProductId__c</name>
+    </fields>
+    <fields>
+        <help><!-- PO Subtotal. --></help>
+        <label><!-- Original Unit Price --></label>
+        <name>Original_Unit_Price2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Unit Price-old --></label>
+        <name>Original_Unit_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other was selected, enter details here to explain why. You can also use this field for any other relevant details for why the Change Order is necessary. --></help>
+        <label><!-- Additional reason details --></label>
+        <name>Other_reason_explanation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overhead Total --></label>
+        <name>Overhead_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overhead (%) --></label>
+        <name>Overhead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Supplied Product --></label>
+        <name>Owner_Supplied_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Status --></label>
+        <name>PO_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total freight on affiliated PO
+Used for Materials CO&apos;s only --></help>
+        <label><!-- PO Total Freight --></label>
+        <name>PO_Total_Freight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup Summary of Total on Cost Breakdowns with ESD = FALSE --></help>
+        <label><!-- PV Change Order Total --></label>
+        <name>PV_Change_Order_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Part Number --></label>
+        <name>Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending Change Orders --></label>
+        <name>Pending_Change_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan/Sheet # --></label>
+        <name>Plan_Sheet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of any prior change orders to the Vendor or Sub --></help>
+        <label><!-- Prior Change Orders --></label>
+        <name>Prior_Change_Orders_SUB_MAT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of any prior change orders at the time of creation --></help>
+        <label><!-- Prior Change Orders --></label>
+        <name>Prior_Change_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Sub CO Frozen --></label>
+        <name>Prior_Sub_CO_Frozen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Sub Change Orders --></label>
+        <name>Prior_Sub_CO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Sub Change Orders-old --></label>
+        <name>Prior_Sub_Change_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>Product_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Cost --></label>
+        <name>Product_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product you are adding to the Opportunity or PO --></help>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Change Orders (New Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the associated Production Modeling record.  Production Modeling record Status must be &quot;Bradley Approved&quot;. --></help>
+        <label><!-- Production Modeling --></label>
+        <name>Production_Modeling__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Profit Total --></label>
+        <name>Profit_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profit (%) --></label>
+        <name>Profit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager Budget Check --></label>
+        <name>Project_Manager_Budget_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager Hours --></label>
+        <name>Project_Manager_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager Rate --></label>
+        <name>Project_Manager_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- Filled in by LH --></help>
+        <label><!-- Project PM Manager --></label>
+        <name>Project_PM_Manager__c</name>
+        <relationshipLabel><!-- Change Orders (Project PM Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project Manager
+Automatically pulls from the Owner listed on the Project --></help>
+        <label><!-- Project PM --></label>
+        <name>Project_PM__c</name>
+        <relationshipLabel><!-- Change Orders (Project PM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>Project_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Purchase Order the CO will modify
+Must be a PO for the Vendor listed on the CO --></help>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order2__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Original product quantity
+Referenced when updating or changing the product and quantity --></help>
+        <label><!-- Original Quantity-old --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the option that best describes the reason for the Change Order --></help>
+        <label><!-- Reason Category --></label>
+        <name>Reason_Category__c</name>
+        <picklistValues>
+            <masterLabel>Added testing required</masterLabel>
+            <translation><!-- Added testing required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Addressing fine / citation</masterLabel>
+            <translation><!-- Addressing fine / citation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civil</masterLabel>
+            <translation><!-- Civil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Close out</masterLabel>
+            <translation><!-- Close out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Code enforcement</masterLabel>
+            <translation><!-- Code enforcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered in contingency</masterLabel>
+            <translation><!-- Covered in contingency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Change after SAR execution</masterLabel>
+            <translation><!-- Design Change after SAR execution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detail update</masterLabel>
+            <translation><!-- Detail update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering change</masterLabel>
+            <translation><!-- Engineering change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment limitation requiring work around</masterLabel>
+            <translation><!-- Equipment limitation requiring work around --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment modification after delivery</masterLabel>
+            <translation><!-- Equipment modification after delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment standards revised</masterLabel>
+            <translation><!-- Equipment standards revised --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Errors</masterLabel>
+            <translation><!-- Errors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fence</masterLabel>
+            <translation><!-- Fence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Department</masterLabel>
+            <translation><!-- Fire Department --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MV equipment</masterLabel>
+            <translation><!-- MV equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mfr issued new requirements</masterLabel>
+            <translation><!-- Mfr issued new requirements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscommunciation</masterLabel>
+            <translation><!-- Miscommunciation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module related</masterLabel>
+            <translation><!-- Module related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Municipal Code requirments missed during design - DC disconnects on roof</masterLabel>
+            <translation><!-- Municipal Code requirments missed during design - DC disconnects on roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neighbor issue</masterLabel>
+            <translation><!-- Neighbor issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New technical requirements</masterLabel>
+            <translation><!-- New technical requirements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed through to Owner</masterLabel>
+            <translation><!-- Passed through to Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plants and visual screening</masterLabel>
+            <translation><!-- Plants and visual screening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor install needs correction</masterLabel>
+            <translation><!-- Poor install needs correction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential AHJ approval cost increase known at handoff</masterLabel>
+            <translation><!-- Potential AHJ approval cost increase known at handoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential Interconnection cost increase known at handoff</masterLabel>
+            <translation><!-- Potential Interconnection cost increase known at handoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement issue</masterLabel>
+            <translation><!-- Procurement issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project not closed out longer than expected - maintenance cost</masterLabel>
+            <translation><!-- Project not closed out longer than expected - maintenance cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punch item</masterLabel>
+            <translation><!-- Punch item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Racking</masterLabel>
+            <translation><!-- Racking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schedule change</masterLabel>
+            <translation><!-- Schedule change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site condition change</masterLabel>
+            <translation><!-- Site condition change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site condition not properly assessed</masterLabel>
+            <translation><!-- Site condition not properly assessed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Techical requirement</masterLabel>
+            <translation><!-- Techical requirement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp service or rental</masterLabel>
+            <translation><!-- Temp service or rental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temporary Site Improvement</masterLabel>
+            <translation><!-- Temporary Site Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility added scope</masterLabel>
+            <translation><!-- Utility added scope --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility delay</masterLabel>
+            <translation><!-- Utility delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor issue requiring fix</masterLabel>
+            <translation><!-- Vendor issue requiring fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weather impact</masterLabel>
+            <translation><!-- Weather impact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work not included SAR</masterLabel>
+            <translation><!-- Work not included SAR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Certain categories require further clarification. Select the best option here if required. --></help>
+        <label><!-- Reason Sub Category --></label>
+        <name>Reason_Sub_Category__c</name>
+        <picklistValues>
+            <masterLabel>BSS issue</masterLabel>
+            <translation><!-- BSS issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Error</masterLabel>
+            <translation><!-- Engineering Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Late order</masterLabel>
+            <translation><!-- Late order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal/Finance Error</masterLabel>
+            <translation><!-- Legal/Finance Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material handling order</masterLabel>
+            <translation><!-- Material handling order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner issue</masterLabel>
+            <translation><!-- Owner issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM Error</masterLabel>
+            <translation><!-- PM Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stabilized laydown areas</masterLabel>
+            <translation><!-- Stabilized laydown areas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey Error</masterLabel>
+            <translation><!-- Survey Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turnarounds</masterLabel>
+            <translation><!-- Turnarounds --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Origin of the need for a Change Order --></help>
+        <label><!-- Reason for Change Order --></label>
+        <name>Reason_for_Change_Order__c</name>
+        <picklistValues>
+            <masterLabel>AHJ</masterLabel>
+            <translation><!-- AHJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM</masterLabel>
+            <translation><!-- PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility</masterLabel>
+            <translation><!-- Utility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- RecordTypeName --></label>
+        <name>RecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Project Status --></label>
+        <name>Related_Project_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Budgeted Expense on the line item - (Line Item Total + Amount Requested on CO)
+Checks to make sure there is enough money in the budget to cover the amount requested on the CO --></help>
+        <label><!-- Remaining Available Budget --></label>
+        <name>Remaining_Available_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Owner (PM) --></help>
+        <label><!-- Requested By --></label>
+        <name>Requested_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Ship Date --></label>
+        <name>Requested_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retention Held --></label>
+        <name>Retention_Held__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Retention Percent --></label>
+        <name>Retention_Percent__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15%</masterLabel>
+            <translation><!-- 15% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5%</masterLabel>
+            <translation><!-- 5% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>other</masterLabel>
+            <translation><!-- other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Tax --></label>
+        <name>Sales_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ship To Account --></label>
+        <name>Ship_To__c</name>
+        <relationshipLabel><!-- Change Orders (Ship To Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shipping --></label>
+        <name>Shipping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Super Hours --></label>
+        <name>Site_Super_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Super Rate --></label>
+        <name>Site_Super_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Change Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Status of the CO
+Controlled by the approval process and recall button --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Pending</masterLabel>
+            <translation><!-- Approval Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved By Customer</masterLabel>
+            <translation><!-- Approved By Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego Approved</masterLabel>
+            <translation><!-- Borrego Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent for Signature</masterLabel>
+            <translation><!-- Sent for Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed by Customer</masterLabel>
+            <translation><!-- Signed by Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X - Rejected</masterLabel>
+            <translation><!-- X - Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Subject of the CO
+PRINTS ON CO --></help>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submit Errors --></label>
+        <name>Submit_Errors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Original price + Prior CO&apos;s --></help>
+        <label><!-- Subtotal --></label>
+        <name>Subtotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Designer Hours --></label>
+        <name>System_Designer_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Designer Rate --></label>
+        <name>System_Designer_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tax rate to be added to the CO --></help>
+        <label><!-- Tax Rate --></label>
+        <name>Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tools (%) --></label>
+        <name>Tools__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Requisitions + Non-Customer Change Orders on the Project 
+TOTAL COMMITTED COSTS TO DATE --></help>
+        <label><!-- Total Project Req&apos;s + CO&apos;s to Date --></label>
+        <name>TotalProjectReqsCOstoDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total CostX --></label>
+        <name>Total_Cost_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Tax Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Tax on the Material PO related to the CO --></help>
+        <label><!-- Total Tax Current PO --></label>
+        <name>Total_Tax_Current_PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Original Order</masterLabel>
+            <translation><!-- Original Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Order</masterLabel>
+            <translation><!-- Replacement Order --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>Unit_Price2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>Unit_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subcontractor Account
+Must be an account in Salesforce --></help>
+        <label><!-- Vendor Account --></label>
+        <name>Vendor_Account__c</name>
+        <relationshipLabel><!-- Change Orders (Vendor Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Subcontractor Contact
+Must be a contact in Salesforce --></help>
+        <label><!-- Vendor Contact --></label>
+        <name>Vendor_Contact__c</name>
+        <relationshipLabel><!-- Change Orders (Vendor Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- prior_Change_Order_From_Purchase --></label>
+        <name>prior_Change_Order_From_Purchase__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- For requesting changes to a Contract Value, or adding/removing products from the contract (and Salesforce Opportunity) --></description>
+        <label><!-- Customer Change Order --></label>
+        <name>Change_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- INTERNAL USE ONLY - Use this Change Order to modify an incorrect contract price or products entered prior to Contract Signing. --></description>
+        <label><!-- Internal Change Order --></label>
+        <name>Internal_Change_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting Modules and Inverters --></description>
+        <label><!-- Major Component Requisition --></label>
+        <name>Major_Component</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Not for changing material on the Opportunity- Use to modify an existing material PO --></description>
+        <label><!-- Material PO Change --></label>
+        <name>Material_Change_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting minor components (including racking and DAS) --></description>
+        <label><!-- Minor Component Requisition --></label>
+        <name>Minor_Component</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting subcontractors --></description>
+        <label><!-- Subcontractor Requisition --></label>
+        <name>Subcontractor</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For requesting subcontractor change orders --></description>
+        <label><!-- Subcontractor Change Order --></label>
+        <name>Subcontractor_Change_Order</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot create a Material CO against a PO that has been Closed, Cancelled or Rejected. --></errorMessage>
+        <name>Closed_POs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Change Order has already been approved. You cannot modify any of the fields after the CO is Borrego Approved or Approved by Customer --></errorMessage>
+        <name>Lock_CO_after_Approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot use a Customer Change Order against a Material PO --></errorMessage>
+        <name>Material_Cannot_Use_Customer_CO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot use an Internal Change Order against a Material PO --></errorMessage>
+        <name>Material_Cannot_Use_Internal_CO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot use a Subcontractor Change Order against a Material PO --></errorMessage>
+        <name>Material_Cannot_Use_Sub_CO</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Purchase Order selected is not a Material PO. Material Change Orders can only be used with Material Purchase Orders. Contact Procurement if you need help with this. --></errorMessage>
+        <name>Material_PO_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When removing products from the Opportunity, the Original Product field is required --></errorMessage>
+        <name>Original_Product_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a budget line item associated with the Project. --></errorMessage>
+        <name>Project_Validation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_PO --></label>
+        <name>Create_PO</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Change_Order --></label>
+        <name>Generate_Change_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Subcontractor_Change_Order --></label>
+        <name>Generate_Subcontractor_Change_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Recall --></label>
+        <name>Recall</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Signed_by_Customer --></label>
+        <name>Signed_by_Customer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- recordIDTest --></label>
+        <name>recordIDTest</name>
+    </webLinks>
+</CustomObjectTranslation>

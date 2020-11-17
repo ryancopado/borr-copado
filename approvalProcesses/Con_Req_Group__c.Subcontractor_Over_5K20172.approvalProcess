@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+        <field>Project__c</field>
+        <field>Project_PM__c</field>
+        <field>Vendor__c</field>
+        <field>Requisition_Total_Roll_Up__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Project_PM__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project_PM__r.Id &lt;&gt; $User.Id</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>PM Approval</label>
+        <name>PM_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>rburrowbridge@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Con_Req_Group__c.Non_Eng_Sub_CRGs__c</field>
+                <operation>lessThan</operation>
+                <value>1</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>VP Eng Approval</label>
+        <name>VP_Eng_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kcorbett@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ISPICKVAL( Project__r.Branch__c, &quot;Boston&quot;)
+&amp;&amp;
+Non_Eng_Sub_CRGs__c&gt;=1)
+||
+(ISPICKVAL( Project__r.Branch__c, &quot;Boston&quot;)
+&amp;&amp;
+Non_Eng_Sub_CRGs__c&lt;1
+&amp;&amp;
+Requisition_Total_Roll_Up__c &gt; 25000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>New England Branch ROD</label>
+        <name>New_England_Branch_ROD</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ISPICKVAL( Project__r.Branch__c, &quot;Mid Atlantic&quot;) 
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&gt;=1) 
+|| 
+(ISPICKVAL( Project__r.Branch__c, &quot;Mid Atlantic&quot;) 
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&lt;1 
+&amp;&amp; 
+Requisition_Total_Roll_Up__c &gt; 25000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Mid Atlantic Branch ROD</label>
+        <name>Mid_Atlantic_Branch_ROD</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbrooke@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approvals based on Branch</description>
+        <entryCriteria>
+            <formula>(OR( 
+ISPICKVAL( Project__r.Branch__c , &quot;Oakland&quot; ) , 
+ISPICKVAL( Project__r.Branch__c ,&quot;Berkeley&quot;), 
+Project__r.Job_Number__c = &quot;901-0418&quot;, 
+Project__r.Job_Number__c = &quot;901-0427&quot;,
+Project__r.Job_Number__c = &quot;901-0653&quot;,
+Project__r.Job_Number__c = &quot;901-0651&quot;,
+Project__r.Job_Number__c = &quot;901-0416&quot; ,
+Project__r.Job_Number__c = &quot;901-0420&quot;, 
+Project__r.Job_Number__c = &quot;901-0489&quot;, 
+Project__r.Job_Number__c = &quot;901-0491&quot;)
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&gt;=1)
+|| 
+(OR( 
+ISPICKVAL( Project__r.Branch__c , &quot;Oakland&quot; ) , 
+ISPICKVAL( Project__r.Branch__c ,&quot;Berkeley&quot;), 
+Project__r.Job_Number__c = &quot;901-0418&quot;, 
+Project__r.Job_Number__c = &quot;901-0427&quot;,
+Project__r.Job_Number__c = &quot;901-0653&quot;,
+Project__r.Job_Number__c = &quot;901-0651&quot;,
+Project__r.Job_Number__c = &quot;901-0416&quot; ,
+Project__r.Job_Number__c = &quot;901-0420&quot;, 
+Project__r.Job_Number__c = &quot;901-0489&quot;, 
+Project__r.Job_Number__c = &quot;901-0491&quot;)
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&lt;1 
+&amp;&amp; 
+Requisition_Total_Roll_Up__c &gt; 25000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Oakland Branch ROD</label>
+        <name>Oakland_Branch_ROD</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>afernandez@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approvals based on Branch</description>
+        <entryCriteria>
+            <formula>(ISPICKVAL( Project__r.Branch__c, &quot;San Diego&quot;) 
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&gt;=1) 
+|| 
+(ISPICKVAL( Project__r.Branch__c, &quot;San Diego&quot;) 
+&amp;&amp; 
+Non_Eng_Sub_CRGs__c&lt;1 
+&amp;&amp; 
+Requisition_Total_Roll_Up__c &gt; 25000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>San Diego Branch ROD</label>
+        <name>San_Diego_Branch_ROD</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>bbarker@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>mswanson@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Requisition_Total_Roll_Up__c  &gt; 200000
+&amp;&amp;
+OR(ISPICKVAL(Project__r.Branch__c, &apos;San Diego&apos;), ISPICKVAL(Project__r.Branch__c, &apos;Oakland&apos;), ISPICKVAL(Project__r.Branch__c, &apos;Berkeley&apos;))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Over $200K West</label>
+        <name>Over_200KWest</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>mswanson@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Requisition_Total_Roll_Up__c &gt; 200000 
+&amp;&amp; 
+OR(ISPICKVAL(Project__r.Branch__c, &apos;Boston&apos;), ISPICKVAL(Project__r.Branch__c, &apos;Mid Atlantic&apos;))</formula>
+        </entryCriteria>
+        <label>Over $200K East</label>
+        <name>Over_200K_East</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Sub over $5k. Includes Subcontractor Engineering records.</description>
+    <emailTemplate>unfiled$public/Con_Req_Group_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( IsAttachment__c = TRUE, Requisition_Total_Roll_Up__c  &gt; 5000,Vendor__r.AcctSeed__Accounting_Active__c =TRUE,NOT(ISPICKVAL(Project__r.WIP_Status__c , &quot;Pre-WIP&quot;)), 
+OR(CONTAINS(Category__c, &quot;S&quot;),CONTAINS(Category__c, &quot;L&quot;)))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Con_Req_Group_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>CRG_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Date_of_Final_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Con_Req_Group_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Rejected_Con_Req_Group</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Con_Req_Group_Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Subcontractor  &gt; $5K 20172</label>
+    <processOrder>13</processOrder>
+    <recallActions>
+        <action>
+            <name>Con_Req_Group_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

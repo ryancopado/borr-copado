@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>O_M_VP_access_to_Prasanna_s_REQ_s</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>prasanna although reporting to Bradley has budget under O&amp;M</description>
+        <label>O&amp;M VP access to Prasanna&apos;s REQ&apos;s</label>
+        <sharedTo>
+            <role>Vice_President_O_M</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00534000009nJiL</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_All</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>View All</label>
+        <sharedTo>
+            <group>Expense_Reports</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>COO_approve_Dir_of_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows the COO to approve the expense report of the Director of Finance</description>
+        <label>COO approve Dir of Finance</label>
+        <sharedTo>
+            <role>COO</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Director_of_Project_Finance</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>West_Approve_East_Design_engineer_expense_reports</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>special Instance where West system design manager needs to approve expense report of East designers</description>
+        <label>West Approve East Design engineer expense reports</label>
+        <sharedTo>
+            <role>West_Engineer_Lead_System_Designer</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>East_Design_Engineer</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

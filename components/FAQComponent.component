@@ -1,0 +1,443 @@
+<apex:component controller="FAQComponentController">
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'></script>
+<script>
+  
+(function($) {
+    
+    function fixTitle($ele) {
+        if ($ele.attr('title') || typeof($ele.attr('original-title')) != 'string') {
+            $ele.attr('original-title', $ele.attr('title') || '').removeAttr('title');
+        }
+    }
+    
+    function Tipsy(element, options) {
+        this.$element = $(element);
+        this.options = options;
+        this.enabled = true;
+        fixTitle(this.$element);
+    }
+    
+    Tipsy.prototype = {
+        show: function() {
+            var title = this.getTitle();
+            if (title && this.enabled) {
+                var $tip = this.tip();
+                
+                $tip.find('.tipsy-inner')[this.options.html ? 'html' : 'text'](title);
+                $tip[0].className = 'tipsy'; // reset classname in case of dynamic gravity
+                $tip.remove().css({top: 0, left: 0, visibility: 'hidden', display: 'block'}).appendTo(document.body);
+                
+                var pos = $.extend({}, this.$element.offset(), {
+                    width: this.$element[0].offsetWidth,
+                    height: this.$element[0].offsetHeight
+                });
+                
+                var actualWidth = $tip[0].offsetWidth, actualHeight = $tip[0].offsetHeight;
+                var gravity = (typeof this.options.gravity == 'function')
+                                ? this.options.gravity.call(this.$element[0])
+                                : this.options.gravity;
+                
+var tp;
+switch (gravity.charAt(0)) {
+    case 'n':
+      //tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+        tp = {top: pos.top - this.options.offset - actualHeight , left: pos.left + pos.width + this.options.offset+ this.options.offset};
+        break;
+    case 's':
+      tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+      
+        break;
+    case 'e':
+        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
+        break;
+    case 'w':
+        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
+        break;
+}
+                
+        if (gravity.length == 2) {
+            if (gravity.charAt(1) == 'w') {
+                tp.left = pos.left + pos.width / 2 - 15;
+            } else {
+                tp.left = pos.left + pos.width / 2 - actualWidth + 15;
+            }
+        }
+        
+        $tip.css(tp).addClass('tipsy-' + gravity);
+        
+        if (this.options.fade) {
+            $tip.stop().css({opacity: 0, display: 'block', visibility: 'visible'}).animate({opacity: this.options.opacity});
+        } else {
+            $tip.css({visibility: 'visible', opacity: this.options.opacity});
+        }
+    }
+},
+        
+        hide: function() {
+            if (this.options.fade) {
+                this.tip().stop().fadeOut(function() { $(this).remove(); });
+            } else {
+                this.tip().remove();
+            }
+        },
+        
+        getTitle: function() {
+            var title, $e = this.$element, o = this.options;
+            fixTitle($e);
+            var title, o = this.options;
+            if (typeof o.title == 'string') {
+                title = $e.attr(o.title == 'title' ? 'original-title' : o.title);
+            } else if (typeof o.title == 'function') {
+                title = o.title.call($e[0]);
+            }
+            title = ('' + title).replace(/(^\s*|\s*$)/, "");
+            return title || o.fallback;
+        },
+        
+        tip: function() {
+            if (!this.$tip) {
+                this.$tip = $('<div class="tipsy"></div>').html('<div class="tipsy-arrow"></div><div class="tipsy-inner"/></div>');
+            }
+            return this.$tip;
+        },
+        
+        validate: function() {
+            if (!this.$element[0].parentNode) {
+                this.hide();
+                this.$element = null;
+                this.options = null;
+            }
+        },
+        
+        enable: function() { this.enabled = true; },
+        disable: function() { this.enabled = false; },
+        toggleEnabled: function() { this.enabled = !this.enabled; }
+    };
+    
+    $.fn.tipsy = function(options) {
+        
+        if (options === true) {
+            return this.data('tipsy');
+        } else if (typeof options == 'string') {
+            return this.data('tipsy')[options]();
+        }
+        
+        options = $.extend({}, $.fn.tipsy.defaults, options);
+        
+        function get(ele) {
+            var tipsy = $.data(ele, 'tipsy');
+            if (!tipsy) {
+                tipsy = new Tipsy(ele, $.fn.tipsy.elementOptions(ele, options));
+                $.data(ele, 'tipsy', tipsy);
+            }
+            return tipsy;
+        }
+        
+        function enter() {
+            var tipsy = get(this);
+            tipsy.hoverState = 'in';
+            if (options.delayIn == 0) {
+                tipsy.show();
+            } else {
+                setTimeout(function() { if (tipsy.hoverState == 'in') tipsy.show(); }, options.delayIn);
+            }
+        };
+        
+        function leave() {
+            var tipsy = get(this);
+            tipsy.hoverState = 'out';
+            if (options.delayOut == 0) {
+                tipsy.hide();
+            } else {
+                setTimeout(function() { if (tipsy.hoverState == 'out') tipsy.hide(); }, options.delayOut);
+            }
+        };
+        
+        if (!options.live) this.each(function() { get(this); });
+        
+        if (options.trigger != 'manual') {
+            var binder   = options.live ? 'live' : 'bind',
+                eventIn  = options.trigger == 'hover' ? 'mouseenter' : 'focus',
+                eventOut = options.trigger == 'hover' ? 'mouseleave' : 'blur';
+            this[binder](eventIn, enter)[binder](eventOut, leave);
+        }
+        
+        return this;
+        
+    };
+    
+    $.fn.tipsy.defaults = {
+        delayIn: 0,
+        delayOut: 0,
+        fade: true,
+        fallback: '',
+        gravity: 'n',
+        html: true,
+        live: false,
+        offset: 0,
+        opacity: 1,
+        title: 'title',
+        trigger: 'hover'
+    };
+    
+    // Overwrite this method to provide options on a per-element basis.
+    // For example, you could store the gravity in a 'tipsy-gravity' attribute:
+    // return $.extend({}, options, {gravity: $(ele).attr('tipsy-gravity') || 'n' });
+    // (remember - do not modify 'options' in place!)
+    $.fn.tipsy.elementOptions = function(ele, options) {
+        return $.metadata ? $.extend({}, options, $(ele).metadata()) : options;
+    };
+    
+    $.fn.tipsy.autoNS = function() {
+        return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 's' : 'n';
+    };
+    
+    $.fn.tipsy.autoWE = function() {
+        return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'e' : 'w';
+    };
+    
+})(jQuery);
+</script>
+
+<style>
+
+.tipsy { padding: 5px; font-size: 13px; position: absolute; z-index: 100000; }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: #0000FF; color: white; max-width: 500px; text-align: left; }
+  .tipsy-inner { border-radius: 3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
+  .tipsy-arrow { position: absolute; background: url('../images/tipsy.gif') no-repeat top left; width: 9px; height: 5px; }
+  .tipsy-n .tipsy-arrow { top: 0; left: 50%; margin-left: -4px; }
+    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; }
+    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; }
+  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -4px; background-position: bottom left; }
+    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; background-position: bottom left; }
+    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; background-position: bottom left; }
+  .tipsy-e .tipsy-arrow { top: 50%; margin-top: -4px; right: 0; width: 5px; height: 9px; background-position: top right; }
+  .tipsy-w .tipsy-arrow { top: 50%; margin-top: -4px; left: 0; width: 5px; height: 9px; }
+
+
+#gravity { width: 100%;padding:3px; margin: 5px 0; border-spacing: 5px; }
+  #gravity td { text-align: center; vertical-align: middle; padding: 5px 0; background-color: #FFFFFF; width: 70%; }
+  #gravity a { }
+    #gravity a:hover { color: #505075; background: none; }
+</style>
+<script>
+    $(function() {
+   $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
+ });
+</script>
+    <style>
+.button{
+     background-color: #4D90FE;
+    background-image: -moz-linear-gradient(center top , #FFFFFF);
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF !important;
+    text-align:center;
+    font-size:15px
+}
+</style>
+<style>
+body .bPageBlock .pbBody {
+padding: 0;
+height: 670px;
+}
+</style>
+
+    <apex:pageBlock >
+    
+    <apex:outputPanel style=" margin-top:5%; width:60%">
+    <apex:pageBlockSection title="General System Safety Warnings" columns="1" collapsible="false">
+    <apex:pageBlockSectionItem ><br/>
+-   The equipment contains lethal AC and DC voltages! Never disconnect any wires under a load.<br/><br/>
+-   Equipment is supplied from multiple sources!<br/><br/>
+-   The inverter contains energy storage devices that require 15 minutes to safely discharge lethal voltages!
+<br/><br/>
+-   Site access is intended for authorized personnel only - No unauthorized persons shall intrude upon the 
+solar electric system vicinity.<br/><br/>
+-   No unauthorized persons shall shut down the photovoltaic system or open any enclosure.<br/><br/>
+-   These servicing instructions are for use by qualified personnel only.<br/><br/>
+-   Never work on the solar electric system alone or without authorization.<br/><br/>
+*** Unauthorized maintenance on the system and any of its related components<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; will void any product warranties associated with the installation.<br/>
+
+ 
+                        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    </apex:outputPanel>
+                
+            <apex:outputPanel style=" margin-top:5%; width:60%">
+           
+                <apex:pageBlockSection title="FAQ" columns="1" collapsible="false">
+                        
+<apex:pageBlockSectionItem > <!--  Emily, this is the section of soaces tht control the text below them as well... we did this WebEx for FAQ #1 -->
+       <a id="north-west" href="#" rel="tipsy" 
+       original-title="If the sun is shining and the system has absolutely no output, 
+       a mechanical part of the system is not functioning properly. 
+       If the system has no output:<br/><br/>                              
+-   check the inverter for any alarm codes or error messages<br/>
+-   check that the DC and AC disconnect switches are closed<br/>
+-   note any fault codes listed on the inverter prior to clearing them or restarting the inverter<br/><br/>
+If the above checks do not lead to a quick fix, contact Borrego Solar via the ‘Contact Us’ tab on this Customer Portal. <br/><br/>
+DO NOT ATTEMPT TO SERVICE THE SYSTEM YOURSELF!<br/>">
+                                       
+My system is not producing any power&nbsp;&nbsp; -&nbsp;&nbsp;what can I do?  </a>
+
+</apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+                        </apex:pageBlockSectionItem>
+                        
+<apex:pageBlockSectionItem >
+       <a id="north-west" href="#" rel="tipsy" 
+       original-title="Please note that system output is directly related to the amount of light hitting the 
+       solar array. If it is a cloudy day then output will be lower than a day with full sun. 
+       Shading of even a single module will also have some impact of the inverter output as well. 
+       The more shading that takes place, the more it will affect output of the system. 
+       It is important that the solar array is not shaded by any objects.<br/><br/>     
+If there is a gradual decrease in AC power output over time, 
+this might indicate the need for array cleaning. 
+Please refer to the cleaning procedure described in response to the next question.<br/><br/>
+If there is an abrupt decrease in AC power output, 
+it is possible that one or more strings are not functioning properly. 
+If this is the case, contact Borrego Solar via the ‘Contact Us’ tab on this Customer Portal.<br/>">  
+
+My system is producing less power than it normally does &nbsp;&nbsp; -&nbsp;&nbsp; is something wrong?
+                                </a>
+</apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+                        </apex:pageBlockSectionItem>
+                        
+<apex:pageBlockSectionItem >
+        <a id="north-west" href="#" rel="tipsy" 
+        original-title="Maintaining module cleanliness is crucial to maximizing system performance. 
+        The recommended frequency of array cleanings is based on many environmental conditions. 
+        If there is a moderate to large accumulation of dirt on the modules in the dry season, 
+        the array should be washed as necessary.<br/><br/>                             
+Equipment Needed:<br/>
+-   Water Source<br/>
+-   Garden Hose<br/>
+-   Nozzle (do not use a pressure washer)<br/>
+-   Soft-bristled Broom w/ Handle extension (optional)<br/><br/>
+Safety:<br/>
+-   Rubber sole shoes with good traction should be worn at all times.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+-   When possible, avoid walking in wet areas of the roof to minimize risks of slipping and electrical shock.<br/>
+-   Refer to the General Safety Procedures in the O&M manual for additional safety guidelines.<br/>
+-   Do not walk across the modules. While the racking may appear strong enough to support your weight, 
+walking on the module frames will introduce micro-cracks in the PV modules, 
+which can lead to lower production and eventual failure of the unit.<br/><br/><br/>
+Note: The system does not need to be turned off during this procedure.<br/>
+1.  Drench each module thoroughly<br/>
+2.  Allow the array to dry<br/><br/>
+Optional: For stubborn dirt, follow the below conditions.<br/>
+1.  Drench the modules requiring additional care<br/>
+2.  Use the soft-bristled broom to loosen dirt <br/>
+3.  Rinse the modules again<br/>
+4.  Allow the array to dry<br/>">
+        
+                Can I clean my system if the surfaces of the modules are dirty?
+        </a>
+</apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+                        </apex:pageBlockSectionItem>
+                        
+<apex:pageBlockSectionItem >
+        <a id="north-west" href="#" rel="tipsy" 
+        original-title="The frequency at which the modules should be cleaned is different for each system. 
+        Typically systems require cleaning annually or biannually, but cleaning may be required more often 
+        in locations with arid climates, strong winds, excessive dust or another environmental obstacle 
+        (fallen leaves, snow, areas with a large concentration of birds (bird droppings), etc.). 
+        We recommend cleaning the modules if the system is outputting a noticeably lower wattage AC or 
+        there is an accumulation of dirt or debris on the modules.<br/>">
+        
+                How often should my system be cleaned?
+        </a>
+</apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+                        </apex:pageBlockSectionItem>
+                        
+<apex:pageBlockSectionItem >
+        <a id="north-west" href="#" rel="tipsy" 
+        original-title="Yes, it is possible to shut down the system by disabling the inverter.<br/>
+        To do so, please follow the procedure below:<br/><br/>
+-   Turn the DC disconnect off<br/>
+-   Turn the AC disconnect off<br/>
+-   Install lockout devices on the disconnects<br/><br/>
+Use the following procedures for System Start-Up and Restart: <br/><br/>
+-   Remove any lockout devices on AC and DC disconnects<br/>
+-   Make sure all combiner fuses are closed<br/>
+-   Close the AC disconnect<br/>
+-   Close the DC disconnect<br/><br/>
+After a short initialization period, the inverter will transition to “waking up” 
+provided that the PV voltage is greater than the PV voltage start set point.  
+After another short period (typically 5 minutes) the system will start up.<br/><br/>
+
+The inverter cuts itself off when either AC or DC power is removed.<br/>
+It is best to remove both sources of power and you must do this before attempting to service the unit.<br/><br/>
+If the system does not reboot by following these instructions, 
+contact Borrego Solar via the ‘Contact Us’ tab on this Customer Portal.<br/><br/>
+
+">
+    Is it possible to shut down the system? &nbsp;&nbsp; What are the start-up/restart procedures?
+        </a>
+</apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+                        </apex:pageBlockSectionItem>
+                        
+<apex:pageBlockSectionItem >
+        <a id="north-west" href="#" rel="tipsy" 
+        original-title="Yes, your system and its primary components are covered under warranty. Modules, 
+        inverters and most racking solutions have separate warranties provided by the manufacturer. 
+        Details of manufacturer warranty provisions can be found within the product specification sheets 
+        located in the ‘Project Documents’ tab of this Customer Portal. 
+        
+        The system as a whole is covered by Borrego Solar Systems, Inc. 
+        for the period of time specified in your contract 
+        (also located within the ‘Project Documents’ tab of this Customer Portal. <br/><br/>
+        Please note that Borrego Solar does not backstop the manufacturer warranties, 
+        meaning that if the manufacturer chooses not to honor the warranty on a particular component, 
+        Borrego Solar will not cover the cost of component failure.
+
+The solar electric system should only be serviced by qualified professional personnel 
+and all work should be sanctioned and approved by Borrego Solar. Work performed by 
+unauthorized personnel may result in voiding of manufacturers’ 
+warranties or system warranties offered by Borrego Solar.<br/> ">
+
+    Are my system and its components covered under warranty?
+    
+        </a>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+                               <!--  SPACER ROW -->
+</apex:pageBlockSectionItem>                
+
+<apex:pageBlockSectionItem >
+        <a id="north-west" href="#" rel="tipsy" 
+        original-title="If a Data Acquisition System (DAS) was purchased for the system, 
+        you should have access to a website that will display system output. If no DAS was purchased, 
+        you can monitor the output of your system by periodically viewing and 
+        logging the total kWh values on either your inverter display or your meter display. 
+        Regularly scheduled logging of kWh output will be a key indicator in how your system is performing.<br/>">
+    How do I monitor the output of my system?
+        </a>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<br/><br/><br/>
+               
+</apex:outputPanel>
+        
+</apex:pageBlock>
+   
+</apex:component>

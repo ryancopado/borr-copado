@@ -1,0 +1,52 @@
+<apex:page controller="LeadsManager.DuplicateLeadCompanies">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.0/css/jquery.dataTables.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+ 
+<script type="text/javascript">
+        $(document).ready( function() {
+            $('#rLeadCompanyList').dataTable({"iDisplayLength": 50});
+        } );
+</script>
+<div style="margin:15px 0 45px 10px" ><apex:outputLink style="color:#015ba7" value="{!retURL}">Back to Lead Companies List</apex:outputLink></div>
+
+<apex:variable id="SN" value="{!1}" var="counter"/>
+  <apex:pageBlock >
+            <div  class="pbBody">
+                <table id="rLeadCompanyList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                    <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn" style="cursor:pointer;width:20px !important">Serial No</th>
+                            <th scope="col" class="actionColumn" style="cursor:pointer;width:100px !important">Name</th>
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Count</th>
+                            <th scope="col" class="actionColumn" style="cursor:pointer;width:100px !important">Oldest</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!listLeadManager}" var="lm" >
+                             
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                    <td>
+                                        <apex:outputText value="{!counter}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{!lm['Name']}"/>
+                                    </td>
+                                    
+                                     <td>
+                                       <apex:outputLink value="/apex/FindAndMergeCompanies?recordid={!lm['Oldest']}&retURL=/apex/AllDuplicateCompanies?retURL={!retURL}">{!lm['expr0']}</apex:outputLink>
+
+                                    </td>
+                                    
+                                     <td>
+                                         <apex:outputLink value="/{!lm['Oldest']}">{!lm['Name']} - Id: {!lm['Oldest']}</apex:outputLink>
+                                    </td>
+                            </tr>
+                            <apex:variable value="{!counter+1}" var="counter" />
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:pageBlock>
+ 
+</apex:page>

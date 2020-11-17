@@ -1,0 +1,2358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Visit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Visits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>Account_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related account for the Service Contract. --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- if yes, input fault code	if yes, is a case open?  If not,open a reactive case. --></help>
+        <label><!-- Active Faults --></label>
+        <name>Active_Faults__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Visit Comment --></label>
+        <name>AdditionalVisitComment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Comments --></label>
+        <name>Additional_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- upon completion of maintenance on this component, is any additional follow up required?   If yes, enter comments in Additional Comments area and attach any necessary photos in notes and attachments. --></help>
+        <label><!-- Additional Follow Up --></label>
+        <name>Additional_Follow_Up__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to track how many Admin hours we are using, required to complete a Service Visit --></help>
+        <label><!-- Administration Time --></label>
+        <name>Administration_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- upon final completion, are all combiners and recombiners on --></help>
+        <label><!-- All Combiners &amp; Recombiners On --></label>
+        <name>All_Combiners_Recombiners_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Faults Cleared --></label>
+        <name>All_Faults_Cleared__c</name>
+    </fields>
+    <fields>
+        <help><!-- use hand held and compare it to what we see remotely.  document results. --></help>
+        <label><!-- Anemometer - device calibration --></label>
+        <name>Anemometer_device_calibration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Arc Shields Installed --></label>
+        <name>Arc_Shields_Installed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the failure description which best describes what occurred to the asset. Add additional comments to the SV if needed. --></help>
+        <label><!-- Asset Fault --></label>
+        <name>AssetFault__c</name>
+        <picklistValues>
+            <masterLabel>Blown GFCI Fuse</masterLabel>
+            <translation><!-- Blown GFCI Fuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAS Failure (hardware)</masterLabel>
+            <translation><!-- DAS Failure (hardware) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAS Failure (software)</masterLabel>
+            <translation><!-- DAS Failure (software) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Damage</masterLabel>
+            <translation><!-- External Damage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility Network Issue</masterLabel>
+            <translation><!-- Facility Network Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility Outage/Issue</masterLabel>
+            <translation><!-- Facility Outage/Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed AFCI Controller</masterLabel>
+            <translation><!-- Failed AFCI Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Anemometer</masterLabel>
+            <translation><!-- Failed Anemometer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Breaker</masterLabel>
+            <translation><!-- Failed Breaker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Communication</masterLabel>
+            <translation><!-- Failed Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed DC Connector</masterLabel>
+            <translation><!-- Failed DC Connector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed DC Wire</masterLabel>
+            <translation><!-- Failed DC Wire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Fan</masterLabel>
+            <translation><!-- Failed Fan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Fuse</masterLabel>
+            <translation><!-- Failed Fuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Inline Fuse</masterLabel>
+            <translation><!-- Failed Inline Fuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Inverter (Full Replacement)</masterLabel>
+            <translation><!-- Failed Inverter (Full Replacement) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Main Breaker</masterLabel>
+            <translation><!-- Failed Main Breaker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Modem</masterLabel>
+            <translation><!-- Failed Modem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Module (Failed Bypass Diode)</masterLabel>
+            <translation><!-- Failed Module (Failed Bypass Diode) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Module (internal short)</masterLabel>
+            <translation><!-- Failed Module (internal short) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Other Internal Component</masterLabel>
+            <translation><!-- Failed Other Internal Component --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Power Supply</masterLabel>
+            <translation><!-- Failed Power Supply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Pyrometer</masterLabel>
+            <translation><!-- Failed Pyrometer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Racking</masterLabel>
+            <translation><!-- Failed Racking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Switch</masterLabel>
+            <translation><!-- Failed Switch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Temp Sensor</masterLabel>
+            <translation><!-- Failed Temp Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Termination</masterLabel>
+            <translation><!-- Failed Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Wind vane</masterLabel>
+            <translation><!-- Failed Wind vane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failure Capacitor</masterLabel>
+            <translation><!-- Failure Capacitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failure Contactor</masterLabel>
+            <translation><!-- Failure Contactor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failure IGBT</masterLabel>
+            <translation><!-- Failure IGBT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failure Software/Firmware</masterLabel>
+            <translation><!-- Failure Software/Firmware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fauna Interference</masterLabel>
+            <translation><!-- Fauna Interference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fauna Intrusion</masterLabel>
+            <translation><!-- Fauna Intrusion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frequency Fault</masterLabel>
+            <translation><!-- Frequency Fault --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grid Outage/Issue</masterLabel>
+            <translation><!-- Grid Outage/Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ground Fault</masterLabel>
+            <translation><!-- Ground Fault --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grounding Xformer Relay Trip</masterLabel>
+            <translation><!-- Grounding Xformer Relay Trip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal short</masterLabel>
+            <translation><!-- Internal short --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical Failure</masterLabel>
+            <translation><!-- Mechanical Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil Leak</masterLabel>
+            <translation><!-- Oil Leak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Current</masterLabel>
+            <translation><!-- Over Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Voltage</masterLabel>
+            <translation><!-- Over Voltage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phase Imbalance</masterLabel>
+            <translation><!-- Phase Imbalance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phase to Ground Short Circuit</masterLabel>
+            <translation><!-- Phase to Ground Short Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phase to Phase Short Circuit</masterLabel>
+            <translation><!-- Phase to Phase Short Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp Fault</masterLabel>
+            <translation><!-- Temp Fault --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker Failure</masterLabel>
+            <translation><!-- Tracker Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under Current</masterLabel>
+            <translation><!-- Under Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under voltage</masterLabel>
+            <translation><!-- Under voltage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vegetation Interference</masterLabel>
+            <translation><!-- Vegetation Interference --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AssetID --></label>
+        <name>AssetID__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over Manufacturer Name from the related Asset/Product --></help>
+        <label><!-- Asset Manufacturer --></label>
+        <name>AssetManufacturer__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over name of product from related Asset --></help>
+        <label><!-- Asset Model --></label>
+        <name>AssetModel__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls serial # from related asset --></help>
+        <label><!-- Asset Serial Number --></label>
+        <name>AssetSerialNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- picklist of values updated once asset selection is made/saved, no need to be on layout, field dependency with Asset Fault. --></help>
+        <label><!-- Asset Type --></label>
+        <name>AssetType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Display the name of the Asset --></help>
+        <label><!-- Asset Name --></label>
+        <name>Asset_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- exact date/time asset when offline --></help>
+        <label><!-- Asset Offline --></label>
+        <name>Asset_Offline__c</name>
+    </fields>
+    <fields>
+        <help><!-- exact date/time asset when back online --></help>
+        <label><!-- Asset Online --></label>
+        <name>Asset_Online__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset --></label>
+        <name>Asset__c</name>
+        <relationshipLabel><!-- Service Visits (Asset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billable Cost by SV --></label>
+        <name>BillableCostbySV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable Labor- Rounded --></label>
+        <name>BillableLaborRounded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable Rev by SV --></label>
+        <name>BillableRevbySV__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicate whether this is a billable service visit --></help>
+        <label><!-- Billable? --></label>
+        <name>Billable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- field will auto populate based on contract type, package type and visit reason to help determine if Labor involved in visit is billable --></help>
+        <label><!-- Labor Billing --></label>
+        <name>Billing_Field__c</name>
+        <picklistValues>
+            <masterLabel>Bill EPC Commissioning</masterLabel>
+            <translation><!-- Bill EPC Commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billable - Fixed Price</masterLabel>
+            <translation><!-- Billable - Fixed Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPC Warranty</masterLabel>
+            <translation><!-- EPC Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Billable</masterLabel>
+            <translation><!-- Not Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M Warranty</masterLabel>
+            <translation><!-- O&amp;M Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Billing Lines Related to the SVC Visit --></help>
+        <label><!-- Billing Lines --></label>
+        <name>Billing_Lines__c</name>
+    </fields>
+    <fields>
+        <help><!-- if requires follow up,  upload file --></help>
+        <label><!-- Bird, Insect, Rodent activity --></label>
+        <name>Bird_Insect_Rodent_activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Borrego Staff Hours --></label>
+        <name>Borrego_Staff_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from Branch field on related Service Contract --></help>
+        <label><!-- Service Contract Branch --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pads:  Brush Finished Properly --></help>
+        <label><!-- Brush Finished Properly --></label>
+        <name>Brush_Finished_Properly__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the visit reason is Landscaping and its completed and Visit End Date is in current year, otherwise should be 0. Use to help roll up total # of visits that meet this criteria onto the contract. --></help>
+        <label><!-- CY Landscaping Count --></label>
+        <name>CY_Landscaping_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the visit reason is Module Wash and its completed and Visit End Date is in current year, otherwise should be 0. Use to help roll up total # of visits that meet this criteria onto the contract. --></help>
+        <label><!-- CY Module Washing Count --></label>
+        <name>CY_Module_Washing_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the visit reason is Primary PM and its completed and Visit End Date is in current year, otherwise should be 0.   Use to help roll up total # of visits that meet this criteria onto the contract. --></help>
+        <label><!-- CY Primary PM Count --></label>
+        <name>CY_Primary_PM_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the visit reason is Secondary PM and its completed and Visit End Date is in current year, otherwise should be 0. Use to help roll up total # of visits that meet this criteria onto the contract. --></help>
+        <label><!-- CY Secondary PM Count --></label>
+        <name>CY_Secondary_PM_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto fills upon creation any description that is already in the Case. --></help>
+        <label><!-- Case Description --></label>
+        <name>CaseDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Number Text --></label>
+        <name>CaseNumberText__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls in SF Case ID from related Case, to be used with LH and RH mostly no need to be on layouts or be visible to anyone --></help>
+        <label><!-- Case ID --></label>
+        <name>Case_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings down the record type of the related case, used mostly with WF related to billing automation and filters for reporting. --></help>
+        <label><!-- Case Record Type --></label>
+        <name>Case_Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the issue entirely resolved, no other visits are needed and case can be closed? --></help>
+        <label><!-- Asset Issue Resolved? --></label>
+        <name>Case_Resolved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- displays status of related Case, used mostly in reporting  no need to be on layouts. --></help>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The case on which the service visit was scheduled. --></help>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check All Fuses for Failure or Signs of Overheat  (Attach Photos) --></help>
+        <label><!-- Check Fuses --></label>
+        <name>Check_Fuses__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverters: Check pressure gauges (address as necessary - Attach Photos) --></help>
+        <label><!-- Check pressure gauges --></label>
+        <name>Check_pressure_gauges__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clean out and Vacuum Enclosure - Check for pests, insects and animals.  (Attach before/after Photos) --></help>
+        <label><!-- Clean out and Vacuum Enclosure --></label>
+        <name>Clean_out_and_Vacuum_Enclosure__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays combo lock information from related project --></help>
+        <label><!-- Combo Lock --></label>
+        <name>Combo_Lock__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comment on visit? --></label>
+        <name>Comment_on_visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments Last Created --></label>
+        <name>CommentsLastCreated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Communications Data Wiring LaLanded  (Attach Photos) --></help>
+        <label><!-- Communications Data Wiring --></label>
+        <name>Communications_Data_Wiring__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto checks off when all of the following fields have been completed:  Visit End Date, Billable?, Hours on Site, Travel Time. --></help>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows type of asset from related Asset record --></help>
+        <label><!-- Asset Type --></label>
+        <name>Component_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverters: Check Condition of AC and DC Surge Protectors  (Attach Photos) --></help>
+        <label><!-- Condition of AC and DC Surge Protectors --></label>
+        <name>Condition_of_AC_and_DC_Surge_Protectors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Conduct Transformer Oil Sampling and testing per nationally and/or internationally recognized testing standard 1x per 2 years Check NETA Standards- See NETA testing to determine what tests to include here. --></help>
+        <label><!-- Conduct Oil Sampling and Testing --></label>
+        <name>Conduct_Oil_Sampling_and_Testing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Module Connection:  if failure, file upload --></help>
+        <label><!-- Connections:Themal Scan on Random Sample --></label>
+        <name>Connections_Themal_Scan_on_Random_Sample__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contacts --></label>
+        <name>Contacts__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ContractID --></label>
+        <name>ContractID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulling picklist value from contract status from the service contract object --></help>
+        <label><!-- Contract Status --></label>
+        <name>Contract_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to bring over value from related Contract from field Type. --></help>
+        <label><!-- Contract Type --></label>
+        <name>Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Warranty</masterLabel>
+            <translation><!-- Borrego Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M</masterLabel>
+            <translation><!-- O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M T&amp;M</masterLabel>
+            <translation><!-- O&amp;M T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M and Warranty</masterLabel>
+            <translation><!-- O&amp;M and Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;M and Warranty</masterLabel>
+            <translation><!-- T&amp;M and Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The related Service Contract. --></help>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contractor Hours --></label>
+        <name>Contractor_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approximate Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments Last Modified --></label>
+        <name>CountofComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts any related CRG&apos;s that are of type Service Visit --></help>
+        <label><!-- Count of Service Reqs --></label>
+        <name>CountofServiceReqs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current --></label>
+        <name>Current__c</name>
+    </fields>
+    <fields>
+        <help><!-- file upload of battery voltage under DC conditions. --></help>
+        <label><!-- DAS UPS test? --></label>
+        <name>DAS_UPS_test__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverters: Check Capacitors for Signs of Damage or Overheating  (Attach Photos) --></help>
+        <label><!-- Damage or Overheating - Capacitors --></label>
+        <name>Damage_or_Overheating_Capacitors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dampeners inspected and adjusted 100%?  if  yes, document how many, what scope and upload before/after photos --></help>
+        <label><!-- Dampeners inspected and adjusted 100%? --></label>
+        <name>Dampeners_inspected_and_adjusted_100__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day of the week --></label>
+        <name>Day_of_the_week__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverter: Check IGBT&apos;s and Inverter Control Boards for Discoloration  (Attach Photos) --></help>
+        <label><!-- Discoloration-IGBTs &amp; Inverter Boards --></label>
+        <name>Discoloration__c</name>
+    </fields>
+    <fields>
+        <help><!-- date &amp; time assign to a tech/subcontractor --></help>
+        <label><!-- Dispatch Time --></label>
+        <name>Dispatch_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- E-stop inspection and test --></help>
+        <label><!-- E-stop inspection and test --></label>
+        <name>E_stop_inspection_and_test__c</name>
+    </fields>
+    <fields>
+        <help><!-- Electrical testing:  power supplies, voltages.  Input results. --></help>
+        <label><!-- Electrical Testing --></label>
+        <name>Electrical_Testing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ensure Terminations Torqued tested with Calibrated Dial Gauge to Manufacturer&apos;s Specifications, Torque as necessary. Mark spec location, document overall condition.   QTY may vary depending on contract. --></help>
+        <label><!-- Ensure Terminations Torqued Tested --></label>
+        <name>Ensure_Terminations_Torqued_Tested__c</name>
+    </fields>
+    <fields>
+        <help><!-- if failure, file upload --></help>
+        <label><!-- Expansion Fittings Properly Installed --></label>
+        <name>Expansion_Fittings_Properly_Installed__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverter: Inspect Large External Air Heat Exchanger or Cooling Fins. Clean as Required.  (Attach before/after Photos) --></help>
+        <label><!-- External Air Heat Exchanger/Cooling Fans --></label>
+        <name>External_Air_Heat_Exchanger_Cooling_Fans__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fan Inspection --></label>
+        <name>Fan_Inspection__c</name>
+        <picklistValues>
+            <masterLabel>Fan test</masterLabel>
+            <translation><!-- Fan test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not servicable</masterLabel>
+            <translation><!-- Not servicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pull test</masterLabel>
+            <translation><!-- Pull test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visual inspection</masterLabel>
+            <translation><!-- Visual inspection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- fault fuse(s) continuity (GFDI) --></help>
+        <label><!-- Fault fuse(s) continuity --></label>
+        <name>Fault_fuse_s_continuity__c</name>
+    </fields>
+    <fields>
+        <help><!-- if fail, input notes, upload photos. --></help>
+        <label><!-- Fencing, Gates, signage, security camera --></label>
+        <name>Fencing_Gates_signage_security_camera__c</name>
+    </fields>
+    <fields>
+        <help><!-- looks at Files and populates ID of most recent - used in conjunction with Trigger and with SDoc reporting --></help>
+        <label><!-- File Photo1 --></label>
+        <name>File_Photo1__c</name>
+    </fields>
+    <fields>
+        <help><!-- looks at Files and populates ID of oldest File - used in conjunction with Trigger and with SDoc reporting --></help>
+        <label><!-- File Photo2 --></label>
+        <name>File_Photo2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comment and upload photo(s) of before and after cleaning/repalcement --></help>
+        <label><!-- Filter Comments --></label>
+        <name>Filter_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filters --></label>
+        <name>Filters__c</name>
+        <picklistValues>
+            <masterLabel>Cleaned</masterLabel>
+            <translation><!-- Cleaned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not addressed</masterLabel>
+            <translation><!-- Not addressed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replaced with OEM filter</masterLabel>
+            <translation><!-- Replaced with OEM filter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replaced with bulk material</masterLabel>
+            <translation><!-- Replaced with bulk material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Fittings Tight:  random sample --></help>
+        <label><!-- Fittings Tight:  random sample --></label>
+        <name>Fittings_Tight_random_sample__c</name>
+    </fields>
+    <fields>
+        <help><!-- Free of Debris and Moisture, if failure, file upload --></help>
+        <label><!-- Free of Debris and Moisture --></label>
+        <name>Free_of_Debris_and_Moisture__c</name>
+    </fields>
+    <fields>
+        <help><!-- Free of Debris and Soiling (Check for Debris Under Array, Especially on Roofs - Nesting Under Panels) --></help>
+        <label><!-- Free of Debris and Soiling --></label>
+        <name>Free_of_Debris_and_Soiling__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inverter is Free of Rust and Damage, Touch Up Paint as Required --></help>
+        <label><!-- Free of Rust and Damage --></label>
+        <name>Free_of_Rust_and_Damage__c</name>
+    </fields>
+    <fields>
+        <help><!-- if failure, file upload --></help>
+        <label><!-- Fuses Intact --></label>
+        <name>Fuses_Intact__c</name>
+    </fields>
+    <fields>
+        <label><!-- GL Account --></label>
+        <name>GLAccount__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Gaskets Intact --></label>
+        <name>Gaskets_Intact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pads:  Ground ring complete --></help>
+        <label><!-- Ground Ring Complete --></label>
+        <name>Ground_Ring_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Grounded as required, spot check random sample or if probably cause. --></help>
+        <label><!-- Grounded as required --></label>
+        <name>Grounded_as_required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Grounding and Bonding Complete/Firmly attached &amp; in good condition.  Continuity check.  Random sample. --></help>
+        <label><!-- Grounding and Bonding --></label>
+        <name>Grounding_and_Bonding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hours spent on site in 15 minute increments. For example, 1 hour and 15 minutes on site would be filled in as 1.25. 2 hours and 45 minutes on site would be filled in as 2.75 --></help>
+        <label><!-- Hours Spent on Site --></label>
+        <name>Hours_Spent_on_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- if failure, file upload --></help>
+        <label><!-- IR image Modules:Random Sample --></label>
+        <name>IR_image_Modules_Random_Sample__c</name>
+    </fields>
+    <fields>
+        <help><!-- Yes if the related Case is Reactive record type and the Visit Start Date is within the Account reporting period. --></help>
+        <label><!-- Included Reporting Period (Visit Summar) --></label>
+        <name>Included_Reporting_Period_Visit_Summar__c</name>
+    </fields>
+    <fields>
+        <label><!-- Included Reporting Period (Performance) --></label>
+        <name>Included_in_Reporting_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inspect Door Mechanisms (hinges, latches, seals - Attach before/after Photos) --></help>
+        <label><!-- Inspect Door Mechanisms --></label>
+        <name>Inspect_Door_Mechanisms__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inspect door and grommet gaskets (Attach before/after Photos) --></help>
+        <label><!-- Inspect Door &amp; Grommet Gaskets --></label>
+        <name>Inspect_door_grommet_gaskets__c</name>
+    </fields>
+    <fields>
+        <help><!-- if failure, file upload --></help>
+        <label><!-- Inspect for Wear and Tear --></label>
+        <name>Inspect_for_Wear_and_Tear__c</name>
+    </fields>
+    <fields>
+        <help><!-- Installed in a Workmanlike manner --></help>
+        <label><!-- Installed in a Workmanlike Manner --></label>
+        <name>Installed_in_a_Workmanlike_Manner__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings over internal prevailing wage rate from related contract. --></help>
+        <label><!-- Internal Prevailing Wage Rate --></label>
+        <name>Internal_Prevailing_Wage_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- used item from existing inventory --></help>
+        <label><!-- Inventory Item 1 Used --></label>
+        <name>Inventory_Item_1_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- used item from existing inventory --></help>
+        <label><!-- Inventory Item 2 Used --></label>
+        <name>Inventory_Item_2_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- used item from existing inventory --></help>
+        <label><!-- Inventory Item 3 Used --></label>
+        <name>Inventory_Item_3_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- used item from existing inventory --></help>
+        <label><!-- Inventory Item 4 Used --></label>
+        <name>Inventory_Item_4_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- used item from existing inventory --></help>
+        <label><!-- Inventory Item 5 Used --></label>
+        <name>Inventory_Item_5_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- select item used on this service visit --></help>
+        <label><!-- Inventory Item Used --></label>
+        <name>Inventory_Item_Used_1__c</name>
+        <relationshipLabel><!-- Inventory Movement --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inventory Item Used --></label>
+        <name>Inventory_Item_Used_2__c</name>
+        <relationshipLabel><!-- Inventory Movement 2 --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Inverter is secured and grounded to earth --></help>
+        <label><!-- Inverter is Secured/Grounded to Earth --></label>
+        <name>Inverter_is_Secured_Grounded_to_Earth__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with workflow rule to pull in the most recent visit comment --></help>
+        <label><!-- Latest Visit Comment --></label>
+        <name>Latest_Visit_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line and Load Side in Proper Location --></label>
+        <name>Line_and_Load_Side_in_Proper_Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- upon completion of entire PM, confirm that you have logged in remotely --></help>
+        <label><!-- Logged in Remotely --></label>
+        <name>Logged_in_Remotely__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lubricate/grease all points --></help>
+        <label><!-- Lubricate/grease all points --></label>
+        <name>Lubricate_grease_all_points__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be entered whenever a manufacturer provides an RMA or service. This field is required if either of the following fields is set to yes: 
+Supplier/Manufacturer Service Required 
+Supplier/Manufacturer Parts Required --></help>
+        <label><!-- Manufacturer RMA/Ticket # --></label>
+        <name>Manufacturer_RMA_Ticket__c</name>
+    </fields>
+    <fields>
+        <help><!-- Module Clamping, Add additional comments, indicate if additional follow up is required? --></help>
+        <label><!-- Mechanical:Clamping:Random Sample --></label>
+        <name>Mechanical_Clamping_Random_Sample__c</name>
+    </fields>
+    <fields>
+        <help><!-- Meter inspection --></help>
+        <label><!-- Meter inspection --></label>
+        <name>Meter_inspection__c</name>
+    </fields>
+    <fields>
+        <help><!-- Motor condition --></help>
+        <label><!-- Motor Condition --></label>
+        <name>Motor_Condition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Technician Text --></label>
+        <name>NameofTechnicianText__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Anomalies Found --></label>
+        <name>No_Anomalies_Found__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to group how time is spent. --></help>
+        <label><!-- Categories --></label>
+        <name>NonActiveCategories__c</name>
+        <picklistValues>
+            <masterLabel>Active Site Visit</masterLabel>
+            <translation><!-- Active Site Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holiday</masterLabel>
+            <translation><!-- Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Time</masterLabel>
+            <translation><!-- Management Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meetings</masterLabel>
+            <translation><!-- Meetings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick</masterLabel>
+            <translation><!-- Sick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Operations</masterLabel>
+            <translation><!-- Site Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation</masterLabel>
+            <translation><!-- Vacation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Management</masterLabel>
+            <translation><!-- Warranty Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- links SV to Non Exempt Time Cards --></help>
+        <label><!-- Non-Exempt Time Card --></label>
+        <name>Non_Exempt_Time_Card__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used for any notes regarding the service visit that you want to appear on the work order form --></help>
+        <label><!-- Service Visit Instructions --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of ConReqs --></label>
+        <name>Number_of_ConReqs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Service Visits on Case --></label>
+        <name>Number_of_Service_Visits_on_Case__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from service contract to help indicate what type of O&amp;M package we have with this client --></help>
+        <label><!-- O&amp;M Package Type --></label>
+        <name>O_M_Package_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls over value that is listed in O&amp;M Package from related Service Contract. Used to help determine if SV is billable. --></help>
+        <label><!-- O&amp;M Package --></label>
+        <name>O_M_Package__c</name>
+    </fields>
+    <fields>
+        <help><!-- Operate Disconnects --></help>
+        <label><!-- Operate Disconnects --></label>
+        <name>Operate_Disconnects__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverters: Check the Operation of all Safety Devices (E-Stop, Door Switches, GFDI) --></help>
+        <label><!-- Operation of all Safety Devices --></label>
+        <name>Operation_of_all_Safety_Devices__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PB Reporting Period Update Fired --></label>
+        <name>PB_Reporting_Period_Update_Fired__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM report print- EMILY --></label>
+        <name>PMreportprintEMILY__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO # --></label>
+        <lookupFilter>
+            <errorMessage><!-- Does not match any Construction Requisition related to this Service Visit. --></errorMessage>
+            <informationalMessage><!-- Enter the name of a Construction Requisition that is related to this Service Visit. --></informationalMessage>
+        </lookupFilter>
+        <name>PO__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PW Hours --></label>
+        <name>PWHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- takes total time (hours on site + travel time) and multiples by PW Rate.   Used mostly for reporting for accounting purposes. --></help>
+        <label><!-- PW Total --></label>
+        <name>PW_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pad not washed out around the edges / erosion --></help>
+        <label><!-- Pad Erosion --></label>
+        <name>Pad_Erosion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pads --></help>
+        <label><!-- Pad is Level --></label>
+        <name>Pad_is_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to determine who the work was performed by. --></help>
+        <label><!-- Performed By --></label>
+        <name>Performed_By__c</name>
+        <picklistValues>
+            <masterLabel>Adam Lamirande</masterLabel>
+            <translation><!-- Adam Lamirande --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego</masterLabel>
+            <translation><!-- Borrego --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor</masterLabel>
+            <translation><!-- Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor - NorCal</masterLabel>
+            <translation><!-- Contractor - NorCal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor - Northeast</masterLabel>
+            <translation><!-- Contractor - Northeast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor - SoCal</masterLabel>
+            <translation><!-- Contractor - SoCal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor - Southeast</masterLabel>
+            <translation><!-- Contractor - Southeast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corey Brown</masterLabel>
+            <translation><!-- Corey Brown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Marks</masterLabel>
+            <translation><!-- David Marks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drew Dodge</masterLabel>
+            <translation><!-- Drew Dodge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment Only</masterLabel>
+            <translation><!-- Equipment Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jason Holt</masterLabel>
+            <translation><!-- Jason Holt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joe DiStefano</masterLabel>
+            <translation><!-- Joe DiStefano --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jorge Portillo</masterLabel>
+            <translation><!-- Jorge Portillo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Josh Tatel</masterLabel>
+            <translation><!-- Josh Tatel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kevin Crowley</masterLabel>
+            <translation><!-- Kevin Crowley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Konstantin Kashper</masterLabel>
+            <translation><!-- Konstantin Kashper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kristopher Makrakis</masterLabel>
+            <translation><!-- Kristopher Makrakis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luke Pollinger</masterLabel>
+            <translation><!-- Luke Pollinger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturer</masterLabel>
+            <translation><!-- Manufacturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matt Murphy</masterLabel>
+            <translation><!-- Matt Murphy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matthew Brady</masterLabel>
+            <translation><!-- Matthew Brady --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scott Robbins</masterLabel>
+            <translation><!-- Scott Robbins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will DeAngelis</masterLabel>
+            <translation><!-- Will DeAngelis --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Perform oil and gas analysis - record levels, pressure and oil temp, Infrared image connections, positive nitrogen charge, record oil temp, level, PSI, visually inspect terminations, seasonal tap adjustments as needed.  (Attach Photos) --></help>
+        <label><!-- Performed Oil&amp;Gas Analysis --></label>
+        <name>Performed_Oil_Gas_Analysis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 1 URL --></label>
+        <name>Photo1URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- looks at attachments and populates ID of most recent - used in conjunction with RH and with SDoc reporting --></help>
+        <label><!-- Photo 1 --></label>
+        <name>Photo1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 2 URL --></label>
+        <name>Photo2URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- grabs oldest image from notes and attachments to put in PM report, updated via RH --></help>
+        <label><!-- Photo 2 --></label>
+        <name>Photo2__c</name>
+    </fields>
+    <fields>
+        <help><!-- if failure, file upload --></help>
+        <label><!-- Placards Installed --></label>
+        <name>Placards_Installed__c</name>
+    </fields>
+    <fields>
+        <help><!-- numeric input field (for each inverter). Units = kWh --></help>
+        <label><!-- Power Output --></label>
+        <name>Power_Output__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from Prevailing Wage Included field from related Service Contract --></help>
+        <label><!-- Prevailing Wage Included --></label>
+        <name>PrevailingWageIncluded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevailing Wage Total --></label>
+        <name>PrevailingWageTotal__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates if prevailing wage is included Y/N from related contract field of same name --></help>
+        <label><!-- Prevailing Wage --></label>
+        <name>Prevailing_Wage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box to hide the Notes field from Customer Portal users. --></help>
+        <label><!-- Private Notes --></label>
+        <name>Private_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProjectName --></label>
+        <name>ProjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>Project_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays a combined project name with total work hours, used with calendar anything no need to be on page layouts --></help>
+        <label><!-- Project with Total Hours --></label>
+        <name>Project_with_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pyranometer- Calibration (factory) --></help>
+        <label><!-- Pyranometer- Calibration (factory) --></label>
+        <name>Pyranometer_Calibration_factory__c</name>
+        <picklistValues>
+            <masterLabel>n/a</masterLabel>
+            <translation><!-- n/a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>none of the above</masterLabel>
+            <translation><!-- none of the above --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>outside factory dates - requires factory calibration.</masterLabel>
+            <translation><!-- outside factory dates - requires factory calibration. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>within factory dates - does not require factory calibration</masterLabel>
+            <translation><!-- within factory dates - does not require factory calibration --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pyranometer- Device calibration - use hand held and compare it to what we see remotely.  document results. --></help>
+        <label><!-- Pyranometer- Device calibration --></label>
+        <name>Pyranometer_Device_calibration__c</name>
+    </fields>
+    <fields>
+        <help><!-- POA / GHI / Both/ NA --></help>
+        <label><!-- Pyranometer --></label>
+        <name>Pyranometer_POA_or_GHI__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GHI</masterLabel>
+            <translation><!-- GHI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POA</masterLabel>
+            <translation><!-- POA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pyranometer- clean - file upload --></help>
+        <label><!-- Pyranometer- clean --></label>
+        <name>Pyranometer_clean__c</name>
+    </fields>
+    <fields>
+        <help><!-- list qty of inventory item 3 used on this SV --></help>
+        <label><!-- Qty Inventory Item 3 Used --></label>
+        <name>Qty_Inventory_Item_3_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- list qty of inventory item 4 used on this SV --></help>
+        <label><!-- Qty Inventory Item 4 Used --></label>
+        <name>Qty_Inventory_Item_4_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- list Qty of Inventory Item 5 used on this SV --></help>
+        <label><!-- Qty Inventory Item 5 Used --></label>
+        <name>Qty_Inventory_Item_5_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter quantity used on this visit --></help>
+        <label><!-- Qty Inventory Item 1 Used --></label>
+        <name>Qty_Inventory_Used_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- list qty of inventory Item 2 used on this SV --></help>
+        <label><!-- Qty Inventory Item 2 Used --></label>
+        <name>Qty_Inventory_Used_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with RH --></help>
+        <label><!-- Billable Con Reqs --></label>
+        <name>RH_Billable_Con_Reqs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Up to technician to define if shoule be addressed during PM or if should be separate case) --></help>
+        <label><!-- Racking / Hardware rust and corrosion --></label>
+        <name>Racking_Hardware_rust_and_corrosion__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of hours between dispatch time and work started. --></help>
+        <label><!-- Reaction Time --></label>
+        <name>Reaction_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reactive Service Type from the referenced case. --></help>
+        <label><!-- Reactive Service Type --></label>
+        <name>Reactive_Service_Type_Case__c</name>
+    </fields>
+    <fields>
+        <help><!-- required at the end of a reactive service visit to help categorize the type of visit further for billing purposes. --></help>
+        <label><!-- Reactive Service Type --></label>
+        <name>Reactive_Service_Type__c</name>
+        <picklistValues>
+            <masterLabel>Investigation - No Reactive Required</masterLabel>
+            <translation><!-- Investigation - No Reactive Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service</masterLabel>
+            <translation><!-- Reactive Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Borrego EPC Warranty</masterLabel>
+            <translation><!-- Reactive Service - Borrego EPC Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Borrego O&amp;M Warranty</masterLabel>
+            <translation><!-- Reactive Service - Borrego O&amp;M Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Manufacturer Warranty</masterLabel>
+            <translation><!-- Reactive Service - Manufacturer Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- helps count records where visit is marked yes case can be closed. --></help>
+        <label><!-- Ready for Closure --></label>
+        <name>Ready_for_Closure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>RecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Count --></label>
+        <name>Record_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Regional Manager - OT Rate --></label>
+        <name>Regional_Manager_OT_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Regional Manager Rate --></label>
+        <name>Regional_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- Remove Dirt and Debris from inside &amp; under the Inverter, ensure free from moisture --></help>
+        <label><!-- Remove Dirt and Debris --></label>
+        <name>Remove_Dirt_and_Debris__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roof Penetrations&amp;Conduit Joints Sealed, Inspected inside &amp; no leaking present (Attach Photos) --></help>
+        <label><!-- Roof Penetrations&amp;Conduit Joints Sealed --></label>
+        <name>Roof_Penetrations_Conduit_Joints_Sealed__c</name>
+    </fields>
+    <fields>
+        <help><!-- if requires follow up,  upload file --></help>
+        <label><!-- Rooftop Drains --></label>
+        <name>Rooftop_Drains__c</name>
+        <picklistValues>
+            <masterLabel>Clear upon arrival</masterLabel>
+            <translation><!-- Clear upon arrival --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cleared during visit</masterLabel>
+            <translation><!-- Cleared during visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requires follow up</masterLabel>
+            <translation><!-- Requires follow up --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SV Record Type ID --></label>
+        <name>SVRecordTypeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SV Comment Log --></label>
+        <name>SV_Comment_Log__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seals are Intact --></label>
+        <name>Seals_are_Intact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secured --></label>
+        <name>Secured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secured at Proper Intervals --></label>
+        <name>Secured_at_Proper_Intervals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Service Clearance/Access Acceptable (Attach Photos) --></help>
+        <label><!-- Service Clearance --></label>
+        <name>Service_Clearance__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value over from related Service Contract, used mostly to default Billing Field values --></help>
+        <label><!-- Service Contract Type --></label>
+        <name>Service_Contract_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Material &amp; Equipment markup from related Service Visit --></help>
+        <label><!-- Service Visit Markup --></label>
+        <name>Service_Visit_Markup__c</name>
+    </fields>
+    <fields>
+        <help><!-- input comments.  time of day.   	if &quot;yes&quot;, upload photo(s).  If yes, send SPF to compare against model --></help>
+        <label><!-- Shading --></label>
+        <name>Shading__c</name>
+    </fields>
+    <fields>
+        <help><!-- date/time sub/tech arrives on location and site work begins --></help>
+        <label><!-- Site Arrival Time (site work begins) --></label>
+        <name>SiteArrivalTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverter - Inspect small internal heat exchanger for corrosion (Attach before/after Photos) --></help>
+        <label><!-- Small internal heat exchanger-corrosion --></label>
+        <name>Small_internal_heat_exchanger_corrosion__c</name>
+    </fields>
+    <fields>
+        <help><!-- what are the soil conditions at the site at the time of the visit --></help>
+        <label><!-- Soiling --></label>
+        <name>Soiling__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation><!-- Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heavy</masterLabel>
+            <translation><!-- Heavy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Light</masterLabel>
+            <translation><!-- Light --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Solar Electrician 1 - OT Rate --></label>
+        <name>Solar_Electrician_1_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name --></help>
+        <label><!-- Solar Electrician 1 Rate --></label>
+        <name>Solar_Electrician_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Solar Electrician 2 - OT Rate --></label>
+        <name>Solar_Electrician_2_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name --></help>
+        <label><!-- Solar Electrician 2 Rate --></label>
+        <name>Solar_Electrician_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Solar Engineer - OT Rate --></label>
+        <name>Solar_Engineer_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Solar Engineer Rate --></label>
+        <name>Solar_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- gets auto checked off if Qty Inventory Used is greater than 0 --></help>
+        <label><!-- Spare Parts Used? --></label>
+        <name>Spare_Parts_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Rate Total --></label>
+        <name>StandardRateTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls branch value from related Account of the listed Technician - used mostly for Calendar planning for Subcontractors. --></help>
+        <label><!-- Subcontractor Branch --></label>
+        <name>SubcontractorBranch__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be checked if the manufacturer or supplier needs to send parts to site to service equipment --></help>
+        <label><!-- Supplier/Manufacturer Parts Required --></label>
+        <name>Supplier_Manufacturer_Parts_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes - covered under warranty</masterLabel>
+            <translation><!-- Yes - covered under warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To be checked if the manufacturer or supplier needs to come to site to service equipment --></help>
+        <label><!-- Supplier/Manufacturer Service Required --></label>
+        <name>Supplier_Manufacturer_Service_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes - covered under warranty</masterLabel>
+            <translation><!-- Yes - covered under warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- On Central Inverters: Inspect Surge Protector MOV&apos;s and In-Line Suppressor Fuses --></help>
+        <label><!-- Surge Protector MOV&apos;s &amp; In-Line Fuses --></label>
+        <name>Surge_Protector_MOV_s_In_Line_Fuses__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inspect All Switches, Fuses, and Disconnects; operate to ensure they are not jammed --></help>
+        <label><!-- Switches, Fuses, and Disconnects --></label>
+        <name>Switches_Fuses_and_Disconnects__c</name>
+    </fields>
+    <fields>
+        <help><!-- populates contact ID for the related technician, used with lookup helper to populate owner of record on relate SV --></help>
+        <label><!-- Technician ID --></label>
+        <name>Technician_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- individual who did the work, if unable to find, add the contact to the Borrego Solar (O&amp;M) account. --></help>
+        <label><!-- Technician --></label>
+        <name>Technician__c</name>
+        <relationshipLabel><!-- Service Visits (Technician) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- use hand held and compare it to what we see remotely.  document results. --></help>
+        <label><!-- Temps- device calibration --></label>
+        <name>Temps_device_calibration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Terminations Torque marks?  Use Dial Gauge and re-apply torque mark where necessary --></help>
+        <label><!-- Terminations Torque Marks --></label>
+        <name>Terminations_Torque_Marks__c</name>
+    </fields>
+    <fields>
+        <help><!-- Thermal Scan Connections (Photo required) --></help>
+        <label><!-- Thermal Scan Connections --></label>
+        <name>Thermal_Scan_Connections_Photo_required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thermal Scan --></label>
+        <name>Thermal_Scan__c</name>
+    </fields>
+    <fields>
+        <help><!-- Anomalies Observed (Photo required) --></help>
+        <label><!-- Thermal image all combiners --></label>
+        <name>Thermal_image_all_combiners__c</name>
+    </fields>
+    <fields>
+        <help><!-- determined by Work Ended date --></help>
+        <label><!-- Time Card Period --></label>
+        <name>Time_Card_Period__c</name>
+        <relationshipLabel><!-- Service Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Torques- factory connections --></help>
+        <label><!-- Torques: Factory Connections --></label>
+        <name>Torques_Factory_Connections__c</name>
+    </fields>
+    <fields>
+        <help><!-- Torques- field connections --></help>
+        <label><!-- Torques: Field Connections --></label>
+        <name>Torques_Field_Connections__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows # of hours of Billable Travel for this visit --></help>
+        <label><!-- Total Billable Travel Hours --></label>
+        <name>TotalBillableTravelHours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Standard Pay --></label>
+        <name>TotalStandardPay__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows total hours asset was offline --></help>
+        <label><!-- Total Hours Asset Offline --></label>
+        <name>Total_Hours_Asset_Offline__c</name>
+    </fields>
+    <fields>
+        <help><!-- numeric input field (for each inverter). Units = kWh --></help>
+        <label><!-- Total Production --></label>
+        <name>Total_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- travel time + hours spent on site + Admin Time --></help>
+        <label><!-- Total Time --></label>
+        <name>Total_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates the # of hours between work started and arrived on site, which should represent amount of time spent traveling to site --></help>
+        <label><!-- Total Travel Time --></label>
+        <name>Total_Travel_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of hours between site arrival time and work ended. --></help>
+        <label><!-- Total Work Hours --></label>
+        <name>Total_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Racking - Tracker calibration --></help>
+        <label><!-- Tracker Calibration --></label>
+        <name>Tracker_Calibration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tracker weld condition --></help>
+        <label><!-- Tracker weld condition --></label>
+        <name>Tracker_weld_condition__c</name>
+    </fields>
+    <fields>
+        <help><!-- converts travel billing cap picklist to # to be used in formulas, no need to be on layouts --></help>
+        <label><!-- Travel Billable (Max) --></label>
+        <name>TravelBillableMax__c</name>
+    </fields>
+    <fields>
+        <help><!-- minimum billable travel hours per service visit from related contract --></help>
+        <label><!-- Travel Billable (Min) --></label>
+        <name>TravelBillableMin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel+Work Hours --></label>
+        <name>TravelWorkHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Travel Billable Cap(Hours) --></label>
+        <name>Travel_Billable_Cap_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over value from related Contract field of same name, used for Billing purposes --></help>
+        <label><!-- Travel Billable? --></label>
+        <name>Travel_Billable__c</name>
+    </fields>
+    <fields>
+        <help><!-- One way travel time to site in 15 minute increments. For example, 1 hour and 15 minutes on site would be filled in as 1.25. 2 hours and 45 minutes on site would be filled in as 2.75 --></help>
+        <label><!-- Travel Time --></label>
+        <name>Travel_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Trip Test Protection Devices / Relay / SEL if available --></help>
+        <label><!-- Trip Test Protection Devices --></label>
+        <name>Trip_Test_Protection_Devices__c</name>
+    </fields>
+    <fields>
+        <help><!-- assigns a type based on value in Technician field.  Contractors = External, everything else would be considered Internal --></help>
+        <label><!-- Utilization Type --></label>
+        <name>Utilization_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- grass/weed height --></help>
+        <label><!-- Vegetation --></label>
+        <name>Vegetation__c</name>
+        <picklistValues>
+            <masterLabel>12&quot;</masterLabel>
+            <translation><!-- 12&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18&quot;</masterLabel>
+            <translation><!-- 18&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24&quot;</masterLabel>
+            <translation><!-- 24&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30&quot;</masterLabel>
+            <translation><!-- 30&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36&quot;+</masterLabel>
+            <translation><!-- 36&quot;+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6&quot;</masterLabel>
+            <translation><!-- 6&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- upon completion of entire visit, Verify all devices communicating --></help>
+        <label><!-- Verify All Devices Communicating --></label>
+        <name>Verify_All_Devices_Communicating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Verify String performance on Inverters via DC Current Clamp where DAS has shown low performance (String &amp; Central) --></help>
+        <label><!-- Verify String performance on Inverters --></label>
+        <name>Verify_String_performance_on_Inverters__c</name>
+        <picklistValues>
+            <masterLabel>iV traces</masterLabel>
+            <translation><!-- iV traces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>none</masterLabel>
+            <translation><!-- none --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>voc and vpm</masterLabel>
+            <translation><!-- voc and vpm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visit Comment History --></label>
+        <name>VisitCommentHistory__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with rollup helper to pull in most recent visit comment --></help>
+        <label><!-- Visit Comments --></label>
+        <name>VisitComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- VisitSummary --></label>
+        <name>VisitSummary__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date on which the service visit is scheduled to occur/start. --></help>
+        <label><!-- Visit Start Date --></label>
+        <name>Visit_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- date upon which the visit was completed, this may be the same as the start date if the visit was completed within same day --></help>
+        <label><!-- Visit End Date --></label>
+        <name>Visit_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- select value that best estimates when visit will end --></help>
+        <label><!-- Scheduled End Time --></label>
+        <name>Visit_End_Time__c</name>
+        <picklistValues>
+            <masterLabel>10:00 AM</masterLabel>
+            <translation><!-- 10:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:00 PM</masterLabel>
+            <translation><!-- 10:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 AM</masterLabel>
+            <translation><!-- 11:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 PM</masterLabel>
+            <translation><!-- 11:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 AM</masterLabel>
+            <translation><!-- 12:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 AM</masterLabel>
+            <translation><!-- 1:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 PM</masterLabel>
+            <translation><!-- 1:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 AM</masterLabel>
+            <translation><!-- 2:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 PM</masterLabel>
+            <translation><!-- 2:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 AM</masterLabel>
+            <translation><!-- 3:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 PM</masterLabel>
+            <translation><!-- 3:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 AM</masterLabel>
+            <translation><!-- 4:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 PM</masterLabel>
+            <translation><!-- 4:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 AM</masterLabel>
+            <translation><!-- 5:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 PM</masterLabel>
+            <translation><!-- 5:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 AM</masterLabel>
+            <translation><!-- 6:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 PM</masterLabel>
+            <translation><!-- 6:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 AM</masterLabel>
+            <translation><!-- 7:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 PM</masterLabel>
+            <translation><!-- 7:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 AM</masterLabel>
+            <translation><!-- 8:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 PM</masterLabel>
+            <translation><!-- 8:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 AM</masterLabel>
+            <translation><!-- 9:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 PM</masterLabel>
+            <translation><!-- 9:00 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The reason or service that is being provided. --></help>
+        <label><!-- Visit Reason --></label>
+        <name>Visit_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Construction Closeout</masterLabel>
+            <translation><!-- Construction Closeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscape Maintenance</masterLabel>
+            <translation><!-- Landscape Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Wash</masterLabel>
+            <translation><!-- Module Wash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational commissioning</masterLabel>
+            <translation><!-- Operational commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preoperational commissioning</masterLabel>
+            <translation><!-- Preoperational commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary preventive maintenance</masterLabel>
+            <translation><!-- Primary preventive maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service</masterLabel>
+            <translation><!-- Reactive Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled Service Other</masterLabel>
+            <translation><!-- Scheduled Service Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary preventive maintenance</masterLabel>
+            <translation><!-- Secondary preventive maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow Removal</masterLabel>
+            <translation><!-- Snow Removal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- select estimate start time of appointment --></help>
+        <label><!-- Scheduled Start Time --></label>
+        <name>Visit_Start_Time__c</name>
+        <picklistValues>
+            <masterLabel>10:00 AM</masterLabel>
+            <translation><!-- 10:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:00 PM</masterLabel>
+            <translation><!-- 10:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 AM</masterLabel>
+            <translation><!-- 11:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00 PM</masterLabel>
+            <translation><!-- 11:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 AM</masterLabel>
+            <translation><!-- 12:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00 PM</masterLabel>
+            <translation><!-- 12:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 AM</masterLabel>
+            <translation><!-- 1:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1:00 PM</masterLabel>
+            <translation><!-- 1:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 AM</masterLabel>
+            <translation><!-- 2:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2:00 PM</masterLabel>
+            <translation><!-- 2:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 AM</masterLabel>
+            <translation><!-- 3:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3:00 PM</masterLabel>
+            <translation><!-- 3:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 AM</masterLabel>
+            <translation><!-- 4:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4:00 PM</masterLabel>
+            <translation><!-- 4:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 AM</masterLabel>
+            <translation><!-- 5:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5:00 PM</masterLabel>
+            <translation><!-- 5:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 AM</masterLabel>
+            <translation><!-- 6:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6:00 PM</masterLabel>
+            <translation><!-- 6:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 AM</masterLabel>
+            <translation><!-- 7:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7:00 PM</masterLabel>
+            <translation><!-- 7:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 AM</masterLabel>
+            <translation><!-- 8:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00 PM</masterLabel>
+            <translation><!-- 8:00 PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 AM</masterLabel>
+            <translation><!-- 9:00 AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9:00 PM</masterLabel>
+            <translation><!-- 9:00 PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- auto checked off when START button is pushed. --></help>
+        <label><!-- Visit Started --></label>
+        <name>Visit_Started__c</name>
+    </fields>
+    <fields>
+        <help><!-- Visually Inspect All Other Equipment in Inverter (Wiring Harnesses, Contactors, Major Components) --></help>
+        <label><!-- Visual Inspection-Other Equip Inverter --></label>
+        <name>Visual_Inspection_Other_Equip_Inverter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Visual Inspect Modules for Physical Damage: 100% glass and backsheet --></help>
+        <label><!-- Visual Inspection: Physical Damange --></label>
+        <name>Visual_Inspection_Physical_Damange__c</name>
+    </fields>
+    <fields>
+        <help><!-- Add Additional comments / follow up required? --></help>
+        <label><!-- Visual Inspection: Wire Management --></label>
+        <name>Visual_Inspection_Wire_Management__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recloser:  visual inspection and photos, upload photos if failure during inspection --></help>
+        <label><!-- Visual Inspection of Recloser --></label>
+        <name>Visual_Inspection_of_Recloser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visual Inspection of Terminations --></label>
+        <name>Visual_Inspection_of_Terminations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Visual inspection of DAS enclosures. --></help>
+        <label><!-- Visual inspection of DAS enclosures --></label>
+        <name>Visual_inspection_of_DAS_enclosures__c</name>
+    </fields>
+    <fields>
+        <help><!-- Visual inspection of measuring devices --></help>
+        <label><!-- Visual inspection of measuring devices --></label>
+        <name>Visual_inspection_of_measuring_devices__c</name>
+    </fields>
+    <fields>
+        <help><!-- Warning &amp; nomenclature placards firmly attached &amp; legible, note where deficient.  If fail, comment and upload photo. --></help>
+        <label><!-- Warning &amp; nomenclature placards --></label>
+        <name>Warning_nomenclature_placards__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clarifies how much time Asset spend off line: Yes indicates 1 day or less; No indicates it was not offline at all; Multiple indicates it will be offline for multiple days --></help>
+        <label><!-- Was Asset Offline? --></label>
+        <name>Was_Asset_Offline__c</name>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- what are the weather conditions at the site during visit. --></help>
+        <label><!-- Weather Conditions --></label>
+        <name>Weather_Conditions__c</name>
+        <picklistValues>
+            <masterLabel>Cloudy</masterLabel>
+            <translation><!-- Cloudy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partly Sunny</masterLabel>
+            <translation><!-- Partly Sunny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rainy</masterLabel>
+            <translation><!-- Rainy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow</masterLabel>
+            <translation><!-- Snow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunny</masterLabel>
+            <translation><!-- Sunny --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Roof Mount: Wind deflector placement and integrity --></help>
+        <label><!-- Wind Deflector Placement &amp; Integrity --></label>
+        <name>Wind_Deflector_Placement_Integrity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wind Stow Check --></help>
+        <label><!-- Wind Stow Check --></label>
+        <name>Wind_Stow_Check__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wire Mangement:  Wiring properly secured and installed  Leads and Connectors Protected from Physical Damage &amp; secured off of roof in neat and workmanlike manner ((UV rated zip ties, Drip loops - ) --></help>
+        <label><!-- Wire Mangement --></label>
+        <name>Wire_Mangement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wire Properly Color Coded and Labeled with Electrical Connections Marked.  If Failure, upload file --></help>
+        <label><!-- Wire Properly Coded/Labeled --></label>
+        <name>Wire_Properly_Coded_Labeled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wires Protected from Physical Damage &amp; properly labelled (Attach Photos) --></help>
+        <label><!-- Wires Protected --></label>
+        <name>Wires_Protected__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wires Protected from Physical Damage.  If Failure, upload file. --></help>
+        <label><!-- Wires Protected from Physical Damage --></label>
+        <name>Wires_Protected_from_Physical_Damage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Ended Date --></label>
+        <name>WorkEndedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Started Blank --></label>
+        <name>WorkStartedBlank__c</name>
+    </fields>
+    <fields>
+        <help><!-- date/time tech/sub begins work, pre-travel --></help>
+        <label><!-- Work Started (pre-travel) --></label>
+        <name>WorkStarted__c</name>
+    </fields>
+    <fields>
+        <help><!-- work is finished and tech/sub is ready to leave the site - should be updated before leaving site as it should not include travel time to next location. --></help>
+        <label><!-- Work Ended --></label>
+        <name>Work_Ended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Date Sent --></label>
+        <name>Work_Order_Date_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Sent To --></label>
+        <name>Work_Order_Sent_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- 100% torqued and marked --></label>
+        <name>X100_torqued_and_marked__c</name>
+    </fields>
+    <fields>
+        <label><!-- attachmentIdSelected --></label>
+        <name>attachmentIdSelected__c</name>
+    </fields>
+    <fields>
+        <label><!-- otherEmailSelected --></label>
+        <name>otherEmailSelected__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over project record type from the related project, used mostly as a filter for reporting, no need to be visible on page. --></help>
+        <label><!-- project record type --></label>
+        <name>project_record_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- userIdEmailSelected --></label>
+        <name>userIdEmailSelected__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- used to log time that is not spent on site or traveling to Site --></description>
+        <label><!-- Admin Service Visit --></label>
+        <name>Non_Active</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for all Reactive Service Visits --></description>
+        <label><!-- Reactive --></label>
+        <name>O_M_and_Warranty</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for all Non-Reactive, Non-PM Service Visits --></description>
+        <label><!-- Other --></label>
+        <name>Other</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - Combiner Boxes --></description>
+        <label><!-- PM-Combiner Box --></label>
+        <name>PM_Combiners</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - Communication Cabinet --></description>
+        <label><!-- PM-Communication Cabinet --></label>
+        <name>PM_Communication_Cabinet</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - Inverters --></description>
+        <label><!-- PM-Inverters --></label>
+        <name>PM_Inverters</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PM-MV Switchgear --></label>
+        <name>PM_MV_Switchgear</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - modules --></description>
+        <label><!-- PM-Modules --></label>
+        <name>PM_Modules</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - Solar Array --></description>
+        <label><!-- PM-Solar Array --></label>
+        <name>PM_Racking</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- O&amp;M preventative maintenance visit - summary of grounds --></description>
+        <label><!-- PM-Site Grounds --></label>
+        <name>PM_Site_Grounds</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used for Preventative Maintenance visits - Transformers --></description>
+        <label><!-- PM-Transformers --></label>
+        <name>PM_Transformers</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PM-Weather Station/DAS --></label>
+        <name>PM_Weather_Station_DAS</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PM-Wireways/Conduit --></label>
+        <name>PM_Wireways_Conduit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Project must match the Project referenced by the Contract. --></errorMessage>
+        <name>ASV_Project_Contract</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Work Hours cannot exceed 8 hours if you are logging Holiday, Sick or Vacation time. --></errorMessage>
+        <name>Admin_Time_Greater_than_8_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Asset Fault must have a value. --></errorMessage>
+        <name>Asset_Fault</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Hours Asset Offline is calculating negative hours, please check your time entry for Asset Offline or Asset Offline --></errorMessage>
+        <name>Asset_Offline_Error_Negative_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If work done today resolves case and no further visits are required for this issue, enter YES.  If additional work/visits are needed enter No. --></errorMessage>
+        <name>Case_Resolved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_CombinerBox</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_Comm_Cabinet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_Inverters</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_SiteGrounds</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_SolarArray</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_Switchgear</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_Transformers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before completing your visit please make sure all items in the Maintenance Items section have been filled in. --></errorMessage>
+        <name>Checklist_items_Required_Weather_Station</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Visit is not &quot;complete&quot; if Work Started and Work Ended are blank or Total Work Hours = 0. --></errorMessage>
+        <name>Completed_Checkbox</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in &quot;Manufacturer RMA/Ticket #&quot; --></errorMessage>
+        <name>RMA_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For Reactive Service Visits the fields Vegatation, Soiling and Weather Conditions are required before completing the Visit. --></errorMessage>
+        <name>Required_Fields_for_Reactive_Visits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Travel Time is calculating negative hours, please check your time entry for Site Arrival Time or Work Started. --></errorMessage>
+        <name>Travel_Time_Entry_Error_Negative_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Travel Time cannot exceed 11 hours per visit, please double check your time entry and make adjustments in order to save the record. If your visit has exceeded 11 hours, please contact your manager to get permission to enter hours. --></errorMessage>
+        <name>Travel_Time_Error_Greater_than_11_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Asset Offline and Asset Online must have a value. --></errorMessage>
+        <name>Was_Asset_Offline</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Asset and Was Asset Offline must have a value if Work Ended is set. --></errorMessage>
+        <name>Work_Ended</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Work Hours cannot exceed 11 hours per visit, please double check your time entry and make adjustments in order to save the record. If your visit has exceeded 11 hours, please contact your manager to get permission to enter hours. --></errorMessage>
+        <name>Work_Hours_Error_Greater_than_11_Hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Total Work Hours is calculating negative hours, please check your time entry for Work Started and Work Ended. --></errorMessage>
+        <name>Work_Hours_Error_Negative_Hours</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Change_Project --></label>
+        <name>Change_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Custom --></label>
+        <name>Clone_Custom</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Visits --></label>
+        <name>Close_Visits</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Asset --></label>
+        <name>Create_Asset</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Work_Order --></label>
+        <name>Create_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Reactive_ServiceVisit --></label>
+        <name>Edit_Reactive_ServiceVisit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Attach_Files --></label>
+        <name>Mass_Attach_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_ASV --></label>
+        <name>New_ASV</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Service_Visit --></label>
+        <name>New_Service_Visit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Service_Visit_Asset --></label>
+        <name>New_Service_Visit_Asset</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Service_Visit_List --></label>
+        <name>New_Service_Visit_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Schedule_Service_Visits --></label>
+        <name>Schedule_Service_Visits</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Technician --></label>
+        <name>Technician</name>
+    </webLinks>
+</CustomObjectTranslation>

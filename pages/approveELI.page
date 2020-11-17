@@ -1,0 +1,35 @@
+<apex:page controller="approveELI" tabStyle="ER__c">
+  <apex:form >
+  <apex:sectionHeader title="Expense Report Approval" subtitle="{!ER.Name} - {!ER.Month_Ending__c}"/>
+  <apex:pageBlock >
+      <apex:pageBlockSection title="Expense Report Information">
+          <apex:outputField value="{!ER.User__c}"/>
+          <apex:outputField value="{!ER.Status__c}"/>
+          <br/>
+          <apex:outputField value="{!ER.Requested_Total__c}"/>
+          <apex:pageBlockSectionItem />
+          <apex:outputField value="{!ER.Total__c}"/>
+      </apex:pageBlockSection>
+  </apex:pageBlock>
+  <apex:pageBlock >
+      <apex:pageBlockButtons >
+          <apex:commandButton action="{!save}" value="Approve"/>
+          <apex:commandButton action="{!saveAll}" value="Approve All"/>
+          <apex:commandButton action="{!cancel}" value="Reject"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!eli}" var="e" title="Expense Line Items">
+          <apex:column ><apex:outputLink value="/{!e.Id}" target="blank">{!e.Name}</apex:outputLink></apex:column> 
+          <apex:column value="{!e.Project__c}"/>
+          <apex:column value="{!e.Vendor__c}"/>
+          <apex:column value="{!e.Cost_Code__c}"/>
+          <apex:column value="{!e.Expenditure_Type__c}"/>
+          <apex:column value="{!e.PV_Direct__c}"/>
+          <apex:column value="{!e.Expenditure_Amount__c}"/>
+          <apex:column ><apex:facet name="header">Approved</apex:facet><apex:inputField value="{!e.Manager_Approval__c}"/></apex:column>
+          <apex:column ><apex:facet name="header">Approved Amount</apex:facet><apex:inputField value="{!e.Approved_Amount__c}"/></apex:column>
+          <apex:column ><apex:facet name="header">Rejected Reason</apex:facet><apex:inputField value="{!e.Rejected_Reason__c}"/></apex:column>
+      </apex:pageBlockTable>
+  </apex:pageBlock>
+  <apex:pageMessages />
+  </apex:form>
+</apex:page>

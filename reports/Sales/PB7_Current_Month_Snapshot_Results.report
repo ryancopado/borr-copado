@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Snapshot_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Opportunity_Name__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Branch__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Stage__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Opportunity_Record_Type__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity_Snapshot__c.Close_Date__c</field>
+    </columns>
+    <description>shows PB7 Submittal Date from project as of 1st of month via snapshot</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>PB3 PB7 Opportunity Tracking</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity_Snapshot__c.PB7_Submittal_Date_from_Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>11/13/2018 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>11/12/2018 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Opportunity_Snapshot__c.PB7_Submittal_Date_from_Project__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PB7 Current Month Snapshot Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Opportunity_Snapshot__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity_Snapshot__c.Opportunity_Name__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

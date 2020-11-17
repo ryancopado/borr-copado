@@ -1,0 +1,254 @@
+<apex:page showHeader="false" sidebar="false" controller="CADragNDrop.ComponentController" action="{!getnamespceAndURL}">
+	<apex:includeScript value="../../soap/ajax/26.0/connection.js" />
+	<apex:includeScript value="{!URLFOR($Resource.CADragNDrop__DND, 'jquery-3.0.0.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.CADragNDrop__DND, 'bootstrap.min.js')}" />
+	<apex:includeScript value="{!$Resource.CADragNDrop__UploadBootstrap}" />
+	<apex:stylesheet value="{!$Resource.CADragNDrop__UploadBootStrapCss}" />
+	<apex:stylesheet value="{!URLFOR($Resource.CADragNDrop__simplePagination,'simplePagination.css')}" />
+	<apex:includeScript value="{!URLFOR($Resource.CADragNDrop__simplePagination,'jquery.simplePagination.js')}" />
+
+	<style>
+
+		td {
+			padding-left: 0px !important;
+		}
+
+		#buttonForMul {
+			display: none;
+
+		}
+
+		.divId {
+			display: none;
+		}
+
+		.bfd-dropfield-inner {
+			border: 3px dotted #ccc;
+			color: #999;
+			font-size: 19px;
+			font-weight: normal;
+			height: 32px !important;
+			padding-top: 6px !important;
+
+		}
+
+		.progress-bar {
+			float: left;
+			width: 0;
+			height: 100%;
+			font-size: 12px;
+			line-height: 20px;
+			color: #fff;
+			text-align: center;
+			background-color: rgb(228, 215, 34);
+			border-radius: 25px 25px 25px 25px;
+			transition: width .6s ease;
+		}
+
+		.bfd-info {
+			width: 100px;
+		}
+
+		.progress-striped .progress-bar,
+		.progress-bar-striped {
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			-webkit-background-size: 40px 40px;
+			background-size: 40px 40px;
+		}
+
+		.progress.active .progress-bar,
+		.progress-bar.active {
+			-webkit-animation: progress-bar-stripes 2s linear infinite;
+			-o-animation: progress-bar-stripes 2s linear infinite;
+			animation: progress-bar-stripes 2s linear infinite;
+		}
+
+		.progress-bar-success {
+			background-color: rgba(255, 255, 0, 0.57);
+
+		}
+
+		.progress-striped .progress-bar-success {
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+		}
+
+		.progress-bar-info {
+			background-color: #5bc0de;
+		}
+
+		.progress-striped .progress-bar-info {
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+		}
+
+		.progress-bar-warning {
+			background-color: #f0ad4e;
+		}
+
+		.progress-striped .progress-bar-warning {
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+		}
+
+		.progress-bar-danger {
+			background-color: #d9534f;
+		}
+
+		.progress-striped .progress-bar-danger {
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+		}
+
+		.sr-only {
+			color: rgb(19, 12, 12);
+		}
+
+		.spanForLink {
+			color: #015ba7 !important;
+			text-decoration: none;
+			font-weight: normal;
+		}
+
+		.bfd-error-message {
+			text-align: center;
+		}
+
+		.bfd-remove {
+			cursor: pointer;
+		}
+
+		.individualPalette {
+			height: 228px !important;
+		}
+
+		.pbBody {
+			overflow-y: auto !important;
+			height: 170px;
+		}
+
+		.textCenter, .pbTitle {
+			text-align: center;
+		}
+
+		#pagination {
+			margin: 0 auto;
+			margin-top: 10px;
+		}
+	</style>
+	<form id="formId"><!-- Begin Default Content REMOVE THIS -->
+
+		<div id="divToAppend"></div>
+
+	</form>
+	<script>
+		function test21() {
+
+			$.FileDialog(
+					{
+						multiple: true
+					}).on('files.bs.filedialog', function (ev) {
+				var files = ev.files;
+				var text = "";
+				files.forEach(function (f) {
+					text += f.name + "<br/>";
+				});
+
+			}).on('files.bs.filedialog', function (ev) {
+
+				var files_list = ev.files;
+
+			})
+					.on('cancel.bs.filedialog', function (ev) {
+
+					});
+		}
+
+		$(document).ready(function () {
+			test21();
+		});
+
+		function uploadAttachment(filecontent, filename, filetype) {
+			sforce.connection.sessionId = "{!$Api.Session_ID}";
+			var attachment = new sforce.SObject('Attachment');
+			attachment.Name = filename;
+			attachment.IsPrivate = false;
+			attachment.ContentType = filetype;
+			attachment.Body = filecontent;
+			attachment.Description = filename;
+			attachment.ParentId = '{!$CurrentPage.parameters.Id}';
+			sforce.connection.create([attachment], {
+				onSuccess: function (result, source) {
+					if (result[0].getBoolean("success")) {
+						console.log("new attachment created with id " + result[0].id);
+						$('.sr-only').text('Uploaded');
+						var parentObjectTemp = $('.sr-only').parents().get(3);
+						var parentClass = parentObjectTemp.className;
+						$('.' + parentClass).each(function () {
+							$(this).css('display', 'none');
+						});
+						//parentObjectTemp.style.display = 'none';
+						$('.progress-bar-success').css('background-color', '#5cb85c');
+
+						//background-color: #5cb85c;
+						fileUploaded();
+					}
+					else {
+						console.log("failed to create attachment " + result[0]);
+						$('.sr-only').text('Not Uploaded' + result[0]);
+						$('.progress-bar-success').css('background-color', 'red');
+					}
+				},
+				onFailure: function (error, source) {
+
+				}
+			});
+		}
+
+		function runMe(a) {
+			if (a.checked) {
+
+				$("[id=checkboxIds]").each(function () {
+					$(this).prop('checked', true);
+				});
+			} else {
+				$("[id=checkboxIds]").each(function () {
+					$(this).prop('checked', false);
+				});
+
+			}
+		}
+
+		function openDNDBrowse() {
+			$('.bfd-dropfield-inner').click();
+		}
+
+		function fileUploaded() {
+			/*var sPageURL = window.location;
+			var sURLVariables = sPageURL.toString().split("/");
+			var sParameterName;
+			var i;
+			for (i = 0; i < sURLVariables.length; i++) {
+				if (i === 0) {
+					sParameterName = sURLVariables[i];
+				}
+				if (i === 2) {
+					sParameterName = sParameterName + "//" + sURLVariables[i] + "/";
+				}
+			}*/
+			//console.log(sParameterName);
+			/*var url1 = '{!JSENCODE(url)}';
+			console.log(url1);*/
+			var message = 'FileUploaded';
+			parent.postMessage(message, '*');
+		}
+
+	</script>
+
+</apex:page>

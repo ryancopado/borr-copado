@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoLogo</letterhead>
+    <name>Unqualified- Residential &amp; Small Commercial/Public</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar: Responding to your inquiry</subject>
+    <textOnly>Dear {!Lead.FirstName}, 
+
+Thank you for your interest in Borrego Solar. We have adapted our business model to focus exclusively on large-scale commercial and public solar installations, and unfortunately we will not be able to assist you with your project .  To find a solar services provider in your area and to learn about local, state and federal incentives for solar, please visit these websites: 
+
+http://www.findsolar.com 
+
+http://www.dsireusa.org/. 
+
+Good luck and thank you for your commitment to creating a clean energy future. 
+
+Sincerely, 
+
+
+{!Lead.OwnerFullName}
+5005 Texas Street Suite 400 
+San Diego, CA 92108 
+{!Lead.OwnerPhone}
+{!Lead.OwnerEmail}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

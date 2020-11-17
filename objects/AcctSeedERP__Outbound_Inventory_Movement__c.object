@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AcctSeedERP__Credit_GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Credit GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements (Credit GL Account)</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Debit_GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Offsetting general ledger account for the transaction.</inlineHelpText>
+        <label>Debit GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__GL_Account_Variable_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GL Account Variable 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 1</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__GL_Account_Variable_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GL Account Variable 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 2</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements (GL Account Variable 2)</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__GL_Account_Variable_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GL Account Variable 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 3</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements (GL Account Variable 3)</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__GL_Account_Variable_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GL Account Variable 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 4</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements (GL Account Variable 4)</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Inbound_Inventory_Movement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inbound Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Inbound_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Inventory_Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Inventory Balance that is directly related to the Outbound Inventory Movement.</inlineHelpText>
+        <label>Inventory Quantity Available</label>
+        <referenceTo>AcctSeedERP__Inventory_Balance__c</referenceTo>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__LedgerId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Inventory_Balance__r.AcctSeedERP__Ledger__c</formula>
+        <label>LedgerId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Ledger__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes the associated ledger.</inlineHelpText>
+        <label>Ledger</label>
+        <referenceTo>AcctSeed__Ledger__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Inventory_Balance__r.AcctSeedERP__Location__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The location that was selected on the related Inventory Balance.</inlineHelpText>
+        <label>Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Movement_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date used to indicate which accounting period the transaction should be booked in.</inlineHelpText>
+        <label>Movement Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__ProductId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Inventory_Balance__r.AcctSeedERP__Product__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ProductId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Product__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Inventory_Balance__r.AcctSeedERP__Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The product the was selected on the related Inventory Balance.</inlineHelpText>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Project_Task__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Line item that is related to the Outbound inventory movement.</inlineHelpText>
+        <label>Project Task</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Project_Task__c.AcctSeed__Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.AcctSeedERP__Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Project_Task__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Project__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The project that is related to the Outbound inventory movement.</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of units being moved.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>6</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Serial_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Serial Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Posting Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>true</default>
+                    <label>Approved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of Outbound Inventory Movement.</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inventory Transfer</fullName>
+                    <default>false</default>
+                    <label>Inventory Transfer</label>
+                </value>
+                <value>
+                    <fullName>Manufacturing Scrap</fullName>
+                    <default>false</default>
+                    <label>Manufacturing Scrap</label>
+                </value>
+                <value>
+                    <fullName>Cycle Count Adjustment</fullName>
+                    <default>false</default>
+                    <label>Cycle Count Adjustment</label>
+                </value>
+                <value>
+                    <fullName>Issue to Customer</fullName>
+                    <default>false</default>
+                    <label>Issue to Customer</label>
+                </value>
+                <value>
+                    <fullName>Return to Vendor</fullName>
+                    <default>false</default>
+                    <label>Return to Vendor</label>
+                </value>
+                <value>
+                    <fullName>Non-Accounting</fullName>
+                    <default>false</default>
+                    <label>Non-Accounting</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Shipment to Site</fullName>
+                    <default>false</default>
+                    <label>Shipment to Site</label>
+                </value>
+                <value>
+                    <fullName>Re-Allocation</fullName>
+                    <default>false</default>
+                    <label>Re-Allocation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Unit_Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The cost per unit for the product listed.</inlineHelpText>
+        <label>Unit Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Warehouse__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Inventory_Balance__r.AcctSeedERP__Warehouse__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The warehouse that was selected on the related Inventory Balance.</inlineHelpText>
+        <label>Warehouse</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOL_Document__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Document control # that corresponds to Bill of Lading document received from the warehouse.  If this is an adjustment, field should be used to indicate adjustment #.</inlineHelpText>
+        <label>BOL Document #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The regional office that is related to the Outbound Inventory Movement.</inlineHelpText>
+        <label>Branch</label>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Debit_GL_Account_from_Project__c</fullName>
+        <description>displays Default GL Expense account name from related project</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Project__r.Default_Expense_GL_Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays Default GL Expense account name from related project</inlineHelpText>
+        <label>Debit GL Account from Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Movement_Total__c</fullName>
+        <description>Unit Cost x Quantity</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Unit_Cost__c *  AcctSeedERP__Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inventory Movement Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Warehouse__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Inventory Warehouse</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Purchase Order Line</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeedERP__Purchase_Order_Line__c.AcctSeedERP__Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.AcctSeedERP__Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeedERP__Purchase_Order_Line__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Purchase Order</label>
+        <referenceTo>AcctSeedERP__Purchase_Order__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.AcctSeedERP__Project__c</field>
+                <operation>equals</operation>
+                <valueField>Site__c.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Jurisdiction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>updates based on Tax Group from related Site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>updates based on Tax Group from related Site</inlineHelpText>
+        <label>Tax Jurisdiction</label>
+        <referenceTo>Tax_Group__c</referenceTo>
+        <relationshipLabel>Outbound Inventory Movements</relationshipLabel>
+        <relationshipName>Outbound_Inventory_Movements</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Rate__c</fullName>
+        <description>pulls in related Tax Rate from related Tax Group/Site</description>
+        <externalId>false</externalId>
+        <formula>Tax_Jurisdiction__r.Tax_Group_Percent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>pulls in related Tax Rate from related Tax Group/Site</inlineHelpText>
+        <label>Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Burdened_Value__c</fullName>
+        <description>Total Burdened Value = Quantity x Unit Value</description>
+        <externalId>false</externalId>
+        <formula>Unit_Value__c *  AcctSeedERP__Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Burdened Value = Quantity x Unit Value</inlineHelpText>
+        <label>Total Burdened Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Value__c</fullName>
+        <description>Unit_Cost__c * (1+ (Tax_Rate__c ))</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Unit_Cost__c * (1+ (Tax_Rate__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Unit_Cost__c * (1+ (Tax_Rate__c ))</inlineHelpText>
+        <label>Unit Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Use_Old_CC__c</fullName>
+        <description>HIdden field - &quot;Use Old CC&quot; field from the related Project record.  Used in the roll up triggers.</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Project__r.Use_Old_CC__c</formula>
+        <label>Use Old CC</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Quantity__c * AcctSeedERP__Unit_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Quantity * Unit Cost = Value</inlineHelpText>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Value_of_sales_tax__c</fullName>
+        <description>Quantity x Unit Cost x Tax Rate.</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Quantity__c *  AcctSeedERP__Unit_Cost__c *  Tax_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Quantity x Unit Cost x Tax Rate.</inlineHelpText>
+        <label>Value of sales tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>movement_date2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual date that transaction occurred; can vary from Accounting Date if transaction was accrued for in a previous period.</inlineHelpText>
+        <label>Movement Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Outbound Inventory Movement</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>AcctSeedERP__Inventory_Balance__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>AcctSeedERP__Product__c</columns>
+        <columns>AcctSeedERP__Project__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>OIM-{00000}</displayFormat>
+        <label>Outbound Inventory Movement Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Outbound Inventory Movements</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>AcctSeedERP__Movement_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeedERP__Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeedERP__Unit_Cost__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeedERP__Serial_Number__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeedERP__Movement_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeedERP__Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeedERP__Unit_Cost__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeedERP__Serial_Number__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AcctSeedERP__Movement_Date__c</searchFilterFields>
+        <searchFilterFields>AcctSeedERP__Quantity__c</searchFilterFields>
+        <searchFilterFields>AcctSeedERP__Unit_Cost__c</searchFilterFields>
+        <searchFilterFields>AcctSeedERP__Serial_Number__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AcctSeedERP__Debit_GL_Account_Is_Required</fullName>
+        <active>true</active>
+        <description>The Debit GL Account field is required unless the type field is &quot;Non-Accounting&quot; or &quot;Inventory Transfer&quot;</description>
+        <errorConditionFormula>TEXT(AcctSeedERP__Type__c) != &quot;Non-Accounting&quot;  &amp;&amp; TEXT(AcctSeedERP__Type__c) != &quot;Inventory Transfer&quot; &amp;&amp; ISBLANK(AcctSeedERP__Debit_GL_Account__c)</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__Debit_GL_Account__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AcctSeedERP__Quantity_Is_Positive</fullName>
+        <active>false</active>
+        <description>quantity must be greater than or equal to 0</description>
+        <errorConditionFormula>AcctSeedERP__Quantity__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__Quantity__c</errorDisplayField>
+        <errorMessage>quantity must be greater than or equal to 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AcctSeedERP__Type_Is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(TEXT(AcctSeedERP__Type__c))</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__Type__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AcctSeedERP__Unit_Cost_Is_Required</fullName>
+        <active>true</active>
+        <description>unit cost field is required</description>
+        <errorConditionFormula>ISBLANK(AcctSeedERP__Unit_Cost__c)</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__Unit_Cost__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ops_Division_Cannot_Contain_a_Value</fullName>
+        <active>false</active>
+        <description>Ops Division should not contain a value if certain GL accounts are used.</description>
+        <errorConditionFormula>BEGINS( AcctSeedERP__Credit_GL_Account__r.Name , &quot;5&quot;) &amp;&amp; NOT(ISBLANK( AcctSeedERP__GL_Account_Variable_3__c )) || BEGINS(AcctSeedERP__Credit_GL_Account__r.Name , &quot;6&quot;) &amp;&amp; NOT(ISBLANK( AcctSeedERP__GL_Account_Variable_3__c ))</errorConditionFormula>
+        <errorMessage>Ops Division should not contain a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ops_Division_Required</fullName>
+        <active>false</active>
+        <description>Ops_Division_Required if Indirects are selected as Variable Name</description>
+        <errorConditionFormula>BEGINS( AcctSeedERP__Credit_GL_Account__r.Name , &quot;4&quot;) &amp;&amp; ISBLANK( AcctSeedERP__GL_Account_Variable_3__c ) || BEGINS(AcctSeedERP__Credit_GL_Account__r.Name , &quot;3&quot;) &amp;&amp; ISBLANK( AcctSeedERP__GL_Account_Variable_3__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__GL_Account_Variable_3__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Ops Division to be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Cannot_Contain_a_Value</fullName>
+        <active>false</active>
+        <description>sales segment should be blank if certain GL Account are used</description>
+        <errorConditionFormula>BEGINS(AcctSeedERP__Credit_GL_Account__r.Name, &quot;4&quot;) &amp;&amp; NOT(ISBLANK( AcctSeedERP__GL_Account_Variable_2__c )) || BEGINS(AcctSeedERP__Credit_GL_Account__r.Name, &quot;6&quot;) &amp;&amp; NOT(ISBLANK( AcctSeedERP__GL_Account_Variable_2__c ))</errorConditionFormula>
+        <errorMessage>Sales Segment should not contain a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Required</fullName>
+        <active>false</active>
+        <description>Sales Segment Required if certain GL Accounts are used</description>
+        <errorConditionFormula>BEGINS(AcctSeedERP__Credit_GL_Account__r.Name, &quot;5&quot;) &amp;&amp; ISBLANK( AcctSeedERP__GL_Account_Variable_2__c ) || BEGINS(AcctSeedERP__Credit_GL_Account__r.Name, &quot;3&quot;) &amp;&amp; ISBLANK( AcctSeedERP__GL_Account_Variable_2__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeedERP__GL_Account_Variable_2__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Sales Segment to be populated.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Outbound_Inventory_Movement</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Outbound Inventory Movement</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{! requireScript(&apos;/soap/ajax/21.0/connection.js&apos;) }
+
+var objId = &apos;{!$ObjectType.AcctSeedERP__Outbound_Inventory_Movement__c}&apos;;
+var projectId = &apos;{!AcctSeed__Project__c.Id}&apos;;
+var projectName = &apos;{!AcctSeed__Project__c.Name}&apos;;
+var BranchName = &apos;{!AcctSeed__Project__c.Branch__c}&apos;;
+
+var projFieldId = &apos;{!$Setup.Dynamic_Field_Id_Setting__c.outbound_inventory_movement_Project_Id__c}&apos;;
+var GLFieldId = &apos;{!$Setup.Dynamic_Field_Id_Setting__c.outbound_inventory_movement_GL_ID__c}&apos;;
+var GL2FieldId = &apos;{!$Setup.Dynamic_Field_Id_Setting__c.Outbound_Inventory_Movement_GL2_Field_Id__c}&apos;;
+var GL3FieldId = &apos;{!$Setup.Dynamic_Field_Id_Setting__c.Outbound_Inventory_Movement_GL3_Field_Id__c}&apos;;
+var BranchId = &apos;{!$Setup.Dynamic_Field_Id_Setting__c.Outbound_inventory_movement_branch_Id__c}&apos;;
+
+if(BranchName == &apos;Berkeley&apos;){
+BranchName = &apos;Nor Cal&apos;;
+}else if(BranchName == &apos;Oakland&apos;){
+BranchName = &apos;Nor Cal&apos;;
+}else if(BranchName == &apos;San Diego&apos;){
+BranchName = &apos;So Cal&apos;;
+}else if(BranchName == &apos;Boston&apos;){
+BranchName = &apos;New England&apos;;
+}
+
+var GLID = &apos;{!AcctSeed__Project__c.Default_Revenue_GL_Account__c}&apos;;
+var GL2ID = &apos;{!AcctSeed__Project__c.Sales_Segment__c}&apos;;
+var GL3ID = &apos;{!AcctSeed__Project__c.Ops_Division__c}&apos;;
+
+window.location = &apos;/&apos;+objId+&apos;/e?CF&apos;+projFieldId+&apos;=&apos;+projectName+&apos;&amp;CF&apos;+projFieldId+&apos;_lkid=&apos;+projectId+&apos;&amp;retURL=%2F&apos;+projectId+&apos;&amp;CF&apos;+GLFieldId+&apos;=&apos;+GLID+&apos;&amp;CF&apos;+BranchId+&apos;=&apos;+BranchName+&apos;&amp;CF&apos;+GL2FieldId+&apos;=&apos;+GL2ID+&apos;&amp;CF&apos;+GL3FieldId+&apos;=&apos;+GL3ID</url>
+    </webLinks>
+</CustomObject>

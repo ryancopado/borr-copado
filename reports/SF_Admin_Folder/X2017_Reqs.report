@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_69685148</developerName>
+        <masterLabel>Source</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>SFDC_Purchase_Requisition__c.Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Development Needed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Support Case Opened</sourceValue>
+            </sourceValues>
+            <value>Outsource</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Approved</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Accepted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gathering Requirements</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ready for Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Meeting Scheduled</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>User Testing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ready For Implementation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Added to Change Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Complete</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Waiting For Response</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>More Info Needed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>X - Rejected</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manager Approved</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>On Hold</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cancelled</sourceValue>
+            </sourceValues>
+            <value>In House</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnStacked</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>SFDC_Purchase_Requisition__c.Requisition_Owner__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_69685148</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SFDC_Purchase_Requisition__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>SFDC_Purchase_Requisition__c.Object_to_Update__c</field>
+    </columns>
+    <columns>
+        <field>SFDC_Purchase_Requisition__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>SFDC_Purchase_Requisition__c.Admin_Notes__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SFDC_Purchase_Requisition__c.Salesforce_Update</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SFDC_Purchase_Requisition__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled,New,Approval Pending,Complete,X - Rejected,On Hold</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SFDC_Purchase_Requisition__c.Requisition_Owner__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SFDC_Purchase_Requisition__c.Expected_Completion__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_69685148</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Remaining 2017 Reqs</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SFDC_Purchase_Requisition__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SFDC_Purchase_Requisition__c.Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SFDC_Purchase_Requisition__c.Expected_Completion__c</dateColumn>
+        <endDate>2017-12-28</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>DMAPP__Account__c</name>
+        <relationshipLabel><!-- Plan Unit Member Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Plan Unit --></label>
+        <name>DMAPP__Plan_Unit__c</name>
+        <relationshipLabel><!-- Plan Unit Member Accounts --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You can only create a member account within top level units --></errorMessage>
+        <name>DMAPP__Member_Accounts_In_Not_Top_Level_Unit</name>
+    </validationRules>
+</CustomObjectTranslation>

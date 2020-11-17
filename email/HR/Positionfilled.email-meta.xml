@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoSolar</letterhead>
+    <name>Position filled</name>
+    <style>freeForm</style>
+    <subject>Re: {!Lead.Job_Applying_For__c} Position</subject>
+    <textOnly>Dear {!Lead.FirstName}, 
+
+ We have received your application for the {!Lead.Job_Applying_For__c} position. This position has been filled but we will keep your resume on file for future openings. 
+
+Thank you for your interest in Borrego Solar Systems!
+
+Best regards,
+Pilar Agejas
+
+Human Resources Manager
+Borrego Solar Systems, Inc
+1365 N. Johnson Avenue, Suite 102
+El Cajon, CA 92020
+Tel – 619-562-7183 * 102
+Fax – 619-562-4310</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

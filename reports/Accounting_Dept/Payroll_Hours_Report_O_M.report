@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>if(SV__c.TravelWorkHours__c:SUM&gt;40, SV__c.TravelWorkHours__c:SUM-40, 0)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>SV__c$Visit_Date__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Overtime Hours</masterLabel>
+        <scale>3</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(if(SV__c.TravelWorkHours__c:SUM&gt;40, SV__c.TravelWorkHours__c:SUM-40, 0))*SV__c.Technician__c.SF_User_Record__c.OvertimeRate__c:MAX</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>SV__c$Visit_Date__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>OT Total $</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(SV__c.TravelWorkHours__c:SUM&gt;40, 40-SV__c.PWHours__c:SUM, SV__c.TravelWorkHours__c:SUM-SV__c.PWHours__c:SUM)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>SV__c$Visit_Date__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Labor+Hours</masterLabel>
+        <scale>3</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(SV__c.TravelWorkHours__c:SUM&gt;40, 40, SV__c.TravelWorkHours__c:SUM) * SV__c.Technician__c.SF_User_Record__c.StandardRate__c:MAX</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>SV__c$Visit_Date__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Labor + Hours Total $</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>SV__c.PW_Total__c:SUM+
+((if(SV__c.TravelWorkHours__c:SUM&gt;40, SV__c.TravelWorkHours__c:SUM-40, 0))*SV__c.Technician__c.SF_User_Record__c.OvertimeRate__c:MAX) +
+(IF(SV__c.TravelWorkHours__c:SUM&gt;40, 40, SV__c.TravelWorkHours__c:SUM) * SV__c.Technician__c.SF_User_Record__c.StandardRate__c:MAX)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA5</developerName>
+        <downGroupingContext>SV__c$Visit_Date__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Payroll</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <colorRanges>
+        <columnName>FORMULA1</columnName>
+        <highBreakpoint>1.0</highBreakpoint>
+        <highColor>#C25454</highColor>
+        <lowColor>#FFFFFF</lowColor>
+        <midColor>#FFFFFF</midColor>
+    </colorRanges>
+    <columns>
+        <field>SV__c$Name</field>
+    </columns>
+    <columns>
+        <field>SV__c$RecordType</field>
+    </columns>
+    <columns>
+        <field>SV__c$Project__c</field>
+    </columns>
+    <columns>
+        <field>SV__c$WorkStarted__c</field>
+    </columns>
+    <columns>
+        <field>SV__c$Work_Ended__c</field>
+    </columns>
+    <columns>
+        <field>SV__c$Technician__c.SF_User_Record__c.OvertimeRate__c</field>
+    </columns>
+    <columns>
+        <field>SV__c$Technician__c.SF_User_Record__c.StandardRate__c</field>
+    </columns>
+    <columns>
+        <field>SV__c$Internal_Prevailing_Wage_Rate__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c$TravelWorkHours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c$PWHours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c$PW_Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SV__c$Technician__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c$Technician__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>landon,darcy,generic,mullins,distefano,equipment,addy,buchanan,flowers,contractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c$Completed__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c$Technician__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>SV__c$Visit_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c$Visit_End_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Payroll Hours Report- O&amp;M</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Service_Visits_with_or_without_Con_Req_Groups__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SV__c$WorkStarted__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SV__c$Visit_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

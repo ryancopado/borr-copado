@@ -1,0 +1,16 @@
+<apex:component >
+	<apex:attribute name="servicevisitlist" type="ServiceVisitWrapper[]" description="Service Visit List" />
+	<apex:outputPanel style="margin-left:10%; margin-top:5%; width:100%">
+<!--	<apex:pageBlock >   -->    
+    		<apex:pageBlockSection title="Service Visits" collapsible="false">
+				<apex:pageBlockTable value="{!servicevisitlist}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="svitem">
+					<apex:column value="{!svitem.SVNumber}" headerValue="Service Visit Number"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<apex:column value="{!svitem.VisitDate}" headerValue="Visit Date"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<apex:column value="{!svitem.VisitReason}" headerValue="Visit Reason"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<apex:column value="{!svitem.PerformedBy}" headerValue="Performed By"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<apex:column value="{!svitem.Notes}" headerValue="Notes"/>
+				</apex:pageBlockTable>
+			</apex:pageBlockSection>
+<!--	</apex:pageBlock>   -->	
+	</apex:outputPanel>
+</apex:component>

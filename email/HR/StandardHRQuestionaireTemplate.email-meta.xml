@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For all candidates</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoSolar</letterhead>
+    <name>Standard HR Questionaire Template</name>
+    <style>freeForm</style>
+    <subject>{!Lead.Job_Applying_For__c} Questionaire</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for applying for the {!Lead.Job_Applying_For__c} position with Borrego Solar Systems, Inc. 
+
+Please answer the questions in the attached document and forward your answers to hr@borregosolar.com at your earliest convenience. If your experience meets our criteria, we will contact you for an interview. 
+
+Once again, thank you for your interest. 
+
+Sincerely, 
+Borrego Solar
+Human Resources</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

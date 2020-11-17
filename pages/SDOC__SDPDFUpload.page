@@ -1,0 +1,1459 @@
+<apex:page controller="SDOC.SDPDFUploadController" docType="html-5.0" sidebar="false" showHeader="false">
+<apex:outputPanel rendered="{!$CurrentPage.parameters.editor!='true'}" layout="none">
+<style>
+.droptarget {
+    width: auto; 
+    height: auto;
+    border: 2px solid #29AAE2;
+    font-size: 10;
+}
+
+/* weed eater. */
+.input {
+    background: #29AAE2;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 6px 0px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.center {
+    position: relative;          /* where the next element will be automatically positioned */
+    display: inline-block;       /* causes element width to shrink to fit content */
+    left: 50%;                   /* moves left side of image/element to center of parent element */
+    transform: translate(-50%);  /* centers image/element on "left: 50%" position */
+}
+
+.fileInput {
+	width: 85.5%;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin: 6px 0px;
+}
+
+.chooseFile {
+  float:left;
+  width: 60%;
+}
+
+.uploadFile {
+  float:right;
+}
+
+.drop-container {
+	position: sticky;
+	top: 0px;
+	width:100%;
+	float: left;
+}
+
+.filetarget {
+    float: right;
+}
+
+.emailInput {
+	width: 50px;
+}
+
+.newEmail {
+	width: 100px; 
+  height: 65px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+.droppable {
+    position: absolute;
+    z-index: 10; 
+}
+
+.iframeClass {
+	width: 95%;
+	height: 300px;
+}
+
+</style>
+
+<script>
+</script>
+<style>
+#loading-div {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  opacity: 0.8;
+  background-color: white;
+}
+#loading-div-spinner {
+  position: fixed;
+  right: 47%;
+  bottom: 50%;
+}
+
+.positionXML{
+
+}
+
+.mergeFieldTable {
+  width:80%;
+}
+
+</style>
+<div id="loading-div">
+  <img width="80" id="loading-div-spinner" src="{!URLFOR($Resource.SDoc,'lightning_spinner.gif')}" class="undraggable" unselectable="on" />
+</div>
+<apex:outputPanel id="pdfStringPanel">
+    <script>
+        if('{!pdfString}' !== 'No file exists' && '{!pdfString}' !== ''){
+            showLoadingDiv();
+            getText(dataURLtoFile('{!pdfString}', 'pdf_test.pdf'));
+        }
+        //POST MESSAGE HERE TO TEMPLATE EDITOR with inputFieldXML as well as coordinates
+    </script>
+</apex:outputPanel>
+
+
+  <div id="body-div">
+  	<div id="drop-container-wrapper" style="display:inline-block;float:left;width:28%;height:10in;">
+	  	<div class="drop-container">
+        <!--<input class="input fileInput" type="file" id="file_input_pdf"  name="file" accept=".pdf"></input>-->
+        <apex:form id="mergeFieldLists" styleClass="input fileInput">
+            
+          <apex:actionFunction action="{!loadSavedFileIfExists}" name="loadSavedFileIfExists" reRender="pdfStringPanel" oncomplete=""/>
+          <apex:inputHidden id="outputMergeField" value="{!output}"/>
+          <apex:inputHidden id="templateXMLString" value="{!templateXMLString}"/>
+            <apex:pageBlock ><apex:pageblocksection columns="6">
+                  <apex:outputpanel id="l1">
+                      <apex:outputtext value="{!f1Obj}" style="font-weight : bold;"/><br />
+                      <apex:selectList value="{!f1}" size="12" id="f1" style="max-width: 200px;"> 
+                          <apex:selectOptions value="{!f1List}" />
+                              <apex:actionSupport event="onchange" action="{!level1}" rerender="leftField,mergeFieldLists,l2,l3,o,merge_field_output_4" status="statLoad1"/>
+                      </apex:selectList>
+                  </apex:outputpanel>
+                </apex:pageblocksection>
+                <apex:pageblocksection columns="6">
+                <apex:outputpanel id="l2">
+                  <apex:outputtext value="{!f2Obj}" style="font-weight : bold;"/><br />
+                      <apex:selectList value="{!f2}" size="12" id="f2"  rendered="{!NOT(ISNULL(f2List))}" style="max-width: 200px;"> 
+                          <apex:selectOptions value="{!f2List}" />
+                          <apex:actionSupport event="onchange" action="{!level2}" rerender="leftField,mergeFieldLists,l3,o,merge_field_output_4" status="statLoad1"/>
+                      </apex:selectList>
+                  </apex:outputpanel>
+                </apex:pageblocksection>
+                <apex:pageblocksection columns="6">
+                <apex:outputpanel id="l3">
+                  <apex:outputtext value="{!f3Obj}" style="font-weight : bold;"/><br />
+                      <apex:selectList value="{!f3}" size="12" id="f3"  rendered="{!NOT(ISNULL(f3List))}" style="max-width: 200px;"> 
+                          <apex:selectOptions value="{!f3List}" />
+                          <apex:actionSupport event="onchange" action="{!level3}" rerender="leftField,mergeFieldLists,o,merge_field_output_4" status="statLoad1"/>
+                      </apex:selectList>
+                  </apex:outputpanel>
+                  <apex:commandbutton styleclass="input" onclick="insertMergeField();" value="Insert Field" oncomplete="" reRender="" />
+                </apex:pageblocksection></apex:pageBlock>
+      </apex:form>
+        <apex:form id="leftForm" styleClass="input fileInput">
+          <apex:actionFunction action="{!saveToSDocTemplate}" name="saveSSignTemplate" />
+          <apex:inputHidden id="positionXMLInput" value="{!positionXML}"/>
+          <apex:inputHidden id="inputFieldXMLInput" value="{!inputFieldXML}"/>
+          <apex:inputHidden id="signerProfileXMLInput" value="{!signerProfileXML}"/>
+            <apex:inputFile styleclass="chooseFile" value="{!pdfToSSignUpload}" id="file_input_pdf" accept=".pdf" />
+            <!--<apex:commandbutton styleclass="uploadFile" action="{!saveFile}" value="Upload" />-->
+            <iframe class="iframeClass" id="ssign_iframe" src="{!SDPDFUploadEditorURL}" onload="createEventListener()" />
+            <!--<input class="input" type="submit" onclick="sendData()" value="Complete PDF!"/>-->
+            <!--<apex:commandbutton styleclass="input" onclick="saveData();" action="{!saveToSDocTemplate}" value="Complete PDF!" />-->
+          </apex:form>
+		</div>
+	</div>
+    <div id="pages-container" float="right" style="display:inline-block;float:right;width:72%;">
+    </div>
+  </div>
+
+
+ 
+  <style>
+/*START Scrollbar style*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: white !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  background: white !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 114, 114);
+}
+/*END Scrollbar style*/
+  #pages-container {
+    background-color: grey;
+    width: 100%;
+    height: 10in;
+  }
+  .page-container {
+    position: relative;
+    /*float: right;*/
+    padding: .1in;
+    width: 8.5in;
+    max-width: 8.5in;
+    height: 11in;
+    position: relative;          /* where the next element will be automatically positioned */
+    display: inline-block;       /* causes element width to shrink to fit content */
+    left: 50%;                   /* moves left side of image/element to center of parent element */
+    transform: translate(-50%);  /* centers image/element on "left: 50%" position */
+  }
+  .page-image {
+    width: 8.5in;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    height: 11in;
+  }
+  .ssign-clickable {
+    position: absolute; 
+    z-index: 10; 
+    width: 1in; 
+    height: 1in;
+    background-color: black;
+  }
+  </style>
+
+  <apex:includeScript value="{!URLFOR($Resource.SDOC__SDoc, 'jquery-1.8.3.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.SDOC__SDoc,'/resources/js/pdf.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SDOC__SDoc,'/resources/js/pdf.worker.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SDOC__SDoc,'/resources/js/jspdf.js')}" />
+  <script type="text/javascript">
+    j$ = jQuery.noConflict();
+    hideLoadingDiv();
+    hideMergeFieldsList();
+  	var globalCounter = 0;
+  	var pdfCounter = 1;
+    var currentlyDragging = false;
+    var dragAndDropLock = false;
+    var pdfString = '';
+    var idCurrenltyChoosingMergeField = '';
+
+    j$( window ).on( "load", function() {
+      //hideLoadingDiv();
+      loadSavedFileIfExists();
+      addOnMessageHandler();
+    });
+
+    function getInputFieldString(globalCounter, pageNumber, fieldID, leftStyle, topStyle) {
+      return '<div class="droptarget" draggable="true" id="sig' + globalCounter + '.page' + pageNumber + '" ssign_id="' + fieldID +
+             '" style="left: ' + leftStyle + 'px; top: ' + topStyle + 'px; z-index: 10; position: absolute;">[[SDOCS_INPUT ID=' + fieldID + ']]</div>'
+    }
+
+    function loadSavedFields() {
+      //alert('HOWDY: ' + j$("[id$='templateXMLString']").val());
+      var globalCounter = 0;
+      var templateXMLString = j$("[id$='templateXMLString']").val();
+      if(templateXMLString === null || templateXMLString === '')
+        return;
+      //'<div class="mergeFieldDiv" pagenumber="' + pageNumber + '" id="' + inputFieldID + '" style="' + mergeFieldStyle + '">' + inputField.mergeField + '</div>'
+      var val = '<div class="mergeFieldDiv"';
+      var indexes = [], i = -1;
+      while ((i = templateXMLString.indexOf(val, i+1)) != -1){
+          indexes.push(i);
+      }
+      for (var j=0, n=indexes.length; j < n; ++j) {
+        var curIndex = indexes[j] + '<div class="mergeFieldDiv" pagenumber="'.length;
+        var leftStyle = '', topStyle = '', pageNumber='', fieldID = '', mergeFieldValue = '', mergeFieldStyle = '';
+        
+        while(templateXMLString[curIndex] !=='"')
+          pageNumber += templateXMLString[curIndex++];
+        curIndex += 6;
+
+        while(templateXMLString[curIndex] !=='"')
+          fieldID += templateXMLString[curIndex++];
+
+        while(templateXMLString.substring(curIndex, curIndex + 5) !== 'left:')
+          curIndex += 1;
+        curIndex += 5; //Now at the start of the left style
+        
+        while(templateXMLString.substring(curIndex, curIndex + 2) !== 'px')
+          leftStyle += templateXMLString[curIndex++];
+        
+        curIndex += 7; //Need to add for 'px;top:'
+
+        while(templateXMLString.substring(curIndex, curIndex + 3) !== 'px;')
+          topStyle += templateXMLString[curIndex++];
+        curIndex += 3;
+
+        while(templateXMLString[curIndex] !=='"')
+          mergeFieldStyle += templateXMLString[curIndex++];
+        
+        while(templateXMLString[curIndex++] !=='>') {} //Need to go till the actual merge Field value
+
+        while(templateXMLString.substring(curIndex, curIndex + 6) !== '</div>')
+          mergeFieldValue += templateXMLString[curIndex++];
+        
+        var leftStyleFloat = parseFloat(leftStyle) + 9.6; //padding = 9.6px
+        var topStyleFloat = parseFloat(topStyle) + 9.6; //padding = 9.6px
+        var inputFieldString = getInputFieldString(globalCounter, pageNumber, fieldID, leftStyleFloat, topStyleFloat);
+        var newDivToAdd = j$(inputFieldString);
+        newDivToAdd.appendTo("#pdf-div"+pageNumber);
+
+        imgPosX = window.scrollX + document.querySelector("#page-id" + pageNumber).getBoundingClientRect().left;
+        imgPosY = window.scrollY + document.querySelector("#page-id" + pageNumber).getBoundingClientRect().top;
+        setMoveListener(globalCounter++, pageNumber, imgPosX, imgPosY);
+      }
+    }
+
+    //These functions need to be called since we are going to need to get a message from the SDTemplateEditor to save
+    function addOnMessageHandler() {
+      //j$(window).on('message', receiveMessage); // j$(window).on() fails silently for some reason. addEvent works though.
+      addEvent(window, 'message', receiveMessage);
+    }
+
+    function addEvent(element, event, fn) {
+      if (element.addEventListener) element.addEventListener(event, fn, false);
+      else if (element.attachEvent) element.attachEvent('on' + event, fn);
+    }
+
+    var messageEvent;
+    function receiveMessage(event) {
+      /* Since this page has a different domain than the SDTemplateEditor page (due to different
+      managed packages having different domains), we cannot run javascript within this iframe
+      from SDTemplateEditor.page as that triggers the browser's cross-domain scripting rules.
+      To get around this we use postMessage to communicate between the two pages. 
+      This allows SDTemplateEditor to tell S-Sign to save the S-Sign Template when
+      the SDTemplateEditor Save button is clicked, and allows S-Sign to tell SDTemplateEditor to
+      save the S-Docs Tempplate once the S-Sign Template has finished saving. */
+      if (event.data === 'save_pdf_upload_sent') {
+        saveData();
+        saveSSignTemplate();
+        messageEvent = event;
+        saveSDocsTemplate();
+      }
+      else if (event.data === 'save_pdf_upload_sent_and_close') {
+        saveData();
+        saveSSignTemplate();
+        messageEvent = event;
+        saveSDocsTemplateAndClose();
+      }
+      else if (event.data === 'save_pdf_upload_sent_and_preview') {
+        saveData();
+        saveSSignTemplate();
+        messageEvent = event;
+        saveSDocsTemplateAndPreview();
+      }
+    }
+
+    
+    function saveSDocsTemplate() {
+      //We want to send back both an indicator that this is a message back from here
+      //As well as the positionXML and merge field information
+      var messageToSendBack = 'save_pdf_upload_ret|-+-|BREAK|-+-|' + j$("[id$='positionXMLInput']").val() +
+                              '|-+-|BREAK|-+-|' + j$("[id$='inputFieldXMLInput']").val();
+      messageEvent.source.postMessage(messageToSendBack, messageEvent.origin);
+    }
+
+    function saveSDocsTemplateAndClose() {
+      //We want to send back both an indicator that this is a message back from here
+      //As well as the positionXML and merge field information
+      var messageToSendBack = 'save_pdf_upload_ret_and_close|-+-|BREAK|-+-|' + j$("[id$='positionXMLInput']").val() +
+                              '|-+-|BREAK|-+-|' + j$("[id$='inputFieldXMLInput']").val();
+      messageEvent.source.postMessage(messageToSendBack, messageEvent.origin);
+    }
+
+    function saveSDocsTemplateAndPreview() {
+      //We want to send back both an indicator that this is a message back from here
+      //As well as the positionXML and merge field information
+      var messageToSendBack = 'save_pdf_upload_ret_and_preview|-+-|BREAK|-+-|' + j$("[id$='positionXMLInput']").val() +
+                              '|-+-|BREAK|-+-|' + j$("[id$='inputFieldXMLInput']").val();
+      messageEvent.source.postMessage(messageToSendBack, messageEvent.origin);
+    }
+
+    function getLoadingDiv() {
+      return j$('#loading-div');
+    }
+    function getMergeFieldsList() {
+      return j$('[id$="mergeFieldLists"]');
+    }
+    function hideLoadingDiv() {
+      $loadingDiv = getLoadingDiv();
+      $loadingDiv.hide();
+    }
+    function showLoadingDiv() {
+      $loadingDiv = getLoadingDiv();
+      $loadingDiv.css('background-color', 'white');
+      $loadingDiv.show();
+    }
+    function showLoadingDivTransparent() {
+      $loadingDiv = getLoadingDiv();
+      $loadingDiv.css('background-color', 'transparent');
+      $loadingDiv.show();
+    }
+    function showMergeFieldsList() {
+      getMergeFieldsList().show();
+    }
+    function hideMergeFieldsList() {
+      getMergeFieldsList().hide();
+    }
+
+    function onDeleteField(id){
+      j$( "div[ssign_id='"+id+"']" ).remove();
+    }
+
+    function drag_start(event){
+        //Mark where the cursor is when it grabs the object
+        console.log(event.target.getAttribute("ssign_id"));
+        var style = window.getComputedStyle(event.target, null);
+        console.log(event.target.getBoundingClientRect().left, event.target.getBoundingClientRect().top);
+        event.dataTransfer.setData("text/plain",
+          (event.clientX - event.target.getBoundingClientRect().left) + ',' 
+          + (event.clientY - event.target.getBoundingClientRect().top) +
+          ',' + event.target.getAttribute("ssign_id"));
+        //Tell the actionlisteners that this element is being created 
+        currentlyDragging = true;
+    }
+
+    var $fileInputPDF = j$(".chooseFile");
+		$fileInputPDF.on("change", function(evt) {
+			//Get the uploaded file
+		    var file = evt.target.files[0];
+		    //Essentially read the file
+		    var reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload = function () {
+				//Get the string of data from the file, then
+				//cut out the beginning which renders us
+				//just the base64 string of the file
+				console.log("HEY: " + pdfCounter)
+        showLoadingDiv();
+				for(var i = 1; i < pdfCounter; ++i){
+					var oldPDF = j$("#page-id" + (i));
+				 	oldPDF.remove();
+				 	var oldDiv = j$("#pdf-div" + (i));
+				 	oldDiv.remove();
+				}
+				for(var j = 0; j < globalCounter; ++j){
+					var oldEmail = j$('#input-div' + j);
+					oldEmail.remove();
+				}
+
+				pdfCounter = 1;
+                globalCounter = 0;
+                pdfString = reader.result;
+         getText(dataURLtoFile(getB64PDFExample2(), 'pdf_test.pdf'));
+			};
+			//If there is an error, send that to the user
+			reader.onerror = function (error) {
+        hideLoadingDiv();
+			 	console.log('Error: ', error);
+			};
+    });
+    
+    //var $dropContainer = j$(".drop-container")
+    //$dropContainer.on("mouseout", function(evt) {
+    //  saveData();
+    //});
+
+    function saveData(){
+      var sigs = j$('*[id^="sig"]');
+      padding = 0; //TODO - change this so it's not a constant
+      // retXML += "<ssign_field_positions>";
+      // for (i = 0; i < sigs.length; i++) { 
+      // 	id = sigs[i].id
+      // 	var sigId = id.substr(id.lastIndexOf('sig') + 3, id.lastIndexOf('.') - (id.lastIndexOf('sig') + 3));
+      // 	var page = id.substr(id.lastIndexOf('page') + 4);
+      //   var emailInput = j$('#input'+sigId);
+      //   retXML += "<ssign_field_position id=\""+sigId+"\">";
+      //   retXML += "<page>"+page+"</page><top>"+
+      //         (parseInt(sigs[i].style.top) - padding)+"px</top><left>"+
+      //         (parseInt(sigs[i].style.left) - padding)+"px</left>";
+      //   retXML += "</ssign_field_position>";
+      // }
+      // retXML += "</ssign_field_positions>";
+
+
+      var retXML = "{ ";
+      var preventFinalComma = false;
+      for (i = 0; i < sigs.length; i++) {
+        if (preventFinalComma) retXML += ", ";
+        else preventFinalComma = true;
+        id = sigs[i].id
+        var sigId = id.substr(id.lastIndexOf('sig') + 3, id.lastIndexOf('.') - (id.lastIndexOf('sig') + 3));
+        var sigFieldId = sigs.eq(i).attr('ssign_id');
+      	var page = id.substr(id.lastIndexOf('page') + 4);
+        var emailInput = j$('#input'+sigId);
+        retXML += '\"' + sigFieldId + "\" : { \"x\":\"" + (parseInt(sigs[i].style.left) - padding) + "\", " +
+                          "\"y\":\"" + (parseInt(sigs[i].style.top) - padding) + "\", " +
+                          "\"pageNumber\":\"" + page + "\" }";
+      }
+      retXML += " }";
+
+      console.log(retXML);
+      j$("[id$='positionXMLInput']").val(retXML);
+      j$("[id$='inputFieldXMLInput']").val(putInputValuesInXML('field'));
+      j$("[id$='signerProfileXMLInput']").val(putInputValuesInXML('profile'));
+      //alert(putInputValuesInXML('field') + '|' + putInputValuesInXML('profile'));
+      //This will grab our hidden value which sets the positionXML
+      console.log(j$("[id$='positionXMLInput']").val());
+    }
+
+    function drag_enter(e) {
+      e.preventDefault();
+    }
+
+    function drag_over(e) {
+      e.preventDefault();
+    }
+
+    j$(document.body).bind('dragover', function(e) {
+        e.preventDefault();
+    });
+
+    j$(document.body).bind('dragenter', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('drop', function(event) {
+        event.preventDefault();
+        if ( event.target.className == "page-image" && currentlyDragging) {
+            event.target.style.border = "";
+            var dataTransfer = event.dataTransfer.getData("text/plain").split(',');
+            var mouseOffsetX = parseInt(dataTransfer[0],10);
+            var mouseOffsetY = parseInt(dataTransfer[1],10);
+            var divGrabbedId = parseInt(dataTransfer[2],10);
+            console.log(mouseOffsetX, mouseOffsetY, divGrabbedId);
+            eventId = event.target.id;
+            var pageNum = eventId.substr(eventId.lastIndexOf('id')+2);
+            var divGrabbed = j$("#ssign_iframe").contents().find("#ssign_"+divGrabbedId).clone();
+            console.log(divGrabbed);
+            var img = j$("#" + event.target.id);
+            imgPosX = window.scrollX + document.querySelector("#" + event.target.id).getBoundingClientRect().left;
+            imgPosY = window.scrollY + document.querySelector("#" + event.target.id).getBoundingClientRect().top;
+            console.log(imgPosX, imgPosY, event.pageX, event.pageY)
+            padding = 9.6 //Fix, shouldn't be constant!
+            //Left = X value of where event occured - X value of image top left corner + padding of image's container - mouse Offset X value
+            //Top very similar but Y values
+            divGrabbed.css('left', event.pageX - imgPosX + padding - mouseOffsetX);
+            divGrabbed.css('top', event.pageY - imgPosY + padding - mouseOffsetY);
+            divGrabbed.attr("id", "sig"+globalCounter+".page"+pageNum);
+            divGrabbed.css('z-index', 10);
+            divGrabbed.css('position', 'absolute');
+
+            //We want to grab any default style that exists before dropping it on the page
+            /*var currentStyle = divGrabbed.attr("style");
+            var defaultMergeFieldStyle = j$("#ssign_iframe").contents().find('[id$="defautlMergeFieldStyle"]').val();
+            divGrabbed.attr("style", defaultMergeFieldStyle + currentStyle);
+            console.log("HEY YO: " + currentStyle + "|" + defaultMergeFieldStyle);*/
+
+            divGrabbed.appendTo("#pdf-div"+pageNum);
+
+            //var newDiv = j$('<div class="newEmail" id="input-div'+globalCounter+'"><p><strong>Signature'+globalCounter+':</strong></p><p>Email: <input class="emailInput" id="input'+ globalCounter +'" /></p></div>');
+            //newDiv.appendTo('.drop-container');
+            setMoveListener(globalCounter, pageNum, imgPosX, imgPosY);
+            globalCounter = globalCounter + 1;
+            var iframeDivGrabbed = j$("#ssign_iframe").contents().find("#ssign_"+divGrabbedId);
+            iframeDivGrabbed.attr('draggable','False');
+            iframeDivGrabbed.css('color', '#b7c2c6');
+            //console.log(iframeDivGrabbed);
+            
+        }
+        currentlyDragging = false;
+    });
+
+    async function getText(file) {
+      fileReader = new FileReader();
+      fileReader.readAsArrayBuffer(file);
+      fileReader.onload = function(ev) {
+        //console.log(ev);
+        var pdf = PDFJS.getDocument(fileReader.result);
+        return pdf.then(
+          function getPdf(pdf) {
+
+            // add PDF page images to webpage
+            /*for (var pageNum = 1; pageNum <= pdf.numPages; pageNum += 1) {
+              if(pageNum == pdf.numPages){
+              	pdfGetPageHelper(pdf, pageNum, true);
+              }
+              else{
+              	pdfGetPageHelper(pdf, pageNum, false);
+              }
+            }*/
+
+            pdfGetPageHelperNew(pdf);
+
+          }, function(error){
+            hideLoadingDiv();
+            console.log(error);
+          }
+        );
+      };
+    }
+    // waiting on getText to finish completion, or error
+
+    function pdfGetPageHelper(pdf, pageNum, isLast) {
+      pdf.getPage(pageNum).then(function getPageHelloWorld(page) {
+        renderPDF(page, pageNum, isLast);
+      });
+    }
+
+    function setHeight(pageNum){
+    	var pageContainer = j$("#pages-container");
+    	var dropContainerWrapper = j$("#drop-container-wrapper");
+ 		pageContainer.css('height', ((pageNum)*1075.2 + 20)+'px');
+ 		dropContainerWrapper.css('height', ((pageNum)*1075.2 + 20)+'px')
+    }
+
+    function renderPDF(page, pageNum, isLast) {
+      var scale = 1.0;
+      var viewport = page.getViewport(scale);
+      //
+      // Prepare canvas using PDF page dimensions
+      //
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+
+      // Later on maybe create canvas elements via JS and set their width's based
+      // on the document's actual page width
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      //
+      // Render PDF page into canvas context
+      //
+      var task = page.render({canvasContext: context, viewport: viewport})
+      task.promise.then(function(){
+        pdfRenderThen(page, pageNum, canvas, isLast);
+      });
+    }
+
+    function pdfRenderThen(page, pageNum, canvas, isLast) {
+      var pageImageDataURL = canvas.toDataURL('image/png');    
+      var pageContainer = j$('<div class="page-container" id="pdf-div'+pdfCounter+'">');
+      pageContainer.appendTo('#pages-container');
+      var imgPage = j$('<img class="page-image" id="page-id'+pdfCounter+'">');
+      pdfCounter = pdfCounter + 1;
+      imgPage.attr('src', pageImageDataURL);
+      imgPage.appendTo(pageContainer);
+      if(isLast){
+      	setHeight(pageNum);
+      }
+
+      /*var clickableImg = j$('<div class="ssign-clickable"></div>');
+      //clickableImg.src = 'https://ssign-dev-ed--ssign.na73.visual.force.com/resource/1527245575000/'+SSUtil.NAMESPACE_PREFIX+'SSign_Images/sign_here.png';
+      clickableImg.css('left', '.667in');
+      clickableImg.css('top', '2.733in');
+      clickableImg.appendTo(pageContainer);*/
+    }
+
+	function pdfGetPageHelperNew(pdf) {
+	  var maxPages = pdf.pdfInfo.numPages;
+	  var iteratePagesPromises = []; // collecting all page promises
+	  for (var j = 1; j <= maxPages; j++) {
+	    var page = pdf.getPage(j);
+
+	    var pagesData = [];
+	    iteratePagesPromises.push(page.then(function(page) { // add page promise
+
+	      // Increase this to increase the resolution of the PDF page images
+	      var scale = 2.5;
+
+	      var viewport = page.getViewport(scale);
+
+	      // Prepare canvas using PDF page dimensions
+	      var canvas = document.createElement('canvas');
+	      var context = canvas.getContext('2d');
+
+	      // Later on maybe create canvas elements via JS and set their width's based
+	      // on the document's actual page width
+	      canvas.height = viewport.height;
+	      canvas.width = viewport.width;
+
+	      // Render PDF page into canvas context
+	      var task = page.render({canvasContext: context, viewport: viewport})
+	      return task.promise.then(function(){
+	        var pageImageDataURL = canvas.toDataURL('image/png');
+	        pagesData[page.pageIndex + 1] = {"page" : page, "pageImageDataURL" : pageImageDataURL};
+	      });
+	    }));
+	  }
+
+	  /* Getting a PDF page is asynchronous. Creating a canvas and placing a PDF page on it in
+	  order to convert that page to an image is also asynchronous. Hence, we do all of that above
+	  and, for each PDF page, we store the pdf.js page object and the pageImageDataURL in an object
+	  at the (page_number+1)-th index of the pagesData array. We then use Promise.all in order to operate
+	  on this array once all asynchronous operations have completed. The main two operations are
+	  1) add PDF page image to DOM in the correct spot, and 2) find location of [[[SIGNATURE]]] 
+	  and overlay SIGN HERE image on top of it */
+	  Promise.all(iteratePagesPromises).then(function() {
+	    
+	    for (var j = 1; j <= maxPages; j++) {
+	      var page = pagesData[j]["page"];
+	      var pageImageDataURL = pagesData[j]["pageImageDataURL"];
+
+	      var pageContainer = j$('<div class="page-container" id="pdf-div'+pdfCounter+'">');
+		  pageContainer.appendTo('#pages-container');
+		  var imgPage = j$('<img class="page-image" id="page-id'+pdfCounter+'">');
+		  pdfCounter = pdfCounter + 1;
+	      imgPage.attr('src', pageImageDataURL);
+	      imgPage.appendTo(pageContainer);
+
+	      if(j === maxPages){
+          setHeight(maxPages);
+          loadSavedFields(); //Load the saved fields now that all these pages have been loaded
+          hideLoadingDiv();
+		    }
+	    }
+
+
+			/*var pageImageDataURL = canvas.toDataURL('image/png');    
+			var pageContainer = j$('<div class="page-container" id="pdf-div'+pdfCounter+'">');
+			pageContainer.appendTo('#pages-container');
+			var imgPage = j$('<img class="page-image" id="page-id'+pdfCounter+'">');
+			pdfCounter = pdfCounter + 1;
+			imgPage.attr('src', pageImageDataURL);
+			imgPage.appendTo(pageContainer);
+			if(isLast){
+				setHeight(pageNum);
+			}*/
+
+	    /* Use Promise.all in order to run initializeAfterPDFImagesDone() a single time once
+	    all asynchronous page.getTextContent().then() calls have completed (initializeAfterPDFImagesDone() operates
+	    on the images that are inserted in placeSignHereImages() so we must wait for all
+	    asynchronous page.getTextContent().then() calls to finish before running it) */
+	    /*Promise.all(placeImagesPromises).then(function() {
+	      initializeAfterPDFImagesDone();
+	    });*/
+
+	  });
+	}
+
+    // Source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f
+    function dataURLtoFile(dataurl, filename) {
+      var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+      while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new File([u8arr], filename, {type:mime});
+    }
+
+    function getB64PDFExample2() {
+      return pdfString;
+    }
+
+    function createEventListener(draggableDoc) {
+      //var draggableDoc = j$("#ssign_iframe").contents().find("#ssign_"+ssign_id)[0];
+      draggableDoc.addEventListener('dragstart',drag_start,false);
+      draggableDoc.addEventListener('dragenter',drag_enter,false);
+      draggableDoc.addEventListener('dragover',drag_over,false);
+    }
+
+    function setMoveListener(globalCounter, pageNum, imgPosX, imgPosY) {
+      j$('[id^=sig'+globalCounter+']').on('mousedown', function (e) {
+
+          j$(this).addClass('active');
+          
+          var oTop = e.pageY - j$('.active').offset().top;
+          var oLeft = e.pageX - j$('.active').offset().left;
+          
+          j$(this).parents().on('mousemove', function (e) {
+
+              j$('.active').offset({ 
+                  //imgPosY + pageHeight - divHeight 
+                  //imgPosX + pageWidth - divWidth
+                  top: Math.max(Math.min(imgPosY + 1056 - 18, e.pageY - oTop), imgPosY),
+                  left: Math.max(Math.min(imgPosX + 816 - 131,e.pageX - oLeft), imgPosX)
+
+              }).on('mouseup', function () {
+
+                  j$(this).removeClass('active');
+
+              });
+              
+          });
+          
+          return false;    
+      });
+    }
+
+    /*var draggableDoc = j$("#ssign_iframe").contents().find("#ssign_1")[0];
+    console.log(draggableDoc)
+    alert("huh");
+    draggableDoc.addEventListener('dragstart',drag_start,false);*/
+
+    /*---------------------------------------------------------------------
+      START FUNCTIONS FROM SSTemplateEditor.page FOR GETTING SSIGN TEMPLATE XML
+    ---------------------------------------------------------------------*/
+
+    function putInputValuesInXML(type) {
+      var xml = '';
+      xml += '<' + getTagNameForXML(type) + 's>';
+      //I would make this a function but JavaScript won't iterate idsToAdd then
+      //BUT, this essentially grabs all ids that exist in the current state
+      //So lets say you delete Signer Profile ID 1, you would get a Set of ['2']
+      var idsToAdd = new Set();
+      if(type === 'profile'){
+        //Signer Profile Ids
+        //This essentially grabs the number of items of this type to parse through
+        var jQueryNumItems = '[class^="ssign-' + type + '-"][class$="-input"]';
+        var numItems = j$("#ssign_iframe").contents().find(jQueryNumItems).length;
+        //We want a Set because we only want unique ids
+        //alert(jQueryNumItems + '|' + numItems);
+        j$("#ssign_iframe").contents().find(jQueryNumItems).each(function() {
+          //It shouldn't have more than one class, that would ruin things
+          //So, if there's whitespace, GET RID OF IT. Yee haw!
+          var cls = j$(this).attr('class');
+          if(cls.indexOf(' ') < 0){
+            cls = cls.replace('ssign-' + type + '-','');
+            cls = cls.replace('-input','');
+            idsToAdd.add(cls);
+          }
+        });
+      }
+      if(type === 'field'){
+        //Input Fields Ids
+        var jQueryNumItems = '[class^="ssign-' + type + '-"][class$="-input"]';
+        var numItems = j$("#ssign_iframe").contents().find(jQueryNumItems).length;
+        //We want a Set because we only want unique ids
+        j$("#ssign_iframe").contents().find(jQueryNumItems).each(function() {
+          //If this has the string '-input profile-options-picklist'
+          //we want to edit it. Yee haw.
+          var cls = j$(this).attr('class');
+          if(cls.includes('-input profile-options-picklist')){
+            cls = cls.replace('ssign-' + type + '-','');
+            cls = cls.replace('-input profile-options-picklist','');
+            idsToAdd.add(cls);
+          }
+          else if(cls.includes('-input')){
+            cls = cls.replace('ssign-' + type + '-','');
+            cls = cls.replace('-input','');
+            idsToAdd.add(cls);
+          }
+        });
+      }
+
+      //idsToAdd are all the ids we found for either type
+      //WHICH MEANS that you can delete these fields or profiles
+      //without fear of it not being included in the final additions
+      //****NOTE: May be a bug that I just fixed for this in SSTemplateEditor.page @Zach
+      for (let id of idsToAdd) {
+        var xmlInner = '<' + getTagNameForXML(type) + ' id="' + id + '">';
+        var elementsFound = false;
+        console.log('.ssign-' + type + '-' + id + '-input');
+        console.log(j$('.ssign-' + type + '-' + id + '-input'));
+        //This line has been changed to account for the fact
+        //that we are pulling from the iframe
+        j$("#ssign_iframe").contents().find('.ssign-' + type + '-' + id + '-input').each(function() {
+          var valToWrite;
+          if (this.type === 'checkbox') valToWrite = this.checked;
+          else if (j$(this).attr('name') === 'MergeField') 
+            valToWrite = j$("#ssign_iframe").contents().find('#merge-field-input-' + id).val();
+          else if (j$(this).attr('name') === 'MergeFieldStyle'){
+            //We want to grab the default style, unless they have set specific style for this specific
+            //merge field
+            var defaultMergeFieldStyle = j$("#ssign_iframe").contents().find('[id$="defautlMergeFieldStyle"]').val();
+            var additionalMergeFieldStyle = j$("#ssign_iframe").contents().find('#merge-field-style-input-' + id).val();
+            //You can override styles if you put them at the end of a style=""
+            //So, this will give all the default styles, as well as any additional styles (override or not)'
+            //for this specific merge field tag.
+            valToWrite = defaultMergeFieldStyle + additionalMergeFieldStyle;
+          }
+          else valToWrite = j$(this).val();
+          
+          console.log(j$(this));
+          console.log(j$(this).val());
+          xmlInner += wrapInXMLTags(j$(this).attr('name'), valToWrite);
+          elementsFound = true;
+        });
+        xmlInner += '</' + getTagNameForXML(type) + '>';
+        if (elementsFound) xml += xmlInner;
+      }
+      xml += '</' + getTagNameForXML(type) + 's>';
+      return xml;
+    }
+
+    function getTagNameForXML(type) {
+      if (type === 'profile') return 'SignerProfile';
+      else if (type === 'field') return 'InputField';
+      else return 'BAD TYPE';
+    }
+
+    function wrapInXMLTags(tagName, val) {
+      return '<' + tagName + '>' + val + '</' + tagName + '>';
+    }
+    /*---------------------------------------------------------------------
+      END FUNCTIONS FROM SSTemplateEditor.page FOR GETTING SSIGN TEMPLATE XML
+    ---------------------------------------------------------------------*/
+
+
+    //This will grab the tag that has been placed for that field and remove it
+    //This is the function called when Delete Field is pressed
+    function removeSSignInputTag(idToRemove) {
+      j$("div[ssign_id='" + idToRemove + "']").remove();
+    }
+
+    //We may not be able to use this at the current moment
+    //Makes dragging the dropped elements too slow.
+    //INVESTIGATE THIS
+    function updateStyleOfSSignInputTag(idToUpdate) {
+      //This will make it so that on any update to a specific merge field style tag
+      //will edit the style of the text in the input field so they can line these up perfectly
+      var currentStyle = j$("div[ssign_id='" + idToUpdate + "']").attr('style');
+      var defaultMergeFieldStyle = j$("#ssign_iframe").contents().find('[id$="defautlMergeFieldStyle"]').val();
+      var additionalMergeFieldStyle = j$("#ssign_iframe").contents().find('#merge-field-style-input-' + id).val();
+      //Order in what should be taken is Additional Merge Field Style -> Default Merge Style -> Current Style.
+      //Ideally, there shouldn't be any overlap with the current style, though, as it is just positional styles,
+      //not cosmetic.
+      var updatedStyle = currentStyle + defaultMergeFieldStyle + additionalMergeFieldStyle;
+      j$("div[ssign_id='" + idToUpdate + "']").attr('style', updatedStyle);
+    }
+
+    function insertMergeField() {
+      var mergeField = j$("[id$='outputMergeField']").val();
+      j$("#ssign_iframe").contents().find('#merge-field-input-' + idCurrenltyChoosingMergeField).val(mergeField);
+      idCurrenltyChoosingMergeField = '';
+      hideMergeFieldsList();
+    }
+
+    function showMergeFields(id) {
+      idCurrenltyChoosingMergeField = id;
+      showMergeFieldsList();
+    }
+  </script>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!$CurrentPage.parameters.editor=='true'}" layout="none">
+<apex:outputPanel rendered="{!$CurrentPage.parameters.lightning == 'true'}" layout="none">
+  <apex:slds />
+</apex:outputPanel>
+
+<style type="text/css">
+.definition-table-separator {
+  border-bottom: 1px solid #D4DADC;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+</style>
+
+<style type="text/css">
+
+/*START Scrollbar style*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: white !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  background: white !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 114, 114);
+}
+/*END Scrollbar style*/
+
+
+
+
+
+/* Style the tab */
+div.customTab {
+    overflow: hidden;
+    background-color: #F0F0F0;
+    /* This is the header for the thing we drag and drop from, we want it to be sticky */
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+/* Style the buttons inside the tab */
+div.tablinks {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: 0.3s;
+    font-weight: bold;
+    border-bottom: 1px solid #D4DADC;
+    border-right: 1px solid #D4DADC;
+}
+
+/* Change background color of buttons on hover */
+/*div.tablinks:hover {
+    background-color: #ccc;
+}*/
+
+/* Create an active/current tablink class */
+div.tablinks.active {
+  background-color: #ffffff;
+  border-bottom: 1px solid white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+}
+
+button {
+  cursor: pointer;
+}
+</style>
+
+<div class="customTab">
+  <div class="tablinks initial-tabs" onclick="openTab(event, 'ssign-field-tab')">S-Docs Fields</div>
+  <!--<div class="tablinks" onclick="openTab(event, 'ssign-profile-tab')">Signer Profiles</div>
+  <div class="tablinks" onclick="openTab(event, 'ssign-template-tab')">S-Sign Template Settings</div>-->
+</div>
+
+<div id="ssign-field-tab" class="tabcontent">
+  <div id="ssign-field-tables-container"></div>
+  <button onclick="addNewDefinition('field');">Create Another Merge Field</button>
+</div>
+
+ <div id="ssign-template-tab" class="tabcontent">
+  <apex:form >
+    <!--<apex:actionFunction action="{!save}" name="saveSSignTemplate" oncomplete="updateSSignTemplateXML();" />-->
+    <apex:inputHidden id="templateXMLString" value="{!templateXMLString}"/>
+    <apex:actionFunction action="{!loadTemplateXMLString}" name="loadTemplateXMLString" reRender="templateXMLStringPanel" oncomplete=""/>  
+    <apex:actionFunction action="{!save}" name="saveSSignTemplate" />
+    <apex:actionFunction action="{!doNothing}" name="rerenderSSTSettings" reRender="sst-settings" />
+    <apex:actionFunction action="{!doNothing}" name="rerenderSignatureImageLabel" reRender="signature-image-label" />
+  </apex:form>
+</div>
+
+
+<apex:includeScript value="{!URLFOR($Resource.SDOC__SDoc, 'jquery-1.8.3.min.js')}"/>
+<script>
+j$ = jQuery.noConflict();
+
+j$(window).on('load', function() {
+  addOnMessageHandler();
+  initializeTabs();
+  //loadTemplateXMLString();
+  loadSavedFields();
+});
+
+function loadSavedFields() {
+  //alert('HOWDY: ' + j$("[id$='templateXMLString']").val());
+  var templateXMLString = j$("[id$='templateXMLString']").val();
+  //'<div class="mergeFieldDiv" pagenumber="' + pageNumber + '" id="' + inputFieldID + '" style="' + mergeFieldStyle + '">' + inputField.mergeField + '</div>'
+  var val = '<div class="mergeFieldDiv"';
+  var indexes = [], i = -1;
+  while ((i = templateXMLString.indexOf(val, i+1)) != -1){
+      indexes.push(i);
+  }
+  for (var j=0, n=indexes.length; j < n; ++j) {
+    var curIndex = indexes[j] + '<div class="mergeFieldDiv" pagenumber="'.length;
+    var leftStyle = '', topStyle = '', pageNumber='', fieldID = '', mergeFieldValue = '', mergeFieldStyle = '';
+    
+    while(templateXMLString[curIndex] !=='"')
+      pageNumber += templateXMLString[curIndex++];
+    curIndex += 6;
+
+    while(templateXMLString[curIndex] !=='"')
+      fieldID += templateXMLString[curIndex++];
+
+    while(templateXMLString.substring(curIndex, curIndex + 5) !== 'left:')
+      curIndex += 1;
+    curIndex += 5; //Now at the start of the left style
+    
+    while(templateXMLString.substring(curIndex, curIndex + 2) !== 'px')
+      leftStyle += templateXMLString[curIndex++];
+    
+    curIndex += 7; //Need to add for 'px;top:'
+
+    while(templateXMLString.substring(curIndex, curIndex + 3) !== 'px;')
+      topStyle += templateXMLString[curIndex++];
+    curIndex += 3;
+
+    while(templateXMLString[curIndex] !=='"')
+      mergeFieldStyle += templateXMLString[curIndex++];
+    
+    while(templateXMLString[curIndex++] !=='>') {} //Need to go till the actual merge Field value
+
+    while(templateXMLString.substring(curIndex, curIndex + 6) !== '</div>')
+      mergeFieldValue += templateXMLString[curIndex++];
+    
+    //alert('HEY HEY HEY -> left: ' + leftStyle + ' top: ' + topStyle + ' fieldID: ' + fieldID + ' mergeFieldValue: ' + mergeFieldValue + ' pageNumber: ' + pageNumber);
+    addNewDefinition('field', parseInt(fieldID));
+    j$('#merge-field-input-' + fieldID).val(mergeFieldValue);
+    j$('#merge-field-style-input-' + fieldID).val(mergeFieldStyle);
+    var iframeDivAdded = j$("#ssign_"+fieldID);
+    iframeDivAdded.attr('draggable','False');
+    iframeDivAdded.css('color', '#b7c2c6');
+  }
+}
+
+function addOnMessageHandler() {
+  //j$(window).on('message', receiveMessage); // j$(window).on() fails silently for some reason. addEvent works though.
+  addEvent(window, 'message', receiveMessage);
+}
+
+function addEvent(element, event, fn) {
+  if (element.addEventListener) element.addEventListener(event, fn, false);
+  else if (element.attachEvent) element.attachEvent('on' + event, fn);
+}
+
+function addInputFields(templateXMLString){
+    var curId = 1;
+
+}
+
+var messageEvent;
+function receiveMessage(event) {
+  /* Since this page has a different domain than the SDTemplateEditor page (due to different
+  managed packages having different domains), we cannot run javascript within this iframe
+  from SDTemplateEditor.page as that triggers the browser's cross-domain scripting rules.
+  To get around this we use postMessage to communicate between the two pages. 
+  This allows SDTemplateEditor to tell S-Sign to save the S-Sign Template when
+  the SDTemplateEditor Save button is clicked, and allows S-Sign to tell SDTemplateEditor to
+  save the S-Docs Tempplate once the S-Sign Template has finished saving. */
+  if (event.data === 'save' || event.data === 'save_and_close' || event.data === 'save_and_preview') {
+    saveSSignTemplate();
+    messageEvent = event;
+  }
+  if(event.data.contains('update_template_xml|')){
+      var templateXMLString = event.data.split('|')[1];
+      addInputFields(templateXMLString);
+  }
+}
+
+function saveSDocsTemplate() {
+  messageEvent.source.postMessage(messageEvent.data, messageEvent.origin);
+}
+
+/* ---- START TABS ---- */
+function initializeTabs() {
+  openTab(null, 'ssign-field-tab');
+  j$('.initial-tabs').addClass('active');
+}
+function openTab(evt, tabId) {
+  var i, tabcontent, tablinks;
+  j$('.customTab').css('display', 'block');
+  hideTabContents();
+  j$('.tablinks').removeClass('active');
+  j$('#' + tabId).css('display', 'block');
+  if (evt !== null) evt.currentTarget.className += " active";
+}
+function hideTabContents() {
+  j$('.tabcontent').css('display', 'none');
+}
+/* ---- END TABS ---- */
+
+function getSSignInputClassName(type, id) {
+  return 'ssign-' + type + '-' + id + '-input';
+}
+
+function getProfileOptionsHTML() {
+  var profileOptionsHTML = '';
+  j$('.ssign-profile-name-input').each(function() {
+    profileOptionsHTML += '<option value="' + this.value + '">' + this.value + '</option>';
+  });
+  return profileOptionsHTML;
+}
+
+function refreshProfileOptionsPicklists() {
+  var profileOptionsHTML = getProfileOptionsHTML();
+  j$('.profile-options-picklist').each(function() {
+    var $this = j$(this);
+    $this.empty();
+    $this.append(profileOptionsHTML);
+  });
+}
+
+function modifyFieldDefinitionRows(htmlElement) {
+  var $thisElement = j$(htmlElement);
+  var fieldID = $thisElement.attr('ssign-field-id');
+  $requiredFieldRow = j$('#required-field-row-' + fieldID);
+  if ($thisElement.val() !== 'text' && $thisElement.val() !== 'checkbox') {
+    $requiredFieldRow.html('');
+  } else if ($requiredFieldRow.html() === '')  {
+      $requiredFieldRow.html(getRequiredFieldRowHTML(fieldID));
+  }
+  $writeToRow = j$('#writeto-row-' + fieldID);
+  if ($thisElement.val() === 'signature' || $thisElement.val() === 'initials' || $thisElement.val() === 'mergeField') {
+    $writeToRow.html('');
+  } else if ($writeToRow.html() === '')  {
+    $writeToRow.html(getWriteToRowHTML(fieldID));
+  }
+
+  $mergeFieldRow = j$('#merge-field-tr-' + fieldID);
+  if ($thisElement.val() !== 'mergeField') {
+    $mergeFieldRow.html('');
+  } else if ($mergeFieldRow.html() === '')  {
+    $mergeFieldRow.html(getMergeFieldRowHTML(fieldID));
+  }
+
+  $mergeFieldStyleRow = j$('#merge-field-style-tr-' + fieldID);
+  if ($thisElement.val() !== 'mergeField') {
+    $mergeFieldStyleRow.html('');
+  } else if ($mergeFieldStyleRow.html() === '')  {
+    $mergeFieldStyleRow.html(getMergeFieldStyleRowHTML(fieldID));
+  }
+
+  $mergeFieldRowBtn = j$('#merge-field-btn-' + fieldID);
+  if ($thisElement.val() !== 'mergeField') {
+    $mergeFieldRowBtn.hide();
+  } else {
+    $mergeFieldRowBtn.show();
+  }
+}
+
+function getMergeFieldRowHTML(fieldID) {
+  return `
+  <td style="padding-top:4px;">
+    Merge Field:
+  </td>
+  <td style="padding-top:4px;">
+    <input name="MergeField" id="merge-field-input-` + fieldID + `">
+  </td>
+  `;
+}
+
+function getMergeFieldStyleRowHTML(fieldID) {
+  return `
+  <td style="padding-top:4px;">
+    Merge Field Additional Style<br />(Override Default):
+  </td>
+  <td style="padding-top:4px;">
+    <!--<input name="MergeFieldStyle" id="merge-field-style-input-` + fieldID + `" oninput="updateStyleOfSSignInputTag(` + fieldID + `)">-->
+    <input name="MergeFieldStyle" id="merge-field-style-input-` + fieldID + `">
+  </td>
+  `;
+}
+
+function getRequiredFieldRowHTML(fieldID) {
+  return `
+  <td style="padding-top:4px;">
+    Required:
+  </td>
+  <td style="padding-top:4px;">
+    <input name="Required" type="checkbox" class="` + getSSignInputClassName('field', fieldID)  + `" />
+  </td>`;
+}
+
+function getWriteToRowHTML(fieldID) {
+  return `
+  <td style="padding-top:4px;">
+    Write signer input<br />to the following<br />field in Salesforce:
+  </td>
+  <td style="padding-top:4px;">
+    <input name="WriteTo" class="` + getSSignInputClassName('field', fieldID)  + `">
+  </td>`;
+}
+
+function isPDFUpload() {
+  return '{!isPDFUpload}' === 'true';
+}
+
+var nextID = { 'field' : 1, 'profile' : 1 };
+function addNewDefinition(type, id) {
+  if (id === null || id === undefined) {
+    id = nextID[type];
+    nextID[type] += 1;
+  }
+  else if (id >= nextID[type] ) {
+    nextID[type] = id + 1;
+  }
+  var inputClassName = getSSignInputClassName(type, id);
+  j$('#ssign-' + type + '-tables-container').append(getDefinitionTableHTML(inputClassName, type, id));
+
+  if (type === 'field') {
+    modifyFieldDefinitionRows(j$('#ssign-field-type-' + id)[0]);
+    if (isPDFUpload()) {
+      var draggableDivString = '<div class="droptarget" draggable="true" id="ssign_'+ id +'" ssign_id="' + id + '">[[SDOCS_INPUT ID=' + id + ']]</div>';
+      var $draggableDiv = j$(draggableDivString);
+      j$('#draggable-div-td-' + id).append($draggableDiv);
+      parent.createEventListener($draggableDiv[0]);
+    }
+  } else if (type === 'profile') {
+    refreshProfileOptionsPicklists();
+  }
+}
+function removeDefinition(type, id) {
+  j$('#ssign-' + type + '-definition-' + id).remove();
+}
+
+function getDefinitionTableHTML(inputClassName, type, id) {
+  if (type === 'field') return getFieldTableHTML(inputClassName, type, id);
+  else if (type === 'profile') return getProfileTableHTML(inputClassName, type, id);
+  else alert('getDefinitionTableHTML(): type not found: ' + type);
+}
+
+function getFieldTableHTML(inputClassName, type, id) {
+  var ssignInputToCopyID = 'ssign-input-to-copy-' + id;
+  var ssignInputResultRow;
+  if (isPDFUpload()) {
+    ssignInputResultRow = `<tr><td></td><td id="draggable-div-td-` + id +`"></td></tr>`;
+  } else {
+    ssignInputResultRow = '' +
+    `<tr title="Keyboard shortcut for paste: Ctrl-V on Windows, Command-V on Mac">
+      <td style="padding-top:4px;">
+        Paste this field into your template:
+      </td>
+      <td style="padding-top:4px;">
+        <input readonly value="[[SDOCS_INPUT ID=` + id + `]]"`
+        //onmouseover="this.select();"
+        //onmouseleave="document.getSelection().removeAllRanges();"
+        + `onclick="copyToClipboard('` + ssignInputToCopyID + `');"
+        id="` + ssignInputToCopyID + `"/>
+        <button style="padding: 4px;" 
+        onclick="copyToClipboard('` + ssignInputToCopyID + `');">
+          Copy to Clipboard
+        </button>
+      </td>
+    </tr>`;
+  }
+  return '' +
+  `<div id="ssign-field-definition-` + id + `">
+    <table class="ssign-field-table">
+      `/*<tr>
+        <td style="padding-top:4px;">
+        S-Sign Field ID:
+        </td>
+        <td style="padding-top:4px;">
+        ` + id +  `
+        </td>
+      </tr>*/
+      + `<tr>
+        <td style="padding-top:4px;">
+          Type: 
+        </td>
+        <td style="padding-top:4px;">
+          <select name="Type" class="` + inputClassName  + ` ssign-field-type" onchange="modifyFieldDefinitionRows(this);" ssign-field-id="` + id + `" id="ssign-field-type-` + id + `">
+            `//<option value="signature">Signature</option>
+            //<option value="initial">Initial</option>
+            //+ `<option value="text">Text</option>
+            //<option value="date">Date</option>
+            /*+ `<option value="checkbox">Checkbox</option>
+            <option value="initials">Initials</option>*/
+            + `<option value="mergeField">Merge Field</option>
+          </select>
+
+          <button id="merge-field-btn-` + id + `"
+          onclick="parent.showMergeFields('` + id + `');">
+            Select Merge Field
+          </button>
+        </td>
+      </tr>
+      `/*<tr>
+        <td style="padding-top:4px;">
+          Profile:
+        </td>
+        <td style="padding-top:4px;">
+          <select name="Profile" class="` + inputClassName  + ` profile-options-picklist">
+            ` + getProfileOptionsHTML() + `
+          </select>
+        </td>
+      </tr>*/
+      + `<tr id="merge-field-tr-` + id + `" name="MergeField" class="` + inputClassName  + `"></tr>
+      <tr id="merge-field-style-tr-` + id + `" name="MergeFieldStyle" class="` + inputClassName  + `"></tr>`
+      /*<tr id="required-field-row-` + id + `" class="required-field-row"></tr>
+      <tr id="writeto-row-` + id + `" class="writeto-row"></tr>
+    `*/
+    + ssignInputResultRow + 
+    `
+    </table>
+    <div style="padding-top:4px;">
+      <button
+      onclick="removeDefinition('field', '` + id + `');parent.removeSSignInputTag('` + id + `')">
+        Delete Field
+      </button>
+    </div>
+    <div class="definition-table-separator" />
+  </div>`;
+}
+
+function getProfileTableHTML(inputClassName, type, id) {
+  return '' +
+  `<div id="ssign-profile-definition-` + id + `">
+    <table class="ssign-profile-table">
+      <tr>
+        <td style="padding-top:4px;">
+        Signer Profile ID:
+        </td>
+        <td style="padding-top:4px;">
+        ` + id +  `
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-top:4px;">
+          Profile Name:
+        </td>
+        <td style="padding-top:4px;">
+          <input name="ProfileName" value="Signer ` + id + `" 
+          class="` + inputClassName  + ` ssign-profile-name-input"
+          onchange="refreshProfileOptionsPicklists();" />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-top:4px;">
+          Email Address:
+        </td>
+        <td style="padding-top:4px;">
+          <input name="Email"
+          class="` + inputClassName  + `" />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding-top:4px;">
+          Signing Order:
+        </td>
+        <td style="padding-top:4px;">
+          <input name="RoutingPosition" value="` + id + `"
+          class="` + inputClassName  + `" />
+        </td>
+      </tr>
+    </table>
+    <button onclick="removeDefinition('profile', '` + id + `');">Delete Profile</button>
+    <div class="definition-table-separator" />
+  </div>`;
+}
+
+function copyToClipboard(elementID) {
+  document.getElementById(elementID).select();
+  document.execCommand('copy');
+  //document.getSelection().removeAllRanges();
+}
+
+function wrapInXMLTags(tagName, val) {
+  return '<' + tagName + '>' + val + '</' + tagName + '>';
+}
+
+/* When we build the XML string to store in Salesforce, we loop through all 
+<input name="some_name" value="some_value" /> 
+and all <select name="some_name" or value="some_value">...</select>
+in the order that they appear in the DOM and add <some_name>some_value</some_name>
+to the XML string */
+ </script>
+</apex:outputPanel>
+</apex:page>

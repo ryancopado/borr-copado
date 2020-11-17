@@ -1,0 +1,66 @@
+<apex:page controller="boxmigrate.BoxMigration" action="{!checkCode}" id="thePage">
+  <apex:form id="theForm">
+    <div id="content"></div>
+   <!-- <apex:actionFunction name="refreshMyPanel" reRender="processingStatus"/>-->
+    <apex:pageBlock title="Box Migration Tool" id="pb">
+      <apex:pageBlocksection title="Box Authentication Settings" columns="1" collapsible="false">
+          <apex:pageMessages id="msg"/>
+          <apex:outputPanel rendered="{!isAuthorized}" >
+            <apex:outputText > Successfully connected to your Box account as:&nbsp; </apex:outputText><br/>
+            <apex:image value="{!currentUser.avatar_url}" /><br/>
+            <apex:outputText value="{!currentUser.login}" /><br/>
+            <apex:outputText >User ID:&nbsp;</apex:outputText>
+            <apex:outputText value="{!directoryInfo.boxmigrate__Box_User_Id__c}" />
+          </apex:outputPanel>
+            <apex:outputText rendered="{!!isAuthorized}"> You have not connected to your Box account yet. </apex:outputText>
+         </apex:pageBlocksection>
+         <apex:commandButton action="{!requestToken}" value="Connect to Box" rendered="{!!isAuthorized}"/>
+         <apex:commandButton action="{!revokeToken}" value="Disconnect from Box" rendered="{!isAuthorized}"/>
+         <br/>
+         <br/>
+         <apex:pageBlockSection title="Box Migration Settings" columns="2" collapsible="false" >
+             <apex:outputText >
+             Use this section to migrate Box for Salesforce V2 documents and folder structure to the Box for Salesforce V3 folder structure.
+             </apex:outputText>
+             <br/>
+             <br/> 
+             <apex:inputField label="Old SF Root Directory Id" value="{!directoryInfo.boxmigrate__Old_SF_Root_Directory_ID__c}"/>
+             <apex:inputField label="New SF Root Directory Id" value="{!directoryInfo.boxmigrate__New_SF_Root_Directory_ID__c}" />
+             <apex:inputField label="Test Folder Move" value="{!directoryInfo.boxmigrate__Test_Move__c}"/>
+             <apex:inputField label="Test Move Size" value="{!directoryInfo.boxmigrate__Test_Move_Size__c}"/>
+       </apex:pageBlockSection>
+
+       <apex:pageBlockSection title="Migration Status" columns="2" collapsible="false" id="pbs">
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_Folders_Complete__c}" id="getFoldersComplete"/>
+        <apex:outputText id="totalFolders" value="{!boxSummary.boxmigrate__Total_Count__c} Total Folders"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_SFProperties_Complete__c}" id="getSFPropertiesComplete"/>
+        <apex:outputText id="sfTotal" value="{!boxSummary.boxmigrate__Get_SFProperties_Total__c} of {!boxSummary.boxmigrate__Total_Count__c} folders with Salesforce associations retrieved"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_Prefix_Subfolder_Complete__c}" id="getPrefixComplete"/>
+        <apex:outputText id="prefixTotal" value="{!boxSummary.boxmigrate__Get_Prefix_Subfolder_Total__c} of {!boxSummary.boxmigrate__Total_Count__c} plural subfolder names populated"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_Subfolder_Names_Complete__c}" id="getSubfolderNamesComplete"/>
+        <apex:outputText id="getSubfoldNameTotal" value="{!boxSummary.boxmigrate__Get_SubFolder_Names_Total__c} subfolder types found"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_Subfolder_Ids_Complete__c}" id="getSubfolderIdsComplete"/>
+        <apex:outputText id="getSubfolderIdTotal" value="{!boxSummary.boxmigrate__Get_Subfolder_Ids_Total__c} subfolder ids found"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Create_Subfolder_Ids_Complete__c}" id="createSubfolderIdsComplete"/>
+        <apex:outputText id="createFolderIdTotal" value="{!boxSummary.boxmigrate__Create_Subfolder_Ids_Total__c} subfolder ids created"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Get_Parent_Ids_Complete__c}" id="parentIdsComplete"/>
+        <apex:outputText id="getParentIdsTotal" value="{!boxSummary.boxmigrate__Get_Parent_Id_Total__c} of {!boxSummary.boxmigrate__Total_Count__c} parent ids assigned to folders"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Create_FRUP_Entry_Complete__c}" id="frupEntryComplete"/>
+        <apex:outputText id="frupEntryTotal" value="{!boxSummary.boxmigrate__Create_FRUP_Entry_Total__c} of {!boxSummary.boxmigrate__Total_Count__c} FRUP entries created"/>
+        <apex:inputCheckbox value="{!boxSummary.boxmigrate__Move_Folders_Complete__c}" id="moveFoldersComplete"/>
+        <apex:outputText id="moveFolderTotal" value="{!boxSummary.boxmigrate__Move_Folder_Total__c} of {!boxSummary.boxmigrate__Total_Count__c} folders moved"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Save" action="{!saveList}" rerender="batchInstance, msg" disabled="{!IF(isProcessing, true,false)}"/>
+        <apex:commandButton value="Migrate" action="{!convertFolders}" rerender="batchInstance, msg" disabled="{!IF(isProcessing, true,false)}"/>
+        <apex:commandButton value="Resume Migration" action="{!restart}" rerender="batchInstance,msg" rendered="{!restartProcess}" disabled="{!IF(isProcessing, true,false)}"/>
+        <apex:commandButton value="Refresh Stats" action="{!refreshStats}" rerender="pbs" rendered="{!isProcessing}"/>
+      </apex:pageBlockButtons>
+
+      <apex:outputPanel id="batchInstance">
+        <apex:outputText value="{!batchInstanceId}">
+        </apex:outputText>
+      </apex:outputPanel>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

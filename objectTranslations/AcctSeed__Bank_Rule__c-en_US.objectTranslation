@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- If selected, Bank Rules will be applied when processing Bank Transactions. --></help>
+        <label><!-- Active --></label>
+        <name>AcctSeed__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apply the Bank Rule to transactions from all financial institution accounts. --></help>
+        <label><!-- Apply To All Financial Accounts --></label>
+        <name>AcctSeed__Apply_To_All_Financial_Accounts__c</name>
+    </fields>
+    <fields>
+        <help><!-- For your reference, describe what the Bank Rule does. --></help>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evaluation Type --></label>
+        <name>AcctSeed__Evaluation_Type__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Any</masterLabel>
+            <translation><!-- Any --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- When a Bank Rule runs relative to other bank rules. A rule with a priority of 1 will run before a rule with priority of 2. --></help>
+        <label><!-- Priority --></label>
+        <name>AcctSeed__Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of source document to create if the Bank Rule&apos;s conditions are met. --></help>
+        <label><!-- Source Record Type --></label>
+        <name>AcctSeed__Source_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash Disbursement</masterLabel>
+            <translation><!-- Cash Disbursement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cash Receipt</masterLabel>
+            <translation><!-- Cash Receipt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Journal Entry</masterLabel>
+            <translation><!-- Journal Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The type of transactions to which the Bank Rule applies. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash In</masterLabel>
+            <translation><!-- Cash In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cash Out</masterLabel>
+            <translation><!-- Cash Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer</masterLabel>
+            <translation><!-- Transfer --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,201 @@
+<apex:page showChat="false" doctype="html-5.0" standardController="NVMStatsSF__NVM_Agent_Summary__c" showHeader="false" sidebar="false" readOnly="true">
+
+<!-- Agent Time Table courtesy of Iain Clements -->
+
+<apex:form >    
+
+<apex:inputHidden value="{!NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Key_Event_String__c}"/> 
+<apex:inputHidden value="{!NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__ChkStr__c}"/>
+    
+    <style>
+table,td,th {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    padding: 5px;
+    width: 200px;
+    min-width: 175px;
+}
+
+tr {
+    
+}
+
+tr.odd {
+    color: red;
+    background-color: lightblue;
+}
+
+th {
+    background-color: lightgray;
+    color: black;
+    width: 25%;
+    text-align: left;
+}
+
+td {
+    color: black;
+}
+</style>
+
+
+
+
+<div align="center">
+    <table>
+
+        <thead>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>Duration</th>
+            <th>Activity</th>
+        </thead>
+        <tr>
+            <td colspan="4">Filter: <input type="search"
+                class="light-table-filter" data-table="order-table"
+                placeholder="Filter"></input>
+
+            </td>
+        </tr>
+    </table>
+</div>
+<apex:outputText >  
+    <script>
+    var order_list = '<apex:outputText value="{!HTMLENCODE(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Key_Event_String__c)}" escape="false"/>';
+    var code_list = '<apex:outputText value="{!HTMLENCODE(NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__ChkStr__c)}" escape="false"/>';
+    </script>
+    
+</apex:outputText>
+
+
+    <script type="text/javascript">
+
+
+
+// This is the table filter:
+
+(function(document) {
+    'use strict';
+    
+    var LightTableFilter = (function(Arr) {
+    
+        var _input;
+        
+        function _onInputEvent(e) {
+            _input = e.target;
+            var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+            Arr.forEach.call(tables, function(table) {
+                Arr.forEach.call(table.tBodies, function(tbody) {
+                    Arr.forEach.call(tbody.rows, _filter);
+                });
+            });
+        }
+        
+        function _filter(row) {
+            var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+            row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+        }
+        
+        return {
+            init: function() {
+                var inputs = document.getElementsByClassName('light-table-filter');
+                Arr.forEach.call(inputs, function(input) {
+                    input.oninput = _onInputEvent;
+                });
+            }
+        };
+        
+    })(Array.prototype);
+    
+    document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+            LightTableFilter.init();
+        }
+    });
+
+})(document);
+
+
+
+
+function makeTable(order_list, code_list) {
+
+    // Turn input strings into arrays
+    var o = order_list.split('|');
+    var popped = o.pop();
+    var c = code_list.split('-');
+    popped = c.pop();
+    //document.write(popped);
+    
+    
+    // Setup DOM elements
+    var thediv = document.createElement('div');
+    thediv.setAttribute("align", "center");
+    
+    var table = document.createElement('table');
+    table.setAttribute("class", "order-table table");
+    var tbody = table.appendChild(document.createElement('tbody'));
+    
+    var oRow2 = document.createElement('tr');
+    var row2;
+    
+    
+    oRow2.appendChild(document.createElement('td'));
+    oRow2.appendChild(document.createElement('td'));
+    oRow2.appendChild(document.createElement('td'));
+    oRow2.appendChild(document.createElement('td'));
+    
+    table.appendChild(tbody);
+    
+    
+    function sec2str(t){
+    
+        var d = (Math.floor(t/86400) % 24),
+        h = ('0'+Math.floor(t/3600) % 24).slice(-2),
+        m = ('0'+Math.floor(t/60)%60).slice(-2),
+        s = ('0' + t % 60).slice(-2);
+        return (d>0?d+'d ':'')+(h>0?h+':':'')+(m>0?m+':':'00:')+s; //+(t>60?s:s+'s');
+    }
+    
+    
+    // Write rest of table - start with loop
+    //To show latent Ready Presences, use debug url parameter
+    var dbg="{!$CurrentPage.parameters.debug}"; 
+
+    for (var i=0, alternate = 0; i <= o.length && i < c.length; i++) {
+        if (dbg != "" || c[i].lastIndexOf("R") < 0 && c[i].lastIndexOf("S") < 0) {
+	        row = tbody.appendChild(oRow2.cloneNode(true));
+	        
+	        //Find the : character to mark duration - characters after that are duration
+	        //Updated for new API - now colons can be in State names
+	        var pos = o[i].lastIndexOf(":");
+	        
+	        var starttime = o[i].slice(0,5);
+	        
+	        var duration = o[i].slice(pos+1);
+	        
+	        //Calculate end time based on Start + Duration
+	        var endtime = parseInt(starttime) + parseInt(duration);
+	        
+	        if (!(alternate++ % 2)){ 
+	            row.setAttribute("class", "odd");
+	        } 
+	        row.childNodes[0].appendChild(document.createTextNode(sec2str(starttime)));
+	        row.childNodes[1].appendChild(document.createTextNode(sec2str(endtime)));
+	        row.childNodes[2].appendChild(document.createTextNode(sec2str(duration)));
+	        row.childNodes[3].appendChild(document.createTextNode(o[i].slice(5, pos))); 
+        }
+    } //end of for loop
+    
+    document.body.appendChild(thediv);
+    
+    thediv.appendChild(table);
+}
+
+window.onload = function() {
+    makeTable(order_list, code_list);
+} 
+</script>
+
+</apex:form>
+
+</apex:page>

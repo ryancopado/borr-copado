@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Status</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$Activity_Type_NEW__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$Owner</field>
+    </columns>
+    <description>Full (non-Pardot) activity history for contacts that met at the booth, registered for breakfast or attended the seminar.</description>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Met at the Booth,Registered for breakfast</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers.Activities$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Emily Tam</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers.Activities$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Pardot list</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.ContactCampaignMembers$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Campaign.ContactCampaignMembers$Account</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2015 League of CA Cities campaign activi</name>
+    <params>
+        <name>scopeid</name>
+        <value>70134000001M2xm</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_with_Contacts_w_wo_Activities__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Campaign.ContactCampaignMembers$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_PREVCUR2FY</interval>
+    </timeFrameFilter>
+</Report>

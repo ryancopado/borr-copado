@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_76753455</developerName>
+        <masterLabel>Employee Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c.AcctSeed__Employee__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Martin Zanghi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dean Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Long</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Albrecht</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kip Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gregory Gibbons</sourceValue>
+            </sourceValues>
+            <value>Civil PE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Brandon Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Frantz Renard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Melissa Samaroo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louisa Deering</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carli Shroyer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Weston Standish</sourceValue>
+            </sourceValues>
+            <value>Associate Civil Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tim Lee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Katlyn Lawver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Lagasse</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brandon Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ryan Stair</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bruce Soloyna</sourceValue>
+            </sourceValues>
+            <value>Senior Design Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lucas Danker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rohit Patil</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shanthini Sivaharan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Gebo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Emily Field</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Megan Belval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Caleb Letourneau</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dylan Lucas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Norman Hallissey</sourceValue>
+            </sourceValues>
+            <value>Design Engineer</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_5598885</developerName>
+        <masterLabel>Pre and Post Handoff Groupings</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card_Line__c.Project_Grouping__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>0: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>1: 50 Set Development</sourceValue>
+            </sourceValues>
+            <value>1. Pre-Handoff</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2: CD IFR Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3: CD IFC Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>4: Post CD Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>5: CD Admin</sourceValue>
+            </sourceValues>
+            <value>2. Post Handoff</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>AcctSeed__Time_Card_Line__c.Project_Grouping__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Employee__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Total_Hours__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>david albrecht,steve long,dean smith,gregory gibbons,kip smith,melissa samaroo,brandon smith,louisa deering,carli shroyer,weston standish,marty zanghi,frantz renard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>katlyn lawver,tim lee,john lagasse,ryan stair,emily field,rohit patil,lucas danker,caleb letourneau,dylan lucas,megan belval,norman hallissey,shanthini Sivaharan,bruce soloyna,brandon taylor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>38 Happy Hollow Road - Winchendon,30 Washburn Rd - Freetown,Route 14A - Seneca - South - primary Project for records,12 River Street - Palmer,328 Partridgeville Road - Athol,529 Old Chilson Road A - Ticonderoga,15 Wilmarth Lane - Plainville,453 Rounseville Road - Rochester,2662 IL Rt 26N - Stephenson,0 Albany Post Road A - Montgomery,6274 N Dakota Road - Stephenson,6140 Route 209 - Town of Rochester,219 South Main Street - Attleboro,959 West Street - Gardner,271 Breckenridge Street - Palmer,147 Williamsville Road - Hubbardston,Shepards Park - Westerlo (West) Primary,138 Brick Church - Brunswick - West - Primary for SF records,8 Natalie Way - Plymouth,35 Eastman Street,18219 IL Route 76 - Boone,Off Airport Road - Rochester - West - Primary,273 Finchville Turnpike - Mount Hope - 1 of 3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_5598885</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_76753455</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Dev Eng Timecard Hours - 2018 Handed off</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Time_Card__c$AcctSeed__Time_Card_Line__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

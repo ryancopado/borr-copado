@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>email to sales analyst that analysis request has been submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Analysis Request Submitted</name>
+    <style>none</style>
+    <subject>An analysis request for {!Analysis_Request__c.Opportunity__c} was submitted by {!Analysis_Request__c.CreatedBy}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

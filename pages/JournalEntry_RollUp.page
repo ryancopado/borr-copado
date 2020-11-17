@@ -1,0 +1,16 @@
+<apex:page standardController="AcctSeed__Journal_Entry__c" extensions="JournalEntry_RollUpCtlExt" tabStyle="AcctSeed__Journal_Entry__c" action="{!executeRollUps}">
+    
+    <apex:form >
+        <apex:sectionHeader title="Journal Entry: Execute Rollups" subtitle="{!je.Name}" />
+        
+        <apex:pageBlock >
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

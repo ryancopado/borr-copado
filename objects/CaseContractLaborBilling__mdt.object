@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores information to determine Labor Billing value on a completed case with respect to the number of annual contract built-in service visits of a particular type.</description>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of the date field on the case that records the original date that case was completed.</inlineHelpText>
+        <label>Case Completed Date</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed_Visits__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of the completed visits field on the contract object.</inlineHelpText>
+        <label>Completed Visits</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Maintenance_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>If left blank, means Maintenance Type is not applicable.</inlineHelpText>
+        <label>Maintenance Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordType_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>RecordType Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Values of the Status field that triggers the calculation of Labor Billing.</inlineHelpText>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Visits_Number__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of field on the contract object that records the number of annual service visits built into contract.</inlineHelpText>
+        <label>Visits Number</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CaseContractLaborBilling</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Completed_Date__c</columns>
+        <columns>Maintenance_Type__c</columns>
+        <columns>RecordType_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Visits_Number__c</columns>
+        <columns>Completed_Visits__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>CaseContractLaborBillings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

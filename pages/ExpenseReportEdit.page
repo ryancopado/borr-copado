@@ -1,0 +1,411 @@
+<apex:page standardController="AcctSeed__Expense_Report__c" id="thePage" extensions="ExpenseReportControllerExt" sidebar="false" lightningStylesheets="true">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        function disableButtons(label) {
+            j$('.btn').each(function(elem) {
+                this.className = 'btnDisabled';
+                this.disabled = true;
+                this.value = label;
+            })
+        }
+    </script>    
+    <style>
+        .rich-tabpanel-content {
+           font-size:100%
+        }
+        
+        .defaultTab {
+            cursor:pointer;
+            font-weight:bold;
+            font-size:12px;
+        }                
+    </style>     
+    <apex:form id="theForm">
+        
+        <apex:pageBlock id="thePageBlockLock" title="Expense Report Entry Form" rendered="{!isLocked}">
+            <apex:outputPanel >
+                <span style="font-weight: bold; font-size: 10pt;">Cannot add or edit Expense Lines of an Expense Report that is Pending Approval, Approved or Posted.</span>
+                <p></p>
+                Click <a href="/{!erId}">here</a> to return to the previous page.
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="thePageBlock" title="Expense Report Entry Form" rendered="{!isLocked = false}">
+            <apex:pageMessages />
+            <apex:pageBlockButtons id="buttonsTop" >
+                <apex:actionStatus id="saveStatus" onstart="disableButtons('Saving...')"/>
+                <apex:commandButton id="recalcButtonTop" status="saveStatus" value="Save & Refresh" reRender="theForm" action="{!saveAndRefresh}"/>
+                <apex:commandButton id="saveButtonTop" status="saveStatus" value="Save & Complete" reRender="theForm" action="{!saveAndClose}"/>                     
+                <apex:commandButton id="cancelButtonTop" value="Cancel" immediate="true" action="{!cancel}"/> 
+            </apex:pageBlockButtons>            
+            <apex:pageBlockSection id="reportData" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput" >
+                       <apex:outputPanel styleClass="requiredBlock"/>
+                        <apex:inputField value="{!expReport.Name}" required="false"/>
+                         <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isNameError}">
+                            <strong>Error:</strong> You must enter a value                                      
+                         </apex:outputPanel>                                     
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >     
+                    <apex:outputLabel value="Employee"/> 
+                    <apex:outputPanel layout="block" styleClass="requiredInput" >           
+                       <apex:outputPanel styleClass="requiredBlock"/>
+                        <apex:inputField value="{!expReport.AcctSeed__Employee__c}"/>   
+                         <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isEmployeeError}">
+                            <strong>Error:</strong> You must enter a value                                      
+                         </apex:outputPanel>                                     
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>                                                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Total Expenses"/>
+                    <apex:outputText id="expenseAmountTotal" value="{0, number, $###,##0.00}">
+                        <apex:param value="{!expenseAmountTotal}"/>
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!editReadOnlyFields}" >
+                    <apex:outputLabel value="Status"/> 
+                    <apex:outputPanel layout="block" styleClass="requiredInput" > 
+                    <apex:outputPanel styleClass="requiredBlock"/>
+                    <apex:inputField value="{!expReport.AcctSeed__Status__c}"/> 
+                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isStatusError}">
+                            <strong>Error:</strong> You must enter a value                                      
+                         </apex:outputPanel>                                     
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem> 
+               <apex:pageBlockSectionItem rendered="{!editReadOnlyFields = false}" >
+                    <apex:outputLabel value="Status"/> 
+                    <apex:outputPanel layout="block" styleClass="requiredInput" > 
+                    <apex:outputPanel styleClass="requiredBlock"/>
+                    <apex:outputField value="{!expReport.AcctSeed__Status__c}"/> 
+                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isStatusError}">
+                            <strong>Error:</strong> You must enter a value                                      
+                         </apex:outputPanel>                                     
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Manager"/>
+                    <apex:outputfield value="{!expReport.Manager_for_Approval__c}"/> 
+                </apex:pageBlockSectionItem>
+                <br/>
+            </apex:pageBlockSection> 
+            <!-- Create Tab panel -->
+            <apex:tabPanel switchType="client" selectedTab="tab1" id="ExpenseTabPanel" tabClass="defaultTab">
+                <apex:tab label="Expenses" name="tab1" id="tabOne">
+                    <apex:outputPanel id="tableSection1">
+                    <table class="list " border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr class="headerRow ">
+                            <td style="width:1%">&nbsp;</td>
+                            <td style="width:12%">Project</td>
+                            <td style="width:15%">Project Task</td>
+                            <td style="width:8%">Date</td>
+                            <td style="width:15%">Expense Type</td>
+                            <td style="width:10%">Vendor</td>
+                            <td style="width:8%">Amount</td>
+                            <td>Internal Comment</td>
+                            <td>Invoice Comment</td>
+                        </tr>
+                        <apex:repeat value="{!expensesList}" var="item" id="billableExpenses" >
+                        <tr>                           
+                            <td >
+                                <apex:actionStatus id="mydeleteStatus1">  
+                                    <apex:facet name="stop">     
+                                        <apex:commandLink action="{!deleteExpenseLine}" title="Remove line" status="mydeleteStatus1" rerender="theForm">
+                                            <apex:image url="{!$Resource.AcctSeed__Redx}" alt="Remove line"/>
+                                            <apex:param id="rowCount1" name="rowCount1" assignTo="{!selectedExpenseRow}" value="{!item.intRowNum}"/>
+                                        </apex:commandLink>
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                        <apex:image url="{!$Resource.AcctSeed__Redx}"/>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </td>                         
+                            <td style="width:80px;">
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Project__c}" >
+                                        <apex:actionSupport event="onchange" action="{!setExpenseProjectTask}" rerender="projTaskId" status="reloadStatus">
+                                            <apex:param id="selectedRow1" name="selectedRow1" assignTo="{!selectedExpenseRow}" value="{!item.intRowNum}" />
+                                        </apex:actionSupport>
+                                    </apex:inputField>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isProjectError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>
+                            </td>
+                            <td style="width:140px;">
+                                <apex:outputPanel id="projTaskId" layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:selectList value="{!item.expenseLine.AcctSeed__Project_Task__c}" size="1" title="task" >
+                                        <apex:selectOptions value="{!item.projectTasksList}" id="tasks" />                                        
+                                    </apex:selectList>
+                                    <apex:actionStatus id="reloadStatus">        
+                                        <apex:facet name="start"><apex:image value="/img/loading.gif" title="Processing..."/></apex:facet>
+                                        <apex:facet name="stop"></apex:facet>
+                                    </apex:actionStatus>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isProjectTaskError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>
+                            </td>
+                            <td style="width:160px;">
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Date__c}" required="false" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isDateError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>                                
+                            </td>
+                            <td style="width:200px;">
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:selectList value="{!item.strExpenseTypeId}" size="1" title="Type" >
+                                        <apex:selectOptions value="{!expenseTypesList}"/>                                        
+                                    </apex:selectList>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isExpenseTypeError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                       
+                                </apex:outputPanel>
+                            </td>
+                             <td >
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.VendorText__c}" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isVendorError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                                                      
+                                </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:actionRegion >
+                                        <apex:inputtext value="{!item.expenseLine.AcctSeed__Amount__c}" style="width:80px">
+                                            <apex:actionSupport event="onkeyup" rerender="projectTotal,expenseAmountTotal"/>
+                                            <apex:actionSupport event="onblur" rerender="projectTotal,expenseAmountTotal"/>
+                                        </apex:inputtext>
+                                    </apex:actionRegion>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isAmountError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isAmountNegativeError}">
+                                        <strong>Error:</strong> Cannot be a negative number                                      
+                                    </apex:outputPanel>                                                                          
+                                </apex:outputPanel>                                
+                            </td>   
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Internal_Comment__c}" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isInternalCommentError}">
+                                         <strong>Error:</strong> You must enter a value                                      
+                                     </apex:outputPanel>
+                                </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:inputField value="{!item.expenseLine.AcctSeed__Invoice_Comment__c}" />                    
+                            </td>
+                        </tr>
+                        </apex:repeat>
+                        <tr class="totalRow">
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                             <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">
+                                <apex:outputPanel id="projectTotal">
+                                    <apex:outputText value="{0, number, $###,##0.00}" rendered="{!expensesList.size>0}">
+                                        <apex:param value="{!projectAmountTotal}"/>
+                                    </apex:outputText>
+                                </apex:outputPanel>
+                            </td>                                              
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="10">
+                                <apex:commandlink rerender="tableSection1" title="Add line" action="{!addExpenseLine}">
+                                    <apex:image url="{!$Resource.AcctSeed__AddLine}" alt="Add line"/>
+                                </apex:commandlink>
+                            </td>
+                        </tr>
+                    </table>
+                    </apex:outputPanel>
+                </apex:tab>
+                <apex:tab label="Mileage" name="tab3" id="tabThree">
+                    <apex:outputPanel id="tableSection3">
+                    <table class="list " border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr class="headerRow ">
+                            <td style="width:1%">&nbsp;</td>
+                            <td style="width:12%">Project</td>
+                            <td style="width:15%">Project Task</td>
+                            <td style="width:8%">Date</td>
+                            <td style="width:15%">Expense Type</td>                                                       
+                            <td style="width:15%">Origin</td>
+                            <td style="width:15%">Destination</td>
+                            <td style="width:5%">Miles</td>
+                            <td style="width:5%">Amount</td>
+                            <td>Internal Comment</td>
+                            <td>Invoice Comment</td>
+                        </tr>
+                        <apex:repeat value="{!mileageList}" var="item" id="mileageExpenses" >
+                        <tr>                           
+                            <td >
+                                <apex:actionStatus id="mydeleteStatus3">  
+                                    <apex:facet name="stop">     
+                                        <apex:commandLink action="{!deleteMileageLine}" title="Remove line" status="mydeleteStatus3" rerender="theForm" immediate="true">
+                                            <apex:image url="{!$Resource.AcctSeed__Redx}" alt="Remove line"/>
+                                            <apex:param id="rowCount3" name="rowCount3" assignTo="{!selectedMileageRow}" value="{!item.intRowNum}"/>
+                                        </apex:commandLink>
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                        <apex:image url="{!$Resource.AcctSeed__Redx}"/>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </td>
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Project__c}" style="width:120px">
+                                        <apex:actionSupport event="onchange" action="{!setMileageProjectTask}" rerender="projTaskId" status="reloadStatus">
+                                            <apex:param id="selectedRow3" name="selectedRow3" assignTo="{!selectedMileageRow}" value="{!item.intRowNum}" />
+                                        </apex:actionSupport>
+                                    </apex:inputField>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isProjectError}">
+                                         <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>  
+                                </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputPanel id="projTaskId" layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:selectList value="{!item.expenseLine.AcctSeed__Project_Task__c}" size="1" title="task" >
+                                        <apex:selectOptions value="{!item.projectTasksList}" id="tasks" />                                        
+                                    </apex:selectList>
+                                    <apex:actionStatus id="reloadStatus">        
+                                        <apex:facet name="start"><apex:image value="/img/loading.gif" title="Processing..."/></apex:facet>
+                                        <apex:facet name="stop"></apex:facet>
+                                    </apex:actionStatus>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isProjectTaskError}">
+                                         <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>
+                            </td> 
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Date__c}" required="false"/>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isDateError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                       
+                                </apex:outputPanel>                                
+                            </td>
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:actionRegion >
+                                        <apex:selectList value="{!item.strExpenseTypeId}" size="1" title="Type" >
+                                            <apex:selectOptions value="{!mileageTypesList}"/>
+                                            <apex:actionSupport event="onchange" rerender="mileageAmount,mileageMilesTotal,mileageAmountTotal,expenseAmountTotal"/>                                        
+                                        </apex:selectList>
+                                    </apex:actionRegion>
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isExpenseTypeError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>
+                            </td>                     
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Mileage_Origin__c}" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isOriginError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>                         
+                            </td>
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Mileage_Destination__c}" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isDestinationError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel>                                     
+                                </apex:outputPanel>                         
+                            </td>
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:actionRegion >
+                                        <apex:inputField value="{!item.expenseLine.AcctSeed__Miles__c}" style="width:50px;">
+                                            <apex:actionSupport event="onkeyup" rerender="mileageAmount,mileageMilesTotal,mileageAmountTotal,expenseAmountTotal"/>
+                                            <apex:actionSupport event="onblur" rerender="mileageAmount,mileageMilesTotal,mileageAmountTotal,expenseAmountTotal"/>
+                                        </apex:inputField>
+                                    </apex:actionRegion>                                      
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isMilesError}">
+                                        <strong>Error:</strong> You must enter a value                                      
+                                    </apex:outputPanel> 
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isMilesNegativeError}">
+                                        <strong>Error:</strong> Cannot be a negative number                                      
+                                    </apex:outputPanel>                                                                         
+                                </apex:outputPanel>                         
+                            </td> 
+                            <td>
+                                <apex:outputText id="mileageAmount" value="{0, number, $###,##0.00}">
+                                   <apex:param value="{!item.amount}"/>
+                                </apex:outputText>                  
+                            </td>                     
+                            <td>
+                                <apex:outputPanel layout="block" styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!item.expenseLine.AcctSeed__Internal_Comment__c}" />
+                                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!item.isInternalCommentError}">
+                                         <strong>Error:</strong> You must enter a value                                      
+                                     </apex:outputPanel>
+                                </apex:outputPanel>               
+                            </td>
+                            <td>   
+                                <apex:inputField value="{!item.expenseLine.AcctSeed__Invoice_Comment__c}" />
+                            </td>
+                        </tr>
+                        
+                        </apex:repeat>
+                        <tr class="totalRow">
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">
+                                <apex:outputText id="mileageMilesTotal" value="{!mileageMilesTotal}" rendered="{!mileageList.size>0}"/>
+                            </td>                                                
+                            <td class="totalRow">
+                                <apex:outputText id="mileageAmountTotal" value="{0, number, $###,##0.00}" rendered="{!mileageList.size>0}">
+                                    <apex:param value="{!mileageAmountTotal}"/>
+                                </apex:outputText>
+                            </td>
+                            <td class="totalRow">&nbsp;</td>
+                            <td class="totalRow">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="13">
+                                <apex:commandlink rerender="tableSection3" title="Add line" action="{!addMileageLine}">
+                                    <apex:image url="{!$Resource.AcctSeed__AddLine}" alt="Add line"/>
+                                </apex:commandlink>
+                            </td>
+                        </tr>
+                    </table>
+                    </apex:outputPanel>
+                </apex:tab>
+            </apex:tabPanel>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

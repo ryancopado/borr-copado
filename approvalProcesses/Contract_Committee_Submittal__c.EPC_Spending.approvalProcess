@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Internal</submitter>
+        <type>group</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kkearney@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Total_Costs_to_Date__c +  Requested_amount_to_spend__c   &lt; 10000</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>EPC Spending Requests &lt;= $10k Total Per Project</label>
+        <name>EPC_Spending_Requests_10k_Total_Per_Project</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>edriscoll@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>OR(
+AND(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;Yes&quot;) ,
+ Total_Costs_to_Date__c +  Requested_amount_to_spend__c  &lt;= 180000,
+Total_Costs_to_Date__c +  Requested_amount_to_spend__c   &gt;= 10000
+),
+AND
+(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;No&quot;),
+Total_Costs_to_Date__c +  Requested_amount_to_spend__c   &gt;= 10000,
+Total_Costs_to_Date__c +  Requested_amount_to_spend__c   &lt;= 125000 )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Spending Requests &lt;= $125k Total Per Project ($180k for stacked sites) - Pre-Handoff</label>
+        <name>Spending_Requests_125k_Total_Per_Project_180k_for_stacked_sites_Pre_Handoff</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+OR(
+BEGINS( Project__r.Job_Number__c,&quot;207&quot;),
+BEGINS( Project__r.Job_Number__c,&quot;205&quot;),
+BEGINS( Project__r.Job_Number__c,&quot;208&quot;),
+BEGINS( Project__r.Job_Number__c,&quot;200&quot;)),
+
+
+OR(
+AND(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;Yes&quot;) ,
+Total_Costs_to_Date__c  &gt; 180000
+),
+AND
+(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;No&quot;),
+Total_Costs_to_Date__c  &gt; 125000
+)
+))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Spending Requests &gt; $125k Total Per Project ($180K for stacked sites)</label>
+        <name>EASTSpending_Requests_125k_Total_Per_Project_180K_for_stacked_sites</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbrooke@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+
+BEGINS( Project__r.Job_Number__c,&quot;201&quot;),
+
+
+OR(
+AND(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;Yes&quot;) ,
+Total_Costs_to_Date__c  &gt; 180000
+),
+AND
+(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;No&quot;),
+Total_Costs_to_Date__c  &gt; 125000
+)
+))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Spending Requests &gt; $125k Total Per Project ($180K for stacked sites) WEST</label>
+        <name>Spending_Requests_125k_Total_Per_Project_180K_for_stacked_sites_WEST</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dmcdonell@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Total_Costs_to_Date__c  &gt; 10000</formula>
+        </entryCriteria>
+        <label>Risk Mgmt</label>
+        <name>Risk_Mgmt</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New,Rejected,Recalled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.RecordType</field>
+            <operation>equals</operation>
+            <value>EPC Development Spending</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Contract_Committee_Submittal_record_approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Contract_Committee_Submittal_record_rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>EPC Spending</label>
+    <processOrder>14</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Performance Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Performance Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active alerts --></label>
+        <name>Active_alerts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual/Estimate --></label>
+        <name>Actual_Estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual/Expected --></label>
+        <name>Actual_Expected__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls service contract from related Site --></help>
+        <label><!-- Contract --></label>
+        <name>Contract_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current alerts --></label>
+        <name>Current_alerts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Availability --></label>
+        <name>Data_Availability__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- for upload purposes only.   data from powertrack comes in watts, there is another field doing a calculation off this field that converts it to kwh for the user interface and reporting. --></help>
+        <label><!-- Estimated GHI w --></label>
+        <name>Estimated_GHI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated GHI kWh --></label>
+        <name>Estimated_GHI_kWh__c</name>
+    </fields>
+    <fields>
+        <help><!-- kWh --></help>
+        <label><!-- Estimated Production --></label>
+        <name>Estimated_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- kWh --></help>
+        <label><!-- Expected Production --></label>
+        <name>Expected_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- Kilowatt hours/meter² --></help>
+        <label><!-- GHI Measured --></label>
+        <name>GHI_Measured__c</name>
+    </fields>
+    <fields>
+        <label><!-- GHI Percent --></label>
+        <name>GHI_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Kilowatt hours --></help>
+        <label><!-- Lost Production --></label>
+        <name>Lost_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- Kilowatt hours --></help>
+        <label><!-- Measured Production --></label>
+        <name>Measured_Production__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Error Root Cause --></label>
+        <name>Model_Error_Root_Cause__c</name>
+        <picklistValues>
+            <masterLabel>Incorrect Model Setup (Borrego)</masterLabel>
+            <translation><!-- Incorrect Model Setup (Borrego) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Model Setup (Platform Limitation/Array Complexity)</masterLabel>
+            <translation><!-- Incorrect Model Setup (Platform Limitation/Array Complexity) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect or No Shading in Model</masterLabel>
+            <translation><!-- Incorrect or No Shading in Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Temperature (Detached or Incorrect Installation)</masterLabel>
+            <translation><!-- Module Temperature (Detached or Incorrect Installation) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Temperature Sensor Failure</masterLabel>
+            <translation><!-- Module Temperature Sensor Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pyranometer Calibration or Failure</masterLabel>
+            <translation><!-- Pyranometer Calibration or Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pyranometer Installation</masterLabel>
+            <translation><!-- Pyranometer Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pyranometer Setup</masterLabel>
+            <translation><!-- Pyranometer Setup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Performance Issue Hardware</masterLabel>
+            <translation><!-- System Performance Issue Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Performance Issue Shading</masterLabel>
+            <translation><!-- System Performance Issue Shading --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Performance Issue Soiling</masterLabel>
+            <translation><!-- System Performance Issue Soiling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weather Station Failure</masterLabel>
+            <translation><!-- Weather Station Failure --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Client --></label>
+        <name>O_M_Client__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls associated paid service contract from site --></help>
+        <label><!-- Paid Contract --></label>
+        <name>Paid_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Paid Service Contract --></label>
+        <name>Paid_Service_Contract__c</name>
+        <relationshipLabel><!-- Performance Data (Paid Service Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Perf Model Notes --></label>
+        <name>Perf_Model_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Notes --></label>
+        <name>Performance_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>AlsoEnergy/Powertrack</masterLabel>
+            <translation><!-- AlsoEnergy/Powertrack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aurora Vision</masterLabel>
+            <translation><!-- Aurora Vision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draker</masterLabel>
+            <translation><!-- Draker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Wind</masterLabel>
+            <translation><!-- First Wind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powerdash</masterLabel>
+            <translation><!-- Powerdash --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Contract --></label>
+        <name>Service_Contract__c</name>
+        <relationshipLabel><!-- Performance Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID from Also Energy/Powertrack --></help>
+        <label><!-- Site ID --></label>
+        <name>Site_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Performance Data --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Start Date --></help>
+        <label><!-- TimeStamp --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uptime --></label>
+        <name>Uptime__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

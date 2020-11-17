@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Regional_Project_Manager_East</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Vendor_Account__c</field>
+        <field>Total_Cost__c</field>
+        <field>Additional_Notes__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Project_PM__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project_PM__r.Id &lt;&gt; $User.Id</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>PM Approval</label>
+        <name>PMApproval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bkyse@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>CONTAINS( Project__r.Name , &apos;IEC&apos;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Brandon Kyse Approval</label>
+        <name>Brandon_Kyse_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>rburrowbridge@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Dir Engineering Approval</label>
+        <name>Dir_Engineering_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Construction_Requisition/Request_for_Approval</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(Total_Cost_Tax__c  &lt;=  5000, RecordTypeId = &apos;012800000006dS0&apos;, 
+	Ok_to_Submit__c = &quot;Yes&quot;,    Cost_Code__r.Id = &apos;a0H80000000ecwU&apos;, (NOT(ISPICKVAL(Project__r.SFDC_Project_Status__c ,&apos;Pre-Contract&apos;))))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>ApprovedMinor</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>EngSubcontractors - Under 5000-IEC</label>
+    <processOrder>15</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

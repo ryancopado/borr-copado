@@ -1,0 +1,467 @@
+<apex:page standardController="AcctSeedERP__Purchase_Order__c" renderAs="pdf" extensions="po_imbed">
+    <div style='display:none'><apex:outputText value="{!AcctSeedERP__Purchase_Order__c.Name}" /></div>
+
+    <apex:stylesheet value="{!URLFOR($Resource.po_style)}" /> 
+    <table width="100%">
+        <tr>
+            <td width="40%">
+                <apex:image url="{!$Resource.borrego}" width="50%" height="50%" /> 
+            </td>
+            <td width="20%" style="vertical-align:top; text-align:center; font-size:18px">
+                <b>
+                    PURCHASE ORDER
+                </b>
+            </td>
+            <td width="40%" style="vertical-align:top; padding-left:35px;">
+                <font size="1">
+                    Billing Address:
+                </font>
+                <br /> 
+                <b>
+                    Borrego Solar Systems, Inc. <br /> 5005 Texas Street, Suite 400<br /> San Diego CA 92108<br />  (888) 898-6273
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td /> 
+            <td style="vertical-align:middle; text-align:center; font-size:10px">
+                <!-- <apex:image url="{!$Resource.aaron}" width="75%" height="75%" rendered="{!IF(AcctSeedERP__Purchase_Order__c.AcctSeedERP__Status__c != 'New' && user == true || $User.Alias == 'echen'||$User.Alias == 'aWowort' || $User.Alias == 'bwill' || $User.Alias == 'soste', 'true', 'false')}" /> ______________________________<br /> Aaron Hall- President -->
+                <apex:image url="{!$Resource.aaron}" width="75%" height="75%" rendered="{!IF(AcctSeedERP__Purchase_Order__c.AcctSeedERP__Status__c != 'New' && (user == true || $User.Alias == 'soste'), 'true', 'false')}" /> ______________________________<br /> Aaron Hall- President 
+            </td>
+            <td /> 
+        </tr>
+        <tr>
+            <td style="vertical-align:top" colspan="2">
+                <apex:dataTable value="{!AcctSeedERP__Purchase_Order__c}" var="vendor">
+                    <apex:column width="75px" style="vertical-align:top;">
+                        <b>
+                            To:
+                        </b>
+                    </apex:column>
+                    <apex:column style="text-align:top;">
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__c}" /><br /> 
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_Contact__c}" /><br /> 
+                
+                        <apex:outputText rendered="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__r.BillingCity != null && AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__r.BillingCity != ''}">
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_Street__c}" />&nbsp;<br /> 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_City__c}" />,&nbsp; 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_State__c}" />&nbsp; 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_Postal_Code__c}" />&nbsp; 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor_Country__c}" /><br /> 
+                        </apex:outputText>
+                        
+                        PHONE: &nbsp;<apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__r.Phone}" />
+                    </apex:column>
+                </apex:dataTable>
+            </td>
+            <td style="text-align:top; padding-left:35px">
+            </td>
+        </tr> 
+        <tr>
+            <td style="vertical-align:top;" colspan="2">
+                <apex:dataTable value="{!AcctSeedERP__Purchase_Order__c}" var="ship">
+                    <apex:column width="75px" style="vertical-align:top;">
+                        <b>
+                            Delivery To:
+                        </b>
+                    </apex:column>
+                    <apex:column width="400px">
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__c}" /><br /> 
+                        <!--  <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__r.ShippingStreet}" /><br />
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__r.ShippingCity}" />, &nbsp;
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__r.ShippingState}" />&nbsp;
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__r.ShippingPostalCode}" />&nbsp;
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Company__r.ShippingCountry}" /><br /> -->
+                        <apex:outputText rendered="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_City__c != null && AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_City__c != ''}">
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Street__c}" />&nbsp;<br /> 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_City__c}" />,&nbsp;                        
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_State__c}" />&nbsp;
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Postal_Code__c}" />&nbsp; 
+                            <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Shipping_Country__c}" /><br />
+                       
+                        </apex:outputText>
+                        ATTN: &nbsp;<apex:outputField value="{!AcctSeedERP__Purchase_Order__c.Ship_To_Contact__c}" /><br /> 
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.Ship_To_Telephone__c}" /><br /> 
+                    </apex:column>
+                    
+                    
+                </apex:dataTable>
+            </td>
+            <td style="vertical-align:top; padding-left:35px">
+                <apex:dataTable value="{!AcctSeedERP__Purchase_Order__c}" var="order">
+                
+                    <apex:column width="120px">
+                        <b>
+                            Purchase Order #:<br /> 
+                            Order Date:<br /> 
+                            Requested By:<br />
+                            Revision Number:<br /> 
+                            Rev. Change Date:<br />
+                            Division:         <br />        
+                        </b>
+                    </apex:column>
+                    <apex:column >
+                        <apex:outputText value="{!poClean}" /><br />
+                        <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Order_Date__c}" /><br /> 
+                        <apex:outputText value="{!$User.FirstName}" /> &nbsp; <apex:outputText value="{!$User.LastName}" /><br />
+                        <apex:outputText value="{!AcctSeedERP__Purchase_Order__c.Revision_Number__c}" /><br />
+                        <apex:outputText value=" {!AcctSeedERP__Purchase_Order__c.Revision_Change_Date__c}" /><br />
+                        <apex:outputText value=" {!AcctSeedERP__Purchase_Order__c.Division1__c}" /><br />
+                    </apex:column>
+                </apex:dataTable>
+            </td>
+        </tr>
+    </table>
+    
+    <br /> 
+    <div>
+        Retention Percent Held:&nbsp;
+        <b>
+            {!AcctSeedERP__Purchase_Order__c.Retention_Percent__c}
+        </b>
+    </div>
+    <div>
+        Payment Terms:&nbsp;
+        <b>
+            {!AcctSeedERP__Purchase_Order__c.Payment_Terms__c}
+        </b>
+    </div>
+    <div>
+        Inco Terms:&nbsp;
+        <b>
+            {!AcctSeedERP__Purchase_Order__c.Inco_Terms__c}
+        </b>
+    </div>
+    <div>
+        Shipping Method:&nbsp; 
+        <b>
+            {!AcctSeedERP__Purchase_Order__c.Shipping_Method__c}
+        </b>
+    </div>
+    <div>
+        Delivery Notes:&nbsp;
+        <b>
+            {!AcctSeedERP__Purchase_Order__c.Delivery_Notes__c}
+        </b>
+    </div>
+    <div>
+        Special Notes:&nbsp;{!AcctSeedERP__Purchase_Order__c.Special_Notes__c} 
+    </div>
+    <br /> 
+
+    <div>
+        <b>Purchase Order Lines</b>
+    </div>
+    <table id="box-table-a">
+        <tr>
+            <td class="title" width="8%">
+                POL# 
+            </td>
+            <td class="title" width="8%">
+                Del. Date 
+            </td>
+            <td width="11%" class="title">
+                Product Name
+            </td>
+            <td width="24%" class="title">
+                Vendor Description 
+            </td>
+            <td width="5%" class="title">
+                Qty 
+            </td>
+            <td width="9%" class="title">
+                Unit price 
+            </td>
+            <td width="8%" class="title">
+                Subtotal 
+            </td>
+            <td width="9%" class="title">
+                Sales Tax Rate 
+            </td>
+            <td width="9%" class="title">
+                Sales Tax 
+            </td>
+            <td width="9%" class="title">
+                Max Freight Allowance 
+            </td>
+        </tr>
+        
+          <apex:repeat value="{!ListOfPOs}" var="orderLine">
+            <tr>
+                <td> <!-- Job Number -->
+                    <apex:outputText value="{!orderLine.LineItem.Name}" />
+                </td>
+                <td> <!-- Del date -->
+                    <apex:outputText value="{0,date,MM/dd/yy}">
+                        <apex:param value="{!orderLine.LineItem.Requested_Delivery_Date__c}" />
+                    </apex:outputText>
+                </td>
+                <td> <!-- product name -->
+                    <apex:outputField value="{!orderLine.LineItem.AcctSeedERP__Product__r.Name}" />
+                </td>
+                <td> <!-- Product Description -->
+                    <apex:outputText value="{!orderLine.Description}" />
+                </td>
+                <td style="text-align:center"> <!-- Qty -->
+                    <apex:outputText value="{0, number, integer}">
+                        <apex:param value="{!orderLine.LineItem.AcctSeedERP__Quantity__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right"> <!-- Unit Price -->
+                    <apex:outputText value="{0, number, $###,###,###,##0.0000}">
+                        <apex:param value="{!orderLine.LineItem.Unit_Cost__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right"> <!-- subtotal -->
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!orderLine.LineItem.AcctSeedERP__Quantity__c * orderLine.LineItem.Unit_Cost__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right"> <!-- sales tax rate -->
+                    <apex:outputText value="{0, number, ###,###,###,##.0000}%">
+                        <apex:param value="{!orderLine.LineItem.Sales_Tax_Rate_Percent__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right"> <!-- sales tax -->
+                 <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!orderLine.LineItem.Sales_Tax__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right"> <!-- max freight -->
+                 <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!orderLine.LineItem.Freight__c}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+          </apex:repeat>
+          <tr>
+            <td class="co_total_white" colspan="10" style="border-top:1px solid #000000;">
+            </td>
+          </tr>
+        </table>
+        
+        <apex:outputPanel rendered="{!coTable}">
+        <br /> 
+        <b>Change Orders</b>
+        <table id="box-table-a">
+            <tr>
+                <td class="title" width="10%">
+                    Job Number 
+                </td>
+                <td class="title" width="5%">
+                    CO # 
+                </td>
+                <td class="title" colspan="3" width="25%">
+                    Subject 
+                </td>
+                <td class="title" colspan="4" width="35%">
+                    Description
+                </td>
+                <td width="15%" class="title">
+                    Amount Requested
+                </td>
+                <td width="10%" class="title">
+                    Sales Tax
+                </td>
+            </tr>
+            
+            <apex:repeat value="{!ListOfCOs}" var="co">
+            <tr>
+                <td>  
+                    <apex:outputField value="{!co.Job_Number2__c}" />
+                </td>
+                <td style="text-align:center">
+                    <apex:outputField value="{!co.CO__c}" />
+                </td>
+                <td colspan="3">
+                    <apex:outputField value="{!co.Subject__c}" />
+                </td>
+                <td colspan="4"> 
+                    <apex:outputField value="{!co.Description__c}" />
+                </td>
+                <td style="text-align:right">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!co.Amount_Requested__c}" /> 
+                    </apex:outputText>
+                </td>
+                <td style="text-align:right">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!co.Sales_Tax__c}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            </apex:repeat>
+            
+            <tr>
+                <td class="co_total_white" colspan="11" style="border-top:1px solid #000000;">
+                </td>
+            </tr>
+        </table>
+        
+        <table id="box-table-a">
+            <tr>
+                <td class="co_total_white" width="65%">
+                </td>
+                <td class="co_total_white" width="35%">
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                </td>
+                <td class="co_total_white">
+                    <b>Purchase Order Totals</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Purchase Order Line SubTotal:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLSubTotal}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Total Freight Allowed: 
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLFreight}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Total Sales Tax:
+                </td>
+                <td colspan="4" class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLSalesTax}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td class="co_total_white">
+                    Purchase Order Line Total:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLTotal}" /> 
+                    </apex:outputText>
+                </td>
+            </tr> -->           
+            <tr>
+                <td class="co_total_white">
+                    Change Order Total:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!ChangeOrderTotal}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Purchase Order Total:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!Total}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+        </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!!coTable}">
+        <table id="box-table-a">
+            <tr>
+                <td class="co_total_white" width="65%">
+                </td>
+                <td class="co_total_white" width="35%">
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                </td>
+                <td class="co_total_white">
+                    <b>Purchase Order Totals</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Purchase Order Line SubTotal:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLSubTotal}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Total Freight Allowed: 
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLFreight}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Total Sales Tax:
+                </td>
+                <td colspan="4" class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!POLSalesTax}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_white">
+                    Purchase Order Total:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!Total}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+        </table>
+        </apex:outputPanel>
+        
+    <br /> <br /> 
+
+    <div>
+        <div style="padding: 10px">
+            Please send invoice copies to the Buyer (Bill to) address referenced above, and ensure all shipping documents and invoices reference the Purchase Order Number found at the top right-hand corner.
+        </div>
+        <div style="padding: 10px"> 
+            Invoices may also be emailed to APdocs@borregosolar.com
+        </div>
+        <div style="padding: 10px">
+            We request that ALL information on this purchase order be confirmed by returning a Purchase Order Acknowledgement within one (1) week of date of this purchase order.
+        </div>
+        <div style="padding: 10px">
+            Please notifiy us immediately if you are unable to deliver this order, as specified.
+        </div>
+        <div style="padding: 10px">
+            You may receive more than one copy of this Purchase order.<br />
+            The latest dated order will prevail as shown here. <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Order_Date__c}" />*
+        </div>
+        <div style="padding: 10px">
+            *Note: Line item shipping dates to take precedence
+        </div>
+    </div>
+    
+    <br /> <br /> <br /> 
+    
+    <div align="center" style="color:#458B00; font-size:10px">
+        <i>
+            Borrego Solar is solving the world’s energy problems by accelerating the adoption of renewable energy.<br /> Our people are committed to excellence in every aspect of solar design and construction. 
+        </i>
+    </div>
+</apex:page>

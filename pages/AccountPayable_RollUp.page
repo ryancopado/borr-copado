@@ -1,0 +1,16 @@
+<apex:page standardController="AcctSeed__Account_Payable__c" extensions="AccountPayable_RollUpCtlExt" tabStyle="AcctSeed__Account_Payable__c" action="{!executeRollUps}">
+    
+    <apex:form >
+        <apex:sectionHeader title="AP Invoice: Execute Rollups" subtitle="{!ap.Name}" />
+        
+        <apex:pageBlock >
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

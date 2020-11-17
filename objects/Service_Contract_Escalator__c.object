@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>stores escalator values for each year of service contract</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AprilBillingRate__c</fullName>
+        <description>multiplies current value per day by 30</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 30</inlineHelpText>
+        <label>April Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AugustBillingRate__c</fullName>
+        <description>multiplies current value per day by 31</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 31</inlineHelpText>
+        <label>August Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CY_End__c</fullName>
+        <description>CY end date based on YEAR for this record.</description>
+        <externalId>false</externalId>
+        <formula>CY_Start__c + 365</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>CY end date based on YEAR for this record.</inlineHelpText>
+        <label>CY End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CY_Start__c</fullName>
+        <description>shows contract start date for this year of the contract reference in YEAR field.</description>
+        <externalId>false</externalId>
+        <formula>DATE(
+YEAR( Service_Contract_Start_Date__c )+( Year__c -1) ,
+MONTH(Service_Contract_Start_Date__c),
+DAY(Service_Contract_Start_Date__c)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>shows contract start date for this year of the contract reference in YEAR field.</inlineHelpText>
+        <label>CY Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Value_Per_Day__c</fullName>
+        <description>formula based on current year contract value/ 365</description>
+        <externalId>false</externalId>
+        <formula>CurrentYearContractValue__c / ( Service_Contract__r.Current_Year_Contract_End__c - Service_Contract__r.Current_Year_Contract_Start__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>formula based on current year contract value/ 365</inlineHelpText>
+        <label>Contract Value Per Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentYearContractValue__c</fullName>
+        <description>shows value of contract in current year with escalators applied - updated via trigger or WF</description>
+        <externalId>false</externalId>
+        <inlineHelpText>shows value of contract in current year with escalators applied</inlineHelpText>
+        <label>Current Year Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year12__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current Solar Engineer Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year1__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current  Regional Manager Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Contract_Value1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(YEAR( Year1__c ) == YEAR(Service_Contract_Start_Date__c),  Service_Contract_Amount__c,  Prior_Year_Contract_Value1__c  * (1 +  Escalator__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Year Contract Value1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Solar_Electrician_1_OT_Ra__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current  Solar Electrician 1 - OT Ra</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Solar_Electrician_1_Rate__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for current year.</inlineHelpText>
+        <label>Current  Solar Electrician 1 Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Solar_Electrician_2_OT_Ra__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current  Solar Electrician 2 - OT Ra</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year_Solar_Engineer_OT_Rate__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current  Solar Engineer - OT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Year__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year.</inlineHelpText>
+        <label>Current Solar Electrician 2 Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DecemberBillingRate__c</fullName>
+        <description>multiplies contract value per day by 31</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies contract value per day by 31</inlineHelpText>
+        <label>December Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EscalatorDetails__c</fullName>
+        <description>brings in details about when escalator should be applied</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Service_Contract__r.Escalator_Details__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>brings in details about when escalator should be applied</inlineHelpText>
+        <label>Escalator Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalator__c</fullName>
+        <description>displays escalator % from the field Escalator from related contract</description>
+        <externalId>false</externalId>
+        <formula>Service_Contract__r.Escalator__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays escalator % from the field Escalator from related contract</inlineHelpText>
+        <label>Escalator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FebruaryBillingRate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 28</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>calculates current value per day by 28</inlineHelpText>
+        <label>February Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JanuaryBillingRate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c *31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies Contract Value Per Day by 31 days</inlineHelpText>
+        <label>January Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JulyBillingRate__c</fullName>
+        <description>multiplies contract value per day by 31</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies contract value per day by 31</inlineHelpText>
+        <label>July Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>JuneBillingRate__c</fullName>
+        <description>multiplies current value per day by 30</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 30</inlineHelpText>
+        <label>June Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Labor_Escalator__c</fullName>
+        <description>Used to bring over Labor rate escalator from contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to bring over Labor rate escalator from contract.</inlineHelpText>
+        <label>Labor Escalator</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MarchBillingRate__c</fullName>
+        <description>multiplies Current value per day by 31</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies Current value per day by 31</inlineHelpText>
+        <label>March Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MayBillingRate__c</fullName>
+        <description>multiplies contract value per day by 31</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 31</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies contract value per day by 31</inlineHelpText>
+        <label>May Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NovemberBillingRate__c</fullName>
+        <description>multiplies current value per day by 30</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 30</inlineHelpText>
+        <label>November Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OctoberBillingRate__c</fullName>
+        <description>multiplies current value per day by 30</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 30</inlineHelpText>
+        <label>October Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Options__c</fullName>
+        <description>displays text value of the field Payment Options picklist from related Contract</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Service_Contract__r.Payment_Options__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays text value of the field Payment Options picklist from related Contract</inlineHelpText>
+        <label>Payment Options</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PriorYearContractValue__c</fullName>
+        <description>displays prior year value of contract with escalators updated via trigger or WF</description>
+        <externalId>false</externalId>
+        <inlineHelpText>displays prior year value of contract with escalators</inlineHelpText>
+        <label>Prior Year Contract Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year12__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</inlineHelpText>
+        <label>Prior  Solar Engineer Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year1__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</inlineHelpText>
+        <label>Prior  Regional Manager Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_Contract_Value1__c</fullName>
+        <externalId>false</externalId>
+        <label>Prior Year Contract Value1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_Solar_Electrician_1_OT_Rate__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</inlineHelpText>
+        <label>Prior  Solar Electrician 1 - OT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_Solar_Electrician_2_Rate__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</inlineHelpText>
+        <label>Prior  Solar Electrician 2 Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_Solar_Engineer_OT_Rate__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year.</inlineHelpText>
+        <label>Prior Solar Engineer - OT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the SV for billing purposes for Prior Year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the SV for billing purposes for Prior Year.</inlineHelpText>
+        <label>Prior  Solar Electrician 2 - OT Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SeptemberBillingRate__c</fullName>
+        <description>multiplies current value per day by 30</description>
+        <externalId>false</externalId>
+        <formula>Contract_Value_Per_Day__c * 30</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>multiplies current value per day by 30</inlineHelpText>
+        <label>September Billing Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Amount__c</fullName>
+        <description>pulls value from Contract Amount yearly field from related contract</description>
+        <externalId>false</externalId>
+        <formula>Service_Contract__r.Contract_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>pulls value from Contract Amount yearly field from related contract</inlineHelpText>
+        <label>Service Contract Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_End_Date__c</fullName>
+        <description>displays value from field Contract End Date from related contract</description>
+        <externalId>false</externalId>
+        <formula>Service_Contract__r.EndDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays value from field Contract End Date from related contract</inlineHelpText>
+        <label>Service Contract End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Start_Date__c</fullName>
+        <description>displays Service Contract Start Date from related Contract</description>
+        <externalId>false</externalId>
+        <formula>Service_Contract__r.Service_Contract_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays Service Contract Start Date from related Contract</inlineHelpText>
+        <label>Service Contract Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract__c</fullName>
+        <description>displays the related contract</description>
+        <externalId>false</externalId>
+        <inlineHelpText>displays the related contract</inlineHelpText>
+        <label>Service Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Service Contract Escalators</relationshipLabel>
+        <relationshipName>Service_Contract_Escalators</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Solar_Electrician_1_Rate1__c</fullName>
+        <description>Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for prior year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for prior year.</inlineHelpText>
+        <label>Prior Solar Electrician 1 Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year1__c</fullName>
+        <externalId>false</externalId>
+        <label>Year1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <description>enter in 4 digit year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>enter in 4 digit year</inlineHelpText>
+        <label>Year</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service Contract Escalator</label>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Service Contract Escalator Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service Contract Escalators</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

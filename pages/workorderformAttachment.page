@@ -1,0 +1,279 @@
+<apex:page showHeader="false" standardController="SV__c" extensions="WorkOrderFormController" >
+	
+	<apex:stylesheet value="{!URLFOR($Resource.workorderform_style)}" /> 
+	<table id="wof-table" width="100%" >
+		<tr id="wof-tr">
+			<td width="50%">
+				<apex:image url="{!$Resource.borrego}" width="50%" height="50%" /> 
+			</td>
+ 			
+			<td width="50%" style="vertical-align:center; ">
+				<div id="wof-title-a" >
+					Site Service Request
+				</div>
+				<div id="wof-title-b" >
+					Operations and Maintenance Department<br/>
+					Service Visit #: {!serviceVisit.Name}<br/>
+					Case #: {!svCase.CaseNumber}
+				</div>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td style="vertical-align:top;" >
+                <apex:dataTable value="{!WorkOrderInfo}" var="woA">
+                
+                    
+                    <apex:column width="115px" >
+                    	<div id="wof-label" >
+                            Site Name:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Service Visit Date:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Technician:<br />
+                            <!-- 
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Company:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Site Contact:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Contact Office #:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Contact Email:<br />
+                            -->
+						</div>
+                    </apex:column>
+                    
+                    
+                    <apex:column >
+                    	<div id="wof-field" >
+                        	<apex:outputText value="{!woA.woProj.Name}" /><br />
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                        	<apex:outputField value="{!woA.woSV.Visit_Date__c}" /><br />
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            <apex:outputText value="____________________________" /><br />
+                        	<!-- 
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                        	<apex:outputText value="{!woA.woAcc.Name}" /><br />
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+							<apex:outputText value="{!woA.woCon.Name}" /><br />
+							<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                        	<apex:outputText value="{!woA.woCon.Phone}" /><br />
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                        	<apex:outputText value="{!woA.woCon.Email}" /><br />
+                        	-->
+					</div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+            <td style="vertical-align:top;" >
+                <apex:dataTable value="{!WorkOrderInfo}" var="woB">
+                
+                    
+                    <apex:column width="115px" style="vertical-align:top;" >
+                    	<div id="wof-label" >
+                            Site Address:<br />
+                            <br/>
+                            <!-- 
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Technician:<br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            Contact Cell #:<br />
+                            -->
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            PO #:<br />
+						</div>
+                    </apex:column>
+                    
+                    
+                    <apex:column style="vertical-align:top;" >
+                    	<div id="wof-field" >
+                        	<apex:outputText value="{!woB.woProj.Site_Address__c}" /><br />
+                        	<apex:outputText value="{!woB.woProj.Site_City__c}" />, &nbsp; <apex:outputText value="{!woB.woProj.Site_State__c}" /> &nbsp; <apex:outputText value="{!woB.woProj.Site_Zip__c}" /><br />
+                        	<!-- 
+                        	<div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            <apex:outputText value="____________________________" /><br />
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            <apex:outputText value="{!woB.woCon.MobilePhone}" /><br />
+                            -->
+                            <div id="wof-half-size" >
+                            	<br />
+                            </div>
+                            <apex:outputText value="{!solString}" /><br />
+					</div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		
+		<apex:outputPanel rendered="{!WorkOrderInfo.woSV.Private_Notes__c=false}" >
+		<tr id="wof-tr">
+			<td style="vertical-align:top;" colspan="2">
+				<div id="wof-label-blue" >
+					Reason for Visit:<br/>
+				</div>
+				<div id="wof-field" >
+					<apex:outputText value="{!WorkOrderInfo.woSVNotes}" /><br/>
+				</div>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		</apex:outputPanel>
+		
+		<tr id="wof-tr">
+			<td style="vertical-align:top;" height="300px" colspan="2">
+				<div id="wof-label-blue" >
+					Additional Issues Found on Site:<br/>
+				</div>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td style="vertical-align:top;" >
+                <apex:dataTable value="{!WorkOrderInfo}" var="woC" >
+                    <apex:column width="80px" >
+                    	<div id="wof-label" >
+                            Ordered By:<br />
+                            <br/>
+                            Signature:<br />
+						</div>
+                    </apex:column>
+					
+                    <apex:column >
+                    	<div id="wof-field" >
+                        	<apex:outputText value="_________________________________" /><br />
+                        	<br/>
+                        	<apex:outputText value="_________________________________" /><br />
+					</div>
+                    </apex:column>
+                </apex:dataTable>
+
+            </td>
+			<td style="vertical-align:top;" >
+                <apex:dataTable value="{!WorkOrderInfo}" var="woD" >
+                    <apex:column width="80px" >
+                    	<div id="wof-label" >
+                            <br />
+                            <br/>
+                            Date:<br />
+						</div>
+                    </apex:column>
+					
+                    <apex:column >
+                    	<div id="wof-field" >
+                        	<br />
+                        	<br/>
+                        	<apex:outputText value="_________________________________" /><br />
+					</div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+				<br/>
+			</td>
+			<td>
+				<br/>
+			</td>
+		</tr>
+		
+		<tr id="wof-tr">
+			<td>
+			</td>
+			<td style="vertical-align:top; padding-left:115px;">
+				<div id="wof-label-blue" >
+					Borrego Solar Systems, Inc. <br /> 
+				</div>
+				<div id="wof-field" >
+					5005 Texas Street, Suite 400<br /> San Diego, CA 92108<br />
+					<apex:outputText style="color: #0047B2; font-weight: bold;" value="Main: " />619-961-4522<br/>
+					<apex:outputText style="color: #0047B2; font-weight: bold;" value="FAX: " />888-843-6778<br/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+</apex:page>

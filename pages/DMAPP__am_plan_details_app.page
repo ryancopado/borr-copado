@@ -1,0 +1,32 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+
+
+	sidebar="false" 
+	 
+	standardController="DMAPP__DM_Account_Plan__c" 
+	extensions="DMAPP.TAMStandardController,DMAPP.PlanUnitDetailsExtension"
+	action="{!noop}"	
+		
+	>
+
+	
+		<apex:include pageName="DMAPP__APIDelegate"/>
+
+		
+
+        
+
+	
+
+
+	
+
+	<c:am_plan_details_app planId="{! planId}"   />
+
+	
+		<apex:includeScript value="{! URLFOR($Resource.JQueryUI, 'js/jquery.paging.min.js') }" />
+	
+	
+
+</apex:page>

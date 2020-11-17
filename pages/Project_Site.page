@@ -1,0 +1,137 @@
+<apex:page standardController="AcctSeed__Project__c" tabStyle="Site__c" showHeader="true" sidebar="false" extensions="Project_SiteControllerExt">
+    
+    <!-- Define Tab panel .css styles -->
+    <style>
+        .activeTab {background-color: #A6A600; color:white; background-image:none; font-size:12px; border-radius:20px;}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none; font-size:12px; border-radius:20px;}
+        .rich-tabhdr-side-border { background-image: none; }
+        .rich-tabhdr-side-cell { border-top: none; }
+    </style>
+    
+    <script type="text/javascript">
+        function plusTabSelected(tabName) {
+            tabselect(tabName);
+        }
+        function rfpage() {
+            rfp();
+        }
+            
+    </script>
+    
+    <apex:form id="theForm">
+        <apex:actionfunction name="tabselect" action="{!setplusTab}" reRender="theForm">
+            <apex:param assignTo="{!plusTabName}" value="" name="plusTabName"/>
+        </apex:actionfunction>
+        <apex:actionfunction name="rfp" action="{!refreshPage}" reRender="theForm"/>
+        
+        <apex:pageMessages />
+        <apex:pageBlock id="thePageBlock">
+            
+            <apex:pageBlockButtons >
+                <!-- Commented By Madan - Dec 7, 2017(To fix view state error)
+                <apex:commandButton value="Refresh" action="{!refreshPage}" style="display:none;"/>
+                <apex:commandButton value="Edit All" action="{!editAllSites}" rendered="{!!editMode && !plusMode && sitesCount > 0}"/>
+                <apex:commandButton value="Clone" action="{!cloneSite}" rendered="{!!editMode && !plusMode && sitesCount > 0}"/>
+                <apex:commandButton value="Save All" action="{!saveAllSites}" rendered="{!editMode}"/>
+                <apex:commandButton value="Cancel All" action="{!cancelAllSites}" immediate="true" rendered="{!editMode}"/>
+                 -->
+                <apex:commandButton value="Refresh" action="{!refreshPage}" style="display:none;"/>
+                <apex:commandButton value="Edit" action="{!editAllSites}" rendered="{!!editMode && !plusMode && sitesCount > 0}"/>
+                <apex:commandButton value="Clone" action="{!cloneSite}" rendered="{!!editMode && !plusMode && sitesCount > 0}" reRender="theForm"/>
+                <apex:commandButton value="Save" action="{!saveAllSites}" rendered="{!editMode}"/>
+                <apex:commandButton value="Cancel" action="{!cancelAllSites}" immediate="true" rendered="{!editMode}"/>
+                
+                <apex:commandButton disabled="{!currentTabNo==0||editMode}" rendered="{!!plusMode}" value="Previous Site" reRender="thePageBlock" action="{!doPrevious}" />
+                <apex:commandButton disabled="{!currentTabNo+1>=tabCount||editMode}" rendered="{!!plusMode}" value="Next Site" reRender="thePageBlock" action="{!doNext}" />
+                <apex:outputText rendered="{!!plusMode}" value="{!IF(sites.size!=0,currentTabNo+1,0)} of {!sites.size} site(s)" />
+            </apex:pageBlockButtons>
+            
+            <!-- 
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Total Sites"/>
+                    <apex:outputText value="{!sitesCount}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Tabs To Display"/>
+                    <apex:inputText value="{!tabsMaxString}" maxlength="2" size="2" title="Set between 1 and {!maxTabsPerPage}." onchange="rfpage();return false;"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            -->
+            <br/>
+            <apex:tabPanel switchType="server" value="{!selectedTab}" id="SiteTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab" contentStyle="font-size: 12px;">
+                <apex:tab label="{!sites[currentTabNo].Name}" name="{!sites[currentTabNo].Name}" rendered="{!currentTabNo < sites.size}" >
+                    <c:Site_detail activeSite="{!sites[currentTabNo]}" isEdit="{!editMode}" isWestLayout="{!westLayout}" isDevLayout="{!devLayout}" isotherLayout="{!otherLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="+" name="+" rendered="{!sitesCount > tabCount}" >
+                    <apex:pageBlockTable value="{!sitesColumns}" var="sc">
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.leftSite.Name}" onclick="plusTabSelected('{!sc.leftSite.Name}');return false;"/>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.rightSite.Name}" onclick="plusTabSelected('{!sc.rightSite.Name}');return false;"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:tab>
+                
+                <!-- OLD Code Commented By Madan
+                <apex:tab label="{!sites[tabFirst].Name}" name="{!sites[tabFirst].Name}" rendered="{!tabCount > 0}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                
+                <apex:tab label="{!sites[tabFirst + 1].Name}" name="{!sites[tabFirst + 1].Name}" rendered="{!tabCount > 1}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 1]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 2].Name}" name="{!sites[tabFirst + 2].Name}" rendered="{!tabCount > 2}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 2]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 3].Name}" name="{!sites[tabFirst + 3].Name}" rendered="{!tabCount > 3}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 3]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 4].Name}" name="{!sites[tabFirst + 4].Name}" rendered="{!tabCount > 4}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 4]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 5].Name}" name="{!sites[tabFirst + 5].Name}" rendered="{!tabCount > 5}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 5]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 6].Name}" name="{!sites[tabFirst + 6].Name}" rendered="{!tabCount > 6}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 6]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 7].Name}" name="{!sites[tabFirst + 7].Name}" rendered="{!tabCount > 7}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 7]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 8].Name}" name="{!sites[tabFirst + 8].Name}" rendered="{!tabCount > 8}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 8]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 9].Name}" name="{!sites[tabFirst + 9].Name}" rendered="{!tabCount > 9}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 9]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 10].Name}" name="{!sites[tabFirst + 10].Name}" rendered="{!tabCount > 10}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 10]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="{!sites[tabFirst + 11].Name}" name="{!sites[tabFirst + 11].Name}" rendered="{!tabCount > 11}" >
+                    <c:Site_detail activeSite="{!sites[tabFirst + 11]}" isEdit="{!editMode}" isWestLayout="{!westLayout}"></c:Site_detail>
+                </apex:tab>
+                
+                <apex:tab label="+" name="+" rendered="{!sitesCount > tabCount}" >
+                    <apex:pageBlockTable value="{!sitesColumns}" var="sc">
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.leftSite.Name}" onclick="plusTabSelected('{!sc.leftSite.Name}');return false;"/>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.rightSite.Name}" onclick="plusTabSelected('{!sc.rightSite.Name}');return false;"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:tab>
+                 -->
+            </apex:tabPanel>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New Business Contact</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoSolar</letterhead>
+    <name>Business Contact</name>
+    <style>freeForm</style>
+    <subject>Thank you for your interest in Borrego Solar</subject>
+    <textOnly>{!Today}
+
+
+Dear {!Contact.FirstName},
+
+Thank you for your interest in Borrego Solar.  We would love to come out and do a free solar site evaluation for your home.  Before our Energy Consultant comes out, however, we like to do a pre-solar evaluation phone call. This will help us determine who the best consultant for your project is, and what resources they should bring out. This is very important so we can do a thorough and accurate evaluation. Please let me know when and where to call you, or you can reach me at {!User.Phone} Monday-Friday 9am-5:30pm. Thank you for considering Borrego Solar. 
+
+Sincerely,
+
+{!User.Name}
+{!User.Title}
+{!User.Phone}
+{!User.Email}
+ 
+Learn more about our company! 
+ 
+See some of our installations in your area!
+
+
+
+The combined current rebate and federal tax incentive can save you 25% or more on the total cost of your solar electric system 
+ 
+Contact your utility company and ask for your last 12 months individual totals of kwh (kilowatt hours). 
+
+
+
+
+
+
+
+This e-mail message may contain privileged or confidential information. If you are not the intended recipient, you may not view, disclose, use, disseminate, distribute, copy, or rely upon this message or attachment in any way. If you received this e-mail message in error, please return by forwarding the message and its attachments to the sender and delete the message.
+
+
+Borrego Solar Systems, Inc. and its affiliates do not accept liability for any errors, omissions, corruption or virus in the contents of this message or any attachments that arise as a result of e-mail transmission.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,80 @@
+<apex:page standardController="Lead" extensions="Lead_SingleWhitePagesProCtlExt" tabStyle="Lead" action="{!reverseAddress}" lightningStylesheets="true">
+
+    <apex:form >
+        
+        <apex:sectionHeader title="Lead: Reverse Address Lookup" subtitle="{!leadRec.Name}" />
+        <apex:pageMessages />
+        
+        <apex:pageBlock mode="maindetail" title="Resident/Owner Selection" id="personsPageBlock">
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveSelection}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <!-- Debug code to display what has been selected -->
+            <!-- 
+            <apex:pageBlockSection columns="1" title="Current Selected Items" id="Selected_Curr">
+                <apex:dataTable value="{!selectedItems}" var="s" cellspacing="10px">
+                    <apex:column headervalue="Status" value="{!s.status}" />
+                    <apex:column headervalue="Type" value="{!s.person.id}" />
+                    <apex:column headervalue="Name" value="{!s.person.name}" />
+                    <apex:column headervalue="Selected" value="{!s.selected}" />
+                </apex:dataTable>
+            </apex:pageBlockSection>
+            -->
+            
+            <apex:pageBlockSection columns="1" title="Select One Resident or Owner">
+                
+                <apex:pageBlockTable value="{!persons}" var="p" id="personsTable">
+                    <apex:column >
+                        <!-- 
+                        <apex:facet name="header">
+                            <apex:inputCheckbox >
+                                <apex:actionSupport event="onclick" action="{!getSelectedPersons}" onsubmit="checkAll(this)" rerender="personsPageBlock"/>
+                            </apex:inputCheckbox>
+                        </apex:facet>
+                        -->
+                        <apex:inputCheckbox value="{!p.selected}"  id="checkedone">
+                            <apex:actionSupport event="onclick" action="{!getSelectedPersons}" rerender="personsPageBlock"/>
+                        </apex:inputCheckbox>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Status">
+                        <apex:outputText value="{!p.status}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Type">
+                        <apex:outputText value="{!p.person.id}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Name">
+                        <apex:outputText value="{!p.person.name}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Phone #">
+                        <apex:outputText value="{!p.phone}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Line Type">
+                        <apex:outputText value="{!p.lineType}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+    <script>
+        function checkAll(cb) {
+            var inputElem = document.getElementsByTagName("input");
+            for(var i=0; i<inputElem.length; i++) {
+                if(inputElem[i].id.indexOf("checkedone")!=-1)
+                    inputElem[i].checked = cb.checked;
+            }
+        }
+    </script>
+    
+</apex:page>

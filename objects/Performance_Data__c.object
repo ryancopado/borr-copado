@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>used for Energy/Powertrack and Salesforce integration, will upload data into the object</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active_alerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Active alerts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Estimate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+OR( 
+ISBLANK(Measured_Production__c ), 
+ISBLANK(Estimated_Production__c), 
+Estimated_Production__c = 0 
+), 
+null, 
+Measured_Production__c / Estimated_Production__c 
+)</formula>
+        <label>Actual/Estimate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Expected__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+OR( 
+ISBLANK(Measured_Production__c ), 
+ISBLANK(Expected_Production__c), 
+Expected_Production__c = 0 
+), 
+null, 
+Measured_Production__c / Expected_Production__c
+)</formula>
+        <label>Actual/Expected</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contract_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Site__r.Contract__r.ContractNumber</formula>
+        <inlineHelpText>pulls service contract from related Site</inlineHelpText>
+        <label>Contract</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_alerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Current alerts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Availability__c</fullName>
+        <externalId>false</externalId>
+        <label>Data Availability</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_GHI__c</fullName>
+        <description>or upload purposes only.   data from powertrack comes in watts, there is another field doing a calculation off this field that converts it to kwh for the user interface and reporting.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>for upload purposes only.   data from powertrack comes in watts, there is another field doing a calculation off this field that converts it to kwh for the user interface and reporting.</inlineHelpText>
+        <label>Estimated GHI w</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_GHI_kWh__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_GHI__c /1000</formula>
+        <label>Estimated GHI kWh</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Production__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>kWh</inlineHelpText>
+        <label>Estimated Production</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expected_Production__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>kWh</inlineHelpText>
+        <label>Expected Production</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GHI_Measured__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Kilowatt hours/meter²</inlineHelpText>
+        <label>GHI Measured</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GHI_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+     OR(
+          ISBLANK(GHI_Measured__c),
+          ISBLANK( Estimated_GHI_kWh__c ),
+          Estimated_GHI_kWh__c = 0
+     ),
+     null,
+     GHI_Measured__c /Estimated_GHI_kWh__c/1000
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GHI Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Lost_Production__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Kilowatt hours</inlineHelpText>
+        <label>Lost Production</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Measured_Production__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Kilowatt hours</inlineHelpText>
+        <label>Measured Production</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Error_Root_Cause__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Error Root Cause</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pyranometer Calibration or Failure</fullName>
+                    <default>false</default>
+                    <label>Pyranometer Calibration or Failure</label>
+                </value>
+                <value>
+                    <fullName>Pyranometer Installation</fullName>
+                    <default>false</default>
+                    <label>Pyranometer Installation</label>
+                </value>
+                <value>
+                    <fullName>Pyranometer Setup</fullName>
+                    <default>false</default>
+                    <label>Pyranometer Setup</label>
+                </value>
+                <value>
+                    <fullName>Module Temperature Sensor Failure</fullName>
+                    <default>false</default>
+                    <label>Module Temperature Sensor Failure</label>
+                </value>
+                <value>
+                    <fullName>Module Temperature (Detached or Incorrect Installation)</fullName>
+                    <default>false</default>
+                    <label>Module Temperature (Detached or Incorrect Installation)</label>
+                </value>
+                <value>
+                    <fullName>Weather Station Failure</fullName>
+                    <default>false</default>
+                    <label>Weather Station Failure</label>
+                </value>
+                <value>
+                    <fullName>Incorrect or No Shading in Model</fullName>
+                    <default>false</default>
+                    <label>Incorrect or No Shading in Model</label>
+                </value>
+                <value>
+                    <fullName>Incorrect Model Setup (Platform Limitation/Array Complexity)</fullName>
+                    <default>false</default>
+                    <label>Incorrect Model Setup (Platform Limitation/Array Complexity)</label>
+                </value>
+                <value>
+                    <fullName>Incorrect Model Setup (Borrego)</fullName>
+                    <default>false</default>
+                    <label>Incorrect Model Setup (Borrego)</label>
+                </value>
+                <value>
+                    <fullName>System Performance Issue Soiling</fullName>
+                    <default>false</default>
+                    <label>System Performance Issue Soiling</label>
+                </value>
+                <value>
+                    <fullName>System Performance Issue Hardware</fullName>
+                    <default>false</default>
+                    <label>System Performance Issue Hardware</label>
+                </value>
+                <value>
+                    <fullName>System Performance Issue Shading</fullName>
+                    <default>false</default>
+                    <label>System Performance Issue Shading</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>O_M_Client__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( Contract_2__c),  Site__r.Account_Name__c ,
+IF(ISBLANK( Paid_Contract__c),Site__r.Account_Name__c,
+null))</formula>
+        <label>O&amp;M Client</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paid_Contract__c</fullName>
+        <externalId>false</externalId>
+        <formula>Site__r.Paid_Contract__r.ContractNumber</formula>
+        <inlineHelpText>pulls associated paid service contract from site</inlineHelpText>
+        <label>Paid Contract</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paid_Service_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Paid Service Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Performance Data (Paid Service Contract)</relationshipLabel>
+        <relationshipName>Performance_Data1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Perf_Model_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Perf Model Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Performance_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AlsoEnergy/Powertrack</fullName>
+                    <default>false</default>
+                    <label>AlsoEnergy/Powertrack</label>
+                </value>
+                <value>
+                    <fullName>Aurora Vision</fullName>
+                    <default>false</default>
+                    <label>Aurora Vision</label>
+                </value>
+                <value>
+                    <fullName>Powerdash</fullName>
+                    <default>false</default>
+                    <label>Powerdash</label>
+                </value>
+                <value>
+                    <fullName>First Wind</fullName>
+                    <default>false</default>
+                    <label>First Wind</label>
+                </value>
+                <value>
+                    <fullName>Draker</fullName>
+                    <default>false</default>
+                    <label>Draker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Performance Data</relationshipLabel>
+        <relationshipName>Performance_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Site_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>ID from Also Energy/Powertrack</inlineHelpText>
+        <label>Site ID</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipLabel>Performance Data</relationshipLabel>
+        <relationshipName>Performance_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Start Date</inlineHelpText>
+        <label>TimeStamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Uptime__c</fullName>
+        <externalId>false</externalId>
+        <label>Uptime</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Performance Data</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Platform__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Site__c</columns>
+        <columns>Site_ID__c</columns>
+        <columns>O_M_Client__c</columns>
+        <columns>Measured_Production__c</columns>
+        <columns>Estimated_Production__c</columns>
+        <columns>Expected_Production__c</columns>
+        <columns>Actual_Estimate__c</columns>
+        <columns>Actual_Expected__c</columns>
+        <columns>GHI_Measured__c</columns>
+        <columns>Estimated_GHI__c</columns>
+        <columns>GHI_Percent__c</columns>
+        <columns>Performance_Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>August_Data</fullName>
+        <columns>NAME</columns>
+        <columns>Platform__c</columns>
+        <columns>Site__c</columns>
+        <columns>Site_ID__c</columns>
+        <columns>Estimated_Production__c</columns>
+        <columns>Expected_Production__c</columns>
+        <columns>Estimated_GHI_kWh__c</columns>
+        <columns>GHI_Measured__c</columns>
+        <columns>GHI_Percent__c</columns>
+        <columns>Measured_Production__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>equals</operation>
+            <value>8/1/2015</value>
+        </filters>
+        <label>August Data</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>May_Data</fullName>
+        <columns>Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Actual_Estimate__c</columns>
+        <columns>Actual_Expected__c</columns>
+        <columns>Estimated_Production__c</columns>
+        <columns>Expected_Production__c</columns>
+        <columns>GHI_Measured__c</columns>
+        <columns>GHI_Percent__c</columns>
+        <columns>Perf_Model_Notes__c</columns>
+        <columns>Performance_Notes__c</columns>
+        <columns>Paid_Contract__c</columns>
+        <columns>Contract_2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>equals</operation>
+            <value>5/1/2015</value>
+        </filters>
+        <label>May Data</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Non_Powertrack_Data</fullName>
+        <columns>NAME</columns>
+        <columns>Site__c</columns>
+        <columns>Site_ID__c</columns>
+        <columns>Measured_Production__c</columns>
+        <columns>Estimated_Production__c</columns>
+        <columns>Expected_Production__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>equals</operation>
+            <value>7/1/2015</value>
+        </filters>
+        <filters>
+            <field>Platform__c</field>
+            <operation>notEqual</operation>
+            <value>AlsoEnergy/Powertrack</value>
+        </filters>
+        <label>Non Powertrack Data</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Powertrack_July_Data</fullName>
+        <columns>Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Site__c</columns>
+        <columns>Site_ID__c</columns>
+        <columns>Actual_Estimate__c</columns>
+        <columns>Actual_Expected__c</columns>
+        <columns>Estimated_Production__c</columns>
+        <columns>Expected_Production__c</columns>
+        <columns>Estimated_GHI__c</columns>
+        <columns>GHI_Measured__c</columns>
+        <columns>GHI_Percent__c</columns>
+        <columns>Measured_Production__c</columns>
+        <columns>O_M_Client__c</columns>
+        <columns>Uptime__c</columns>
+        <columns>Lost_Production__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Start_Date__c</field>
+            <operation>equals</operation>
+            <value>7/1/2015</value>
+        </filters>
+        <filters>
+            <field>Platform__c</field>
+            <operation>equals</operation>
+            <value>AlsoEnergy/Powertrack</value>
+        </filters>
+        <label>Powertrack July Data</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Performance Data Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Performance Data</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

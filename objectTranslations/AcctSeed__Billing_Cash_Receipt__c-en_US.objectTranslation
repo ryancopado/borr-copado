@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Applied Accounting Period --></label>
+        <lookupFilter>
+            <errorMessage><!-- The accounting period status must be &quot;Open&quot; --></errorMessage>
+            <informationalMessage><!-- The accounting period status must be open --></informationalMessage>
+        </lookupFilter>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Billing Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Amount --></label>
+        <name>AcctSeed__Adjustment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment GL Account --></label>
+        <name>AcctSeed__Adjustment_GL_Account__c</name>
+        <relationshipLabel><!-- Billing Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applied Amount --></label>
+        <name>AcctSeed__Applied_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to specify the applied date for financial reporting. --></help>
+        <label><!-- Applied Date --></label>
+        <name>AcctSeed__Applied_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing --></label>
+        <name>AcctSeed__Billing__c</name>
+        <relationshipLabel><!-- Applied Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash Receipt --></label>
+        <name>AcctSeed__Cash_Receipt__c</name>
+        <relationshipLabel><!-- Billings Applied To --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Period Applied --></label>
+        <name>AcctSeed__Period_Applied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Posting Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- A billing cash receipt must contain a value for the accounting period field. --></errorMessage>
+        <name>AcctSeed__Accounting_Period_Is_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

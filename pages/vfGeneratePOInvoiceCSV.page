@@ -1,0 +1,80 @@
+<apex:page Controller="clsGeneratePOInvoiceCSV" contentType="application/vnd.ms-excel">   
+<table> 
+    <apex:repeat value="{!CSVRecords}" var="Item">     
+   
+        
+            <!--    <td> <apex:outputField value="{!Item.PType}"/> </td>
+                <td> <apex:outputField value="{!Item.Commitment}"/> </td>
+                <td> <apex:outputField value="{!Item.CommitmentLineItem}"/> </td>
+                <td> <apex:outputField value="{!Item.Equipment}"/> </td>
+                <td> <apex:outputField value="{!Item.EQCostCode}"/> </td>
+                <td> <apex:outputField value="{!Item.JobNumber}"/> </td>
+                <td> <apex:outputField value="{!Item.Extra}"/> </td>
+                <td> <apex:outputField value="{!Item.CostCodeNumber}"/> </td>
+                <td> <apex:outputField value="{!Item.Category}"/> </td>
+                <td> <apex:outputField value="{!Item.BLStdItem}"/> </td>
+                <td> <apex:outputField value="{!Item.Reserved}"/> </td>
+                <td> <apex:outputField value="{!Item.ExpenseAccount}"/> </td>
+                <td> <apex:outputField value="{!Item.AccountsPayable}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscDeduction2}"/> </td>
+                <td> <apex:outputField value="{!Item.TaxGroup}"/> </td>
+                <td> <apex:outputField value="{!Item.Units}"/> </td>
+                <td> <apex:outputField value="{!Item.UnitsCost}"/> </td>
+                <td> <apex:outputField value="{!Item.Amount}"/> </td>
+                <td> <apex:outputField value="{!Item.Tax}"/> </td>
+                <td> <apex:outputField value="{!Item.TaxLiability}"/> </td>
+                <td> <apex:outputField value="{!Item.DiscountOffered}"/> </td>
+                <td> <apex:outputField value="{!Item.Retention}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscDeduction}"/> </td>
+                <td> <apex:outputField value="{!Item.Exempt}"/> </td>
+                <td> <apex:outputField value="{!Item.DisCode}"/> </td>
+                <td> <apex:outputField value="{!Item.Draw}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscEntry1}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscEntryUnites1}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscEntry2}"/> </td>
+                <td> <apex:outputField value="{!Item.MiscEQEntryUnits2}"/> </td>
+                <td> <apex:outputField value="{!Item.EQMeterOdomenter}"/> </td>
+                <td> <apex:outputField value="{!Item.Description}"/> </td>
+                <td> <apex:outputField value="{!Item.Authorization}"/> </td>
+                <td> <apex:outputField value="{!Item.JointPayee}"/> </td>-->
+                
+                <tr> 
+                <td> {!Item.PType} </td>
+                <td> {!Item.Commitment} </td>
+                <td> {!Item.CommitmentLineItem} </td>
+                <td> {!Item.Equipment} </td>
+                <td> {!Item.EQCostCode} </td>
+                <td> {!Item.JobNumber} </td>
+                <td> {!Item.Extra} </td>
+               <td> {!Item.CostCodeNumber}   </td>
+                <td> {!Item.Category} </td>
+                <td> {!Item.BLStdItem} </td>
+                <td> {!Item.Reserved} </td>
+                <td> {!Item.ExpenseAccount} </td>
+                <td> {!Item.AccountsPayable} </td>
+                <td> {!Item.MiscDeduction2} </td>
+                <td> {!Item.TaxGroup} </td>
+                <td> {!Item.Units} </td>
+                <td> {!Item.UnitsCost} </td>
+                <td> {!Item.Amount} </td>
+                <td> {!Item.Tax} </td>
+                <td> {!Item.TaxLiability} </td>
+                <td> {!Item.DiscountOffered} </td>
+                <td> {!Item.Retention} </td>
+                <td> {!Item.MiscDeduction} </td>
+                <td> {!Item.Exempt} </td>
+                <td> {!Item.DisCode} </td>
+                <td> {!Item.Draw} </td>
+                <td> {!Item.MiscEntry1} </td>
+                <td> {!Item.MiscEntryUnites1} </td>
+                <td> {!Item.MiscEntry2} </td>
+                <td> {!Item.MiscEQEntryUnits2} </td>
+                <td> {!Item.EQMeterOdomenter} </td>
+                <td> {!Item.Description} </td>
+                <td> {!Item.Authorization} </td>
+                <td> {!Item.JointPayee} </td> 
+                </tr> 
+       
+    </apex:repeat>
+</table>
+</apex:page>

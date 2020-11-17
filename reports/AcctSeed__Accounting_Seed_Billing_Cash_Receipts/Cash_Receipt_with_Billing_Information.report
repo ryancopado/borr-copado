@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Receipt__c.AcctSeed__Account__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Receipt__c.AcctSeed__Amount__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Billing__c.AcctSeed__Proprietary_Billing_Number__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Billing__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing_Cash_Receipt__c.AcctSeed__Applied_Amount__c</field>
+    </columns>
+    <description>Cash Receipts with billing information</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Cash_Receipt__c.AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2013-05</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Cash Receipt with Billing Information</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Cash_Receipt__c$AcctSeed__Billing_Cash_Receipt__c@AcctSeed__Billing_Cash_Receipt__c.AcctSeed__Billing__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Cash_Receipt__c.AcctSeed__Account__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Cash_Receipt__c.AcctSeed__Receipt_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

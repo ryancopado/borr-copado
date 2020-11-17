@@ -1,0 +1,453 @@
+<apex:page id="thePage" tabStyle="Import_Financial_File__tab" title="Financial File Import | Accounting Seed" controller="AcctSeed.FinancialFileImport" extensions="AcctSeed.EnvironmentUtils" docType="html-5.0" sidebar="false">
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__internationalization_resources, '/javascript/Intl.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__internationalization_resources, '/locale-data/jsonp/' & DefaultLocale & '.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-common.js')}" />
+    <script type="text/javascript">
+        AcctSeed.ASModule.defaultLocale = "{!JSENCODE(DefaultLocale)}";
+        AcctSeed.ASModule.packageQualifier = "{!JSENCODE(PackageQualifier)}";
+        AcctSeed.ASModule.cashDisbursementKeyPrefix = "{!$ObjectType.AcctSeed__Cash_Disbursement__c.KeyPrefix}";
+        AcctSeed.ASModule.cashReceiptKeyPrefix = "{!$ObjectType.AcctSeed__Cash_Receipt__c.KeyPrefix}";
+        AcctSeed.ASModule.accountingPeriodKeyPrefix = "{!$ObjectType.AcctSeed__Accounting_Period__c.KeyPrefix}";
+        AcctSeed.ASModule.gLAccountKeyPrefix = "{!$ObjectType.AcctSeed__GL_Account__c.KeyPrefix}";
+        AcctSeed.ASModule.getGLAccountRemoteMethod = '{!$RemoteAction.FinancialFileImport.getGLAccount}';
+        AcctSeed.ASModule.queryDefaultVendor = '{!$RemoteAction.FinancialFileImport.queryDefaultVendor}';
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-currency.js')}" loadOnReady="true"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/financial-import.js')}" loadOnReady="true"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/financial-file-import.js')}" loadOnReady="true"/>
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/common.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/jquery.dataTables.min.css')}" />
+    <style type="text/css">
+        .statusHeader {
+            width:80px;
+        }
+    </style>
+
+    <apex:sectionHeader title="Financial File Import" subtitle="Financial File Import" />
+    <apex:form id="theForm" rendered="{!!importHandler.isLineExisted}" onsubmit="return AcctSeed.ASModule.checkFileSize();">
+        <apex:pageBlock id="thePageBlock1" title="Select File">
+            <apex:pageMessage summary="The Financial File Import utility supports the creation of cash receipts and cash disbursements from OFX and QFX file formats. These file formats are available for download from certain bank or credit card companies." severity="info" strength="3" />
+            <apex:pageMessages id="fileImportErrors" rendered="{!isError}" />
+            <apex:pageBlockButtons id="pageBlockButtons1">
+                <apex:commandButton id="import" value="Import" action="{!importFile}" onclick="AcctSeed.ASModule.disableImportButtons('Processing...')" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Import Options" columns="2" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Ledger" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:actionRegion >
+                            <apex:selectList required="true"
+                                             value="{!disbursement.AcctSeed__Ledger__c}"
+                                             multiselect="false"
+                                             size="1">
+                                <apex:selectOptions value="{!allLedgers}" />
+                                <apex:actionSupport event="onchange"
+                                                    action="{!changeLedger}"
+                                                    rerender="bankAccount"
+                                                    status="updateStatus"/>
+                            </apex:selectList>
+                        </apex:actionRegion>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Bank Account" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:selectList id="bankAccount" value="{!disbursement.AcctSeed__Bank_Account__c}" size="1">
+                            <apex:selectOptions value="{!GLAccounts}" />
+                        </apex:selectList>
+                        <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isGLAccountError}">
+                            <strong>Error:</strong> You must enter a value
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="File Upload" columns="2" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="File Input" />
+                    <apex:inputFile id="file" value="{!file.body}" filename="{!file.name}" accept=".ofx,.qfx" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <div id="resultsSection" style="display:none">
+        <apex:form id="theForm2">
+            <apex:pageBlock id="thePageBlock" title="Financial Transactions" rendered="{!importHandler.isLineExisted}">
+                <apex:pageMessages id="responseErrors" rendered="{!isError || isSaved}" />
+                <apex:pageBlockButtons id="pageBlockButtons">
+                    <apex:actionStatus id="saveStatus"
+                                       onstart="AcctSeed.ASModule.disableButtons('Processing...'); AcctSeed.ASModule.disableCheckBoxes();"
+                                       onstop="AcctSeed.ASModule.enableCheckBoxes()"/>
+                    <apex:actionStatus id="updateStatus"
+                                       onstart="AcctSeed.ASModule.disableButtons('Processing...')"
+                                       onStop="AcctSeed.ASModule.enableButtons()" />
+                    <apex:commandButton id="createButton" value="Create/Update Records"
+                                        action="{!createImportRecords}"
+                                        status="saveStatus"
+                                        reRender="theForm2"
+                                        onclick="AcctSeed.ASModule.submitForm();AcctSeed.ASModule.hideTable()"
+                                        oncomplete="AcctSeed.ASModule.formatTable();AcctSeed.ASModule.showTable();AcctSeed.ASModule.setLookupFieldElements();" />
+                    <apex:commandButton id="matchButton"
+                                        value="Find Matching Data"
+                                        status="saveStatus"
+                                        action="{!findMatchingData}"
+                                        reRender="theForm2"
+                                        oncomplete="AcctSeed.ASModule.formatTable();AcctSeed.ASModule.showTable();AcctSeed.ASModule.fireOnChangeEvent();AcctSeed.ASModule.setLookupFieldElements();"/>
+                    <apex:commandButton id="populateGLAccountButton" value="Mass Populate GL Account"
+                                        rerender="theForm2"
+                                        status="saveStatus"
+                                        onclick="AcctSeed.ASModule.setDefaultGLAccount();"
+                                        action="{!validateDefaultGLAccount}"
+                                        oncomplete="AcctSeed.ASModule.formatTable();AcctSeed.ASModule.showTable();AcctSeed.ASModule.setLookupFieldElements();" />
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection id="resultsPageBlockSection" title="Import Options" collapsible="false" columns="2">
+                    <apex:outputField value="{!disbursement.AcctSeed__Ledger__c}"/>
+                    <apex:outputText value="{!file.name}" label="File Name" />
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Bank Account">
+                            <div class="helpOrbCommon tooltip" style="position:relative;left:10px">
+                                <span>
+                                    Upon posting, a credit or debit entry will be made to this GL account based on the Type selected.
+                                </span>
+                            </div>
+                        </apex:outputLabel>
+                        <apex:outputField value="{!disbursement.AcctSeed__Bank_Account__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="vendorGLAccountItem">
+                        <apex:outputLabel value="GL Account"/>
+                        <apex:inputField id="defaultVendorGLAccount"
+                                         value="{!disbursement.AcctSeed__Debit_GL_Account__c}" required="false" />
+                    </apex:pageBlockSectionItem>
+                    <apex:inputCheckbox id="showProjects" label="Display Project Fields?" value="{!showProjectFields}">
+                        <apex:actionSupport status="saveStatus"
+                                            event="onchange"
+                                            rerender="theForm2"
+                                            oncomplete="AcctSeed.ASModule.formatTable();AcctSeed.ASModule.showTable();AcctSeed.ASModule.setLookupFieldElements();"/>
+                    </apex:inputCheckbox>
+                    <apex:outputText value=""/>
+                    <apex:inputCheckbox id="showGLAVS" label="Display GL Variable Fields?" value="{!showGLAVFields}">
+                        <apex:actionSupport status="saveStatus"
+                                            event="onchange"
+                                            rerender="theForm2"
+                                            oncomplete="AcctSeed.ASModule.formatTable();AcctSeed.ASModule.showTable();AcctSeed.ASModule.setLookupFieldElements();"/>
+                    </apex:inputCheckbox>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Results" columns="1" collapsible="false">
+                    <apex:dataTable id="theTable" styleClass="display" value="{!importHandler.wrappedLines}" var="item">
+                        <apex:column headerClass="statusHeader" headerValue="Status" styleClass="statusColumn">
+                            <div class="tableCell noneCell mid-width">
+                                <apex:outputText value="{!item.insertResult.result.Message}" escape="false"/>
+                                <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                    <div class="tableCell">
+                                        <input class="matchingRadioButton" type="radio" name="{!item.extId}" value="none" checked="checked">None</input>
+                                        <apex:inputHidden id="sfId" value="{!item.obj['Id']}"/>
+                                        <apex:inputHidden id="matchingFlag" value="{!item.linkedWithMatchingRecord}"/>
+                                    </div>
+                                </apex:outputPanel>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell mid-width">
+                                            <input class="matchingRadioButton" type="radio" name="{!matchingRecord.extId}" value="{!matchingRecord.obj.Id}">
+                                            <a href="/{!matchingRecord.obj['Id']}" target="_blank">{!matchingRecord.obj['Name']}</a>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column id="idColumn" headerValue="Id">
+                            <div class="tableCell mid-width">
+                                <apex:outputText value="{!item.extId}"/>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell mid-width"></div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Date">
+                            <div class="tableCell mid-width">
+                                <apex:outputField value="{!item.obj['Receipt_Date__c']}" rendered="{!item.tranTypeName='Receipt'}"/>
+                                <apex:outputField value="{!item.obj['Disbursement_Date__c']}" rendered="{!item.tranTypeName='Disbursement'}"/>
+                                <apex:outputField value="{!item.obj['Journal_Entry__r']['Journal_Date__c']}" rendered="{!CONTAINS(item.tranTypeName, 'Journal')}"/>
+                                <apex:outputField value="{!item.obj['Deposit_Date__c']}" rendered="{!item.tranTypeName='Deposit'}"/>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Receipt_Date__c']}" rendered="{!matchingRecord.tranTypeName='Receipt'}"/>
+                                            <apex:outputField value="{!matchingRecord.obj['Disbursement_Date__c']}" rendered="{!matchingRecord.tranTypeName='Disbursement'}"/>
+                                            <apex:outputField value="{!matchingRecord.obj['Journal_Entry__r']['Journal_Date__c']}" rendered="{!CONTAINS(matchingRecord.tranTypeName, 'Journal')}"/>
+                                            <apex:outputField value="{!matchingRecord.obj['Deposit_Date__c']}" rendered="{!matchingRecord.tranTypeName='Deposit'}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Accounting Period" styleClass="acctPeriodColumn">
+                            <div class="tableCell mid-width">
+                                <apex:inputField id="periodLookup" value="{!item.obj['Accounting_Period__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['Accounting_Period__c']}" rendered="{!!item.isCreateable && (item.tranTypeName='Receipt' || item.tranTypeName='Disbursement')}" />
+                                <apex:outputField value="{!item.obj['Journal_Entry__r']['Accounting_Period__c']}" rendered="{!!item.isCreateable && CONTAINS(item.tranTypeName, 'Journal')}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell acctPeriodCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Accounting_Period__c']}"
+                                                              rendered="{!(matchingRecord.tranTypeName='Receipt' || matchingRecord.tranTypeName='Disbursement')}" />
+                                            <apex:outputField value="{!matchingRecord.obj['Journal_Entry__r']['Accounting_Period__c']}" rendered="{!CONTAINS(matchingRecord.tranTypeName, 'Journal')}" />
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column id="nameColumn" headerValue="Name" html-data-atr="{!item.name}">
+                            <div class="tableCell large-width">
+                                <apex:outputText value="{!item.name}"
+                                                 rendered="{!NOT(item.tranTypeName='Disbursement')}"/>
+                                <apex:outputField value="{!item.obj['Import_Vendor_Name__c']}"
+                                                  rendered="{!NOT(item.isCreateable) && item.tranTypeName='Disbursement'}"/>
+                                <apex:inputField value="{!item.obj['Import_Vendor_Name__c']}"
+                                                 rendered="{!item.isCreateable && item.tranTypeName='Disbursement'}"/>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Name']}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Customer/Vendor" styleClass="vendorColumn">
+                            <div class="tableCell mid-width">
+                                <apex:inputField id="customerLookup" value="{!item.obj['Account__c']}" rendered="{!item.tranTypeName='Receipt' && item.isCreateable}" required="false" />
+                                <apex:inputField id="vendorLookup"
+                                                 value="{!item.obj['Vendor__c']}"
+                                                 rendered="{!item.tranTypeName='Disbursement' && item.isCreateable}"
+                                                 required="false"
+                                                 onchange="AcctSeed.ASModule.setVendorResultGLAccount(this); AcctSeed.ASModule.setVendorResultGLAVs(this);" />
+                                <apex:outputField id="customerLookup_output" value="{!item.obj['Account__c']}" rendered="{!(item.tranTypeName='Receipt' || CONTAINS(item.tranTypeName, 'Journal')) && !item.isCreateable}" />
+                                <apex:outputField id="vendorLookup_output" value="{!item.obj['Vendor__c']}" rendered="{!item.tranTypeName='Disbursement' && !item.isCreateable}" />
+                            </div>
+
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell vendorCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Account__c']}" rendered="{!(matchingRecord.tranTypeName='Receipt' || CONTAINS(matchingRecord.tranTypeName, 'Journal'))}" />
+                                            <apex:outputField value="{!matchingRecord.obj['Vendor__c']}" rendered="{!matchingRecord.tranTypeName='Disbursement'}" />
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="GL Account" styleClass="glAccountColumn">
+                            <div class="tableCell mid-width">
+                                <apex:inputField id="creditGLAccountLookup" value="{!item.obj['Credit_GL_Account__c']}" rendered="{!item.tranTypeName='Receipt' && item.isCreateable}" />
+                                <apex:inputField id="debitGLAccountLookup" value="{!item.obj['Debit_GL_Account__c']}" rendered="{!item.tranTypeName='Disbursement' && item.isCreateable}" />
+                                <apex:outputField id="creditGLAccountLookup_output" value="{!item.obj['Credit_GL_Account__c']}" rendered="{!item.tranTypeName='Receipt' && !item.isCreateable}" />
+                                <apex:outputField id="debitGLAccountLookup_output" value="{!item.obj['Debit_GL_Account__c']}" rendered="{!item.tranTypeName='Disbursement' && !item.isCreateable}" />
+                                <apex:outputField id="BankAccountLookup_output" value="{!item.obj['Bank_Account__c']}" rendered="{!item.tranTypeName='Deposit' && !item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell glAccountCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Credit_GL_Account__c']}" rendered="{!matchingRecord.tranTypeName='Receipt'}" />
+                                            <apex:outputField value="{!matchingRecord.obj['Debit_GL_Account__c']}" rendered="{!matchingRecord.tranTypeName='Disbursement'}" />
+                                            <apex:outputField value="{!matchingRecord.obj['Bank_Account__c']}" rendered="{!matchingRecord.tranTypeName='Deposit'}" />
+                                            <apex:outputField value="{!matchingRecord.obj['GL_Account__c']}" rendered="{!CONTAINS(matchingRecord.tranTypeName, 'Journal')}" />
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Cash Flow Category" styleClass="cashFlowColumn" rendered="{!importHandler.isCashFlowStatementEnabled}">
+                            <div class="tableCell mid-width">
+                                <apex:inputField id="cashFlowLookup" value="{!item.obj['Cash_Flow_Category__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField id="cashFlowLookup_output"
+                                                  value="{!item.obj['Cash_Flow_Category__c']}"
+                                                  rendered="{!item.tranTypeName!='Deposit' && !item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell cashFlowCell mid-width">
+                                            <apex:outputField value="{!matchingRecord.obj['Cash_Flow_Category__c']}" rendered="{!matchingRecord.tranTypeName != 'Deposit'}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Type" styleClass="typeColumn">
+                            <div class="tableCell mid-width">
+                                <apex:selectList value="{!item.selectedTransactionType}" size="1" rendered="{!item.isCreateable}">
+                                    <apex:selectOptions value="{!item.AvailableTypes}"/>
+                                </apex:selectList>
+                                <apex:outputText value="{!item.selectedTransactionType}" rendered="{!!item.isCreateable}"/>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell typeCell mid-width">
+                                            <apex:outputText value="{!matchingRecord.tranTypeName}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Amount" styleClass="align-right">
+                            <div class="tableCell mid-width">
+                                <apex:outputField styleClass="align-right" value="{!item.obj[item.amountFieldApiName]}"/>
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell mid-width">
+                                            <apex:outputField styleClass="align-right" value="{!matchingRecord.obj[matchingRecord.amountFieldApiName]}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+
+                        <apex:column headerValue="Project" rendered="{!showProjectFields}" styleClass="projectColumn">
+                            <div class="tableCell">
+                                <apex:inputField value="{!item.obj['Project__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['Project__c']}" rendered="{!!item.isCreateable && item.tranTypeName != 'Deposit'}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell projectCell">
+                                            <apex:outputField value="{!matchingRecord.obj['Project__c']}" rendered="{!matchingRecord.tranTypeName != 'Deposit'}" />
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="Project Task" rendered="{!showProjectFields}" styleClass="projectTaskColumn">
+                            <div class="tableCell">
+                                <apex:inputField value="{!item.obj['Project_Task__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['Project_Task__c']}" rendered="{!!item.isCreateable && item.tranTypeName != 'Deposit'}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell projectTaskCell">
+                                            <apex:outputField value="{!matchingRecord.obj['Project_Task__c']}" rendered="{!matchingRecord.tranTypeName != 'Deposit'}" />
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <!-- change label names to be dynamic -->
+                        <apex:column headerValue="{!$ObjectType.Account.fields.AcctSeed__GL_Account_Variable_1__c.Label}" rendered="{!showGLAVFields}" styleClass="glav1Column">
+                            <div class="tableCell">
+                                <apex:inputField id="glav1_lookup" value="{!item.obj['GL_Account_Variable_1__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['GL_Account_Variable_1__c']}" rendered="{!!item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell glav1Cell">
+                                            <apex:outputField value="{!matchingRecord.obj['GL_Account_Variable_1__c']}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.Account.fields.AcctSeed__GL_Account_Variable_2__c.Label}" rendered="{!showGLAVFields}" styleClass="glav2Column">
+                            <div class="tableCell">
+                                <apex:inputField id="glav2_lookup" value="{!item.obj['GL_Account_Variable_2__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['GL_Account_Variable_2__c']}" rendered="{!!item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell glav2Cell">
+                                            <apex:outputField value="{!matchingRecord.obj['GL_Account_Variable_2__c']}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.Account.fields.AcctSeed__GL_Account_Variable_3__c.Label}" rendered="{!showGLAVFields}" styleClass="glav3Column">
+                            <div class="tableCell">
+                                <apex:inputField id="glav3_lookup" value="{!item.obj['GL_Account_Variable_3__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['GL_Account_Variable_3__c']}" rendered="{!!item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell glav3Cell">
+                                            <apex:outputField value="{!matchingRecord.obj['GL_Account_Variable_3__c']}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.Account.fields.AcctSeed__GL_Account_Variable_4__c.Label}" rendered="{!showGLAVFields}" styleClass="glav4Column">
+                            <div class="tableCell">
+                                <apex:inputField id="glav4_lookup" value="{!item.obj['GL_Account_Variable_4__c']}" rendered="{!item.isCreateable}" />
+                                <apex:outputField value="{!item.obj['GL_Account_Variable_4__c']}" rendered="{!!item.isCreateable}" />
+                            </div>
+                            <!-- Matching Record Column -->
+                            <apex:outputPanel rendered="{!item.hasMatchingRecords}" layout="block">
+                                <apex:repeat value="{!item.matchingRecords}" var="matchingRecord">
+                                    <div class="matchingRecord" data-matching-row-id="{!matchingRecord.obj['Id']}">
+                                        <div class="tableCell glav4Cell">
+                                            <apex:outputField value="{!matchingRecord.obj['GL_Account_Variable_4__c']}"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <!-- ==================== -->
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

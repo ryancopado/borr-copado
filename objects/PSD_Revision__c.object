@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>PSD_Revision_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will contain all of the Pre-Sales Design revision requests.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Applications_Engineer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Pick the AE that will be working with you on the design</inlineHelpText>
+        <label>Applications Engineer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Applications Engineer, Applications Engineer I</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PSD_Revisions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apps_Engineer_Logged_in__c</fullName>
+        <description>displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports</description>
+        <externalId>false</externalId>
+        <formula>IF(   Pre_Sales_Design__r.Application_Engineer__c  = $User.Id, 1,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports</inlineHelpText>
+        <label>Apps Engineer Logged in</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed_Design_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>contains link to box or helioscope documents</inlineHelpText>
+        <label>Completed Design Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is for the IEI team to ask questions and give feedback regarding the revision.</inlineHelpText>
+        <label>Completed Notes</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( Working_Design_Date__c ), TODAY()-  DATEVALUE(CreatedDate) , 
+ Working_Design_Date__c   -  DATEVALUE(CreatedDate) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>calculates # of calendar days between CreatedDate &amp; Working Design/Draft Layout Date. If not complete it uses TODAY - CreatedDate</inlineHelpText>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Since_Revision_Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() - Revision_Status_Change__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Since Revision Status Change</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Design_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Design Notes</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <description>The number of hours the PSD Engineer has spent on this revision.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter in quarter hours - how long it takes to complete the revision</inlineHelpText>
+        <label>Process Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IEI_Charged_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Which month the PSD will be charged. Only input once the PSD has been created.</inlineHelpText>
+        <label>Charged Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IEI_Designer__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the engineer from the IEI team.</inlineHelpText>
+        <label>Designer</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Kevin Gebo</fullName>
+                    <default>false</default>
+                    <label>Kevin Gebo</label>
+                </value>
+                <value>
+                    <fullName>Nawaf Hassan</fullName>
+                    <default>false</default>
+                    <label>Nawaf Hassan</label>
+                </value>
+                <value>
+                    <fullName>Dan Merlin</fullName>
+                    <default>false</default>
+                    <label>Dan Merlin</label>
+                </value>
+                <value>
+                    <fullName>John Innes</fullName>
+                    <default>false</default>
+                    <label>John Innes</label>
+                </value>
+                <value>
+                    <fullName>Shaun O&apos;Leary</fullName>
+                    <default>false</default>
+                    <label>Shaun O&apos;Leary</label>
+                </value>
+                <value>
+                    <fullName>Tarn Yates</fullName>
+                    <default>false</default>
+                    <label>Tarn Yates</label>
+                </value>
+                <value>
+                    <fullName>Rogan Guild</fullName>
+                    <default>false</default>
+                    <label>Rogan Guild</label>
+                </value>
+                <value>
+                    <fullName>Jon Christensen</fullName>
+                    <default>false</default>
+                    <label>Jon Christensen</label>
+                </value>
+                <value>
+                    <fullName>Eric Biggs</fullName>
+                    <default>false</default>
+                    <label>Eric Biggs</label>
+                </value>
+                <value>
+                    <fullName>Bryan Sammons</fullName>
+                    <default>false</default>
+                    <label>Bryan Sammons</label>
+                </value>
+                <value>
+                    <fullName>Channing Congdon</fullName>
+                    <default>false</default>
+                    <label>Channing Congdon</label>
+                </value>
+                <value>
+                    <fullName>Justin Martin</fullName>
+                    <default>false</default>
+                    <label>Justin Martin</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Commercial Designer: Courtney McKinney, court.mckinney@sepisolar.com, 360-915-4663</fullName>
+                    <default>false</default>
+                    <label>Court McKinney, court.mckinney@sepisolar.com, (510) 940-9759</label>
+                </value>
+                <value>
+                    <fullName>Kevin Leong, kevin.leong@sepisolar.com, (510) 940-9754</fullName>
+                    <default>false</default>
+                    <label>Kevin Leong, kevin.leong@sepisolar.com, (510) 940-9754</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IEI_Expected_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected date of completion. This date takes the AE&apos;s or PD&apos;s priority and due date into consideration.</inlineHelpText>
+        <label>Expected Completed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IEI_Number_of_Sites__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Sites</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IEI_PSD_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that the PSD Revision draft layout was completed.</inlineHelpText>
+        <label>PSD Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IEI_PVsyst_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the modeling is completed.</inlineHelpText>
+        <label>PVsyst Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IEI_PVsyst_Modeling_Hours__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How long it takes to complete the PVsyst modeling. Only used for shade modeling.</inlineHelpText>
+        <label>PVsyst Modeling Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IEI_Photo_Simulation_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that the Photo Simulation was completed.</inlineHelpText>
+        <label>Photo Simulation Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IEI_Photo_Simulation_Sets__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to notate how many sets of pictures are needed based on the set of drawings.</inlineHelpText>
+        <label>Photo Simulation Sets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter__c</fullName>
+        <externalId>false</externalId>
+        <label>Inverter</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Checklist_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Complete The System Information Table</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lightning_Text__c</fullName>
+        <description>This field is created only for Apex class Psdlighning to store value during the Process . Please do not delete it .</description>
+        <externalId>false</externalId>
+        <label>Lightning Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module__c</fullName>
+        <externalId>false</externalId>
+        <label>Module</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>On Time</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityLookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>PSD Revisions</relationshipLabel>
+        <relationshipName>PSD_Revisions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pre_Sales_Design__r.Opportunity__r.Owner.FirstName + &quot; &quot;+Pre_Sales_Design__r.Opportunity__r.Owner.LastName</formula>
+        <label>Opportunity Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pre_Sales_Design__r.Opportunity__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSD_Apps_Engineer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pre_Sales_Design__r.Application_Engineer__r.FirstName + &apos; &apos;+ Pre_Sales_Design__r.Application_Engineer__r.LastName</formula>
+        <label>PSD Apps Engineer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Person_Responsible__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the engineer from the IEI team.</inlineHelpText>
+        <label>Person Responsible</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PSD_Revisions1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Photo_Simulation_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Photo Simulation Required</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_Sales_Design__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre-Sales Design</label>
+        <referenceTo>PSD__c</referenceTo>
+        <relationshipLabel>PSD Revisions</relationshipLabel>
+        <relationshipName>PSD_Revisions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>TOP - Should only be used when it absolutely has to be completed by tomorrow.</inlineHelpText>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Normal</fullName>
+                    <default>false</default>
+                    <label>Normal</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Quick Revision</fullName>
+                    <default>false</default>
+                    <label>Quick Revision</label>
+                </value>
+                <value>
+                    <fullName>Top</fullName>
+                    <default>false</default>
+                    <label>Top</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Production_Model_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Model Required</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proposal_Level_Needed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>L0 = Almost always used on 1st Rev, Basic Layout, System Size and limited add&apos;l info 
+L1 = More Details, Full System specs 
+L2 = L1 + Simple Single Line 
+L3 = L1 + Inconnection App level &amp; simple single line</inlineHelpText>
+        <label>Proposal Level Needed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L0</fullName>
+                    <default>false</default>
+                    <label>L0</label>
+                </value>
+                <value>
+                    <fullName>L1</fullName>
+                    <default>false</default>
+                    <label>L1</label>
+                </value>
+                <value>
+                    <fullName>L2</fullName>
+                    <default>false</default>
+                    <label>L2</label>
+                </value>
+                <value>
+                    <fullName>L3</fullName>
+                    <default>false</default>
+                    <label>L3</label>
+                </value>
+                <value>
+                    <fullName>Intx Layout</fullName>
+                    <default>false</default>
+                    <label>Intx Layout</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Racking__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Modification_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Modification Notes</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_modifiction__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Modification</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Draft</fullName>
+                    <default>false</default>
+                    <label>First Draft</label>
+                </value>
+                <value>
+                    <fullName>Design Change</fullName>
+                    <default>false</default>
+                    <label>Design Change</label>
+                </value>
+                <value>
+                    <fullName>Upgrade Proposal Level</fullName>
+                    <default>false</default>
+                    <label>Upgrade Proposal Level</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Correct Mistakes</fullName>
+                    <default>false</default>
+                    <label>Correct Mistakes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revision_De__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description to distinguish this Revision from another Revision. Used to be the &quot;Name&quot;</inlineHelpText>
+        <label>PSD Revision Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revision_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Revision Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revision_Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Revision Status Change</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Revision_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Revision Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>true</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>In Design</fullName>
+                    <default>false</default>
+                    <label>In Design</label>
+                </value>
+                <value>
+                    <fullName>Draft Layout</fullName>
+                    <default>false</default>
+                    <label>Draft Layout</label>
+                </value>
+                <value>
+                    <fullName>Resubmitted with Additional Requirements</fullName>
+                    <default>false</default>
+                    <label>Resubmitted with Additional Requirements</label>
+                </value>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Shade_Model_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Shade Model Required</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipLabel>PSD Revisions</relationshipLabel>
+        <relationshipName>PSD_Revisions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date__c</fullName>
+        <description>Date Stamps the date the PSD Revision is Submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date Stamps the date the PSD Revision is Submitted</inlineHelpText>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Why_Top_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Why Top Priority?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Working_Design_Date__c</fullName>
+        <description>captures the date the status was changed to Working Design or Draft Layout. Used for Lead and Process Time reporting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>captures the date the status was changed to Working Design or Draft Layout. Used for Lead and Process Time reporting</inlineHelpText>
+        <label>Working Design Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>PSD Revision</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_PSD_Revisions</fullName>
+        <columns>NAME</columns>
+        <columns>Revision_Status__c</columns>
+        <columns>OpportunityLookup__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Completed_Design_Link__c</columns>
+        <columns>Pre_Sales_Design__c</columns>
+        <columns>IEI_Designer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Apps_Engineer_Logged_in__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Revision_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Draft Layout,Sold,Cancelled,On Hold</value>
+        </filters>
+        <filters>
+            <field>IEI_PSD_Completion_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>My PSD Revisions</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Application_Engineer_East</role>
+            <role>Estimator</role>
+            <roleAndSubordinatesInternal>ApplicationsEngineer</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Civil_Engineering_Manager</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>Development_Engineering_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>PSD Revision Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>PSD Revisions</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Revision_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Due_Date__c</searchFilterFields>
+        <searchFilterFields>Priority__c</searchFilterFields>
+        <searchFilterFields>Proposal_Level_Needed__c</searchFilterFields>
+        <searchFilterFields>Revision_Status__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Due_Date_Accepted</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(AND(TEXT( Revision_Status__c ) &lt;&gt; &quot;New&quot;, PRIORVALUE(Due_Date__c) &lt;&gt; Due_Date__c))</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>Due Date cannot be edited after the design is accepted.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_PSD_REvision_Status_is_Submitted</fullName>
+        <active>true</active>
+        <description>AND( 
+ISNEW(), 
+NOT(ISPICKVAL( Revision_Status__c , &apos;Submitted&apos;)) 
+)</description>
+        <errorConditionFormula>AND(
+ISNEW(), 
+NOT(ISPICKVAL( Revision_Status__c , &apos;Submitted&apos;)) 
+)</errorConditionFormula>
+        <errorDisplayField>Revision_Status__c</errorDisplayField>
+        <errorMessage>Default Revision Status for a new PSD Revisions must be Submitted</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Process_Time_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISBLANK( Hours__c), 
+NOT( ISBLANK( IEI_PSD_Completion_Date__c )))</errorConditionFormula>
+        <errorDisplayField>Hours__c</errorDisplayField>
+        <errorMessage>Process time is required before you can enter a PSD Completion Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proposal_Level_Accepted</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(AND(TEXT( Revision_Status__c ) &lt;&gt; &quot;New&quot;, ISCHANGED(Proposal_Level_Needed__c) = TRUE))</errorConditionFormula>
+        <errorDisplayField>Proposal_Level_Needed__c</errorDisplayField>
+        <errorMessage>Proposal Level cannot be edited after the design is accepted.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Top_Priority_Reason_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Priority__c, &quot;Top&quot;), ISBLANK( Why_Top_Priority__c))</errorConditionFormula>
+        <errorDisplayField>Why_Top_Priority__c</errorDisplayField>
+        <errorMessage>Enter reason why PSD Revision is &quot;Top Priority&quot;.   Top Priority should only be used when it absolutely has to be done by tomorrow.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Working_Design</fullName>
+        <availability>online</availability>
+        <description>Mark the Status field Working Design and if indicated by the user, set all other Working Design PSD Revision records associated with the same Pre-Sales Design to Previously Approved.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Working Design</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{! requireScript(&apos;/soap/ajax/30.0/connection.js&apos;) } 
+
+var preSalesDesignId = &apos;{!PSD_Revision__c.Pre_Sales_DesignId__c}&apos;;
+var psdRevisionId = &apos;{!PSD_Revision__c.Id}&apos;;
+var psdRevisionName = &apos;{!PSD_Revision__c.Name}&apos;;
+var revisionStatus = &apos;{!PSD_Revision__c.Revision_Status__c}&apos;;
+var resultMsg = &apos;&apos;;
+var refreshPage = false;
+
+
+// If already marked Working Design, there is nothing to do
+if (revisionStatus == &apos;Working Design&apos;) {
+    alert(&apos;PSD Revision is already marked &quot;Working Design&quot;.&apos;);
+
+} else {
+
+    // Verify that the user truly wants to mark the PSD Revision as Working Design
+    var r = confirm(&apos;Mark this PSD Revision &quot;Working Design&quot;?&apos;);
+    if (r == true) {
+
+        // Update Revision Status field to Working Design
+        var psdRevision = new sforce.SObject(&quot;PSD_Revision__c&quot;);
+        psdRevision.Id = psdRevisionId;
+        psdRevision.Revision_Status__c = &apos;Working Design&apos;;
+        result = sforce.connection.update([psdRevision]);
+        if (result[0].getBoolean(&quot;success&quot;)) {
+            resultMsg = &apos;Marked PSD Revision &apos; + psdRevisionName + &apos; &quot;Working Design&quot;.\n&apos;;
+            refreshPage = true;
+
+            // Determine if there are any other PSD Revision records associated with
+            // the same Pre-Sales Design record that are already marked Working Design
+            var result = sforce.connection.query(&apos;SELECT Id, Name, Revision_Status__c, Pre_Sales_Design__c FROM PSD_Revision__c WHERE Pre_Sales_Design__c = \&apos;&apos;+preSalesDesignId+&apos;\&apos; AND Revision_Status__c = \&apos;Working Design\&apos; AND Id != \&apos;&apos;+psdRevisionId+&apos;\&apos;&apos;);
+            var records = result.getArray(&quot;records&quot;);
+            if ( records.length &gt; 0 ) {
+                var r = confirm(&apos;There are &apos; + records.length + &apos; PSD Revision record(s) already marked Working Design.\nDo you want to mark those record(s) &quot;Previously Approved&quot;?&apos;);
+
+                if (r == true) {
+                    var psdRevUpdate = [];
+
+                    // Mark the Revision Status field of all other Working Design records
+                    // Previously Approved.
+                    for (var i=0; i&lt;records.length; i++) {
+                        var psdRev = new sforce.SObject(&quot;PSD_Revision__c&quot;);
+                        psdRev.Id = records[i].Id;
+                        psdRev.Revision_Status__c = &apos;Previously Approved&apos;;
+                        psdRevUpdate.push(psdRev);
+                    }
+                    result = sforce.connection.update(psdRevUpdate);
+                    if (result[0].getBoolean(&quot;success&quot;)) {
+                        resultMsg += &apos;Marked &apos; + psdRevUpdate.length + &apos; other PSD Revision record(s) &quot;Previously Approved&quot;.&apos;;
+                    } else {
+                        resultMsg += &apos;Failed to mark &apos; + psdRevUpdate.length + &apos; other PSD Revision record(s) &quot;Previously Approved&quot;.\nError = &apos; + result[0];
+                    }
+                }
+
+            }
+
+        } else {
+            resultMsg = &apos;Failed to mark PSD Revision &apos; + psdRevisionName + &apos; &quot;Working Design&quot;.\nError = &apos; + result[0];
+        }
+
+        alert(resultMsg);
+        if (refreshPage == true) {
+            window.location = &apos;/&apos;+psdRevisionId;
+        }
+    }
+}</url>
+    </webLinks>
+</CustomObject>

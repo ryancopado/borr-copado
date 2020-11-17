@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_51436266</developerName>
+        <masterLabel>Status Bucket</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Project__c.Interconnection_Applications__r$Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <value>SIS/CESIR</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Application Requested</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Application Submitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Acknowledge Receipt of Application</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Complete Review of all Screens</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Complete Standard Process Initial Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Utility System Design Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Supplemental Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Detailed Study</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pre-Test Complete</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CoC Submitted to Utility</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Notice/Witness Test</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>On Hold Per Utility</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Borrego Owes Material</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Construction Timeline</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Permission To Operate</sourceValue>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Overall_Project_Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Site__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Date_Exhibit_G_Submitted_3rd_Pty_Agmt__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Next_Milestone_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Interconnection_Applications__r$Executed_ISA__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Interconnection_Applications__r$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Interconnection_Application__c.All_Applications</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_51436266</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Projects and Sites with Interconnection</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_and_Sites_with_Interconnection__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Project__c.Interconnection_Applications__r$Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c$X50_Baseline_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

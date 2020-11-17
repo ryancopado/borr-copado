@@ -1,0 +1,2589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Active Contract Lookup --></label>
+        <name>SBQQ__ActiveContractLookup</name>
+    </fieldSets>
+    <fields>
+        <help><!-- The related project that the service contract was created for. --></help>
+        <label><!-- Project --></label>
+        <name>ASProject__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- branch that is associated with the Account related to the contract --></help>
+        <label><!-- Account Branch --></label>
+        <name>Acct_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aerial (Thermal) Inspection --></label>
+        <name>Aerial_Thermal_Inspection__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Annual Landscaping Budget --></label>
+        <name>Annual_Landscaping_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Module Washing Budget --></label>
+        <name>Annual_Module_Washing_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- April --></label>
+        <name>April__c</name>
+    </fields>
+    <fields>
+        <help><!-- Area Supervisor on the contract --></help>
+        <label><!-- Area Supervisor --></label>
+        <name>Area_Supervisor__c</name>
+        <relationshipLabel><!-- Service Contracts (Area Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- August --></label>
+        <name>August__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Liablity --></label>
+        <name>Auto_Liablity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address --></label>
+        <name>Billing_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is used to calculate the due date on a billing when you create a new billing record for the customer. For example if the Billing Days Due field has a value of 30 and the billing issue date is 01/01 then the due date for the billing will be 01/31. --></help>
+        <label><!-- Billing Days Due --></label>
+        <name>Billing_Days_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of days from the billing date that the customer would have to pay within to get a discount: Example of what we use: &quot;10&quot; or “15” --></help>
+        <label><!-- Billing Discount Days Due --></label>
+        <name>Billing_Discount_Days_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percent discount the customer will receive if they pay within the number of days entered in the Billing Discount Days Due field: Example &quot;2&quot; would give a discount of 2% --></help>
+        <label><!-- Billing Discount --></label>
+        <name>Billing_Discount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of billing terms as you need them to appear on the invoice.  i.e - &quot;Due Upon Receipt&quot;. The text will default on the billing when you create a new billing record for the particular account. Current terms we use Net 15, Net 30, Net 45 --></help>
+        <label><!-- Billing Terms Name --></label>
+        <name>Billing_Terms_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+        <picklistValues>
+            <masterLabel>Mid Atlantic</masterLabel>
+            <translation><!-- Mid Atlantic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midwest</masterLabel>
+            <translation><!-- Midwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New England</masterLabel>
+            <translation><!-- New England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nor Cal</masterLabel>
+            <translation><!-- Nor Cal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>So Cal</masterLabel>
+            <translation><!-- So Cal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southeast</masterLabel>
+            <translation><!-- Southeast --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Building/Enclosure Maintenance Included? --></label>
+        <name>Building_Enclosure_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CAISO Rig Certification Included? --></label>
+        <name>CAISO_Rig_Certification_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CAISO Rig Maintenance Included? --></label>
+        <name>CAISO_Rig_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CY Compl Landscaping Visits - Not Billed --></label>
+        <name>CY_Completed_Landscaping_Visits_Not_Bi__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts total number of completed Landscaping Cases that are closed within the Current Contract Year --></help>
+        <label><!-- CY Completed Landscaping Visits --></label>
+        <name>CY_Completed_Landscaping_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- CY Compl Module Wash Visits - Not Billed --></label>
+        <name>CY_Completed_Module_Wash_Visits_Not_Bill__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts total number of completed Module Washing Cases that are closed within the Current Contract Year --></help>
+        <label><!-- CY Completed Module Wash Visits --></label>
+        <name>CY_Completed_Module_Wash_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts completed Primary PM visits from related service visits for the current year. --></help>
+        <label><!-- CY Completed Primary PM Visits --></label>
+        <name>CY_Completed_Primary_PM_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts total number of completed Work Orders related to Reactive cases that are closed within the current contract year. --></help>
+        <label><!-- CY Completed Reactive Visits --></label>
+        <name>CY_Completed_Reactive_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts total number of completed secondary PM visits from related SV for just the current year. --></help>
+        <label><!-- CY Completed Secondary PM Visits --></label>
+        <name>CY_Completed_Secondary_PM_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula field used to auto populate the next billing date on the recurring billing record based on the contract start date. --></help>
+        <label><!-- Calculate Next Billing Date --></label>
+        <name>Calculate_Next_Billing_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to Case Closure folder on Box.com --></help>
+        <label><!-- Case Closure Folder Email --></label>
+        <name>Case_Closure_Folder_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closeout Folder --></label>
+        <name>Closeout_Binder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Caused Downtime --></label>
+        <name>Company_Caused_Downtime__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls the contract signed/close date from the related project&apos;s opportunity --></help>
+        <label><!-- Contract Signed --></label>
+        <name>ContractSigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Term Years --></label>
+        <name>ContractTermYears__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total yearly amount of the service contract. --></help>
+        <label><!-- Contract Amount (yearly) --></label>
+        <name>Contract_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Job Number --></label>
+        <name>Contract_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The status of the service contract. --></help>
+        <label><!-- Contract Status --></label>
+        <name>Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego Terminated</masterLabel>
+            <translation><!-- Borrego Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Terminated</masterLabel>
+            <translation><!-- Customer Terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Erroneous</masterLabel>
+            <translation><!-- Erroneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Contract Complete</masterLabel>
+            <translation><!-- Paid Contract Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- displays calendar year in which service contract started --></help>
+        <label><!-- Contract Year --></label>
+        <name>Contract_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost for Added Landscaping per Visit --></label>
+        <name>Cost_for_Added_Landscaping_per_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost for Added Module Washing per Wash --></label>
+        <name>Cost_for_Added_Module_Washing_per_Wash__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost for Added Snow Removal per Visit --></label>
+        <name>Cost_for_Added_Snow_Removal_per_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Escalator End Date --></label>
+        <name>CurrentEscalatorEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Escalator Start Date --></label>
+        <name>CurrentEscalatorStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Engineer Rate OT --></label>
+        <name>Current_Engineer_Rate_OT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Engineer Rate --></label>
+        <name>Current_Engineer_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Regional Manager Rate --></label>
+        <name>Current_Regional_Manager_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Electrician 1 Rate OT --></label>
+        <name>Current_Solar_Electrician_1_Rate_OT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Electrician 1 Rate --></label>
+        <name>Current_Solar_Electrician_1_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Electrician 2 Rate OT --></label>
+        <name>Current_Solar_Electrician_2_Rate_OT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Solar Electrician 2 Rate --></label>
+        <name>Current_Solar_Electrician_2_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Contract End --></label>
+        <name>Current_Year_Contract_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Contract Start --></label>
+        <name>Current_Year_Contract_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Field is used to capture the current year contract value from the escalator. --></help>
+        <label><!-- Current Year Contract Value --></label>
+        <name>Current_Year_Contract_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Service Report Filed --></label>
+        <name>Current_Year_Service_Report_Filed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Contact --></label>
+        <name>Customer_Contact__c</name>
+        <relationshipLabel><!-- Contracts (Customer Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DAS Notes --></label>
+        <name>DAS_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- DAS Subscription Included --></label>
+        <name>DAS_Subscription_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DAS Vendor --></label>
+        <name>DAS_Vendor__c</name>
+        <relationshipLabel><!-- Contracts (DAS Vendor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Pulls in the DAS Provider from the related Project --></help>
+        <label><!-- DAS Vendor --></label>
+        <name>DAS_Vendor_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- show the date when the 1st increase in Labor Rates will take place --></help>
+        <label><!-- Date 1st Labor Escalator Applied --></label>
+        <name>Date_1st_Labor_Escalator_Applied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of First Escalator to be Applied --></label>
+        <name>Date_of_First_Escalator_to_be_Applied__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days after the reporting period has ended that the report is due. --></help>
+        <label><!-- Days After Period Report Due --></label>
+        <name>Days_After_Period_Report_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days contractor allowed to remedy failur --></label>
+        <name>Days_contractor_allowed_to_remedy_failur__c</name>
+    </fields>
+    <fields>
+        <label><!-- December --></label>
+        <name>December__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deductible (bodily injury/property damag --></label>
+        <name>Deductible_bodily_injury_property_damag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delay (Equipment out of Warranty) --></label>
+        <name>Delay_Equipment_out_of_Warranty__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Delay (Manufacturer Caused) --></label>
+        <name>Delay_Manufacturer_Caused__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document Comments/Explanation --></label>
+        <name>Document_Comments_Explanation__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicate whether contract will auto-renew --></help>
+        <label><!-- Does Contract Auto Renew? --></label>
+        <name>Does_Contract_Auto_Renew__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the value =  Internal it means there is 1 or more contracts associated that are of type = Warranty/Construction.   If its External it means there are no Warranty Construction Contracts associated with this project. --></help>
+        <label><!-- EPC Type --></label>
+        <name>EPCType__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC Defect Warranty Term (yrs) --></label>
+        <name>EPC_Defect_Warranty_Term_yrs__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls from related project --></help>
+        <label><!-- ES Watt-Hours --></label>
+        <name>ES_Watt_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulled from related project --></help>
+        <label><!-- ES Watts-AC --></label>
+        <name>ES_Watts_AC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electrical Panel Maintenance Included? --></label>
+        <name>Electrical_Panel_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Electrical Sub Warranty Term --></label>
+        <name>Electrical_Sub_Warranty_Obligation_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electrical Subcontractor --></label>
+        <name>Electrical_Subcontractor__c</name>
+        <relationshipLabel><!-- Contracts (Electrical Subcontractor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Determines whether equipment rentals are included as part of the contract or if they will be billable to the customer. If No, make sure to provide an explanation.
+NO LONGER BEING USED REPLACED BY UPDATED GLOBAL PICKLIST --></help>
+        <label><!-- Equipment Rental Included --></label>
+        <name>EquipmentRentalIncluded__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether equipment rentals are included as part of the contract or if they will be billable to the customer. If No, make sure to provide an explanation. --></help>
+        <label><!-- Equipment Rental Included --></label>
+        <name>Equipment_Rental_Included__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalator Year of Contract --></label>
+        <name>EscalatorYearofContract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalator Details --></label>
+        <name>Escalator_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Escalator --></label>
+        <name>Escalator__c</name>
+    </fields>
+    <fields>
+        <label><!-- February --></label>
+        <name>February__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fence Maintenance Included? --></label>
+        <name>Fence_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to location of final As Built --></help>
+        <label><!-- Final As-Built --></label>
+        <name>Final_As_Built__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fire Damage --></label>
+        <name>Fire_Damage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fire Suppression Included --></label>
+        <name>Fire_Suppression_Included__c</name>
+    </fields>
+    <fields>
+        <label><!-- Force Majeure --></label>
+        <name>Force_Majeure__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary PM Visits --></label>
+        <name>Full_PM_Visits__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- General Liability (aggregate) --></label>
+        <name>General_Liability_aggregate__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Liability (per occurrence) --></label>
+        <name>General_Liability_per_occurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Termination by Contractor (days) --></label>
+        <name>General_Termination_by_Contractor_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- General Termination by Owner (days) --></label>
+        <name>General_Termination_by_Owner_days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity at creation of contract but can be modified --></help>
+        <label><!-- Guarantee Start Date --></label>
+        <name>GuaranteeStartDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity upon creation of the contract but can be modified --></help>
+        <label><!-- Guarantee Status --></label>
+        <name>GuaranteeStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Adds the Term (years) to the Guarantee Start Date --></help>
+        <label><!-- Guarantee End Date --></label>
+        <name>Guarantee_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Guarantee Level --></label>
+        <name>Guarantee_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Guarantee Start Date --></label>
+        <name>Guarantee_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Guarantee Status --></label>
+        <name>Guarantee_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- HVAC Included --></label>
+        <name>HVAC_Included__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Service Notes --></label>
+        <name>Hourly_Drive_Time_Rate_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hourly Rate - Service (Off Hours) --></label>
+        <name>Hourly_Rate_Service_Off_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hourly Rate - Service (On Hours) --></label>
+        <name>Hourly_Rate_Service_On_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- IV Curve --></label>
+        <name>IV_Curve__c</name>
+        <picklistValues>
+            <masterLabel>1%</masterLabel>
+            <translation><!-- 1% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2%</masterLabel>
+            <translation><!-- 2% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3%</masterLabel>
+            <translation><!-- 3% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4%</masterLabel>
+            <translation><!-- 4% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40%</masterLabel>
+            <translation><!-- 40% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5%</masterLabel>
+            <translation><!-- 5% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6%</masterLabel>
+            <translation><!-- 6% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60%</masterLabel>
+            <translation><!-- 60% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7%</masterLabel>
+            <translation><!-- 7% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70%</masterLabel>
+            <translation><!-- 70% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8%</masterLabel>
+            <translation><!-- 8% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>80%</masterLabel>
+            <translation><!-- 80% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9%</masterLabel>
+            <translation><!-- 9% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90%</masterLabel>
+            <translation><!-- 90% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- I/V Curve Testing Included --></label>
+        <name>I_V_Curve_Testing_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- I/V Curve % --></label>
+        <name>I_V_Curve__c</name>
+    </fields>
+    <fields>
+        <help><!-- If No is provided as the answer to Equipment Rental included please provide a more detailed explanation in this box. --></help>
+        <label><!-- If no equipment rental, please explain --></label>
+        <name>Ifnoequipmentrentalpleaseexplain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include In Reports --></label>
+        <name>IncludeInReports__c</name>
+    </fields>
+    <fields>
+        <help><!-- lists install types from related sites. --></help>
+        <label><!-- Install Type --></label>
+        <name>Install_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Brings over value from related opportunity from the field Did Borrego do the EPC? --></help>
+        <label><!-- Internal/External --></label>
+        <name>Internal_External__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prevailing wage that is required to be paid to internal solar electricians --></help>
+        <label><!-- Internal Prevailing Wage Rate --></label>
+        <name>Internal_Prevailing_Wage_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory --></label>
+        <name>Inventory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do inverters communicate to DAS platform? --></help>
+        <label><!-- Inverter Communication --></label>
+        <name>Inverter_Communication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inverter Serial Nos. --></label>
+        <name>Inverter_Serial_Nos__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoices due (days) --></label>
+        <name>Invoices_due_days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Irradiance Threshold (W/m2) --></label>
+        <name>Irradiance_Threshold_W_m2__c</name>
+    </fields>
+    <fields>
+        <label><!-- January --></label>
+        <name>January__c</name>
+    </fields>
+    <fields>
+        <label><!-- JobNo --></label>
+        <name>JobNo__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field derives from the Project&apos;s Job Number Example: &quot;901-0004&quot; --></help>
+        <label><!-- Project Number --></label>
+        <name>JobNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- July --></label>
+        <name>July__c</name>
+    </fields>
+    <fields>
+        <label><!-- June --></label>
+        <name>June__c</name>
+    </fields>
+    <fields>
+        <help><!-- describes when the labor escalator should be applied --></help>
+        <label><!-- Labor Escalator Details --></label>
+        <name>Labor_Escalator_Details__c</name>
+        <picklistValues>
+            <masterLabel>Increases on anniversary date of contract</masterLabel>
+            <translation><!-- Increases on anniversary date of contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increases per calendar year</masterLabel>
+            <translation><!-- Increases per calendar year --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Labor rate escalator for this contract --></help>
+        <label><!-- Labor Escalator --></label>
+        <name>Labor_Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- converts values in picklist Landscaping Visits Per Year to numeric values so it can be used in calcuations on related SV, no need to be on layout or visible to anyone --></help>
+        <label><!-- Landscaping Visits Number --></label>
+        <name>Landscaping_Visits_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Landscaping Visits per Year --></label>
+        <name>Landscaping_Visits_per_Year__c</name>
+        <picklistValues>
+            <masterLabel>1 Prepaid If Required</masterLabel>
+            <translation><!-- 1 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 Required</masterLabel>
+            <translation><!-- 1 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 Required Billable</masterLabel>
+            <translation><!-- 1 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Prepaid If Required</masterLabel>
+            <translation><!-- 2 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Required</masterLabel>
+            <translation><!-- 2 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Required Billable</masterLabel>
+            <translation><!-- 2 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Prepaid If Required</masterLabel>
+            <translation><!-- 3 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Required</masterLabel>
+            <translation><!-- 3 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Required Billable</masterLabel>
+            <translation><!-- 3 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Prepaid If Required</masterLabel>
+            <translation><!-- 4 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Required</masterLabel>
+            <translation><!-- 4 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Required Billable</masterLabel>
+            <translation><!-- 4 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OnCall Billable</masterLabel>
+            <translation><!-- OnCall Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unlimited Prepaid</masterLabel>
+            <translation><!-- Unlimited Prepaid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Mow Date --></label>
+        <name>Last_Mow_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last date that the site was serviced. --></help>
+        <label><!-- Last Service Date --></label>
+        <name>Last_Service_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Wash Date --></label>
+        <name>Last_Wash_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- input link to where contract documents are being stored --></help>
+        <label><!-- Link to Contract Documents --></label>
+        <name>Link_to_Contract_Documents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Performance Guarantee --></label>
+        <name>Link_to_Performance_Guarantee__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Link to Performance Model --></label>
+        <name>Link_to_Performance_Model__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulled from related Opportunity upon creation of the contract but can be modified --></help>
+        <label><!-- Link to Performance Model --></label>
+        <name>LinktoPerformanceModel__c</name>
+    </fields>
+    <fields>
+        <label><!-- March --></label>
+        <name>March__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mark up pct formula --></label>
+        <name>Mark_up_pct_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material and Equipment Mark-Up --></label>
+        <name>Material_and_Equipment_Mark_Up__c</name>
+        <picklistValues>
+            <masterLabel>1%</masterLabel>
+            <translation><!-- 1% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11%</masterLabel>
+            <translation><!-- 11% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12%</masterLabel>
+            <translation><!-- 12% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13%</masterLabel>
+            <translation><!-- 13% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14%</masterLabel>
+            <translation><!-- 14% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15%</masterLabel>
+            <translation><!-- 15% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16%</masterLabel>
+            <translation><!-- 16% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17%</masterLabel>
+            <translation><!-- 17% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18%</masterLabel>
+            <translation><!-- 18% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19%</masterLabel>
+            <translation><!-- 19% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2%</masterLabel>
+            <translation><!-- 2% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3%</masterLabel>
+            <translation><!-- 3% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4%</masterLabel>
+            <translation><!-- 4% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5%</masterLabel>
+            <translation><!-- 5% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6%</masterLabel>
+            <translation><!-- 6% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7%</masterLabel>
+            <translation><!-- 7% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8%</masterLabel>
+            <translation><!-- 8% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9%</masterLabel>
+            <translation><!-- 9% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- May --></label>
+        <name>May__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Expense (each claim) --></label>
+        <name>Medical_Expense_each_claim__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum number of hours billable per service visit. If 0, all travel time is billable --></help>
+        <label><!-- Minimum Billable Travel Time --></label>
+        <name>MinimumBillableTravelTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any details or anomalies related to modeling --></help>
+        <label><!-- Modeling Notes --></label>
+        <name>Modeling_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select source of modeling --></help>
+        <label><!-- Modeling --></label>
+        <name>Modeling__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Approved Model</masterLabel>
+            <translation><!-- Borrego Approved Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego Model</masterLabel>
+            <translation><!-- Borrego Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- converts values in picklist # Module Washings  to numeric values so it can be used in calcuations on related SV, no need to be on layout or visible to anyone...displays # of visits that are free --></help>
+        <label><!-- Module Washings Number --></label>
+        <name>Module_Washings_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Modules Washings per Year --></label>
+        <name>Modules_Washings_per_Year__c</name>
+        <picklistValues>
+            <masterLabel>1 Prepaid If Required</masterLabel>
+            <translation><!-- 1 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 Required</masterLabel>
+            <translation><!-- 1 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1 Required Billable</masterLabel>
+            <translation><!-- 1 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Prepaid If Required</masterLabel>
+            <translation><!-- 2 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Required</masterLabel>
+            <translation><!-- 2 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Required Billable</masterLabel>
+            <translation><!-- 2 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Prepaid If Required</masterLabel>
+            <translation><!-- 3 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Required</masterLabel>
+            <translation><!-- 3 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 Required Billable</masterLabel>
+            <translation><!-- 3 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Prepaid If Required</masterLabel>
+            <translation><!-- 4 Prepaid If Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Required</masterLabel>
+            <translation><!-- 4 Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Required Billable</masterLabel>
+            <translation><!-- 4 Required Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OnCall Billable</masterLabel>
+            <translation><!-- OnCall Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unlimited Prepaid</masterLabel>
+            <translation><!-- Unlimited Prepaid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does the contract require that we monitor the site? --></help>
+        <label><!-- Monitoring Required? --></label>
+        <name>Monitoring_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mow/wash escalator for this contract --></help>
+        <label><!-- Mow/Wash Escalator --></label>
+        <name>Mow_Wash_Escalator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Mow Date --></label>
+        <name>Next_Mow_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the related Project Opportunity --></help>
+        <label><!-- Next True Up Date --></label>
+        <name>Next_True_Up_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Wash Date --></label>
+        <name>Next_Wash_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- November --></label>
+        <name>November__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of SV in Reporting Period --></label>
+        <name>Number_of_SV_in_Reporting_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rolls up the number of Work Orders in the related Account reporting period. Used in the Summary Report on the Account. --></help>
+        <label><!-- Number of WO in Reporting Period --></label>
+        <name>Number_of_WO_in_Reporting_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Personnel at client who manages contract terms --></help>
+        <label><!-- O&amp;M Client Contact --></label>
+        <name>O_M_Client_Contact__c</name>
+        <relationshipLabel><!-- O&amp;M Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Contract Active? --></label>
+        <name>O_M_Contract_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Package --></label>
+        <name>O_M_Package__c</name>
+        <picklistValues>
+            <masterLabel>Comprehensive</masterLabel>
+            <translation><!-- Comprehensive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Price</masterLabel>
+            <translation><!-- Fixed Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hourly</masterLabel>
+            <translation><!-- Hourly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preventative</masterLabel>
+            <translation><!-- Preventative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;M</masterLabel>
+            <translation><!-- T&amp;M --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Start Date --></label>
+        <name>O_M_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- October --></label>
+        <name>October__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related Opportunity --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Incident --></label>
+        <name>Other_Incident__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other Description --></label>
+        <name>Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Reporting Period Update Fired --></label>
+        <name>PB_Reporting_Period_Update_Fired__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Budget --></label>
+        <name>PM_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Case Closure Box Folder E-mail --></label>
+        <name>PM_Case_Closure_Box_Folder_E_mail__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Notes --></label>
+        <name>PM_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM --></label>
+        <name>PM__c</name>
+        <relationshipLabel><!-- Service Contracts (PM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Prior Year (contract year) completed landscaping visits. --></help>
+        <label><!-- PY Completed Landscaping Visits --></label>
+        <name>PY_Completed_Landscaping_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Year (contract year) completed module washing visits. --></help>
+        <label><!-- PY Completed Module Wash Visits --></label>
+        <name>PY_Completed_Module_Wash_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Year (contract year) completed primary preventative maintenance visits. --></help>
+        <label><!-- PY Completed Primary PM Visits --></label>
+        <name>PY_Completed_Primary_PM_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Year (contract year) completed reactive visits. --></help>
+        <label><!-- PY Completed Reactive Visits --></label>
+        <name>PY_Completed_Reactive_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Year (contract year) completed secondary preventative maintenance visits. --></help>
+        <label><!-- PY Completed Secondary PM Visits --></label>
+        <name>PY_Completed_Secondary_PM_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- payment options will eventually auto-populate value on Billings and set off automated process, please make sure its accurate before activating contract. --></help>
+        <label><!-- Payment Options --></label>
+        <name>Payment_Options__c</name>
+        <picklistValues>
+            <masterLabel>Anniversary Semi-Annual in Arrears</masterLabel>
+            <translation><!-- Anniversary Semi-Annual in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anniversary in Advance</masterLabel>
+            <translation><!-- Anniversary in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual in Advance - Jan to Dec</masterLabel>
+            <translation><!-- Annual in Advance - Jan to Dec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arrears Per % of visits completed</masterLabel>
+            <translation><!-- Arrears Per % of visits completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long-Term in Advance</masterLabel>
+            <translation><!-- Long-Term in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Semi-Annual</masterLabel>
+            <translation><!-- Mid Semi-Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly in Advance</masterLabel>
+            <translation><!-- Monthly in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly in Arrears</masterLabel>
+            <translation><!-- Monthly in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Advance</masterLabel>
+            <translation><!-- Quarterly in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Advance Equal Installments</masterLabel>
+            <translation><!-- Quarterly in Advance Equal Installments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Arrears</masterLabel>
+            <translation><!-- Quarterly in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Arrears Equal Installments</masterLabel>
+            <translation><!-- Quarterly in Arrears Equal Installments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annual in Advance</masterLabel>
+            <translation><!-- Semi-Annual in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annual in Arrears</masterLabel>
+            <translation><!-- Semi-Annual in Arrears --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- how many days the customer has to pay us --></help>
+        <label><!-- Payment due (days) --></label>
+        <name>Payment_due_days__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulled from related Opportunity upon creation of the contract but can be modified --></help>
+        <label><!-- Penalty Rate --></label>
+        <name>PenaltyRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Penalty Rate ($/kWh) --></label>
+        <name>Penalty_Rate_kWh__c</name>
+    </fields>
+    <fields>
+        <help><!-- Information on the performance guarantee that is from the opportunity. --></help>
+        <label><!-- Performance Guarantee Info --></label>
+        <name>Performance_Guarantee_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal/Advertising Injury (aggregate): --></label>
+        <name>Personal_Advertising_Injury_aggregate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picasa Album --></label>
+        <name>Picasa_Album__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preapproved Level --></label>
+        <name>Preapproved_Level__c</name>
+        <picklistValues>
+            <masterLabel>1000</masterLabel>
+            <translation><!-- 1000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1500</masterLabel>
+            <translation><!-- 1500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2000</masterLabel>
+            <translation><!-- 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>500</masterLabel>
+            <translation><!-- 500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls from opportunity at creation but can also be edited if necessary --></help>
+        <label><!-- Prevailing Wage Included --></label>
+        <name>Prevailing_Wage_Included__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from prevailing wage field on the opportunity --></help>
+        <label><!-- Prevailing Wage DO NOT USE --></label>
+        <name>Prevailing_Wage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preventative Maintenance --></label>
+        <name>Preventative_Maintenance__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- converts values in picklist PRimary PM to numeric values so it can be used in calcuations --></help>
+        <label><!-- Primary PM Visits Number --></label>
+        <name>Primary_PM_Visits_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Procore Project URL --></label>
+        <name>Procore_Project_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Products --></label>
+        <name>Products__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays opportunity ID from opportunity on related project, used mostly in reporting no need to be on layouts or visible to anyone but admins --></help>
+        <label><!-- Project Opportunity ID --></label>
+        <name>ProjectOpportunityID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date on which the related project is set to end. --></help>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Engineer --></label>
+        <name>Project_Engineer__c</name>
+        <relationshipLabel><!-- Service Contracts (Project Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Service Contracts (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Punch List --></label>
+        <name>Punch_List__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quoted Fixed Price --></label>
+        <name>Quoted_Fixed_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quoted Labor Costs --></label>
+        <name>Quoted_Labor_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quoted Material Cost --></label>
+        <name>Quoted_Material_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reactive Maintenance --></label>
+        <name>Reactive_Maintenance__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reactive Service Budget --></label>
+        <name>Reactive_Service_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula Field to concatenate the project name and account name used in the recurring billing record to populate the recurring billing name --></help>
+        <label><!-- Recurring Billing Name --></label>
+        <name>Recurring_Billing_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly(OT) rate stated in contract --></help>
+        <label><!-- Regional Manager - OT Rate --></label>
+        <name>Regional_Manager_OT_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Regional manager on the contract --></help>
+        <label><!-- Regional Manager --></label>
+        <name>Regional_Manager_User__c</name>
+        <relationshipLabel><!-- Service Contracts (Regional Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract --></help>
+        <label><!-- Regional Manager Rate --></label>
+        <name>Regional_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Requirement Notes --></label>
+        <name>Reporting_Requirement_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Requirements --></label>
+        <name>Reporting_Requirements__c</name>
+        <picklistValues>
+            <masterLabel>Annual Production Report</masterLabel>
+            <translation><!-- Annual Production Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Availability Report</masterLabel>
+            <translation><!-- Availability Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly Production Report</masterLabel>
+            <translation><!-- Monthly Production Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Guarantee Report</masterLabel>
+            <translation><!-- Performance Guarantee Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly Production Report</masterLabel>
+            <translation><!-- Quarterly Production Report --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporting Requirements from Oppty --></label>
+        <name>Reporting_Requirements_from_Oppty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a residential contract? Looks at the Account. --></help>
+        <label><!-- Residential --></label>
+        <name>Residential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Road/Access Point Maintenance Included? --></label>
+        <name>Road_Access_Point_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この契約が有効かどうかを決定します。</help>
+        <label><!-- Active Contract --></label>
+        <name>SBQQ__ActiveContract__c</name>
+    </fields>
+    <fields>
+        <help>他に指定されていない場合、修正商談のレコードタイプ。</help>
+        <label><!-- Amendment Opportunity Record Type Id --></label>
+        <name>SBQQ__AmendmentOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help>修正商談の現在のフェーズ。</help>
+        <label><!-- Amendment Opportunity Stage --></label>
+        <name>SBQQ__AmendmentOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help>元の商談の所有者。</help>
+        <label><!-- Amendment Owner --></label>
+        <name>SBQQ__AmendmentOwner__c</name>
+        <relationshipLabel><!-- Service Contracts (Amendment Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>修正の価格表 ID。</help>
+        <label><!-- Amendment Pricebook Id --></label>
+        <name>SBQQ__AmendmentPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>更新開始日と修正終了日の計算ベース。</help>
+        <label><!-- Amendment &amp; Renewal Behavior --></label>
+        <name>SBQQ__AmendmentRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>Earliest End Date</masterLabel>
+            <translation>最も早い終了日</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest End Date</masterLabel>
+            <translation>最も遅い終了日</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>修正の開始日。空白の場合、修正は現在の日付で開始します。</help>
+        <label><!-- Amendment Start Date --></label>
+        <name>SBQQ__AmendmentStartDate__c</name>
+    </fields>
+    <fields>
+        <help>元の商談から更新商談に取引先責任者ロールを含めるには選択します。</help>
+        <label><!-- Default Renewal Contact Roles --></label>
+        <name>SBQQ__DefaultRenewalContactRoles__c</name>
+    </fields>
+    <fields>
+        <help>元の商談パートナーを更新商談に含めるには選択します。</help>
+        <label><!-- Default Renewal Partners --></label>
+        <name>SBQQ__DefaultRenewalPartners__c</name>
+    </fields>
+    <fields>
+        <help>オフにすると、修正見積終了日は [修正および更新動作] 設定に従って設定されます。オンにすると、終了日は設定されません。</help>
+        <label><!-- Disable Amendment Co-Term --></label>
+        <name>SBQQ__DisableAmendmentCoTerm__c</name>
+    </fields>
+    <fields>
+        <help>契約がエバーグリーンかどうかを示します。</help>
+        <label><!-- Evergreen --></label>
+        <name>SBQQ__Evergreen__c</name>
+    </fields>
+    <fields>
+        <help>時間ベースのワークフローで使用する契約終了日。</help>
+        <label><!-- Expiration Date --></label>
+        <name>SBQQ__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <help>セグメント化されたサブスクリプション商品を更新見積でどのように表示するかを定義します。セグメント化を解除すると、最終セグメントのデータで標準見積品目として更新されます。</help>
+        <label><!-- MDQ Renewal Behavior --></label>
+        <name>SBQQ__MDQRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>De-segmented</masterLabel>
+            <translation>セグメント化解除</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この契約をこの取引先の主契約として指定するには選択します。更新時、すべての契約はこの契約に集約されます。</help>
+        <label><!-- Master Contract --></label>
+        <name>SBQQ__MasterContract__c</name>
+    </fields>
+    <fields>
+        <help>元の商談から使用される価格表の ID。</help>
+        <label><!-- Opportunity or Quote Price Book ID --></label>
+        <name>SBQQ__OpportunityPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>この契約の作成元である商談。</help>
+        <label><!-- Opportunity --></label>
+        <name>SBQQ__Opportunity__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>SBQQ__Order__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>更新見積のバンドル階層を保持するにはチェックボックスをオンにします。</help>
+        <label><!-- Preserve Bundle Structure --></label>
+        <name>SBQQ__PreserveBundleStructureUponRenewals__c</name>
+    </fields>
+    <fields>
+        <help>この契約の作成元である見積。</help>
+        <label><!-- Quote --></label>
+        <name>SBQQ__Quote__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>売上予測目的で更新商談の生成をトリガする場合に選択します。更新見積を自動的に生成することはありません。</help>
+        <label><!-- Renewal Forecast --></label>
+        <name>SBQQ__RenewalForecast__c</name>
+    </fields>
+    <fields>
+        <help>デフォルトと異なる場合、更新商談のレコードタイプ。</help>
+        <label><!-- Renewal Opportunity Record Type Id --></label>
+        <name>SBQQ__RenewalOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help>この更新のデフォルトの商談フェーズを上書きします。更新商談で有効にするには、これを [更新売上予測] の選択より前に行う必要があります。</help>
+        <label><!-- Renewal Opportunity Stage --></label>
+        <name>SBQQ__RenewalOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help>この契約の更新を追跡するために生成された更新商談。</help>
+        <label><!-- Renewal Opportunity --></label>
+        <name>SBQQ__RenewalOpportunity__c</name>
+        <relationshipLabel><!-- Renewal Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>元の商談の所有者。</help>
+        <label><!-- Renewal Owner --></label>
+        <name>SBQQ__RenewalOwner__c</name>
+        <relationshipLabel><!-- Service Contracts (Renewal Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>元の商談の価格表 ID を使用しない場合、更新商談で使用する価格表 ID を指定します。</help>
+        <label><!-- Renewal Pricebook Id --></label>
+        <name>SBQQ__RenewalPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>更新商談で更新見積を自動的に生成する場合はこのオプションを選択します。</help>
+        <label><!-- Renewal Quoted --></label>
+        <name>SBQQ__RenewalQuoted__c</name>
+    </fields>
+    <fields>
+        <help>更新の期間を指定します。デフォルトでは、元の契約期間と同じになります。</help>
+        <label><!-- Renewal Term --></label>
+        <name>SBQQ__RenewalTerm__c</name>
+    </fields>
+    <fields>
+        <help>更新価格の増加率。</help>
+        <label><!-- Renewal Uplift (%) --></label>
+        <name>SBQQ__RenewalUpliftRate__c</name>
+    </fields>
+    <fields>
+        <help>同じ商品のサブスクリプションの数量を更新見積と修正の 1 つの品目に統合する場合に選択します。</help>
+        <label><!-- Combine Subscription Quantities --></label>
+        <name>SBQQ__SubscriptionQuantitiesCombined__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will auto-fill with the Project&apos;s &quot;Permission to Operate&quot; PTO Date --></help>
+        <label><!-- Project PTO Date --></label>
+        <name>SFDCProjectPTODate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes whether or not the contract should include Sales Tax. Used for Billings. --></help>
+        <label><!-- Sales Tax Exempt? --></label>
+        <name>SalesTaxExempt__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Who is responsible for sales tax? --></help>
+        <label><!-- Sales Tax Responsibility --></label>
+        <name>Sales_Tax_Responsibility__c</name>
+        <picklistValues>
+            <masterLabel>Borrego</masterLabel>
+            <translation><!-- Borrego --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scope --></label>
+        <name>Scope__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Electrical Subcontractor --></label>
+        <name>Secondary_Electrical_Subcontractor__c</name>
+        <relationshipLabel><!-- Warranty Contracts (Secondary Electrical Subcontractor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Secondary PM Visits --></label>
+        <name>Secondary_PM_Visit__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- converts values in picklist Secondary PM to numeric values so it can be used in calcuations on related SV, no need to be on layout or visible to anyone --></help>
+        <label><!-- Secondary PM Visits Number --></label>
+        <name>Secondary_PM_Visits_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sensor Calibration Included? --></label>
+        <name>Sensor_Calibration_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- September --></label>
+        <name>September__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date that the service contract starts. --></help>
+        <label><!-- Service Contract Start Date --></label>
+        <name>Service_Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tier 1 = Borrego has a performance or availability guarantee in place 
+Tier 2 = Reactive package 
+Tier 3 = Basic package 
+Tier 4 = Less than Basic package
+Tier 10 = Not Currently Contracted or Warranty --></help>
+        <label><!-- Service Contract Tier --></label>
+        <name>Service_Contract_Tier__c</name>
+        <picklistValues>
+            <masterLabel>Tier 0</masterLabel>
+            <translation><!-- Tier 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 10</masterLabel>
+            <translation><!-- Tier 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3</masterLabel>
+            <translation><!-- Tier 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 4</masterLabel>
+            <translation><!-- Tier 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The total amount of money spent on service cost for the current year. --></help>
+        <label><!-- Service Costs (this year) --></label>
+        <name>Service_Costs_this_year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Frequency (months) --></label>
+        <name>Service_Schedule_months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Module Washing --></label>
+        <name>Service_Vendor_Module_Washing__c</name>
+        <relationshipLabel><!-- Contracts (Service Vendor Module Washing) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Notes --></label>
+        <name>Service_Vendor_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Reactive --></label>
+        <name>Service_Vendor_Reactive__c</name>
+        <relationshipLabel><!-- Contracts (Service Vendor Reactive) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Scheduled PM --></label>
+        <name>Service_Vendor_Scheduled_PM__c</name>
+        <relationshipLabel><!-- Contracts (Service Vendor Scheduled PM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Snow Removal --></label>
+        <name>Service_Vendor_Snow_Removal__c</name>
+        <relationshipLabel><!-- Contracts (Service Vendor Snow Removal) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Vendor Vegetation --></label>
+        <name>Service_Vendor_Vegetation__c</name>
+        <relationshipLabel><!-- Contracts (Service Vendor Vegatation) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The address of the site. This is pulled through from the related project fields . --></help>
+        <label><!-- Site Address --></label>
+        <name>Site_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- SS --></label>
+        <name>Site_Super__c</name>
+    </fields>
+    <fields>
+        <label><!-- Snow Removal Included? --></label>
+        <name>Snow_Removal_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Snow or Ice --></label>
+        <name>Snow_or_Ice__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Hourly(OT) rate stated in contract --></help>
+        <label><!-- Solar Electrician 1 - OT Rate --></label>
+        <name>Solar_Electrician_1_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract --></help>
+        <label><!-- Solar Electrician 1 Rate --></label>
+        <name>Solar_Electrician_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly(OT) rate stated in contract --></help>
+        <label><!-- Solar Electrician 2 - OT Rate --></label>
+        <name>Solar_Electrician_2_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract --></help>
+        <label><!-- Solar Electrician 2 Rate --></label>
+        <name>Solar_Electrician_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly(OT) rate stated in contract --></help>
+        <label><!-- Solar Engineer - OT Rate --></label>
+        <name>Solar_Engineer_OT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract --></help>
+        <label><!-- Solar Engineer Rate --></label>
+        <name>Solar_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Include link to inventory spreadsheet --></help>
+        <label><!-- Spare Parts Inventory Notes --></label>
+        <name>Spare_Parts_Inventory_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spare Parts Not In Stock --></label>
+        <name>Spare_Parts_Not_In_Stock__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Special Maintenance Notes --></label>
+        <name>Special_Maintenance_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Drive Time Policy --></label>
+        <name>Standard_Drive_Time_Policy__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Standard Insurance Terms --></label>
+        <name>Standard_Insurance_Terms__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Standard Response Times Conditions --></label>
+        <name>Standard_Response_Times_Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Response Times --></label>
+        <name>Standard_Response_Times__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- String Inverter Replacement Included? --></label>
+        <name>String_Inverter_Replacement_Included_in__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- String Inverters --></label>
+        <name>String_Inverters__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Switchgear Maintenance Included? --></label>
+        <name>Switchgear_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Senior Designer Engineer --></label>
+        <name>System_Designer__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the current system size for the related project. --></help>
+        <label><!-- System Size Watts STC --></label>
+        <name>System_Size_Watts_STC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tariff --></label>
+        <name>Tariff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Term (Years) --></label>
+        <name>Term_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination for cause by Contractor (day --></label>
+        <name>Termination_for_cause_by_Contractor_day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination for cause by Owner (days) --></label>
+        <name>Termination_for_cause_by_Owner_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination for convenience? --></label>
+        <name>Termination_for_convenience__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor</masterLabel>
+            <translation><!-- Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Thermal Imaging w/ Handheld --></label>
+        <name>Thermal_Imaging__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bi-annual</masterLabel>
+            <translation><!-- Bi-annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Torque Structural --></label>
+        <name>Torque_Structural__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40%</masterLabel>
+            <translation><!-- 40% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60%</masterLabel>
+            <translation><!-- 60% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70%</masterLabel>
+            <translation><!-- 70% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>80%</masterLabel>
+            <translation><!-- 80% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90%</masterLabel>
+            <translation><!-- 90% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transformer DGA --></label>
+        <name>Transformer_DGA__c</name>
+        <picklistValues>
+            <masterLabel>3rd Year</masterLabel>
+            <translation><!-- 3rd Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bi-annual</masterLabel>
+            <translation><!-- Bi-annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transformer Maintenance Included? --></label>
+        <name>Transformer_Maintenance_Included__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Travel Cap Text --></label>
+        <name>TravelCapText__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates If travel billable per the service contract, and how it should be billed if it is. --></help>
+        <label><!-- Travel Billable? --></label>
+        <name>Travel_Billable__c</name>
+        <picklistValues>
+            <masterLabel>1-way</masterLabel>
+            <translation><!-- 1-way --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2-way</masterLabel>
+            <translation><!-- 2-way --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- maximum hours that can be billed for travel per contract --></help>
+        <label><!-- Travel Billing Cap (Hours) --></label>
+        <name>Travel_Billing_Cap_Hours__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- True Up Interval (Years) --></label>
+        <name>True_Up_Interval_Years__c</name>
+    </fields>
+    <fields>
+        <help><!-- O&amp;MWarranty:  Borrego built, under EPCWrnty &amp; contract
+O&amp;M: Borrego didn&apos;t build; EPC expired &amp; contract
+O&amp;M T&amp;M: Borrego didn&apos;t build; EPC expired &amp; contract,  billed T&amp;M 
+Borrego Warranty: Borrego built, under EPCWrnty; no contract
+Project: one-offs --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>O&amp;M</masterLabel>
+            <translation><!-- O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M T&amp;M</masterLabel>
+            <translation><!-- O&amp;M T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Projects</masterLabel>
+            <translation><!-- Special Projects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty/Construction</masterLabel>
+            <translation><!-- Warranty/Construction --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Type of Guarantee --></label>
+        <name>Type_of_Guarantee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Umbrella Liability (aggregate) --></label>
+        <name>Umbrella_Liability_aggregate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Umbrella Liability (per occurrence) --></label>
+        <name>Umbrella_Liability_per_occurrence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Uncertainty (%) --></label>
+        <name>Uncertainty__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from related opportunity --></help>
+        <label><!-- Union --></label>
+        <name>Union__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from related Project Opportunity --></help>
+        <label><!-- Upside? --></label>
+        <name>Upside__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility Outage --></label>
+        <name>Utility_Outage__c</name>
+        <picklistValues>
+            <masterLabel>Excluded</masterLabel>
+            <translation><!-- Excluded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Utility Resets --></label>
+        <name>Utility_Resets__c</name>
+    </fields>
+    <fields>
+        <help><!-- The utility company for the related project. --></help>
+        <label><!-- Utility --></label>
+        <name>Utility__c</name>
+    </fields>
+    <fields>
+        <label><!-- VOC / IMP --></label>
+        <name>VOC_IMP__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40%</masterLabel>
+            <translation><!-- 40% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60%</masterLabel>
+            <translation><!-- 60% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70%</masterLabel>
+            <translation><!-- 70% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>80%</masterLabel>
+            <translation><!-- 80% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90%</masterLabel>
+            <translation><!-- 90% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Warranty Activation Milestone --></label>
+        <name>Warranty_Activation_Milestone__c</name>
+        <picklistValues>
+            <masterLabel>Final Completion</masterLabel>
+            <translation><!-- Final Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical Completion</masterLabel>
+            <translation><!-- Mechanical Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Permission to Operate</masterLabel>
+            <translation><!-- Permission to Operate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Substantial Completion</masterLabel>
+            <translation><!-- Substantial Completion --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Warranty - EPC --></label>
+        <name>Warranty_EPC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty - Non-EPC --></label>
+        <name>Warranty_Non_EPC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Notes --></label>
+        <name>Warranty_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Registration Number --></label>
+        <name>Warranty_Registration_Number_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the project still under warranty? --></help>
+        <label><!-- Warranty Status --></label>
+        <name>Warranty_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Warranty information for Borrego-built systems should be in the EPC contract. This will determine whether we are responsible for just the workmanship or the materials as well on our EPC warranty. --></help>
+        <label><!-- Warranty Type --></label>
+        <name>Warranty_Type__c</name>
+        <picklistValues>
+            <masterLabel>Workmanship Only</masterLabel>
+            <translation><!-- Workmanship Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workmanship and Materials</masterLabel>
+            <translation><!-- Workmanship and Materials --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Washing/Landscaping/SnowRemoval Notes --></label>
+        <name>Washing_Lanscaping_Snow_Removal_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choosing &quot;No&quot; means we must hire water truck. Account for this in washing pricing. --></help>
+        <label><!-- Water Provided on site? --></label>
+        <name>Water_Provided_on_site__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is there a functional weather station? --></help>
+        <label><!-- Weather Station --></label>
+        <name>Weather_Station__c</name>
+    </fields>
+    <fields>
+        <label><!-- Worker&apos;s Compensation (Each Accident/Dis --></label>
+        <name>Worker_s_Compensation_Each_Accident_Dis__c</name>
+    </fields>
+    <fields>
+        <label><!-- 24 Hour Response (kW) --></label>
+        <name>X24_Hour_Response_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- 48 Hour Response (kW) --></label>
+        <name>X48_Hour_Response_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- 72 Hour Response (kW) --></label>
+        <name>X72_Hour_Response_kW__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays Year of contract we are in, 1st year, 2nd year, 3rd year...etc, based on Service Contract Start Date. --></help>
+        <label><!-- Year of Contract --></label>
+        <name>Year_of_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- # inverter replacements included annuall --></label>
+        <name>inverter_replacements_included_annuall__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Service Date field of the last Case completed with Maintenance record type Case. --></help>
+        <label><!-- Last PM Completed --></label>
+        <name>of_Completed_PM_s_in_Reporting_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatic calculation based on the percentage of money spent for the year. --></help>
+        <label><!-- % of Contract Amount Used (this year) --></label>
+        <name>of_Contract_Amount_Used_this_year__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Electrical Panels Included --></label>
+        <name>of_Electrical_Panels_Included__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Reactive Service Visits (annually) --></label>
+        <name>of_Reactive_Service_Visits_annually__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>serviceContract_Contact__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Paid O&amp;M Service Contracts --></description>
+        <label><!-- Paid --></label>
+        <name>Paid</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- NOT USED --></description>
+        <label><!-- ServiceContract --></label>
+        <name>ServiceContract</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to track warranty claims for all projects --></description>
+        <label><!-- Warranty --></label>
+        <name>Warranty</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Warranty Registration --></label>
+        <name>Warranty_Registration</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- When activating a contract of type O&amp;M and Warranty or O&amp;M you must fill out values in the following fields:  Payment Options, Escalator, Escalator Details, Date First Escalator applied. --></errorMessage>
+        <name>Active_OM_and_Warranty_Req_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you selected NO for is Equipment Rental Included, please provide a more detailed explanation --></errorMessage>
+        <name>Equipment_Rental_NO_Explanation_Require</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you selected As Needed as an option under Landscaping Visits per Year or Mowing Visits per Year you need to add specifics in the field Washing/Landscaping/SnowRemoval Notes --></errorMessage>
+        <name>Mow_and_Wash_As_Needed_Req_Note</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Regional Manager and Area Supervisor are required for Paid Active contracts --></errorMessage>
+        <name>Require_RM_and_Area_Super_when_Active</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Service Contract Tier and Monitoring Required are required fields for all Active O&amp;M and O&amp;M T&amp;M type contracts. --></errorMessage>
+        <name>Service_Contract_Tier</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract types = O&amp;M and Warranty or Borrego Warranty must also have a Warranty Type. --></errorMessage>
+        <name>Warranty_Type_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Amount Required if Service Contract &apos;Type&apos; = &quot;Warranty and Paid&quot; --></errorMessage>
+        <name>Warranty_and_Paid_Req_Srvc_Amt</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Merge --></label>
+        <name>APXTConga4__Conga_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Escalators --></label>
+        <name>Create_Escalators</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Service_Contract --></label>
+        <name>Create_Service_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Case_Contract_List --></label>
+        <name>New_Case_Contract_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Service_Contract --></label>
+        <name>New_Service_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Roll_Up_Service_Costs_this_year --></label>
+        <name>Roll_Up_Service_Costs_this_year</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Amend --></label>
+        <name>SBQQ__Amend</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- RenewContracts --></label>
+        <name>SBQQ__RenewContracts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- S_Docs --></label>
+        <name>SDOC__S_Docs</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Escalator_Labo --></label>
+        <name>Update_Escalator_Labo</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_with_DocuSign --></label>
+        <name>dsfs__Send_with_DocuSign</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,4 @@
+<apex:page standardController="Lead" extensions="LeadsManager.Sync_LeadsManagerFromLead" action="{!syncLeadsManager}">
+    <apex:pageMessages />
+    <apex:outputLink value="/{!lead.Id}">Return to main page.</apex:outputLink>
+</apex:page>

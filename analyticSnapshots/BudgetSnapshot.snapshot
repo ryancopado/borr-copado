@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <mappings>
+        <sourceField>SFDC_Project__c$Id</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.Project__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>SFDC_Project__c.Budgets__r$Id</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.Budget__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>SFDC_Project__c.Budgets__r.BudgetLine__r$Active_Budget__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.Active_Budget__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>SFDC_Project__c.Budgets__r.BudgetLine__r$Total_PO__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.PO_Total__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>SFDC_Project__c.Budgets__r.BudgetLine__r$Id</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.Budget_Line_Item__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>SFDC_Project__c.Budgets__r.BudgetLine__r$Actual_Budget__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Budget_Snapshot__c.Actual_Cost_TL__c</targetField>
+    </mappings>
+    <name>Budget Snapshot</name>
+    <runningUser>developer@borregosolar.com</runningUser>
+    <sourceReport>Budget_Snapshot/Snapshot_Report_DO_NOT_TOUCH</sourceReport>
+    <targetObject>Budget_Snapshot__c</targetObject>
+</AnalyticSnapshot>

@@ -1,0 +1,959 @@
+<apex:page controller="AcctSeed.AccountingHome" applyBodyTag="false" sideBar="false" title="Accounting Home">
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'javascript/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'javascript/vex.combined.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/vex.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/vex-theme-default.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/accounting-home.css')}" />
+
+    <script>
+        jQuery.noConflict();
+        var needDomain;
+        (function($) {
+            vex.defaultOptions.className = 'vex-theme-default';
+
+            $(document).ready(function() {
+                $('.erp_required').click(function(e) {
+                    vex.open({
+                        content: '<div style="margin:25px;font-size:16px">Use of this feature requires the installation of the Accounting Seed Orders &amp; Inventory product. Please contact our Sales Team at <a href="mailto:info@accountingseed.com?Subject=ERP%20Product%20Info&Body=Please%20provide%20{!$User.FirstName}%20{!$User.LastName}%20at%20{!$Organization.Name}%20more%20info%20on%20the%20ERP%20product." target="_top">info@accountingseed.com</a> for further information.</div>'
+                    });
+                });
+
+                $('.wo_required').click(function(e) {
+                    vex.open({
+                        content: '<div style="margin:25px;font-size:16px">Use of this feature requires Field Service Lightning to be enabled and the installation of the Accounting Seed Field Service Lightning connector. <br/> Please contact our Sales Team at <a href="mailto:info@accountingseed.com?Subject=ERP%20Product%20Info&Body=Please%20provide%20{!$User.FirstName}%20{!$User.LastName}%20at%20{!$Organization.Name}%20more%20info%20on%20the%20ERP%20product." target="_top">info@accountingseed.com</a> for further information.</div>'
+                    });
+                });
+
+                needDomain = function () {
+                    vex.open({
+                        content: '<div style="margin:25px;font-size:16px">Use of this feature requires the installation of My Domain. Please refer to this <br/> <a href="https://developer.salesforce.com/docs/atlas.en-us.identityImplGuide.meta/identityImplGuide/domain_name_overview.htm" target="_blank"><u>My Domain - Knowledge Article</u></a> for further information.</div>'
+                    });
+                }
+            });
+        })(jQuery)
+    </script>
+
+    <body class="home">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="wrapper" class="clearfix">
+        <header id="header" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 header__left">
+                    <h1 id="logo">
+                        <img src="{!URLFOR($Resource.accounting_resources, 'images/as-logo.png')}"  alt="Accounting Seed" width="315"/><span class="home">Home</span>
+                    </h1>
+
+                </div>
+                <div class="release-nmb col-xs-6">
+                    <div style="margin-top: 15px; font-weight: bold;">{!releaseVersionName}</div>
+                    <div style="margin-top: -10px; margin-right: 5px;">Release</div>
+                </div>
+                <div class="col-xs-2 header__right columm-right">
+                    <div>
+                        <a title="Accounting Seed Knowledge Base" href="https://accountingseed.zendesk.com/hc/en-us" target="_blank" class="btn-custom btn-info btn-kb">
+                            KNOWLEDGE BASE
+                        </a>
+                    </div>
+                    <div>
+                        <a title="Accounting Seed University" href="https://www.accountingseed.com/accounting-seed-university/" target="_blank" class="btn-custom btn-info btn-kb">
+                            UNIVERSITY
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Cash In</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.Opportunity.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #FCB95B">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/opportunity_120.png" class="icon" alt="{!$ObjectType.Opportunity.labelPlural}" title="{!$ObjectType.Opportunity.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Opportunity.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Billing__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #cfd05b">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom42_120.png" class="icon" alt="{!$ObjectType.Billing__c.labelPlural}" title="{!$ObjectType.Billing__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Billing__c.labelPlural} (Customer Invoices)
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Cash_Receipt__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #4dca76">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom17_120.png" class="icon" alt="{!$ObjectType.Cash_Receipt__c.labelPlural}" title="{!$ObjectType.Cash_Receipt__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Cash_Receipt__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Bank_Deposit__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #d876e5">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom87_120.png" class="icon" alt="{!$ObjectType.Bank_Deposit__c.labelPlural}" title="{!$ObjectType.Bank_Deposit__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Bank_Deposit__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Recurring_Billing__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #83c75e">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom40_120.png" class="icon" alt="{!$ObjectType.Recurring_Billing__c.labelPlural}" title="{!$ObjectType.Recurring_Billing__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Recurring_Billing__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+
+
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Cash Out</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Account_Payable__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #3cc2b3">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom14_120.png" class="icon" alt="{!$ObjectType.Account_Payable__c.labelPlural}" title="{!$ObjectType.Account_Payable__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Account_Payable__c.labelPlural} (Vendor Invoices)
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Cash_Disbursement__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #43b5b5">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom41_120.png" class="icon" alt="{!$ObjectType.Cash_Disbursement__c.labelPlural}" title="{!$ObjectType.Cash_Disbursement__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Cash_Disbursement__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Cash_Disbursement_Batch__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #df6184">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom13_120.png" class="icon" alt="{!$ObjectType.Cash_Disbursement_Batch__c.labelPlural}" title="{!$ObjectType.Cash_Disbursement_Batch__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Cash_Disbursement_Batch__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Recurring_Account_Payable__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #679ef0">
+                                                    <span class="uiImage" >
+                                                        <img src="/img/icon/t4v35/custom/custom73_120.png" class="icon" alt="{!$ObjectType.Recurring_Account_Payable__c.labelPlural}" title="{!$ObjectType.Recurring_Account_Payable__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Recurring_Account_Payable__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Banking</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="{!$Page.AcctSeed__FinancialTransactionImport}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #5FB211">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/environment_hub_120.png" class="icon" alt="Bank Direct Connect" title="Bank Direct Connect"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Bank Direct Connect
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="{!$Page.AcctSeed__FinancialFileImport}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #49BCD3">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/report_120.png" class="icon"
+                                                             alt="Financial File Import" title="Financial File Import"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Financial File Import
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Bank_Reconciliation2__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e9af67" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom16_120.png" class="icon" alt="{!$ObjectType.Bank_Reconciliation2__c.labelPlural}" title="{!$ObjectType.Bank_Reconciliation2__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Bank_Reconciliation2__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Payment_Activity__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #679ef0" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom40_120.png" class="icon" alt="{!$ObjectType.Payment_Activity__c.labelPlural}" title="{!$ObjectType.Payment_Activity__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!$ObjectType.Payment_Activity__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Orders &amp; Inventory</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #bdd25f">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom29_120.png" class="icon" alt="Sales Orders" title="Sales Orders"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Sales Orders
+                                    </apex:outputLink>
+                                    <apex:outputLink value="/{!SalesOrderPrefix}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #bdd25f">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom29_120.png" class="icon" alt="{!SalesOrderLabelPlural}" title="{!SalesOrderLabelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!SalesOrderLabelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!PurchaseOrderPrefix}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #38c393">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom32_120.png" class="icon" alt="{!PurchaseOrderLabelPlural}" title="{!PurchaseOrderLabelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!PurchaseOrderLabelPlural}
+                                    </apex:outputLink>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #38c393">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom32_120.png" class="icon" alt="Purchase Orders" title="Purchase Orders"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                       Purchase Orders
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!WorkOrderPrefix}" rendered="{!isWOEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #38c393">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom30_120.png" class="icon" alt="{!WorkOrderLabelPlural}" title="{!WorkOrderLabelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!WorkOrderLabelPlural}
+                                    </apex:outputLink>
+                                    <apex:outputLink value="#" styleClass="wo_required" rendered="{!!isWOEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #38c393">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom30_120.png" class="icon" alt="Work Orders" title="Work Orders"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Work Orders
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!InventoryBalancePrefix}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #c8ca58" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom44_120.png" class="icon" alt="{!InventoryBalanceLabelPlural}" title="{!InventoryBalanceLabelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!InventoryBalanceLabelPlural}
+                                    </apex:outputLink>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #c8ca58" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom44_120.png" class="icon" alt="Inventory Balances" title="Inventory Balances"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Inventory Balances
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="{!SerialNumberSearchUrl}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #FFFFFF">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/utility/search_120.png" class="icon" alt="Serial Number Search" title="Serial Number Search"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Serial Number Search
+                                    </apex:outputLink>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #FFFFFF">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/utility/search_120.png" class="icon" alt="Serial Number Search" title="Serial Number Search"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Serial Number Search
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.Product2.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #B781D3">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/product_120.png" class="icon" alt="{!$ObjectType.Product2.labelPlural}" title="{!$ObjectType.Product2.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Product2.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e22626">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom45_120.png" class="icon" alt="Product Purchase Prices" title="Product Purchase Prices"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Product Purchase Prices
+                                    </apex:outputLink>
+                                    <apex:outputLink value="/{!ProductPurchasePricePrefix}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e22626">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom45_120.png" class="icon" alt="Product Purchase Prices" title="Product Purchase Prices"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Product Purchase Prices
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!WarehousePrefix}" rendered="{!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #49bcd3" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom50_120.png" class="icon" alt="{!WarehouseLabelPlural}" title="{!WarehouseLabelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!WarehouseLabelPlural}
+                                    </apex:outputLink>
+                                    <apex:outputLink value="#" styleClass="erp_required" rendered="{!!isERPEnabled}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #49bcd3" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom50_120.png" class="icon" alt="Warehouses" title="Warehouses"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Warehouses
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Projects</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Project__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f26979">
+                                                    <span  class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom68_120.png" class="icon" alt="{!$ObjectType.Project__c.labelPlural}" title="{!$ObjectType.Project__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Project__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Time_Card__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e46fbe">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom25_120.png" class="icon" alt="{!$ObjectType.Time_Card__c.labelPlural}" title="{!$ObjectType.Time_Card__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Time_Card__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Expense_Report__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #4dca76">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom18_120.png" class="icon" alt="{!$ObjectType.Expense_Report__c.labelPlural}" title="{!$ObjectType.Expense_Report__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Expense_Report__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Time_Card_Period__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #8bcf6a" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom95_120.png" class="icon" alt="{!$ObjectType.Time_Card_Period__c.labelPlural}" title="{!$ObjectType.Time_Card_Period__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Time_Card_Period__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Cost_Rates__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f77e75" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom15_120.png" class="icon" alt="{!$ObjectType.Cost_Rates__c.labelPlural}" title="{!$ObjectType.Cost_Rates__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Cost_Rates__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Reporting</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="{!$Page.AcctSeed__RunFinancialReport}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #5FB211">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom63_120.png" class="icon" alt=" Financial Reports" title=" Financial Reports"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Financial Reports
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.Report.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #8a6d3b">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom64_120.png" class="icon" alt="Management Reports" title="Management Reports"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Management Reports
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!AccountingDashboard}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #ef6e64">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/dashboard_120.png" class="icon" alt="Dashboards" title="Dashboards"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Dashboards
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Financial_Report_Definition__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #6b92dc" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom62_120.png" class="icon" alt="{!$ObjectType.Financial_Report_Definition__c.labelPlural}" title="{!$ObjectType.Financial_Report_Definition__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Financial_Report_Definition__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__GL_Account_Reporting_Group__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f9dd34" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom57_120.png" class="icon" alt="{!$ObjectType.GL_Account_Reporting_Group__c.labelPlural}" title="{!$ObjectType.GL_Account_Reporting_Group__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.GL_Account_Reporting_Group__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Financial_Cube__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #6a89e5" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom7_120.png" class="icon" alt="Budget Entries" title="Budget Entries"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Budget Entries
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="{!$Page.AcctSeed__AvaTaxExceptionReport}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f1a899" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom39_120.png" class="icon" alt="Tax Exception Report" title="Tax Exception Report"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Tax Exception Report
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Master Data Setup</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.Account.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #7F8DE1">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/account_120.png" class="icon" alt="{!$ObjectType.Account.labelPlural}" title="{!$ObjectType.Account.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Account.labelPlural} (Customers &amp; Vendors)
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.Contact.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #A094ED" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/contact_120.png" class="icon" alt="{!$ObjectType.Contact.labelPlural}" title="{!$ObjectType.Contact.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Contact.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Tax_Group__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f6707b" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom58_120.png" class="icon" alt="{!$ObjectType.Tax_Group__c.labelPlural}" title="{!$ObjectType.Tax_Group__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!$ObjectType.Tax_Group__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Billing_Format__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #f6707b" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom84_120.png" class="icon" alt="{!$ObjectType.Billing_Format__c.labelPlural}" title="{!$ObjectType.Billing_Format__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Billing_Format__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">General Ledger Setup</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__GL_Account__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #5a9cdd" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom57_120.png" class="icon" alt="{!$ObjectType.GL_Account__c.labelPlural}" title="{!$ObjectType.GL_Account__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        General Ledger Accounts
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Accounting_Variable__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #3abeb1" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom18_120.png" class="icon" alt="{!$ObjectType.Accounting_Variable__c.labelPlural}" title="{!$ObjectType.Accounting_Variable__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Accounting Variables
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Accounting_Period__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #ecb46c" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom3_120.png" class="icon" alt="{!$ObjectType.Accounting_Period__c.labelPlural}" title="{!$ObjectType.Accounting_Period__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Accounting_Period__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Ledger__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e3d067" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom59_120.png" class="icon" alt="{!$ObjectType.Ledger__c.labelPlural}" title="{!$ObjectType.Ledger__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Ledger__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="{!$Page.AcctSeed__PMAMain}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #5FB211">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/custom_120.png" class="icon" alt="Accounting Settings" title="Accounting Settings"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Accounting Settings
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+                <div class="col-xs-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">General Ledger Entry</div>
+                        <div class="panel-body">
+                            <ul class="list-menu">
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Journal_Entry__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #22a48a" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom90_120.png" class="icon" alt="{!$ObjectType.Journal_Entry__c.labelPlural}" title="{!$ObjectType.Journal_Entry__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Journal_Entry__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Recurring_Journal_Entry__c.keyPrefix}">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #83c75e">
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom40_120.png" class="icon" alt="{!$ObjectType.Recurring_Journal_Entry__c.labelPlural}" title="{!$ObjectType.Recurring_Journal_Entry__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        {!$ObjectType.Recurring_Journal_Entry__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Scheduled_Revenue_Expense__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e7806f" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom83_120.png" class="icon" alt="{!$ObjectType.Scheduled_Revenue_Expense__c.labelPlural}" title="{!$ObjectType.Scheduled_Revenue_Expense__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Scheduled_Revenue_Expense__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="/{!$ObjectType.AcctSeed__Fixed_Asset__c.keyPrefix}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #e1be5c" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/custom/custom98_120.png" class="icon" alt="{!$ObjectType.Fixed_Asset__c.labelPlural}" title="{!$ObjectType.Fixed_Asset__c.labelPlural}"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                            {!$ObjectType.Fixed_Asset__c.labelPlural}
+                                    </apex:outputLink>
+                                </li>
+
+                                <li>
+                                    <apex:outputLink value="{!payrollLink}" onClick="{!onClickMessage}">
+                                        <div class="slds-media__figure" >
+                                            <span class="slds-icon_container" >
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #49BCD3" >
+                                                    <span class="uiImage">
+                                                        <img src="/img/icon/t4v35/standard/report_120.png" class="icon" alt="Import Payroll Files" title="Import Payroll Files"/>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        Payroll File Import
+                                    </apex:outputLink>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.panel -->
+                </div>
+            </div><!-- /.row -->
+        </main>
+    </div><!-- /#wrapper -->
+    </body>
+</apex:page>

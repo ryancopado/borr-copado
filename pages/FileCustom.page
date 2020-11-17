@@ -1,0 +1,49 @@
+<apex:page standardController="AcctSeed__Project__c">
+
+<script src="/soap/ajax/19.0/connection.js" type="text/javascript"></script> 
+<script src="/soap/ajax/19.0/apex.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+
+function setupPage() 
+{ 
+
+var BOX_DOMAIN = 'www.box.com'; 
+
+// get page 
+
+var current_id = '{!LEFT(AcctSeed__Project__c.Id,15)}';
+
+var record_name = '{!AcctSeed__Project__c.Name}'; 
+
+var record_type = 'AcctSeed__Project__c';
+
+if('{!AcctSeed__Project__c.SFDCProject__c}' != ''){
+    current_id ='{!LEFT(AcctSeed__Project__c.SFDCProject__c,15)}';
+    record_name = '{!AcctSeed__Project__c.SFDCProject__r.Name}'; 
+    record_type = 'SFDC_Project__c';
+}
+
+var email_recipients = ""; 
+
+// api 
+var src = 'https://' + BOX_DOMAIN + '/widget_sso/salesforce?'; 
+var params = '&api_key=haxkxreiq4cm12iy8ulr5dd6028y2hlj' + '&module_url=https://www.box.net/static/flash/module_salesforce.swf'; 
+var widget_api_urls = ''; 
+if (BOX_DOMAIN != 'www.box.net') widget_api_urls = '&api_domain=' + BOX_DOMAIN; 
+
+// flash 
+var server_url = '{!$API.Partner_Server_URL_120}'; 
+var auth_token = '{"server_url":"' + server_url + '","session_id":"{!$API.Session_ID}"}'; 
+src = src + 'token=' + escape(auth_token) + '&partner_object_type=' + escape(record_type) + '&partner_object_name=' + escape(record_name) + '&partner_object_email=' + escape(email_recipients) + '&partner_object_id=' + escape(current_id) + '&salesforce_object_typed_id=' + escape(current_id) + '&open_new_window=1&partner_user_id={!URLENCODE($User.Id)}&partner_user_name={!URLENCODE($User.FirstName)}%20{!URLENCODE($User.LastName)}&partner_user_email={!URLENCODE($User.Email)}&email_recipients=' + escape(email_recipients); // + '&debug=1'; 
+
+// write 
+document.write('<iframe src="' + src + '" width="100%" height="450px" name="box_net_widget" allowscriptaccess="always" scrolling="true"></iframe>'); 
+
+document.close(); 
+return false; 
+} 
+setupPage();
+</script> 
+
+
+</apex:page>

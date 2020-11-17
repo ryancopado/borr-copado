@@ -1,0 +1,217 @@
+<apex:page standardController="SFDC_Project__c" extensions="printDesign" renderAs="pdf">
+  <apex:stylesheet value="{!URLFOR($Resource.psd)}"/>
+  <div style="display:none">{!SFDC_Project__c.Opportunity__c}</div>
+  <table width="100%">
+      <tr>
+          <td style="color:#DCDCDC; font-size:18px;" width="50%">DESIGN INFORMATION -&nbsp; <apex:outputField value="{!psd.Today__c}"/></td>
+          <td align="right"><apex:image value="{!URLFOR($Resource.borrego)}" width="25%" height="25%"/></td>
+      </tr>
+  </table>
+  <br/>
+  <table width="100%">
+      <tr>
+          <td width="135px"><b>Project Name:</b></td>
+          <td><apex:outputField value="{!SFDC_Project__c.Name}"/></td>
+      </tr>
+      <tr>
+          <td ><b>Job Type:</b></td>
+          <td ><apex:outputField value="{!psd.Job_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td width="135px"><b>Site Address:</b></td>
+          <td><apex:outputField value="{!SFDC_Project__c.Site_City__c}"/></td>
+      </tr>
+  </table>
+  <br/><br/> 
+  <div style="color:#DCDCDC; font-size:16px;" width="50%">PRESALES</div>
+  <table width="100%">
+      <tr>
+          <td width="155px"><b>Proposal Level Needed:</b></td>
+          <td ><apex:outputField value="{!psd.Proposal_Level_Needed__c}"/></td>
+      </tr>
+      <tr>
+          <td width="155px"><b>Date Due:</b></td>
+          <td ><apex:outputField value="{!psd.Due_Date__c}"/></td>
+      </tr>
+  </table> 
+  <br/>
+  <table width="100%" id="box">
+      <tr>
+          <td class="title">Building Type</td>
+          <td><apex:outputField value="{!psd.Building_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Drawings Exist</td>
+          <td><apex:outputField value="{!psd.Drawings_Already_Exist__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Racking System</td>
+          <td><apex:outputField value="{!psd.Racking_System__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Module Location Description</td>
+          <td><apex:outputField value="{!psd.Module_Location_Description__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Preferred Modules</td>
+          <td><apex:outputField value="{!psd.Modules__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Preferred Inverter</td>
+          <td><apex:outputField value="{!psd.Inverters__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Proposed Tilt Angle</td>
+          <td><apex:outputField value="{!psd.Proposed_System_Tilt_Angle__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">System Sizing Strategy</td>
+          <td><apex:outputField value="{!psd.System_Sizing_Strategy__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Existing Electrical Info and Location</td>
+          <td><apex:outputField value="{!psd.Electrical_Sizing_Strategy__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Roof Type</td>
+          <td><apex:outputField value="{!psd.Roof_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Roof Space Off Limits</td>
+          <td><apex:outputField value="{!psd.Roof_Space_Off_Limits__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Shading Notes</td>
+          <td><apex:outputField value="{!psd.Shading_Notes__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Additional Notes</td>
+          <td><apex:outputField value="{!psd.Additional_Notes__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Status</td>
+          <td><apex:outputField value="{!psd.Status__c}"/></td>
+      </tr>
+  </table>
+  <div style="page-break-after:always"></div>
+  <div style="color:#DCDCDC; font-size:16px;" width="50%">PROJECT</div>
+  <br/>
+  <table width="100%" id="box">
+      <tr>
+          <td class="title">Picasa Album</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Picasa_Album__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Building Code</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Building_Code__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">NEC Code</td>
+          <td><apex:outputField value="{!SFDC_Project__c.NEC_Code__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Structural Engineer</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Structural_Engineer__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Electrical Engineer</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Electrical_Engineer__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Windspeed</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Windspeed__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Seismic Zone</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Seismic_Zone__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Snow Load</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Snow_Load__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Exposure Category</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Exposure_Category__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Importance Factor</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Importance_Factor_Architect_Engineer__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Shading Analysis Complete</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Shade_Analysis_Complete__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Design High Temp</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Design_High_Temp__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Design Low Temp</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Design_Low_Temp__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Average High Temp</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Average_High_Temp__c}"/></td>
+      </tr>
+       <tr>
+          <td class="title">Contract Production Requirement</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Contract_Production_Requirement__c}"/></td>
+      </tr>
+       <tr>
+          <td class="title">Expected Yearly Production (kWh)</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Expected_Yearly_Production_in_kWh__c}"/></td>
+      </tr>
+       <tr>
+          <td class="title">kWh/kW Rating</td>
+          <td><apex:outputField value="{!SFDC_Project__c.kWh_kW_Rating__c}"/></td>
+      </tr>
+       <tr>
+          <td class="title">Total kW</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Total_kW__c}"/></td>
+      </tr>
+       <tr>
+          <td class="title">Notes</td>
+          <td><apex:outputField value="{!SFDC_Project__c.Design_Notes__c}"/></td>
+      </tr>
+  </table>
+  <div style="page-break-after:always"></div>
+  <div style="color:#DCDCDC; font-size:16px;" width="50%">BUILDINGS</div>
+  <br/>
+  <apex:repeat value="{!SFDC_Project__c.Buildings__r}" var="b"> 
+      <table width="100%" id="box">
+          <tr>
+              <td class="title">Name</td>
+              <td><apex:outputField value="{!b.Name}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Racking Tilt</td>
+              <td><apex:outputField value="{!b.Racking_Tilt__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Orientation</td>
+              <td><apex:outputField value="{!b.Orientation__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Roof Pitch</td>
+              <td><apex:outputField value="{!b.Roof_Pitch__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Roof Height</td>
+              <td><apex:outputField value="{!b.Roof_Height__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Electrical Main Rating</td>
+              <td><apex:outputField value="{!b.Electrical_Main_Rating__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Electrical BUS Rating</td>
+              <td><apex:outputField value="{!b.Electrical_BUS_Rating__c}"/></td>
+          </tr>
+          <tr>
+              <td class="title">Connection Type</td>
+              <td><apex:outputField value="{!b.Connection_Type__c}"/></td>
+          </tr>
+      </table>
+      <br/>
+  </apex:repeat>
+</apex:page>

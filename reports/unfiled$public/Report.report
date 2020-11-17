@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_28372935</developerName>
+        <masterLabel>Eng Phase</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Site__c.Design_Stage__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Site Use Permit Set</sourceValue>
+            </sourceValues>
+            <value>Dev Eng</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CD IFR</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>50% Set</sourceValue>
+            </sourceValues>
+            <value>Ops Eng</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CD IFC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>As Built</sourceValue>
+            </sourceValues>
+            <value>Const Admin</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Site__c.Kickoff_Meeting_Held__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Kickoff_Date_editable__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Site_Use_Permit_Set_Release__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Development_Engineering_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.X50_Forecast_Release_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.MarkettoOwnerDate__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Handoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.CD_Forecast_Release_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.CD_IFP_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.CD_IFC_Release_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Mobilization_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Substantial_Completion_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.PTO_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.EE_Total_Hours__c</field>
+    </columns>
+    <description>EE Workload w/ Hours</description>
+    <filter>
+        <booleanFilter>2 AND 3 AND 4 AND 5 and (1 OR 6)</booleanFilter>
+        <criteriaItems>
+            <column>Site__c.Project_Kickoff_Date_editable__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2014</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Design_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New,Site Use Permit Set,50% Set,CD IFR,CD IFC,As Built,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Dead</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Electrical_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>conway,walter,randy,plaxico,munger,stafford</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Construction_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Kickoff_Meeting_Held__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2014</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Site__c.Electrical_Engineer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site__c@Site__c.Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Site__c.Kickoff_Meeting_Held__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Site__c.X50_Forecast_Release_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

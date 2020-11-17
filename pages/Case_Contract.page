@@ -1,0 +1,23 @@
+<apex:page standardController="Case" extensions="Case_ContractCtlExt" tabStyle="Case" action="{!initRecordTypes}">
+	
+	<apex:form id="theForm">
+		<apex:pageMessages />
+		
+		<apex:sectionHeader title="New Case" subtitle="Select Case Record Type" />
+		
+		<apex:pageBlock title="Select Case Record Type">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Continue" action="{!saveRecordType}" disabled="{!fatalError || !showRecordTypes}"/>
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection >
+				<apex:selectList label="Record Type of new record" value="{!selectedRecordTypeId}" multiselect="false" size="1" required="true">
+					<apex:selectOptions value="{!recordTypeList}"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+		
+	</apex:form>
+	
+</apex:page>

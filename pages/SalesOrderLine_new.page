@@ -1,0 +1,179 @@
+<apex:page standardController="AcctSeedERP__Sales_Order_Line__c" extensions="ConstructionReqControllerExt" tabStyle="AcctSeedERP__Sales_Order_Line__c" action="{!initConstructionReq}" >
+    
+    <apex:pagemessages />
+    
+    <apex:outputPanel rendered="{!conReq.Con_Req_Group__r.IsLocked__c}" >
+        <br/>
+        Click&nbsp; 
+        <apex:outputLink value="{!isLockedReturn}" >here</apex:outputLink>
+        to return to the previous page.
+    </apex:outputPanel>
+    
+    <apex:form rendered="{!!conReq.Con_Req_Group__r.IsLocked__c}">
+        
+        
+        <apex:sectionHeader title="Construction Requisition Edit" subtitle="New Construction Requisition" rendered="{!isNew}"/>
+        <apex:sectionHeader title="Construction Requisition Edit" subtitle="{!conReq.Name}" rendered="{!!isNew}"/>
+        
+        <apex:pageBlock title="Construction Requisition Edit" mode="edit" id="block" rendered="{!isMajorComponent}">
+    
+            <apex:pageBlockButtons >     
+                <apex:commandButton value="Save" action="{!saveMajorConstructionReq}"/>
+                <apex:commandButton value="Cancel"  action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="2" title="Information" collapsible="false">
+                <apex:outputField value="{!conReq.Name}" rendered="{!!isNew}" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Sales_Order__c}" required="true"/>
+                <apex:outputField value="{!conReq.RecordTypeId}" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Project__c}" />
+                <apex:inputField value="{!conReq.Ship_to_Account__c}" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Project_Task__c}" required="true" />
+                <apex:inputField value="{!conReq.Development_Cost__c}" />
+                <apex:inputField value="{!conReq.Backcharge__c}" />
+                <apex:inputField value="{!conReq.Development_Cost_Line_Item__c}" />
+                <apex:inputField value="{!conReq.Backcharge_To__c}" />
+                <apex:inputField value="{!conReq.Racking_Watts__c}" />
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2" title="Product Information" collapsible="false">
+                <apex:inputField value="{!conReq.Vendor__c}" required="true" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Quantity_Ordered__c}" required="true" />
+                <apex:inputField value="{!conReq.Vendor_Contact__c}" required="true" />
+                <apex:inputField value="{!conReq.Unit_Cost__c}" required="true" />
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block">  
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!conReq.Opportunity_Product__c}" size="1" >
+                            <apex:selectOptions value="{!ProjProducts}"/>
+                        </apex:selectList>
+                        <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isProductError}">
+                            <strong>Error:</strong> You must enter a value
+                        </apex:outputPanel>
+                    </apex:outputPanel>             
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputField value="{!conReq.Freight__c}" />
+                <apex:inputField value="{!conReq.Requested_Delivery_Date__c}" required="true" showDatePicker="true" />
+                <apex:inputField value="{!conReq.Sales_Tax_Rate_Percent__c}" />
+                <apex:inputField value="{!conReq.Additional_Notes__c}" required="true" />
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2" title="Procurement Information" collapsible="false">
+                
+                <apex:inputField value="{!conReq.AcctSeedERP__Purchase_Order_Line__c}" />
+            
+            </apex:pageBlockSection>
+    
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Construction Requisition Edit" mode="edit" rendered="{!isService}">
+    
+            <apex:pageBlockButtons >     
+                <apex:commandButton value="Save" action="{!saveMajorConstructionReq}"/>
+                <apex:commandButton value="Cancel"  action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Information" columns="2" collapsible="false">
+                <apex:outputField value="{!conReq.Name}" rendered="{!!isNew}" />
+                <apex:pageBlockSectionItem rendered="{!isNew}"/>
+                <apex:inputField value="{!conReq.Status__c}" rendered="{!editReadonlyFields}" />
+                <apex:outputField value="{!conReq.Status__c}" rendered="{!!editReadonlyFields}" />
+                <apex:outputField value="{!conReq.Con_Req_Group__c}"/>
+                <apex:outputField value="{!conReq.RecordTypeId}"/>
+                <apex:inputField value="{!conReq.AcctSeedERP__Project__c}" />
+                <apex:inputField value="{!conReq.Tax_Group__c}"/>
+                <apex:inputField value="{!conReq.AcctSeedERP__Project_Task__c}" required="true"/>
+                <apex:inputField value="{!conReq.Sales_Tax_Rate_Percent__c}"/>
+                <apex:inputField value="{!conReq.Tax_Category__c}" required="true"/>
+                
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!conReq.AcctSeedERP__Quantity_Ordered__c}" required="true"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!conReq.Unit_Cost__c}" required="true"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!conReq.AcctSeedERP__Product__c}" required="true"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!conReq.Not_To_Exceed__c}" required="true"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!conReq.WorkOrder__c}"/>
+                
+            </apex:pageBlockSection>
+    
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Construction Requisition Edit" mode="edit" rendered="{!!isMajorComponent && !isService}">
+    
+            <apex:pageBlockButtons >     
+                <apex:commandButton value="Save" action="{!saveMajorConstructionReq}"/>
+                <apex:commandButton value="Cancel"  action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+             
+            <apex:pageBlockSection columns="2" title="Information" collapsible="false">
+                <apex:outputField value="{!conReq.Name}" rendered="{!!isNew}" />
+                <apex:inputField value="{!conReq.Status__c}" rendered="{!editReadonlyFields}" />
+                <apex:outputField value="{!conReq.Status__c}" rendered="{!!editReadonlyFields}" />
+                <apex:outputField value="{!conReq.AcctSeedERP__Sales_Order__c}" />
+                <apex:outputField value="{!conReq.RecordTypeId}" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Project__c}" />
+                <apex:inputField value="{!conReq.Project_PM__c}" rendered="{!editReadonlyFields}" />
+                <apex:inputField value="{!conReq.Site__c}" />
+                <apex:inputField value="{!conReq.Not_To_Exceed__c}" required="true" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Project_Task__c}" required="true" />
+                <apex:inputField value="{!conReq.Backcharge__c}" />
+                <apex:inputField value="{!conReq.Ship_to_Account__c}" />
+                <apex:inputField value="{!conReq.Backcharge_To__c}" />
+                <apex:inputField value="{!conReq.Development_Cost__c}" />
+                <apex:inputField value="{!conReq.Con_Req_Group__c}" rendered="{!editReadonlyFields}"/>
+                <apex:inputField value="{!conReq.Development_Cost_Line_Item__c}" />
+                
+                <!-- Layout fields conditional based upon record type -->
+                <apex:inputField value="{!conReq.Approval_Status__c}" rendered="{!rtName == 'Other Costs'}" />
+                <apex:inputField value="{!conReq.Service_Visit__c}" rendered="{!rtName == 'Service'}" />
+                <apex:inputField value="{!conReq.Type__c}" required="true" rendered="{!rtName == 'Service'}" />
+                <apex:outputField value="{!conReq.Project_PM__c}" rendered="{!!editReadonlyFields && rtName != 'Service'}" />
+                                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2" title="Product Information" collapsible="false">
+                <apex:inputField value="{!conReq.Vendor__c}" required="true" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Quantity_Ordered__c}" required="true" />
+                <apex:inputField value="{!conReq.Vendor_Contact__c}" required="true" />
+                <apex:inputField value="{!conReq.Unit_Cost__c}" required="true" />
+                <apex:inputField value="{!conReq.AcctSeedERP__Product__c}" required="true" />
+                <apex:inputField value="{!conReq.Sales_Tax_Rate_Percent__c}" />
+                <apex:pageBlockSectionItem />
+                
+               <!-- Layout fields conditional based upon record type -->
+                <apex:inputField value="{!conReq.Freight__c}" rendered="{!rtName != 'Service' && rtName != 'Subcontractor'}" />
+                <apex:inputField value="{!conReq.Racking_Watts__c}" rendered="{!rtName != 'Service' && rtName != 'Subcontractor' && rtName != 'Minor Component'}" />
+                
+                <apex:inputField value="{!conReq.Requested_Delivery_Date__c}" required="true" showDatePicker="true" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" >
+                <apex:inputField value="{!conReq.Additional_Notes__c}" required="true" />
+               <!-- Layout fields conditional based upon record type -->
+                <apex:inputField value="{!conReq.Accounting_Notes__c}" rendered="{!rtName == 'Service'}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2" title="Procurement Information" collapsible="false">
+                <apex:inputField value="{!conReq.AcctSeedERP__Purchase_Order_Line__c}" rendered="{!editReadonlyFields}" />
+                <apex:outputField value="{!conReq.AcctSeedERP__Purchase_Order_Line__c}" rendered="{!!editReadonlyFields}" />
+            </apex:pageBlockSection>
+    
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+    <!-- <apex:outputPanel rendered="{!isMajorComponent = false}" >
+        <script>
+            window.location.assign("{!standardURL}");               
+        </script>
+    </apex:outputPanel> -->
+
+</apex:page>

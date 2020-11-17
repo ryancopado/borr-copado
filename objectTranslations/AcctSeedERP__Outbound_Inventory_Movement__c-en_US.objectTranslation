@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Credit GL Account --></label>
+        <name>AcctSeedERP__Credit_GL_Account__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements (Credit GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Offsetting general ledger account for the transaction. --></help>
+        <label><!-- Debit GL Account --></label>
+        <name>AcctSeedERP__Debit_GL_Account__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Branch</label>
+        <name>AcctSeedERP__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Business Unit</label>
+        <name>AcctSeedERP__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Team</label>
+        <name>AcctSeedERP__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Account Variable 4 --></label>
+        <name>AcctSeedERP__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inbound Inventory Movement --></label>
+        <name>AcctSeedERP__Inbound_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Inventory Balance that is directly related to the Outbound Inventory Movement. --></help>
+        <label><!-- Inventory Quantity Available --></label>
+        <name>AcctSeedERP__Inventory_Balance__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LedgerId --></label>
+        <name>AcctSeedERP__LedgerId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeedERP__Ledger__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The location that was selected on the related Inventory Balance. --></help>
+        <label><!-- Location --></label>
+        <name>AcctSeedERP__Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date used to indicate which accounting period the transaction should be booked in. --></help>
+        <label>Accounting Date</label>
+        <name>AcctSeedERP__Movement_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProductId --></label>
+        <name>AcctSeedERP__ProductId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The product the was selected on the related Inventory Balance. --></help>
+        <label><!-- Product --></label>
+        <name>AcctSeedERP__Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Line item that is related to the Outbound inventory movement. --></help>
+        <label>Line Item</label>
+        <name>AcctSeedERP__Project_Task__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The project that is related to the Outbound inventory movement. --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeedERP__Project__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The number of units being moved. --></help>
+        <label><!-- Quantity --></label>
+        <name>AcctSeedERP__Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>AcctSeedERP__Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Posting Status --></label>
+        <name>AcctSeedERP__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The type of Outbound Inventory Movement. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeedERP__Type__c</name>
+        <picklistValues>
+            <masterLabel>Cycle Count Adjustment</masterLabel>
+            <translation><!-- Cycle Count Adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory Transfer</masterLabel>
+            <translation><!-- Inventory Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue to Customer</masterLabel>
+            <translation><!-- Issue to Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing Scrap</masterLabel>
+            <translation><!-- Manufacturing Scrap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Accounting</masterLabel>
+            <translation><!-- Non-Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-Allocation</masterLabel>
+            <translation><!-- Re-Allocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Return to Vendor</masterLabel>
+            <translation><!-- Return to Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment to Site</masterLabel>
+            <translation><!-- Shipment to Site --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The cost per unit for the product listed. --></help>
+        <label><!-- Unit Cost --></label>
+        <name>AcctSeedERP__Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- The warehouse that was selected on the related Inventory Balance. --></help>
+        <label><!-- Warehouse --></label>
+        <name>AcctSeedERP__Warehouse__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document control # that corresponds to Bill of Lading document received from the warehouse.  If this is an adjustment, field should be used to indicate adjustment #. --></help>
+        <label><!-- BOL Document # --></label>
+        <name>BOL_Document__c</name>
+    </fields>
+    <fields>
+        <help><!-- The regional office that is related to the Outbound Inventory Movement. --></help>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays Default GL Expense account name from related project --></help>
+        <label><!-- Debit GL Account from Project --></label>
+        <name>Debit_GL_Account_from_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Movement Total --></label>
+        <name>Inventory_Movement_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Warehouse --></label>
+        <name>Inventory_Warehouse__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order Line --></label>
+        <name>Purchase_Order_Line__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- updates based on Tax Group from related Site --></help>
+        <label><!-- Tax Jurisdiction --></label>
+        <name>Tax_Jurisdiction__c</name>
+        <relationshipLabel><!-- Outbound Inventory Movements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- pulls in related Tax Rate from related Tax Group/Site --></help>
+        <label><!-- Tax Rate --></label>
+        <name>Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Burdened Value = Quantity x Unit Value --></help>
+        <label><!-- Total Burdened Value --></label>
+        <name>Total_Burdened_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unit_Cost__c * (1+ (Tax_Rate__c )) --></help>
+        <label><!-- Unit Value --></label>
+        <name>Unit_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Old CC --></label>
+        <name>Use_Old_CC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity * Unit Cost = Value --></help>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity x Unit Cost x Tax Rate. --></help>
+        <label><!-- Value of sales tax --></label>
+        <name>Value_of_sales_tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual date that transaction occurred; can vary from Accounting Date if transaction was accrued for in a previous period. --></help>
+        <label><!-- Movement Date --></label>
+        <name>movement_date2__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Debit_GL_Account_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- quantity must be greater than or equal to 0 --></errorMessage>
+        <name>AcctSeedERP__Quantity_Is_Positive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Type_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Unit_Cost_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Ops Division should not contain a value --></errorMessage>
+        <name>Ops_Division_Cannot_Contain_a_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are using a GL account that requires the Ops Division to be populated. --></errorMessage>
+        <name>Ops_Division_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sales Segment should not contain a value --></errorMessage>
+        <name>Sales_Segment_Cannot_Contain_a_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are using a GL account that requires the Sales Segment to be populated. --></errorMessage>
+        <name>Sales_Segment_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Outbound_Inventory_Movement --></label>
+        <name>New_Outbound_Inventory_Movement</name>
+    </webLinks>
+</CustomObjectTranslation>

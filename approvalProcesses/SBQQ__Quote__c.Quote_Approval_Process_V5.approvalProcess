@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>SBQQ__Account__c</field>
+        <field>SBQQ__NetAmount__c</field>
+        <field>Case__c</field>
+        <field>SBQQ__StartDate__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jthorpe@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>For Type of Work Initial Visit, or Corrective with &lt;5K Net Amount, no Borrego approval needed</description>
+        <entryCriteria>
+            <formula>AND(
+  ISPICKVAL( Type_of_Work__c , &quot;Corrective Repairs&quot; ),
+  SBQQ__NetAmount__c  &gt;= 5000
+ )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Corrective &gt;= $5K</label>
+        <name>Auto_Approve</name>
+    </approvalStep>
+    <description>If Type of Work is Initial Visit, or Corrective with Net Amount under $5K, not Borrego approval is needed.</description>
+    <emailTemplate>Quote_Email_Templates/Quote_Approval_Request_Notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+ OR(
+  ISPICKVAL( SBQQ__Status__c , &quot;Draft&quot; ),
+  ISPICKVAL( SBQQ__Status__c , &quot;In Review&quot; )
+  ),
+ NOT( ISBLANK( Site_Address__c ) ),
+ NOT( ISBLANK( Site_City__c ) ),
+ NOT( ISBLANK( Site_State__c ) ),
+ NOT( ISBLANK( Site_Zip__c ) ),
+ OR(
+  ISPICKVAL( Type_of_Work__c , &quot;Initial Visit&quot; ),
+  ISPICKVAL( Type_of_Work__c , &quot;Corrective Repairs&quot; )
+  )
+ )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Quote_Approved_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_RT_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Quote_Rejected_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Denied</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Update_Status_to_In_Review</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Initial Visit/Corrective</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Update_Status_to_Draft</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

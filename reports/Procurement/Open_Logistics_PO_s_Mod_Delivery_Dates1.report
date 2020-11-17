@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Site__c.Modules_Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Site__c.Module_Delivery_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Module_Delivery_Date_Updated__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <description>Used to review monthly storage invoices and freight invoices</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Site__c.Construction_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Work 90% Completed,Inspection Pending,Inspections Complete,Cust. Accept. Complete,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Direct Sale</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Job_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>startsWith</operator>
+            <value>9,n</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Open Logistics PO&apos;s - Mod Delivery Dates</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Project__c$Project_Products__c@Project_Products__c.Site__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.X50_Review_Baseline__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>RecordDrawingDetailPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Account that the noted contact is related to.</inlineHelpText>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approved_as_corrected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Approved as corrected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_to__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>auto fills with user from related Issue Tracker To Borrego Approver, used in conjunction with Approval Process and LH</description>
+        <externalId>false</externalId>
+        <inlineHelpText>auto fills with user from related Issue Tracker To Borrego Approver, used in conjunction with Approval Process and LH</inlineHelpText>
+        <label>Assigned to:</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Record_Drawings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Email address of the related contact as listed in Salesforce.</inlineHelpText>
+        <label>Contact Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select the contact from the account.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Record_Drawings_1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the submittal request was received from the field.</inlineHelpText>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Closed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Closed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Number__c</fullName>
+        <description>This field was created to make a &quot;Common Field&quot; for the Issue Tracker Joined Report.</description>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Issue Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Submitted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Submitted Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Tracker__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the issue tracker number that the record drawing is associated with.</inlineHelpText>
+        <label>Issue Tracker</label>
+        <referenceTo>Request_for_Information_RFI__c</referenceTo>
+        <relationshipLabel>Record Drawings</relationshipLabel>
+        <relationshipName>Record_Drawings_1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Notes_and_Additional_Information__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this section to add detailed notes for the Record Drawing.</inlineHelpText>
+        <label>Notes and Additional Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Link__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is hidden and is filled in a by a trigger. We need this so we can automatically link the records to the related project so we have clean related lists on the project layout.</description>
+        <externalId>false</externalId>
+        <label>Project Link</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Record Drawings</relationshipLabel>
+        <relationshipName>Record_Drawings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.ASProject__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.ASProject__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Project related to the record drawing.</inlineHelpText>
+        <label>Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Response_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The target date that you are asking the approver to respond by.</inlineHelpText>
+        <label>Requested Response Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The response details to the record drawing submitted from the approver. Must be filled out before record drawing can be complete.</inlineHelpText>
+        <label>Response</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Revise_and_Resubmit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Revise and Resubmit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Selected_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Selected Users</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Highlight__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c,&quot;Approval Pending&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=015800000014vi&quot;, &quot;Submitted Pending1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Rejected&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=015800000014viE&quot;, &quot;Rejected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Cancelled&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=0158000000151bq&quot;, &quot;Cancelled&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Revise and Resubmit&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=015800000014viT&quot;, &quot;Revise and Resubmit1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved as Corrected&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=015800000014vhz&quot;, &quot;Approved as Corrected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved&quot;),IMAGE( &quot;https://na6.salesforce.com/servlet/servlet.FileDownload?file=015800000014vi4&quot;, &quot;Approved&quot;), 
+&quot;&quot;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This changes based on the status of the record drawing.</inlineHelpText>
+        <label>Status Highlight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track and manage the status of the record drawing.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Revise and Resubmit</fullName>
+                    <default>false</default>
+                    <label>Revise and Resubmit</label>
+                </value>
+                <value>
+                    <fullName>Approved as Corrected</fullName>
+                    <default>false</default>
+                    <label>Approved as Corrected</label>
+                </value>
+                <value>
+                    <fullName>Approval Pending</fullName>
+                    <default>false</default>
+                    <label>Approval Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>Field used as a Common field for Issue Tracker joined report</description>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.Subject__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subject</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Issue_Tracker__r.Track__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Track</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Record Drawing</label>
+    <nameField>
+        <label>Record Drawing Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Record Drawings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Requested_Response_Greater_Than_24_Hours</fullName>
+        <active>false</active>
+        <description>Do not allow the requested response date to be set &lt;= TODAY().  Made inactive as of Sprint 2018.06 c</description>
+        <errorConditionFormula>AND(ISPICKVAL( Status__c,&quot;New&quot;), 
+Requested_Response_Date__c &lt;= TODAY(),
+ISCHANGED(Requested_Response_Date__c) 
+)</errorConditionFormula>
+        <errorDisplayField>Requested_Response_Date__c</errorDisplayField>
+        <errorMessage>The requested Response Date has to be at least 1 day from today.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

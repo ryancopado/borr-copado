@@ -1,0 +1,585 @@
+<!--
+PVBidView.vfp: View designed to facilitate uni-directional synchronization of pricing data from a PVBid bid into a Pricing Request object in Salesforce for additional processing
+during the Opportunity lifecycle. Visual force page is invoked by a detail page button and has a thin user interface layer that allows a user to search for and select a target
+project and bid to associate with a particular Salesforce Pricing_Request__c record. If the project/bid have already been previously selected, the interface will shortcut the process
+and list only a button with "Synchronize with existing project (Project#) and bid (Bid#)" as the text. In order to "reset" the pricing request, simply delete the project/bid from
+the pricing request record to get back to the search screen.
+
+Once the synchronization has been invoked by clicking the button, the following fields from PVBid will be pulled into the pricing request from the PVBid bid record and overwrite
+any values that already exist in these fields:
+*snapshotCreationDate
+*finalEPC
+*ineligibleCosts
+*finalEPCTotal
+*directMarginPercentage
+*modulePriceAssumption
+*systemSize
+*grossMargin
+*bidTitle
+*directMarginDollars
+*directCOGS
+*directCOGSPerWatt
+*grossMarginPercentage
+*esdPrice
+*esdCost
+
+Dependencies: 
+semantic-ui 2.3.1: UI libraries for dropdown menu and transitions, used to drive the project/bid search functionality.
+jquery 3.3.1: JQuery "convenience" JavaScript library used for some sort and search functions.
+pvbid 1.1: Used to interact with PVBid via its supported JavaScript SDK
+
+
+-->
+
+<apex:page standardController="Pricing_Tool_Approval__c" extensions="PVBidExtension" showHeader="true" showChat="false" sidebar="true"  lightningStylesheets="true">
+    <apex:form >
+        <apex:actionFunction name="receiveDataFromPVBid" action="{!receiveDataFromPVBid}" rerender="view"> 
+            <apex:param assignTo="{!snapshotCreationDate}" name="snapshotCreationDate" value="" />
+            <apex:param assignTo="{!finalEPC}" name="finalEPC" value="" />
+            <apex:param assignTo="{!ineligibleCosts}" name="ineligibleCosts" value="" />
+            <apex:param assignTo="{!finalEPCTotal}" name="finalEPCTotal" value="" />
+            <apex:param assignTo="{!directMarginPercentage}" name="directMarginPercentage" value="" />
+            <apex:param assignTo="{!modulePriceAssumption}" name="modulePriceAssumption" value="" />
+            <apex:param assignTo="{!systemSize}" name="systemSize" value="" />
+            <apex:param assignTo="{!grossMargin}" name="grossMargin" value="" />
+            <apex:param assignTo="{!bidTitle}" name="bidTitle" value="" />
+            <apex:param assignTo="{!directMarginDollars}" name="directMarginDollars" value="" />
+            <apex:param assignTo="{!directCOGS}" name="directCOGS" value="" />
+            <apex:param assignTo="{!directCOGSPerWatt}" name="directCOGSPerWatt" value="" />
+            <apex:param assignTo="{!grossMarginPercentage}" name="grossMarginPercentage" value="" />
+            <apex:param assignTo="{!esdFinalPrice}" name="esdFinalPrice" value="" />
+            <apex:param assignTo="{!esdCost}" name="esdCost" value="" />
+            <apex:param assignTo="{!AffiliateFee}" name="AffiliateFee" value="" />
+            <apex:param assignTo="{!UtilityUpgrades}" name="UtilityUpgrades" value="" />
+            <apex:param assignTo="{!finaldevcogssum}" name="finaldevcogssum" value="" />
+            <apex:param assignTo="{!storagemargin}" name="storagemargin" value="" />
+            
+            <apex:param assignTo="{!storagepower}" name="storagepower" value="" />
+            <apex:param assignTo="{!storageenergy}" name="storageenergy" value="" />
+            <apex:param assignTo="{!energystoragesys}" name="energystoragesys" value="" />
+            <apex:param assignTo="{!enerystorageunit}" name="enerystorageunit" value="" />
+            <apex:param assignTo="{!pvtotal}" name="pvtotal" value="" />
+           
+            
+        </apex:actionFunction>
+        <apex:actionFunction name="errorCondition" action="{!errorCondition}" rerender="view"> 
+        </apex:actionFunction>
+        <apex:actionFunction name="setProjectAndBid" action="{!setProjectAndBid}" rerender="view"> 
+            <apex:param assignTo="{!projectId}" name="projectId" value="" />
+            <apex:param assignTo="{!bidId}" name="bidId" value="" />
+        </apex:actionFunction>
+    </apex:form>
+    <!--apex:pageBlock-->
+        <head>   
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/transition.min.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/dropdown.min.css"/>
+            <script type="text/javascript" src="https://unpkg.com/pvbid-sdk@1.1/dist/pvbid.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>           
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/transition.min.js" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/dropdown.min.js" />
+            
+            <script type="text/javascript"> 
+                var resultsLoading = false; // global variable used to drive search status.
+                var projectSearchTerm = '';
+                var selectedProject = '';
+                var selectedBid = '';
+                var pvbid;
+                
+                /*
+                 * On page load, check a few business conditions and then either display the project/bid search or the button to execute the sync if they're already selected.
+                 */
+                $(document).ready(function() {  
+                // Start JS that gets fired on page load. Some variables below are set in the controller extension constructor. 
+               
+                    $('.ui.dropdown').hide();
+                    $('#submitButton').hide();
+                
+                    var locked = '{!isPricingRequestLocked}';
+                    console.log ('isPricingRequestLocked=' + locked);
+                    
+                    // If pricing request is not new, do not allow a sync since it's already entered an approval process.
+                    if (locked == 'true') {
+                        $('#bodydiv').text('Pricing request is not in new state. Cannot sync data.');
+                        return;
+                    }
+                
+                    var bidId = '{!bidId}';
+                    var projectId = '{!projectId}';
+                
+                    // NOTE: This should NEVER be hard-coded but PVBid does not yet support a true OAuth flow, and currently the only way to get a Bearer token is to request one from their team,
+                    // have them generate it, and then put it into the VisualForce code as you see below. This should be changed ASAP once a real flow is supported by PVBid.
+                    //9/11/20 changed token
+                    //const config = { token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImUyNmI1MjVmNjNjODVmOGFlZGJlN2RjOGIzNWIxODRmNmY5Yzg4MjZmOGJkZDgxOThjOTE5MmVhZmUyYmZjMGEyZDFhMTg1MDJiZTM0YTUzIn0.eyJhdWQiOiIyIiwianRpIjoiZTI2YjUyNWY2M2M4NWY4YWVkYmU3ZGM4YjM1YjE4NGY2ZjljODgyNmY4YmRkODE5OGM5MTkyZWFmZTJiZmMwYTJkMWExODUwMmJlMzRhNTMiLCJpYXQiOjE1NTQ4MzMxOTUsIm5iZiI6MTU1NDgzMzE5NSwiZXhwIjoxNTg2NDU1NTk1LCJzdWIiOiIyNTUiLCJzY29wZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtZGVmaW5pdGlvbnMiLCJtYW5hZ2UtYmlkcyJdfQ.S30b7GLmzQziMJlutLDkMmiH1QscXL1_dIiSsR1Y7z3FdTvFs4GSlQnPQnkbHAvFDtLdFVFMjj1oD9VC62SuYEGw6Z7GsHSZJhXTb7uxtlukfInnevV1_66aUC2f4OFK_PlUSYHcsDEMLrWpnney0SdpUvgzNbaF4BHxfk6PcpeH_jhgZ49xyqs-EN3OnUzFVe3vCkpQ893CfxvUmosbYcDyUSo1_bVqicfg2iWNzdDzdgOR0YWoykPyoTzfMT4WJ-2ESy1dvQXqZ-ViZTivs2ekeBbzyeCs2BEFjA_l-_txlfj-ClaPzOiGOaafKY93sBev1nRO5SG3fgdNLw0RaC3OWO49F3pZjGXKBIoiHJXzNYPT3YzOtwLsrbcTLEjp3KE0y1VCDZLMGv7ZI0cCT2TZvF7Lmc6N9LAWdbv1i3fp9YubLDs3zAVseuKd1X-yYvD2QDkslyCc83b5PF-YhjxaFxhYTuGZg4CONqu1ShgekbuJWtJy-eeA2492Zh9lSJG3fcK8SXmVci52KISTmPp7M5pQzA1-iE4HnngcVZptQuTZ09VEjIpCyskt3u1zYliBxkzoCW2EW9NH68vG4-5YgMXCNH8ia1nV_bvH0ZmnwLTM5gFdbx_tvBS3zKJLT503Ie9tAKYWA-nS8nETag4nYI4EaZQufYtBZ_NVONs" };
+                    //const config = { token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjNhNGFmZTJkNmMxMzQ2ZDg0OGY0NzdmYjE1YzllM2JkY2E4N2UzODRmZmEwYmM1MzZjYWI2ODRiNDVhYmNjNGIyZWZmMzIxYzdlOWViMzE5In0.eyJhdWQiOiIyIiwianRpIjoiM2E0YWZlMmQ2YzEzNDZkODQ4ZjQ3N2ZiMTVjOWUzYmRjYTg3ZTM4NGZmYTBiYzUzNmNhYjY4NGI0NWFiY2M0YjJlZmYzMjFjN2U5ZWIzMTkiLCJpYXQiOjE1ODUyNTI5ODUsIm5iZiI6MTU4NTI1Mjk4NSwiZXhwIjoxNjE2Nzg4OTg1LCJzdWIiOiIyNTUiLCJzY29wZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtZGVmaW5pdGlvbnMiLCJtYW5hZ2UtYmlkcyJdfQ.AhnGmKkNSuFkvO-B6bpKDXQ_q8xbQ-LFiON_AUKLxggkXijQcEAhADqUPE5MnR_OHvzQ7MptGWNww1d8XXz4aNutANi93B1NCgBAL3RNNN4fsp76E_94HRDDrVrxtmmjucx9YVGFRyBzyIBcnhNWD8vQddZNe25OVq9bbV1Z3J9Gf-19OcaCgivpl1MZ76NU9PxUH6FByp9bKvkBHzvIimE-dDhbkfOn3L12WzazIeDEBxRaavI2lFX-VZV6XN0YxbBANaNCd_KXfItz-xg-U880lhG7nMwUxuHqhiAOi-5ecaZV7fnFf4UnkUQqhHwQEMamcUyTgAqsNUunRcHkQLSACYsnkFpdVbaUMI05GcKGIOg0zHWGCFAFNHWuvpW7CKOml1f_m6NM-L4fSO19Jo13KZMJdFWliBuE17xnqUTThhJ9rg9KfR6IjrrU9ZY65Wr5fIte6YtIoRk6qq16mHVr1v2YiMd2QHGFY_7Oj4YV_IeKyHTcJhZ9ihfDF3ky_cHE9dEhS0ULxrlUjZhszQrgbDLlD1FtX_dELAUaK7h6R5548bMKjkjIdq6fiM7wQOrsTEWsrkd5EkD2ZMNx_gfjMgkfChNmDkidF2iwmngxR-dOfOL1l4HUCTjOickjyFumTIXHSayJ-5moYpG25Qw2ow0k_F7asIWky9j1ru4" };
+                    const config = { token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVmMjVjYzYwYTdjOTc5OGNjNmViMmVhYWNiOWE4Yjk2M2YwMTQ0NjI5MjEyNDhmMGQ0MTdhMWU5NjZmMmM4YjU5OTU4ZGQ4YmExNmEyOTNiIn0.eyJhdWQiOiIyIiwianRpIjoiNWYyNWNjNjBhN2M5Nzk4Y2M2ZWIyZWFhY2I5YThiOTYzZjAxNDQ2MjkyMTI0OGYwZDQxN2ExZTk2NmYyYzhiNTk5NThkZDhiYTE2YTI5M2IiLCJpYXQiOjE2MDQ5NDg3MTIsIm5iZiI6MTYwNDk0ODcxMiwiZXhwIjoxNjM2NDg0NzEyLCJzdWIiOiIyNTUiLCJzY29wZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtZGVmaW5pdGlvbnMiLCJtYW5hZ2UtYmlkcyJdfQ.YFXp-X5xZBKIiQ90IxW2rdi52OVdHanUrYP_QuXd1uw48EplBO1AFHoOeHuM_YhCTSChFyO_z_oS9RBsGtd03l7kTPp-dsqvw4lsWIzUQC_vS_4AF6l8MOcjPICCp1UQ_ZWzd01wJBHFJ-v2k9fI4kJM1ctEKhJPswqv8RoXFSeFmzgj75bz8zQvGFyosD8Fr_NsKpsIx2mAyqYYRCaqcDMkuqdEwAfF5ZDZ2y-E6pplS9YlagA1Xji6vLwiZcmLYAt1FL_l2bPvYHeFKXg4h2wtHfyGP1EZGcDzeKWZe7Sg5p-NMifLZSQYuxisqqjX-MG47_KO6yuCZo87Fh4-ejD4DfaxfdhRJMbxYWuVDBRWKN15Bg7cMhMh3o9kmL18w8rdVjj5PaPCBtht6aJ81NrhdTlqCixJatJrl0bDE1jJgrSuwpGCehjW-Zt3aCWW1e0GKJ_3Vp1td6wunV4-ZOglWiW_Qd18-sdE1naG45FRR7YbaE4C7xejUBmaH-9bazJllGiQ7pLKcoK24QEWhlEI2zN3oeebQjGhs2XJBMQKg7XrLBck6aq8FgOhHYHQ4WFOCY9S2aYqFPsywOcj8vZAYhSa2a692jR-t6WTkWlIB-InXkSFMlDY0XzwKA_II66XiL4dgyWX4vtS9V914QLk0HDpf5Ja7QsREQFyYuI" };          
+                    pvbid = PVBid.createContext(config);
+
+                    // If the user hasn't yet associated a project/bid to the pricing request, display the UI controls that allow them to do so.
+                    if (bidId == null || projectId == null || bidId == '' || projectId == '') {
+                        initializeDropdowns(pvbid);
+                    }
+                    
+                    // Already have the project and bid ids. Display a button to start the sync process on the selected project/bid.
+                    else {
+                        $('#bodydiv').hide();
+                        $('#submitButton').text('Synchronize with existing project (' + projectId + ') and bid (' + bidId + ')');
+                        $('#submitButton').show();
+                        
+                        selectedProject = projectId;
+                        selectedBid = bidId;
+                    }
+                    
+                });
+            // End initial page-load triggered JS
+            </script>
+            
+            <script type="text/javascript">
+            // Start JS functions that get invoked based on user action.
+            
+                // Invoked when a user starts searching for projects.
+                const searchForProjectsAsync = async (pvbid, searchTerm) => {
+                    let projects = await pvbid.repositories.projects.get({ per_page: 100, search: searchTerm});
+                    return projects;
+                };
+            
+                // Invoked when a user selects a project and bid to pull down the full object for processing.
+                const fetchPVBidProjectAsync = async (pvbid, projectId) => {
+                        try {
+                            let project = await pvbid.getProject(projectId);
+                            return project;
+                        }
+                        catch (error) {
+                            console.log (error);   
+                            $('#bodydiv').text('Error retrieving your project from PVBid. Please ensure the ProjectId is correct. The error from PVBid is: ' + error.message);
+                            errorCondition ();
+                            return; 
+                        }
+                };
+            
+                // Initialize project/bid search functionality. Invoked on page load if a project/bid has not yet been associated to the pricing request.
+                function initializeDropdowns (pvbid) {
+                    $('#bodydiv').hide();
+                        
+                    // Create the dropdown. Don't populate until the user searches.
+                    $('#project-select').dropdown({
+                        onChange: function(value, text, $selectedItem) {
+                          
+                            // This thing gets called even when someone messes with the bid picklist. Eliminate duplicate calls.
+                            if (value && selectedProject != value) {
+                                populateBidSelector (pvbid, value);
+                                selectedProject = value;
+                            }
+                        },
+                        onNoResults: function (searchValue) {
+                            projectSearchTerm = searchValue;
+          
+                            if (projectSearchTerm.length >= 3 && !resultsLoading) {
+                                resultsLoading =  true;
+                                populateProjectSelector (pvbid, projectSearchTerm);
+                            }
+                        },
+                        placeholder : 'Search for your project...'
+                    });
+                    $('#project-select').show();
+                    errorCondition ();   
+                }
+            
+                // Populate the project selector dropdown search box.
+                function populateProjectSelector (pvbid, searchTerm) {
+                    var dropdownValues = [];
+                    searchForProjectsAsync(pvbid, searchTerm).then ((projects) => {
+                        if (projects) {
+                            $.each(projects, function (i, project) {
+                            
+                                dropdownValues.push ({
+                                    value: project.id,
+                                    name: project.title
+                                });
+                            });
+                        }
+                              
+                        if (dropdownValues) {
+                            $('#project-select').dropdown('change values', dropdownValues);
+                            $('#project-select').dropdown ('set text', projectSearchTerm);
+                        }
+                        else {
+                            $('#project-select').clear();  
+                        }
+            
+                        resultsLoading = false;
+                    });
+                }
+                
+                // Populate the bid select search box.
+                function populateBidSelector (pvbid, projectId) {
+                    $('#bid-select').dropdown({
+                        placeholder : 'Select your bid',
+                        onChange: function(value, text, $selectedItem) {
+
+                            if (value) {
+                                selectedBid = value;
+                                $('#submitButton').text('Synchronize with selected project and bid');
+                                $('#submitButton').show();
+                            } 
+                        }
+                    });
+                    $('#bid-select').dropdown('set text', 'Loading bids...');
+                    $('#bid-select').show();
+                    
+                    // Grab the bids on the selected project and populate the selection box.
+                    fetchPVBidProjectAsync (pvbid, projectId).then ((project) => {
+
+                        if (project) {
+                            var dropdownValues = [];
+                            $.each(project.bids, function (i, bid) {
+                                dropdownValues.push ({
+                                    value: bid.id,
+                                    name: bid.title
+                                });
+                            });
+                            
+                            $('#bid-select').dropdown('change values', dropdownValues);
+                            $('#bid-select').dropdown('restore placeholder text');
+                        }
+                    });
+                }
+                
+                // Invoked when a user clicks the button to initiate a bid sync.
+                function syncBid () {
+                    
+                    $('.ui.dropdown').hide();
+                    $('#submitButton').hide();
+                    $('#bodydiv').show();
+                    
+                    setProjectAndBid (selectedProject, selectedBid);
+                    syncPVBidData (pvbid, selectedProject, selectedBid);
+                }
+            
+                // Worker function to fetch all of the data from a particular bid and then call into the Apex controller extension for record modification. 
+                function syncPVBidData (pvbid, projectId, bidId) {
+                    /*
+                     * Variables that we need to extract from PVBid and load into Salesforce.
+                     */
+                    var finalEPC;
+                    var ineligibleCosts;
+                    var finalEPCTotal;
+                    var directMarginPercentage;
+                    var modulePriceAssumption;
+                    var systemSize;
+                    var grossMargin;
+                    var bidTitle;
+                    var directMarginDollars = 0;
+                    var directCOGS = 0;
+                    var directCOGSPerWatt = 0;
+                    var grossMarginPercentage = 0;
+                    var esdFinalPrice = 0;
+                    var esdCost = 0;
+                    var AffiliateFee=0;
+                    var UtilityUpgrades=0;
+                    var devcogs1=0;
+                    var devcogs2=0;
+                    var devcogs3=0;
+                    var devcogs4=0;
+                    var devcogs5=0;
+                    var devcogs6=0;
+                    var finaldevcogssum=0;
+                    var storagemargin=0;
+                    var storagepower =0;
+                    var storageenergy = 0;
+                    var energystoragesys = 0;
+                    var enerystorageunit = 0;
+                    var pvtotal = 0;
+                    
+                 
+                            
+
+                    fetchPVBidProjectAsync (pvbid, projectId).then ((project) => {
+                        if (project) {
+                            let bid = project.bids[bidId];
+
+                            if (!bid) {
+                                $('#bodydiv').text('Error retrieving your bid from PVBid. Please ensure the BidId is correct for the given ProjectId.');
+                                errorCondition ();
+                                return; 
+                            }
+                            
+                            
+                                             
+                            
+                              // Get all line items and then trim to just parents with cost.changed by DK on 3/10/2020
+                              
+                           var lineItems = bid.entities.components();
+                           var csvIds = '';
+                           var csvCosts = '';
+                           
+                           for (var key in lineItems) {
+                           
+                           if(lineItems[key].definitionId===643)
+                           {
+                           
+                           AffiliateFee=lineItems[key].cost;
+                           
+                           }
+                           
+                           if(lineItems[key].definitionId===674)
+                           {
+                           
+                           UtilityUpgrades=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===659)
+                           {
+                           
+                           devcogs1=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===672)
+                           {
+                           
+                           devcogs2=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===428)
+                           {
+                           
+                           devcogs3=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===427)
+                           {
+                           
+                           devcogs4=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===964)
+                           {
+                           
+                           devcogs5=lineItems[key].cost;
+                           
+                           }
+                           if(lineItems[key].definitionId===433)
+                           {
+                           
+                           devcogs6=lineItems[key].cost;
+                           
+                           }
+                           
+                           
+                           
+                           
+                           
+                            }
+                            
+                            finaldevcogssum =devcogs1 + devcogs2 + devcogs3 + devcogs4 + devcogs5 + devcogs6;
+                            console.log('Fees' +finaldevcogssum);
+                            
+                       
+                            
+                           
+                                                                    
+                            // We've pulled down the bid, now grab all of the data we care about by using the PVBid SDK
+                                                                    
+              //added more metrics group on 8/12/2020 by MG (storagepower,storageenergy,energystoragesys;enerystorageunit,pvtotal)                                                   
+
+                            bidTitle = bid.title;
+                            finalEPC = bid.price / bid.watts;
+                            var metricGroups = bid.entities.metrics(); 
+                            console.log('MG' +metricGroups); 
+             
+             
+                         for (var key1 in metricGroups ) 
+                         { 
+                         console.log(metricGroups[key1].definitionId);
+                             if (metricGroups[key1].definitionId === 1571)
+                                 {
+                                     ineligibleCosts=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 2240)
+                                 {
+                                     directMarginPercentage=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 2247)
+                                 {
+                                     grossMargin=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 3371)
+                                 {
+                                     directMarginDollars=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 3363)
+                                 {
+                                     grossMarginPercentage=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 5007)
+                                 {
+                                     directCOGS=metricGroups[key1].value;
+                                     }
+                             if (metricGroups[key1].definitionId === 5008)
+                                 {
+                                     directCOGSPerWatt=metricGroups[key1].value;
+                                     }
+                              if (metricGroups[key1].definitionId === 31369)
+                                 {
+                                     esdFinalPrice=metricGroups[key1].value;
+                                     }
+                                      if (metricGroups[key1].definitionId === 31368)
+                                 {
+                                     storagemargin=metricGroups[key1].value;
+                                     
+                                     }
+                                      if (metricGroups[key1].definitionId === 38317)
+                                      
+                                      
+                                 {
+                                 console.log(metricGroups[key1].value);
+                                     storagepower =metricGroups[key1].value;
+                                     
+                                     }
+                                     if (metricGroups[key1].definitionId === 38318)
+                                 {
+                                 
+                                  console.log(metricGroups[key1].value);
+                                     storageenergy =metricGroups[key1].value;
+                                     
+                                     }
+                                      if (metricGroups[key1].definitionId === 34117)
+                                 {
+                                 
+                                  console.log(metricGroups[key1].value);
+                                     energystoragesys =metricGroups[key1].value;
+                                     
+                                     }
+                                      if (metricGroups[key1].definitionId === 38319)
+                                 {
+                                 
+                                  console.log(metricGroups[key1].value);
+                                     enerystorageunit =metricGroups[key1].value;
+                                     
+                                     }
+                                     if (metricGroups[key1].definitionId === 35668)
+                                 {
+                                 
+                                  console.log(metricGroups[key1].value);
+                                     pvtotal =metricGroups[key1].value;
+                                     
+                                     }
+                                     
+                                     
+                                     
+                             }
+                             
+                          
+                             
+                    ////////////////////////////////
+                    
+                    //let affiliatefeeDollars = bid.entities.searchByTitle("metric", "Affiliate Fee");
+                    //if (affiliatefeeDollars && affiliatefeeDollars[0]) 
+                    //AffiliateFee = affiliatefeeDollars[0].value;
+                    
+                    
+                        
+                    //let ineligibleMetric = bid.entities.searchByTitle("metric", "Ineligibles");
+                              
+                    //ineligibleCosts = ineligibleMetric[0].value;
+                        
+                            finalEPCTotal = bid.price;
+                        
+                    //let directMarginPercentageMetric = bid.entities.searchByTitle("metric", "Direct Margin (%)");
+                            
+                    //directMarginPercentage = directMarginPercentageMetric[0].value;
+                        
+                            let modulePrice = bid.entities.searchByTitle("component", "Modules - Material");
+                            for (var i = 0; i < modulePrice.length; i++) {
+                        
+                                // There are others with similar titles as children. Find the parent and use it.
+                                if (!modulePrice[i]._data.config.is_nested) {
+                                    modulePriceAssumption = (modulePrice[i].cost / bid.watts).toFixed(3);
+                                }
+                            }
+                            
+                            systemSize = bid.watts;
+                    
+                    //let grossMarginDollars = bid.entities.searchByTitle("metric", "Gross Margin ($)");
+                   
+                    //if (grossMarginDollars && grossMarginDollars[0]) 
+                    //grossMargin = grossMarginDollars[0].value;
+                    
+                    //let directMarginDollarsMetric = bid.entities.searchByTitle("metric", "Direct Margin ($)");
+                    
+                    //if (directMarginDollarsMetric && directMarginDollarsMetric[0]) 
+                    //directMarginDollars = directMarginDollarsMetric[0].value;
+                    
+                    //let grossMarginPercentageMetric = bid.entities.searchByTitle("metric", "Gross Margin (%)");
+                    
+                    //grossMarginPercentage = grossMarginPercentageMetric[0].value;
+                    
+                    //let directCOGSMetric = bid.entities.searchByTitle("metric", "Direct COGS");
+                   
+                    //if (directCOGSMetric && directCOGSMetric[0]) 
+                    //directCOGS = directCOGSMetric[0].value;
+                    
+                    //let directCOGSPerWattMetric = bid.entities.searchByTitle("metric", "Direct COGS $/W");
+                    //if (directCOGSPerWattMetric && directCOGSPerWattMetric[0])
+                    //directCOGSPerWatt = directCOGSPerWattMetric[0].value;
+                    
+                    //let esdFinalPriceMetric = bid.entities.searchByTitle("metric", "ESD Price");
+                    
+                    //if (esdFinalPriceMetric && esdFinalPriceMetric[0]) 
+                    //esdFinalPrice = esdFinalPriceMetric[0].value;
+                    
+                    let esdCostMetric = bid.entities.searchByTitle("metric", "ESD Cost", true);//no changes made for this line
+                    
+                            if (esdCostMetric && esdCostMetric[0]) 
+                                esdCost = esdCostMetric[0].value;
+                    
+                            // Create a snapshot and then lock the bid. Note that if the bid is already locked, the snapshot creation will fail with a bad error message. PVBid
+                            // has an open work item to create a better error message in this scenario. 
+                            bid.createSnapshot('Salesforce Sync Snapshot', 'Snapshot created when bid synchronized from Salesforce. See timestamp on snapshot for date.').then((promise)=>{
+                
+                                lockBidAndSyncData (bid, promise.created_at, finalEPC, ineligibleCosts, finalEPCTotal, directMarginPercentage, modulePriceAssumption,
+                                    systemSize, grossMargin, bidTitle, directMarginDollars, directCOGS, directCOGSPerWatt, grossMarginPercentage, esdFinalPrice, esdCost , AffiliateFee,UtilityUpgrades,finaldevcogssum,storagemargin,storagepower ,storageenergy ,energystoragesys ,enerystorageunit ,pvtotal)
+                            }, (rejectionReason)=>{
+                                console.log ('promise rejected');
+                                console.log (rejectionReason);
+                                lockBidAndSyncData (bid, null, finalEPC, ineligibleCosts, finalEPCTotal, directMarginPercentage, modulePriceAssumption,
+                                    systemSize, grossMargin, bidTitle, directMarginDollars, directCOGS, directCOGSPerWatt, grossMarginPercentage, esdFinalPrice, esdCost , AffiliateFee,UtilityUpgrades,finaldevcogssum,storagemargin,storagepower ,storageenergy ,energystoragesys ,enerystorageunit ,pvtotal)
+                            });
+                        }
+                    });
+               }
+                                
+               // Invoked to complete synchronization work by locking the bid and then returning the data to the Apex Controller Extension for processing.
+               function lockBidAndSyncData (bid, snapshotCreationDate, finalEPC, ineligibleCosts, finalEPCTotal, directMarginPercentage, modulePriceAssumption,
+                                    systemSize, grossMargin, bidTitle, directMarginDollars, directCOGS, directCOGSPerWatt, grossMarginPercentage, esdFinalPrice, esdCost,AffiliateFee,UtilityUpgrades,finaldevcogssum,storagemargin,storagepower ,storageenergy ,energystoragesys ,enerystorageunit ,pvtotal) {
+               
+                    // Lock the bid and then sync the data into SFDC.
+                    if (bid.canLock()) {
+                        bid.lock().then(()=>{ 
+                            console.log ('locked bid, now returning');
+                            receiveDataFromPVBid(snapshotCreationDate, finalEPC, ineligibleCosts, finalEPCTotal, directMarginPercentage, modulePriceAssumption,
+                                systemSize, grossMargin, bidTitle, directMarginDollars, directCOGS, directCOGSPerWatt, grossMarginPercentage, esdFinalPrice, esdCost,AffiliateFee,UtilityUpgrades,finaldevcogssum,storagemargin,storagepower ,storageenergy ,energystoragesys ,enerystorageunit ,pvtotal);
+                        });
+                    }
+                    else {
+                        console.log ('bid cannot be locked, returning');
+                        receiveDataFromPVBid(snapshotCreationDate, finalEPC, ineligibleCosts, finalEPCTotal, directMarginPercentage, modulePriceAssumption,
+                            systemSize, grossMargin, bidTitle, directMarginDollars, directCOGS, directCOGSPerWatt, grossMarginPercentage, esdFinalPrice, esdCost,AffiliateFee,UtilityUpgrades,finaldevcogssum,storagemargin,storagepower ,storageenergy ,energystoragesys ,enerystorageunit ,pvtotal);
+                    } 
+               }
+            
+            // End JavaScript functions that are invoked by user action
+            </script>
+            <style>
+                select {margin: 15px;}
+            </style>
+           </head> 
+        
+    <!-- Lightweight HTML elements used to inject project/bid search and selection controls -->
+    <body id="view">
+        <div id="bodydiv"><b>Please wait while your data is being synchronized from PVBid...</b></div>
+        <select class="ui dropdown search selection" id="project-select"></select>
+        <select class="ui dropdown search selection" id="bid-select"></select>
+        <div><button id="submitButton" onclick="syncBid()">Synchronize Record with PVBid</button></div>
+    </body> 
+    <!--/apex:pageBlock-->
+</apex:page>

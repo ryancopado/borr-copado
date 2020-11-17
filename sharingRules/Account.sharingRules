@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Ahana</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Ahana</label>
+        <sharedTo>
+            <group>GLC</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Customer,Business</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Borrego_Employee_Account</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <description>provides visibility to HR and CEO to employee contact records</description>
+        <label>Borrego Employee Account</label>
+        <sharedTo>
+            <group>Borrego_Employee_Account_All_Acess</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>Borrego Solar Employees</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Private_Account_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>give specific users access to Private Account record types</description>
+        <label>Private Account Access</label>
+        <sharedTo>
+            <group>Private_Account_Access</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Private</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sepi_Solar_View_All_Accounts_non_private</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Sepi Solar View All Accounts non private</label>
+        <sharedTo>
+            <group>Sepi_Solar</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Municipality,Vendor- Corporate,Customer,Vendor- Material,Vendor- Subcontractor/Non-Material,Business</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_All</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>View all accounts except Private</description>
+        <label>View All</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Municipality,Customer,Vendor- Corporate,Vendor- Material,Vendor- Subcontractor/Non-Material,Business,Borrego Competitors</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

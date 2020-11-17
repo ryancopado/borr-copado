@@ -1,0 +1,31 @@
+<apex:page standardController="Invoices__c" extensions="createInvoice" id="page">
+    <apex:pageMessage severity="error" title="Error:" summary="You cannot edit an invoice that has entered or completed the approval process." 
+                          strength="3" rendered="{!if(Invoices__c.Status__c != 'New', 'true', 'false')}"/>
+        <apex:form id="form" rendered="{!if(Invoices__c.Status__c == 'New', 'true', 'false')}"> 
+            <apex:sectionHeader title="New Invoice" subtitle="{!Invoices__c.Name}"/>
+            <apex:pageBlock id="block">
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!save}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+                    <apex:inputField value="{!Invoices__c.Phase__c}" required="true"/>
+                    <apex:outputField value="{!Invoices__c.Project__c}"/>
+                    <apex:inputField value="{!Invoices__c.Scope_Items__c}" required="true"/>
+                    <apex:inputField value="{!Invoices__c.ATTN__c}"/>
+                    <apex:inputField value="{!Invoices__c.Payment_Terms__c}" required="true"/>
+                    <apex:inputField value="{!Invoices__c.Date__c}" required="true"/>
+                    <apex:inputField value="{!Invoices__c.RE__c}"/>
+                </apex:pageBlockSection>
+                <br/>
+                <apex:pageBlockSection columns="1" id="section">    
+                    <apex:pageBlockSectionItem id="item">
+                        <apex:outputLabel >Select Lines to Invoice</apex:outputLabel>
+                        <apex:selectList value="{!selected}" multiselect="true" size="10" id="lines">
+                            <apex:selectOptions value="{!lines}" id="line"/>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+    <apex:pagemessages />
+</apex:page>

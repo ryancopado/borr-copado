@@ -1,0 +1,1143 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" access="global" controller="ChecklistVfpageLightning" >
+    <aura:attribute name="chklist" type="Id"/>
+    <aura:attribute name="chklistrec" type="Checklist__c[]"/>
+    <aura:attribute name="getpenwo" type="Pending_Work__c[]"/>
+    <aura:attribute name="getfile" type="ContentDocument[]"/>
+    <aura:attribute name="rectypename" type="string"/>
+    <aura:attribute name="recid" type="Id" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="init" value="{!this}" action="{!c.getfilesrec}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getpendingworkfiles}"/>
+    
+    <lightning:card iconName="standard:user" title="Checklist Detail">
+        <aura:if isTrue="{!v.rectypename =='Solar Array Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Solar Array">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodamageetctomodules__c"></lightning:outputfield>
+                           
+                            <lightning:outputfield fieldName="Moduleshardwaresecuredtightened__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Novegcontactbacksheetorthruarray__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Modulesoilinglevel__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCwiringisproperlyroutedandsecured__c"></lightning:outputfield>
+                            
+                        </div>
+                       <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                          <lightning:outputfield fieldName="Conduitsnodmgepropersupportetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Usemeterconfirmcontinuity__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Rackingfastnerstorquednodamageetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtnodamageWindDeflector__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtBallastproperlystationedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtSlipSheetpositionednodmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectinternalnoissues__c"></lightning:outputfield>
+                            
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+                    
+        <!--Solar Array Mowing Checklist  -->
+         <aura:if isTrue="{!v.rectypename =='Solar Array Mowing Checklist'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Checklist Details">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Grounds__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Height_Before__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Obstruction__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Height_After__c"></lightning:outputfield>
+                                                  
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Trimmed__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Solar_Array_Mowing_Veg_Debris__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Solar_Array_Mowing__c"></lightning:outputfield>
+                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!-- String Inverter Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='String Inverter Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="String Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Extinverterhousingcleannodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InternalInverterhousingnodamageetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fanfilterfancovercleaned__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="HandcoversCoolingfanscleaned__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCDisconnecttestednoDCpower__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Stringterminationsseatedtorqued__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InverterDCStringConnectnoanomalie__c"></lightning:outputfield>
+                                                  
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Fusescheckedallgoodnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoB__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoC__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="ACvoltagereadingPhaseBtoC__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingpositivetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingnegativetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Surgearresterisnottrippednodamage__c"></lightning:outputfield>
+                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!-- Switchgear Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='Switchgear Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Switchgear">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Padnocrackserosionodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Inclsdpositionandindicatorsdisplay__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Termscablesnosignofdamage__c"></lightning:outputfield>
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="GaspressuregaugeindicatesOK__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="SafetyWarningPlacardslegible__c"></lightning:outputfield>
+                                                                                
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!--Tracker Unit Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='Tracker Unit Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Tracker Unit">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Windslowfunctiontrippedandtested__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Driveshaftcolumhousingalignedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Driveshaftboltedconnecttorquedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Slewgeartorquredetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SlewgeargreasedperOEMrqmt__c"></lightning:outputfield>
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Motormountedconnecttorquedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Limitswitchesadjustedetcwiresecure__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Controlcabinetcleannodamage__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Foundationnodamageroofmountssecure__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Trackersalignedwithothersitetracker__c"></lightning:outputfield>
+                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        
+         <!--Transformer Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='Transformer Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Transformer">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Padnocrackserosionodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Oiltemperaturegaugereading__c"></lightning:outputfield>
+                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodegradestressheatdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SafetyWarningPlacardslegible__c"></lightning:outputfield>
+                                                                            
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+          <!--Weather Station Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='Weather Station Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Weather Station">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Anenometercleanmountrotatenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Windvanecleanmountrotatenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Pyranometercleanmountalignnodamage__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Pyranometerwithincalibrationdate__c"></lightning:outputfield>
+                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Pyranometercalibrationdate__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Pyranometercleanmountunshadednodmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Othersensorscleanedmountednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Cablingroutedandsecured__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                            
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+                  <!--AC Panel Cabinet Primary PM -->
+         <aura:if isTrue="{!v.rectypename =='AC Panel Cabinet Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="AC Panel Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakerslabeledhaspanelschedule__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakersclosedposition__c"></lightning:outputfield>
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Breakersgoodconditionnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM AC Panel -->
+         <!--aura:if isTrue="{!v.rectypename =='2nd PM AC Panel'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="AC Panel Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakerslabeledhaspanelschedule__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakersclosedposition__c"></lightning:outputfield>
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Breakersgoodconditionnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if-->
+        <!-- Added BY DK-->
+        <!--2nd PM AC Panel -->
+         <aura:if isTrue="{!v.rectypename =='2nd PM AC Panel'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="AC Panel Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakerslabeledhaspanelschedule__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakersclosedposition__c"></lightning:outputfield>
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Breakersgoodconditionnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!--2nd PM BOP -->
+         <aura:if isTrue="{!v.rectypename =='2nd PM BOP'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="BOP">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Perimeterfence__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="freeofsignificantrutsholeserosion__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Sitevegetationheight__c"></lightning:outputfield>
+                            
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nosignofvandaltheftorcrimeactivy__c"></lightning:outputfield>
+                            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!--2nd PM Central Inverter -->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Central Inverter'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Central Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="SafetyWarningPlacardslegible__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InverterHousingcleannodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="HMIscreengoodcondfunctioning__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectinternalnoissues__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Controlwirestermblksseatednodmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Allboardshaveconnectandseated__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fusesseatednodamage__c"></lightning:outputfield>
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Breakersclosednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Mainbrkrtrippedandtested__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Capacitorsshownodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Busbarstorquedandnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACcablestorquednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCcablestorquednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Paneldoorgasketsnodamageseal__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Doorlatcheslocks__c"></lightning:outputfield>
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM Combiner Box -->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Combiner Box'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Combiner Box">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nophysicalelectricheatotherdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fusestestedgoodcondition__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fusescheckedallgoodnodamage__c"></lightning:outputfield>
+                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="CBDCwiringnoinsulationdegradeordmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!--2nd PM Communication Cabinet-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Communication Cabinet'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Communication Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Securemountandnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="LEDlitorflashingwhenpowered__c"></lightning:outputfield>
+                            
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            
+                            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!--2nd PM Solar Array-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Solar Array'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Solar Array">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nodamageetctomodules__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Moduleshardwaresecuredtightened__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Novegcontactbacksheetorthruarray__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Modulesoilinglevel__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCwiringisproperlyroutedandsecured__c"></lightning:outputfield>
+                            
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Grndgattachedsecurednodamagecorro__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtnodamageWindDeflector__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtBallastproperlystationedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="RoofMtSlipSheetpositionednodmg__c"></lightning:outputfield>
+                            
+                            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!--BOP Mowing-->
+         <aura:if isTrue="{!v.rectypename =='BOP Mowing'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Checklist Details">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="BOP_Mowing_Fence__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Site_Grounds__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Vandalism__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Vegetation_Height__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Obstructions__c"></lightning:outputfield>
+                            
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="BOP_Mowing_Vegetation_After__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Trimmed__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Debris__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing_Drainage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOPMowingVegDebris__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="BOP_Mowing__c"></lightning:outputfield>
+                            
+                            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!--BOP Primary PM-->
+         <aura:if isTrue="{!v.rectypename =='BOP Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="BOP">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Perimeterfence__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="freeofsignificantrutsholeserosion__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nosignofvandaltheftorcrimeactivy__c"></lightning:outputfield>
+                                                    
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Sitevegetationheight__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Alldrainagefreeofdebrisblocketc__c"></lightning:outputfield>
+          
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!--Central Inverter Primary PM-->
+         <aura:if isTrue="{!v.rectypename =='Central Inverter Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Central Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SafetyWarningPlacardslegible__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InverterHousingcleannodamage__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="HMIscreengoodcondfunctioning__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Filtersinspectedcleanedreplaced__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Coolingsfansoperatingwoutabnnoises__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="Thermalinspectinternalnoissues__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Controlwirestermblksseatednodmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Allboardshaveconnectandseated__c"></lightning:outputfield>
+                                <lightning:outputfield fieldName="Fusestestedgoodcondition__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakersclosednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Mainbrkrtrippedandtested__c"></lightning:outputfield>                         
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Capacitorsshownodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InputOutputvoltagesmatchHMIdisplay__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Busbarstorquedandnodamage__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="ACcablestorquednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCcablestorquednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Paneldoorgasketsnodamageseal__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="Doorlatcheslocks__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoB__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoC__c"></lightning:outputfield>
+                                <lightning:outputfield fieldName="ACvoltagereadingPhaseBtoC__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingnegativetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingpositivetoground__c"></lightning:outputfield>   
+                                                                                       
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+          <!--Combiner Box Primary PM-->
+         <aura:if isTrue="{!v.rectypename =='Combiner Box Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Combiner Box">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SafetyWarningPlacardslegible__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="CBDCwiringnoinsulationdegradeordmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="CBFusesinstringtestedandconfirmed__c"></lightning:outputfield>
+                                                     
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Fusescheckedallgoodnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Lightningarrestorsnodamageorfail__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="Paneldoorgasketsnodamageseal__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                          
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!--Communication Cabinet Primary PM-->
+         <aura:if isTrue="{!v.rectypename =='Communication Cabinet Primary PM'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Communication Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Securemountandnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="LEDlitorflashingwhenpowered__c"></lightning:outputfield>
+                                                                               
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Commcablespluginsecurenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                                                    
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!--Corrective PM AC Panel-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM AC Panel'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="AC Panel Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            
+                                                     
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Breakersgoodconditionnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Breakersclosedposition__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                                                     
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!--Corrective PM Central Inverter-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Central Inverter'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Central Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InverterHousingcleannodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fansfilterscleannoobstructions__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="Inverteronlineatdeparture__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ListInverterfault__c"></lightning:outputfield>
+                              <lightning:outputfield fieldName="Listversionoffirmware__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                     
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="DCvoltagereadingnegativetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingpositivetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoB__c"></lightning:outputfield>
+                               <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoC__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseBtoC__c"></lightning:outputfield>
+                                 <lightning:outputfield fieldName="Nophysicalelectricheatotherdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectinternalnoissues__c"></lightning:outputfield>
+                                                                                                          
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+              <!--2nd PM String Inverter-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM String Inverter'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="String Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Extinverterhousingcleannodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InternalInverterhousingnodamageetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCDisconnecttestednoDCpower__c"></lightning:outputfield>
+                                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Stringterminationsseatedtorqued__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fusescheckedallgoodnodamage__c"></lightning:outputfield>
+            
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM Switchgear-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Switchgear'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Switchgear">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Padnocrackserosionodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Inclsdpositionandindicatorsdisplay__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Termscablesnosignofdamage__c"></lightning:outputfield>
+                                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="GaspressuregaugeindicatesOK__c"></lightning:outputfield>
+                                       
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM Tracker Unit-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Tracker Unit'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Tracker Unit">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Windslowfunctiontrippedandtested__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Driveshaftcolumhousingalignedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Driveshaftboltedconnecttorquedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SlewGearnoleakscorrodamage__c"></lightning:outputfield>
+                                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Motormountedconnecttorquedetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Limitswitchesadjustedetcwiresecure__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Controlcabinetcleannodamage__c"></lightning:outputfield>
+                                       
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM Transformer-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Transformer'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Transformer">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Oiltemperaturegaugereading__c"></lightning:outputfield>
+                           
+                           
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Nodegradestressheatdamage__c"></lightning:outputfield>
+                           
+                                       
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+         <!--2nd PM Weather Station-->
+         <aura:if isTrue="{!v.rectypename =='2nd PM Weather Station'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Weather Station">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Anenometercleanmountrotatenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Windvanecleanmountrotatenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Pyranometercleanmountalignnodamage__c"></lightning:outputfield>
+                                       
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Pyranometerwithincalibrationdate__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Pyranometercleanmountunshadednodmg__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Othersensorscleanedmountednodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Cablingroutedandsecured__c"></lightning:outputfield>
+                                       
+                                                                                                      
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!--Corrective PM Weather Station-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Weather Station'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Weather Station">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Anenometercleanmountrotatenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Windvanecleanmountrotatenodamage__c"></lightning:outputfield>
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Pyranometercleanmountalignnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Reportingtomonitoringatcompletion__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+          <!--Corrective PM Transformer-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Transformer'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Transformer">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="SecondaryACvoltagereading__c"></lightning:outputfield>
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Nodegradestressheatdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+         <!--Corrective PM Switchgear-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Switchgear'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Switchgear">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Inclsdpositionandindicatorsdisplay__c"></lightning:outputfield>
+                           
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Termscablesnosignofdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Loadsidevoltagereading__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                                                                                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+          <!--Corrective PM Combiner Box-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Combiner Box'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Combiner Box">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nophysicalelectricheatotherdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fusescheckedallgoodnodamage__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="Fusestestedgoodcondition__c"></lightning:outputfield>
+                           
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                                                                                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!-- Corrective PM Communication Cabinet-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Communication Cabinet'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Communication Cabinet">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Securemountandnodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="LEDlitorflashingwhenpowered__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="PowersupplyDCvoltagereading__c"></lightning:outputfield>
+                           
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Commcablespluginsecurenodamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ContactOpsconfirmequipcomm__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                                                                                                                 
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!-- Corrective PM Solar Array-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM Solar Array'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Solar Array">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Docmanufacturerserial__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodamageetctomodules__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nopaintcorrodamage__c"></lightning:outputfield>
+                                              
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCwiringisproperlyroutedandsecured__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCconnectgoodcondnodamage__c"></lightning:outputfield>
+                                                                                                                                         
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!-- Corrective PM String Inverter-->
+         <aura:if isTrue="{!v.rectypename =='Corrective PM String Inverter'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="String Inverter">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="manufacturerserialno__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="InternalInverterhousingnodamageetc__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ListInverterfault__c"></lightning:outputfield>
+                             <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoB__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseAtoC__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="ACvoltagereadingPhaseBtoC__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="DCvoltagereadingpositivetoground__c"></lightning:outputfield>
+                                              
+                                      
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                            <lightning:outputfield fieldName="DCvoltagereadingnegativetoground__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Fanfilterfancovercleaned__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Thermalinspectnoanomallies__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nophysicalelectricheatotherdamage__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Listversionoffirmware__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Inverteronlineatdeparture__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Nodebrisrodentinsectdebrisetc__c"></lightning:outputfield>
+                                                                                                                                         
+                        </div>
+                        
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+        <!-- Other-->
+         <aura:if isTrue="{!v.rectypename =='Other'}">
+            <lightning:recordViewForm recordId="{!v.chklist}" objectApiName="Checklist__c">
+                
+                <lightning:card  title="Checklist Info">
+            
+                    <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+                            <lightning:outputfield fieldName="Scope_of_Work__c"></lightning:outputfield>
+                            <lightning:outputfield fieldName="Scope_of_Work_Completed__c"></lightning:outputfield>
+                                                                                            
+                                      
+                        </div>
+                                               
+                    </div>
+                     </lightning:card>
+                     </lightning:recordViewForm>
+        </aura:if>
+        <!-- -->
+                
+                <!-- this is pending work section    -->
+        <!--
+                <lightning:card iconName="standard:user" title ="Pending Work">
+                    <table >
+                        
+                        <thead>
+                            
+                            <aura:iteration items="{!v.getpenwo}" var="PWrk">
+                                <tr>
+                                    <th scope="col">  
+                                        
+                                        <ui:outputURL value="{!'/'+PWrk.Id}" label="{!PWrk.Name}" aura:id="detailContURL" />
+                                        
+                                    </th> 
+                                </tr>
+                            </aura:iteration>
+                        </thead>
+                    </table>
+                </lightning:card > -->
+                <!---this is files section -->
+                <lightning:card iconName="standard:user" title ="Files"> 
+                    <table >
+                        
+                        <thead>
+                            
+                            <aura:iteration items="{!v.getfile}" var="fl">
+                                <tr>
+                                    <th scope="col">  
+                                        
+                                        <ui:outputURL value="{!'/'+fl.Id}" label="{!fl.Title}" aura:id="detailContURL" />
+                                        
+                                    </th> 
+                                </tr>
+                            </aura:iteration>
+                        </thead>
+                    </table>
+                </lightning:card >
+             
+    </lightning:card>
+</aura:component>

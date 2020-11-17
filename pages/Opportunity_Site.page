@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" tabStyle="Opportunity" extensions="Opportunity_SiteControllerExt">
+	
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!sites}" var="s">
+				<apex:column headerValue="Site">
+					<apex:outputLink value="/{!s.Id}" target="_blank">{!s.Name}</apex:outputLink>
+				</apex:column>
+				<apex:column value="{!s.Available_Area__c}"/>
+				<apex:column value="{!s.Type__c}"/>
+				<apex:column value="{!s.Utility_Zone__c}"/>
+				<apex:column value="{!s.Project_Size_Watts_STC__c}"/>
+			</apex:pageBlockTable> 
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

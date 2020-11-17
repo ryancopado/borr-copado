@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>to store check list items for maintenance case</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>checkoff if maintenance was completed.  leave unchecked if it was not</inlineHelpText>
+        <label>Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Component_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Component Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Combiner Boxes</fullName>
+                    <default>false</default>
+                    <label>Combiner Boxes</label>
+                </value>
+                <value>
+                    <fullName>Contractual/Special Requirements</fullName>
+                    <default>false</default>
+                    <label>Contractual/Special Requirements</label>
+                </value>
+                <value>
+                    <fullName>DAS/Metering Inspection</fullName>
+                    <default>false</default>
+                    <label>DAS/Metering Inspection</label>
+                </value>
+                <value>
+                    <fullName>Exposed Wireways</fullName>
+                    <default>false</default>
+                    <label>Exposed Wireways</label>
+                </value>
+                <value>
+                    <fullName>Inverters</fullName>
+                    <default>false</default>
+                    <label>Inverters</label>
+                </value>
+                <value>
+                    <fullName>Modules &amp; Mounting</fullName>
+                    <default>false</default>
+                    <label>Modules &amp; Mounting</label>
+                </value>
+                <value>
+                    <fullName>Roof</fullName>
+                    <default>false</default>
+                    <label>Roof</label>
+                </value>
+                <value>
+                    <fullName>Site Grounds</fullName>
+                    <default>false</default>
+                    <label>Site Grounds</label>
+                </value>
+                <value>
+                    <fullName>Tracker</fullName>
+                    <default>false</default>
+                    <label>Tracker</label>
+                </value>
+                <value>
+                    <fullName>Transformers</fullName>
+                    <default>false</default>
+                    <label>Transformers</label>
+                </value>
+                <value>
+                    <fullName>Weather Station</fullName>
+                    <default>false</default>
+                    <label>Weather Station</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Component__c</fullName>
+        <externalId>false</externalId>
+        <label>Component</label>
+        <referenceTo>Component__c</referenceTo>
+        <relationshipLabel>Maintenance Items</relationshipLabel>
+        <relationshipName>Maintenance_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Performed During Visit</fullName>
+                    <default>false</default>
+                    <label>Performed During Visit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <description>The way it is implemented today, if you change the mapping of maintenance items to components, you not only have to change the picklist and dependent picklist on the Maintenance Item object but you also have to update the custom setting ComponentToMaintenanceItem__c.  The custom setting is what the code uses to determine what the mapping is between maintenance items and components.
+
+The custom setting has one record for each component.  There are two fields per record - &quot;Picklist Values 1&quot; and &quot;Picklist Values 2&quot;. These two fields are used to store the name of the Maintenance Items that map to the component. The names of the Maintenance Items listed here must match the picklist values in the Item field of the Maintenance Item object exactly.  Each value is separated by a semi-colon.  Only use field &quot;Pick List Values 2&quot; if you can&apos;t fit all of the Maintenance Items names in &quot;Pick List Values 1&quot;.</description>
+        <externalId>false</externalId>
+        <label>Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Component_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Bird, Insect, Rodent Activity</fullName>
+                    <default>false</default>
+                    <label>Bird, Insect, Rodent Activity</label>
+                </value>
+                <value>
+                    <fullName>Calibration verification</fullName>
+                    <default>false</default>
+                    <label>Calibration verification</label>
+                </value>
+                <value>
+                    <fullName>Cell temp sensor properly secured</fullName>
+                    <default>false</default>
+                    <label>Cell temp sensor properly secured</label>
+                </value>
+                <value>
+                    <fullName>Check Battery Backup</fullName>
+                    <default>false</default>
+                    <label>Check Battery Backup</label>
+                </value>
+                <value>
+                    <fullName>Combiner Electrical Testing</fullName>
+                    <default>false</default>
+                    <label>Combiner Electrical Testing</label>
+                </value>
+                <value>
+                    <fullName>Current Transformer NETA</fullName>
+                    <default>false</default>
+                    <label>Current Transformer NETA</label>
+                </value>
+                <value>
+                    <fullName>DAS Electrical Testing</fullName>
+                    <default>false</default>
+                    <label>DAS Electrical Testing</label>
+                </value>
+                <value>
+                    <fullName>DAS network connectivity</fullName>
+                    <default>false</default>
+                    <label>DAS network connectivity</label>
+                </value>
+                <value>
+                    <fullName>DC grounding check and inspection</fullName>
+                    <default>false</default>
+                    <label>DC grounding check and inspection</label>
+                </value>
+                <value>
+                    <fullName>Defective Modules</fullName>
+                    <default>false</default>
+                    <label>Defective Modules</label>
+                </value>
+                <value>
+                    <fullName>Disolved Gas Test</fullName>
+                    <default>false</default>
+                    <label>Disolved Gas Test</label>
+                </value>
+                <value>
+                    <fullName>Electrical connections</fullName>
+                    <default>false</default>
+                    <label>Electrical connections</label>
+                </value>
+                <value>
+                    <fullName>Filters cleaned</fullName>
+                    <default>false</default>
+                    <label>Filters cleaned</label>
+                </value>
+                <value>
+                    <fullName>Grease gears</fullName>
+                    <default>false</default>
+                    <label>Grease gears</label>
+                </value>
+                <value>
+                    <fullName>Grease zerks</fullName>
+                    <default>false</default>
+                    <label>Grease zerks</label>
+                </value>
+                <value>
+                    <fullName>Ground continuity to door</fullName>
+                    <default>false</default>
+                    <label>Ground continuity to door</label>
+                </value>
+                <value>
+                    <fullName>I/V Curve Tracing</fullName>
+                    <default>false</default>
+                    <label>I/V Curve Tracing</label>
+                </value>
+                <value>
+                    <fullName>Inspect driveline and associated hardware for proper torque</fullName>
+                    <default>false</default>
+                    <label>Inspect driveline and associated hardware for proper torque</label>
+                </value>
+                <value>
+                    <fullName>Inspect Switchgear/Transformer</fullName>
+                    <default>false</default>
+                    <label>Inspect Switchgear/Transformer</label>
+                </value>
+                <value>
+                    <fullName>Inspect Switchgear Controls</fullName>
+                    <default>false</default>
+                    <label>Inspect Switchgear Controls</label>
+                </value>
+                <value>
+                    <fullName>Inverter Electrical Testing</fullName>
+                    <default>false</default>
+                    <label>Inverter Electrical Testing</label>
+                </value>
+                <value>
+                    <fullName>Inverter Readings recorded</fullName>
+                    <default>false</default>
+                    <label>Inverter Readings recorded</label>
+                </value>
+                <value>
+                    <fullName>Inverter terminal connections - Torque &amp; Marked</fullName>
+                    <default>false</default>
+                    <label>Inverter terminal connections - Torque &amp; Marked</label>
+                </value>
+                <value>
+                    <fullName>IR Imaging</fullName>
+                    <default>false</default>
+                    <label>IR Imaging</label>
+                </value>
+                <value>
+                    <fullName>IR Scan &amp; Image LV/MV</fullName>
+                    <default>false</default>
+                    <label>IR Scan &amp; Image LV/MV</label>
+                </value>
+                <value>
+                    <fullName>Manufacturer Recommended Preventative Maintenance</fullName>
+                    <default>false</default>
+                    <label>Manufacturer Recommended Preventative Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Medium Voltage Switchgear NETA 7.5.4</fullName>
+                    <default>false</default>
+                    <label>Medium Voltage Switchgear NETA 7.5.4</label>
+                </value>
+                <value>
+                    <fullName>Megger Testing</fullName>
+                    <default>false</default>
+                    <label>Megger Testing</label>
+                </value>
+                <value>
+                    <fullName>Module connector condition</fullName>
+                    <default>false</default>
+                    <label>Module connector condition</label>
+                </value>
+                <value>
+                    <fullName>Module soiling</fullName>
+                    <default>false</default>
+                    <label>Module soiling</label>
+                </value>
+                <value>
+                    <fullName>Mounting</fullName>
+                    <default>false</default>
+                    <label>Mounting</label>
+                </value>
+                <value>
+                    <fullName>Note DAS Location on site plan</fullName>
+                    <default>false</default>
+                    <label>Note DAS Location on site plan</label>
+                </value>
+                <value>
+                    <fullName>Note irradiance sensor angle and direction - GHI and/or POA</fullName>
+                    <default>false</default>
+                    <label>Note irradiance sensor angle and direction - GHI and/or POA</label>
+                </value>
+                <value>
+                    <fullName>Note rooftop debris</fullName>
+                    <default>false</default>
+                    <label>Note rooftop debris</label>
+                </value>
+                <value>
+                    <fullName>Organic matter</fullName>
+                    <default>false</default>
+                    <label>Organic matter</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Phase Rotation</fullName>
+                    <default>false</default>
+                    <label>Phase Rotation</label>
+                </value>
+                <value>
+                    <fullName>Pier support condition</fullName>
+                    <default>false</default>
+                    <label>Pier support condition</label>
+                </value>
+                <value>
+                    <fullName>Potential Transformer NETA 7.10</fullName>
+                    <default>false</default>
+                    <label>Potential Transformer NETA 7.10</label>
+                </value>
+                <value>
+                    <fullName>Proper erosion control &amp; drainage</fullName>
+                    <default>false</default>
+                    <label>Proper erosion control &amp; drainage</label>
+                </value>
+                <value>
+                    <fullName>Proper labeling</fullName>
+                    <default>false</default>
+                    <label>Proper labeling</label>
+                </value>
+                <value>
+                    <fullName>Roof issues</fullName>
+                    <default>false</default>
+                    <label>Roof issues</label>
+                </value>
+                <value>
+                    <fullName>Roof type verified</fullName>
+                    <default>false</default>
+                    <label>Roof type verified</label>
+                </value>
+                <value>
+                    <fullName>Shading</fullName>
+                    <default>false</default>
+                    <label>Shading</label>
+                </value>
+                <value>
+                    <fullName>Site Security</fullName>
+                    <default>false</default>
+                    <label>Site Security</label>
+                </value>
+                <value>
+                    <fullName>Soil condition</fullName>
+                    <default>false</default>
+                    <label>Soil condition</label>
+                </value>
+                <value>
+                    <fullName>Standing water</fullName>
+                    <default>false</default>
+                    <label>Standing water</label>
+                </value>
+                <value>
+                    <fullName>Strucutrual deficiencies</fullName>
+                    <default>false</default>
+                    <label>Strucutrual deficiencies</label>
+                </value>
+                <value>
+                    <fullName>Torque Terminals all LV connections</fullName>
+                    <default>false</default>
+                    <label>Torque Terminals all LV connections</label>
+                </value>
+                <value>
+                    <fullName>Tracker/Groundmount/Carport - Performed Mfg Recommended Preventative Maint</fullName>
+                    <default>false</default>
+                    <label>Tracker/Groundmount/Carport - Performed Mfg Recommended Preventative Maint</label>
+                </value>
+                <value>
+                    <fullName>Transformer Testing NETA 7.2.2</fullName>
+                    <default>false</default>
+                    <label>Transformer Testing NETA 7.2.2</label>
+                </value>
+                <value>
+                    <fullName>UPS Acceptance Testing</fullName>
+                    <default>false</default>
+                    <label>UPS Acceptance Testing</label>
+                </value>
+                <value>
+                    <fullName>Vegetation</fullName>
+                    <default>false</default>
+                    <label>Vegetation</label>
+                </value>
+                <value>
+                    <fullName>Verify ground continuity to conduit</fullName>
+                    <default>false</default>
+                    <label>Verify ground continuity to conduit</label>
+                </value>
+                <value>
+                    <fullName>Visual &amp; Mechanical check of all module mounting hardware</fullName>
+                    <default>false</default>
+                    <label>Visual &amp; Mechanical check of all module mounting hardware</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection</fullName>
+                    <default>false</default>
+                    <label>Visual inspection</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection for water penetration/ corrosion</fullName>
+                    <default>false</default>
+                    <label>Visual inspection for water penetration/ corrosion</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of AC disconnect switches</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of AC disconnect switches</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of all conduit fittings and gaskets</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of all conduit fittings and gaskets</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of conduit/fittings/expansion joint/support condition</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of conduit/fittings/expansion joint/support condition</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of conduit entry/ wire management</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of conduit entry/ wire management</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of DAS enclosure</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of DAS enclosure</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of DC disconnect switches</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of DC disconnect switches</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of exposed wire in array</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of exposed wire in array</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of Pyranometer shading?</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of Pyranometer shading?</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of Pyranometer soiling?</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of Pyranometer soiling?</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of roof conduit penetrations and conduit</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of roof conduit penetrations and conduit</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of the inverter external</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of the inverter external</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of the inverter internal</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of the inverter internal</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of weather station</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of weather station</label>
+                </value>
+                <value>
+                    <fullName>Visual inspection of wiring</fullName>
+                    <default>false</default>
+                    <label>Visual inspection of wiring</label>
+                </value>
+                <value>
+                    <fullName>VLF MV Cable Testing</fullName>
+                    <default>false</default>
+                    <label>VLF MV Cable Testing</label>
+                </value>
+                <value>
+                    <fullName>Wind Stow Function</fullName>
+                    <default>false</default>
+                    <label>Wind Stow Function</label>
+                </value>
+                <value>
+                    <fullName>Wire Management</fullName>
+                    <default>false</default>
+                    <label>Wire Management</label>
+                </value>
+                <value>
+                    <fullName>Wiring/mechanical connections all CT/VT</fullName>
+                    <default>false</default>
+                    <label>Wiring/mechanical connections all CT/VT</label>
+                </value>
+                <value>
+                    <fullName>Wiring/mechanical connections all sensors</fullName>
+                    <default>false</default>
+                    <label>Wiring/mechanical connections all sensors</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Tracker</controllingFieldValue>
+                <valueName>Grease gears</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tracker</controllingFieldValue>
+                <valueName>Grease zerks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tracker</controllingFieldValue>
+                <valueName>Inspect driveline and associated hardware for proper torque</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tracker</controllingFieldValue>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <controllingFieldValue>Contractual/Special Requirements</controllingFieldValue>
+                <controllingFieldValue>DAS/Metering Inspection</controllingFieldValue>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tracker</controllingFieldValue>
+                <valueName>Wind Stow Function</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Combiner Electrical Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Electrical connections</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Ground continuity to door</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Proper labeling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Visual inspection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Visual inspection for water penetration/ corrosion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Visual inspection of conduit entry/ wire management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combiner Boxes</controllingFieldValue>
+                <valueName>Wire Management</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractual/Special Requirements</controllingFieldValue>
+                <valueName>I/V Curve Tracing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractual/Special Requirements</controllingFieldValue>
+                <valueName>IR Imaging</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractual/Special Requirements</controllingFieldValue>
+                <valueName>Megger Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractual/Special Requirements</controllingFieldValue>
+                <valueName>Phase Rotation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DAS/Metering Inspection</controllingFieldValue>
+                <valueName>DAS Electrical Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DAS/Metering Inspection</controllingFieldValue>
+                <valueName>DAS network connectivity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DAS/Metering Inspection</controllingFieldValue>
+                <valueName>Note DAS Location on site plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>DAS/Metering Inspection</controllingFieldValue>
+                <valueName>Visual inspection of DAS enclosure</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <valueName>Verify ground continuity to conduit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <valueName>Visual inspection of all conduit fittings and gaskets</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <valueName>Visual inspection of conduit/fittings/expansion joint/support condition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <valueName>Visual inspection of exposed wire in array</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Exposed Wireways</controllingFieldValue>
+                <valueName>Visual inspection of roof conduit penetrations and conduit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Inverter Electrical Testing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Inverter Readings recorded</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Inverter terminal connections - Torque &amp; Marked</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Manufacturer Recommended Preventative Maintenance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Visual inspection of AC disconnect switches</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Visual inspection of DC disconnect switches</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Visual inspection of the inverter external</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Inverters</controllingFieldValue>
+                <valueName>Visual inspection of the inverter internal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>DC grounding check and inspection</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Defective Modules</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Module connector condition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Module soiling</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Note rooftop debris</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Shading</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Tracker/Groundmount/Carport - Performed Mfg Recommended Preventative Maint</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Modules &amp; Mounting</controllingFieldValue>
+                <valueName>Visual &amp; Mechanical check of all module mounting hardware</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <valueName>Organic matter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <valueName>Roof issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <valueName>Roof type verified</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <valueName>Standing water</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Roof</controllingFieldValue>
+                <valueName>Strucutrual deficiencies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Bird, Insect, Rodent Activity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Pier support condition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Proper erosion control &amp; drainage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Site Security</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Soil condition</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Site Grounds</controllingFieldValue>
+                <valueName>Vegetation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Check Battery Backup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Disolved Gas Test</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Filters cleaned</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Inspect Switchgear/Transformer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Inspect Switchgear Controls</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>IR Scan &amp; Image LV/MV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Torque Terminals all LV connections</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transformers</controllingFieldValue>
+                <valueName>Wiring/mechanical connections all CT/VT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Calibration verification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Mounting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Note irradiance sensor angle and direction - GHI and/or POA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Visual inspection of Pyranometer shading?</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Visual inspection of Pyranometer soiling?</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Visual inspection of weather station</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Weather Station</controllingFieldValue>
+                <valueName>Visual inspection of wiring</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Maintenance Item</label>
+    <nameField>
+        <displayFormat>MAINT-{0}</displayFormat>
+        <label>Maintenance Items Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Maintenance Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

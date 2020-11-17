@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Project_PM__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Con_PO__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Con_PO__c.Date__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Con_PO__c.Vendor_Account__c</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Con_PO__c.Product__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Con_PO__c.Total_Cost_Tax__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Con_PO__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Submitted to Vendor</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Con_Req__c.Project__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>PO&apos;s Submitted to Vendor</name>
+    <reportType>CustomEntity$Con_Req__c@Con_Req__c.Purchase_Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Con_Req__c.Date_Needed__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

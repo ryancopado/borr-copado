@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case.WorkOrders$Name</field>
+    </columns>
+    <description>To help capture month-end Self-performed mow revenue.</description>
+    <filter>
+        <criteriaItems>
+            <column>Case$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.Landscaping</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Labor_Billing__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Billable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.WorkOrders$TotalLaborTravelfromTSE__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$CaseNumber</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>O&amp;M Self-Performed Mows - WO Data</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Work_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$ClosedDate</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

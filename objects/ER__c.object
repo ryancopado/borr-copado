@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Individual expense reports.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Manager_For_Approval__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Manager For Approval</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Manager</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Month_Ending__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose the last day of the month you are submitting expenses for</inlineHelpText>
+        <label>Month Ending</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PV__c</fullName>
+        <externalId>false</externalId>
+        <label>PV</label>
+        <summaryFilterItems>
+            <field>ELI__c.PV_Direct__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ELI__c.Expense_Header__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Receipts_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Hidden field.  Checked by expRepButton.checkAtt if all Expense Line Items that require receipts have attachments.</description>
+        <externalId>false</externalId>
+        <label>Receipts Attached</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Total</label>
+        <summarizedField>ELI__c.Expenditure_Amount__c</summarizedField>
+        <summaryForeignKey>ELI__c.Expense_Header__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Approval Pending</fullName>
+                    <default>false</default>
+                    <label>Approval Pending</label>
+                </value>
+                <value>
+                    <fullName>PV Direct Approved</fullName>
+                    <default>false</default>
+                    <label>PV Direct Approved</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Processed By Accounting</fullName>
+                    <default>false</default>
+                    <label>Processed By Accounting</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved Total</label>
+        <summarizedField>ELI__c.Expenditure_Amount__c</summarizedField>
+        <summaryForeignKey>ELI__c.Expense_Header__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employee Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Expense Report-OLD</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Manager_For_Approval__c</columns>
+        <columns>Month_Ending__c</columns>
+        <columns>Total__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <roleAndSubordinates>VPFinance</roleAndSubordinates>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Closed</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Month_Ending__c</columns>
+        <columns>Requested_Total__c</columns>
+        <columns>Total__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Processed By Accounting</value>
+        </filters>
+        <label>Closed</label>
+        <sharedTo>
+            <group>Accounting</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Open</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Month_Ending__c</columns>
+        <columns>Requested_Total__c</columns>
+        <columns>Total__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approval Pending,PV Direct Approved,Approved</value>
+        </filters>
+        <label>Open</label>
+        <sharedTo>
+            <group>Accounting</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>EXP-{0000}</displayFormat>
+        <label>Expense Report #</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expense Reports-OLD</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Month_Ending__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Generate_CSV</listViewButtons>
+        <listViewButtons>Process_Reports</listViewButtons>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Approve_Expense_Items</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve Expense Items</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{! requireScript(&quot;/soap/ajax/15.0/connection.js&quot;) }
+
+//DECLARE CONSTANTS
+var errnum = 0;
+var STATUS = &quot;{!ER__c.Status__c}&quot;;
+
+if(STATUS == &apos;New&apos;){errnum++; alert(&quot;Error:\nExpense Items cannot be approved until\nthe Expense Report has been submitted.&quot;);}
+if(  STATUS == &apos;Approved&apos;){errnum++; alert(&quot;Error:\nYou cannot Approve Expense Items after they are Approved.&quot;);}
+else if(errnum == 0) {
+window.parent.location.href=&quot;/apex/approveELI?id={!ER__c.Id}&quot;;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/apex.js&quot;)}
+
+var errnum = 0;
+var errmsg = &quot;&quot;;
+var ER_ID = &quot;{!ER__c.Id}&quot;;
+
+var result = sforce.apex.execute(&quot;expRepButton&quot; , &quot;clone&quot;, {e : ER_ID});
+alert(&quot;Expense Report Cloned.&quot;);
+window.parent.location.href = &quot;/&quot; + result;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Cost_Code_CheatSheet</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Cost Code CheatSheet</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/sfc/#version?selectedDocumentId=06980000000L0S3</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_CSV</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate CSV</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)} 
+
+var records = {!GETRECORDIDS($ObjectType.ER__c)}; 
+
+if (records[0] == null) { 
+alert(&quot;Please select at least one record.&quot;) } 
+else if (records.length&gt; 1) { 
+alert(&quot;Please select only one record.&quot;) } 
+else {
+window.open(&quot;/apex/printExpense?id=&quot;+records[0]);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Process_Reports</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Process Reports</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/apex.js&quot;)} 
+
+var errnum = 0; 
+var errmsg = &quot;&quot;; 
+var uname = &quot;{!$User.FirstName}&quot;;
+var lname = &quot;{!$User.LastName}&quot;;
+var idArray = {!GETRECORDIDS($ObjectType.ER__c)}; 
+
+if (((uname == &quot;Tanya&quot;) &amp;&amp; (lname == &quot;Reas&quot;)) ||  ((uname == &quot;Christopher&quot;) &amp;&amp; (lname == &quot;Eng&quot;))) {
+if (idArray[0] != null) { 
+var records = sforce.connection.retrieve(&quot;Name,Status__c&quot;, &quot;ER__c&quot;, idArray); 
+if (records.length &gt; 0) { 
+for (var i = 0; i &lt; records.length; i++) { 
+if (records[i].Status__c != &quot;Approved&quot;) { 
+errnum++; 
+errmsg += records[i].Name + &quot;\n&quot;; 
+} 
+}
+}
+if (errnum == 0) { 
+var result = sforce.apex.execute(&quot;expReportButton&quot;, &quot;processExp&quot;, { expId: idArray }); 
+alert(&quot;Expense Reports Updated.&quot;); 
+window.location.reload();
+} 
+else { 
+alert(&quot;Please select Approved Expense Reports only.\nThe following Reports are not Approved:\n\n&quot; + errmsg); 
+} 
+}
+else { 
+alert(&quot;Please select at least one record.&quot;); 
+}
+}
+else {
+alert(&quot;Only Tanya Reas or Christopher Eng can process expense reports.&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Approval</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/apex.js&quot;)}
+
+var errnum = 0;
+var errmsg = &quot;&quot;; 
+var ER_ID = &quot;{!ER__c.Id}&quot;;
+
+var result1 = sforce.apex.execute(&quot;expRepButton&quot; , &quot;checkAtt&quot;, {e : ER_ID});
+if(result1 == &apos;null&apos;) {
+var result = sforce.apex.execute(&quot;expRepButton&quot;, &quot;submit&quot;, {id: ER_ID});
+alert(&quot;Expense Report Submitted.&quot;);
+window.parent.location.href = &quot;/&quot; + ER_ID;
+} else {
+  if(result1 == &apos;none&apos;) {
+    alert(&quot;Expense report must have at least one expense line item.&quot;);
+  } else {
+    alert(&quot;Receipts are missing for: \n&quot;+ result1);
+  }
+}</url>
+    </webLinks>
+</CustomObject>

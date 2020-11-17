@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Project__c</field>
+        <field>Project_PM__c</field>
+        <field>Status__c</field>
+        <field>Vendor__c</field>
+        <field>Requisition_Total_Roll_Up__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>areed@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project__r.POCO_Total__c + Requisition_Total_Roll_Up__c  &lt; 25000</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>EVP Sales Approval</label>
+        <name>EVP_Sales_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND ( 
+Project__r.POCO_Total__c + Requisition_Total_Roll_Up__c &gt;= 25000, Project__r.POCO_Total__c + Requisition_Total_Roll_Up__c &lt; 400000 )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Contracts Committee Approval</label>
+        <name>Contracts_Committee_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>mike@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project__r.POCO_Total__c + Requisition_Total_Roll_Up__c &gt;= 400000</formula>
+        </entryCriteria>
+        <label>Board Approval</label>
+        <name>Board_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Major Components</description>
+    <emailTemplate>unfiled$public/Con_Req_Group_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( IsAttachment__c = TRUE,  Vendor__r.AcctSeed__Accounting_Active__c =TRUE,  NOT(ISPICKVAL(Project__r.WIP_Status__c , &quot;On WIP&quot;)), 
+  OR(CONTAINS( Cost_Code_Number__c , &quot;02-1410&quot;), CONTAINS( Cost_Code_Number__c , &quot;02-1540&quot;),CONTAINS( Cost_Code_Number__c , &quot;02-1535&quot;)))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Con_Req_Group_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Material_Purchase_Approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Purchase_Approved_ConReqGrp</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Con_Req_Group_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Rejected_Con_Req_Group</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Con_Req_Group_Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Modules, Inverters, Racking-NonWIP2</label>
+    <processOrder>4</processOrder>
+    <recallActions>
+        <action>
+            <name>Con_Req_Group_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,398 @@
+<apex:page standardController="AcctSeed__Billing__c" extensions="Billing_InvoiceCtlExt" applyBodyTag="false" renderAs="pdf">
+    
+    <html>
+        <head>
+            <title></title>
+        </head>
+        
+        <body>
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px" align="center" cellpadding="0" cellspacing="0">
+                <tbody>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 20px 0;">
+                            <span style="font-weight: bold;">Borrego Solar Systems</span>
+                            <br/>
+                            5005 Texas Street, Suite 400
+                            <br/>
+                            San Diego, CA 92108
+                        </td>
+                        <td style="text-align: right;">
+                            <apex:image url="{!$Resource.BorregoLogo}" /> 
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="width:100%; text-align: center; font-size: 18px; text-transform: uppercase; padding: 15px 0 0 0; border-top: solid;">
+                            {!billing.AcctSeed__Type__c}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <apex:outputPanel layout="block" rendered="{!solarFund == 'N/A'}">
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 20%; vertical-align: top;">
+                            Invoice #:
+                            <br/>
+                            Invoice Date:
+                            <br/>
+                            Invoice Due Date:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 30%; vertical-align: top;">
+                            {!billing.Name}
+                            <br/>
+                            {!invoiceDate}
+                            <br/>
+                            {!dueDate}
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 20%; vertical-align: top;">
+                            TO:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 30%; vertical-align: top;">
+                            {!billing.AcctSeed__Customer__r.Name}                    
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            FOR:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            {!svConProject.Name}
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 20%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingStreet}" />
+                            <br/>
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingCity}" />
+                            <apex:outputText value=", " />
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingState}" />
+                            <apex:outputText value=" " />
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingPostalCode}" />
+                            <br/>
+                            <br/>
+                            <apex:outputText value="ATTN: " />
+                            <apex:outputText value="{!attentionNames}" />
+                            <br/>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 45%; vertical-align: top;">
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_Street__c}" />
+                            <br/>
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_City__c}" />
+                            <apex:outputText value=", " />
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_State__c}" />
+                            <apex:outputText value=" " />
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_PostalCode__c}" />
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 10px 0; width: 20%; vertical-align: top;">
+                            Customer Ref #:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 10px 0; width: 30%; vertical-align: top;">
+                            {!billing.Customer_Reference_Number__c}
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="4" style="width:100%; text-align: center; font-size: 18px; text-transform: uppercase; padding: 15px 0 0 0; border-top: solid;">
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            </apex:outputPanel>
+            
+            <apex:outputPanel layout="block" rendered="{!solarFund != 'N/A'}">
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 20%; vertical-align: top;">
+                            Invoice #:
+                            <br/>
+                            Invoice Date:
+                            <br/>
+                            Invoice Due Date:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 30%; vertical-align: top;">
+                            {!billing.Name}
+                            <br/>
+                            {!invoiceDate}
+                            <br/>
+                            {!dueDate}
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 20%; vertical-align: top;">
+                            TO:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 30%; vertical-align: top;">
+                            {!solarFund}                    
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            FOR:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            {!svConProject.Name}
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 20%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <apex:outputField value="{!billing.AcctSeed__Customer__r.Name}" />
+                            <br/>
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingStreet}" />
+                            <br/>
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingCity}" />
+                            <apex:outputText value=", " />
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingState}" />
+                            <apex:outputText value=" " />
+                            <apex:outputField value="{!billing.Service_Contract__r.BillingPostalCode}" />
+                            <br/>
+                            <br/>
+                            <apex:outputText value="ATTN: " />
+                            <apex:outputText value="{!attentionNames}" />
+                            <br/>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 45%; vertical-align: top;">
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_Street__c}" />
+                            <br/>
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_City__c}" />
+                            <apex:outputText value=", " />
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_State__c}" />
+                            <apex:outputText value=" " />
+                            <apex:outputField value="{!billing.AcctSeed__Shipping_PostalCode__c}" />
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 10px 0; width: 20%; vertical-align: top;">
+                            Customer Ref #:
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 10px 0; width: 30%; vertical-align: top;">
+                            {!billing.Customer_Reference_Number__c}
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 5%; vertical-align: top;">
+                            
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 45%; vertical-align: top;">
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="4" style="width:100%; text-align: center; font-size: 18px; text-transform: uppercase; padding: 15px 0 0 0; border-top: solid;">
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            </apex:outputPanel>
+            
+            <!-- 
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 15%; vertical-align: top;">
+                            Project Name(s):
+                        </td>
+                        <td style="text-align: left; padding: 15px 0 0 0; width: 85%; vertical-align: top;">
+                            <apex:repeat value="{!projectList}" var="p">
+                                <apex:outputField value="{!p.Customer_Project_Name__c}"/>
+                                <br/>
+                            </apex:repeat>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            -->
+            
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0 0 0; width: 75%; vertical-align: top;">
+                            Description
+                        </th>
+                        <!-- 
+                        <th style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                            Tax %
+                        </th>
+                        -->
+                        <th style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                            Total
+                        </th>
+                        <th style="text-align: center; padding: 10px 0 0 0; width: 10%; vertical-align: top;">
+                            Tax
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!billLines}" var="bl">
+                        <tr>
+                            <td style="text-align: left; padding: 10px 0 0 0; width: 75%; vertical-align: top;">
+                                <apex:outputField value="{!bl.Description__c}"/>
+                            </td>
+                            <!-- 
+                            <td style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                                <apex:outputField value="{!bl.AvaAcctSeed__Rate__c}" rendered="{!bl.Taxable__c}"/>
+                            </td>
+                            -->
+                            <td style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                                <apex:outputField value="{!bl.AcctSeed__Total__c}"/>
+                            </td>
+                            <td style="text-align: center; padding: 10px 0 0 0; width: 10%; vertical-align: top;">
+                                <apex:outputField value="{!bl.SalesTaxRateFormula__c}"/>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                    
+                    <tr>
+                        <td style="text-align: left; padding: 10px 0 0 0; width: 75%; vertical-align: top;">
+                            <apex:outputText value="Sales Tax Total" rendered="{!AND(billing.AvaAcctSeed__Sales_Tax_Amount__c!=null)}" />
+                        </td>
+                        <!-- 
+                        <td style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                            <apex:outputField value="{!bl.AvaAcctSeed__Rate__c}" rendered="{!bl.Taxable__c}"/>
+                        </td>
+                        -->
+                        <td style="text-align: center; padding: 10px 0 0 0; width: 15%; vertical-align: top;">
+                            <apex:outputField value="{!billing.AvaAcctSeed__Sales_Tax_Amount__c}"/>
+                        </td>
+                        <td style="text-align: center; padding: 10px 0 0 0; width: 10%; vertical-align: top;">
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="width:100%; text-align: center; font-size: 18px; padding: 15px 0 20px 0;">
+                            Total Amount Due:&nbsp;&nbsp;<apex:outputField value="{!billing.AcctSeed__Total__c}"/>
+                            <!-- Total Amount Due:&nbsp;&nbsp;<apex:outputText value="{!omBillLineTotal}"/> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px; vertical-align: top;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    
+                    <tr>
+                        <td colspan="2" style="width:100%; text-align: left; font-style: italic; padding: 15px 0 0 0;">
+                            If you have any questions, please contact Patrick King at <a style="color:#000000; text-decoration:none" href="tel:619.961.4542" value="+16199614542" target="_blank">(619) 961-4542</a> or <a href="mailto:pking@borregosolar.com" style="color:#000000" target="_blank">pking@borregosolar.com</a>.
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="text-align: left; padding: 15px 0 0 0; width: 100%; vertical-align: top;">
+                            Please remit to:
+                            <br/>
+                            <span style="padding: 0 0 0 40px;">Borrego Solar Systems, Inc.</span>
+                            <br/>
+                            <span style="padding: 0 0 0 40px;">O&amp;M Accounting</span>
+                            <br/>
+                            <span style="padding: 0 0 0 40px;">5005 Texas Street, Suite 400</span>
+                            <br/>
+                            <span style="padding: 0 0 0 40px;">San Diego, CA 92108</span>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="text-align: left; padding: 15px 0 0 0; width: 100%; vertical-align: top;">
+                            Banking ACH or Wiring Instructions:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <span style="padding: 0 0 0 40px;">Beneficiary Bank:</span>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 70%; vertical-align: top;">
+                            Bank of the West
+                            <br/>
+                            300 S. Grand Ave., 7th Floor
+                            <br/>
+                            Los Angeles, CA 90071
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <span style="padding: 0 0 0 40px;">Routing/ABA#:</span>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 70%; vertical-align: top;">
+                            121100782
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <span style="padding: 0 0 0 40px;">SWIFT Code:</span>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 70%; vertical-align: top;">
+                            BWSTUS66
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <span style="padding: 0 0 0 40px;">Beneficiary:</span>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 70%; vertical-align: top;">
+                            Borrego Solar Systems, Inc.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 30%; vertical-align: top;">
+                            <span style="padding: 0 0 0 40px;">Account Number:</span>
+                        </td>
+                        <td style="text-align: left; padding: 0 0 0 0; width: 70%; vertical-align: top;">
+                            045909850
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </body>
+        
+    </html>
+    
+</apex:page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>External_Sharing_Rule_for_Work_Orders</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>External Sharing Rule for Work Orders</label>
+        <sharedTo>
+            <group>O_M_Customer_Portal</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Internal</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Internal_Sharing_Rule_for_Work_Orders</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Internal Sharing Rule for Work Orders</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Internal</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

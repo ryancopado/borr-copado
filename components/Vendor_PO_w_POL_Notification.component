@@ -1,0 +1,86 @@
+<apex:component controller="VendorPOwPOLNotification" access="global">
+    <apex:attribute name="purchaseOrderId" assignTo="{!poId}" type="Id" description="PO Id" />
+    
+    <style>
+        .headerStyle{text-align: left;}
+    </style>
+    
+    <html>
+        <head>
+            <title></title>
+        </head>
+        
+        <body>
+            <p>
+                A purchase order has been created in our system in the amount of&nbsp;<apex:outputField value="{!purchaseOrder.PO_Total__c}" />.
+            </p>
+            
+            <p>
+                The PO number is&nbsp;<apex:outputField value="{!purchaseOrder.Name}" />. It is important that you reference this PO number on your invoice.
+            </p>
+            
+            <p>
+                See below for additional detail and further breakdown of this purchase order:
+            </p>
+            
+            <p>
+            Shipping Street: {!purchaseOrder.AcctSeedERP__Shipping_Street__c} 
+            <br />
+            Shipping City: {!purchaseOrder.AcctSeedERP__Shipping_City__c} 
+            <br />
+            Shipping State: {!purchaseOrder.AcctSeedERP__Shipping_State__c}
+            <br />
+            Shipping Postal Code: {!purchaseOrder.AcctSeedERP__Shipping_Postal_Code__c } 
+             
+            </p>
+            
+            <table>
+                <thead>
+                    <th style="text-align: left; font-weight: bold; padding: 5px 20px 5px 0;">
+                        PO Line
+                    </th>
+                    <th style="text-align: left; font-weight: bold; padding: 5px 20px 5px 0;">
+                        Project Name
+                    </th>
+                    <th style="text-align: left; font-weight: bold; padding: 5px 20px 5px 0;">
+                        Amount
+                    </th>
+                    <th style="text-align: left; font-weight: bold; padding: 5px 20px 5px 0;">
+                        Line Item
+                    </th>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!POLines}" var="pol">
+                        <tr>
+                            <td style="padding: 5px 20px 5px 0;">
+                                <apex:outputField value="{!pol.Name}"/>
+                            </td>
+                            <td style="padding: 5px 20px 5px 0;">
+                                <apex:outputField value="{!pol.AcctSeedERP__Project__r.Name}"/>
+                            </td>
+                            <td style="padding: 5px 20px 5px 0; text-align: right;">
+                                <apex:outputField value="{!pol.POLine_Total__c}"/>
+                            </td>
+                            <td style="padding: 5px 20px 5px 0;">
+                                <apex:outputField value="{!pol.AcctSeedERP__Project_Task__r.Name}"/>
+                            </td>
+                        </tr>
+            
+                    </apex:repeat>
+                </tbody>
+            </table>
+            
+          
+            
+            <p>            
+                <b><u>Please forward this to the most responsible person in your Company that handles billings to Borrego Solar. It is very important that this person has PO number and line numbers in order to provide in the billing to Borrego Solar.
+                </u></b>             
+                <br />               
+                Thank you,
+                <br />               
+                Borrego Solar Systems Accounting Department
+            </p>
+            
+        </body>
+    </html>
+</apex:component>

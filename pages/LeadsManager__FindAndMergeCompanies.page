@@ -1,0 +1,94 @@
+<apex:page controller="LeadsManager.DuplicateLeadCompanies">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.0/css/jquery.dataTables.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+ 
+<script type="text/javascript">
+        $(document).ready( function() {
+            $('#rLeadCompanyList').dataTable({"iDisplayLength": 50});
+        } );
+</script>
+<apex:form >
+
+<div style="margin:15px 0 45px 10px" ><apex:outputLink style="color:#015ba7" value="{!retURL}">{!backString}</apex:outputLink></div>
+  <apex:pageBlock >
+            <div  class="pbBody">
+            <CENTER>
+            <apex:commandButton id="MergeLeadCompanies" onclick="mergeRecords(); return false;" immediate="true" title="Merge Lead Companies" value="Merge Lead Companies" ></apex:commandButton>
+            <apex:commandButton Action="{!Cancel}" value="Cancel"/>
+            
+            </CENTER>
+                <table id="rLeadCompanyList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                   <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Master Record</th>
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Select Records</th>
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Action</th>
+                            <apex:repeat value="{!$ObjectType.LeadsManager__Leads_Manager__c.FieldSets.LeadsManager__FieldSetForLeadsManager}" var="f">
+                                <th style="cursor:pointer;">{!$ObjectType.LeadsManager__Leads_Manager__c.Fields[f].label}</th>
+                            </apex:repeat>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!listLeadManagers}" var="lm" >
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                <td class="x-grid3-col x-grid3-cell x-grid3-td-checkbox x-grid3-cell-first">
+                                <input id="{!lm.Id}00" value="{!lm.Id}" title="" type="radio" class="radio" name="mids"/></td>
+                                <td class="x-grid3-col x-grid3-cell x-grid3-td-checkbox x-grid3-cell-first">
+                                <input id="{!lm.Id}" value="{!lm.Id}" title="" type="checkbox" class="checkbox" name="ids"/></td>
+                                <td class="actionColumn">
+                                <a title="Edit" class="actionLink" href="/{!lm.Id}/e?retURL={!leadsManager.Id}">Edit</a>&nbsp;|&nbsp;
+                                <a title="Delete - {!lm.Name}" class="actionLink" href="{!URLFOR($Action.Leads_Manager__c.Delete, lm.Id, [retURL=$CurrentPage.URL])}" onClick="return confirmDelete();">Delete</a></td>
+
+                                <apex:repeat value="{!$ObjectType.LeadsManager__Leads_Manager__c.FieldSets.LeadsManager__FieldSetForLeadsManager}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!lm.Id}" rendered="{!IF($ObjectType.Leadsmanager__Leads_Manager__c.Fields[f].Label= 'Company',true,false) }">{!lm[f]}</apex:outputLink>
+                                        <apex:outputField value="{!lm[f]}" rendered="{!AND($ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Type != 'datetime', $ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Type != 'date', $ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Label != 'Company')}"/>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Type = 'datetime', $ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Type = 'date'), NOT(ISNULL(lm[f])))}">
+                                            {!MONTH(lm[f])}/{!DAY(lm[f])}/{!YEAR(lm[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:pageBlock>
+</apex:form> 
+<script>
+function mergeRecords(){
+
+    var selectedRecords = [];
+    $('input[name=ids]:checked').each(function() {
+        selectedRecords.push($(this).attr('id'));
+    });
+         
+    
+    if (selectedRecords[0] == null || selectedRecords.length < 1 || selectedRecords.length > 10) 
+    { 
+        alert('Please select at least 1 record and less then or equal to 10 records.'); 
+    } 
+    else 
+    { 
+        var firstRecord = $("input[name=mids]:checked").val();
+        
+        location.href = '/apex/LeadsManager__MergeRecords?masterRecordId=' + firstRecord + '&childRecordIds=' +selectedRecords+ '&returnURL=' + encodeURIComponent(location.href); 
+    }
+}
+
+$("form input:radio" ).click(function(){
+    var cbid = this.id.substring(0,this.id.length -2);
+    var ckbox = document.getElementById(cbid);
+    $( "form input:checkbox" ).each(function( ) {
+      $(this).prop('disabled',false);
+      if(this.id == cbid ){
+      $(this).prop('checked',false);
+      $(this).prop('disabled',true);
+   
+      }
+    }); 
+
+});
+</script>
+</apex:page>

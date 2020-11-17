@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Branch Assignment Rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Manager Created,Customer Requested,SPG Created,System Performance Group,Email,Phone</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>pryder@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Resolved,Reminder</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>powertrack@alsoenergy.com</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Ended</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>support@auroravision.net</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SPG</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 3 AND (2 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Reactive</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Description</field>
+                <operation>contains</operation>
+                <value>Weather Station Alert/499,Site PV Analyzer/356,Zone / string alarm/353,Performance Index Alert/401,Inverter Performance Ratio (upload)/393,Production Meter/Inverter/288,Power Meter check/350</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Resolved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Description</field>
+                <operation>contains</operation>
+                <value>ATI Tracker Position Alert/412,String Output Current (XML)/304,Site Analyzer/354,Site Zone Analyzer/355,Production Meter / Inverter/288,String Output Current (XML)/304</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kgiannasca@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Portal_Inquiry_Type__c</field>
+                <operation>equals</operation>
+                <value>General Inquiries/Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Portal_Inquiry_Type__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <template>Case_Email_Alerts/Notify_Tommy_Portal_Case</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kgiannasca@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web,Email</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CreatedByAlias</field>
+                <operation>equals</operation>
+                <value>etam</value>
+            </criteriaItems>
+            <template>SupportEmails/SUPPORTNewassignmentnotification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kgiannasca@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>commissioning@borregosolar.com</value>
+            </criteriaItems>
+            <template>SupportEmails/SUPPORTNewassignmentnotification</template>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Case Escalation Process</fullName>
+        <active>false</active>
+    </assignmentRule>
+</AssignmentRules>

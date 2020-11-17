@@ -1,0 +1,21 @@
+<apex:page standardController="Commission__c" extensions="commission" action="{!setOpp}">
+<apex:sectionHeader title="Commission Edit" subtitle="New Commission" id="header"/>
+<apex:form id="form">
+<apex:actionFunction name="percent" action="{!setPercent}" rerender="out"/>
+<apex:pageBlock title="Commission Edit" mode="edit" id="title">
+<apex:pageBlockButtons id="buttons">
+    <apex:commandButton action="{!saves}" value="Save" id="save"/><apex:commandbutton value="Save and New" action="{!saveAndNew}" id="saveAndNew"/><apex:commandButton action="{!cancel}" value="Cancel" id="cancel"/>
+</apex:pageBlockButtons>
+    <apex:pageBlockSection columns="2" title="Information" collapsible="false" id="subtitle">
+       <!-- <apex:inputField value="{!Commission__c.Contact__c}" required="true" onfocus="percent();" onchange="percent();" id="user"/>-->
+        <apex:inputField value="{!Commission__c.Contact__c}" required="true"    id="user"/>        
+        <apex:inputField value="{!Commission__c.Opportunity__c}" required="true" id="opp"/>
+        <apex:inputField value="{!Commission__c.Percent__c}"  id="out"/> 
+        <apex:inputField value="{!Commission__c.Fixed_Cost__c}"  /> 
+        <div/>
+        <apex:inputField value="{!Commission__c.Fixed_Cost_Amount__c}"/>
+      </apex:pageBlockSection>
+</apex:pageBlock>
+<apex:pageMessages />
+</apex:form>
+</apex:page>

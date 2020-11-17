@@ -1,0 +1,566 @@
+<apex:page standardcontroller="AcctSeed__Billing__c" extensions="BillingPrintCtrl" renderas="pdf" >
+
+<head>
+<style>
+@page {
+    size                    : landscape;
+}
+table.invoice {
+    border                  : none;
+}
+
+h1, h2 {
+    font-weight             : bold;
+    text-transform          : uppercase;
+    font-size               : 14px;
+    clear                   : both;
+}
+h2 {
+    font-size               : 10px;
+    border-top              : 2px solid #000;
+}
+
+td {
+    vertical-align          : top;
+    font-size               : 12px;
+}
+.i-label {
+    text-align              : right;
+}
+.i-value {
+    font-weight             : bold;
+}
+
+.float-wrapper {
+    position                : relative;
+    min-height              : 100px;
+}
+
+.table-wrapper {
+    float                   : left;
+    min-height              : 100px;
+    width                   : 49%;
+    margin-right            :5px;
+}
+
+.lastdiv{
+    border-bottom               : 2px solid #000;
+
+}
+
+
+#box-table-a td.title
+{
+    border: 1px solid #000000;
+    color: #000000;
+    text-align:center;
+    vertical-align:middle;
+    font-size: 10px;
+}
+
+
+#box-table-a
+{
+   width : 95%;
+}
+
+
+
+
+#box-table-a td
+{
+    border-width: 0px 1px 0 1px;
+    color: #000000;
+    border-color: #000000;
+    border-style: solid;
+}
+
+</style>
+</head>
+<body>
+<apex:outputText value="{!AcctSeed__Billing__c.Material_presently_stored__c}" rendered="false"/> 
+<apex:outputText value="{!AcctSeed__Billing__c.retainage__c }" rendered="false"/> 
+<apex:outputText value="{!AcctSeed__Billing__c.AcctSeed__Opportunity__r.Change_Orders__c }" rendered="false"/> 
+
+
+
+
+
+<div class="float-wrapper">
+    <h1>
+        APPLICATION AND CERTIFICATE FOR PAYMENT
+    </h1>
+    
+    <h2>PROJECT: {!theBLProject.AcctSeed__project__r.Name}</h2>
+    <div class="table-wrapper">
+    
+<table class="invoice">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="i-label">
+                To (GC):
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.AcctSeed__Customer__c}"/><br/>
+
+                <apex:outputText rendered="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingCity != null && AcctSeed__Billing__c.AcctSeed__Customer__r.BillingCity != ''}">
+                    Billing Address:&nbsp;<apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingStreet}"/>&nbsp;<br/>
+                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingCity}"/>,&nbsp;
+                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingState}"/>&nbsp;
+                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingPostalCode}"/>&nbsp;
+                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.BillingCountry}"/><br/>
+                </apex:outputText>
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Attn:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.AcctSeed__Billing_Contact__c}"/><br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Email:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.AcctSeed__Billing_Contact__r.Email}"/>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="i-label">
+                From:
+            </td>
+            <td class="i-value">
+                Borrego Solar<br/>
+                5005 Texas Street, Suite 400<br/>
+                San Diego, CA 92108
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="i-label">
+                CONTRACT FOR:
+            </td>
+            <td class="i-value">
+                {!theBLProject.AcctSeed__project__r.Name}
+            </td>
+        </tr>
+    </tbody>
+</table>    
+    </div>
+    
+    
+    <div class="table-wrapper">
+<table class="invoice">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="i-label">
+                Application #:
+            </td>
+            <td class="i-value">
+                {!AcctSeed__Billing__c.Application_Number__c}
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Application Date:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.Application_Date__c}"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Period To:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.Period_To__c}"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Invoice Date:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.AcctSeed__Date__c}"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Payment Due Net 30 days from Date of Invoice:
+            </td>
+            <td class="i-value">
+                {!AcctSeed__Billing__c.PAyment_Due__c}
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="i-label">
+                Borrego Project Number:
+            </td>
+            <td class="i-value">
+                {!theBLProject.AcctSeed__project__r.Job_Number__c}
+            </td>
+        </tr>
+        <tr>
+            <td class="i-label">
+                Contract Date:
+            </td>
+            <td class="i-value">
+                <apex:outputfield value="{!AcctSeed__Billing__c.AcctSeed__Opportunity__r.CloseDate}"/>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+    <div style="clear:both; border-bottom:2px solid #000;"></div>
+</div>
+
+
+<div class="float-wrapper ">
+    <h1>
+        CONTRACTOR'S APPLICATION FOR PAYMENT
+    </h1>
+    <br/>
+    <div class="table-wrapper">
+        <table  id="box-table-a" cellspacing="0">
+            <tr>
+                <td  class="title" colspan = "4">
+                    CHANGE ORDERS (PLEASE SEE ATTACHED SUMMARY)
+                </td>
+            </tr>
+            <tr>
+                <td  class="title"  colspan = "2">
+                    Change Orders approved in
+                    previous months by Owner
+                </td>
+                <td  class="title"  colspan = "1">
+                    ADDITIONS
+                </td>
+                <td  class="title"  colspan = "1">
+                    DEDUCTIONS
+                </td>
+            </tr>
+            <tr>
+                <td  class="title"  colspan = "2">
+                    Approved this month
+                </td>
+                <td    colspan = "1">
+                    
+                </td>
+                <td   colspan = "1">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td  class="title"  colspan = "1">
+                    Number
+                </td>
+                <td  class="title"  colspan = "1">
+                    Date Approved
+                </td>
+                <td  colspan = "1">
+                    
+                </td>
+                <td  colspan = "1">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td   colspan = "1">
+                </td>
+                <td    colspan = "1">
+                </td>
+                <td  colspan = "1">
+                </td>
+                <td  colspan = "1">
+                </td>
+            </tr>
+            <apex:repeat value="{!RelatedChangeOrders}" var="CO">
+                <tr>
+                    <td   colspan = "1">
+                    <apex:outputtext value="{!CO.Job_Number__c}"/>
+                    </td>
+                    <td    colspan = "1">
+                    <apex:outputtext value=" {!CO.LastModifiedDate}"/>
+                    </td>
+                    <td  colspan = "1">
+                        <apex:outputText value="{0, number, $###,###,###,##0.00}" rendered="{!CO.Final_Change_Order_Amount__c >= 0}">
+                            <apex:param value="{!CO.Final_Change_Order_Amount__c}"/>
+                        </apex:outputText>
+                    </td>
+                    <td  colspan = "1">
+                        <apex:outputText value="{0, number, $###,###,###,##0.00}"  rendered="{!CO.Final_Change_Order_Amount__c < 0}">
+                            <apex:param value="{!CO.Final_Change_Order_Amount__c}"/>
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </apex:repeat>
+            <tr>
+                <td  class="title" colspan = "1">
+                </td>
+                <td  class="title"  colspan = "1" style="text-align:right;">
+                    Total
+                </td>
+                <td class="title" colspan = "1">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}" >
+                        <apex:param value="{!totalpos}"/>
+                    </apex:outputText>
+                </td>
+                <td class="title" colspan = "1">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}" >
+                        <apex:param value="{!totalneg}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td  class="title"  colspan = "2">
+                    Net change by Change Orders
+                </td>
+                <td class="title" colspan = "1">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}" >
+                        <apex:param value="{!totalpos}"/>
+                    </apex:outputText>
+                </td>
+                <td class="title" colspan = "1">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}" >
+                        <apex:param value="{!totalneg}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            
+            
+            
+            
+            
+        </table>
+        
+        <br/>
+        <div style="font-size: 12px;">
+            The undersigned Contractor certifies that to the best of the Contractor's knowledge, information        
+            and belief the Work covered by this Application for Payment has been completed in accordance        
+            with the Contract Documents, that all amounts have been paid by the Contractor for Work for     
+            which previous Certificates for Payment were issued and payments received from the Owner,       
+            and that current payment shown herein is now due.
+        </div>
+        
+        
+    </div>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <td colspan="4">
+                    Application is made for Payment, as shown below, in connection with the Contract
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <strong>Continuation Sheet</strong> is attached
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1. ORIGINAL CONTRACT SUM
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!i_1originalContractSum}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    2. Net change by Change Order
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!ChangeOrder}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3. CONTRACT SUM TO DATE (LINE 1+/-2)
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!theBLProject.AcctSeed__project__r.AcctSeed__Budgeted_Amount__c+ChangeOrder}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4. TOTAL COMPLETED STORED TO DATE:
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!theBLProject.AcctSeed__Project__r.Roll_Up_Billed_To_Date__c + AcctSeed__Billing__c.AcctSeed__Total__c}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    5. RETAINAGE (see attached schedule):
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    a. 10% of Completed Work
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!retainageA}"/>
+                    </apex:outputText>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    b. 10% of Stored Material
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!retainageB}"/>
+                    </apex:outputText>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Total contract Value held by Owner (Line 5a + 5b)
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!retainageA + retainageB}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    6. TOTAL EARNED LESS RETAINAGE:
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td> 
+                <td>
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!theBLProject.AcctSeed__Project__r.Roll_Up_Billed_To_Date__c + AcctSeed__Billing__c.AcctSeed__Total__c - (retainageA + retainageB)}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    7. LESS PREVIOUS CERTIFICATES FOR PAYMENT
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                    <apex:param value="{!theBLProject.AcctSeed__Project__r.Roll_Up_Billed_To_Date__c}"/>
+                </apex:outputText>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    8. CURRENT PAYMENT DUE: 
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                    <apex:param value="{!AcctSeed__Billing__c.AcctSeed__Total__c - (retainageA + retainageB)}"/>
+                </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    9. BALANCE TO FINISH, PLUS RETAINAGE: 
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>
+                <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                    <apex:param value="{!theBLProject.AcctSeed__project__r.AcctSeed__Budgeted_Amount__c+ChangeOrder - (theBLProject.AcctSeed__Project__r.Roll_Up_Billed_To_Date__c + AcctSeed__Billing__c.AcctSeed__Total__c - (retainageA + retainageB))}"/>
+                </apex:outputText>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div style="width:150px;float: left;margin-bottom: 25px;margin-bottom: 15px;">
+    By: 
+    <div style=" margin-left:20px;border-bottom:2px solid #000;"></div>
+</div>
+        
+
+<div style="width:150px;float: left;margin-left: 100px;margin-bottom: 25px;margin-bottom: 15px;">
+    Date: 
+    <div style=" margin-left:35px;border-bottom:2px solid #000;"></div>
+</div>
+
+<div style="clear:both; border-bottom:2px solid #000;"></div>
+
+<!-- 
+
+
+
+E: Work complete Gross from previous application    {!completedPreviously}
+F: work complete this period    {!completedDuringtheperiod}
+G: Material presently stored    {!AcctSeed__Billing__c.Material_presently_stored__c}
+
+
+H: Total completed and stored to date  __> {!completedPreviously} + {!completedDuringtheperiod} + {!AcctSeed__Billing__c.Material_presently_stored__c}
+
+
+
+F33: work complete this period for the change order : {!AcctSeed__Billing__c.Change_Order_Work_Complete__c}
+
+G33: Material presently stored for the change order : {!AcctSeed__Billing__c.Change_Order_Material_presently_stored__c}
+
+
+
+
+
+H33:change order completed and stored to date: {!AcctSeed__Billing__c.Change_Order_Work_Complete__c}+{!AcctSeed__Billing__c.Change_Order_Material_presently_stored__c}+{!ChangeOrder}
+
+
+
+
+ -->
+
+</body>
+</apex:page>

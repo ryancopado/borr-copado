@@ -1,0 +1,354 @@
+<apex:page standardController="DMAPP__DM_Market_View_Report__c" extensions="DMAPP.MarketViewStandardController">
+    <!-- l10n data -->
+    <apex:includeScript value="{!$Resource.DMAPP__l10njs}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DMAPP__prefix)}"/>
+    <!--<apex:includeScript value="{!URLFOR($Resource.ttgomjs, 'ttg/lib/ttgutils.js')}"/>-->  
+    <style>
+    
+/*
+body, td {
+    color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+    font-family: 'Arial','Helvetica',sans-serif;
+    font-size: 75%;
+}   
+*/      
+        .smartOMPanel {
+            top: -16px;
+            z-index: 45; /* Needed to make chatter popups display fine on IE7 */
+        }
+
+        .smartOMOpportunitySummary {
+		    margin: 10px 0 0 0;
+            font-size: 1.2em;
+            line-height: 150%;
+            float:left;
+        }
+
+        .smartOMOpportunitySummary a {
+            text-decoration: none;
+        }
+        
+        .smartOMOpportunitySummary a:hover {
+            text-decoration: underline;
+        } 
+        
+        .chatterContainer {
+            float: right;
+        }
+        
+        .smartOMTabContainer {
+            clear: both;
+            float: left;
+            width: 100%;
+        }
+        
+        .smartOMTab {
+            background: #405773 url('{!URLFOR($Resource.SmartOM, 'tabs/bg_nav_off.jpg')}') left top repeat-x;
+            border: 1px solid  #374A61;
+            border-radius: 5px 5px 0px 0px;
+            -moz-border-radius: 5px 5px 0px 0px;
+            -webkit-border-radius: 5px 5px 0px 0px;
+            bottom: -1px;
+            float: left;
+            line-height: 1.5em;
+            margin-right: 5px;
+            padding: 5px 20px;
+            position: relative;
+            text-align: center;
+            color: #FFFFFF;
+            text-shadow: 0px -1px 0px rgba(0,0,0,0.8);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+        }       
+        
+        .smartOMTabSelected {
+            background: #FFFFFF none !important;
+            border-bottom: 1px solid #FFFFFF;
+            color:  #374A61;
+            text-shadow:0px 1px 0px rgba(255,255,255,0.8);
+        }
+        .smartOMTab strong {
+            display: block;
+        }
+        .smartOMTab .smartOMTabInfo {
+            visibility: visible;
+            font-size:0.85em;
+            color:#C8D1DA;
+        }
+        .smartOMTabSelected .smartOMTabInfo {
+            visibility: hidden;
+        }       
+        
+        .smartOMLink {
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .smartOMLink:hover .smartOMTab {
+            background: #4A6688 url('{!URLFOR($Resource.SmartOM, 'tabs/bg_nav_hover.jpg')}') left top repeat-x;
+            text-decoration: none;
+        }           
+        
+        .smartOMTabContainerBottom {
+            background-color:  #374A61;
+            clear: both;
+            height: 1px;
+            margin-bottom: 10px;
+        }
+        
+        div.smartOMBackLink {
+            float:left; 
+            margin:10px;
+        }
+
+            div.smartOMBackLink a {
+                float:left;
+                display:block;
+                text-indent: -999em;
+                width:24px;
+                height:24px;
+                background: url('{!URLFOR($Resource.SmartOM, 'tabs/btn_back_link.png')}') center center no-repeat;  
+            }
+            
+        div.TAMAdminLink {
+            float:right;    
+            margin:10px;
+        }
+        
+        div.TAMAdminLink a {
+            float:left;
+            display:block;
+            background: url('{!URLFOR($Resource.TAM, 'images/icon_admin.png')}') left center no-repeat;
+            padding:5px 0px 5px 20px;
+            text-decoration:none;
+            color:#405773;
+            cursor: pointer; 
+        }
+        
+        div.smartOMHelpLink {
+            float:right;    
+            margin:10px;
+        }
+        
+        div.smartOMHelpLink a {
+            float:left;
+            display:block;
+            background: url('{!URLFOR($Resource.SmartOM, 'tabs/icon_help.png')}') left center no-repeat;
+            padding:5px 0px 5px 20px;
+            text-decoration:none;
+            color:#405773;
+            cursor: pointer; 
+        }        
+        
+        div.smartOMPPTLink {
+            float:right;    
+            margin:10px;
+        }
+        
+        div.smartOMPPTLink a {
+            float:left;
+            display:block;
+            background: url('{!URLFOR($Resource.SmartOM, 'tabs/icon_ppt.png')}') left center no-repeat;
+            padding:5px 0;
+            text-decoration:none;
+            color:#405773;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }           
+        
+        .readOnlyText {
+            color: red;
+        }       
+        
+        .smartOMLink {
+            float: left;
+        }
+
+        div.marketViewsListLinkContainer {
+            display: inline-block;
+        }
+
+        .marketViewsListLinkContainer a.breadcrumb {
+            color : #00396b;
+            text-decoration: underline;
+        }
+
+    /**
+    * DMDEV-8127 - Users access Community Pages/Feedback pages Dealmaker 
+    */
+
+    ul.helpDropdown{
+        position: absolute;
+        right: 106px;
+        top: 56px;
+        background-color: white;
+        border-radius: 5px;
+        z-index: 10;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.16);
+        border: 1px solid #d8dde6;
+        padding: 10px 0px 5px 0px;
+        color: rgb(22, 50, 92);
+        margin: 0;
+    }
+
+    ul.helpDropdown:before {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: inherit;
+        left: 7rem;
+        top: -.55rem;
+        margin-left: -.5rem;
+        border-top: solid 1px #d8dde6;
+        border-left: solid 1px #d8dde6;
+    }
+
+        ul.helpDropdown li{
+            list-style-type: none;
+            margin: 0;
+        }
+
+            ul.helpDropdown li:hover{
+                background-color: #f4f6f9;
+            }
+
+        ul.helpDropdown li{
+            float: none;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            ul.helpDropdown li:first-child{
+                border-bottom: 1px solid #d8dde6;
+                padding: 6px 10px 8px 15px;
+            }
+
+            ul.helpDropdown li a{
+                background: url('');
+                float: none;
+                padding: 10px 11px 8px 14px;
+                display: block;
+            } 
+
+    </style>    
+    
+    
+    <apex:variable var="reportSelected" value="{!IF(CONTAINS(selectedPage,'marketview'),true,false)}"/>
+
+    <div class="smartOMPanel">
+        <div class="smartOMTabContainer">
+
+            <div class="smartOMOpportunitySummary"> 
+                <span class="breadcrumb_altify_logo"></span>
+                <div class="marketViewsListLinkContainer">
+                    <c:outputLink target="_top" value="{! URLFOR($Page.MarketViews, null)}" styleClass="breadcrumb">Market Views</c:outputLink></div> &nbsp;-&nbsp;{!report.Name}
+            </div>
+
+            <apex:outputPanel layout="block" styleClass="TAMAdminLink" rendered="{!isLicensedForAccountManager}">
+                <a id="TAMADMINLINK">Settings</a>
+            </apex:outputPanel>  
+
+            <div class="smartOMHelpLink">
+                <a id="TASHELPLINK" class="showHelp" onclick="javascript: help.showHelpDropdown();">Help</a>
+                <a id="TASHELPLINK" class="hideHelp" style='display:none' onclick="javascript: help.hideHelpDropdown();">Help</a>
+
+                <ul class="helpDropdown" style='display:none'>
+                    <li onclick="javascript: help.showHelp();" >Online Help</li>
+                    <li><a href="http://www.altify.com/altify-community/" target="_blank">Ask the Community</a></li>
+                    <li><a href="http://content.altify.com/submit-feedback" target="_blank">Send us Feedback</a></li>
+                </ul>
+            </div> 
+
+            <!-- 
+            <div id='smartOMPPTLink' class="smartOMPPTLink"  style='display:none'>
+                <apex:form >
+                    <a id="PPTEXPORT2" onclick="javascript: handlePPTX();"></a>
+                </apex:form> 
+            </div>                                         
+             -->
+        </div>
+        
+        <div class="smartOMTabContainerBottom"></div>
+    </div>  
+
+    <script>
+    
+		/* 
+		 * Copyright © {! $Setup.DMAPP__Company_Information__c.DMAPP__Company_Name__c}. All rights reserved.
+		 *  
+		 */        
+
+        /** 
+        * Checks if we're on an iPad AND in S1.
+        * 
+        * Back link will be hidden in S1 on iPad only.
+        * It should still display in Lightning and Aloha
+        */
+        if (ttg.urlServiceInstance.isSalesforce1()) {
+            jQuery('div.marketViewsListLinkContainer').hide();
+        }
+    
+        var _HELP = function(spec) {
+        
+            var that = { }
+            
+            function showHelp() {
+            
+                var url = '{!helpURLBase}' + '/Default.htm#Smart_AM/';
+            
+                if ({!reportSelected}) {
+                    url += '11.Market_View_Report/1.Market_View_Report.htm';
+                }
+                else {
+                    alert('Sorry, help not available')
+                }
+                
+                var testwindow = window.open(url, "TAS", "resizable=1,location=1,status=1,scrollbars=1,width=600,height=600");
+
+            }
+
+            function showHelpDropdown(){
+                jQuery('.helpDropdown').show();
+                jQuery('.showHelp').hide();
+                jQuery('.hideHelp').show();
+            }  
+
+            function hideHelpDropdown(){
+                jQuery('.helpDropdown').hide();
+                jQuery('.showHelp').show();
+                jQuery('.hideHelp').hide();   
+            } 
+
+            that.showHelp = showHelp;
+            that.showHelpDropdown = showHelpDropdown;
+            that.hideHelpDropdown = hideHelpDropdown;
+            
+            return that;
+        }
+        
+        var help = _HELP({});
+
+        jQuery(document).mouseup(function (e)
+        {
+            var container = jQuery('.helpDropdown');
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            {
+                container.hide();
+                jQuery('.showHelp').show();
+                jQuery('.hideHelp').hide(); 
+            }
+        });
+
+    </script>
+
+</apex:page>

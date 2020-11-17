@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_39185669</developerName>
+        <masterLabel>Internal/External</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>SV__c.Technician__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Contractor- Generic</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Contractor- NorCal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Contractor- Northeast</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Contractor- SoCal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cameron Quinonez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Danny Addy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ernie Roles</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeff Bell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Luke Pollinger</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manufacturer- Generic</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Benson</sourceValue>
+            </sourceValues>
+            <value>External</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Adam Lamirande</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brad Ebrom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joe DiStefano</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jon Mullins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jorge Portillo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Crowley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristopher Makrakis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mike Dillon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ralph Royle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Scott Robbins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Todd Miller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Will DeAngelis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vincenzo Raia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Zach Flowers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cameron Wilson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chip Greene</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joshua Wells</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Josh Tatel</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Simon Wood</sourceValue>
+            </sourceValues>
+            <value>Internal</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gus Cota</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Powell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jovanni Martinez</sourceValue>
+            </sourceValues>
+            <value>Internal 2</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SV__c.Case_Record_Type__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Asset__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Technician__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Visit_Date__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Notes__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Completed__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Contract.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>O&amp;M and Warranty,O&amp;M,O&amp;M T&amp;M</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c.Case_Record_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>primary pm,secondary pm</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c.Completed__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c.Branch__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_39185669</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Service Visits for KPI - PM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SV__c@SV__c.Contract__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SV__c.Visit_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

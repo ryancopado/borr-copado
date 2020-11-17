@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>sharinpix__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field name --></label>
+        <name>sharinpix__FieldName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Format --></label>
+        <name>sharinpix__Format__c</name>
+        <picklistValues>
+            <masterLabel>%</masterLabel>
+            <translation><!-- % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>px</masterLabel>
+            <translation><!-- px --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Image Id --></label>
+        <name>sharinpix__ImageId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opacity --></label>
+        <name>sharinpix__Opacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- SharinPix Sync Setting --></label>
+        <name>sharinpix__SharinPixSyncSetting__c</name>
+        <relationshipLabel><!-- SharinPix Transformations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Transformation --></label>
+        <name>sharinpix__Transformation__c</name>
+        <picklistValues>
+            <masterLabel>Fill to size</masterLabel>
+            <translation><!-- Fill to size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fit to size</masterLabel>
+            <translation><!-- Fit to size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pad to size</masterLabel>
+            <translation><!-- Pad to size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scale to size</masterLabel>
+            <translation><!-- Scale to size --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>sharinpix__Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watermark Height --></label>
+        <name>sharinpix__WatermarkHeight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watermark Size --></label>
+        <name>sharinpix__WatermarkSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watermark Width --></label>
+        <name>sharinpix__WatermarkWidth__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Image Id must be a valid Id from SharinPix --></errorMessage>
+        <name>sharinpix__VR_ImageId_Length_if_not_blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either Watermark Width or Watermark Height is required if Image Id is specified. --></errorMessage>
+        <name>sharinpix__VR_WatermarkSizeRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

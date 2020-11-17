@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Terms_Conditions__c.Borrego_Volume_Commitment_Roll_Up__c</field>
+    </columns>
+    <columns>
+        <field>Terms_Conditions__c.Borrego_Outstanding_Commitment_kW__c</field>
+    </columns>
+    <columns>
+        <field>Terms_Conditions__c.Vendor_Volume_Commitment_Roll_Up__c</field>
+    </columns>
+    <columns>
+        <field>Terms_Conditions__c.Vendor_Outstanding_Commitment_kW__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Fluence,IHI</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Energy Storage SPA Commitments</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Terms_Conditions__c@Terms_Conditions__c.Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Terms_Conditions__c.Expiration_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

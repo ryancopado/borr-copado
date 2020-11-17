@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object To Store Avalara Service URL, Credentials, and Preferences</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AvaAcctSeed__AccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Avalara Account ID</inlineHelpText>
+        <label>Account ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Active_AvaTax_Setting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If Checked, this is the AvaTax Setting record that will be referenced whenever Avalara is called (for Address Validation or Tax Calculation)</inlineHelpText>
+        <label>Active Avalara Setting</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__CompanyCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Company Code that will be referenced in calls to Avalara.</inlineHelpText>
+        <label>Company Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Customer_Code_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the field from which the Tax Calculation will pull the Avalara Customer Code.</inlineHelpText>
+        <label>Customer Code Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account Number</fullName>
+                    <default>true</default>
+                    <label>Account Number</label>
+                </value>
+                <value>
+                    <fullName>Account Name</fullName>
+                    <default>false</default>
+                    <label>Account Name</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Enable_Address_Validation__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If this field is unchecked, Address Validation is disabled</inlineHelpText>
+        <label>Enable Address Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Enable_Entity_Use_Code__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If check box is enable, you can use Entity/Use Code in tax calculation</inlineHelpText>
+        <label>Enable Entity/Use Code</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Enable_Tax_Calculation__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If this box is not checked, Tax Calculation is disabled</inlineHelpText>
+        <label>Enable Tax Calculation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Enable_Tax_Code__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If checkbox is enable then Tax Code will be mapped with item</inlineHelpText>
+        <label>Enable Tax Code Mapping</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Enable_UPC_Code_as_ItemCode__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If checkbox is enable then UPC will be pass as Item Code. You will have to write UPC in product if you want to pass UPC.</inlineHelpText>
+        <label>Enable UPC Code as ItemCode</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Balance Sheet</value>
+            </filterItems>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Sub_Type_1__c</field>
+                <operation>equals</operation>
+                <value>Liabilities</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Avalara</relationshipLabel>
+        <relationshipName>Avalara</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__License_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Avalara License Key</inlineHelpText>
+        <label>License Key</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Address_Latitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Origin Address Latitude field on Avalara configuration page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Latitude details for Avalara Tax Calculation</inlineHelpText>
+        <label>Latitude</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Address_Longitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Origin Address Longitude field on Avalara configuration page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Longitude details for Tax Calculation</inlineHelpText>
+        <label>Longitude</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Origin Street Address - up to three lines</inlineHelpText>
+        <label>Line Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Origin City for Tax Calcs</inlineHelpText>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>2 char ISO Country Code for Origin Address</inlineHelpText>
+        <label>Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Zip or Postal Code for the Origin Address</inlineHelpText>
+        <label>Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Origin_Region__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>State or Province 2 char Abbreviation</inlineHelpText>
+        <label>Region</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Password__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Password Corresponding to User Name for this Avalara Account</inlineHelpText>
+        <label>Password</label>
+        <length>175</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>all</maskType>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Return_address_in_upper_case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Return address in upper case</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__ST_ProductCode__c</fullName>
+        <defaultValue>&quot;AvaTax&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Product Code That will Be used for the Sales Tax Amount Line on the Invoice.</inlineHelpText>
+        <label>SalesTax Product Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__ServiceURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the url used to access the Avalara Service.  
+Example: https://development.avalara.net</inlineHelpText>
+        <label>ServiceURL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Tax_Schedule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tax Schedule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AvaTax</fullName>
+                    <default>true</default>
+                    <label>AvaTax</label>
+                </value>
+                <value>
+                    <fullName>AvaTaxPOS</fullName>
+                    <default>false</default>
+                    <label>AvaTaxPOS</label>
+                </value>
+                <value>
+                    <fullName>AvaTaxPOD</fullName>
+                    <default>false</default>
+                    <label>AvaTaxPOD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__UserName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Avalara User Name for access to avalara service.  Must have at Least &quot;Company Admin&quot; privileges in the Avalara Dashboard.</inlineHelpText>
+        <label>User Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvaAcctSeed__Verify_Validations__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If Checked, when an Address is validated, the proposed replacement will be presented for verification prior to actually replacing the record.  If not checked, the replacement is automagic</inlineHelpText>
+        <label>Verify Validated Addresses</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Avalara Account</label>
+    <listViews>
+        <fullName>AvaAcctSeed__All</fullName>
+        <columns>NAME</columns>
+        <columns>AvaAcctSeed__Active_AvaTax_Setting__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Avalara Account Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Avalara</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AvaAcctSeed__NOBlank</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( AvaAcctSeed__Customer_Code_Field__c ,&quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>AvaAcctSeed__Customer_Code_Field__c</errorDisplayField>
+        <errorMessage>Blank Value Not Allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AvaAcctSeed__NOBlankField</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( AvaAcctSeed__Customer_Code_Field__c ,&quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>AvaAcctSeed__Tax_Schedule__c</errorDisplayField>
+        <errorMessage>Blank Value Not Allowed</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>AvaAcctSeed__Admin_Console_Production_Link</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Admin Console Production Link</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://admin-avatax.avalara.net/login.aspx?ReturnUrl=%2f</url>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__Avalara_CertCapture</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Avalara CertCapture</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://app.certcapture.com/logins/login</url>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__Avalara_Community</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Avalara Community</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://community.avalara.com/avalara</url>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__CBTestConnect</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Test Connection</masterLabel>
+        <openType>sidebar</openType>
+        <page>AvaAcctSeed__CBTestConnect</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__CBValidateOrigin</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Validate Origin Address</masterLabel>
+        <openType>sidebar</openType>
+        <page>AvaAcctSeed__CBValidateOriginHandlerPage</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__Create_Company</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Company in AvaTax</masterLabel>
+        <openType>sidebar</openType>
+        <page>AvaAcctSeed__AvaCreateCompany</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__Create_Tax_Profile</fullName>
+        <availability>online</availability>
+        <description>Deprecated Create Tax Profile in AvaTax from v2.78.0.0</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Deprecated - Create Tax Profile in AvaTax</masterLabel>
+        <openType>sidebar</openType>
+        <page>AvaAcctSeed__AvaSetTaxProfile</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>AvaAcctSeed__Help_Center</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Help Center</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://help.avalara.com</url>
+    </webLinks>
+</CustomObject>

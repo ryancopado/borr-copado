@@ -1,0 +1,40 @@
+<apex:page id="thePage" title="Reports | Accounting Seed" standardController="AcctSeed__Bank_Reconciliation2__c" extensions="AcctSeed.BankReconciliationReports">
+    <apex:sectionHeader title="Bank Reconciliation" subtitle="{!AcctSeed__Bank_Reconciliation2__c.Name}" />
+    <apex:form id="theForm">
+        <apex:pageBlock title="Bank Reconciliation Report">
+            <apex:pageMessages escape="false"/>
+            <apex:pageBlockButtons id="buttons">
+                <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                <apex:commandbutton id="attachButton" value="Create and Attach Reports" status="saveStatus"
+                                    action="{!createBankReconciliationReports}" rendered="{!NOT(isError)}" reRender="theForm" />
+                <apex:commandbutton value="Back" action="{!cancel}" immediate="true" />
+            </apex:pageBlockButtons>
+            <apex:pageMessage summary="'Create and Attach Reports' will generate two separate Bank Reconciliation reports: for cleared and uncleared transactions. Please check the Files related list in a few minutes."
+                    severity="info" strength="3" rendered="{!NOT(isError)}"/>
+            <apex:pageBlockSection columns="2" collapsible="false" rendered="{!NOT(isError)}">
+                    <apex:outputField value="{!bankRec.Name}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Currency" />
+                    <apex:outputText value="{!currencyIsoCode}"/>
+                </apex:pageBlockSectionItem>
+                    <apex:outputField value="{!bankRec.AcctSeed__Start_Date__c}"/>
+                    <apex:outputField value="{!bankRec.AcctSeed__Beginning_Balance__c}"/>
+                    <apex:outputField value="{!bankRec.AcctSeed__End_Date__c}"/>
+                    <apex:outputField value="{!bankRec.AcctSeed__Cleared_Deposits__c}"/>
+                    <apex:outputField value="{!bankRec.AcctSeed__Ledger__c}"/>
+                <apex:outputField value="{!bankRec.AcctSeed__Cleared_Disbursements__c}"/>
+                <apex:outputField value="{!bankRec.AcctSeed__Bank_Account__c}"/>
+                <apex:outputField value="{!bankRec.AcctSeed__Calculated_Ending_Balance__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Report Created Date" />
+                    <apex:outputField value="{!proxyCreatedDate.AcctSeed__Start_Date__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputField value="{!bankRec.AcctSeed__Ending_Balance__c}"/>
+                <apex:outputText />
+                <apex:outputField value="{!bankRec.AcctSeed__Uncleared_Amount__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputField value="{!AcctSeed__Bank_Reconciliation2__c.AcctSeed__End_Date__c}" rendered="false" />
+        <apex:outputField value="{!AcctSeed__Bank_Reconciliation2__c.Bank_Account__r.Name}" rendered="false" />
+    </apex:form>
+</apex:page>

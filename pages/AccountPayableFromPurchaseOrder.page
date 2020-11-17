@@ -1,0 +1,400 @@
+<apex:page id="thePage" standardController="AcctSeedERP__Purchase_Order__c" extensions="AccountPayableFromPurchaseOrder">
+    <apex:form id="theForm">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            function disableButtons() {
+                $('.btn').each(function(elem) {
+                    this.className = 'btnDisabled';
+                    this.disabled = true;
+                    this.value = 'Creating Account Payable...';
+                })
+            }
+            
+            function calculateQuantity(obj) {
+                
+                var numPatt = new RegExp("[0-9]+");
+                var num = new Number(numPatt.exec(obj.id));  
+       
+                var quantityField = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":quantity");
+                var quantityOrdered = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":quantityOrdered").innerHTML;
+                //var unitPrice = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":unitPrice").value.replace("$","").replace(",","");
+                var totalAmount = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":totalAmount").innerHTML.replace("$","").replace(",","");
+                
+                if (isNaN(obj.value) || obj.value == "") {
+                    quantityField.value = '';
+                }
+                else {
+                    quantityField.value =  (obj.value / (totalAmount/quantityOrdered)).toFixed(2);
+                }
+                calculateTotalAmount();
+            }
+
+            function calculateAmount(obj) {
+                
+                var numPatt = new RegExp("[0-9]+");
+                var num = new Number(numPatt.exec(obj.id));  
+       
+                var amountField = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":amount");
+                var quantityOrdered = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":quantityOrdered").innerHTML;
+                var totalAmount = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + num + ":totalAmount").innerHTML.replace("$","").replace(",","");
+                
+                if (isNaN(obj.value) || obj.value == "") {
+                    amountField.value = '';
+                }
+                else {
+                    amountField.value =  (obj.value * (totalAmount/quantityOrdered)).toFixed(2);
+                }
+                calculateTotalAmount();
+            }
+
+            function calculateTotalAmount() {
+                var count = document.getElementById("poLineCount").value;
+                var totalAmountField = document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:footerAmount");
+                var totalAmount = 0;
+                
+                for (var i = 0; i<count; i++) {
+                    var amount = parseFloat(document.getElementById("thePage:theForm:thePageBlock:thePageBlockTable:" + i + ":amount").value);
+                    
+                    if (!isNaN(amount) && amount != "") {
+                        totalAmount += amount;
+                    }
+                }
+                totalAmountField.innerHTML = "$" + totalAmount.formatMoney(2,".",",");
+            }    
+            
+            Number.prototype.formatMoney = function(c, d, t){
+            var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+               return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+            };   
+            
+             function cleanInt(val) {
+                try {
+                    val = val.replace(/[^0-9.-]/g,'');
+                    if( val.length == 0 ) val = "0";
+                    return parseFloat(val);
+                } catch (e) {}
+                return 0;
+            }
+             
+             function currencyFormat(val) {
+                val = val+"";
+                var parts = val.split('.');
+                
+                var tmp = "", pre = "";
+                var c = 0;
+                for( var i = parts[0].length-1; i >= 0; i--) {
+                    tmp += parts[0][i];
+                    c++;
+                    if( c % 3 == 0 && i > 0 && parts[0][i-1] != "-" ) tmp += ",";
+                }
+                for( var i = 0; i < tmp.length; i++ ) pre = tmp[i]+pre;
+                
+                if( parts.length == 1 ) return "$"+pre+".00";
+                if( parts[1].length == 1 ) return "$"+pre+"."+parts[1]+"0";
+                
+                if( parts[1].length > 2 ) parts[1] = parts[1].substring(0,2);
+                
+                return "$"+pre+"."+parts[1];
+            }
+            
+            function floorFigure(figure, decimals){
+                if (!decimals) decimals = 2;
+                var d = Math.pow(10,decimals);
+                return (parseInt(figure*d)/d).toFixed(decimals);
+            };
+
+
+            function updateCOAmmount( item){
+                
+                var theRequestedAmmount = cleanInt(jQuery(item).parent().parent().parent().find(".amountRequested").text());
+                
+                
+                var quantity = cleanInt(jQuery(item).val());
+                
+                jQuery(item).parent().parent().parent().find(".amountCO").val(quantity * theRequestedAmmount);
+                
+                var totalAmmounts = 0;
+                
+                jQuery('.amountCO').each(function () {
+                
+                    totalAmmounts += cleanInt(jQuery(this).val());
+                
+                });
+                
+                jQuery("[id*='amountCOTotal']").text(currencyFormat(totalAmmounts));
+                jQuery("[id*='amountCOTotalSub']").text(currencyFormat(totalAmmounts));
+                
+                   
+            } 
+            
+            
+            
+            function updateCOQuantity( item){
+                
+                var theRequestedAmmount = cleanInt(jQuery(item).parent().parent().find(".amountRequested").text());
+                
+                
+                var amountChanged = cleanInt(jQuery(item).val());
+                
+                jQuery(item).parent().parent().find(".theQuantity input").val(parseFloat(floorFigure(amountChanged / theRequestedAmmount,2)));
+                
+                var totalAmmounts = 0;
+                
+                jQuery('.amountCO').each(function () {
+                
+                    totalAmmounts += cleanInt(jQuery(this).val());
+                
+                });
+                
+                jQuery("[id*='amountCOTotal']").text(currencyFormat(totalAmmounts));
+                jQuery("[id*='amountCOTotalSub']").text(currencyFormat(totalAmmounts));
+                
+                   
+            } 
+            
+            
+            
+            
+            $(document).ready(function() {
+            
+                /*jQuery('.theQuantity').each(function () {
+                
+                    var rt = jQuery(this).attr('recordType');
+                
+                    if(rt == 'Subcontractor Change Order'){
+                    
+                        var theValue = $(this).find('input');
+                    
+                        $(this).keypress(function(key) {
+                            
+                            if(key.charCode < 47 || key.charCode > 49) return false;
+                        });
+                    }
+                
+                
+                });*/
+                
+                
+                
+                var totalAmmounts = 0;
+                
+                jQuery('.amountCO').each(function () {
+                
+                    totalAmmounts += cleanInt(jQuery(this).val());
+                
+                });
+                
+                jQuery("[id*='amountCOTotal']").text(currencyFormat(totalAmmounts));
+                jQuery("[id*='amountCOTotalSub']").text(currencyFormat(totalAmmounts));
+                
+            
+            });
+            
+            
+            
+        </script>
+        <apex:pageBlock id="thePageBlock" title="Create Account Payable">
+            <apex:pageMessage severity="info" strength="3" summary="You must include a value for amount to pay and quantity to pay for each line you want to include on the account payable " />
+           <apex:pageBlockButtons >
+               <apex:actionStatus id="saveStatus" onstart="disableButtons()" />
+               <apex:commandButton status="saveStatus" value="Create Account Payable" action="{!createAccountPayable}" reRender="theForm"/>
+               <apex:commandButton value="Cancel" action="/{!AcctSeedERP__Purchase_Order__c.Id}" immediate="true"/>
+           </apex:pageBlockButtons>
+           <apex:pageMessages />
+           <apex:pageBlockTable id="thePageBlockTable" value="{!polWrapper}" var="pow">
+                <apex:column value="{!pow.poLine.Name}"/>
+                <apex:column value="{!pow.poLine.AcctSeedERP__Product__r.Name}"/>
+                <apex:column headerValue="Project">
+                    <apex:outputField value="{!pow.poLine.AcctSeedERP__Project__c}"/>
+                </apex:column>                      
+                <apex:column headerValue="Quantity Ordered">
+                    <apex:outputText id="quantityOrdered" value="{0, number, 0.000000}">
+                        <apex:param value="{!pow.poLine.AcctSeedERP__Quantity__c}"/>
+                     </apex:outputText>                            
+                </apex:column>
+                <!-- -apex:column headerValue="Quantity Received">
+                    <apex:outputText value="{0, number, 0.000000}">
+                        <apex:param value="{!pow.quantityReceived}"/>
+                     </apex:outputText>                
+                </apex:column>
+                <apex:column headerValue="Quantity Unreceived">
+                    <apex:outputText value="{0, number, 0.000000}">
+                        <apex:param value="{!pow.poLine.AcctSeedERP__Quantity__c - pow.quantityReceived}"/>
+                     </apex:outputText>   
+                     <apex:inputHidden id="unitPrice" value="{!pow.poLine.AcctSeedERP__Unit_Price__c}"/>                 
+                </apex:column -->                  
+                <apex:column headerValue="Quantity to Pay">
+                    <apex:inputField id="quantity" value="{!pow.apl.AcctSeed__Quantity__c}">
+                        <apex:actionSupport event="onkeyup" oncomplete="calculateAmount(this)" rerender="amount,totalAmount"/>
+                    </apex:inputField>
+                </apex:column>                   
+                <apex:column headerValue="Total Amount">
+                    <apex:outputField id="totalAmount" value="{!pow.poLine.POLine_Total__c}" />
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalAmount}"/>
+                        </apex:outputText>                    
+                     </apex:facet>                      
+                </apex:column>
+                <apex:column headerValue="Paid Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!pow.paidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalPaid}"/>
+                        </apex:outputText>                    
+                     </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Outstanding Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!pow.poLine.POLine_Total__c - pow.paidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalOutstanding}"/>
+                        </apex:outputText>                    
+                     </apex:facet>                    
+                </apex:column>
+                <apex:column headerValue="Amount to Pay">
+                    <apex:inputField id="amount" value="{!pow.apl.AcctSeed__Amount__c}">
+                        <apex:actionSupport event="onkeyup" oncomplete="calculateQuantity(this)" rerender="quantity,totalAmount"/>
+                    </apex:inputField>
+                    <apex:facet name="footer">
+                    <apex:outputText id="footerAmount" value="{0, number, $###,##0.00}">
+                        <apex:param value="{!0}"/>
+                     </apex:outputText>                    
+                    </apex:facet>
+                </apex:column>                                          
+           </apex:pageBlockTable>
+           <br/>
+           <apex:pageBlockTable id="thePageBlockTableCO" value="{!colWrapper}" var="cow">
+                <apex:column value="{!cow.coLine.Name}"/>
+                <apex:column value="{!cow.coLine.Product__c}"/>
+                <apex:column value="{!cow.coLine.ASProject__c}"/>
+                <apex:column value="{!cow.coLine.recordType.name}"/>
+                <apex:column value="{!cow.coLine.New_QuantityCOConReq__c}"/>
+                
+                <apex:column headerValue="Quantity to Pay">
+                    <div class="theQuantity" recordType="{!cow.coLine.recordType.name }">
+                        <apex:inputText id="quantityCO" value="{!cow.quantityReceived}" onchange="updateCOAmmount(this);" />
+                    </div>
+                </apex:column>  
+                
+            
+            
+               
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        Amount Requested                     
+                     </apex:facet> 
+                    <div class="amountRequested">
+                        <apex:outputField value="{!cow.coLine.Amount_Requested__c}" />
+                    </div>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!totalAmmountRequested}"/>
+                        </apex:outputText>                    
+                     </apex:facet> 
+                </apex:column>
+                
+                
+                
+                <apex:column headerValue="Paid Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!cow.ALPpaidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!totalAmmountPaid}"/>
+                        </apex:outputText>                    
+                     </apex:facet>
+                </apex:column>
+                
+                
+                <apex:column headerValue="Outstanding Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!cow.coLine.Amount_Requested__c - cow.ALPpaidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!totalAmmountRequested - totalAmmountPaid}"/>
+                        </apex:outputText>                    
+                     </apex:facet>                    
+                </apex:column>
+                
+                
+                
+                
+                
+                
+               <apex:column headerValue="Amount to Pay" >
+                    <apex:inputText value="{!cow.paidAmount}"  styleClass="amountCO" onchange="updateCOQuantity(this);"/>
+                    <apex:facet name="footer">
+                        <apex:outputText id="amountCOTotal" value="0"/>                    
+                     </apex:facet> 
+                </apex:column> 
+                
+                
+                
+               <!--  <apex:column headerValue="Project">
+                    <apex:outputField value="{!pow.poLine.AcctSeedERP__Project__c}"/>
+                </apex:column>                     
+                <apex:column headerValue="Quantity Ordered">
+                    <apex:outputText id="quantityOrdered" value="{0, number, 0.000000}">
+                        <apex:param value="{!pow.poLine.AcctSeedERP__Quantity__c}"/>
+                     </apex:outputText>                            
+                </apex:column>
+                <apex:column headerValue="Quantity to Pay">
+                    <apex:inputField id="quantity" value="{!pow.apl.AcctSeed__Quantity__c}">
+                        <apex:actionSupport event="onkeyup" oncomplete="calculateAmount(this)" rerender="amount,totalAmount"/>
+                    </apex:inputField>
+                </apex:column>                   
+                <apex:column headerValue="Total Amount">
+                    <apex:outputField id="totalAmount" value="{!pow.poLine.POLine_Total__c}" />
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalAmount}"/>
+                        </apex:outputText>                    
+                     </apex:facet>                      
+                </apex:column>
+                <apex:column headerValue="Paid Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!pow.paidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalPaid}"/>
+                        </apex:outputText>                    
+                     </apex:facet>
+                </apex:column>                
+                <apex:column headerValue="Outstanding Amount">
+                    <apex:outputText value="{0, number, $###,##0.00}">
+                        <apex:param value="{!pow.poLine.POLine_Total__c - pow.paidAmount}"/>
+                     </apex:outputText>
+                     <apex:facet name="footer">
+                        <apex:outputText value="{0, number, $###,##0.00}">
+                            <apex:param value="{!TotalOutstanding}"/>
+                        </apex:outputText>                    
+                     </apex:facet>                    
+                </apex:column>
+                <apex:column headerValue="Amount to Pay">
+                    <apex:inputField id="amount" value="{!pow.apl.AcctSeed__Amount__c}">
+                        <apex:actionSupport event="onkeyup" oncomplete="calculateQuantity(this)" rerender="quantity,totalAmount"/>
+                    </apex:inputField>
+                    <apex:facet name="footer">
+                    <apex:outputText id="footerAmount" value="{0, number, $###,##0.00}">
+                        <apex:param value="{!0}"/>
+                     </apex:outputText>                    
+                    </apex:facet>
+                </apex:column>  -->                                          
+           </apex:pageBlockTable>
+           
+           
+           <input type="hidden" id="poLineCount" value="{!polWrapper.size}"/> 
+           <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__c}" rendered="false"/>
+           <apex:outputField value="{!AcctSeedERP__Purchase_Order__c.Name}" rendered="false"/>           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

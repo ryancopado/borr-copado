@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- This should be set to the main Accounts Payable GL Account. --></help>
+        <label><!-- AP Control GL Account --></label>
+        <name>AcctSeed__AP_Control_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (AP Control GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This should be set to the main Accounts Receivable GL Account. --></help>
+        <label><!-- AR Control GL Account --></label>
+        <name>AcctSeed__AR_Control_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (AR Control GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field left and a negative value will move the field right the number of millimeters specified. --></help>
+        <label><!-- Amount Right Offset --></label>
+        <name>AcctSeed__Amount_Right_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Amount Top Offest --></label>
+        <name>AcctSeed__Amount_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the amount in words field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified. --></help>
+        <label><!-- Amount Words Left Offset --></label>
+        <name>AcctSeed__Amount_Words_Left_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the amount in words field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Amount Words Top Offset --></label>
+        <name>AcctSeed__Amount_Words_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- This should be used as the offset for archiving. --></help>
+        <label><!-- Archive Month Offset --></label>
+        <name>AcctSeed__Archive_Month_Offset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto-Post Source Documents --></label>
+        <name>AcctSeed__Auto_Post_Source_Documents__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account ID on your Avalara account’s Settings --></help>
+        <label><!-- Avalara Account Id --></label>
+        <name>AcctSeed__Avalara_Account_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- License key given by Avalara --></help>
+        <label><!-- Avalara License Key --></label>
+        <name>AcctSeed__Avalara_License_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Avalara Production Endpoint --></label>
+        <name>AcctSeed__Avalara_Production_Endpoint__c</name>
+    </fields>
+    <fields>
+        <help><!-- This GL Account should be set up as Type Balance Sheet and Sub Type 1 Liabilities. --></help>
+        <label><!-- Avalara Sales Tax GL Account --></label>
+        <name>AcctSeed__Avalara_Sales_Tax_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting Settings (Avalara Sales Tax GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- A generic product whose name (example: Avalara Tax) populates the product field on the calculated Avalara tax line. This should be assigned a $0.00 standard price and added to a price book. --></help>
+        <label><!-- Avalara Tax Product --></label>
+        <name>AcctSeed__Avalara_Tax_Product__c</name>
+        <relationshipLabel><!-- Accounting Settings (Avalara Tax Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the billing activity statement format here. The billing activity statement format is the PDF format used to send billing activity statements to a customer. --></help>
+        <label><!-- Billing Activity Statement Format --></label>
+        <name>AcctSeed__Billing_Activity_Statement_Format__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Activity Statement Format) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the billing outstanding statement format here. The billing outstanding statement format is the PDF format used to send billing outstanding statements to a customer. --></help>
+        <label><!-- Billing Outstanding Statement Format --></label>
+        <name>AcctSeed__Billing_Outstanding_Statement_Format__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Billing Statement Format) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash-In Default Matching Setting --></label>
+        <name>AcctSeed__Cash_In_Default_Matching_Setting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash-In Default Source Record Type --></label>
+        <name>AcctSeed__Cash_In_Default_Source_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash Receipt</masterLabel>
+            <translation><!-- Cash Receipt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Journal Entry</masterLabel>
+            <translation><!-- Journal Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cash-Out Default Matching Setting --></label>
+        <name>AcctSeed__Cash_Out_Default_Matching_Setting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash-Out Default Source Record Type --></label>
+        <name>AcctSeed__Cash_Out_Default_Source_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash Disbursement</masterLabel>
+            <translation><!-- Cash Disbursement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Journal Entry</masterLabel>
+            <translation><!-- Journal Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>AcctSeed__City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Company Code on your Avalara account’s Settings --></help>
+        <label><!-- Company Code --></label>
+        <name>AcctSeed__Company_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- 2 character ISO abbreviation for Country Code --></help>
+        <label><!-- Country Code --></label>
+        <name>AcctSeed__Country_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the GL Account which will need to be set for the realized loss and gain transactions which are created for the cash application and cash disbursement post. --></help>
+        <label><!-- Currency Gain/Loss GL Account --></label>
+        <name>AcctSeed__Currency_Gain_Loss_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting Settings (Currency Gain/Loss GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current Year Earnings GL Account --></label>
+        <name>AcctSeed__Current_Year_Earnings_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Current Year Earnings GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Payment Adjustment GL Account --></label>
+        <name>AcctSeed__Customer_Payment_Adjustment_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Default Payment Adjustment GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field left and a negative value will move the field right the number of millimeters specified. --></help>
+        <label><!-- Date Right Offset --></label>
+        <name>AcctSeed__Date_Right_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the date field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Date Top Offset --></label>
+        <name>AcctSeed__Date_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the account that the majority of payments are made from and that deposits are made to. When entering a cash receipt it will default to this bank account. When creating a cash disbursement batch it will default to this account. --></help>
+        <label><!-- Default Bank Account --></label>
+        <name>AcctSeed__Default_Bank_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Default Bank Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select your primary billing format here. When you create a billing and leave this field blank, the default billing format will be selected after you press save. --></help>
+        <label><!-- Default Billing Format --></label>
+        <name>AcctSeed__Default_Billing_Format__c</name>
+        <relationshipLabel><!-- Accounting_Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize Cash Disbursements on the Cash Flow statement. --></help>
+        <label><!-- Default Cash Disbursement Category --></label>
+        <name>AcctSeed__Default_Cash_Disbursement_Category__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Cash Disburs. Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize Cash Receipts on the Cash Flow statement. --></help>
+        <label><!-- Default Cash Receipt Category --></label>
+        <name>AcctSeed__Default_Cash_Receipt_Category__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Cash Receipt Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize Journal Entry Lines related to bank accounts on the Cash Flow statement. --></help>
+        <label><!-- Default Journal Entry Line Category --></label>
+        <name>AcctSeed__Default_Journal_Entry_Line_Category__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default JE Line Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the default ledger used to post transaction records --></help>
+        <label><!-- Default Ledger --></label>
+        <lookupFilter>
+            <errorMessage><!-- The ledger type must be Transactional --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Default_Ledger__c</name>
+        <relationshipLabel><!-- Accounting_Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select your primary packing slip format here. When you create a shipment record and leave this field blank, the default packing slip format will be selected after you press save. --></help>
+        <label><!-- Default Packing Slip Format --></label>
+        <lookupFilter>
+            <errorMessage><!-- The type on the PDF Format must be Packing Slip --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Default_Packing_Slip_Format__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Packing Slip) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This GL Account is the debit side of the Time Card labor recording.  It will be an expense (debit) --></help>
+        <label><!-- Default Project Task Labor GL Account --></label>
+        <name>AcctSeed__Default_Project_Task_Labor_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Default Labor GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select your primary purchase order format here. When you create a  purchase order and leave this field blank, the default  purchase order format will be selected after you press save. --></help>
+        <label><!-- Default Purchase Order Format --></label>
+        <lookupFilter>
+            <errorMessage><!-- The type on the PDF Format must be Purchase Order --></errorMessage>
+            <informationalMessage><!-- The type on the PDF Format must be Purchase Order --></informationalMessage>
+        </lookupFilter>
+        <name>AcctSeed__Default_Purchase_Order_Format__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Purchase Order Format) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Default Vendor on the Bank Direct Connect page. --></help>
+        <label><!-- Default Vendor --></label>
+        <name>AcctSeed__Default_Vendor__c</name>
+        <relationshipLabel><!-- Accounting Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Disable Trial Data --></label>
+        <name>AcctSeed__Disable_Trial_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- This checkbox will display the billable checkbox on time cards. If enabled, users can select it on individual time card lines to show the line is billable. --></help>
+        <label><!-- Display Billable Flag in Time Card Entry --></label>
+        <name>AcctSeed__Display_Billable_Flag_in_Time_Card_Entry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable AP Period Sensitive Aging --></label>
+        <name>AcctSeed__Enable_AP_Period_Sensitive_Aging__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable Avalara AvaTax integration for tax calculation. This overrides Accounting Seed&apos;s native tax calculation. --></help>
+        <label><!-- Enable Avalara Tax Calculation --></label>
+        <name>AcctSeed__Enable_Avalara_Tax_Calculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Billing Period Sensitive Aging --></label>
+        <name>AcctSeed__Enable_Billing_Period_Sensitive_Aging__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this for the ability to run the Cash Flow Statement report. The default Cash Flow Categories chosen here will auto-populate on records created after the setting is enabled. --></help>
+        <label><!-- Enable Cash Flow Statement --></label>
+        <name>AcctSeed__Enable_Cash_Flow_Statement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Global Automated Add --></label>
+        <name>AcctSeed__Enable_Global_Automated_Add__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Global Automated Match --></label>
+        <name>AcctSeed__Enable_Global_Automated_Match__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Multi-Currency --></label>
+        <name>AcctSeed__Enable_Multi_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box to record the costing of the sale of products.  With this enabled a new billing will record a debit to Cost of Goods and a credit to inventory. --></help>
+        <label><!-- Enable Product Costing --></label>
+        <name>AcctSeed__Enable_Product_Costing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Suite Key --></label>
+        <name>AcctSeed__Financial_Suite_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes whether standard or average cost is used for Product Costing. --></help>
+        <label><!-- Inventory Valuation Method --></label>
+        <name>AcctSeed__Inventory_Valuation_Method__c</name>
+        <picklistValues>
+            <masterLabel>Average Cost</masterLabel>
+            <translation><!-- Average Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Cost</masterLabel>
+            <translation><!-- Standard Cost --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This GL Account captures the difference between the standard inventory product cost and the actual purchase price when a payable is created. --></help>
+        <label><!-- Inventory Variance GL Account --></label>
+        <name>AcctSeed__Inventory_Variance_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Inventory Variance GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the label used to display the Time Card Variable 1 in the Time Card screen.  This is used in coordination with setting up variables in the Accounting Variables tab. --></help>
+        <label><!-- Label for Time Card Variable 1 --></label>
+        <name>AcctSeed__Label_for_Time_Card_Variable_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the label used to display the Time Card Variable 2 in the Time Card screen.  This is used in coordination with setting up variables in the Accounting Variables tab. --></help>
+        <label><!-- Label for Time Card Variable 2 --></label>
+        <name>AcctSeed__Label_for_Time_Card_Variable_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- This liability account (accrued payroll) will be credited when a time card is posted.  The corresponding debit (expense) is from the project task line. --></help>
+        <label><!-- Labor Clearing GL Account --></label>
+        <name>AcctSeed__Labor_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Labor GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ledger Limit --></label>
+        <name>AcctSeed__Ledger_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Default Ledger --></label>
+        <name>AcctSeed__Legacy_Default_Ledger__c</name>
+        <relationshipLabel><!-- Accounting Settings (Legacy Default Ledger) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the memo field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified. --></help>
+        <label><!-- Memo Left Offset --></label>
+        <name>AcctSeed__Memo_Left_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the memo field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Memo Top Offset --></label>
+        <name>AcctSeed__Memo_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the payee address field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified. --></help>
+        <label><!-- Payee Address Left Offset --></label>
+        <name>AcctSeed__Payee_Address_Left_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the payee address field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Payee Address Top Offset --></label>
+        <name>AcctSeed__Payee_Address_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the payee field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified. --></help>
+        <label><!-- Payee  Left Offset --></label>
+        <name>AcctSeed__Payee_Left_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifying a value will offset the payee field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified. --></help>
+        <label><!-- Payee Top Offset --></label>
+        <name>AcctSeed__Payee_Top_Offset__c</name>
+    </fields>
+    <fields>
+        <help><!-- This account is credited when your organization takes advantage of early vendor payment discounts. --></help>
+        <label><!-- Vendor Payment Discount GL Account --></label>
+        <name>AcctSeed__Payment_Discount_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Payment Discount GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payment Link Username --></label>
+        <name>AcctSeed__Payment_Link_Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Settings --></label>
+        <name>AcctSeed__Post_Settings__c</name>
+        <picklistValues>
+            <masterLabel>Header-Level Post</masterLabel>
+            <translation><!-- Header-Level Post --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Line-Level Post</masterLabel>
+            <translation><!-- Line-Level Post --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Zip or Postal Code --></help>
+        <label><!-- Postal Code --></label>
+        <name>AcctSeed__Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populates the Debit GL Account field on a Cash Disbursement when applied to a Payable --></help>
+        <label><!-- Prepaid Expense GL Account --></label>
+        <name>AcctSeed__Prepaid_Expense_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting Settings (Default Prepaid Expense GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- 2 character abbreviation for State or Province --></help>
+        <label><!-- State/Province --></label>
+        <name>AcctSeed__Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retained Earnings GL Account --></label>
+        <name>AcctSeed__Retained_Earnings_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Retained Earnings GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Set this to the main revenue account associated with your billings. --></help>
+        <label><!-- Default Revenue GL Account --></label>
+        <name>AcctSeed__Revenue_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Revenue GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>AcctSeed__Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stripe Connected Account Id --></label>
+        <name>AcctSeed__Stripe_Connected_Account_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Point of Sale considers taxability for Origin Address. Point of Destination considers taxability for Shipping Address. Shipment considers taxability for both addresses. --></help>
+        <label><!-- Sales Tax Calculation Mode --></label>
+        <name>AcctSeed__Tax_Calculation_Mode__c</name>
+        <picklistValues>
+            <masterLabel>Point of Destination</masterLabel>
+            <translation><!-- Point of Destination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point of Sale</masterLabel>
+            <translation><!-- Point of Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment</masterLabel>
+            <translation><!-- Shipment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This GL Account is credited upon entering a cash receipt.   After applying the cash receipt to a bill, the amount is removed (debits) from this account and a reduces (credits) Accounts Receivable.   Typical placement of this account is next to AR. --></help>
+        <label><!-- Unapplied A/R GL Account --></label>
+        <name>AcctSeed__Unapplied_Cash_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Unapplied Cash GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This GL Account is credited when a Purchase Order product has been received.  Then match a Vendor Invoice by creating a Payable from the Purchase Order page.  This action will then debit Vouchers Payable and credit Accounts Payable. --></help>
+        <label><!-- Vouchers Payable GL Account --></label>
+        <name>AcctSeed__Vouchers_Payable_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Vouchers Payable) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This account is increased when a Manufacturing Order allocates raw materials.  It is reduced upon completion of the manufactured product and transferred to finished goods inventory. --></help>
+        <label><!-- Work in Process GL Account --></label>
+        <name>AcctSeed__Work_in_Process_GL_Account__c</name>
+        <relationshipLabel><!-- Accounting_Settings (Work in Process GL Account) --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

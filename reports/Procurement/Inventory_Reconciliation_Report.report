@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Location__c</field>
+    </columns>
+    <columns>
+        <field>FK_PROD_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Available_Quantity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeedERP__Inventory_Balance__c.Total_Value__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>Used in accounting IV file for period end reconciliation.</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Warehouse__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Green Lake Capital</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Available_Quantity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Warehouse__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Inventory-Reconciliation Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AcctSeedERP__Inventory_Balance__c@AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Product__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeedERP__Inventory_Balance__c.AcctSeedERP__Location__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Information about the Service Visit records that are automatically created when a Maintenance Case is created.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Default_Technician_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Id of the Contact record to be used for the Technician__c field on the new Service Visit record.</inlineHelpText>
+        <label>Default Technician Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Visit_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Visit Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>MaintenanceCaseServiceVisits</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>NAME</columns>
+        <columns>Default_Technician_Id__c</columns>
+        <columns>Service_Visit_Record_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+        <language>en_US</language>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

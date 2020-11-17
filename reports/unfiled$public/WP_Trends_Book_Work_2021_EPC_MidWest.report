@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>TAMOUNT:SUM*TPROBABILITY:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># EPC Solar + Storage WP - Historical</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_25475394</developerName>
+        <masterLabel>Booked/Open</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>TSTAGE</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Project Awarded</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shortlisted/Interviews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Proposal Submitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Option Lease Executed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>LOI Signed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Qualified</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Prospecting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Preliminary 7C</sourceValue>
+            </sourceValues>
+            <value>Open</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Project Booked</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>EPC Signed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Contract Signed</sourceValue>
+            </sourceValues>
+            <value>Booked</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>No Decision</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Disqualified - Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Disqualified - Technical</sourceValue>
+            </sourceValues>
+            <value>Closed</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Opportunity.Solar_Storage_Weighted_Pipeline__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>INTERVAL_DATE</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>WP: &quot;Book Work 2021&quot; WIG - EPC West Div</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Solar_Storage_Weighted_Pipeline__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TAMOUNT</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Project_Likelihood__c</field>
+    </columns>
+    <columns>
+        <field>TSTAGE</field>
+    </columns>
+    <columns>
+        <field>TCLOSEDATE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>EPC - west,EPC - midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>INTERVAL_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_YEAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Weighted_Contract_Price__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>INTERVAL_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_25475394</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>WP Trends: EPC West Div, 2020 Contracts</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityTrend@Opportunity.Team__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

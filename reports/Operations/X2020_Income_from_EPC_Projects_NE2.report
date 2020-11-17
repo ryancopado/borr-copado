@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.AcctSeed__Projects__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.AcctSeed__Projects__r$Percent_Completed__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Final_Contract_Price__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.AcctSeed__Projects__r$Original_Contract_Price__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>160 Tihonet Road - Wareham (MIPA),459 Blacksmith Shop Road - Falmouth,0 Blodgett St - Dunstable - EPC,0 South Main Street - Freetown,131 Bullock Road - Freetown,147 Williamsville Road - Hubbardston,0 Pleasant St - Dunstable,68 Woodland Avenue - Seekonk,328 Partridgeville Road - Athol,959 West Street - Gardner,271 Breckenridge Street - Palmer,28 Livermore Hill Road - Westminster,0 Brookwood Dr - Westport- EPC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.AcctSeed__Projects__r$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0 South Main Street - Freetown (Dead)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.AcctSeed__Projects__r.Sites__r$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>68 Woodland Avenue - Site B,68 Woodland Ave Site C</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>2020 Income from EPC Projects - NE</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_w_Projects_and_Sites__c</reportType>
+    <roleHierarchyFilter>CEO</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity.AcctSeed__Projects__r$Percent_Completed__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

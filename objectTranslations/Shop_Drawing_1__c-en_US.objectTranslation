@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Shop Drawing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shop Drawings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account that the noted contact is related to. --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved --></label>
+        <name>Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved as corrected --></label>
+        <name>Approved_as_corrected__c</name>
+    </fields>
+    <fields>
+        <help><!-- fills in with the name of the Approver from the related Issue Tracker, used in conjunction with approval processes --></help>
+        <label><!-- Assigned to: --></label>
+        <name>Assigned_to__c</name>
+        <relationshipLabel><!-- Shop Drawings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Email address of the related contact. --></help>
+        <label><!-- Contact Email Address --></label>
+        <name>Contact_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please select the contact from the account. --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Shop Drawings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the date the submittal request was received from the field. --></help>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Closed Date --></label>
+        <name>Issue_Closed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field was created to make a &quot;Common Field&quot; for the Issue Tracker Joined Report. --></help>
+        <label><!-- Issue Number --></label>
+        <name>Issue_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Submitted Date --></label>
+        <name>Issue_Submitted_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the issue tracker number that the shop drawing is associated with. --></help>
+        <label><!-- Issue Tracker --></label>
+        <name>Issue_Tracker__c</name>
+        <relationshipLabel><!-- Shop Drawings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this section to add detailed notes. --></help>
+        <label><!-- Notes and Additional Information --></label>
+        <name>Notes_and_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Link --></label>
+        <name>Project_Link__c</name>
+        <relationshipLabel><!-- Shop Drawings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project related to the shop drawing. --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- The target date that you are asking the approver to respond by. --></help>
+        <label><!-- Requested Response Date --></label>
+        <name>Requested_Response_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The response details to the shop drawing submitted from the approver. Must be filled out before shop drawing can be complete. --></help>
+        <label><!-- Response --></label>
+        <name>Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revise and Resubmit --></label>
+        <name>Revise_and_Resubmit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Users --></label>
+        <name>Selected_Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- This changes based on the status of the shop drawing. --></help>
+        <label><!-- Status Highlight --></label>
+        <name>Status_Highlight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to track and manage the status of the shop drawing. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Pending</masterLabel>
+            <translation><!-- Approval Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved as Corrected</masterLabel>
+            <translation><!-- Approved as Corrected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revise and Resubmit</masterLabel>
+            <translation><!-- Revise and Resubmit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Track --></label>
+        <name>Track__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The requested Response Date has to be at least 1 day from today. --></errorMessage>
+        <name>Requested_Response_Greater_Than_24_Hours</name>
+    </validationRules>
+</CustomObjectTranslation>

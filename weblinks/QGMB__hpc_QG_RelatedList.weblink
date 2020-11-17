@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>QueryGuru Related Lists (Object)</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;../../soap/ajax/32.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;../../soap/ajax/32.0/apex.js&quot;)}
+
+{!REQUIRESCRIPT(&quot;/resource/QGMB__jquery_1_11_1_min&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/QGMB__jquery_ui_1_10_4_custom/js/jquery-ui-1.10.4.custom.min.js&quot;)}
+
+var $j = jQuery.noConflict();
+
+
+{!REQUIRESCRIPT(&quot;/resource/QGMB__QG_BtnTools&quot;)}
+// Not sure that the below is necessary
+{!REQUIRESCRIPT(&apos;/resource/&apos; &amp; LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(NOW()),&apos;:&apos;,&apos;&apos;),&apos;-&apos;,&apos;&apos;),&apos; &apos;,&apos;&apos;),10) &amp; &apos;000/QGMB__QG_RL_BtnHelper&apos;)}
+
+
+var invokeUrl = &apos;{!URLFOR(&quot;/apex/qgmb__dispQueryGuruGrid&quot;)}&apos;.toLowerCase();
+
+debugMode = true;
+
+//debugger;
+getObjRelatedList(sfdcPage.entityId,&quot;{!$Api.Session_ID}&quot;,window.location.href, invokeUrl, debugMode );</url>
+</CustomPageWebLink>

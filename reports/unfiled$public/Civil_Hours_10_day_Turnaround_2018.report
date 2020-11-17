@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_62209798</developerName>
+        <masterLabel>Employee Position</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c.AcctSeed__Employee__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Steve Long</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Albrecht</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dean Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Martin Zanghi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gregory Gibbons</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kip Smith</sourceValue>
+            </sourceValues>
+            <value>Civil PE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Brandon Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louisa Deering</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Weston Standish</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Melissa Samaroo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carli Shroyer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Frantz Renard</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_62209798</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Employee__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Project_Kickoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Period__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Total_Hours__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>david albrecht,steve long,dean smith,kip smith,brandon smith,martin zanghi,melissa samaroo,louisa deering,gregory gibbons,carli shroyer,weston standish,frantz renard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>12/31/2017</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card_Line__c.AcctSeed__Total_Hours__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Civil Hours - 10-day Turnaround 2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Time_Card__c$AcctSeed__Time_Card_Line__c@AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FK_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FK_$AcctSeed__Project__c.Project_Kickoff_Date__c</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-08-01</startDate>
+    </timeFrameFilter>
+</Report>

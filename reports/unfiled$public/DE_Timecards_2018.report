@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_76753455</developerName>
+        <masterLabel>Employee Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c.AcctSeed__Employee__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Martin Zanghi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dean Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Long</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Albrecht</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Brandon Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Frantz Renard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Melissa Samaroo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louisa Deering</sourceValue>
+            </sourceValues>
+            <value>Junior Civil Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tim Lee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Katlyn Lawver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Lagasse</sourceValue>
+            </sourceValues>
+            <value>Senior Design Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lucas Danker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rohit Patil</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shanthini Sivaharan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Gebo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Emily Field</sourceValue>
+            </sourceValues>
+            <value>Design Engineer</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_5598885</developerName>
+        <masterLabel>Pre and Post Handoff Groupings</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card_Line__c.Project_Grouping__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>0: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>1: 50 Set Development</sourceValue>
+            </sourceValues>
+            <value>1. Pre-Handoff</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2: CD IFR Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3: CD IFC Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>4: Post CD Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>5: CD Admin</sourceValue>
+            </sourceValues>
+            <value>2. Post Handoff</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>BucketField_5598885</field>
+    </columns>
+    <columns>
+        <field>BucketField_76753455</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Employee__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Total_Hours__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2) AND (3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>development engineer,civil engineer,civil engineer - drafter,principal civil engineer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card_Line__c.Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>kevin gebo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>19C Ward Street - Carver,74 Fordlea Road - Primary Project for records,Mathworks Parking Garage,14R West St. - Carver,Banner Lassen Medical Center,218 Buckley - Whitehall - A - East,Pierson Hill Road - Mt Hope - East 1,Pierson Hill Road - Mt Hope - West 2,The Wine Group - Fresno,218 Buckley - Whitehall - B - West,AKS Investments Office Building - San Bernardino,414 Main Street - Barnstable,City of Cathedral,0 Tanglewood Circle - Becket,The Wine Group-Chowchilla- Site 1,519 Route 151 - Oppenheim - 2 of 2 - south (System A),Stockton Delta Resort,LLC,263 Purgatory Road - Sutton,3 Perkins Way - Newburyport,68 Woodland Avenue - Seekonk,0 Horne Homestead Road - Charlton,West State St - South,825 Hylton Road - Pennsauken,NJ,Washington Charter School - Palm Desert,60 Bidwell St - Manchester,CT,0 Horne Homestead Road - Charlton - ESD,85 Wauwinet Road - Barre,5813A Minaville Road,Florida NY,5813B Minaville Road,373A Old Stage Road,Knox,NY,Greenmount Cemetery Lane - Whitehall</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card_Line__c.AcctSeed__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Elmwood Avenue - West,Elmwood Avenue - East,519 Route 151 - Oppenheim - North (System B),Crans Mill Project 1 - 2.8 MW</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>DE Timecards - 2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Time_Card__c$AcctSeed__Time_Card_Line__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</dateColumn>
+        <endDate>2017-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

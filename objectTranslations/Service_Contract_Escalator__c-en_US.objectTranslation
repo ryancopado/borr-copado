@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Contract Escalator</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Contract Escalators</value>
+    </caseValues>
+    <fields>
+        <help><!-- multiplies current value per day by 30 --></help>
+        <label><!-- April Billing Rate --></label>
+        <name>AprilBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies current value per day by 31 --></help>
+        <label><!-- August Billing Rate --></label>
+        <name>AugustBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- CY end date based on YEAR for this record. --></help>
+        <label><!-- CY End --></label>
+        <name>CY_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows contract start date for this year of the contract reference in YEAR field. --></help>
+        <label><!-- CY Start --></label>
+        <name>CY_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- formula based on current year contract value/ 365 --></help>
+        <label><!-- Contract Value Per Day --></label>
+        <name>Contract_Value_Per_Day__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows value of contract in current year with escalators applied --></help>
+        <label><!-- Current Year Contract Value --></label>
+        <name>CurrentYearContractValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current Solar Engineer Rate --></label>
+        <name>Current_Year12__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current  Regional Manager Rate --></label>
+        <name>Current_Year1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Contract Value1 --></label>
+        <name>Current_Year_Contract_Value1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current  Solar Electrician 1 - OT Ra --></label>
+        <name>Current_Year_Solar_Electrician_1_OT_Ra__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for current year. --></help>
+        <label><!-- Current  Solar Electrician 1 Rate --></label>
+        <name>Current_Year_Solar_Electrician_1_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current  Solar Electrician 2 - OT Ra --></label>
+        <name>Current_Year_Solar_Electrician_2_OT_Ra__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current  Solar Engineer - OT Rate --></label>
+        <name>Current_Year_Solar_Engineer_OT_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for current year. --></help>
+        <label><!-- Current Solar Electrician 2 Rate --></label>
+        <name>Current_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies contract value per day by 31 --></help>
+        <label><!-- December Billing Rate --></label>
+        <name>DecemberBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings in details about when escalator should be applied --></help>
+        <label><!-- Escalator Details --></label>
+        <name>EscalatorDetails__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays escalator % from the field Escalator from related contract --></help>
+        <label><!-- Escalator --></label>
+        <name>Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates current value per day by 28 --></help>
+        <label><!-- February Billing Rate --></label>
+        <name>FebruaryBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies Contract Value Per Day by 31 days --></help>
+        <label><!-- January Billing Rate --></label>
+        <name>JanuaryBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies contract value per day by 31 --></help>
+        <label><!-- July Billing Rate --></label>
+        <name>JulyBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies current value per day by 30 --></help>
+        <label><!-- June Billing Rate --></label>
+        <name>JuneBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to bring over Labor rate escalator from contract. --></help>
+        <label><!-- Labor Escalator --></label>
+        <name>Labor_Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies Current value per day by 31 --></help>
+        <label><!-- March Billing Rate --></label>
+        <name>MarchBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies contract value per day by 31 --></help>
+        <label><!-- May Billing Rate --></label>
+        <name>MayBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies current value per day by 30 --></help>
+        <label><!-- November Billing Rate --></label>
+        <name>NovemberBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies current value per day by 30 --></help>
+        <label><!-- October Billing Rate --></label>
+        <name>OctoberBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays text value of the field Payment Options picklist from related Contract --></help>
+        <label><!-- Payment Options --></label>
+        <name>Payment_Options__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays prior year value of contract with escalators --></help>
+        <label><!-- Prior Year Contract Value --></label>
+        <name>PriorYearContractValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year. --></help>
+        <label><!-- Prior  Solar Engineer Rate --></label>
+        <name>Prior_Year12__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year. --></help>
+        <label><!-- Prior  Regional Manager Rate --></label>
+        <name>Prior_Year1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Year Contract Value1 --></label>
+        <name>Prior_Year_Contract_Value1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year. --></help>
+        <label><!-- Prior  Solar Electrician 1 - OT Rate --></label>
+        <name>Prior_Year_Solar_Electrician_1_OT_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year. --></help>
+        <label><!-- Prior  Solar Electrician 2 Rate --></label>
+        <name>Prior_Year_Solar_Electrician_2_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for prior year. --></help>
+        <label><!-- Prior Solar Engineer - OT Rate --></label>
+        <name>Prior_Year_Solar_Engineer_OT_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the SV for billing purposes for Prior Year. --></help>
+        <label><!-- Prior  Solar Electrician 2 - OT Rate --></label>
+        <name>Prior_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- multiplies current value per day by 30 --></help>
+        <label><!-- September Billing Rate --></label>
+        <name>SeptemberBillingRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from Contract Amount yearly field from related contract --></help>
+        <label><!-- Service Contract Amount --></label>
+        <name>Service_Contract_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays value from field Contract End Date from related contract --></help>
+        <label><!-- Service Contract End Date --></label>
+        <name>Service_Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays Service Contract Start Date from related Contract --></help>
+        <label><!-- Service Contract Start Date --></label>
+        <name>Service_Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays the related contract --></help>
+        <label><!-- Service Contract --></label>
+        <name>Service_Contract__c</name>
+        <relationshipLabel><!-- Service Contract Escalators --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Hourly rate stated in contract, will be carried over to the Escalator for billing purposes for prior year. --></help>
+        <label><!-- Prior Solar Electrician 1 Rate --></label>
+        <name>Solar_Electrician_1_Rate1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year1 --></label>
+        <name>Year1__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter in 4 digit year --></help>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

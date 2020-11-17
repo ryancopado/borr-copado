@@ -1,0 +1,60 @@
+<apex:page Controller="ProcessInstanceWorkItemIssueTrackerCtrl" >
+
+<style>
+        
+        /* === Hides Action Column for Approval History === */
+        
+        
+        [class$='actionColumn']
+        
+        {display:none}
+        
+
+        /* === END === */
+
+.bRelatedList .bPageBlock .pbButton {
+white-space: normal;
+visibility: hidden;
+}
+
+</style>
+<apex:form >
+     <apex:pageblock >
+     
+         <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Approved" action="{!Approved}"/>
+                 <apex:commandButton value="Rejected" action="{!Rejected}"/>
+                 <apex:commandButton value="Cancel" action="{!Cancel}"/>   
+                 <apex:commandButton value="Resolved" action="{!Resolved}"/>                                  
+         </apex:pageblockButtons>
+         
+         <apex:pageBlockSection columns="1">
+         
+             
+             <apex:outputField value="{!IssueTracker.Name}"/>
+             <apex:outputField value="{!IssueTracker.Contact__c}"/>
+                                               
+             <apex:outputField value="{!IssueTracker.Notes_and_Additional_Information__c}"/>                      
+              <apex:pageBlockSectionItem >
+              
+                 <apex:outputLabel >Comment</apex:outputLabel>
+                 <apex:inputTextarea value="{!comment}" />
+             </apex:pageBlockSectionItem>                                                                                   
+          </apex:pageBlockSection>
+     <!-- <c:MultiselectPicklist leftLabel="Available Users"
+                leftOptions="{!allUsers}"
+                rightLabel="Selected Users"
+                rightOptions="{!selectedUsers}"
+                size="14"
+                width="150px"/>  -->
+        
+     </apex:pageblock>
+    
+</apex:form>
+     <apex:relatedList list="ProcessSteps" subject="{!IssueTracker.Id}" />
+     
+
+
+
+
+</apex:page>

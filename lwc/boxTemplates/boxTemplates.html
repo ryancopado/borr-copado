@@ -1,0 +1,35 @@
+<template>
+  <template if:true={showLoadingSpinner}>
+    <div class="loading">
+      <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner_medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+    </div>
+  </template>
+  <lightning-card>
+    <div class="slds-m-around_medium">
+      <lightning-combobox
+        name="templates"
+        label="Template"
+        value={templateId}
+        placeholder="clone from template ..."
+        options={templateFolders}
+        onchange={handleChange} >
+      </lightning-combobox>
+      <template if:true={setFrup}>
+        <lightning-input label="Box Folder ID" onchange={handleFRUP}></lightning-input>
+      </template>
+      <div class="slds-m-top_medium">
+        <lightning-button label="Clone" disabled={getDisabled}  onclick={handleClone}></lightning-button>
+      </div>
+      <!-- <br/> *** Dev Only - <br/>
+      oppId: {recordId} <br/>
+      boxFolderId: {boxOppFolderId} <br/>
+      boxOppFrupId: {boxOppFrupId} <br/> -->
+    </div>
+  </lightning-card>
+</template>

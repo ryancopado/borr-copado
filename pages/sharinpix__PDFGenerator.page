@@ -1,0 +1,34 @@
+<apex:page docType="html-5.0" applyBodyTag="false" controller="sharinpix.ToPdfRenderController" renderAs="{! IF($CurrentPage.parameters.html = 'html', 'html', 'pdf')}">
+    <head>
+        <apex:stylesheet value="{!$Resource.sharinpix__PDFGeneratorCss}"/>
+        <style type="text/css" media="print">
+            @page {
+                size: A4 {!HTMLENCODE(orientation)};
+                @bottom-center {
+                    content: element(footer);
+                }
+            }
+        </style>
+        <style>
+            html { {!IF(singleImagePerPage = TRUE, " height: 95%; ", "")} }
+
+            div.footer {
+                display: block;
+                text-align: center;
+                position: running(footer);
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+        </style>
+    </head>
+    <body class="sharinpix-pdf-generator-body">
+        <div class="footer">
+            <div><apex:outputText value="{!footer}" escape="false"/></div>
+        </div>
+        <apex:outputText value="{!html}" escape="false"/>
+    </body>
+</apex:page>

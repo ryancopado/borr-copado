@@ -1,0 +1,114 @@
+<apex:page id="OpportunitySalesAvaTax" title="Sales Tax | Accounting Seed" standardController="Opportunity" extensions="AcctSeed.OpportunitySalesAvaTax,AcctSeed.EnvironmentUtils" action="{!estimateTax}" lightningStylesheets="true">
+
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/common.css')}" />
+    <apex:variable var="customLEX" value="customLEXOn" rendered="{!$User.UIThemeDisplayed = 'Theme4d' || $User.UIThemeDisplayed = 'Theme4u'}">
+        <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/visualforce-lex-ext.css')}" />
+    </apex:variable>
+
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-common.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-currency.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/currency-formatter.js')}" loadOnReady="true"/>
+
+    <script type="text/javascript">
+        AcctSeed.ASModule.defaultLocale = "{!JSENCODE(DefaultLocale)}";
+        AcctSeed.ASModule.defaultCurrency = "{!JSENCODE(DefaultCurrency)}";
+        AcctSeed.ASModule.isMultiCurrencyEnabled = "{!JSENCODE(IF(isMultiCurrencyEnabled, 'true', 'false'))}";
+        AcctSeed.ASModule.currencyIsoCode = "{!JSENCODE(currencyIsoCode)}";
+    </script>
+
+    <apex:form id="theForm">
+        <apex:sectionHeader title="Avalara" subTitle="Opportunity Sales Tax"/>
+        <apex:pageBlock title="{!pageBlockTitle}">
+            <apex:pageMessages />
+            <apex:pageMessage severity="info" strength="3"
+                              summary="The following Tax Line will be created. Click on the Calc Tax button to proceed."
+                              rendered="{!AND(NOT(isError), NOT(isIncorrectCurrency), NOT(isHeaderLevelPostEnabled))}"/>
+            <apex:pageBlockButtons >
+                <apex:actionStatus id="processingStatus"
+                                   onstart="AcctSeed.ASModule.disableButtons('Processing...');"/>
+                <apex:commandButton value="Calc Tax" action="{!commitTax}" status="processingStatus" reRender="theForm" rendered="{!!isError && !isIncorrectCurrency}"/>
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+
+            <!-- Opportunity Section is rendered in HLP mode only -->
+            <apex:pageBlockSection title="Opportunity" collapsible="false" columns="2" rendered="{!NOT(isError) && isHeaderLevelPostEnabled}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer"/>
+                    <apex:outputField value="{!Opportunity.AccountId}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Sub-Total"/>
+                    <apex:outputText id="oppSubTotalAmount" value="{!oppSubTotal}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Opportunity"/>
+                    <apex:outputField value="{!Opportunity.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Estimated Tax Amount"/>
+                    <apex:outputText id="oppTaxAmount" value="{!oppTaxAmount}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value=""/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Estimated Total"/>
+                    <apex:outputText id="oppTotalAmount" value="{!oppTotal}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Select Ledger" collapsible="false" columns="2" rendered="{!isMultiLedgerEnabled && !isError}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.AcctSeed__Billing__c.fields.AcctSeed__Ledger__c.Label}"/>
+                    <apex:selectList required="true"
+                                     value="{!selectedLedger}"
+                                     multiselect="false"
+                                     size="1">
+                        <apex:selectOptions value="{!allLedgers}" />
+                        <apex:actionStatus id="changeStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                        <apex:actionSupport status="changeStatus"
+                                            event="onchange"
+                                            action="{!changeLedger}"
+                                            reRender="theForm"
+                                            onComplete="AcctSeed.ASModule.pageLoad(); setCurrentCurrency();"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="{!lineTableSectionTitle}" collapsible="false" columns="1" rendered="{!!isError && !isIncorrectCurrency}">
+                <!-- ================= LINE LEVEL POSTING MODE ================================== -->
+                <apex:pageBlockSectionItem rendered="{!NOT(isHeaderLevelPostEnabled)}">
+                    <apex:pageBlockTable value="{!oppLineItemsWithEstimatedTaxAmount}" var="line">
+                        <apex:column value="{!line.opportunityLineItem.OpportunityId}"/>
+                        <apex:column value="{!line.opportunityLineItem.Product2Id}"/>
+                        <apex:column headerValue="Estimated Tax Amount">
+                            <apex:outputText id="lineLLPUnitPriceAmount" value="{!line.opportunityLineItem.UnitPrice}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+                <!-- ================= HEADER LEVEL POSTING MODE ++============================== -->
+                <apex:pageBlockSectionItem rendered="{!isHeaderLevelPostEnabled}">
+                    <apex:pageBlockTable value="{!oppLineItemsWithEstimatedTaxAmount}" var="line">
+                        <apex:column value="{!line.opportunityLineItem.PricebookEntry.Product2Id}"/>
+                        <apex:column value="{!line.opportunityLineItem.Quantity}" headerClass="align-right" styleClass="align-right"/>
+                        <apex:column headerValue="Price" headerClass="align-right" styleClass="align-right">
+                            <apex:outputText id="lineUnitPriceAmount" value="{!line.opportunityLineItem.UnitPrice}"/>
+                        </apex:column>
+                        <apex:column headerValue="Discount" headerClass="align-right" styleClass="align-right" rendered="{!showDiscount}">
+                            <apex:outputText id="lineDiscountAmount" value="{!line.LineDiscountAmount}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sub-Total" headerClass="align-right" styleClass="align-right">
+                            <apex:outputText id="lineSubTotalAmount" value="{!line.LineSubTotal}"/>
+                        </apex:column>
+                        <apex:column headerValue="Estimated Tax Amount" headerClass="align-right" styleClass="align-right">
+                            <apex:outputText id="lineTaxAmount" value="{!line.LineTaxAmount}"/>
+                        </apex:column>
+                        <apex:column headerValue="Estimated Total" headerClass="align-right" styleClass="align-right">
+                            <apex:outputText id="lineTotalAmount" value="{!line.LineTotal}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

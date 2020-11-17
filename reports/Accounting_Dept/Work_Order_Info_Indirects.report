@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case.WorkOrders$Project__c</field>
+    </columns>
+    <columns>
+        <field>Case$Project_ID__c</field>
+    </columns>
+    <columns>
+        <field>Case$Project__c.Job_Number__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders$StartDate</field>
+    </columns>
+    <columns>
+        <field>Case$RecordType</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders$BillableRevbyWO__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders$BillableCostbyWO__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case.WorkOrders$Work_Start_Time__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>7/21/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.WorkOrders$Work_Start_Time__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>8/3/2019 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Work Order Info- Indirects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Work_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$ClosedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

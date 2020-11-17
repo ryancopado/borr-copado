@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LeadsManager__ActivitiesFilter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Example text :  Subject = &apos;Call&apos;  And  Type != &apos;Email&apos;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Example text :  Subject = &apos;Call&apos;  And  Type != &apos;Email&apos;</inlineHelpText>
+        <label>Activities Filter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__BatchActivitiesFilter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Batch Activities Filter</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__CustomRelatedLists__c</fullName>
+        <deprecated>false</deprecated>
+        <description>[{&quot;ObjApiName&quot;: &quot;TestObj__c&quot;, &quot;RFieldApi&quot;: &quot;Leads_Company__c&quot;, &quot;FieldsetApi&quot;: &quot;fsFO&quot;}, {&quot;ObjApiName&quot;: &quot;SecondObject__c&quot;,&quot;RFieldApi&quot;: &quot;SecondObject__c&quot;, &quot;FieldsetApi&quot;: &quot;fsSO&quot;}]</description>
+        <externalId>false</externalId>
+        <inlineHelpText>[{&quot;ObjApiName&quot;: &quot;TestObj__c&quot;, &quot;RFieldApi&quot;: &quot;Leads_Company__c&quot;, &quot;FieldsetApi&quot;: &quot;fsFO&quot;}, {&quot;ObjApiName&quot;: &quot;SecondObject__c&quot;,&quot;RFieldApi&quot;: &quot;SecondObject__c&quot;, &quot;FieldsetApi&quot;: &quot;fsSO&quot;}]</inlineHelpText>
+        <label>CustomRelatedLists</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__EnableCompnayList__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Company Hierarchy List</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__EnableContactIist__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Contact Iist</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__Ignored_Domain_Names__c</fullName>
+        <defaultValue>&quot;gmail,yahoo,hotmail,earthlink,comcast,cox&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Please provide comma separated domain names to ignore</description>
+        <externalId>false</externalId>
+        <label>Email Domain Name Filtering</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__Ignored_Keywords__c</fullName>
+        <defaultValue>&quot;llp,corporation,and,corp,limited,pvt,llc,incorporated,incorporation,inc,ltd&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Comma separated keyword to ignore from company name field.</description>
+        <externalId>false</externalId>
+        <label>Company Name Filtering</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__LeadRelatedLists__c</fullName>
+        <deprecated>false</deprecated>
+        <description>[{&quot;ObjApiName&quot;: &quot;TestObj__c&quot;, &quot;RFieldApi&quot;: &quot;Leads_Company__c&quot;, &quot;FieldsetApi&quot;: &quot;fsFO&quot;}, {&quot;ObjApiName&quot;: &quot;SecondObject__c&quot;,&quot;RFieldApi&quot;: &quot;SecondObject__c&quot;, &quot;FieldsetApi&quot;: &quot;fsSO&quot;}]</description>
+        <externalId>false</externalId>
+        <inlineHelpText>[{&quot;ObjApiName&quot;: &quot;TestObj__c&quot;, &quot;RFieldApi&quot;: &quot;Leads_Company__c&quot;, &quot;FieldsetApi&quot;: &quot;fsFO&quot;}, {&quot;ObjApiName&quot;: &quot;SecondObject__c&quot;,&quot;RFieldApi&quot;: &quot;SecondObject__c&quot;, &quot;FieldsetApi&quot;: &quot;fsSO&quot;}]</inlineHelpText>
+        <label>Lead RelatedLists</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__LeadStatusHierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lead Status Hierarchy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__RecordTypeFilter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>select Id from RecordType where Name = &apos;RecordTypeName&apos; and SobjectType = &apos;Lead&apos;</inlineHelpText>
+        <label>Record Type Filter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__Sync_Ownership__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Company and Leads Owner Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__TriggerOnContact__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Trigger on Contacts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__TriggerOnLead__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Trigger on Leads</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadsManager__TriggerOnTask__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Trigger on Tasks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Configuration Manager</label>
+    <visibility>Public</visibility>
+</CustomObject>

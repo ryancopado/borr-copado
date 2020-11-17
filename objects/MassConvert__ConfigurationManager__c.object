@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>MassConvert__AccountsAutoConvertCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Accounts Auto Convert Condition</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__AccountsFilterCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Accounts Filter Criteria</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__AccountsMatchingCriteriaContainsValue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Use Accounts Matching Criteria as Value</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__AlwaysCreateNewAccount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Always Create New Account</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__AutoConvertCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status = &apos;Contacted&apos; And LeadSource = &apos;Purchased List&apos;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Example Text : Status = &apos;Contacted&apos; And LeadSource = &apos;Purchased List&apos;</inlineHelpText>
+        <label>Leads Auto Convert Condition</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__BatchSize__c</fullName>
+        <defaultValue>20</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Batch Size</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MassConvert__CustomCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use 1 condition at a time:
+1. where Account.Name in: Lead.Name OR Account.ExternalId__c in :Lead.ExternalId__c
+2. where Account.Name in: Lead.Name AND Account.ExternalId__c in :Lead.ExternalId__c</inlineHelpText>
+        <label>Accounts Matching Criteria</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__EnableCustomCriteria__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom Criteria to Identify Existing Account</inlineHelpText>
+        <label>Enable Custom Account Matching Criteria</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__EnablePersonAccounts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Person Accounts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__GenericDomains__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Generic Domains</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__IsCreateOpportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Create Opportunity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__Key__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>License Key</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MassConvert__LeadsMatchingCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for identifying matching leads when auto-converting leads based on a newly created account</inlineHelpText>
+        <label>Leads Matching Criteria</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__RecordTypeSettings__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Record Type Settings</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__TriggerOnAccount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Trigger On Accounts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MassConvert__TriggerOnLead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Trigger On Leads</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Lead Conversion Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

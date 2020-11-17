@@ -1,0 +1,485 @@
+<apex:page standardController="AcctSeed__Billing__c" extensions="AcctSeed.BillingPDFControllerExt,BillingServicePDFController" applyBodyTag="false"
+           renderAs="pdf">
+    
+    <head>
+        <style type="text/css" media="print">
+            @page :first {
+            @top-right {
+            content: element(headerFirst);
+            }
+            
+            @bottom-left {
+            content: element(footer);
+            }
+            margin-top: 50px;
+            size:portrait;
+            }
+            
+            @page {
+            
+            @top-right {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            margin-top: 100px;
+            size:portrait;
+            }
+            
+            div.header {
+            position: running(header);
+            margin-bottom: -55px;
+            }
+            
+            div.content {
+            position: relative;
+            }
+            
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            }
+            
+            .pagenumber:before {
+            content: counter(page);
+            }
+            
+            .pagecount:before {
+            content: counter(pages);
+            }
+            
+            body {
+            font-family: "Arial" "Sans-Serif";
+            font-size: 11px;
+            margin: 1px;
+            }
+            
+            .tableHeader {
+            font-weight: bold;
+            background-color: #0070c0;
+            height: 20px;
+            padding: 6px;
+            vertical-align: top;
+            color: white;
+            }
+            
+            .columnHeader {
+            text-align: right;
+            }
+            
+            .tableRow {
+            padding: 6px;
+            vertical-align: text-top;
+            }
+            .tableRowLast {
+            padding: 6px;
+            vertical-align: middle;
+            border: 0.5px solid black;
+            text-align: center;
+            }
+            
+            .tableRowAmount {
+            background-color: #DADADA;
+            }
+            
+            .alignRight {
+            text-align: right
+            }
+            .mainTable tr th {
+            border: 0.5px solid black;
+            }
+            .mainTable td {
+            border-left: 0.5px solid black;
+            border-right: 0.5px solid black;
+            }
+            .totalBackgr {
+            background-color: #f0e789;  
+            font-weight: bold;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!--h1 TITLE SERVICE INVOICE-->
+        <h1 style="text-align: center">SERVICE INVOICE</h1>
+        <!--CONTACT INFO AND LOGO-->
+        <div>
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <table style="border-collapse:collapse">
+                            <tr>
+                                <td style="font-weight: bold;font-size: 14px;">
+                                    <apex:outputText value="{!IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Name__c),$Organization.Name,AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Name__c)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Street2__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Street2__c)}"/>
+                                    <apex:outputText value="{!$Organization.Street}"
+                                                     rendered="{!ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Street2__c)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputText value="{!IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_City__c),$Organization.City, AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_City__c) & IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_City__c) && ISBLANK($Organization.City),'',', ') & IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_State__c),$Organization.State,AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_State__c) & ' ' & IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_PostalCode__c),$Organization.PostalCode,AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_PostalCode__c)}"/>
+                                </td>
+                            </tr>
+                            <!--tr>
+<td>
+<apex:outputText value="{!IF(ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Country__c),$Organization.Country,AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Country__c)}"
+rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Company_Country__c) || !!ISBLANK($Organization.Country)}"/>
+</td>
+</tr-->
+                            <tr>
+                                <td>
+                                    <apex:outputText value="tel: {!$Organization.Phone}, fax: {!$Organization.Fax}"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="text-align: right">
+                        <apex:image alt="borrego logotype" title="logo"
+                                    url="{!URLFOR($Resource.borrego)}" height="80px" width="140px"/>
+                    </td>
+                </tr>
+            </table>     
+        </div>
+        <hr style="margin-bottom:0px;"/>
+        <div class="content" style="margin-top:-2px;">        
+            <!-- SUB HEADER-->
+            <table style="width:100%;border-collapse:collapse;">
+                <tr>
+                    <td style="width:65%;vertical-align:top">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:20%;"><b><apex:outputText value="CUSTOMER:"/></b></td>
+                                <td>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.Name}"
+                                                      rendered="{!ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c)}"/>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c}"
+                                                      rendered="{!NOT(ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c))}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:20%;"><b><apex:outputText value="Solar Fund:"/></b></td>
+                                <td>
+                                    <apex:outputlabel value="{!IF(AcctSeed__Billing__c.AcctSeed__Customer__r.Name!='Longroad Energy' ,AcctSeed__Billing__c.AcctSeed__Customer__r.Name,AcctSeed__Billing__c.Service_Contract__r.Account.Name) }" >
+                                    </apex:outputlabel>
+                                    <!--                rendered="{!ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c)}"/>
+<apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c}"
+rendered="{!NOT(ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Alternate_Payee_Name__c))}"/>-->
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td height="40px;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td ><b><apex:outputText value="ATTN:"/></b></td>
+                                <td>
+                                    <!--  <apex:outputText value="{!AcctSeed__Billing__c.AcctSeed__Billing_Contact__r.Name}"
+                            rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Contact__c)}"/> -->
+                                    <!--  <apex:outputText value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Billing_Contact__r.Name}"
+                            rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.AcctSeed__Billing_Contact__c) && ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Contact__c)}"/>-->
+                                    <!--apex:outputText value="{!attname}"/--> 
+                                    <apex:repeat value="{!getattnames}" var="a">
+                                        
+                                        <apex:outputText value="{!a.email}"/><br/>
+                                        
+                                    </apex:repeat>
+                                </td>
+                            </tr>
+                            
+                            <!---- Commented line due to requirement change on 6/4/2020
+                                  <tr   >
+                                    <td style="width:20%;"><b><apex:outputText value="PROJECT:"  rendered="{!render}"/></b></td>
+                                    
+                                    <td><apex:outputtext value="CA- Kern Co- Bakersfield NORTH : PROJ-193" rendered="{!render}">
+                                       </apex:outputtext>
+                                    </td>
+                                </tr>
+                                
+                                <tr > 
+                                    <td style="width:20%;"><b><apex:outputText value="SUBSIDIARY:"  rendered="{!render}"/></b></td>
+                                   <td>    <apex:outputtext value="C2 Kern, LLC" rendered="{!render}">
+                                        </apex:outputtext>
+                                    </td>  
+                                    
+                                </tr>          
+                             </apex:outputPanel> 
+                          C2 Special Situations Group    -->
+                            <!----  Added new field to the PDF -->
+
+              <tr>
+                                <td style="width:20%;"><b><apex:outputText value="Customer Invoicing Information:"/></b></td>
+                                <td>
+                                <apex:outputText value="{!HTMLENCODE(custinvoiceinfo)}" 
+  style="white-space:pre;" escape="false"/>
+                                  <!--  <apex:outputText value="{!custinvoiceinfo}" />-->
+                                                   </td>
+                            </tr>
+
+
+
+                           <!--     End of new field --->
+                            
+                            
+                            <tr>
+                                <td height="30px;" colspan="2"></td>
+                            </tr>
+                            <tr >
+                                <td><b><apex:outputText value="SITE:"/></b></td>
+                                <td >
+                                    <apex:outputField value="{!AcctSeed__Billing__c.Service_Contract__r.ASProject__r.Name}" 
+                                                      rendered="{!!OR(ISBLANK(AcctSeed__Billing__c.Service_Contract__c), ISBLANK(AcctSeed__Billing__c.Service_Contract__r.ASProject__c))}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b><apex:outputText value="SITE ADDRESS:"/></b></td>
+                                <td>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Shipping_Street__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Street__c)}"/>
+                                    <apex:outputText value=",&nbsp;" escape="false"
+                                                     rendered="{!AND(!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Street__c),!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_City__c))}"/>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Shipping_City__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_City__c)}"/>
+                                    <apex:outputText value=",&nbsp;" escape="false"
+                                                     rendered="{!AND(OR(!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Street__c), !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_City__c)),!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_State__c))}"/>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Shipping_State__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_State__c)}"/>
+                                    <apex:outputText value=",&nbsp;" escape="false"
+                                                     rendered="{!AND(OR(!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Street__c), !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_City__c),  !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_State__c)),!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_PostalCode__c))}"/>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Shipping_PostalCode__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_PostalCode__c)}"/>
+                                    <apex:outputText value=",&nbsp;" escape="false"
+                                                     rendered="{!AND(OR(!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Street__c), !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_City__c),  !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_State__c),  !ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_PostalCode__c)),!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Country__c))}"/>
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Shipping_Country__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Shipping_Country__c)}"/>
+                                    
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="10px;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td><b><apex:outputText value="MANAGER:"  /></b></td>
+                                <td >
+                                    <apex:outputfield value="{!AcctSeed__Billing__c.Service_Contract__r.Regional_Manager_User__r.Contact_Record_Name__c}" />  
+                                    <!--"test" rendered="{!!ISBLANK(AcctSeed__Billing__c.Service_Contract__r.Regional_Manager_User__c)} "  -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td valign="top">
+                        <table style="border-collapse:collapse;float:right;">
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="INVOICE #:"/></b>
+                                </td>
+                                <td style="text-align:left;">
+                                    <apex:outputText value="{!AcctSeed__Billing__c.Application_Number__c}"
+                                                     rendered="{!!ISBLANK(AcctSeed__Billing__c.Application_Number__c)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="DATE:"/></b>
+                                </td>
+                                <td style="text-align:left;">
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Date__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Date__c)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="DUE DATE:"/></b>
+                                </td>
+                                <td style="text-align:left;">
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Due_Date2__c}"
+                                                      rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Due_Date2__c)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="TERMS: NET"/></b>
+                                </td>
+                                <td style="text-align:left">
+                                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Customer__r.Vendor_Terms_days__c}"
+                                                      rendered="{!AND(!ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__c), !ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.Vendor_Terms_days__c))}"/>
+                                    <apex:outputText value="30"
+                                                     rendered="{!OR(ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__c), ISBLANK(AcctSeed__Billing__c.AcctSeed__Customer__r.Vendor_Terms_days__c))}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="CONTRACT:"/></b>
+                                </td>
+                                <td style="text-align:left">
+                                    <apex:outputField value="{!AcctSeed__Billing__c.Service_Contract__r.ContractNumber}"
+                                                      rendered="{!AND(!ISBLANK(AcctSeed__Billing__c.Service_Contract__c), !ISBLANK(AcctSeed__Billing__c.Service_Contract__r.ContractNumber))}"/>
+                                </td>
+                            </tr>
+                      <!--      <tr>
+<td style="text-align:right;">
+<b><apex:outputText value="CASE:"/></b>
+</td>
+<td style="text-align:left">
+<apex:outputText value="{!casenumber} "/>
+</td>
+</tr> -->
+
+                            <tr>
+                                <td height="15px;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">
+                                    <b><apex:outputText value="CUSTOMER PO:"/></b>
+                                </td>
+                                <td style="text-align:left">
+                                    <span style="font-weight:bold">
+                                        <apex:outputField value="{!AcctSeed__Billing__c.Customer_Reference_Number__c}"
+                                                          rendered="{!!ISBLANK(AcctSeed__Billing__c.Customer_Reference_Number__c)}"/>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="50px;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;padding-right:10px">
+                                    <b><apex:outputText value="TOTAL DUE: "/></b>
+                                </td>
+                                <td style="text-align:left">
+                                    <b> 
+                                        <apex:outputText value="{0, Number, Currency}">
+                                            <apex:param value="{!AcctSeed__Billing__c.SubTotal__c + summaryTaxes}"/>
+                                        </apex:outputText>
+                                    </b>                                
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- BILLING ITEMS TABLE-->
+            <table class="mainTable" style="margin-top:7px;width:100%;border-collapse: collapse;margin-right:1px;">
+                <colgroup span="7"></colgroup>
+                <thead class="rich-table-thead">
+                    <tr>
+                        <th class="tableHeader" style="width:35%; text-align: center;">
+                            <apex:outputText value="DESCRIPTION"/>
+                        </th>
+                        <th class="tableHeader" style="width:15%; text-align: center;">
+                            <apex:outputText value="WORK ORDER"/>
+                        </th>
+                        <th class="tableHeader" style="width:15%; text-align: center;">
+                            <apex:outputText value="ITEM CODE"/>
+                        </th>
+                        <th class="tableHeader" style="width:8%; text-align: center;">
+                            <apex:outputText value="QTY"/>
+                        </th>
+                        <th class="tableHeader" style="width:8%; text-align: center;">
+                            <apex:outputText value="RATE"/>
+                        </th>
+                        <th class="tableHeader" style="width:8%; text-align: center;">
+                            <apex:outputText value="TOTAL"/>
+                        </th>
+                        <th class="tableHeader" style="width:6%; text-align: center;">
+                            <apex:outputText value="TAX"/>
+                        </th>
+                    </tr>
+                </thead>
+                <apex:repeat value="{!billingLines}" var="item">
+                    <tr >
+                        <td class="tableRow">
+                            <!--Case__r.Subject-->
+                            <apex:outputField value="{!item.Description__c}" rendered="{!!ISBLANK(item.Case__c)}"/>
+                        </td>
+                        <td class="tableRow">
+                            <apex:outputField value="{!item.WorkOrder__r.WorkOrderNumber}" rendered="{!!ISBLANK(item.Case__c)}"/>
+                        </td>
+                        <td class="tableRow">
+                            <apex:outputField value="{!item.Category__c}" rendered="{!!ISBLANK(item.Category__c)}"/>
+                        </td>
+                        <td class="tableRow alignRight">
+                            
+                            <apex:outputText value="{0, Number}">
+                                <apex:param value="{!item.AcctSeed__Hours_Units__c}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="tableRow alignRight">
+                            
+                            <apex:outputText value="{0, Number, Currency}">
+                                <apex:param value="{!item.AcctSeed__Rate__c}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="tableRow alignRight">
+                            <apex:outputField value="{!item.AcctSeed__Total__c}" rendered="{!!isCurrencyFormat}"/>
+                            <apex:outputText value="{!CurrencyFormat}" rendered="{!isCurrencyFormat}">
+                                <apex:param value="{!item.AcctSeed__Total__c}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="tableRow alignRight">
+                            <!--  <apex:outputField id="sumTaxes" value="{!item.AvaAcctSeed__LineTax__c}" rendered="{!!isCurrencyFormat}"/>
+<apex:outputText value="{!CurrencyFormat}" rendered="{!isCurrencyFormat}">
+<apex:param value="{!item.AvaAcctSeed__LineTax__c}"/>
+</apex:outputText>-->
+                            <apex:outputlabel value="{!IF(item.AvaAcctSeed__LineTax__c!=null && item.AvaAcctSeed__LineTax__c >0 ,'T','') }">
+                            </apex:outputlabel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+                <tr>
+                    <td class="tableRowLast" style="font-style: italic;" colspan="3" rowspan="3">
+                        <apex:outputText value="*Please refer to the individual case service reports emailed to you upon case completion for specific service visit and case details."/>
+                    </td>
+                    <td class="tableRowLast totalBackgr" style="font-weight:bold" colspan="2"><apex:outputText value="Sub-Total"/></td>
+                    <td class="tableRowLast totalBackgr" colspan="2">                        
+                        <span style="font-weight:bold">
+                            <apex:outputField value="{!AcctSeed__Billing__c.SubTotal__c}"
+                                              rendered="{!!isCurrencyFormat}"/>
+                            <apex:outputText value="{!CurrencyFormat}" rendered="{!isCurrencyFormat}">
+                                <apex:param value="{!AcctSeed__Billing__c.SubTotal__c}"/>
+                            </apex:outputText>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tableRowLast totalBackgr" colspan="2">
+                        <apex:outputText value="Sales Tax {!AcctSeed__Billing__c.SalesTaxPercent__c}%"/></td>
+                    <td class="tableRowLast totalBackgr" colspan="2">
+                        <apex:outputText value="{0, Number, Currency}">
+                            <apex:param value="{!summaryTaxes}"/>
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tableRowLast totalBackgr" colspan="2"><apex:outputText value="TOTAL DUE"/></td>
+                    <td class="tableRowLast totalBackgr" colspan="2">
+                        <apex:outputText value="{0, Number, Currency}">
+                            <!-- <apex:param value="{!AcctSeed__Billing__c.SubTotal__c - summaryTaxes}"/>-->
+                            <apex:param value="{!AcctSeed__Billing__c.AcctSeed__Total__c + summaryTaxes}"/>
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <div style="page-break-inside: avoid;">
+                <apex:outputPanel layout="block" style="width:100%;margin-top:5px"
+                                  rendered="{!!ISBLANK(AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Custom_Footer_Content__c)}">
+                    <apex:outputField value="{!AcctSeed__Billing__c.AcctSeed__Billing_Format__r.AcctSeed__Custom_Footer_Content__c}"/>
+                </apex:outputPanel>
+            </div>
+        </div>
+        <div class="footer">
+            <div>Page&nbsp;<span class="pagenumber"/>&nbsp;of&nbsp;<span class="pagecount"/>
+            </div>
+        </div>
+    </body>
+</apex:page>

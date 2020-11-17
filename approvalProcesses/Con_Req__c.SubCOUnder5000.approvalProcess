@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>CO__c</field>
+        <field>Original_Contract_Price__c</field>
+        <field>Final_Change_Order_Amount__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Project_PM__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project_PM__r.Id &lt;&gt; $User.Id</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>PM Approval</label>
+        <name>PMApproval</name>
+    </approvalStep>
+    <emailTemplate>Construction_Requisition/Request_for_Approval_Sub_CO</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(RecordTypeId = &apos;012800000007bXQ&apos;, 
+Amount_Requested__c &lt;= 5000, 
+Ok_to_Submit__c = &quot;Yes&quot;, 
+OR( Service_Visit__c &lt;&gt; null , 
+OR( 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;New&apos;), 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;Design&apos;), 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;Pre-Contract&apos;), 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;Construction&apos;), 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;Completed&apos;), 
+ISPICKVAL( Project__r.SFDC_Project_Status__c , &apos;On Hold&apos;) 
+) 
+) 
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Set_Date_Requested</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SetApprovedCOTotal</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Subcontractor_CO_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Sub - CO - Under 5000</label>
+    <processOrder>5</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

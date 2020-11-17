@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>HR &amp; Vin to be alerted when a job applicant lead &quot;Next Step Field&quot; status is changed to &quot;PHONE SCREEN&quot;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Phone Screen Lead Next Step</name>
+    <style>none</style>
+    <subject>Next Step Phone Screen: {!Lead.Name},  {!Lead.Job_Applying_For__c}, {!Lead.Job_Requisition__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

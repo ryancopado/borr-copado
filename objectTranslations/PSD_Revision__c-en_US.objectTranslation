@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PSD Revision</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PSD Revisions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Pick the AE that will be working with you on the design --></help>
+        <label><!-- Applications Engineer --></label>
+        <name>Applications_Engineer__c</name>
+        <relationshipLabel><!-- PSD Revisions (Applications Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports --></help>
+        <label><!-- Apps Engineer Logged in --></label>
+        <name>Apps_Engineer_Logged_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- contains link to box or helioscope documents --></help>
+        <label><!-- Completed Design Link --></label>
+        <name>Completed_Design_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is for the IEI team to ask questions and give feedback regarding the revision. --></help>
+        <label><!-- Completed Notes --></label>
+        <name>Completed_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of calendar days between CreatedDate &amp; Working Design/Draft Layout Date. If not complete it uses TODAY - CreatedDate --></help>
+        <label><!-- Days Open --></label>
+        <name>Days_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Since Revision Status Change --></label>
+        <name>Days_Since_Revision_Status_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Design Notes --></label>
+        <name>Design_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter in quarter hours - how long it takes to complete the revision --></help>
+        <label><!-- Process Time --></label>
+        <name>Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which month the PSD will be charged. Only input once the PSD has been created. --></help>
+        <label><!-- Charged Date --></label>
+        <name>IEI_Charged_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the engineer from the IEI team. --></help>
+        <label><!-- Designer --></label>
+        <name>IEI_Designer__c</name>
+        <picklistValues>
+            <masterLabel>Bryan Sammons</masterLabel>
+            <translation><!-- Bryan Sammons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channing Congdon</masterLabel>
+            <translation><!-- Channing Congdon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Court McKinney, court.mckinney@sepisolar.com, (510) 940-9759</masterLabel>
+            <translation><!-- Court McKinney, court.mckinney@sepisolar.com, (510) 940-9759 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dan Merlin</masterLabel>
+            <translation><!-- Dan Merlin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eric Biggs</masterLabel>
+            <translation><!-- Eric Biggs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>John Innes</masterLabel>
+            <translation><!-- John Innes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jon Christensen</masterLabel>
+            <translation><!-- Jon Christensen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Justin Martin</masterLabel>
+            <translation><!-- Justin Martin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kevin Gebo</masterLabel>
+            <translation><!-- Kevin Gebo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kevin Leong, kevin.leong@sepisolar.com, (510) 940-9754</masterLabel>
+            <translation><!-- Kevin Leong, kevin.leong@sepisolar.com, (510) 940-9754 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nawaf Hassan</masterLabel>
+            <translation><!-- Nawaf Hassan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rogan Guild</masterLabel>
+            <translation><!-- Rogan Guild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shaun O&apos;Leary</masterLabel>
+            <translation><!-- Shaun O&apos;Leary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tarn Yates</masterLabel>
+            <translation><!-- Tarn Yates --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Expected date of completion. This date takes the AE&apos;s or PD&apos;s priority and due date into consideration. --></help>
+        <label><!-- Expected Completed Date --></label>
+        <name>IEI_Expected_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Sites --></label>
+        <name>IEI_Number_of_Sites__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date that the PSD Revision draft layout was completed. --></help>
+        <label><!-- PSD Completion Date --></label>
+        <name>IEI_PSD_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date the modeling is completed. --></help>
+        <label><!-- PVsyst Completion Date --></label>
+        <name>IEI_PVsyst_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- How long it takes to complete the PVsyst modeling. Only used for shade modeling. --></help>
+        <label><!-- PVsyst Modeling Hours --></label>
+        <name>IEI_PVsyst_Modeling_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date that the Photo Simulation was completed. --></help>
+        <label><!-- Photo Simulation Completion Date --></label>
+        <name>IEI_Photo_Simulation_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to notate how many sets of pictures are needed based on the set of drawings. --></help>
+        <label><!-- Photo Simulation Sets --></label>
+        <name>IEI_Photo_Simulation_Sets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inverter --></label>
+        <name>Inverter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complete The System Information Table --></label>
+        <name>Is_Checklist_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lightning Text --></label>
+        <name>Lightning_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Time --></label>
+        <name>On_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>OpportunityLookup__c</name>
+        <relationshipLabel><!-- PSD Revisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSD Apps Engineer --></label>
+        <name>PSD_Apps_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the engineer from the IEI team. --></help>
+        <label><!-- Person Responsible --></label>
+        <name>Person_Responsible__c</name>
+        <relationshipLabel><!-- PSD Revisions (Person Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Photo Simulation Required --></label>
+        <name>Photo_Simulation_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pre-Sales Design --></label>
+        <name>Pre_Sales_Design__c</name>
+        <relationshipLabel><!-- PSD Revisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- TOP - Should only be used when it absolutely has to be completed by tomorrow. --></help>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quick Revision</masterLabel>
+            <translation><!-- Quick Revision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top</masterLabel>
+            <translation><!-- Top --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Production Model Required --></label>
+        <name>Production_Model_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- L0 = Almost always used on 1st Rev, Basic Layout, System Size and limited add&apos;l info 
+L1 = More Details, Full System specs 
+L2 = L1 + Simple Single Line 
+L3 = L1 + Inconnection App level &amp; simple single line --></help>
+        <label><!-- Proposal Level Needed --></label>
+        <name>Proposal_Level_Needed__c</name>
+        <picklistValues>
+            <masterLabel>Intx Layout</masterLabel>
+            <translation><!-- Intx Layout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L0</masterLabel>
+            <translation><!-- L0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L1</masterLabel>
+            <translation><!-- L1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2</masterLabel>
+            <translation><!-- L2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L3</masterLabel>
+            <translation><!-- L3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Racking --></label>
+        <name>Racking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Modification Notes --></label>
+        <name>Reason_for_Modification_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Modification --></label>
+        <name>Reason_for_modifiction__c</name>
+        <picklistValues>
+            <masterLabel>Correct Mistakes</masterLabel>
+            <translation><!-- Correct Mistakes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Change</masterLabel>
+            <translation><!-- Design Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Draft</masterLabel>
+            <translation><!-- First Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade Proposal Level</masterLabel>
+            <translation><!-- Upgrade Proposal Level --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Description to distinguish this Revision from another Revision. Used to be the &quot;Name&quot; --></help>
+        <label><!-- PSD Revision Description --></label>
+        <name>Revision_De__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Number --></label>
+        <name>Revision_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Status Change --></label>
+        <name>Revision_Status_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Status --></label>
+        <name>Revision_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft Layout</masterLabel>
+            <translation><!-- Draft Layout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Design</masterLabel>
+            <translation><!-- In Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resubmitted with Additional Requirements</masterLabel>
+            <translation><!-- Resubmitted with Additional Requirements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold</masterLabel>
+            <translation><!-- Sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shade Model Required --></label>
+        <name>Shade_Model_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- PSD Revisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date Stamps the date the PSD Revision is Submitted --></help>
+        <label><!-- Submitted Date --></label>
+        <name>Submitted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Why Top Priority? --></label>
+        <name>Why_Top_Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- captures the date the status was changed to Working Design or Draft Layout. Used for Lead and Process Time reporting --></help>
+        <label><!-- Working Design Date --></label>
+        <name>Working_Design_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Due Date cannot be edited after the design is accepted. --></errorMessage>
+        <name>Due_Date_Accepted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Default Revision Status for a new PSD Revisions must be Submitted --></errorMessage>
+        <name>New_PSD_REvision_Status_is_Submitted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Process time is required before you can enter a PSD Completion Date. --></errorMessage>
+        <name>Process_Time_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Proposal Level cannot be edited after the design is accepted. --></errorMessage>
+        <name>Proposal_Level_Accepted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter reason why PSD Revision is &quot;Top Priority&quot;.   Top Priority should only be used when it absolutely has to be done by tomorrow. --></errorMessage>
+        <name>Top_Priority_Reason_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Working_Design --></label>
+        <name>Working_Design</name>
+    </webLinks>
+</CustomObjectTranslation>

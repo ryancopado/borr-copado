@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_WEST</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_10_A1</name>
+        <label>West Shortlisted Alert</label>
+        <locationX>1000</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_WEST</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myRule_10_A2</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_EAST</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_4_A1</name>
+        <label>East Division Shortlisted Alert</label>
+        <locationX>400</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_EAST</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myRule_4_A2</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_NY</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_6_A1</name>
+        <label>NY Division Shortlisted Alert</label>
+        <locationX>600</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_NY</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myRule_6_A2</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_WDG</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_8_A1</name>
+        <label>WDG Shortlisted Alert</label>
+        <locationX>800</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_Sales_that_Oppty_has_moved_to_Shorlisted_Interviews_WDG</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myRule_8_A2</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_pmetdec</targetReference>
+            </connector>
+            <label>Stamp Shortlist Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision3</name>
+        <label>myDecision3</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_4</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_pmetdec</targetReference>
+            </connector>
+            <label>East Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision5</name>
+        <label>myDecision5</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision7</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_6</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_6</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_6_pmetdec</targetReference>
+            </connector>
+            <label>NY Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision7</name>
+        <label>myDecision7</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision9</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_8</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_8</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_8_pmetdec</targetReference>
+            </connector>
+            <label>WDG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision9</name>
+        <label>myDecision9</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_10</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_10</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_10_pmetdec</targetReference>
+            </connector>
+            <label>West Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_10_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1000</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_10_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_10_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_10_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_10_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_10_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_1_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_1_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_1_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision3</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_4_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>400</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_4_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_4_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_4_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_6_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>600</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_6_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_6_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_6_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_6_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_6_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_8_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>800</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_8_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_8_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_8_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_8_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_8_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <description>performs field updates and email notifications upon stage changing to Shortlisted</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>TODAY()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_9548967937</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.StageName} , &quot;Shortlisted/Interviews&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;West&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_10</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;West&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_current.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;West&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_10_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;West&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_old.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_old.StageName} , &quot;Shortlisted/Interviews&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+OR( [Opportunity].Opportunity_Owner_Division__c = &quot;East&quot;,
+        [Opportunity].Opportunity_Owner_Division__c = &quot;New England&quot;),
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ,
+[Opportunity].RecordTypeId = &quot;012340000007kaFAAQ&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_4</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+OR( {!myVariable_current.Opportunity_Owner_Division__c} = &quot;East&quot;,
+        {!myVariable_current.Opportunity_Owner_Division__c} = &quot;New England&quot;),
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ,
+{!myVariable_current.RecordTypeId} = &quot;012340000007kaFAAQ&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+OR( [Opportunity].Opportunity_Owner_Division__c = &quot;East&quot;,
+        [Opportunity].Opportunity_Owner_Division__c = &quot;New England&quot;),
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ,
+[Opportunity].RecordTypeId = &quot;012340000007kaFAAQ&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_4_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+OR( {!myVariable_old.Opportunity_Owner_Division__c} = &quot;East&quot;,
+        {!myVariable_old.Opportunity_Owner_Division__c} = &quot;New England&quot;),
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ,
+{!myVariable_old.RecordTypeId} = &quot;012340000007kaFAAQ&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;New York&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_6</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;New York&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_current.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;New York&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_6_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;New York&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_old.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;WDG&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_8</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;WDG&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_current.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Shortlisted/Interviews&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;WDG&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot;,
+[Opportunity].RecordTypeId =&quot;012340000007kaFAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_8_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Shortlisted/Interviews&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;WDG&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot;,
+{!myVariable_old.RecordTypeId} =&quot;012340000007kaFAAQ&quot; ))</expression>
+    </formulas>
+    <interviewLabel>Opportunity_Stage_Shortlisted-2_InterviewLabel</interviewLabel>
+    <label>Opportunity Stage Shortlisted</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Opportunity</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_10_A2</name>
+        <label>Shortlisted Checkbox</label>
+        <locationX>1000</locationX>
+        <locationY>300</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Shortlisted</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Shortlisted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Shortlist Date = Today</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Shortlist Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Shortlist_Date__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_9548967937</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_4_A2</name>
+        <label>Shortlisted Checkbox</label>
+        <locationX>400</locationX>
+        <locationY>300</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Shortlisted</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Shortlisted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_6_A2</name>
+        <label>Shortlisted Checkbox</label>
+        <locationX>600</locationX>
+        <locationY>300</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Shortlisted</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Shortlisted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Opportunity]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_8_A2</name>
+        <label>Shortlisted Checkbox</label>
+        <locationX>800</locationX>
+        <locationY>300</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Shortlisted</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Shortlisted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

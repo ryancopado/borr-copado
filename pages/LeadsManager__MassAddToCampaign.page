@@ -1,0 +1,79 @@
+<apex:page Controller="LeadsManager.AddToCampaign" tabStyle="Campaign">
+    <apex:sectionHeader title="Campaign" subtitle="Add To Campaign" />
+
+    <style>
+        .pbTitle {
+            display: inline;
+            color: black !important;
+        }
+        .bPageBlock {
+            border: 0 !important;
+        }
+        .pbButtonb {
+            float: right;
+        }
+        .pbBottomButtons {
+            width: 100%
+        }
+        .bWizardBlock fieldset {
+            background: #f8f8f8 none;
+            border: none;
+            padding-top: 0px;
+            padding-left: 0px;
+            margin-left: 0px;
+        }
+    </style>
+    <apex:form >
+        <div class="bWizardBlock tertiaryPalette" style=" height: 300px;background:#f8f8f8 none;">
+            <div class="pbWizardTitle tertiaryPalette brandTertiaryBgr">
+                <div class="ptRightTitle">
+                    Step 1 of 2
+                </div>
+                <h2>
+                Step 1. Select a campaign and member status
+            </h2>
+            </div>
+            <apex:pageBlock >
+                <apex:outputText >Select a campaign, and a desired member status. To create a new campaign, you must exit this process.</apex:outputText>
+                <apex:pageBlockSection columns="1">
+                    <apex:panelGrid columns="3" style="margin-left:115px;">
+                        <apex:outputText style="margin-right:10px">Campaign:</apex:outputText>
+                        <apex:inputText id="CampaignName" value="{!CampaginName}" onchange="refreshlist();" />
+                        <apex:image url="/s.gif" alt="Lookup (New Window)" styleClass="lookupIcon" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" onclick="javascript:showLookup('j_id0:j_id3:j_id5:j_id8:CampaignName','701')"
+                        title="Lookup (New Window)" />
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="margin-left:90px;" width="280px">
+                        <apex:outputLabel value=" Member Status:" />
+                        <apex:selectList style="width:150px;" id="existingMemberOp" value="{!Statuses}" size="1">
+                            <apex:selectOptions value="{!options}" />
+                        </apex:selectList>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="margin-left:73px;" width="400px">
+                        <apex:outputLabel value="Existing Members :" />
+                        <apex:selectRadio value="{!ExistingMemberOption}" layout="pageDirection" style="float:left">
+                            <apex:selectOptions value="{!items}" />
+                        </apex:selectRadio>
+                    </apex:panelGrid>
+                    <apex:inputHidden id="CampaignName_lkid" value="{!lookupCampaignID}" />
+                    <apex:inputHidden id="CampaignName_lkold" value="{!lookupCampaignNameForOld}" />
+
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom" id="btns">
+                    <apex:commandButton id="btnAddCampaign" action="{!addCampaign}" value="Add to Campaign" />
+                    <apex:commandButton action="{!Cancel}" value="Cancel" />
+                </apex:pageBlockButtons>
+                <apex:actionFunction id="refreshlist" name="refreshlist" action="{!getRefreshList}" reRender="existingMemberOp" />
+            </apex:pageBlock>
+        </div>
+    </apex:form>
+    <script>
+        var x = document.getElementById("j_id0:j_id3:j_id5:j_id8:existingMemberOp");
+        x.setAttribute("disabled", "disabled");
+        x.setAttribute("style", "background:#ebebe4 none;width:150px");
+    </script>
+    <script>
+        function showLookup(ctrlID, objKeyPrefix) {
+            openLookup("/_ui/common/data/LookupPage?lkfm=editPage&lknm=" + ctrlID + "&lktp=" + objKeyPrefix, 500);
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$New_Design_Note__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Overall_Project_Size_Watts_STC__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Project_Kickoff_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test,Tezt</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,Mid Atlantic,Southeast,Midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>esd</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Sites__r$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>site 2,site 3,site 4,site 5</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Sites__r$Design_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Site Use Permit Set,50% Set</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Sites__r$Development_SDE__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>brandon taylor,john lagasse,tim lee,katlyn lawver,emily field,bruce soloyna,ryan stair</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>shepards park,117 bliss,grooms road,138 brick</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Dev Eng projects for 7c Tracker - All</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Sites_and_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Sites__r$Project_Kickoff_Date_editable__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

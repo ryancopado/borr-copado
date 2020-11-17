@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>create, edit status on CC Submittals for Project Kickoff</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contract_Committee_Submittal__c.Outstanding_Issues__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contract_Committee_Submittal__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Contracts Committee Project Kickoff CRE</label>
+    <license>Salesforce</license>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Contract_Committee_Submittal__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <recordTypeVisibilities>
+        <recordType>Contract_Committee_Submittal__c.Project_Kickoff_Approval</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

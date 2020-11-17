@@ -1,0 +1,270 @@
+<apex:page controller="AcctSeed.BankReconciliationPDFReport" title="Report | Accounting Seed"
+           sidebar="false" applyBodyTag="false"
+           applyHtmlTag="false" showheader="false" readOnly="true" standardStylesheets="false" renderAs="pdf">
+
+    <html>
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                @top-right {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+                margin-top:100px;
+            }
+            
+            div.header {
+                position: running(header);
+                text-align: center;
+            }
+
+            div.error span {
+                color: red;
+            }
+            
+            div.content {
+                position: relative;
+            }
+            
+            div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+            }
+            
+            .pagenumber:before {
+                content: counter(page);
+            }
+            
+            .pagecount:before {
+                content: counter(pages);
+            }
+            
+            body {
+                font-family: "Arial""Sans-Serif";
+                font-size: 12px;
+                margin: 0px;
+            }
+            
+            .tableHeader {
+                font-weight: bold;
+                background-color: #DADADA;
+                height: 20px;
+            }
+            
+            .columnHeader {
+                text-align: right;
+            }
+            
+            .tableRow {
+                border-bottom: 3px solid #DADADA;
+            }
+            
+            .pageBreakBefore {
+                page-break-before: always;
+            }
+            
+            .label {
+                font-weight: bold;
+            }
+            
+            .align-right {
+                text-align: right;
+            }
+            .nowrap {
+                white-space:nowrap;
+            }
+        </style>
+    </head>
+
+    <body>
+        <apex:outputPanel layout="block" rendered="{!isError}">
+            <div class="error">
+                <span>{!errorMessage}</span>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel layout="block" rendered="{!NOT(isError)}">
+            <div class="header">
+                <h3>{!$Organization.Name} Bank Reconciliation Cleared Transactions Report for&nbsp;<apex:outputText value="{!bankRec.Bank_Account__r.Name}" /></h3>
+            </div>
+            <table cellpadding="6" style="width:100%">
+                <tr>
+                    <td class="label">Bank Reconciliation Name</td>
+                    <td>
+                        <apex:outputField value="{!bankRec.Name}" />
+                    </td>
+                    <td class="label">Currency</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!currencyIsoCode}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Start Date</td>
+                    <td>
+                        <apex:outputField value="{!bankRec.AcctSeed__Start_Date__c}" />
+                    </td>
+                    <td class="label">Beginning Balance</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!beginningBalance}" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="label">End Date</td>
+                    <td>
+                        <apex:outputField value="{!bankRec.AcctSeed__End_Date__c}" />
+                    </td>
+                    <td class="label">Cleared Deposits</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!clearedDepositsString}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Ledger</td>
+                    <td>
+                        <apex:outputText value="{!bankRec.Ledger__r.Name}" />
+                    </td>
+                    <td class="label">Cleared Disbursements</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!clearedDisbursementsString}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Bank Account</td>
+                    <td>
+                        <apex:outputText value="{!bankRec.Bank_Account__r.Name}" />
+                    </td>
+                    <td class="label">Calculated Ending Balance</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!calculatedEndingBalance}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Report Created Date</td>
+                    <td>
+                        <apex:outputField value="{!bankRecDate.AcctSeed__Start_Date__c}"/>
+                    </td>
+                    <td class="label">Ending Balance</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!endingBalance}" />
+                    </td>
+                </tr>
+                <tr>
+                    <apex:outputPanel rendered="{!(ISBLANK(GLVariable1))}" layout="none">
+                        <td class="label"></td>
+                        <td>
+                            <apex:outputText />
+                        </td>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!NOT(ISBLANK(GLVariable1))}" layout="none">
+                        <td class="label">{!$ObjectType.AcctSeed__Bank_Reconciliation2__c.fields.AcctSeed__GL_Account_Variable_1__c.label}</td>
+                        <td>
+                            <apex:outputText value="{!GLVariable1}" />
+                        </td>
+                    </apex:outputPanel>
+                    <td class="label">Ending Balance Difference</td>
+                    <td class="align-right">
+                        <apex:outputText value="{!endingBalanceDifference}" />
+                    </td>
+                </tr>
+                <apex:outputPanel rendered="{!NOT(ISBLANK(GLVariable2))}" layout="none">
+                    <tr>
+                        <td class="label">{!$ObjectType.AcctSeed__Bank_Reconciliation2__c.fields.AcctSeed__GL_Account_Variable_2__c.label}</td>
+                        <td>
+                            <apex:outputText value="{!GLVariable2}" />
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!NOT(ISBLANK(GLVariable3))}" layout="none">
+                    <tr>
+                        <td class="label">{!$ObjectType.AcctSeed__Bank_Reconciliation2__c.fields.AcctSeed__GL_Account_Variable_3__c.label}</td>
+                        <td>
+                            <apex:outputText value="{!GLVariable3}" />
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!NOT(ISBLANK(GLVariable4))}" layout="none">
+                    <tr>
+                        <td class="label">{!$ObjectType.AcctSeed__Bank_Reconciliation2__c.fields.AcctSeed__GL_Account_Variable_4__c.label}</td>
+                        <td>
+                            <apex:outputText value="{!GLVariable4}" />
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+            </table>
+            <div class="footer">
+                <div>Page&nbsp;<span class="pagenumber" />&nbsp;of&nbsp;<span class="pagecount" />
+                </div>
+            </div>
+            <div class="content">
+                <br/>
+                <apex:outputPanel rendered="{!clearedDeposits.size>0}">
+                    <div>
+                        <apex:outputPanel rendered="{!clearedDeposits.size>0}">
+                            <h3>Cleared Deposits - {!clearedDeposits.size}</h3>
+                        </apex:outputPanel>
+                        <apex:dataTable width="100%" cellpadding="6" columnClasses="tableRow" headerClass="tableHeader"
+                                        value="{!clearedDeposits}" var="item" rendered="{!clearedDeposits.size>0}">
+                            <apex:column headerValue="Name" value="{!item.name}">
+                                <apex:facet name="footer">
+                                    <apex:outputText styleClass="label" value="Cleared Deposits Total" />
+                                </apex:facet>
+                            </apex:column>
+                            <apex:column headerValue="Customer/Vendor" value="{!item.accountName}" />
+                            <apex:column headerValue="Reference" value="{!item.reference}"/>
+                            <apex:column headerValue="Date">
+                                <apex:outputField value="{!item.cr.AcctSeed__Receipt_Date__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Cleared Date">
+                                <apex:outputText value="{!item.clearedDate}"/>
+                            </apex:column>
+                            <apex:column styleClass="align-right nowrap" footerClass="align-right" headerClass="align-right" headerValue="Amount">
+                                <apex:outputText value="{!item.AmountString}"/>
+                                <apex:facet name="footer">
+                                    <apex:outputPanel styleClass="nowrap">
+                                        <apex:outputText value="{!clearedDepositsString}" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                            </apex:column>
+                        </apex:dataTable>
+                    </div>
+                </apex:outputPanel>
+                <br/>
+                <apex:outputPanel rendered="{!clearedDisbursements.size>0}">
+                    <div class="pageBreakBefore">
+                        <apex:outputPanel rendered="{!clearedDisbursements.size>0}">
+                            <h3>Cleared Disbursements - {!clearedDisbursements.size}</h3>
+                        </apex:outputPanel>
+                        <apex:dataTable width="100%" cellpadding="6" columnClasses="tableRow" headerClass="tableHeader"
+                                        value="{!clearedDisbursements}" var="item" rendered="{!clearedDisbursements.size>0}">
+                            <apex:column headerValue="Name" value="{!item.name}">
+                                <apex:facet name="footer">
+                                    <apex:outputText styleClass="label" value="Cleared Disbursements Total" />
+                                </apex:facet>
+                            </apex:column>
+                            <apex:column headerValue="Customer/Vendor" value="{!item.accountName}" />
+                            <apex:column headerValue="Reference" value="{!item.reference}" />
+                            <apex:column headerValue="Date">
+                                <apex:outputField value="{!item.cr.AcctSeed__Receipt_Date__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Cleared Date">
+                                <apex:outputText value="{!item.clearedDate}"/>
+                            </apex:column>
+                            <apex:column styleClass="align-right nowrap" footerClass="align-right" headerClass="align-right" headerValue="Amount">
+                                <apex:outputText value="{!item.AmountString}"/>
+                                <apex:facet name="footer">
+                                    <apex:outputPanel styleClass="nowrap">
+                                        <apex:outputText value="{!clearedDisbursementsString}" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                            </apex:column>
+                        </apex:dataTable>
+                    </div>
+                </apex:outputPanel>
+            </div>
+        </apex:outputPanel>
+    </body>
+    </html>
+</apex:page>

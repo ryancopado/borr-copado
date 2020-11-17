@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Job Applicant or Customer</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.PostalCode</field>
+                <operation>startsWith</operation>
+                <value>,94,95,96,97,98</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Marked_as_Spam__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Employment Applicant,Affirmative Action</value>
+            </criteriaItems>
+            <senderEmail>acain@borregosolar.com</senderEmail>
+            <senderName>Amanda Cain</senderName>
+            <template>X1_Lead_Management/LeadsWebtoLeademailresponse</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.PostalCode</field>
+                <operation>startsWith</operation>
+                <value>90,91,92,93,0,1,2,3,4,5,6,7,8</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Marked_as_Spam__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Employment Applicant,Affirmative Action</value>
+            </criteriaItems>
+            <senderEmail>acain@borregosolar.com</senderEmail>
+            <senderName>Amanda Cain</senderName>
+            <template>X1_Lead_Management/LeadsWebtoLeademailresponse</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Employment Applicant</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Marked_as_Spam__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <senderEmail>peopleandculture@borregosolar.com</senderEmail>
+            <senderName>People &amp; Culture</senderName>
+            <template>X1_Lead_Management/Web_to_Lead_Employment_Applicant</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Production Modeling</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Production Modeling</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter any further losses to apply to the annual energy generation, e.g.: estimate of shading losses. --></help>
+        <label><!-- Additional Derating Loss (%) --></label>
+        <name>Additional_Derating_Loss__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Production (MWh) --></label>
+        <name>Annual_Production_MWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Production (kWh) --></label>
+        <name>Annual_Production_MWh_formula__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports --></help>
+        <label><!-- Apps Engineer Logged in --></label>
+        <name>Apps_Engineer_Logged_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- pull0s email address from assigned apps engineer field on related opportunity --></help>
+        <label><!-- Assigned Apps Engineer Email --></label>
+        <name>Assigned_Apps_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in WF to cancel Request for Production Model --></help>
+        <label><!-- Cancel Request --></label>
+        <name>Cancel_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record changes made since previous approved model on Salesforce.  &quot;Equipment&quot; refers to anything that impacts production such as modules, inverters, transformers and storage capacity. --></help>
+        <label><!-- Change in Site Layout/Shading/Equipment? --></label>
+        <name>Change_in_Site_Layout_Shading_Equipment__c</name>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Contact Bradley if you think Person Responsible should be able to self approve production models. --></help>
+        <label><!-- Cleared to Approve Production Models --></label>
+        <name>Cleared_to_Approve_Production_Models__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates request for production modeling has been completed --></help>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract --></label>
+        <name>Contract_del__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The most recently approved weather station. --></help>
+        <label><!-- Current Approved Weather Station --></label>
+        <name>Current_Approved_Weather_Station__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Contract Price (from Opp) --></label>
+        <name>Current_Contract_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps when completed check-box is checked off --></help>
+        <label><!-- Date Completed --></label>
+        <name>Date_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Created for Workflows --></label>
+        <name>Date_Created_for_Workflows__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Needed By --></label>
+        <name>Date_Needed_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps when request is submitted initially (not for approval) --></help>
+        <label><!-- Date Submitted --></label>
+        <name>Date_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of calendar days between Date Submitted and Date Completed. If not complete it uses TODAY - Date Submitted. --></help>
+        <label><!-- Days Open --></label>
+        <name>Days_Open__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the degree of certainty that this is the final design, ie: 20%, 80%, etc --></help>
+        <label><!-- Degree of Certainty --></label>
+        <name>Degree_of_Certainty__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70%</masterLabel>
+            <translation><!-- 70% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90%</masterLabel>
+            <translation><!-- 90% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description of Other Modelling Stage --></label>
+        <name>Description_of_Other_Modelling_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the link to the PSD you are referencing --></help>
+        <label><!-- Design Link --></label>
+        <name>Design_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project record Design Stage value at Production Modeling record creation time.  Automatically set. --></help>
+        <label><!-- Design Stage --></label>
+        <name>Design_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a link to the Design Tool here --></help>
+        <label><!-- Design Tool Link --></label>
+        <name>Design_Tool_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC Price $/watt --></label>
+        <name>EPC_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Opportunity --></help>
+        <label><!-- ESS AC or DC? --></label>
+        <name>ESS_AC_or_DC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the project have AC or DC energy storage --></help>
+        <label><!-- ESS --></label>
+        <name>ESS__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Expected date of completion by person responsible --></help>
+        <label><!-- Expected Completion Date --></label>
+        <name>Expected_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Proposal --></label>
+        <name>Final_Proposal__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings over the value in this field from the opportunity when production modeling request was created --></help>
+        <label><!-- Financing Source --></label>
+        <name>Financing_Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Link to Helioscope Project, the live project in Helioscope not the printed report --></help>
+        <label><!-- Helioscope Project Link --></label>
+        <name>Helioscope_Project_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Make sure horizon profile e is created from the precise site location. --></help>
+        <label><!-- Horizon Profile Included? --></label>
+        <name>Horizon_Profile_Included__c</name>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is used to check action is taken from approval process or any DML operation in trigger. --></help>
+        <label><!-- Is Submitted For Approval --></label>
+        <name>IsSubmittedForApproval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply. --></help>
+        <label><!-- Model Based On? --></label>
+        <name>Model_Based_On__c</name>
+        <picklistValues>
+            <masterLabel>Feedback from project personnel</masterLabel>
+            <translation><!-- Feedback from project personnel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record drawing set</masterLabel>
+            <translation><!-- Record drawing set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redlines</masterLabel>
+            <translation><!-- Redlines --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of times the array will be washed annually, ensure that O&amp;M pricing reflects this. --></help>
+        <label><!-- Number of Washings --></label>
+        <name>Number_of_Washings__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates if the records meets the necessary criteria to be submitted for approval --></help>
+        <label><!-- OK to Submit --></label>
+        <name>OKtoSubmit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Production Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PSD Revision Link --></label>
+        <name>PSD_Revision_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the PSD Revision that is related to the production model. --></help>
+        <label><!-- PSD Revision --></label>
+        <name>PSD_Revision__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the percentage of downtime modeled. --></help>
+        <label><!-- Percent of Downtime Modeled --></label>
+        <name>Percent_of_Downtime_Modeled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter link to performance model report on Box folder for the project. --></help>
+        <label><!-- Performance Model Report --></label>
+        <name>Performance_Model_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the person you would like to perform the modeling --></help>
+        <label><!-- Person Responsible --></label>
+        <name>Person_Responsible__c</name>
+        <relationshipLabel><!-- Production Modeling (Person Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If the potential reduction in specific yield exceeds 1%, enter the reasons for the reduction, i.e., weather station selection. --></help>
+        <label><!-- Potential Reduction Reasons --></label>
+        <name>Potential_Reduction_Reasons__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the potential reduction in specific yield if modeling assumptions end up being a worst case. --></help>
+        <label><!-- Potential Reduction in Yield (%) --></label>
+        <name>Potential_Reduction_in_Yield__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Sales Design --></label>
+        <name>Pre_Sales_Design__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter in quarter hours - time taken to complete Production Model --></help>
+        <label><!-- Process Time --></label>
+        <name>Process_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings over the value from the opportunity field upon creation of the request --></help>
+        <label><!-- Production Guarantee Included --></label>
+        <name>Production_Guarantee_Included__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the production modeling stage. --></help>
+        <label><!-- Production Modeling Stage --></label>
+        <name>Production_Modeling_Stage__c</name>
+        <picklistValues>
+            <masterLabel>50% Design</masterLabel>
+            <translation><!-- 50% Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFR</masterLabel>
+            <translation><!-- CD IFR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guarantee model</masterLabel>
+            <translation><!-- Guarantee model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Test</masterLabel>
+            <translation><!-- Performance Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Drawing</masterLabel>
+            <translation><!-- Record Drawing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Production Modeling (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the annual production in MWh from the production model, note that specified downtime will be applied to this number. --></help>
+        <label><!-- Raw Annual Production (MWhs) --></label>
+        <name>Raw_Annual_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- this is required whenever the request is not for a new model --></help>
+        <label><!-- Reason for Change --></label>
+        <name>Reason_for_Change__c</name>
+    </fields>
+    <fields>
+        <help><!-- include specifics about the request --></help>
+        <label><!-- Request Notes --></label>
+        <name>Request_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows status of the request itself not the actual completed production model --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>New Model</masterLabel>
+            <translation><!-- New Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Equipment</masterLabel>
+            <translation><!-- Update Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Layout</masterLabel>
+            <translation><!-- Update Layout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>Requester__c</name>
+        <relationshipLabel><!-- Production Modeling (Requester) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site City --></label>
+        <name>SiteCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the Box link to the Snow and/or Soiling Calculator used to complete the model,  enter N/A or per Design Tool as applicable --></help>
+        <label><!-- Snow/Soiling Loss Calculator Link --></label>
+        <name>Snow_Soiling_Loss_Calculator_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software --></label>
+        <name>Software__c</name>
+        <picklistValues>
+            <masterLabel>Helioscope</masterLabel>
+            <translation><!-- Helioscope --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PvSyst 5</masterLabel>
+            <translation><!-- PvSyst 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PvSyst 6</masterLabel>
+            <translation><!-- PvSyst 6 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Specific Yield RH --></label>
+        <name>Specific_Yield_RH__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Yield ( kWh/kWp ) --></label>
+        <name>Specific_Yield_kWh_kWp2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Yield (kWh/kWp) --></label>
+        <name>Specific_Yield_kWh_kWp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the Buyer/Owner&apos;s Account for which the model is to be run. If the Buyer/Owner is not yet identified, select the Borrego Solar account. --></help>
+        <label><!-- Standards --></label>
+        <name>Standards__c</name>
+        <relationshipLabel><!-- Production Modeling --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Approved</masterLabel>
+            <translation><!-- Current Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previously Approved</masterLabel>
+            <translation><!-- Previously Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the system rating in STC DC Watts. --></help>
+        <label><!-- System Size (W) --></label>
+        <name>System_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size (from Opp) --></label>
+        <name>System_Size_from_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size from Opportunity --></label>
+        <name>System_Size_from_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Source for Tree heights/Shade object heights (attach document if applicable) --></help>
+        <label><!-- Tree/Shade Object Height Source? --></label>
+        <name>Tree_Shade_Object_Height_Source__c</name>
+        <picklistValues>
+            <masterLabel>Aerial Imagery</masterLabel>
+            <translation><!-- Aerial Imagery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Survey</masterLabel>
+            <translation><!-- Site Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Walk Verification</masterLabel>
+            <translation><!-- Site Walk Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wetlands Delineation</masterLabel>
+            <translation><!-- Wetlands Delineation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pre-GW revolution committed deals where MIPA and EPC are signed simultaneously --></help>
+        <label><!-- Turnkey/Pre-GW revolution committed deal --></label>
+        <name>Turnkey__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If deviating from the original weather station please use this field to note the details. --></help>
+        <label><!-- Weather Station Notes --></label>
+        <name>Weather_Station_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weather Station Used --></label>
+        <name>Weather_Station_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Production Modeling Request cannot be edited after the request has been submitted or completed. To update the Production Modeling, clone this record and re-submit. --></errorMessage>
+        <name>Cannot_Change_Fields_after_Submitted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill out Date Needed By before saving. --></errorMessage>
+        <name>Date_Needed_By</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Design Link is required in order to submit your request if you are submitted --></errorMessage>
+        <name>Production_Model_Design_Link_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If your request is not for a new model please provide details about your request in the reason for change field. --></errorMessage>
+        <name>Requires_Reason_for_Change_when_not_new</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the System Size in watts --></errorMessage>
+        <name>Watts_Validation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Cancel_Request --></label>
+        <name>Cancel_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_Request --></label>
+        <name>Submit_Request</name>
+    </webLinks>
+</CustomObjectTranslation>

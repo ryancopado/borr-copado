@@ -1,0 +1,187 @@
+<apex:page id="OpportunitySalesTax" title="Sales Tax | Accounting Seed" standardController="Opportunity" extensions="AcctSeed.OpportunitySalesTax,AcctSeed.EnvironmentUtils" lightningStylesheets="true" action="{!init}">
+
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/common.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/jquery.dataTables.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/tax-intermediate-screen.css')}" />
+    <apex:variable var="customLEX" value="customLEXOn" rendered="{!$User.UIThemeDisplayed = 'Theme4d' || $User.UIThemeDisplayed = 'Theme4u'}">
+        <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/visualforce-lex-ext.css')}" />
+    </apex:variable>
+
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-common.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-currency.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/tax-intermediate-screen.js')}" loadOnReady="true"/>
+    <script type="text/javascript">
+        AcctSeed.ASModule.defaultLocale = "{!JSENCODE(DefaultLocale)}";
+        AcctSeed.ASModule.defaultCurrency = "{!JSENCODE(DefaultCurrency)}";
+        AcctSeed.ASModule.isMultiCurrencyEnabled = "{!JSENCODE(IF(isMultiCurrencyEnabled, 'true', 'false'))}";
+        AcctSeed.ASModule.currencyIsoCode = "{!JSENCODE(currencyIsoCode)}";
+    </script>
+
+    <apex:form id="theForm">
+        <apex:sectionHeader title="{!$ObjectType.Opportunity.labelPlural}"
+                            subtitle="{!IF(!isHeaderLevelPostEnabled, $ObjectType.Opportunity.labelPlural + ' Sales', 'Estimated/Calculated')} Tax" />
+        <apex:pageBlock >
+            <apex:pageMessages escape="false"/>
+            <apex:pageBlockButtons >
+                <apex:actionStatus id="saveStatus"
+                                   onstart="AcctSeed.ASModule.disableButtons('Processing...')"/>
+                <apex:commandButton action="{!save}"
+                                    value="Calc Tax"
+                                    status="saveStatus"
+                                    rendered="{!isValidationPassed}"
+                                    reRender="theForm"/>
+                <apex:commandButton action="/{!Opportunity.Id}"
+                                    value="Back"/>
+            </apex:pageBlockButtons>
+            <!-- ================= LINE LEVEL POSTING MODE ===================================== -->
+            <apex:dataTable id="taxTable" styleClass="display" value="{!taxTableData}" var="taxData"
+                            rendered="{!AND(isTaxableProductsExisted, isValidationPassed, !isHeaderLevelPostEnabled)}" style="visibility:hidden" >
+                <apex:facet name="header">{!$ObjectType.Opportunity.labelPlural} Sales Tax</apex:facet>
+
+                <apex:column headerValue="Tax Rate Name">
+                    <div class="child">
+                        <apex:outputLink value="/{!taxData.taxRateId}" target="_blank" >
+                            {!taxData.taxRateName}
+                        </apex:outputLink>
+                    </div>
+                </apex:column>
+
+                <apex:column headerValue="{!$ObjectType.OpportunityLineItem.label}">
+                    <apex:repeat value="{!taxData.linesNames}" var="lineData" >
+                        <div class="child">
+                            <apex:outputLink value="/{!lineData}" target="_blank" >
+                                {!taxData.linesNames[lineData]}
+                            </apex:outputLink>
+                        </div>
+                    </apex:repeat>
+                </apex:column>
+
+                <apex:column headerValue="Taxable Product">
+                    <apex:repeat value="{!taxData.taxableProducts}" var="lineData" >
+                        <div class="child">
+                            <apex:repeat value="{!taxData.taxableProducts[lineData]}" var="line" >
+                                <apex:outputLink value="/{!line}" target="_blank" >
+                                    {!taxData.taxableProducts[lineData][line]}
+                                </apex:outputLink>
+                            </apex:repeat>
+                        </div>
+                    </apex:repeat>
+                </apex:column>
+
+                <apex:column headerValue="Amount">
+                    <div class="align">
+                        <apex:repeat value="{!taxData.amount}" var="lineData">
+                            <div class="child">
+                                <apex:outputText id="Amounts" value="{!taxData.amount[lineData]}" />
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </apex:column>
+
+                <apex:column headerValue="Tax Rate %">
+                    <apex:repeat value="{!taxData.taxableProducts}" var="lineData" >
+                        <div class="child">
+                            <apex:outputText id="TaxRate" value="{!taxData.taxRate}" />
+                        </div>
+                    </apex:repeat>
+                </apex:column>
+
+                <apex:column headerValue="Tax Amount" id="amountPosition">
+                    <div class="align">
+                        <apex:repeat value="{!taxData.taxAmount}" var="lineData">
+                            <div class="child">
+                                <apex:outputText id="Amount" value="{!taxData.taxAmount[lineData]}" />
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </apex:column>
+
+                <apex:column breakBefore="true" colspan="6">
+                    <div class="parent" style="justify-content: flex-end; display: flex;">
+                        <apex:outputText value="{!taxData.taxTotalName}"/>
+                        <div class="setBlockPosition">
+                            <div class="align">
+                                <apex:outputText id="Amounts" value="{!taxData.taxAmountTotal}"/>
+                            </div>
+                        </div>
+                    </div>
+                </apex:column>
+
+            </apex:dataTable>
+
+        <!-- ================= HEADER LEVEL POSTING MODE ===================================== -->
+            <apex:pageBlockSection id="HlTaxTable"
+                                   title="Opportunity"
+                                   collapsible="false"
+                                   columns="2"
+                                   rendered="{!AND(isHeaderLevelPostEnabled, isValidationPassed)}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer" />
+                    <apex:outputField value="{!hlpOpportunityDataWrapper.opportunity.Account.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Sub-Total" />
+                    <apex:outputText id="oppAmounts" value="{!hlpOpportunityDataWrapper.opportunity.Amount}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Opportunity" />
+                    <apex:outputField value="{!hlpOpportunityDataWrapper.opportunity.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Estimated Tax Amount" />
+                    <apex:outputText id="oppTaxAmounts" value="{!hlpOpportunityDataWrapper.opportunity.AcctSeed__Tax_Amount__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Estimated Total" />
+                    <apex:outputText id="oppTotalAmounts" value="{!hlpOpportunityDataWrapper.EstimatedTotal}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Product Lines"
+                                   collapsible="false"
+                                   columns="1"
+                                   rendered="{!AND(isHeaderLevelPostEnabled, isValidationPassed)}">
+                <apex:pageBlockTable value="{!hlpOpportunityDataWrapper.opportunityLineItems}" var="line" width="100%">
+                    <apex:column headerValue="Product">
+                        <apex:outputField value="{!line.opportunityLineItem.PriceBookEntry.Product2.Name}"/>
+                    </apex:column>
+                    <apex:column headerClass="align-right"
+                                 styleClass="align-right"
+                                 headerValue="{!$ObjectType.OpportunityLineItem.fields.Quantity.Label}">
+                        <apex:outputField value="{!line.opportunityLineItem.Quantity}" />
+                    </apex:column>
+                    <apex:column headerClass="align-right"
+                                 styleClass="align-right"
+                                 headerValue="{!$ObjectType.OpportunityLineItem.fields.UnitPrice.Label}">
+                        <apex:outputText id="lineAmounts" value="{!line.opportunityLineItem.UnitPrice}" />
+                    </apex:column>
+                    <apex:column headerValue="Discount" headerClass="align-right" styleClass="align-right" rendered="{!showDiscount}">
+                        <apex:outputText id="lineDiscountAmounts" value="{!line.LineDiscountAmount}"/>
+                    </apex:column>
+                    <apex:column headerClass="align-right"
+                                 styleClass="align-right"
+                                 headerValue="Subtotal">
+                        <apex:outputText id="lineSubTotalAmounts" value="{!line.LineSubTotal}" />
+                    </apex:column>
+                    <apex:column headerClass="padding-left"  styleClass="padding-left" headerValue="{!$ObjectType.OpportunityLineItem.fields.AcctSeed__Tax_Group__c.Label}">
+                        <apex:outputField value="{!line.opportunityLineItem.AcctSeed__Tax_Group__c}" />
+                    </apex:column>
+                    <apex:column headerClass="align-right"
+                                 styleClass="align-right"
+                                 headerValue="Estimated Tax Amount">
+                        <apex:outputText id="lineTaxAmounts" value="{!line.opportunityLineItem.AcctSeed__Tax_Amount__c}" />
+                    </apex:column>
+                    <apex:column headerClass="align-right"
+                                 styleClass="align-right"
+                                 headerValue="Estimated Total">
+                        <apex:outputText id="lineTotalAmounts" value="{!line.LineTotal}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Reports</value>
+    </caseValues>
+    <fields>
+        <help><!-- auto fills with user from related Issue Tracker To Borrego Approver, used in conjunction with Approval Process and LH --></help>
+        <label><!-- Assigned to: --></label>
+        <name>Assigned_to__c</name>
+        <relationshipLabel><!-- Test Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the date the Test Report request was received from the field. --></help>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawing Refererence --></label>
+        <name>Drawing_Refererence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Issue Tracker number associated this Test Report --></help>
+        <label><!-- Issue Tracker --></label>
+        <name>Issue_Tracker__c</name>
+        <relationshipLabel><!-- Test Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this section to add detailed notes regarding the Test Report --></help>
+        <label><!-- Notes and Additional Information --></label>
+        <name>Notes_and_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project related to the submittal. --></help>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- updated by trigger to match project on related Issue tracker, hidden field no need to be on layout. --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Test Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The target date that you are asking the approver to respond by --></help>
+        <label><!-- Requested response Date --></label>
+        <name>Requested_response_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The response details to the Test Report submitted from the approver. Must be filled out before the Test Report can be complete --></help>
+        <label><!-- Response --></label>
+        <name>Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Users --></label>
+        <name>Selected_Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- Changes based on the status of the Test Report --></help>
+        <label><!-- Status Highlight --></label>
+        <name>Status_Highlight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to track and manage the status of the submittal --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Pending</masterLabel>
+            <translation><!-- Approval Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved as Corrected</masterLabel>
+            <translation><!-- Approved as Corrected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Approved</masterLabel>
+            <translation><!-- Not Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revise and Submit</masterLabel>
+            <translation><!-- Revise and Submit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

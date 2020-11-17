@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_7576205</developerName>
+        <masterLabel>Balance Sheet</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>FK_$AcctSeed__GL_Account__c.BalSheet_Type__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>01Cash</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>02Accounts Receivable</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>03Accounts Receivable - Inter Company EPC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>04Accounts Receivable - Development Company</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>05Inventory</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>06Cost/Est Earning in Exc of Billing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>07Deferred Costs -ST</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>08Other Receivable</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09Prepaid Expense &amp; Deposits</sourceValue>
+            </sourceValues>
+            <value>CURRENT ASSETS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>10PROPERTY AND EQUIPMENT</sourceValue>
+            </sourceValues>
+            <value>PROPERTY AND EQUIPMENT</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>11Deposits - Facilities</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12Other Receivables</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>13Deferred Costs -LT</sourceValue>
+            </sourceValues>
+            <value>OTHER ASSETS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>14Accounts Payable</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>15Accrued Contract Costs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>16Other Accrued Expenses</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>17Advances from Cus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>18Deferred Revenue -ST</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>19Billing in Exc of Cost/Est Earning</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>20Line of Credit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>21Notes Payable - Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>22Deferred Tax</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>23Notes Payable -Other</sourceValue>
+            </sourceValues>
+            <value>CURRENT LIABILITIES</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>24Deferred Revenue-LT</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>25Accrued Service Costs-LT</sourceValue>
+            </sourceValues>
+            <value>LONG TERM LIABILITIES</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>26COMMON STOCK</sourceValue>
+            </sourceValues>
+            <value>COMMON STOCK</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>27RETAINED EARNINGS</sourceValue>
+            </sourceValues>
+            <value>RETAINED EARNINGS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>28Income Statement</sourceValue>
+            </sourceValues>
+            <value>CURRENT R/E</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c.AcctSeed__Report_Amount__c</field>
+    </columns>
+    <description>This report provides the columns for Balance Sheet transactions with the Grand Total column being the Balance Sheet column</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$AcctSeed__GL_Account__c.AcctSeed__Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Balance Sheet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>2013-01</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c.AcctSeed__Accounting_Year__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_7576205</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$AcctSeed__GL_Account__c.BalSheet_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Quick Balance Sheet</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Transaction__c@AcctSeed__Transaction__c.AcctSeed__GL_Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Transaction__c.AcctSeed__Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

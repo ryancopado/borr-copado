@@ -1,0 +1,2915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Transfer_Received_Less_than_Sent</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_20_A1</name>
+        <label>Email IM Team</label>
+        <locationX>2000</locationX>
+        <locationY>200</locationY>
+        <actionName>ProductTransfer.Transfer_Received_Less_than_Sent</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myDecision21</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Inventory_Requested_En_Route</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>Inventory En Route</label>
+        <locationX>700</locationX>
+        <locationY>200</locationY>
+        <actionName>ProductTransfer.Inventory_Requested_En_Route</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>myDecision8</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_pmetdec</targetReference>
+            </connector>
+            <label>ISNEW() - Return Order</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision12</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_pmetdec</targetReference>
+            </connector>
+            <label>Update PRLI to Partial</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision12</name>
+        <label>myDecision12</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_pmetdec</targetReference>
+            </connector>
+            <label>Return Order Line Transfer Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision14</name>
+        <label>myDecision14</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision16</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_15</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_pmetdec</targetReference>
+            </connector>
+            <label>Vendor PO Line New/Added</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>8.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision16</name>
+        <label>myDecision16</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision19</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_pmetdec</targetReference>
+            </connector>
+            <label>Vendor Inbound Complete</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>9.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision19</name>
+        <label>myDecision19</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision21</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_20</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_20</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_20_pmetdec</targetReference>
+            </connector>
+            <label>Received Less than Sent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_pmetdec</targetReference>
+            </connector>
+            <label>IsNew Address on File</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>10.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision21</name>
+        <label>myDecision21</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision23</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_22</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_22</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_22_pmetdec</targetReference>
+            </connector>
+            <label>All Items Returned - Return Order</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>11.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision23</name>
+        <label>myDecision23</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision25</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_24</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_24</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_24_pmetdec</targetReference>
+            </connector>
+            <label>All Replacement Transfers Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>12.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision25</name>
+        <label>myDecision25</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_26</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_26</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_26_pmetdec</targetReference>
+            </connector>
+            <label>All Products Received - Product Request</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision6</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_pmetdec</targetReference>
+            </connector>
+            <label>ISNEW() - Product Request</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_7</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_pmetdec</targetReference>
+            </connector>
+            <label>Product Transfer Inbound</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_pmetdec</targetReference>
+            </connector>
+            <label>Update PRLI to Fulfilled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_11_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_11_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_11_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision12</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_13_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1300</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_13_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_13_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision14</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_15_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1500</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_15_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_15_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_15_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_15_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision16</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_17_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1700</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_17_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_17_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision19</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_1_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_1_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_1_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision2</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_20_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>2000</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_20_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_20_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_20_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_20_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_20_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision21</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_22_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>2200</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_22_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_22_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_22_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_22_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_22_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision23</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_24_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>2400</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_24_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_24_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_24_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_24_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_24_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision25</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_26_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>2600</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_26_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_26_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_26_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_26_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_26_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_3_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>300</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_3_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_3_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision4</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_5_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>500</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_5_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_5_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision6</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_7_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>700</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_7_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_7_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_7_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision8</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_9_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>900</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_9_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_9_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision10</targetReference>
+            </connector>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>+ [ProductTransfer].QuantityReceived </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_18_myRule_17_A1_0774808540</name>
+        <dataType>Number</dataType>
+        <expression>+ {!myVariable_current.QuantityReceived}</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+NOT(ISBLANK([ProductTransfer].ReturnOrderLineItem.ReturnOrder.Ship_to_User__c))
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_current.Transfer_Parent__c} = &quot;Return&quot;,
+NOT(ISBLANK({!myVariable_current.ReturnOrderLineItem.ReturnOrder.Ship_to_User__c}))
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItemId)), ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].QuantityReceived &lt; [ProductTransfer].Quantity_Requested__c,
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.DestinationLocationId 
+) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_current.ProductRequestLineItemId})), ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_current.Status}),
+{!myVariable_current.QuantityReceived} &lt; {!myVariable_current.Quantity_Requested__c},
+{!myVariable_current.DestinationLocationId} = {!myVariable_current.ProductRequestLineItem.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItemId)), ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].QuantityReceived &lt; [ProductTransfer].Quantity_Requested__c,
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.DestinationLocationId 
+) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_old.ProductRequestLineItemId})), ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_old.Status}),
+{!myVariable_old.QuantityReceived} &lt; {!myVariable_old.Quantity_Requested__c},
+{!myVariable_old.DestinationLocationId} = {!myVariable_old.ProductRequestLineItem.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].RecordType.DeveloperName = &quot;Vendor_Outbound&quot;
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.Transfer_Parent__c} = &quot;Return&quot;,
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_current.Status}),
+{!myVariable_current.RecordType.DeveloperName} = &quot;Vendor_Outbound&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].RecordType.DeveloperName = &quot;Vendor_Outbound&quot;
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_old.Transfer_Parent__c} = &quot;Return&quot;,
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_old.Status}),
+{!myVariable_old.RecordType.DeveloperName} = &quot;Vendor_Outbound&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+ISNEW(),
+NOT(ISBLANK([ProductTransfer].Vendor_PO_Line__c))),
+ISCHANGED([ProductTransfer].Vendor_PO_Line__c)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_15</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+ISNEW(),
+NOT(ISBLANK({!myVariable_current.Vendor_PO_Line__c}))),
+ISCHANGED({!myVariable_current.Vendor_PO_Line__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+ISNEW(),
+NOT(ISBLANK([ProductTransfer].Vendor_PO_Line__c))),
+ISCHANGED([ProductTransfer].Vendor_PO_Line__c)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_15_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+ISNEW(),
+NOT(ISBLANK({!myVariable_old.Vendor_PO_Line__c}))),
+ISCHANGED({!myVariable_old.Vendor_PO_Line__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].Vendor_PO_Line__c)),
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;,
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_current.Vendor_PO_Line__c})),
+{!myVariable_current.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;,
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].Vendor_PO_Line__c)),
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;,
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_old.Vendor_PO_Line__c})),
+{!myVariable_old.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;,
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+NOT(ISBLANK([ProductTransfer].ReturnOrderLineItem.ReturnOrder.Ship_to_User__c))
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_old.Transfer_Parent__c} = &quot;Return&quot;,
+NOT(ISBLANK({!myVariable_old.ReturnOrderLineItem.ReturnOrder.Ship_to_User__c}))
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISCHANGED([ProductTransfer].IsReceived),
+[ProductTransfer].IsReceived,
+[ProductTransfer].QuantityReceived != [ProductTransfer].QuantitySent 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_20</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISCHANGED({!myVariable_current.IsReceived}),
+{!myVariable_current.IsReceived},
+{!myVariable_current.QuantityReceived} != {!myVariable_current.QuantitySent} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISCHANGED([ProductTransfer].IsReceived),
+[ProductTransfer].IsReceived,
+[ProductTransfer].QuantityReceived != [ProductTransfer].QuantitySent 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_20_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISCHANGED({!myVariable_old.IsReceived}),
+{!myVariable_old.IsReceived},
+{!myVariable_old.QuantityReceived} != {!myVariable_old.QuantitySent} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+[ProductTransfer].ReturnOrderLineItem.ReturnOrder.Open_ROLIs__c = 0,
+[ProductTransfer].Replacement__c = FALSE,
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_22</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.Transfer_Parent__c} = &quot;Return&quot;,
+{!myVariable_current.ReturnOrderLineItem.ReturnOrder.Open_ROLIs__c} = 0,
+{!myVariable_current.Replacement__c} = FALSE,
+ISCHANGED({!myVariable_current.Status}),
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Return&quot;,
+[ProductTransfer].ReturnOrderLineItem.ReturnOrder.Open_ROLIs__c = 0,
+[ProductTransfer].Replacement__c = FALSE,
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_22_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_old.Transfer_Parent__c} = &quot;Return&quot;,
+{!myVariable_old.ReturnOrderLineItem.ReturnOrder.Open_ROLIs__c} = 0,
+{!myVariable_old.Replacement__c} = FALSE,
+ISCHANGED({!myVariable_old.Status}),
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+[ProductTransfer].Replacement__c,
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.Parent.DestinationLocationId 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_24</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.Transfer_Parent__c} = &quot;Request&quot;,
+{!myVariable_current.Replacement__c},
+ISCHANGED({!myVariable_current.Status}),
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;),
+{!myVariable_current.DestinationLocationId} = {!myVariable_current.ProductRequestLineItem.Parent.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+[ProductTransfer].Replacement__c,
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.Parent.DestinationLocationId 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_24_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_old.Transfer_Parent__c} = &quot;Request&quot;,
+{!myVariable_old.Replacement__c},
+ISCHANGED({!myVariable_old.Status}),
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;),
+{!myVariable_old.DestinationLocationId} = {!myVariable_old.ProductRequestLineItem.Parent.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+[ProductTransfer].ProductRequestLineItem.Parent.Open_PRLIs__c = 0,
+ISBLANK([ProductTransfer].ProductRequestLineItem.Parent.Return_Order__c), 
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+[ProductTransfer].ProductRequestLineItem.Parent.DestinationLocationId = [ProductTransfer].DestinationLocationId 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_26</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.Transfer_Parent__c} = &quot;Request&quot;,
+{!myVariable_current.ProductRequestLineItem.Parent.Open_PRLIs__c} = 0,
+ISBLANK({!myVariable_current.ProductRequestLineItem.Parent.Return_Order__c}), 
+ISCHANGED({!myVariable_current.Status}),
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;),
+{!myVariable_current.ProductRequestLineItem.Parent.DestinationLocationId} = {!myVariable_current.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+[ProductTransfer].ProductRequestLineItem.Parent.Open_PRLIs__c = 0,
+ISBLANK([ProductTransfer].ProductRequestLineItem.Parent.Return_Order__c), 
+ISCHANGED([ProductTransfer].Status),
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+[ProductTransfer].ProductRequestLineItem.Parent.DestinationLocationId = [ProductTransfer].DestinationLocationId 
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_26_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_old.Transfer_Parent__c} = &quot;Request&quot;,
+{!myVariable_old.ProductRequestLineItem.Parent.Open_PRLIs__c} = 0,
+ISBLANK({!myVariable_old.ProductRequestLineItem.Parent.Return_Order__c}), 
+ISCHANGED({!myVariable_old.Status}),
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;),
+{!myVariable_old.ProductRequestLineItem.Parent.DestinationLocationId} = {!myVariable_old.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+ISPICKVAL([ProductTransfer].Status, &quot;En Route&quot;),
+NOT(ISBLANK([ProductTransfer].DestinationLocationId)),
+NOT(ISBLANK([ProductTransfer].Ship_To_Email__c)),
+[ProductTransfer].Single_Transfer__c,
+ISPICKVAL([ProductTransfer].Ship_To__c, &quot;Location Address&quot;),
+OR(
+[ProductTransfer].RecordType.DeveloperName  = &quot;Internal_Transfer&quot;,
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+ISPICKVAL({!myVariable_current.Status}, &quot;En Route&quot;),
+NOT(ISBLANK({!myVariable_current.DestinationLocationId})),
+NOT(ISBLANK({!myVariable_current.Ship_To_Email__c})),
+{!myVariable_current.Single_Transfer__c},
+ISPICKVAL({!myVariable_current.Ship_To__c}, &quot;Location Address&quot;),
+OR(
+{!myVariable_current.RecordType.DeveloperName}  = &quot;Internal_Transfer&quot;,
+{!myVariable_current.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+ISPICKVAL([ProductTransfer].Status, &quot;En Route&quot;),
+NOT(ISBLANK([ProductTransfer].DestinationLocationId)),
+NOT(ISBLANK([ProductTransfer].Ship_To_Email__c)),
+[ProductTransfer].Single_Transfer__c,
+ISPICKVAL([ProductTransfer].Ship_To__c, &quot;Location Address&quot;),
+OR(
+[ProductTransfer].RecordType.DeveloperName  = &quot;Internal_Transfer&quot;,
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+ISPICKVAL({!myVariable_old.Status}, &quot;En Route&quot;),
+NOT(ISBLANK({!myVariable_old.DestinationLocationId})),
+NOT(ISBLANK({!myVariable_old.Ship_To_Email__c})),
+{!myVariable_old.Single_Transfer__c},
+ISPICKVAL({!myVariable_old.Ship_To__c}, &quot;Location Address&quot;),
+OR(
+{!myVariable_old.RecordType.DeveloperName}  = &quot;Internal_Transfer&quot;,
+{!myVariable_old.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItem.Parent.Ship_to_User__c ))
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_current.Transfer_Parent__c} = &quot;Request&quot;,
+NOT(ISBLANK({!myVariable_current.ProductRequestLineItem.Parent.Ship_to_User__c} ))
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+[ProductTransfer].Transfer_Parent__c = &quot;Request&quot;,
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItem.Parent.Ship_to_User__c ))
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_old.Transfer_Parent__c} = &quot;Request&quot;,
+NOT(ISBLANK({!myVariable_old.ProductRequestLineItem.Parent.Ship_to_User__c} ))
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+ISPICKVAL([ProductTransfer].Status, &quot;En Route&quot;),
+NOT(ISBLANK([ProductTransfer].DestinationLocationId)),
+NOT(ISBLANK([ProductTransfer].Ship_To_Email__c)), 
+OR(
+[ProductTransfer].RecordType.DeveloperName  = &quot;Internal_Transfer&quot;,
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_7</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+ISPICKVAL({!myVariable_current.Status}, &quot;En Route&quot;),
+NOT(ISBLANK({!myVariable_current.DestinationLocationId})),
+NOT(ISBLANK({!myVariable_current.Ship_To_Email__c})), 
+OR(
+{!myVariable_current.RecordType.DeveloperName}  = &quot;Internal_Transfer&quot;,
+{!myVariable_current.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+ISPICKVAL([ProductTransfer].Status, &quot;En Route&quot;),
+NOT(ISBLANK([ProductTransfer].DestinationLocationId)),
+NOT(ISBLANK([ProductTransfer].Ship_To_Email__c)), 
+OR(
+[ProductTransfer].RecordType.DeveloperName  = &quot;Internal_Transfer&quot;,
+[ProductTransfer].RecordType.DeveloperName  = &quot;Vendor_Inbound_Transfer&quot;
+))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_7_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+ISPICKVAL({!myVariable_old.Status}, &quot;En Route&quot;),
+NOT(ISBLANK({!myVariable_old.DestinationLocationId})),
+NOT(ISBLANK({!myVariable_old.Ship_To_Email__c})), 
+OR(
+{!myVariable_old.RecordType.DeveloperName}  = &quot;Internal_Transfer&quot;,
+{!myVariable_old.RecordType.DeveloperName}  = &quot;Vendor_Inbound_Transfer&quot;
+))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItemId)), 
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].Quantity_Requested__c = [ProductTransfer].QuantityReceived,
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.DestinationLocationId 
+) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_current.ProductRequestLineItemId})), 
+ISPICKVAL({!myVariable_current.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_current.Status}),
+{!myVariable_current.Quantity_Requested__c} = {!myVariable_current.QuantityReceived},
+{!myVariable_current.DestinationLocationId} = {!myVariable_current.ProductRequestLineItem.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+NOT(ISBLANK([ProductTransfer].ProductRequestLineItemId)), 
+ISPICKVAL([ProductTransfer].Status, &quot;Completed&quot;),
+ISCHANGED([ProductTransfer].Status),
+[ProductTransfer].Quantity_Requested__c = [ProductTransfer].QuantityReceived,
+[ProductTransfer].DestinationLocationId = [ProductTransfer].ProductRequestLineItem.DestinationLocationId 
+) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(ISBLANK({!myVariable_old.ProductRequestLineItemId})), 
+ISPICKVAL({!myVariable_old.Status}, &quot;Completed&quot;),
+ISCHANGED({!myVariable_old.Status}),
+{!myVariable_old.Quantity_Requested__c} = {!myVariable_old.QuantityReceived},
+{!myVariable_old.DestinationLocationId} = {!myVariable_old.ProductRequestLineItem.DestinationLocationId} 
+)</expression>
+    </formulas>
+    <interviewLabel>Product_Transfer_Record_Created_or_Updated-4_InterviewLabel</interviewLabel>
+    <label>Product Transfer: Record Created or Updated</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>ProductTransfer</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Product Request Line Item ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>Update PRLI to Partial</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision12</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItemId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Partially Fulfilled</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ProductRequestLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Return Order Line Item ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>Update ROLI Status</label>
+        <locationX>1300</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision14</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ReturnOrderLineItemId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ReturnOrderLineItem</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_15_A1</name>
+        <label>Update Product Transfer Fields</label>
+        <locationX>1500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision16</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Purchase Order</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>AcctSeedERP__Purchase_Order__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Purchase_Order__c</field>
+            <value>
+                <elementReference>myVariable_current.Vendor_PO_Line__r.AcctSeedERP__Purchase_Order__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ProductTransfer</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Vendor PO Line</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
+        <label>Update Vendor PO Line</label>
+        <locationX>1700</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision19</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Vendor_PO_Line__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Quantity Received To Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Quantity_Received_To_Date__c</field>
+            <value>
+                <elementReference>formula_18_myRule_17_A1_0774808540</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeedERP__Purchase_Order_Line__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Ship to Email</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To Email</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_Email__c</field>
+            <value>
+                <elementReference>myVariable_current.ReturnOrderLineItem.ReturnOrder.Ship_to_User__r.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ProductTransfer</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Return Order Line Item ID.Return Order ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_22_A1</name>
+        <label>Update Return Order Status</label>
+        <locationX>2200</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision23</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ReturnOrderLineItem.ReturnOrderId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ReturnOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Product Request Line Item ID.Product Request ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_24_A1</name>
+        <label>Update Product Request Status</label>
+        <locationX>2400</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_24_A2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItem.ParentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open PRLIs</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_PRLIs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open ROLIs</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_ROLIs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ProductRequest</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Product Request Line Item ID.Product Request ID.Return Order</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_24_A2</name>
+        <label>Update Return Order</label>
+        <locationX>2400</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myDecision25</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItem.Parent.Return_Order__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open ROLIs</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_ROLIs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ReturnOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Product Request Line Item ID.Product Request ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_26_A1</name>
+        <label>Update Product Request Status</label>
+        <locationX>2600</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItem.ParentId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open PRLIs</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_PRLIs__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ProductRequest</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Update Ship To</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision4</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To City</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_City__c</field>
+            <value>
+                <elementReference>myVariable_current.DestinationLocation.City__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To State</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_State__c</field>
+            <value>
+                <elementReference>myVariable_current.DestinationLocation.State__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To Street</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_Street__c</field>
+            <value>
+                <elementReference>myVariable_current.DestinationLocation.Street__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To Zip</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_Zip__c</field>
+            <value>
+                <elementReference>myVariable_current.Ship_To_Zip__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ProductTransfer</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Update Ship To Email</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision6</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ship To Email</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ship_To_Email__c</field>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItem.Parent.Ship_to_User__r.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ProductTransfer</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[ProductTransfer].Product Request Line Item ID</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>Update PRLI to Fulfilled</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision10</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.ProductRequestLineItemId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Fulfilled</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ProductRequestLineItem</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>ProductTransfer</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ProductTransfer</objectType>
+    </variables>
+</Flow>

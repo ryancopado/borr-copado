@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Finance Checklist</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Finance Checklists</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please enter the lease term length --></help>
+        <label><!-- Initial Term Length --></label>
+        <name>Initial_Term_Length__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link from Box.com of associated project finance checklist --></help>
+        <label><!-- Link to Project Finance Checklist --></label>
+        <name>Link_to_Project_Finance_Checklist__c</name>
+    </fields>
+    <fields>
+        <help><!-- The opportunity the checklist is associated with --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Project Finance Checklists --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Logs the actual approver of the project finance checklist. Filled in by approval process. --></help>
+        <label><!-- Project Finance Final Approver --></label>
+        <name>Project_Finance_Final_Approver__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be used for significant, non-standard contract terms, explanation to be provided in the &apos;Notes&apos; section --></help>
+        <label><!-- Reduced Development Spending Cap --></label>
+        <name>Reduced_Development_Spending_Cap__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current approval status of Project Finance Checklist --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please note, additional terms must have a unilateral exercise right --></help>
+        <label><!-- Total of Additional Option Term Lengths --></label>
+        <name>Total_of_Additional_Option_Term_Lengths__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,51 @@
+<template>
+  <template if:true={loaded}>
+    <div class="sllds-align_absolute-center">
+      <lightning-combobox
+        label="Type"
+        name="type"
+        placeholder="Select a Record Type"
+        options={recordTypes}
+        onchange={handleTypeChange}
+      ></lightning-combobox>
+
+      <c-lookup
+        data-id="destination"
+        selection={destinationSelection}
+        onselectionchange={handleSelectionChange}
+        onsearch={handleDestinationSearch}
+        label="Destination Location"
+        placeholder="Search Locations"
+        is-multi-entry={isMultiEntry}
+      >
+      </c-lookup>
+
+      <c-lookup
+        data-id="source"
+        selection={sourceSelection}
+        onselectionchange={handleSelectionChange}
+        onsearch={handleSourceSearch}
+        label="Source Location"
+        placeholder="Search Locations"
+        is-multi-entry={isMultiEntry}
+      >
+      </c-lookup>
+
+      <c-lookup
+        data-id="vendor"
+        selection={vendorSelection}
+        onselectionchange={handleSelectionChange}
+        onsearch={handleVendorSearch}
+        label="Vendor"
+        placeholder="Search Vendors"
+        is-multi-entry={isMultiEntry}
+      >
+      </c-lookup>
+    </div>
+  </template>
+  <template if:false={loaded}>
+    <lightning-spinner
+      alternative-text="loading record types"
+    ></lightning-spinner>
+  </template>
+</template>

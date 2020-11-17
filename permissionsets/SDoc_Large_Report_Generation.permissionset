@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>SDGenerateReport</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SDGenerateReportTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>gives permissions to specific Apex Class to run a specific large report for O&amp;M PM&apos;s.  User will also need S Doc license</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SDoc Large Report Generation</label>
+    <license>Salesforce</license>
+    <pageAccesses>
+        <apexPage>SDGenerateReport</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+</PermissionSet>

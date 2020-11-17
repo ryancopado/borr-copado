@@ -1,0 +1,533 @@
+<apex:page controller="MassConvert.MassLeadConvert" id="pg" tabStyle="Lead" sidebar="false" title="Mass Convert Leads - Select Accounts" docType="HTML - 5.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script>
+        _$ = jQuery.noConflict(true);
+    	_$(document).ready(function(){
+        	resetGridLayout();
+            if({!isCreateOpportunity})
+        		doNotCreateOppCheck(false);
+            else
+                doNotCreateOppCheck(true);
+            
+            checkAllOppo(null);
+        });
+    	
+    	function resetGridLayout(){
+            _$('.slds-card__body').find('[type="text"]').addClass('slds-input');
+            _$('.slds-card__body').find('select').addClass('slds-select');
+            console.log(_$('.ownerClass').find('select').css('width'));
+            _$('.ownerClass').find('select').css('width', '10px!important');
+            console.log(_$('.ownerClass').find('select').css('width'));
+            _$('.ownerClass').find('input[type=text]').css('width', '10px!important');
+            /*_$('span.lookupInput [type=text]').css('width','109px!important');*/
+         }
+    
+    	function doNotCreateOppCheck(val) {
+            //idString = 'pg:frm:pb:pbt:';
+            //var indSize = 50;
+            document.getElementById('selectAllOpportunity').checked = val;
+            /*for (i = 0; i < indSize; i++) {
+                if (document.getElementById(idString + i + ':oppoStatus') != null)
+                    document.getElementById(idString + i + ':oppoStatus').checked = val;
+                if (document.getElementById(idString + i + ':oppoName') != null) {
+                    document.getElementById(idString + i + ':oppoName').disabled = val;
+                }
+            }*/
+        }
+    
+        function checkAllLeads(val) {
+            _$('.recSelector').each(function(i,e){
+            	e.checked = val.checked;    
+            });
+        }
+        
+        function setCheckAllLeads(ele) {
+            var chk = false;
+            _$('.recSelector').each(function(i,e){
+            	if(e.checked)
+                    chk = true;
+                else{
+                    chk = false;
+                    return false;
+                }
+            });
+            document.getElementById('selectAll').checked  = chk;
+            var pr = _$(ele).parent();
+            var eleid = pr.find('.leadSelector').prop('id');
+            document.getElementById(eleid).checked  = ele.checked;
+            
+        }
+        
+        //This javascript method is to select/unselect all the check boxes if header level check box is selected.
+        function checkAllEmail(val) {
+            idString = 'pg:frm:pbt:';
+            var indSize = 50;
+            for (i = 0; i < indSize; i++) {
+                if (document.getElementById(idString + i + ':Email') != null)
+                    document.getElementById(idString + i + ':Email').checked = val.checked;
+            }
+        }
+
+        var lName = "/_ui/common/data/LookupPage?lkfm=pg%3Afrm&lknm=";
+        var lookUpWindow;
+        var leadId;
+
+        function showLookup(ctrlID, objKeyPrefix, selectedLead) {
+            leadId = selectedLead;
+            var conid = ctrlID.split('.');//pg:frm:pbt:0:selectedFieldValue
+            var cid = 'pg:frm:pbt:' + conid[0]+  ':selectedFieldValue';
+            lookUpWindow = openLookup(lName + cid + "&lktp=" + objKeyPrefix, 670, '', lName + cid + "&lktp=" + objKeyPrefix);
+        }
+
+        function lookupPick(pageType, lkIdType, idType, data1, idValue, labelValue, data2, data3) {
+            try {
+                if (idValue.match('^001') == null) {
+                    if (document.getElementById(lkIdType) != null)
+                        document.getElementById(lkIdType).value = idValue;
+                    if (document.getElementById(idType) != null)
+                        document.getElementById(idType).value = labelValue;
+                } else {
+                    addAccountSelectOption(leadId, idValue, labelValue);
+                }
+                closePopup();
+                resetGridLayout();
+            } catch (e) {}
+        }
+
+        function checkAllOppo(val) {
+            if(val == null){
+                val = document.getElementById('selectAllOpportunity');
+            }
+            
+            _$('.oppSelector').each(function(i,e){
+            	e.checked = val.checked;    
+            });
+            _$('.oppoName').each(function(i,e){
+            	e.disabled = val.checked; 
+            });
+        }
+        
+        function disableOpportunityName(objCheckBox) {
+            var chk = false;
+            _$('.oppSelector').each(function(i,e){
+            	if(e.checked)
+                    chk = true;
+                else{
+                    chk = false;
+                    return false;
+                }
+            });
+            document.getElementById('selectAllOpportunity').checked  = chk;
+            var pr = _$(objCheckBox).parent();
+            var eleid = pr.find('.oppSelector').prop('id');
+            document.getElementById(eleid).checked  = objCheckBox.checked;
+            
+            if (objCheckBox != null) {
+                var objId = objCheckBox.id;
+                objId = 'pg:frm:pbt:'+objId+':oppoName';
+                if (document.getElementById(objId) != null) {
+                    document.getElementById(objId).disabled = objCheckBox.checked;
+                }
+                top.window.focus();
+            }
+        }
+    
+        function disableSelectList() {
+            /*var x=document.getElementsByTagName('select');
+            if (x != null) {
+              for(var j = 0; j< x.length; j++){
+                var objId = objCheckBox.id;
+                objId = objId.replace('oppoStatus', 'oppoName');
+                if (document.getElementById(objId) != null) {
+                    document.getElementById(objId).disabled = objCheckBox.checked;
+                }
+              }
+            }*/
+        }
+
+         //This javascript method is to select/unselect all the check boxes if header level check box is selected.
+        function checkOppoName(oPPoNameObject) {
+            var objId = oPPoNameObject.id;
+            objId = objId.replace('oppoName', 'hiddenOppoName');
+            if (document.getElementById(objId) != null) {
+                document.getElementById(objId).value = oPPoNameObject.value;
+            }
+        }
+    
+    </script>
+
+    <style>
+        .leadTab .bPageBlock {
+            border-top: 0px solid #e39321 !important;
+        }
+        
+        .dateFormat
+        {
+          display: none;
+        }
+        .bWizardBlock .pbBottomButtons{
+        	float: none !important;
+        }
+        .datePicker {
+    		width: 222px !important;
+        }
+        .dateOnlyInput input {
+        /*width: auto !important;*/
+        }
+        .slds-card {
+        	background: #f7f9fb !important;
+            border: none !important;
+            border-right: 1px solid #d8dde6 !important;
+            border-bottom: 1px solid #d8dde6 !important;
+            border-left: 1px solid #d8dde6 !important;
+        }
+        .slds-select {
+        	width: auto !important;
+        }
+        .slds-input{
+        	width: 109px !important;
+        }
+    </style>
+    <apex:form id="frm">
+        <apex:slds rendered="true"/>
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon_container--circle slds-icon-action-description">
+                                <svg class="slds-icon slds-icon--small" aria-hidden="true">
+                                    <use href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#lead_convert')}"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-title--caps slds-line-height--reset">Account Selection</p>
+                            <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match the Record Title">Mass Convert Leads</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="slds-grid" style="padding-top: 10px;">
+                <div class="slds-col slds-align-bottom">
+                    <p class="slds-text-body--small">
+                    	• If you really want us to convert a lead, please specify a user for the owner field.<br/>
+                        • If you would like us to create a follow-up task, you must specify the task subject.<br/>
+                        • We can only convert 50 leads at a time but we dont expect you to keep a count. 
+                        Just go ahead and give us 200 leads and we will convert the first 50.
+                    </p>
+                </div>
+                <!--<div class="slds-col slds-no-flex slds-grid slds-align-bottom">
+                    <div class="slds-dropdown-trigger slds-dropdown-trigger--click" aria-expanded="false">
+                        <button class="slds-button slds-button--icon-more" aria-haspopup="true" title="Change view">
+                            <svg class="slds-button__icon" aria-hidden="true">
+                                <use href="/assets/icons/utility-sprite/svg/symbols.svg#table"></use>
+                            </svg>
+                            <svg class="slds-button__icon slds-button__icon--x-small" aria-hidden="true">
+                                <use href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Change view</span>
+                        </button>
+                    </div>
+                    <div class="slds-button-group slds-m-left--xx-small" role="group">
+                        <button class="slds-button slds-button--icon-border" title="Chart">
+                            <svg class="slds-button__icon" aria-hidden="true">
+                                <use href="/assets/icons/utility-sprite/svg/symbols.svg#chart"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Chart</span>
+                        </button>
+                        <button class="slds-button slds-button--icon-border" title="settings">
+                            <svg class="slds-button__icon" aria-hidden="true">
+                                <use href="/assets/icons/utility-sprite/svg/symbols.svg#filterList"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Filter List</span>
+                        </button>
+                        <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" aria-expanded="false">
+                            <button class="slds-button slds-button--icon-more" aria-haspopup="true" title="Sort">
+                                <svg class="slds-button__icon" aria-hidden="true">
+                                    <use href="/assets/icons/utility-sprite/svg/symbols.svg#sort"></use>
+                                </svg>
+                                <svg class="slds-button__icon slds-button__icon--x-small" aria-hidden="true">
+                                    <use href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                                </svg>
+                                <span class="slds-assistive-text">Sort</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__body">
+                        <h2>
+                            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                                <span class="slds-text-heading--small">Step 1. Select a new account or search for an existing account.</span>&nbsp;
+                                <span>(Step 1 of 2)</span>
+                            </a>
+                        </h2>
+                    </div>
+                </header>
+                <div class="slds-no-flex">
+                    <apex:commandButton value="Next" action="{!chooseContact}" styleClass="slds-button slds-button--neutral"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}" styleClass="slds-button slds-button--neutral"/>
+                </div>
+                <!-- Action function to add the account in select option list -->
+                <apex:actionFunction name="addAccountSelectOption" action="{!addAccount}" reRender="pb,pbt" oncomplete="resetGridLayout()">
+                    <apex:param name="param1" value="" assignTo="{!selectedLeadId}" />
+                    <apex:param name="param2" value="" assignTo="{!lookUpId}" />
+                    <apex:param name="param3" value="" assignTo="{!lookUpLabel}" />
+                </apex:actionFunction>
+            </div>
+            <div class="slds-card__body">
+                <apex:outputPanel id="pb" rendered="{!IF(getLstResult.SIze > 0,false,true)}">
+                <table class="slds-table slds-table--bordered slds-table--resizable-cols slds-table--fixed-layout" role="grid">
+                    <thead>
+                        <tr class="slds-line-height--reset">
+                            <th scope="col" style="width:2.25rem;" class="slds-text-align--right">
+                                <div class="slds-th__action slds-th__action--form">
+                                    <span class="slds-checkbox">
+                                        <input type="checkbox" name="options" checked="checked" id="selectAll" onclick="checkAllLeads(this);" />
+                                        <label class="slds-checkbox__label" for="selectAll">
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </th>
+                            <th class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Name">Lead</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-567" class="slds-assistive-text">Name column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-567" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th style="width:244px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Account Name">Record Owner</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-568" class="slds-assistive-text">Account Name column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-568" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th style="width:164px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Close Date">Converted Status</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-569" class="slds-assistive-text">Close Date column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-569" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th style="width:220px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Stage">Account Name</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-570" class="slds-assistive-text">Stage column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-570" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th class="slds-is-sortable slds-is-resizable slds-text-title--caps slds-text-align--center" scope="col" style="width:66px;">
+                                <span class="slds-checkbox">
+                                    <input type="checkbox" name="options" id="selectAllOpportunity" onclick="checkAllOppo(this);" />
+                                    <label class="slds-checkbox__label" for="selectAllOpportunity">
+                                        <span class="slds-checkbox--faux"></span>
+                                        <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                                    </label>
+                                </span>
+                                <span class="slds-truncate" title="">Don&#39;t <br/>Create <br/>Opp</span>
+                                
+                            </th>
+                            <th style="width:197px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Amount">Opportunity Name</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-572" class="slds-assistive-text">Amount column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-572" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th style="width: 145px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Contact">Task Subject</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-573" class="slds-assistive-text">Contact column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-573" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                            <th style= "width: 120px;" class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+                                    <span class="slds-assistive-text">Sort </span>
+                                    <span class="slds-truncate" title="Contact">Task Due Date</span>
+                                    <div class="slds-icon_container">
+                                        <!--<svg class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+                                            <use href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                        </svg>-->
+                                    </div>
+                                    <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+                                </a>
+                                <div class="slds-resizable">
+                                    <label for="cell-resize-handle-573" class="slds-assistive-text">Contact column width</label>
+                                    <input type="range" min="20" max="1000" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-573" tabindex="0" />
+                                    <span class="slds-resizable__handle">
+                                        <span class="slds-resizable__divider"></span>
+                                    </span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:variable value="{!200}" var="co" />
+                        <apex:variable value="{!0}" var="acc" />
+                        <apex:variable value="{!0}" var="oppoStatusId" />
+                        <apex:repeat value="{!listConvertParameters}" id="pbt" var="item" >
+                            <tr class="slds-hint-parent">
+                                <td role="gridcell" class="slds-text-align--right" style="width:2.25rem;">
+                                    <span class="slds-checkbox">
+                                        <apex:inputCheckbox value="{!item.leadStatus}" id="leadSelector" styleClass="leadSelector"/>
+                                        <input type="checkbox" class="recSelector" checked="{!item.leadStatus}" id="{!co}" onclick="setCheckAllLeads(this);" />
+                                        <label class="slds-checkbox__label" for="{!co}">
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select item 1</span>
+                                        </label>
+                                    </span>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="{!item.lead.Name}">
+                                    	<apex:outputLink value="/{!item.lead.Id}">{!item.lead.Name}</apex:outputLink>
+                                    </div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="Owner">
+                                    	<apex:inputField value="{!item.lead.ownerId}" styleClass="ownerClass" />
+                                    </div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="">
+                                        <apex:selectList value="{!item.selectedConvertedStatus}" size="1" multiselect="false">
+                                            <apex:selectOptions value="{!item.listConvertedStatus}" />
+                                        </apex:selectList>
+                                    </div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="">
+                                        <apex:selectList value="{!item.selectedAccountId}" size="1" onchange="curPopupWindow.close();" multiselect="false" 
+                                                  id="selectedFieldValue" style="width:180px!important;float:left">
+                                            <apex:selectOptions value="{!item.listAccount}" />
+                                        </apex:selectList>
+                                        <apex:image url="/s.gif" alt="Lookup (New Window)" style="position:absolute" styleClass="lookupIcon" 
+                                                    onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" 
+                                                    onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" 
+                                                    onclick="showLookup('{!acc}' ,'001','{!item.lead.Id}');" title="Lookup (New Window)" />
+                                    </div>
+                                    <apex:variable value="{!acc+1}" var="acc" />
+                                </td>
+                                <td role="gridcell" class="slds-text-align--center">
+                                    <span class="slds-checkbox">
+                                        <apex:inputCheckbox value="{!item.opprtunityStatus}" id="oppSelector" styleClass="oppSelector"/>
+                                        <input type="checkbox" class="oppSelector" checked="{!item.opprtunityStatus}" id="{!oppoStatusId}" 
+                                               onchange="disableOpportunityName(this);" />
+                                        <label class="slds-checkbox__label" for="{!oppoStatusId}">
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select item 1</span>
+                                        </label>
+                                    </span>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="">
+                                        <apex:inputText value="{!item.opportunityName}" styleClass="oppoName" id="oppoName" style="width:180px!important" 
+                                                        disabled="false" onBlur="checkOppoName(this);" />
+                                        <apex:inputHidden value="{!item.opportunityName}" id="hiddenOppoName" />
+                                    </div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="jrogers@acme.com">
+                                    	<apex:inputField value="{!item.task.Subject}" style="width:110px!important;"/>
+                                    </div>
+                                </td>
+                                <td role="gridcell">
+                                    <div class="slds-truncate" title="">
+                                    	<apex:inputField value="{!item.task.ActivityDate}" style="width:90px!important;"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <apex:variable value="{!co+1}" var="co" />
+                            <apex:variable value="{!oppoStatusId+1}" var="oppoStatusId" />
+                        </apex:repeat>
+                    </tbody>
+                </table>
+                    </apex:outputPanel>
+            </div>
+            
+        </article>
+    </apex:form>
+</apex:page>

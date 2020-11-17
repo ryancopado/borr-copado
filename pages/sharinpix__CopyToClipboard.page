@@ -1,0 +1,49 @@
+<apex:page sidebar="false" showHeader="false" showChat="false" docType="html-5.0" controller="sharinpix.ToPdfRenderController">
+  <apex:slds />
+
+  <style type="text/css">
+    .modal-content {
+      position: relative;
+      padding-bottom: 68px !important;
+    }
+    .modal-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+
+  <div class="modal-content slds-p-around_medium">
+    <section id="clipboard-content">
+      <apex:outputText value="{!html}" escape="false" />
+    </section>
+
+    <footer id="copy-btns" class="modal-footer slds-modal__footer">
+      <button onclick="quit()" class="slds-button slds-button_neutral">Close</button>
+      <button onclick="copy()" class="slds-button slds-button_brand">
+        <lightning-icon icon-name="utility:copy_to_clipboard" size="xx-small" variant="inverse" alternative-text="Copy"></lightning-icon>
+        <span>{!$CurrentPage.parameters.buttonLabel}</span>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    var parentWindow = (parent || opener);
+
+    function quit () {
+      parentWindow.postMessage({ name: 'modal-close' }, '*');
+    }
+
+    function copy () {
+      var clipboardContent = document.getElementById('clipboard-content');
+      clipboardContent.contentEditable = true;
+      clipboardContent.focus();
+      document.execCommand('selectAll');
+      document.execCommand('copy');
+      clipboardContent.contentEditable = false;
+      getSelection().removeAllRanges();
+      parentWindow.postMessage({ name: 'copy-done' }, '*');
+    }
+  </script>
+</apex:page>

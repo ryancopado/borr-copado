@@ -1,0 +1,37 @@
+<apex:page standardController="Request_for_Information_RFI__c" extensions="IssueTrackerSelectedUserCtrl"   lightningStylesheets="true"  action="{!initUserFields}">
+    
+    <apex:form id="theForm">
+        <apex:pageMessages />
+        
+        <apex:pageBlock >
+            
+            <apex:outputPanel rendered="{!Message != null}">
+                <h1 style="color: red;">Error: {!Message}</h1>
+            </apex:outputPanel>
+        
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!Save}" disabled="{!fatalError}" rerender="theForm" />
+            </apex:pageBlockButtons>
+            
+            <c:MultiselectPicklist leftLabel="Available Users" 
+                leftOpts="{!allUsers}"
+                rightLabel="Selected Users"
+                rightOpts="{!selectedUsers}"
+                size="14"
+                width="150px"></c:MultiselectPicklist>
+                
+        </apex:pageBlock>
+       
+        <script>
+            function refreshParentPage(){
+                //alert({!refreshParent});
+                if ({!refreshParent} == true) {
+                    //alert("about to refresh parent");
+                    window.open("/{!IssueTracker.Id}", '_parent');
+                }
+            }
+            refreshParentPage();
+        </script>
+
+    </apex:form>
+</apex:page>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Site_State__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.O_M_System_Install_Type__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contract.System_Size_Watts_STC__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Contract.Contract_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Contract.ContractSigned__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Contract_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Contract_Status__c</field>
+    </columns>
+    <description>for EXT sharing. Part 1 of partnership discussion.</description>
+    <filter>
+        <criteriaItems>
+            <column>Contract.Contract_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending,Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contract.Paid</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>O&amp;M,O&amp;M T&amp;M</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Renewable Properties</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>RP O&amp;M Contracts - Pending and Active</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContractList@Contract.ASProject__c</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Contract.ContractSigned__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contract.Service_Contract_Start_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

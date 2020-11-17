@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoLogo</letterhead>
+    <name>Unqualified- Solar Farm</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar: Thank you for your inquiry</subject>
+    <textOnly>Dear {!Lead.FirstName}, 
+
+Thank you for your interest in
+Borrego Solar. Regarding your inquiry about a solar farm, these installations
+are often not feasible unless directly initiated by the Utility. 
+Currently, Utilities will not pay you for excess electricity produced and only
+allow solar installations to cover on-site electrical consumption (i.e. the
+electricity used by appliances on site and tracked on a utility meter). 
+This means that there is no incentive to overproduce, making solar farm
+projects a tough sell.
+
+ 
+
+The only way to have a solar farm
+succeed is with sponsorship for the Utility, becoming a small generation plant
+that the Utility draws from while paying you for the power produced. 
+These opportunities do exist but are limited in scope.
+Hopefully that gives some clarity to the situation. If you have any other questions, please feel free to contact me. Have a great day!
+
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+1810 Gillespie Way, Suite 108El Cajon, CA 92020{!Lead.OwnerPhone}{!Lead.OwnerEmail}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

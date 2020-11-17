@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Finance Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Finance Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Notes --></label>
+        <name>AdditionalNotes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description or more information on any additional incentive rate structures --></help>
+        <label><!-- Utility Rate ($/kWh) --></label>
+        <name>Additional_Incentive_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Affiliate Fee from Pricing Request --></help>
+        <label><!-- Affiliate Fee --></label>
+        <name>Affiliate_Fee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current utility escalation rate --></help>
+        <label><!-- Annual Utility Escalation --></label>
+        <name>Annual_Utility_Escalation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assessed Taxes Escalator --></label>
+        <name>Assessed_Taxes_Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total assessed value $$ amount --></help>
+        <label><!-- Assessed Taxes ($) --></label>
+        <name>Assessed_Taxes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Borrego PPA Notes --></label>
+        <name>Borrego_PPA_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Close Date from the Opportunity- Date the Contract is or will be signed --></help>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total cost of EPC to the project per watt DC --></help>
+        <label><!-- All-In EPC Cost per DC Watt --></label>
+        <name>Cost_per_DC_Watt_ASP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Rating Agency --></label>
+        <name>Credit_Rating_Agency__c</name>
+        <picklistValues>
+            <masterLabel>D&amp;B</masterLabel>
+            <translation><!-- D&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fitch</masterLabel>
+            <translation><!-- Fitch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moody&apos;s</masterLabel>
+            <translation><!-- Moody&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;P</masterLabel>
+            <translation><!-- S&amp;P --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Credit Rating --></label>
+        <name>Credit_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Request Submitted for Approval --></label>
+        <name>Date_Request_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- autocalculates # of calendar days between date request was approved and date request was submitted for approval --></help>
+        <label><!-- Days to Complete Request --></label>
+        <name>Days_to_Complete_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- The present value of the decommissioning estimates approved by the town --></help>
+        <label><!-- Decommissioning Amount Estimate --></label>
+        <name>Decommissioning_Amount_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose the type of decommissioning bond --></help>
+        <label><!-- Decommissioning Bond Type --></label>
+        <name>Decommissioning_Bond_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bond</masterLabel>
+            <translation><!-- Bond --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LC</masterLabel>
+            <translation><!-- LC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EPC DCOGs from Opportunity / System Size from Pricing Request --></help>
+        <label><!-- EPC DCOGS $/w --></label>
+        <name>EPC_DCOGS_w__c</name>
+    </fields>
+    <fields>
+        <help><!-- EPC DCOGs from Opportunity --></help>
+        <label><!-- EPC DCOGs --></label>
+        <name>EPC_DCOGs_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entered by Project Finance --></help>
+        <label><!-- Total Value $/w --></label>
+        <name>EPC_Price_Watt__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC Price at Minimum Hurdle --></label>
+        <name>EPC_Price_at_Minimum_Hurdle__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESD Block --></label>
+        <name>ESD_Block__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESD Duration --></label>
+        <name>ESD_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESD Term --></label>
+        <name>ESD_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESD $/kWh --></label>
+        <name>ESD_kWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESD kw --></label>
+        <name>ESD_kw__c</name>
+    </fields>
+    <fields>
+        <help><!-- ESS AC or DC from related Opportunity --></help>
+        <label><!-- ESS AC or DC? --></label>
+        <name>ESS_AC_or_DC_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated date system will be turned on and in service --></help>
+        <label><!-- Estimated In-Service Date --></label>
+        <name>Estimated_In_Service_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expected Rebate amount listed on the Opportunity --></help>
+        <label><!-- Expected Rebate Amount --></label>
+        <name>Expected_Rebate_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facility Size (usable sq/ft) --></label>
+        <name>Facility_Size_usable_sq_ft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grant/ITC % --></label>
+        <name>Grant_ITC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum IRR required for project approval – see PPA Notes for details --></help>
+        <label><!-- Hurdle Rate --></label>
+        <name>Hurdle_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide REC, Rebates, PBI&apos;s, Bulk Incentives, and battery incentives --></help>
+        <label><!-- Primary Incentive Rate and Description --></label>
+        <name>Incentive_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount per DC watt for interconnection expenses which are NOT eligible for ITC basis-Any expense which is not related to &apos;generation assets not owned by GLC&apos; prior to the point of common coupling. Ex: we are paying for the equipment but utility owns it --></help>
+        <label><!-- Ineligible Interconnection EPC $/watt --></label>
+        <name>Ineligible_Interconnection_EPC_watt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Type --></label>
+        <name>Install_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Utility Upgrade costs from related Pricing Request --></help>
+        <label><!-- Interconnection Upgrades ($) --></label>
+        <name>Interconnection_Upgrades__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsSubmittedForApproval --></label>
+        <name>IsSubmittedForApproval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Type --></label>
+        <name>Job_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual escalation applied to Yr1 site lease payment for term of lease --></help>
+        <label><!-- Lease Escalator --></label>
+        <name>Lease_Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- This number should always be in a $/MW-DC/year format. --></help>
+        <label><!-- Lease Payment ($/MW-DC/year) --></label>
+        <name>Lease_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of local property tax requirement --></help>
+        <label><!-- Local Property Tax Description --></label>
+        <name>Local_Property_Tax_Treatment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manually entered by Project Finance --></help>
+        <label><!-- MIPA Contract Value --></label>
+        <name>MIPA_Contract_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- MIPA Contract Value / System Size DC (watts) from Pricing Request --></help>
+        <label><!-- MIPA Contract Value $/w --></label>
+        <name>MIPA_Contract_Value_w__c</name>
+    </fields>
+    <fields>
+        <help><!-- MIPA Signed Date from Opportunity --></help>
+        <label><!-- MIPA Signed Date --></label>
+        <name>MIPA_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Assumed mechanical completion date --></help>
+        <label><!-- Assumed Milestone Payment 1 Date (MC) --></label>
+        <name>Milestone_Payment_1_Assumption__c</name>
+    </fields>
+    <fields>
+        <help><!-- Assumed PTO date --></help>
+        <label><!-- Assumed Milestone Payment 2 Date (PTO) --></label>
+        <name>Milestone_Payment_2_Assumption__c</name>
+    </fields>
+    <fields>
+        <label><!-- NMTC Eligible? --></label>
+        <name>NMTC_Eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Exempt Taxes Escalator --></label>
+        <name>Non_Exempt_Taxes_Escalator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Millage rate in $1/$1000 --></help>
+        <label><!-- Non Exempt Taxes ($/MW-DC/yr) --></label>
+        <name>Non_Exempt_Taxes_MW_DC_yr__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non-IX Dev COGs from related Opportunity --></help>
+        <label><!-- Non-IX Dev Expenses --></label>
+        <name>Non_IX_Dev_Expenses_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of sites at the project location --></help>
+        <label><!-- Number of Sites --></label>
+        <name>Number_of_Sites__c</name>
+    </fields>
+    <fields>
+        <label><!-- OK to Submit for Approval --></label>
+        <name>OK_to_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Estimate Storage ($/kWh/year) --></label>
+        <name>O_M_Estimate_Storage_kWh_year__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Stage of the Opportunity --></help>
+        <label><!-- Opportunity Stage --></label>
+        <name>Opportunity_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Finance Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Payment required to acquire the option to purchase the land --></help>
+        <label><!-- Option Payment --></label>
+        <name>Option_Payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the site owned or leased? --></help>
+        <label><!-- Owned or Leased? --></label>
+        <name>Owned_or_Leased__c</name>
+        <picklistValues>
+            <masterLabel>Leased</masterLabel>
+            <translation><!-- Leased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owned</masterLabel>
+            <translation><!-- Owned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Targeted years of PPA agreement (term) --></help>
+        <label><!-- PPA Agreement Term --></label>
+        <name>PPA_Agreement_Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- PPA annual escalation rate proposed by Finance Team --></help>
+        <label><!-- PPA Annual Escalation Rate --></label>
+        <name>PPA_Annual_Escalation_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPA Price Formula --></label>
+        <name>PPA_Price_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPA Price Text --></label>
+        <name>PPA_Price_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- PPA Price from Financing Dept --></help>
+        <label><!-- PPA Price --></label>
+        <name>PPA_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Target rate for PPA- to be filled out by Project Developer --></help>
+        <label><!-- PPA Target Rate --></label>
+        <name>PPA_Target_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Priced_System_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pricing Request --></label>
+        <lookupFilter>
+            <errorMessage><!-- Pricing Request must be associated with related Opportunity --></errorMessage>
+        </lookupFilter>
+        <name>Pricing_Request__c</name>
+        <relationshipLabel><!-- Finance Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Link to the Pricing Tool associated with this finance request --></help>
+        <label><!-- Pricing Tool Link --></label>
+        <name>Pricing_tool_link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Production Modeling --></help>
+        <label><!-- Production Modeling --></label>
+        <name>ProductionModeling__c</name>
+        <relationshipLabel><!-- Finance Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- State where the Project is located --></help>
+        <label><!-- Project Location --></label>
+        <name>Project_Location__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple States</masterLabel>
+            <translation><!-- Multiple States --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation><!-- Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Estimated PILOT amount in $/MW-DC/yr --></help>
+        <label><!-- PILOT ($/MW-DC/yr) --></label>
+        <name>Property_Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rating --></label>
+        <name>Rating__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reason there is no credit rating. Required when rating Agency is &quot;none&quot; --></help>
+        <label><!-- Reason for No Rating --></label>
+        <name>Reason_for_No_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Primary Rebate Program-  listed on the Opportunity (Incentive Rate Field) --></help>
+        <label><!-- Primary Incentive Rate --></label>
+        <name>Rebate_Program__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Finance Approval Comment --></help>
+        <label><!-- Project Finance Notes --></label>
+        <name>Rejection_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Targeted/Requested annual escalation rate- to be filled out by Project Developer --></help>
+        <label><!-- Requested Annual Escalation Rate --></label>
+        <name>Requested_Annual_Escalation_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <picklistValues>
+            <masterLabel>Off-Site UCPA Different Host</masterLabel>
+            <translation><!-- Off-Site UCPA Different Host --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Off-Site UCPA Single Host</masterLabel>
+            <translation><!-- Off-Site UCPA Single Host --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Site PPA</masterLabel>
+            <translation><!-- On-Site PPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Site UCPA</masterLabel>
+            <translation><!-- On-Site UCPA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Specific Yield from related Production Model --></help>
+        <label><!-- Specific Yield ( kWh/kWp ) --></label>
+        <name>Specific_Yield_kWh_kWp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Starting Utility Rate --></label>
+        <name>Starting_Utility_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Tax Treatment --></label>
+        <name>State_Tax_Treatment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Storage Energy (kWh) from related Opportunity --></help>
+        <label><!-- Storage Energy (kWh) --></label>
+        <name>Storage_Energy_kWh_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Storage Power (kW) from Opportunity --></label>
+        <name>Storage_Power_kW_from_Oppty_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- System Size AC from related Opportunity --></help>
+        <label><!-- System Size AC (watts) --></label>
+        <name>System_Size_AC_watts_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- System size in watts DC (DO NOT ENTER AC HERE) --></help>
+        <label><!-- System Size DC (watts) --></label>
+        <name>System_Size_DC__c</name>
+    </fields>
+    <fields>
+        <help><!-- System Size from Estimating Pricing Tool from related Pricing Request --></help>
+        <label><!-- System Size DC (watts) from PR --></label>
+        <name>System_Size_DC_watts_from_PR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated PILOT escalator %/yr --></help>
+        <label><!-- Tax Rate Escalator PILOT --></label>
+        <name>Tax_Rate_Escalator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Termination Values --></label>
+        <name>Termination_Values__c</name>
+        <picklistValues>
+            <masterLabel>Do not include</masterLabel>
+            <translation><!-- Do not include --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Include: Off-site</masterLabel>
+            <translation><!-- Include: Off-site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Include: On-site</masterLabel>
+            <translation><!-- Include: On-site --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Dev Profit / System Size --></help>
+        <label><!-- Total Dev Profit $/W --></label>
+        <name>Total_Dev_Profit_W__c</name>
+    </fields>
+    <fields>
+        <help><!-- MIPA Contract Value - Interconnection Upgrades (from Pricing Request) - Non-IX Dev COGs (from Opportunity) - Affiliate Fee (from Pricing Request) --></help>
+        <label><!-- Total Dev Profit --></label>
+        <name>Total_Dev_Profit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ineligible Costs from related Pricing Request --></help>
+        <label><!-- Total Ineligibles --></label>
+        <name>Total_Ineligibles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Value * System Size DC (watts) from Pricing Request --></help>
+        <label><!-- Total Valuation ($) --></label>
+        <name>Total_Valuation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Utility Company listed on the Opportunity --></help>
+        <label><!-- Utility Company --></label>
+        <name>Utility_Company__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current utility rate --></help>
+        <label><!-- Utility Rate ( $/kWh ) --></label>
+        <name>Utility_Rate_kWh__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over from the Opportunity --></help>
+        <label><!-- Utility Zone --></label>
+        <name>Utility_Zone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Vertical listed on the Opportunity --></help>
+        <label><!-- Vertical --></label>
+        <name>Vertical__c</name>
+    </fields>
+    <fields>
+        <help><!-- 1st year estimated O&amp;M amount --></help>
+        <label><!-- Estimated Year 1 O&amp;M Amount --></label>
+        <name>Year_1_O_M_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter year 1 production in kWh --></help>
+        <label><!-- Year 1 Production (kWh) --></label>
+        <name>Year_1_Production__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual Production (kWh) from related Production Model --></help>
+        <label><!-- Year 1 Production (kWh) from PM --></label>
+        <name>Year_1_Production_kWh_PM__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Use for final finance request submittal to CC --></description>
+        <label><!-- Final --></label>
+        <name>Final</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use for preliminary requests --></description>
+        <label><!-- Preliminary --></label>
+        <name>Preliminary_Finance_Request</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Enter the Ineligible Interconnection EPC $/watt costs --></errorMessage>
+        <name>Ineligible_Interconnection_Costs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the Finance Team can edit the PPA Price and Rating --></errorMessage>
+        <name>Only_Finance_can_edit_the_PPA_Terms</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please give a reason for no credit rating. --></errorMessage>
+        <name>Reason_for_No_Rating</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- NMTC_Mapping_Tool --></label>
+        <name>NMTC_Mapping_Tool</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Refresh_Opportunity_Data --></label>
+        <name>Refresh_Opportunity_Data</name>
+    </webLinks>
+</CustomObjectTranslation>

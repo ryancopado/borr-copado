@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeedERP__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>AcctSeedERP__Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Branch where the project is classified --></help>
+        <label>Branch</label>
+        <name>AcctSeedERP__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Sales Segment</label>
+        <name>AcctSeedERP__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Purchase Order Lines (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Ops Division</label>
+        <name>AcctSeedERP__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Purchase Order Lines (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Account Variable 4 --></label>
+        <name>AcctSeedERP__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Purchase Order Lines (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Product on the PO Line
+Defaults as the Product listed on the Requisition
+PRINTS ON THE PO --></help>
+        <label><!-- Product --></label>
+        <name>AcctSeedERP__Product__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Line item the PO Line is associated to
+Automatically fills in when PO Line is created from a requisition --></help>
+        <label>Line Item</label>
+        <name>AcctSeedERP__Project_Task__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Project the PO Line is for --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeedERP__Project__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Purchase Order the PO Line Is associated with --></help>
+        <label><!-- Purchase Order --></label>
+        <name>AcctSeedERP__Purchase_Order__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity Received --></label>
+        <name>AcctSeedERP__Quantity_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Unreceived --></label>
+        <name>AcctSeedERP__Quantity_Unreceived__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity to order
+For Subcontractors, enter 1 --></help>
+        <label><!-- Quantity --></label>
+        <name>AcctSeedERP__Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeedERP__Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- defaults to $1 when created from a construction requisition
+if manually creating, enter $1
+Needed for Accounting Seed functionality --></help>
+        <label><!-- Unit Price --></label>
+        <name>AcctSeedERP__Unit_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Spend --></label>
+        <name>Actual_Spend__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is from the SOLine and is editable --></help>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Quantity Received --></label>
+        <name>All_Quantity_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roll Up only AP Lines part of an invoice that has been Posted --></help>
+        <label><!-- Posted AP Line Total --></label>
+        <name>Approved_AP_Line_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls SF ID of the creator of the Con Req --></help>
+        <label><!-- Con Req Creator ID --></label>
+        <name>Con_Req_Creator_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related Construction Requisition- where the PO Line was generated from
+Automatically filled in when the PO Line is created --></help>
+        <label><!-- Construction Requisition --></label>
+        <lookupFilter>
+            <errorMessage><!-- Construction Requisition value does not exist or does not match filter criteria. --></errorMessage>
+        </lookupFilter>
+        <name>Construction_Req__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Construction Requisition ID --></label>
+        <name>Construction_Requisition_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Cost Code entered in the Line Item associated with the PO Line --></help>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Based on Vendor&apos;s approximate transit time + the Vendor Confirmed Ship Date. 
+If PO Line Status is &quot;Received In-Full: Warehouse&quot;, then this is the most current information provided to Procurement from the Project Team re: when Product is needed on-site. --></help>
+        <label><!-- Estimated Delivery Date --></label>
+        <name>Estimated_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Material Delivery --></label>
+        <name>Expected_Material_Delivery__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Invoice Status --></label>
+        <name>Final_Invoice_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Posted</masterLabel>
+            <translation><!-- Posted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- indicates value based on various status of PO, POL and when the record was created. --></help>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is from the approved SOLine and is editable. --></help>
+        <label><!-- Freight --></label>
+        <name>Freight__c</name>
+    </fields>
+    <fields>
+        <label><!-- JE Total --></label>
+        <name>JE_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Job Number
+Pulls from the Project listed --></help>
+        <label><!-- Job Number --></label>
+        <name>Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Journal Entry Line --></label>
+        <name>Journal_Entry_Line__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Material Delivery Confirmed --></label>
+        <name>Material_Delivery_Confirmed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a Material PO? --></help>
+        <label><!-- Material PO --></label>
+        <name>Material_PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material? --></label>
+        <name>Material__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Freight Allowance --></label>
+        <name>Max_Freight_Allowance__c</name>
+    </fields>
+    <fields>
+        <help><!-- O&amp;M System Install Type from the Project. Used in reports --></help>
+        <label><!-- O&amp;M Install Type --></label>
+        <name>O_M_Install_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM- Project Name --></label>
+        <name>PM_Project_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- updated via a WF whenever POL Status field is  changed --></help>
+        <label><!-- POL Status Change Date --></label>
+        <name>POLStatusChangeDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field computes (Unit Cost X Qty) + Freight + Sales Tax + Use Tax unless this Purchase Order Line is associated with an AP Invoice that is marked Final Invoice. --></help>
+        <label><!-- POLine Total --></label>
+        <name>POLine_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Line Status --></label>
+        <name>PO_Line_Status__c</name>
+        <picklistValues>
+            <masterLabel>Aaron Approved</masterLabel>
+            <translation><!-- Aaron Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM Approved</masterLabel>
+            <translation><!-- PM Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received - O&amp;M</masterLabel>
+            <translation><!-- Partially Received - O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received: Job Site</masterLabel>
+            <translation><!-- Partially Received: Job Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received: Warehouse</masterLabel>
+            <translation><!-- Partially Received: Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received In-Full - O&amp;M</masterLabel>
+            <translation><!-- Received In-Full - O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received In-Full: Job Site</masterLabel>
+            <translation><!-- Received In-Full: Job Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received In-Full: Warehouse</masterLabel>
+            <translation><!-- Received In-Full: Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment On Hold</masterLabel>
+            <translation><!-- Shipment On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipment Scheduled</masterLabel>
+            <translation><!-- Shipment Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Vendor</masterLabel>
+            <translation><!-- Submitted to Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Received PO</masterLabel>
+            <translation><!-- Vendor Received PO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Shipped Material</masterLabel>
+            <translation><!-- Vendor Shipped Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PO Name --></label>
+        <name>PO_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the PO where the PO Line is related --></help>
+        <label><!-- PO Status --></label>
+        <name>PO_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Vendor listed on the related PO --></help>
+        <label><!-- PO Vendor --></label>
+        <name>PO_Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in reporting --></help>
+        <label><!-- Project Branch --></label>
+        <name>Project_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager Email --></label>
+        <name>Project_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Received To Date --></label>
+        <name>Quantity_Received_To_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity greater than 0 --></label>
+        <name>Quantity_greater_than_0__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date requested by the PM for the material to be delivered or service to be rendered
+Defaults based on what was entered on the Requisition --></help>
+        <label><!-- Requested Delivery Date --></label>
+        <name>Requested_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of related AP lines (Invoices) that are related to the PO Line --></help>
+        <label><!-- AP Lines Total --></label>
+        <name>Roll_Up_All_Account_Payable_Lines__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>SFDCProject__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used in reporting. Displays the record type of the SV related to the Construction Requisition --></help>
+        <label><!-- SV Record Type --></label>
+        <name>SV_Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defaults as the rate from the Tax Group
+Can be manually adjusted or filled in --></help>
+        <label><!-- Sales Tax Rate --></label>
+        <name>Sales_Tax_Rate_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select corrected Tax Rate, if necessary.  Otherwise this is the approved SOLine tax rate table selection. --></help>
+        <label><!-- Sales Tax Rate Table --></label>
+        <name>Sales_Tax_Rate_Table__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity * Unit Cost * Sales Tax Rate --></help>
+        <label><!-- Sales Tax --></label>
+        <name>Sales_Tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is from the Construction Requisition and is editable --></help>
+        <label><!-- Ship to Account --></label>
+        <name>Ship_to_Account__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Subtotal --></label>
+        <name>Subtotal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tax Group the PO falls under
+Defaults from the Tax Group listed on the related Opportunity --></help>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Purchase Order Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate --></label>
+        <name>Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls hours spent on site from related con req/service visit --></help>
+        <label><!-- Total SV Hours on Site --></label>
+        <name>Total_SV_Hours_on_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls total travel time hours from service visit/con req --></help>
+        <label><!-- Total SV Travel Time --></label>
+        <name>Total_SV_Travel_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is from the approved SOLine and is editable. --></help>
+        <label><!-- Unit Cost --></label>
+        <name>Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of shipment, confirmed by the Vendor
+Filled in by Procurement once PO is submitted --></help>
+        <label><!-- Vendor Confirmed Ship Date --></label>
+        <name>Vendor_Confirmed_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the Product for the vendor
+PRINTS ON THE PO --></help>
+        <label><!-- Vendor Description --></label>
+        <name>Vendor_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Part number --></label>
+        <name>Vendor_Part_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume PO Line --></label>
+        <name>Volume_PO_Line__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Volume Purchase Total --></label>
+        <name>Volume_Purchase_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Purchased Roll Up --></label>
+        <name>Volume_Purchased_Roll_Up__c</name>
+    </fields>
+    <fields>
+        <help><!-- If product is a module or inverter calculates volume purchased based on Watts from associated product * Qty/1000 --></help>
+        <label><!-- Volume Purchased --></label>
+        <name>Volume_Purchased__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The product inventory type must be purchased or raw material. If the product inventory type is raw material the inventory product field must be checked. --></errorMessage>
+        <name>AcctSeedERP__Product_Inventory_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Product_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeedERP__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- quantity must be greater than or equal to 0 --></errorMessage>
+        <name>AcctSeedERP__Quantity_Is_Positive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To decrease Unit Cost, the associated PO must be Not To Exceed. Cannot increase Unit Cost. Instead, enter a Change Order. --></errorMessage>
+        <name>Check_PM_UnitCost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only System Administrators and Accounting users can change Quantity or Unit Price. --></errorMessage>
+        <name>Check_UnitPriceandQuantity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Certain fields cannot be edited. Please contact Accounting if you need to change the Status or the Vendor and Shipping Information. --></errorMessage>
+        <name>Lock_Fields_From_Being_Edited_by_a_PM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Quantity must be greater than 0 --></errorMessage>
+        <name>Quantity_Greater_than_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Site must be updated when changing the Project --></errorMessage>
+        <name>Update_Site_when_Project_changed</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Add_Edit_Rows --></label>
+        <name>AcctSeedERP__Mass_Add_Edit_Rows</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Serial_Numbers --></label>
+        <name>AcctSeedERP__Update_Serial_Numbers</name>
+    </webLinks>
+</CustomObjectTranslation>

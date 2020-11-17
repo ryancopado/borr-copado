@@ -1,0 +1,13 @@
+<apex:page standardController="Non_Exempt_Time__c" showHeader="false" sidebar="false"  extensions="NonExemptController">
+<apex:sectionHeader title="Nonexempt timecard" subtitle="Timecard" />
+ <apex:form id="theForm" >
+ <apex:pageMessages id="showmsg" />
+ <apex:pageBlock title="Time card Details"  mode="edit"> 
+      <apex:pageBlockSection columns="2" showHeader="true" title=" Timecard Information">
+         <apex:inputField id="timecardweek" value="{!Non_Exempt_Time__c.Time_Card_Week__c}" required="true" />
+         <apex:inputField id="employeename" value="{!Non_Exempt_Time__c.Employee_Name__c}" required="true" />
+         <apex:commandButton id="save" action="{!save}"  value="Save" rerender="showmsg"/> 
+     </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

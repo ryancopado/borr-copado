@@ -1,0 +1,34 @@
+<apex:page standardController="Customer_Satisfaction__c" extensions="sendCustomerSatisfactionEmail" action="{!thankYou}" >
+	<apex:messages />
+
+	<apex:sectionHeader title="Send Customer Satisfaction Email" subtitle="Thank You" />
+
+	<apex:form rendered="{!if(to = null, 'true', 'false')}">
+		<apex:pageMessage severity="error" title="Error:" summary="Contact must have a valid email address." 
+                          strength="3" rendered="{!if(to = null, 'true', 'false')}"/> 
+    	<apex:commandButton action="{!cancel}" value="Cancel" rendered="{!if(to = null, 'true', 'false')}" />
+    </apex:form>
+		
+	<apex:form rendered="{!if(to = null, 'false', 'true')}">
+		<apex:pageMessage severity="warning" title="Warning:" summary="This Contact has opted out for email." 
+                          strength="2" rendered="{!optout}"/>
+		<apex:pageBlock title="Email Edit">
+			<apex:pageBlockButtons >     
+				<apex:commandButton action="{!send}" value="Send Email"/><apex:commandButton action="{!cancel}" value="Cancel"/>  
+			</apex:pageBlockButtons>
+			<apex:outputLabel value="To" for="To"/>:<br />     
+			<apex:inputText value="{!Customer_Satisfaction__c.Contact__r.Email}" id="To" maxlength="80" size="50"/>
+			<br /><br />		
+			<apex:outputLabel value="Subject" for="Subject"/>:<br />     
+			<apex:inputText value="{!subject}" id="Subject" maxlength="80" size="50"/>
+			<p><strong><em>
+			NOTE:  If you change the email, please change both the RichText and the PlainText versions.
+			</em></strong></p>
+			<apex:outputLabel value="RichText" for="RichText"/>:<br />     
+			<apex:inputTextarea value="{!htmlbody}" id="RichText" rows="30" cols="120" richText="true"/>
+			<br /><br />
+			<apex:outputLabel value="PlainText" for="PlainText"/>:<br />     
+			<apex:inputTextarea value="{!body}" id="PlainText" rows="30" cols="120"/>         
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

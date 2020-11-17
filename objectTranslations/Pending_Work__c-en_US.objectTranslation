@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pending Work</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pending Work</value>
+    </caseValues>
+    <fields>
+        <help><!-- SF ID of Account associated with related Project --></help>
+        <label><!-- Account ID --></label>
+        <name>Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Asset Manufacturer --></label>
+        <name>Asset_Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Model --></label>
+        <name>Asset_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Name --></label>
+        <name>Asset_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Serial Number --></label>
+        <name>Asset_Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Type --></label>
+        <name>Asset_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset --></label>
+        <lookupFilter>
+            <errorMessage><!-- Value does not exist or does not match filter criteria. The Project on the Asset must match the Project on the Pending Work. --></errorMessage>
+        </lookupFilter>
+        <name>Asset__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Case in which the pending work item was addressed --></help>
+        <label><!-- Associated Case to Close --></label>
+        <name>Associated_Case_to_Close__c</name>
+        <relationshipLabel><!-- Pending Work (Associated Case to Close) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Service Visit in which the Pending work item was addressed --></help>
+        <label><!-- Associated Service Visit to Close --></label>
+        <name>Associated_Service_Visit_to_Close__c</name>
+        <relationshipLabel><!-- Pending Work (Associated Service Visit to Close) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Date/Time Opened --></label>
+        <name>Case_Date_Time_Opened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Number --></label>
+        <name>Case_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the &quot;Case Resolution Date&quot; from the related Case. --></help>
+        <label><!-- Case Resolution Date --></label>
+        <name>Case_Resolution_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the &quot;Case Start Date&quot; on the related Case --></help>
+        <label><!-- Case Started Date --></label>
+        <name>Case_Started_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Checklist --></label>
+        <name>Checklist__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Contract must be associated with the same Project as the Pending Work --></errorMessage>
+        </lookupFilter>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Closed --></label>
+        <name>Date_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Opened --></label>
+        <name>Date_Opened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description of Pending Work --></label>
+        <name>Description_of_Pending_Work__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the &quot;O&amp;M Contract&quot; field on the related Contract --></help>
+        <label><!-- O&amp;M Package --></label>
+        <name>O_M_Package__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Items --></label>
+        <name>Other_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Parts --></label>
+        <name>Other_Parts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RMA --></label>
+        <name>RMA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Label --></label>
+        <name>Report_Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the &quot;Visit End Date&quot; on the related Service Visit. --></help>
+        <label><!-- Service Visit End Date --></label>
+        <name>Service_Visit_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the &quot;Visit Start Date&quot; on the related Service Visit. --></help>
+        <label><!-- Service Visit Start Date --></label>
+        <name>Service_Visit_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Display the Status of the Pending Work --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Assigned</masterLabel>
+            <translation><!-- Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- show how/where the pending work was created --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Auto Created</masterLabel>
+            <translation><!-- Auto Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual Creation Project</masterLabel>
+            <translation><!-- Manual Creation Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual Creation SV</masterLabel>
+            <translation><!-- Manual Creation SV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- WOLI to Close --></label>
+        <name>WOLI_to_Close__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Order Line Item Number --></label>
+        <name>Work_Order_Line_Item_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Line Item Start Time --></label>
+        <name>Work_Order_Line_Item_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Line Item --></label>
+        <name>Work_Order_Line_Item__c</name>
+        <relationshipLabel><!-- Pending Work (Work Order Line Item) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Order To Close --></label>
+        <name>Work_Order_To_Close__c</name>
+        <relationshipLabel><!-- Pending Work (Work Order To Close) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Order --></label>
+        <name>Work_Order__c</name>
+        <relationshipLabel><!-- Pending Work --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If pending work was created from a project it should not be associated with a Service Visit or a Case. --></errorMessage>
+        <name>Pending_Work_Manually_Created</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Pending_Work_Project --></label>
+        <name>Create_Pending_Work_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Pending_Work_SV --></label>
+        <name>Create_Pending_Work_SV</name>
+    </webLinks>
+</CustomObjectTranslation>

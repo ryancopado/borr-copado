@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Main record used to define configuration and default settings used in the application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AcctSeed__AP_Control_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This should be set to the main Accounts Payable GL Account.</inlineHelpText>
+        <label>AP Control GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (AP Control GL Account)</relationshipLabel>
+        <relationshipName>PMA_Main1</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__AR_Control_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This should be set to the main Accounts Receivable GL Account.</inlineHelpText>
+        <label>AR Control GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (AR Control GL Account)</relationshipLabel>
+        <relationshipName>PMA_Main</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount_Right_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field left and a negative value will move the field right the number of millimeters specified.</inlineHelpText>
+        <label>Amount Right Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Amount Top Offest</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount_Words_Left_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the amount in words field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified.</inlineHelpText>
+        <label>Amount Words Left Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount_Words_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the amount in words field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Amount Words Top Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Archive_Month_Offset__c</fullName>
+        <defaultValue>15</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This should be used as the offset for archiving.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This should be used as the offset for archiving.</inlineHelpText>
+        <label>Archive Month Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Auto_Post_Source_Documents__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto-Post Source Documents</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Avalara_Account_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Account ID on your Avalara account’s Settings</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account ID on your Avalara account’s Settings</inlineHelpText>
+        <label>Avalara Account Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Avalara_License_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>License key given by Avalara</description>
+        <externalId>false</externalId>
+        <inlineHelpText>License key given by Avalara</inlineHelpText>
+        <label>Avalara License Key</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Avalara_Production_Endpoint__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Avalara Production Endpoint</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Avalara_Sales_Tax_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This GL Account should be set up as Type Balance Sheet and Sub Type 1 Liabilities.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This GL Account should be set up as Type Balance Sheet and Sub Type 1 Liabilities.</inlineHelpText>
+        <label>Avalara Sales Tax GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Balance Sheet</value>
+            </filterItems>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Sub_Type_1__c</field>
+                <operation>equals</operation>
+                <value>Liabilities</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Avalara Sales Tax GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings_AvaGLAcct</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Avalara_Tax_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A generic product whose name (example: Avalara Tax) populates the product field on the calculated Avalara tax line. This should be assigned a $0.00 standard price and added to a price book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A generic product whose name (example: Avalara Tax) populates the product field on the calculated Avalara tax line. This should be assigned a $0.00 standard price and added to a price book.</inlineHelpText>
+        <label>Avalara Tax Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Accounting Settings (Avalara Tax Product)</relationshipLabel>
+        <relationshipName>Avalara_Tax_Product_Settings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Activity_Statement_Format__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the billing activity statement format here. The billing activity statement format is the PDF format used to send billing activity statements to a customer.</inlineHelpText>
+        <label>Billing Activity Statement Format</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Billing_Format__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Activity Statement</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Billing_Format__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Activity Statement Format)</relationshipLabel>
+        <relationshipName>Accounting_Settings10</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Outstanding_Statement_Format__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the billing outstanding statement format here. The billing outstanding statement format is the PDF format used to send billing outstanding statements to a customer.</inlineHelpText>
+        <label>Billing Outstanding Statement Format</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Billing_Format__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Outstanding Statement</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Billing_Format__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Billing Statement Format)</relationshipLabel>
+        <relationshipName>Accounting_Settings11</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_In_Default_Matching_Setting__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Cash-In Default Matching Setting</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_In_Default_Source_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Cash-In Default Source Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cash Receipt</fullName>
+                    <default>false</default>
+                    <label>Cash Receipt</label>
+                </value>
+                <value>
+                    <fullName>Journal Entry</fullName>
+                    <default>false</default>
+                    <label>Journal Entry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Out_Default_Matching_Setting__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Cash-Out Default Matching Setting</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Out_Default_Source_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Cash-Out Default Source Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cash Disbursement</fullName>
+                    <default>false</default>
+                    <label>Cash Disbursement</label>
+                </value>
+                <value>
+                    <fullName>Journal Entry</fullName>
+                    <default>false</default>
+                    <label>Journal Entry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Company_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company Code on your Avalara account’s Settings</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company Code on your Avalara account’s Settings</inlineHelpText>
+        <label>Company Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Country_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>2 character ISO abbreviation for Country Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>2 character ISO abbreviation for Country Code</inlineHelpText>
+        <label>Country Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Currency_Gain_Loss_GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the GL Account which will need to be set for the realized loss and gain transactions which are created for the cash application and cash disbursement post.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the GL Account which will need to be set for the realized loss and gain transactions which are created for the cash application and cash disbursement post.</inlineHelpText>
+        <label>Currency Gain/Loss GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Currency Gain/Loss GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings157Y</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Current_Year_Earnings_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Current Year Earnings GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Current Year Earnings GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings9</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Customer_Payment_Adjustment_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Customer Payment Adjustment GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Default Payment Adjustment GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings4A9K</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Date_Right_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the amount field relative to the current location on the print check pdf. A positive value will move the field left and a negative value will move the field right the number of millimeters specified.</inlineHelpText>
+        <label>Date Right Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Date_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the date field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Date Top Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Bank_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the account that the majority of payments are made from and that deposits are made to. When entering a cash receipt it will default to this bank account. When creating a cash disbursement batch it will default to this account.</inlineHelpText>
+        <label>Default Bank Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Bank__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Default Bank Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Billing_Format__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select your primary billing format here. When you create a billing and leave this field blank, the default billing format will be selected after you press save.</inlineHelpText>
+        <label>Default Billing Format</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Billing_Format__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Billing</value>
+            </filterItems>
+            <infoMessage>The type on the PDF Format must be Billing</infoMessage>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Billing_Format__c</referenceTo>
+        <relationshipLabel>Accounting_Settings</relationshipLabel>
+        <relationshipName>Accounting_Settings</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Cash_Disbursement_Category__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to categorize Cash Disbursements on the Cash Flow statement.</inlineHelpText>
+        <label>Default Cash Disbursement Category</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Cash Flow</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Cash Disburs. Cash Flow Category)</relationshipLabel>
+        <relationshipName>Accounting_Settings_CF_CD</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Cash_Receipt_Category__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to categorize Cash Receipts on the Cash Flow statement.</inlineHelpText>
+        <label>Default Cash Receipt Category</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Cash Flow</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Cash Receipt Cash Flow Category)</relationshipLabel>
+        <relationshipName>Accounting_Settings_CF_CR</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Journal_Entry_Line_Category__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to categorize Journal Entry Lines related to bank accounts on the Cash Flow statement.</inlineHelpText>
+        <label>Default Journal Entry Line Category</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Cash Flow</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default JE Line Cash Flow Category)</relationshipLabel>
+        <relationshipName>Accounting_Settings_CF_JEL</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Ledger__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the default ledger used to post transaction records</inlineHelpText>
+        <label>Default Ledger</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The ledger type must be Transactional</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Ledger__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Transactional</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Ledger__c</referenceTo>
+        <relationshipLabel>Accounting_Settings</relationshipLabel>
+        <relationshipName>Accounting_Settings</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Packing_Slip_Format__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select your primary packing slip format here. When you create a shipment record and leave this field blank, the default packing slip format will be selected after you press save.</inlineHelpText>
+        <label>Default Packing Slip Format</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The type on the PDF Format must be Packing Slip</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Billing_Format__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Packing Slip</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Billing_Format__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Packing Slip)</relationshipLabel>
+        <relationshipName>Accounting_Settings2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Project_Task_Labor_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Default_Project_Task_Labor_GL_Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This GL Account is the debit side of the Time Card labor recording.  It will be an expense (debit)</inlineHelpText>
+        <label>Default Project Task Labor GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Default Labor GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Purchase_Order_Format__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select your primary purchase order format here. When you create a  purchase order and leave this field blank, the default  purchase order format will be selected after you press save.</inlineHelpText>
+        <label>Default Purchase Order Format</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The type on the PDF Format must be Purchase Order</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Billing_Format__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Purchase Order</value>
+            </filterItems>
+            <infoMessage>The type on the PDF Format must be Purchase Order</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Billing_Format__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Purchase Order Format)</relationshipLabel>
+        <relationshipName>Accounting_Settings1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Default_Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Default Vendor on the Bank Direct Connect page.</inlineHelpText>
+        <label>Default Vendor</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Accounting Settings</relationshipLabel>
+        <relationshipName>Accounting_Settings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Disable_Trial_Data__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Trial Data</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Display_Billable_Flag_in_Time_Card_Entry__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This checkbox will display the billable checkbox on time cards. If enabled, users can select it on individual time card lines to show the line is billable.</inlineHelpText>
+        <label>Display Billable Flag in Time Card Entry</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_AP_Period_Sensitive_Aging__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable AP Period Sensitive Aging</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Avalara_Tax_Calculation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable Avalara AvaTax integration for tax calculation. This overrides Accounting Seed&apos;s native tax calculation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable Avalara AvaTax integration for tax calculation. This overrides Accounting Seed&apos;s native tax calculation.</inlineHelpText>
+        <label>Enable Avalara Tax Calculation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Billing_Period_Sensitive_Aging__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Billing Period Sensitive Aging</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Cash_Flow_Statement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this for the ability to run the Cash Flow Statement report. The default Cash Flow Categories chosen here will auto-populate on records created after the setting is enabled.</inlineHelpText>
+        <label>Enable Cash Flow Statement</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Global_Automated_Add__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Global Automated Add</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Global_Automated_Match__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Global Automated Match</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Multi_Currency__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Multi-Currency</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Enable_Product_Costing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to record the costing of the sale of products.  With this enabled a new billing will record a debit to Cost of Goods and a credit to inventory.</inlineHelpText>
+        <label>Enable Product Costing</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Financial_Suite_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Suite Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Inventory_Valuation_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes whether standard or average cost is used for Product Costing.</inlineHelpText>
+        <label>Inventory Valuation Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Average Cost</fullName>
+                    <default>true</default>
+                    <label>Average Cost</label>
+                </value>
+                <value>
+                    <fullName>Standard Cost</fullName>
+                    <default>false</default>
+                    <label>Standard Cost</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Inventory_Variance_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This GL Account captures the difference between the standard inventory product cost and the actual purchase price when a payable is created.</inlineHelpText>
+        <label>Inventory Variance GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Inventory Variance GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Label_for_Time_Card_Variable_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label used to display for Time Card Variable 1 in the Time Card screen.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the label used to display the Time Card Variable 1 in the Time Card screen.  This is used in coordination with setting up variables in the Accounting Variables tab.</inlineHelpText>
+        <label>Label for Time Card Variable 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Label_for_Time_Card_Variable_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label used to display for Time Card Variable 2 in the Time Card screen.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the label used to display the Time Card Variable 2 in the Time Card screen.  This is used in coordination with setting up variables in the Accounting Variables tab.</inlineHelpText>
+        <label>Label for Time Card Variable 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Labor_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This liability account (accrued payroll) will be credited when a time card is posted.  The corresponding debit (expense) is from the project task line.</inlineHelpText>
+        <label>Labor Clearing GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Labor GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Ledger_Limit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Ledger Limit</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Legacy_Default_Ledger__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Legacy Default Ledger</label>
+        <referenceTo>AcctSeed__Ledger__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Legacy Default Ledger)</relationshipLabel>
+        <relationshipName>Accounting_Settings1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Memo_Left_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the memo field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified.</inlineHelpText>
+        <label>Memo Left Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Memo_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the memo field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Memo Top Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payee_Address_Left_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the payee address field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified.</inlineHelpText>
+        <label>Payee Address Left Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payee_Address_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the payee address field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Payee Address Top Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payee_Left_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the payee field relative to the current location on the print check pdf. A positive value will move the field right and a negative value will move the field left the number of millimeters specified.</inlineHelpText>
+        <label>Payee  Left Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payee_Top_Offset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifying a value will offset the payee field relative to the current location on the print check pdf. A positive value will move the field down and a negative value will move the field up the number of millimeters specified.</inlineHelpText>
+        <label>Payee Top Offset</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payment_Discount_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This account is credited when your organization takes advantage of early vendor payment discounts.</inlineHelpText>
+        <label>Vendor Payment Discount GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Payment Discount GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings5</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payment_Link_Username__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Link Username</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Post_Settings__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Post Settings</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Header-Level Post</fullName>
+                    <default>true</default>
+                    <label>Header-Level Post</label>
+                </value>
+                <value>
+                    <fullName>Line-Level Post</fullName>
+                    <default>false</default>
+                    <label>Line-Level Post</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Zip or Postal Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Zip or Postal Code</inlineHelpText>
+        <label>Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Prepaid_Expense_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Populates the Debit GL Account field on a Cash Disbursement when applied to a Payable</inlineHelpText>
+        <label>Prepaid Expense GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting Settings (Default Prepaid Expense GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settingsauaf</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Region__c</fullName>
+        <deprecated>false</deprecated>
+        <description>2 character abbreviation for State or Province</description>
+        <externalId>false</externalId>
+        <inlineHelpText>2 character abbreviation for State or Province</inlineHelpText>
+        <label>State/Province</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Retained_Earnings_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Retained Earnings GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Retained Earnings GL Account)</relationshipLabel>
+        <relationshipName>Accounting_SettingsuZ2N</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Revenue_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Set this to the main revenue account associated with your billings.</inlineHelpText>
+        <label>Default Revenue GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Revenue</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Revenue GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings4</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Street__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Stripe_Connected_Account_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Stripe Connected Account Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Tax_Calculation_Mode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Point of Sale considers taxability for Origin Address. Point of Destination considers taxability for Shipping Address. Shipment considers taxability for both addresses.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Point of Sale considers taxability for Origin Address. Point of Destination considers taxability for Shipping Address. Shipment considers taxability for both addresses.</inlineHelpText>
+        <label>Sales Tax Calculation Mode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>POS</fullName>
+                    <default>true</default>
+                    <label>Point of Sale</label>
+                </value>
+                <value>
+                    <fullName>POD</fullName>
+                    <default>false</default>
+                    <label>Point of Destination</label>
+                </value>
+                <value>
+                    <fullName>Shipment</fullName>
+                    <default>false</default>
+                    <label>Shipment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Unapplied_Cash_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This GL Account is credited upon entering a cash receipt.   After applying the cash receipt to a bill, the amount is removed (debits) from this account and a reduces (credits) Accounts Receivable.   Typical placement of this account is next to AR.</inlineHelpText>
+        <label>Unapplied A/R GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Unapplied Cash GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings7</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Vouchers_Payable_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This GL Account is credited when a Purchase Order product has been received.  Then match a Vendor Invoice by creating a Payable from the Purchase Order page.  This action will then debit Vouchers Payable and credit Accounts Payable.</inlineHelpText>
+        <label>Vouchers Payable GL Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Balance Sheet</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Vouchers Payable)</relationshipLabel>
+        <relationshipName>Accounting_Settings1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Work_in_Process_GL_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This account is increased when a Manufacturing Order allocates raw materials.  It is reduced upon completion of the manufactured product and transferred to finished goods inventory.</inlineHelpText>
+        <label>Work in Process GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Accounting_Settings (Work in Process GL Account)</relationshipLabel>
+        <relationshipName>Accounting_Settings6</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Accounting Settings</label>
+    <nameField>
+        <label>Account Settings Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Accounting Settings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

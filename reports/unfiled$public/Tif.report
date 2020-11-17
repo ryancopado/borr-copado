@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Con_Req_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Con_Req_Group__c.Construction_Requisitions__r$Name</field>
+    </columns>
+    <columns>
+        <field>Con_Req_Group__c$Vendor__c</field>
+    </columns>
+    <columns>
+        <field>Con_Req_Group__c.Construction_Requisitions__r.Purchase_Order_Lines__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Con_Req_Group__c$Vendor__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Greenberg Farrow Architecture</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Tif</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Con_Req_Groups_with_Construction_Reqs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Con_Req_Group__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

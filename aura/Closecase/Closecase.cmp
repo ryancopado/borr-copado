@@ -1,0 +1,208 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId,force:appHostable" access="global"  controller="closecaselightning">
+    <aura:attribute name="cslist" type="Id"/>
+    <aura:attribute name="rectypename" type="string"/>
+    <aura:attribute name="recid" type="Id" />
+     <aura:attribute name="cslistrec" type="Case[]"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+     <aura:if isTrue="{!(v.rectypename =='Service')||(v.rectypename=='Warranty')||(v.rectypename=='Reactive')}">
+     <lightning:recordeditform 
+            recordId="{!v.cslist}"
+            objectApiName="Case"  onsubmit="{!c.onRecordSubmit}"
+               onsuccess="{!c.handleSuccess}" >
+           <lightning:card  title="Case Information">
+          <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+         <lightning:inputField fieldName="OwnerId" />
+         <lightning:inputField fieldName="CaseNumber" />
+         <lightning:inputField fieldName="AccountId" />
+         <lightning:inputField fieldName="Project__c" />
+         <lightning:inputField fieldName="ServiceContract_Case__c" />
+         <lightning:inputField fieldName="Branch__c" /> 
+              
+           </div>
+                <div class="slds-col slds-size_1-of-2">
+                     <lightning:inputField fieldName="RecordTypeId"  />
+                    <lightning:inputField fieldName="Status"   required="true"  value="Closed" size="1"/>
+                     <lightning:inputField fieldName="Priority" />
+                     <lightning:inputField fieldName="Origin"  required="true"  />
+                    <lightning:inputField fieldName="Reason" />
+                    <lightning:inputField fieldName="Case_Start_Date__c" />
+                    <lightning:inputField fieldName="Case_Cause__c"  required="true"/>
+                    
+                    
+                    
+              </div>
+         </div>
+         </lightning:card>
+         <lightning:card  title="Site Readings">
+             <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-2" >
+                      <lightning:inputField fieldName="Case_End_Date__c"  required="true"  />
+                      <lightning:inputField fieldName="Contract_Type__c" />
+                      <lightning:inputField fieldName="Reactive_Service_Type__c"  required="true"  />
+                      <lightning:inputField fieldName="Was_there_an_environmental_issue__c" required="true" />
+                      <lightning:inputField fieldName="Was_there_a_safety_issue__c"  required="true"  />
+                       <lightning:inputField fieldName="Subject" />
+                      <lightning:inputField fieldName="Manager_Comments__c" />
+                      
+                 </div>
+                
+             </div>
+         </lightning:card>
+           <lightning:card  title="Description Information">
+             
+                 
+                <lightning:inputField fieldName="Description"/> 
+                     
+                  
+                    <div class="slds-align--absolute-center">
+                        <lightning:button  title="Save" label="Save"  variant="brand" type="submit" /><!--onclick="{!c.gotoURL}" class="{!con.Id}"-->
+                         <lightning:button  title="Cancel" label="Cancel" variant="brand" onclick="{!c.cancelevent}" /><!--onclick="{!c.cancelevent}" class="{!con.Id}"-->
+                  
+               </div>
+         </lightning:card>
+               
+             
+       
+         
+    </lightning:recordeditform>
+         </aura:if>
+    <!-- PROJECT RECORDTYPE-->
+    <aura:if isTrue="{!(v.rectypename=='Project')}">
+     <lightning:recordeditform  aura:id="closecaseform"
+            recordId="{!v.cslist}"
+                               
+            objectApiName="Case" onsubmit="{!c.onRecordSubmit}"
+                               onsuccess="{!c.handleSuccess}" onerror="{!c.handleError}" ><!--onerror="{!c.handleError}"-->
+           <lightning:card  title="Case Information">
+          <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+         <lightning:inputField fieldName="OwnerId" />
+         <lightning:inputField fieldName="CaseNumber" />
+         <lightning:inputField fieldName="AccountId" />
+         <lightning:inputField fieldName="Project__c" />
+         <lightning:inputField fieldName="ServiceContract_Case__c" />
+         <lightning:inputField fieldName="Branch__c" /> 
+             
+
+              
+           </div>
+                <div class="slds-col slds-size_1-of-2">
+                     <lightning:inputField fieldName="RecordTypeId"  />
+                    <lightning:inputfield fieldName="Status"   required="true"  value="Closed" editable="false" />
+                     <lightning:inputField fieldName="Priority" />
+                    <lightning:inputField fieldName="Case_Start_Date__c" />
+            
+                    
+              </div>
+         </div>
+         </lightning:card>
+         <lightning:card  title="Site Readings">
+             <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-2" >
+                      <lightning:inputField fieldName="Case_End_Date__c"  required="true"  />
+                      <lightning:inputField fieldName="Labor_Billing__c" required="true"  /><!--required="true"-->
+                    <!--  <lightning:inputField fieldName="Contract_Type__c" />-->
+                     <!-- <lightning:inputField fieldName="Reactive_Service_Type__c"  required="true"  />-->
+                      <lightning:inputField fieldName="Was_there_an_environmental_issue__c" required="true" />
+                      <lightning:inputField fieldName="Was_there_a_safety_issue__c"  required="true"  />
+                       <lightning:inputField fieldName="Subject" />
+                      <lightning:inputField fieldName="Manager_Comments__c" />
+                       
+                      
+                 </div>
+                
+             </div>
+         </lightning:card>
+           <lightning:card  title="Description Information">
+             
+                 
+                <lightning:inputField fieldName="Description"/> 
+                     
+                  
+                    <div class="slds-align--absolute-center">
+                        <lightning:button  title="Save" label="Save"  variant="brand" type="submit" /><!--onclick="{!c.gotoURL}" class="{!con.Id}"-->
+                         <lightning:button  title="Cancel" label="Cancel" variant="brand" onclick="{!c.cancelevent}" /><!--onclick="{!c.cancelevent}" class="{!con.Id}"-->
+                  
+               </div>
+         </lightning:card>
+               
+             
+        <!--<lightning:inputField fieldName="Labor_Billing__c"  />  -->
+         
+    </lightning:recordeditform>
+         </aura:if>
+     <!--Other record types-->
+     <aura:if isTrue="{!(v.rectypename!='Warranty') &amp;&amp; (v.rectypename!='Reactive') &amp;&amp; (v.rectypename!='Project')}">
+      
+        <lightning:recordeditform 
+            recordId="{!v.cslist}"
+            objectApiName="Case" onsubmit="{!c.onRecordSubmit}"
+                                  onsuccess="{!c.handleSuccess}">
+           <lightning:card  title="Case Information">
+          <div class="slds-grid">
+                        
+                        <div class="slds-col slds-size_1-of-2" >
+                            
+         <lightning:inputField fieldName="OwnerId" />
+         <lightning:inputField fieldName="CaseNumber" />
+         <lightning:inputField fieldName="AccountId" />
+         <lightning:inputField fieldName="Project__c" />
+         <lightning:inputField fieldName="ServiceContract_Case__c" />
+         <lightning:inputField fieldName="Branch__c" /> 
+                   
+              
+           </div>
+                <div class="slds-col slds-size_1-of-2">
+                     <lightning:inputField fieldName="RecordTypeId"  />
+                    <lightning:inputField fieldName="Status" required="true"  value="Closed"/>
+                     <lightning:inputField fieldName="Priority" />
+                    <lightning:inputField fieldName="Case_Start_Date__c" />
+                   
+                    
+                    
+                    
+              </div>
+         </div>
+         </lightning:card>
+         <lightning:card  title="Site Readings">
+             <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-2" >
+                      <lightning:inputField fieldName="Case_End_Date__c"  required="true"  />
+                      <lightning:inputField fieldName="Contract_Type__c" />
+                      <lightning:inputField fieldName="Reactive_Service_Type__c"  required="true"  />
+                      <lightning:inputField fieldName="Was_there_an_environmental_issue__c" required="true" />
+                      <lightning:inputField fieldName="Was_there_a_safety_issue__c"  required="true"  />
+                       <lightning:inputField fieldName="Subject" />
+                      <lightning:inputField fieldName="Manager_Comments__c" />
+                      <lightning:inputField fieldName="Labor_Billing__c"  /> 
+                      
+                 </div>
+                
+             </div>
+         </lightning:card>
+           <lightning:card  title="Description Information">
+             
+                 
+                <lightning:inputField fieldName="Description"/> 
+                     
+                  
+                    <div class="slds-align--absolute-center">
+                        <lightning:button  title="Save" label="Save"  variant="brand" type="submit" />
+                         <lightning:button  title="Cancel" label="Cancel" variant="brand" onclick="{!c.cancelevent}" />
+                  <!-- -->
+               </div>
+         </lightning:card>
+               
+             
+        
+         
+    </lightning:recordeditform>
+      
+    </aura:if>
+
+</aura:component>

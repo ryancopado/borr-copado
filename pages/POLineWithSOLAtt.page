@@ -1,0 +1,29 @@
+<apex:page standardController="AcctSeedERP__Purchase_Order_Line__c" extensions="ASconPOatt">
+<style>
+.fewerMore {display: none;}
+</style>
+<apex:form >
+ <apex:pageMessages />
+ <apex:detail relatedList="true"></apex:detail>
+ 
+ <!--Removed the display of attachments since we moved to Files-added by Divya on 1/11/2019-->
+ 
+<!--<apex:pageblock id="CustomList" title="Construction Requisition Attachments"  >
+   <apex:pageBlockTable value="{!atts}" var="o" rendered="{!NOT(ISNULL(atts))}">
+        <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!o.Id}">{!o.Name}</apex:outputLink></apex:column>
+        <apex:column value="{!o.OwnerId}"/>
+        <apex:column value="{!o.CreatedDate}"/>
+   </apex:pageBlockTable>
+   <apex:outputLabel value="No records to display" rendered="{!(ISNULL(atts))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+ </apex:pageblock>-->
+ <apex:pageblock id="CustomList1" title="Construction Requisition Files"  >
+   
+   <apex:pageBlockTable value="{!files}" var="f" rendered="{!NOT(ISNULL(files))}">
+        <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!f.ContentDocumentID}">{!f.ContentDocument.title}</apex:outputLink></apex:column>
+        <apex:column value="{!f.ContentDocument.OwnerId}"/>
+        <apex:column value="{!f.ContentDocument.CreatedDate}"/>
+   </apex:pageBlockTable>
+   <apex:outputLabel value="No records to display" rendered="{!(ISNULL(files))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+ </apex:pageblock>
+</apex:form>
+</apex:page>

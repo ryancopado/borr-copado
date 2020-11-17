@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Case field labels of those fields exposed to customer portal users.  This is used to decide what fields to show in a Case history display on the customer portal.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Case_Field_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Field Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track_Changes_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this if this is a field that track history only tracks changes rather than also tracking old and new values (for example fields of type textarea).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this if this is a field that track history only tracks changes rather than also tracking old and new values (for example fields of type textarea).</inlineHelpText>
+        <label>Track Changes Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Portal Case Field</label>
+    <visibility>Public</visibility>
+</CustomObject>

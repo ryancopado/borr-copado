@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchase Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchase Items</value>
+    </caseValues>
+    <fields>
+        <help><!-- Is the item allowed to be used on a IT Req? --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- A free text field used for any special comments. --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Item Code --></label>
+        <name>Item_Code__c</name>
+        <picklistValues>
+            <masterLabel>6270.00</masterLabel>
+            <translation><!-- 6270.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6310.00</masterLabel>
+            <translation><!-- 6310.00 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select a preferred vendor if needed. --></help>
+        <label><!-- Preferred Vendor --></label>
+        <name>Preferred_Vendor__c</name>
+        <relationshipLabel><!-- Purchase Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The standard cost per unit. --></help>
+        <label><!-- Standard Cost --></label>
+        <name>Standard_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Unit of Measure --></label>
+        <name>Standard_Unit_of_Measure__c</name>
+        <picklistValues>
+            <masterLabel>Box</masterLabel>
+            <translation><!-- Box --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carton</masterLabel>
+            <translation><!-- Carton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Each</masterLabel>
+            <translation><!-- Each --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the category that the item best fits into. --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation><!-- Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office</masterLabel>
+            <translation><!-- Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Employee_Name__c</field>
+        <field>Employee_Title__c</field>
+        <field>Owner</field>
+        <field>Item_Requested__c</field>
+        <field>Quantity__c</field>
+        <field>Cost__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>etam@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>IT approved</label>
+        <name>IT_approved</name>
+    </approvalStep>
+    <emailTemplate>Procurement/Account_Creation_Submitted</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Account Creation Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.Computer_Requirement__c</field>
+            <operation>equals</operation>
+            <value>Previously Used Computer,None</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Account_CReation_Request_Endsight</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Account_submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Account Creation notification</label>
+    <processOrder>12</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

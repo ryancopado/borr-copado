@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used when Status of Personnel Req changes to Hired</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Offer Letter Signed</name>
+    <style>none</style>
+    <subject>An offer letter has been signed for {!SFDC_Purchase_Requisition__c.Employee_Title__c} in {!SFDC_Purchase_Requisition__c.Branch__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

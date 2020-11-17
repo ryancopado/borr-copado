@@ -1,0 +1,1845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Pre_Sales_Design_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Revision Notes</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Engineer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Pick the AE that will be working with you on the design.</inlineHelpText>
+        <label>Application Engineer</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>contains</operation>
+                <value>Applications Engineer, Application Engineer, Industrial Engineer, Development Engineer,Sr Pre-Construction Manager</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Alias</field>
+                <operation>equals</operation>
+                <value>so&apos;le</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Pre_Sales_Designs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Applications_Engineer__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Pick the AE that will be working with you on the design.</inlineHelpText>
+        <label>Applications Engineer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cameron Thorne</fullName>
+                    <default>false</default>
+                    <label>Cameron Thorne</label>
+                </value>
+                <value>
+                    <fullName>Tarn Yates</fullName>
+                    <default>false</default>
+                    <label>Tarn Yates</label>
+                </value>
+                <value>
+                    <fullName>Patrick Canning</fullName>
+                    <default>false</default>
+                    <label>Patrick Canning</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Ted Delgado</fullName>
+                    <default>false</default>
+                    <label>Ted Delgado</label>
+                </value>
+                <value>
+                    <fullName>Ben Foss-Michaelis</fullName>
+                    <default>false</default>
+                    <label>Ben Foss-Michaelis</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Building_Owner__c</fullName>
+        <defaultValue>&apos;N/A&apos;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Input N/A if Building Owner should not be in title block</inlineHelpText>
+        <label>Building Owner</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Building_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Existing Rooftop</fullName>
+                    <default>false</default>
+                    <label>Existing Rooftop</label>
+                </value>
+                <value>
+                    <fullName>New Construction</fullName>
+                    <default>false</default>
+                    <label>New Construction</label>
+                </value>
+                <value>
+                    <fullName>Ground</fullName>
+                    <default>false</default>
+                    <label>Ground</label>
+                </value>
+                <value>
+                    <fullName>Carport</fullName>
+                    <default>false</default>
+                    <label>Carport</label>
+                </value>
+                <value>
+                    <fullName>Landfill</fullName>
+                    <default>false</default>
+                    <label>Landfill</label>
+                </value>
+                <value>
+                    <fullName>Variable Solution</fullName>
+                    <default>false</default>
+                    <label>Variable Solution</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Completed_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Notes</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Pre-Sales Designs</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Designer__c  , &apos;Internal&apos;), 50 *  Hours__c , IF(ISPICKVAL(Designer__c , &apos;Outsource&apos;),  Design_Partner__r.Hourly_Rate__c *Hours__c, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Created_Date_of_1st_Revision__c</fullName>
+        <externalId>false</externalId>
+        <label>Created Date of 1st Revision</label>
+        <summarizedField>PSD_Revision__c.CreatedDate</summarizedField>
+        <summaryFilterItems>
+            <field>PSD_Revision__c.Revision_Number__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PSD_Revision__c.Pre_Sales_Design__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name to be displayed in the title block</inlineHelpText>
+        <label>Project Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Since_Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() -  Status_Change__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Since Status Change</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Design_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Design Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pre-Sales Designs</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Designer__c</fullName>
+        <externalId>false</externalId>
+        <label>Designer</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                    <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>Outsource</fullName>
+                    <default>false</default>
+                    <label>Outsource</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Drawing_Title__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the Drawing Title that you would like to see appear in the title block</inlineHelpText>
+        <label>Drawing Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Drawings_Already_Exist__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawings Already Exist</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>No - Aerial Sufficient</fullName>
+                    <default>false</default>
+                    <label>No - Aerial Sufficient</label>
+                </value>
+                <value>
+                    <fullName>Yes - Attached</fullName>
+                    <default>false</default>
+                    <label>Yes - Attached</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Valid__c</fullName>
+        <description>Formula to check if the Due Date is valid or not.  This is used by both the Due Date New validation rule and by the Submit button javascript to verify if the Due Date field is valid.</description>
+        <externalId>false</externalId>
+        <formula>IF((AND(OR(TEXT( Status__c ) = &apos;New&apos;, TEXT( Status__c ) = &apos;Submitted&apos;, TEXT( Status__c ) = &apos;Corrections Needed&apos;  ),  $User.Id &lt;&gt; &apos;00530000000jcNDAAY&apos; ,  $User.Pre_Sales_Design_Request_Email__c =FALSE ,OR(AND( Due_Date__c  &lt; TODAY() +2,  ISPICKVAL(Proposal_Level_Needed__c, &quot;L1&quot;)),  AND( Due_Date__c  &lt; TODAY() +5,  ISPICKVAL(Proposal_Level_Needed__c, &quot;L2&quot;)),
+AND( Due_Date__c  &lt; TODAY() +14,  ISPICKVAL(Proposal_Level_Needed__c, &quot;L3&quot;))))), &apos;Invalid&apos;, &apos;Valid&apos;)</formula>
+        <label>Due Date Valid</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <defaultValue>TODAY()+2</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>L1 - Minimum 2 Days
+L2 - Minimum 5 Days
+L3 - Minimum 14-21 Days</inlineHelpText>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Electrical_Sizing_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe existing electrical equipment on site including possible interconnection locations.</inlineHelpText>
+        <label>Existing Electrical Info and Location</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Email</formula>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Finance_Option__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE(
+    IF(INCLUDES( Opportunity__r.Financing_Options_Provided__c , &apos;Cash&apos;),  &apos;Cash,&apos;,  NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;PPA&apos;), &apos;PPA,&apos;, NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;Lease&apos;), &apos;Lease,&apos;, NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;Other&apos;),  &apos;Other,&apos;,  NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;TEML&apos;),  &apos;TEML,&apos;,  NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;PACE&apos;),  &apos;PACE,&apos;,  NULL) +
+    IF(INCLUDES(Opportunity__r.Financing_Options_Provided__c, &apos;GO Bond&apos;), &apos;GO Bond,&apos;, NULL) + &apos;#&apos;,
+
+    &apos;,#&apos;,
+
+    NULL
+)</formula>
+        <inlineHelpText>Options brought over from the Opportunity.</inlineHelpText>
+        <label>Finance Option</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Site_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.ShippingStreet &amp; &quot;, &quot; &amp;
+ Opportunity__r.Account.ShippingCity &amp; &quot;, &quot; &amp;
+ Opportunity__r.Account.ShippingState &amp; &quot; &quot; &amp;
+ Opportunity__r.Account.ShippingPostalCode</formula>
+        <label>Site Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interconnection_Voltage__c</fullName>
+        <externalId>false</externalId>
+        <label>Interconnection Voltage</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_1_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Inverter Type 1 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_2_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Inverter Type 2 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Inverter Type 2</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Inverter Type 2)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_3_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Inverter Type 3 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Inverter Type 3</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Inverter Type 3)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_4_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Inverter Type 4 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inverter_Type_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Inverter Type 4</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Inverter Type 4)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inverters__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Inverter Type 1</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Inverters)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_a_Checklist_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Is a Checklist Required?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Proposal_Level_Needed__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>L1</controllingFieldValue>
+                <controllingFieldValue>L2</controllingFieldValue>
+                <controllingFieldValue>L3</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>L1</controllingFieldValue>
+                <controllingFieldValue>L0</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Job_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.Account.Job_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Job Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LJTPVsyst_Modeling_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT PVsyst Modeling Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LJT_Designer__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT Designer</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Algan Gan</fullName>
+                    <default>false</default>
+                    <label>Algan Gan</label>
+                </value>
+                <value>
+                    <fullName>Albert Zhu</fullName>
+                    <default>false</default>
+                    <label>Albert Zhu</label>
+                </value>
+                <value>
+                    <fullName>Daisy Wu</fullName>
+                    <default>false</default>
+                    <label>Daisy Wu</label>
+                </value>
+                <value>
+                    <fullName>Duran Xiao</fullName>
+                    <default>false</default>
+                    <label>Duran Xiao</label>
+                </value>
+                <value>
+                    <fullName>Sam Zou</fullName>
+                    <default>false</default>
+                    <label>Sam Zou</label>
+                </value>
+                <value>
+                    <fullName>Steven Sun</fullName>
+                    <default>false</default>
+                    <label>Steven Sun</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LJT_PS_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT PS Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LJT_PVsyst_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT PVsyst Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LJT_Photo_Simulation_Sets__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT Photo Simulation Sets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LJT_Proposed_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT Proposed Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LJT_Sites__c</fullName>
+        <externalId>false</externalId>
+        <label>LJT Number of Sites</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Location_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Location Description</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Module_Type_1_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Type 1 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Type_2_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Type 2 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Type_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Type 2</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Module Type 2)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs5</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Module_Type_3_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Type 3 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Type_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Type 3</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Module Type 3)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs6</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Module_Type_4_Qty__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Type 4 Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Type_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Type 4</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Module Type 4)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs7</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Modules__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Type 1</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Buildings__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Buildings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Revision__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to count the number of unique revisions for a specific Pre-Sales Design</inlineHelpText>
+        <label>Number of Revision</label>
+        <summaryForeignKey>PSD_Revision__c.Pre_Sales_Design__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>On_Hold_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>On Hold Notes</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>On_Time_Revisions__c</fullName>
+        <externalId>false</externalId>
+        <label>On Time Revisions</label>
+        <summaryFilterItems>
+            <field>PSD_Revision__c.On_Time__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PSD_Revision__c.Pre_Sales_Design__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>On_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>On_Time_Revisions__c / Number_of_Revision__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% On Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The opportunity that the Pre-Sales Design is related too.</inlineHelpText>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Pre-Sales Designs</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Photo_Simulation_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Photo Simulation Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Picasa_Album__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Picasa_Album__c</formula>
+        <inlineHelpText>Picasa Album link from Opportunity</inlineHelpText>
+        <label>Picasa Album</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Normal</fullName>
+                    <default>false</default>
+                    <label>Normal</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Quick Revision</fullName>
+                    <default>false</default>
+                    <label>Quick Revision</label>
+                </value>
+                <value>
+                    <fullName>Top</fullName>
+                    <default>false</default>
+                    <label>Top</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Production_Model_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Production Model Required </label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Proposal_Level_Needed__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposal Level Needed</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L0</fullName>
+                    <default>false</default>
+                    <label>L0</label>
+                </value>
+                <value>
+                    <fullName>L1</fullName>
+                    <default>false</default>
+                    <label>L1</label>
+                </value>
+                <value>
+                    <fullName>L2</fullName>
+                    <default>false</default>
+                    <label>L2</label>
+                </value>
+                <value>
+                    <fullName>L3</fullName>
+                    <default>false</default>
+                    <label>L3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proposed_System_Tilt_Angle__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed System Tilt Angle</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Racking_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking System</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Carport</fullName>
+                    <default>false</default>
+                    <label>Carport</label>
+                </value>
+                <value>
+                    <fullName>Flat Roof Tilt-Up</fullName>
+                    <default>false</default>
+                    <label>Flat Roof Tilt-Up</label>
+                </value>
+                <value>
+                    <fullName>Flush Mount</fullName>
+                    <default>false</default>
+                    <label>Flush Mount</label>
+                </value>
+                <value>
+                    <fullName>Ground Tilt-Up</fullName>
+                    <default>false</default>
+                    <label>Ground Tilt-Up</label>
+                </value>
+                <value>
+                    <fullName>On-Energy</fullName>
+                    <default>false</default>
+                    <label>On-Energy</label>
+                </value>
+                <value>
+                    <fullName>SunLink</fullName>
+                    <default>false</default>
+                    <label>SunLink</label>
+                </value>
+                <value>
+                    <fullName>Tracker</fullName>
+                    <default>false</default>
+                    <label>Tracker</label>
+                </value>
+                <value>
+                    <fullName>Sunlink Ground</fullName>
+                    <default>false</default>
+                    <label>Sunlink Ground</label>
+                </value>
+                <value>
+                    <fullName>SolarFlex Ground</fullName>
+                    <default>false</default>
+                    <label>SolarFlex Ground</label>
+                </value>
+                <value>
+                    <fullName>ULA Ground</fullName>
+                    <default>false</default>
+                    <label>ULA Ground</label>
+                </value>
+                <value>
+                    <fullName>Other Ground</fullName>
+                    <default>false</default>
+                    <label>Other Ground</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_1_Tilt__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking Type 1 Tilt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Racking Type 1</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Racking Type 1)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs8</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_2_Tilt__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking Type 2 Tilt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Racking Type 2</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Racking Type 2)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs9</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_3_Tilt__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking Type 3 Tilt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Racking Type 3</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Racking Type 3)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs4ekp</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_4_Tilt__c</fullName>
+        <externalId>false</externalId>
+        <label>Racking Type 4 Tilt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Racking_Type_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Racking Type 4</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Pre-Sales Designs (Racking Type 4)</relationshipLabel>
+        <relationshipName>Pre_Sales_Designs4ekz</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_PSD_Revision__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for PSD Revision</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Draft</fullName>
+                    <default>false</default>
+                    <label>First Draft</label>
+                </value>
+                <value>
+                    <fullName>Design Change</fullName>
+                    <default>false</default>
+                    <label>Design Change</label>
+                </value>
+                <value>
+                    <fullName>Upgrade Proposal Level</fullName>
+                    <default>false</default>
+                    <label>Upgrade Proposal Level</label>
+                </value>
+                <value>
+                    <fullName>Correct Mistakes</fullName>
+                    <default>false</default>
+                    <label>Correct Mistakes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rev_Count_Rev_Ben_Foss__c</fullName>
+        <description>Counts the number of PSD Revisions assigned to Ben. Used in reporting AE Metrics</description>
+        <externalId>false</externalId>
+        <label>Rev Count - Ben Foss</label>
+        <summaryFilterItems>
+            <field>PSD_Revision__c.CreatedDate</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2016 12:00 AM</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>PSD_Revision__c.Applications_Engineer__c</field>
+            <operation>notEqual</operation>
+            <value>00580000003QlzP</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PSD_Revision__c.Pre_Sales_Design__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Roof_Space_Off_Limits__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe any roof space that will be off limits due to shade, vents, etc.</inlineHelpText>
+        <label>Roof Space Off Limits</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Roof_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Roof Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shade_Model_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Shade Model Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shading_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>General Design Notes</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Site_Address2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When multiple sites add include a name of the site which will help to designate which PSD belongs to which site. 
+When single site just use main site addresses.</inlineHelpText>
+        <label>Site Name/Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>In Design</fullName>
+                    <default>false</default>
+                    <label>In Design</label>
+                </value>
+                <value>
+                    <fullName>Draft Layout</fullName>
+                    <default>false</default>
+                    <label>Draft Layout</label>
+                </value>
+                <value>
+                    <fullName>Approved Pending Investigation</fullName>
+                    <default>false</default>
+                    <label>Approved Pending Investigation</label>
+                </value>
+                <value>
+                    <fullName>Design Approved for Sale</fullName>
+                    <default>false</default>
+                    <label>Design Approved for Sale</label>
+                </value>
+                <value>
+                    <fullName>Revisions Needed</fullName>
+                    <default>false</default>
+                    <label>Revisions Needed</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>System_Orientation_Azimuth__c</fullName>
+        <externalId>false</externalId>
+        <label>System Orientation/Azimuth</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>System_Sizing_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum modules possible or notate a specific system size.</inlineHelpText>
+        <label>System Sizing Strategy</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Today__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Today</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>What_is_the_Basic_Wind_Speed__c</fullName>
+        <externalId>false</externalId>
+        <label>What is the Basic Wind Speed?</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>What_is_the_Ground_Snow_Load__c</fullName>
+        <externalId>false</externalId>
+        <label>What is the Ground Snow Load?</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>What_is_the_Total_Parcel_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>What is the Total Parcel Area?</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Which_AC_Rating_is_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Which AC Rating is Required?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AC</fullName>
+                    <default>false</default>
+                    <label>AC</label>
+                </value>
+                <value>
+                    <fullName>AC-CEC</fullName>
+                    <default>false</default>
+                    <label>AC-CEC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Why_Top_Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Why Top Priority?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2nd_Designer_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Designer Cost</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Designer_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Designer Hours</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Pre-Sales Design</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>P-SD-{000000}</displayFormat>
+        <label>Pre-Sales Design Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pre-Sales Designs</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Opportunity__c</lookupFilterFields>
+        <lookupFilterFields>Status__c</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Opportunity__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Design_Accepted</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c , &quot;Design Accepted&quot;), ISPICKVAL(Designer__c, &apos;&apos;))</errorConditionFormula>
+        <errorDisplayField>Designer__c</errorDisplayField>
+        <errorMessage>Designer is Required for Status Design Accepted.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Design_Completed</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Design Completed&quot;), ISPICKVAL(Designer__c, &quot;Outsource&quot;),  Design_Partner__c = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Design_Partner__c</errorDisplayField>
+        <errorMessage>Design Partner is required for Status Design Complete.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Design_Completed_Hours</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Status__c, &quot;Design Completed&quot;), ISNULL(Hours__c) = TRUE)</errorConditionFormula>
+        <errorDisplayField>Hours__c</errorDisplayField>
+        <errorMessage>Hours are required for Status Design Complete.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Accepted</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(AND(TEXT( Status__c ) &lt;&gt; &quot;New&quot;,  TEXT( Status__c ) &lt;&gt; &quot;Submitted&quot;, TEXT( Status__c ) &lt;&gt; &quot;Revisions Needed&quot;,  TEXT( Status__c ) &lt;&gt; &quot;Draft Layout&quot;, 
+TEXT( Status__c ) &lt;&gt; &quot;In Design&quot;),  PRIORVALUE(Due_Date__c) &lt;&gt; Due_Date__c)</errorConditionFormula>
+        <errorMessage>Due Date cannot be edited after the design is accepted.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_New</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Due_Date_Valid__c  = &apos;Invalid&apos;,  $User.UserRoleId &lt;&gt;&quot;00E800000015Se4&quot;)</errorConditionFormula>
+        <errorMessage>Due Date cannot be less than 2 days from today for L1 proposals, 5 days from today for L2 proposals or 14 days from today for L3 proposals. 
+
+Please adjust accordingly.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Electrical_Sizing</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Proposal_Level_Needed__c , &quot;L2&quot;) , ISPICKVAL( Proposal_Level_Needed__c , &quot;L3&quot;)),  Electrical_Sizing_Strategy__c  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Electrical_Sizing_Strategy__c</errorDisplayField>
+        <errorMessage>Existing Electrical Info and Location is required for a L2 or L3 proposal.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inverter_Approved_For_Sale</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(ISPICKVAL(  Inverters__r.Status__c , &quot;Under Consideration&quot;), ISPICKVAL(Inverters__r.Status__c, &quot;Rejected&quot;), ISPICKVAL(Inverters__r.Status__c , &quot;Discontinued&quot;), ISPICKVAL(Inverters__r.Status__c, &quot;Pending Approval&quot;))</errorConditionFormula>
+        <errorDisplayField>Inverters__c</errorDisplayField>
+        <errorMessage>The product you selected is not approved for sale. Please select a product that is approved for sale.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inverter_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Proposal_Level_Needed__c , &quot;L2&quot;) , ISPICKVAL( Proposal_Level_Needed__c , &quot;L3&quot;)),   Inverters__c  = &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Inverters__c</errorDisplayField>
+        <errorMessage>Inverter is required for a L2 or L3 proposal.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Module_Approved_For_Sale</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(ISPICKVAL(Modules__r.Status__c , &quot;Rejected&quot;), ISPICKVAL(Modules__r.Status__c , &quot;Discontinued&quot;), ISPICKVAL(Modules__r.Status__c , &quot;Pending Approval&quot;))</errorConditionFormula>
+        <errorDisplayField>Modules__c</errorDisplayField>
+        <errorMessage>The product you selected is not approved for sale or under consideration at this time. Please select another product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Qualified_Oppty</fullName>
+        <active>false</active>
+        <description>Only Qualified Opportunities can request PSDs. Prevents PSDs w/o such from being created.</description>
+        <errorConditionFormula>AND( ISNEW(), ISPICKVAL( Opportunity__r.StageName, &quot;Prospecting&quot; ))</errorConditionFormula>
+        <errorMessage>You may only request PSDs for an Opportunity that has been Qualified.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Top_Priority_Reason_Required</fullName>
+        <active>true</active>
+        <description>enter reason why PSD is &quot;top Priority&quot;</description>
+        <errorConditionFormula>AND( ISPICKVAL( Priority__c, &quot;Top&quot;),  ISBLANK( Why_Top_Priority__c))</errorConditionFormula>
+        <errorDisplayField>Why_Top_Priority__c</errorDisplayField>
+        <errorMessage>Please enter a reason why this Pre-Sales Design is a Top Priority</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Generate_Information_Sheet</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Information Sheet</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{! requireScript(&quot;/soap/ajax/15.0/connection.js&quot;) }
+
+//DECLARE CONSTANTS
+var PSD_ID = &quot;{!PSD__c.Id}&quot;;
+var STATUS = &quot;{!PSD__c.Status__c}&quot;;
+
+if (STATUS == &quot;New&quot;) {
+   alert(&quot;The Pre-Sales Design must be submitted before the Information Sheet can be printed.&quot;);
+} else {
+window.open(&quot;/apex/psDesign?id={!PSD__c.Id}&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{! requireScript(&quot;/soap/ajax/15.0/connection.js&quot;) }
+
+//DECLARE CONSTANTS
+var errnum = 0;
+var errmsg = &quot;&quot;; 
+var PSD_ID = &quot;{!PSD__c.Id}&quot;;
+var STATUS = &quot;{!PSD__c.Status__c}&quot;;
+var DESIGN = &quot;{!PSD__c.Drawings_Already_Exist__c}&quot;;
+var ROOF = &quot;{!PSD__c.Building_Type__c}&quot;;
+var DUEDATE = &quot;{!PSD__c.Due_Date_Valid__c}&quot;;
+var CONTACT = &quot;{!PSD__c.Contact__c}&quot;;
+
+var result1 = sforce.connection.query(&quot;Select Id from Attachment where ParentId =&apos;&quot; +PSD_ID +&quot;&apos;&quot;);
+var ATTS = result1.size; 
+
+if(ROOF == &apos;New&apos; &amp;&amp; ATTS == 0){errnum++; alert(&quot;Error:\nDrawings are required when Building Type equals New.\nPlease attach the drawings.&quot;);} 
+if(DESIGN == &apos;Yes - Attached&apos; &amp;&amp; ATTS == 0){errnum++; alert(&quot;Error:\nDrawings are required when Drawings Already Exist equals Yes.\nPlease attach the drawings.&quot;);} 
+if(CONTACT == &apos;&apos;){errnum++; alert(&quot;Error:\nContact field is required.&quot;);} 
+if(STATUS != &apos;New&apos; &amp;&amp; STATUS != &apos;Design Completed&apos; &amp;&amp; STATUS != &apos;Revisions Needed&apos;){errnum++; alert(&quot;Error:\nStatus must be set to New, Design Completed or Revisions Needed.&quot;);} 
+if(DUEDATE == &apos;Invalid&apos;){errnum++; alert(&quot;Error:\nDue Date cannot be less than 2 days from today for L1 proposals, 5 days from today for L2 proposals or 14 days from today for L3 proposals.  Please adjust accordingly.&quot;);} 
+else if(errnum == 0) { 
+var psd = new sforce.SObject(&quot;PSD__c&quot;);
+psd.Id = PSD_ID;
+psd.Status__c = &quot;Submitted&quot;;
+var result = sforce.connection.update([psd]);
+if (result[0].getBoolean(&quot;success&quot;)) {
+alert(&quot;Pre-Sales Design Submitted to Designer&quot;);
+window.parent.location.href=&quot;/{!PSD__c.Id}&quot;;
+} else {
+alert(&quot;Error:\nThere is no email address for the Contact listed.  Please enter an email address on the Contact.&quot;);
+}
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,61 @@
+<apex:page Controller="ProcessInstanceWorkItemSDController" >
+
+<style>
+        
+        /* === Hides Action Column for Approval History === */
+        
+        
+        [class$='actionColumn']
+        
+        {display:none}
+        
+
+        /* === END === */
+
+.bRelatedList .bPageBlock .pbButton {
+white-space: normal;
+visibility: hidden;
+}
+
+</style>
+<apex:form >
+     <apex:pageblock >
+     
+         <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Approved" action="{!Approved}"/>
+                 <apex:commandButton value="Approved as Corrected" action="{!ApprovedasCorrected}"/>  
+                 <apex:commandButton value="Revise and Resubmit" action="{!ReviseandResubmit}"/>
+                 <apex:commandButton value="Rejected" action="{!Rejected}"/>
+                 <apex:commandButton value="Cancel" action="{!Cancel}"/>   
+                  
+                                                
+         </apex:pageblockButtons>
+         
+         <apex:pageBlockSection columns="1">
+         
+              
+             <apex:outputField value="{!ShopDrawing.Name}"/>
+             <apex:outputField value="{!ShopDrawing.Account__c}"/>
+             <apex:outputField value="{!ShopDrawing.Date_Received__c}"/>                                       
+             <apex:outputField value="{!ShopDrawing.Notes_and_Additional_Information__c}"/>                      
+             <apex:outputField value="{!ShopDrawing.Approved__c}"/>                      
+             <apex:outputField value="{!ShopDrawing.Approved_as_corrected__c}"/>                                                         
+             <apex:outputField value="{!ShopDrawing.Revise_and_Resubmit__c}"/>                                                         
+             <apex:outputField value="{!ShopDrawing.Approved_as_corrected__c}"/> 
+              <apex:pageBlockSectionItem >
+              
+                 <apex:outputLabel >Comment</apex:outputLabel>
+                 <apex:inputTextarea value="{!comment}" />
+             </apex:pageBlockSectionItem>                                                                          
+         </apex:pageBlockSection>
+        
+         
+     </apex:pageblock>
+</apex:form>
+     <apex:relatedList list="ProcessSteps" subject="{!ShopDrawing.Id}" />
+     
+
+
+
+
+</apex:page>

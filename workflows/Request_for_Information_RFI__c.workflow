@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_to_Issue_Tracker_Requestor_that_Forecasted_Res_Date_has_changed</fullName>
+        <description>Alert to Issue Tracker Requestor that Forecasted Res Date has changed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_6__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_7__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_8__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Issue_Tracker_Forecast_Resolution_Date_Change_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>CC_Issue_Tracker</fullName>
+        <description>CC Issue Tracker</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/CC_User_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Clarifications_Entered_RFI</fullName>
+        <description>Clarifications Entered RFI</description>
+        <protected>false</protected>
+        <recipients>
+            <field>To_Borrego_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/RFI_Clarifications_Entered</template>
+    </alerts>
+    <alerts>
+        <fullName>Clarifications_Needed_RFI</fullName>
+        <description>Clarifications Needed RFI</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/RFI_Clarifications_Needed</template>
+    </alerts>
+    <alerts>
+        <fullName>Inc_RFI_Closed</fullName>
+        <description>Inc RFI - Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Incoming_RFI_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Inc_RFI_Re_assigned_3rd_Party</fullName>
+        <description>Inc RFI - Re-assigned 3rd Party</description>
+        <protected>false</protected>
+        <recipients>
+            <field>X3rd_Party__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Contact__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_PM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Inc_RFI_Re_assigned_to_3rd_Party</template>
+    </alerts>
+    <alerts>
+        <fullName>Inc_RFI_Reminder</fullName>
+        <description>Inc RFI Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Portal_Inc_RFI_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_Tracker_Created_for_Project</fullName>
+        <description>Issue Tracker Created for Project</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Issue_Tracker_Created_for_Project</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_Tracker_Forecasted_Date_Notification</fullName>
+        <description>Issue Tracker Forecasted Date Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_6__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_7__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_8__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Issue_Tracker_Forecast_Resolution_Date_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Inc_RFI_Notify_Sub</fullName>
+        <description>New Inc RFI - Notify Sub</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Portal_Notify_Sub_New_Inc_RFI</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Issue_Tracker_alert_MidAtlantic</fullName>
+        <description>New Issue Tracker alert - MidAtlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Civil_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Electrical_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_PE_Manger_Emails__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Ops_SDE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Site_Superintendent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorofEngineeringSystemDesigner</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Field_Operations_Manager_Mid_Atlantic</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>canderson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jbierly@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mswanson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/New_Issue_Tracker_Construction_Control</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Issue_Tracker_alert_Midwest</fullName>
+        <description>New Issue Tracker alert - Midwest</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Civil_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Electrical_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_PE_Manger_Emails__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Ops_SDE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Site_Superintendent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_of_Operations_Midwest_Project_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorofEngineeringSystemDesigner</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Field_Operations_Manager_Midwest</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>canderson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jmeiltoft@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mswanson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/New_Issue_Tracker_Construction_Control</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Issue_Tracker_alert_NE</fullName>
+        <description>New Issue Tracker alert - NE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Civil_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Electrical_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_PE_Manger_Emails__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Ops_SDE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Site_Superintendent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_of_Operations_East_Project_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorofEngineeringSystemDesigner</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Field_Operations_Manager_East</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>canderson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mswanson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nchaney@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swillett@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/New_Issue_Tracker_Construction_Control</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Issue_Tracker_alert_NorCal</fullName>
+        <description>New Issue Tracker alert - NorCal</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Civil_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Electrical_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_PE_Manger_Emails__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Ops_SDE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Site_Superintendent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_of_Operations_NorCal_Project_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorofEngineeringSystemDesigner</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Field_Operations_Manager_NorCal</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>canderson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jbrooke@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mswanson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/New_Issue_Tracker_Construction_Control</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Issue_Tracker_alert_SoCal</fullName>
+        <description>New Issue Tracker alert - SoCal</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Internal_Civil_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Electrical_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_PE_Manger_Emails__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Structural_Engineer_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Ops_SDE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Coordinator_APM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Site_Superintendent_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_of_Operations_NorCal_Project_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorofEngineeringSystemDesigner</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Field_Operations_Manager_NorCal</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>canderson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jbrooke@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mswanson@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/New_Issue_Tracker_Construction_Control</template>
+    </alerts>
+    <alerts>
+        <fullName>Out_RFI_Closed</fullName>
+        <description>Out RFI - Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Incoming_RFI_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Outgoing_RFI_Created_External_Contact</fullName>
+        <description>Outgoing RFI Created - External Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Outgoinging_RFI_External_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>Outgoing_RFI_Created_Project_Team</fullName>
+        <description>Outgoing RFI Created - Project Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Outgoing_RFI_Created_Project_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Outgoing_RFI_Response</fullName>
+        <description>Outgoing RFI Response</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Internal_Contact__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_PM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Outgoinging_RFI_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Portal_RFI_3rd_Party_Responded</fullName>
+        <description>Portal RFI - 3rd Party Responded</description>
+        <protected>false</protected>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_RFI_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Portal_RFI_PM_Response</fullName>
+        <description>Portal RFI - PM Response</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_RFI_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Portal_RFI_Sub_Response</fullName>
+        <description>Portal RFI - Sub Response</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_RFI_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>RFIResponseDateArrivedandNoResponseReceived</fullName>
+        <description>RFI Response Date Arrived and No Response Received</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Project_PM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RFI_Related_E_mail_Notifications/RFI_Response_Date_Passed_and_No_Response_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>RFI_Approved</fullName>
+        <description>RFI Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>bmorrison@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rburrowbridge@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_PM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/RFI_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>RFI_Rejected</fullName>
+        <description>RFI Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/RFI_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>RyanBryan_email_Issue_still_Open</fullName>
+        <description>RyanBryan email- Issue still Open</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bmorrison@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rburrowbridge@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>To_Borrego_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RFI_Related_E_mail_Notifications/IssueTracker_Response_Date_Passed_and_No_Response_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_updated_Response</fullName>
+        <description>Send updated Response</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_6__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_7__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_8__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Issue_Tracker_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_updated_Response_Project_Kickoff_Engineering</fullName>
+        <ccEmails>mhanagan@borregosolar.com</ccEmails>
+        <description>Send updated Response - Project Kickoff Engineering</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User_1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_6__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_7__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Email_User_8__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Issue_Tracker_Response_PreKickoff_Engineering</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_3rd_Party_Notify_Proj_Team</fullName>
+        <description>Sub Portal - 3rd Party - Notify Proj Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Inc_RFI_3rd_Party</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_3rd_Party_Response_Entered</fullName>
+        <description>Sub Portal - 3rd Party Response Entered</description>
+        <protected>false</protected>
+        <recipients>
+            <field>X3rd_Party__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Portal_Response_Entered</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_New_Inc_RFI</fullName>
+        <description>Sub Portal - New Inc RFI</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>CC1__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CC2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>APM_PC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Proj_Eng_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Site_Super__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Portal_New_Inc_RFI</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_RFI_Notify_3rd_Party</fullName>
+        <description>Sub Portal RFI - Notify 3rd Party</description>
+        <protected>false</protected>
+        <recipients>
+            <field>X3rd_Party__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Inc_RFI_3rd_Party_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_RFI_Sub_Received</fullName>
+        <description>Sub Portal RFI - Sub Received</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Subcontractor_Portal_Response_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Portal_Response_Submitted</fullName>
+        <description>Sub Portal - Response Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Portal_Response_Entered</template>
+    </alerts>
+    <alerts>
+        <fullName>X24_Hours_No_Forecast_Date</fullName>
+        <description>24 Hours No Forecast Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bmorrison@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rburrowbridge@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>To_Borrego_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/X24_Hours_No_Forecast_Date</template>
+    </alerts>
+    <alerts>
+        <fullName>X48_Hours_No_Forecast_Date</fullName>
+        <description>48 Hours No Forecast Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bmorrison@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rburrowbridge@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>From__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>To_Borrego_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/X48_Hours_No_Forecast_Date</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Clear_3rd_Party</fullName>
+        <field>With_3rd_Party__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear 3rd Party</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Approval_Submitted</fullName>
+        <field>Approval_Submitted__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear Approval Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_CCIssueTracker</fullName>
+        <field>CCIssueTracker__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear CCIssueTracker</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_IsNew</fullName>
+        <description>Subcontractor Portal. Once Created Email Alert is sent this checkbox is marked false. Determines flow of communcation.</description>
+        <field>IsNew__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear IsNew</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_PM_Responded</fullName>
+        <field>PM_Responded__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear PM Responded</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Response</fullName>
+        <field>Latest_Response__c</field>
+        <name>Clear Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Send_Updated_Response</fullName>
+        <field>Send_Updated_Response__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear Send Updated Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Submitted</fullName>
+        <field>Submit_RFI__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_With_Sub</fullName>
+        <description>Clears the With Sub checkbox when Sub submits a response to an Outgoing RFI.</description>
+        <field>With_Sub__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear With Sub</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Closed</fullName>
+        <field>Status__c</field>
+        <literalValue>Closed</literalValue>
+        <name>Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Closed_2</fullName>
+        <description>Used by Subcontractor Portal approval process to prevent conflict with internal RFI approval process.</description>
+        <field>Status__c</field>
+        <literalValue>Closed</literalValue>
+        <name>Closed 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Created_Date</fullName>
+        <field>Created_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Created Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Submitted</fullName>
+        <field>Date_Submitted__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Internal_Civil_Engineer_Email_Update</fullName>
+        <description>Update the Site specificinternal civil engineer email address</description>
+        <field>Internal_Civil_Engineer_Email__c</field>
+        <formula>Site__r.Civil_Engineer__r.Email</formula>
+        <name>Internal Civil Engineer Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Internal_Electrical_Engineer_Email_Updat</fullName>
+        <field>Internal_Electrical_Engineer_Email__c</field>
+        <formula>Site__r.Electrical_Engineer__r.Email</formula>
+        <name>Internal Electrical Engineer Email Updat</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Internal_PE_Manager_Email_Update</fullName>
+        <description>Update the Site specific internal Internal PE Manager email address</description>
+        <field>Internal_PE_Manger_Emails__c</field>
+        <formula>Internal_PE__r.Manager.Email</formula>
+        <name>Internal PE Manager Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Internal_Structural_Engineer_Email_Updat</fullName>
+        <field>Internal_Structural_Engineer_Email__c</field>
+        <formula>Site__r.Structural_Engineer__r.Email</formula>
+        <name>Internal Structural Engineer Email Updat</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Issue_Closed_Date</fullName>
+        <field>Issue_Closed_Date__c</field>
+        <formula>Today()</formula>
+        <name>Issue Closed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Issue_Rejected_Date</fullName>
+        <field>Issue_Rejected_Date__c</field>
+        <formula>Today()</formula>
+        <name>Issue Rejected Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Issue_Submitted_Date</fullName>
+        <field>Issue_Submitted_Date__c</field>
+        <formula>Today()</formula>
+        <name>Issue Submitted Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_New</fullName>
+        <description>Subcontractor Portal. When RFI is created, marks this checkbox true. Determines flow of communcation.</description>
+        <field>IsNew__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ops_SDE_Email_Update</fullName>
+        <field>Ops_SDE_Email__c</field>
+        <formula>Site__r.Senior_Design_Engineer__r.Email</formula>
+        <name>Ops SDE Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PM_Responded</fullName>
+        <field>PM_Responded__c</field>
+        <literalValue>1</literalValue>
+        <name>PM Responded</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Coordinator_APM_Email_Update</fullName>
+        <description>pulls the email from the Site Project Coordinator/APM and updates corresponding email field on CC Issue tracker</description>
+        <field>Project_Coordinator_APM_Email__c</field>
+        <formula>Site__r.Project_Coordinator_APM__r.Email</formula>
+        <name>Project Coordinator/APM Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Manager_Email_Update</fullName>
+        <field>Project_Manager_Email__c</field>
+        <formula>Site__r.Project_Manager__r.Email</formula>
+        <name>Project Manager Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Re_assigned</fullName>
+        <field>Status__c</field>
+        <literalValue>Re-assigned</literalValue>
+        <name>Re-assigned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Re_assignment_Update</fullName>
+        <field>Latest_Response__c</field>
+        <formula>IF( TEXT( MONTH( TODAY() ) ) = &quot;1&quot;, &quot;01&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;2&quot;, &quot;02&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;3&quot;, &quot;03&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;4&quot;, &quot;04&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;5&quot;, &quot;05&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;6&quot;, &quot;06&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;7&quot;, &quot;07&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;8&quot;, &quot;08&quot;, 
+IF( TEXT( MONTH( TODAY() ) ) = &quot;9&quot;, &quot;09&quot;, 
+TEXT( MONTH( TODAY() ) ) ) ) ) ) ) ) ) ) ) 
++ &quot;.&quot; + 
+TEXT( DAY( TODAY() ) ) 
++ &quot;.&quot; + 
+RIGHT( TEXT( YEAR( TODAY() ) ), 2 ) 
++ &quot;: &quot; + 
+&quot;BSSI - Reassigned to 3rd Party.&quot;</formula>
+        <name>Re-assignment Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall</fullName>
+        <field>Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Site_Superintendent_Email_Update</fullName>
+        <field>Site_Superintendent_Email__c</field>
+        <formula>Site__r.Site_Superintendent__r.Email</formula>
+        <name>Site Superintendent Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Portal_Response_History</fullName>
+        <field>Response__c</field>
+        <formula>IF(
+$User.ProfileId = &quot;00e340000015RaK&quot;,
+$User.FirstName 
++ &quot; &quot; + 
+$User.LastName 
++ &quot;, [&quot; + 
+$User.CompanyName 
++ &quot; ] - &quot;,
+&quot;BSSI - &quot; )
++
+IF( TEXT( MONTH( TODAY() ) ) = &quot;1&quot;, &quot;01&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;2&quot;, &quot;02&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;3&quot;, &quot;03&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;4&quot;, &quot;04&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;5&quot;, &quot;05&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;6&quot;, &quot;06&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;7&quot;, &quot;07&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;8&quot;, &quot;08&quot;,
+IF( TEXT( MONTH( TODAY() ) ) = &quot;9&quot;, &quot;09&quot;,
+TEXT( MONTH( TODAY() ) ) ) ) ) ) ) ) ) ) )
++ &quot;.&quot; +
+TEXT( DAY( TODAY() ) )
++ &quot;.&quot; +
+RIGHT( TEXT( YEAR( TODAY() ) ), 2 )
++ &quot;: &quot; +
+Latest_Response__c + BR() + 
+PRIORVALUE( Response__c )</formula>
+        <name>Sub Portal - Response History</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted/Pending</literalValue>
+        <name>Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted/Pending</literalValue>
+        <name>Submitted/Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Response_Field</fullName>
+        <description>Auto update response entry with date stamp and intials</description>
+        <field>Response__c</field>
+        <formula>TEXT(TODAY())+ &quot; &quot; + LEFT($User.Alias,2) + &quot;:&quot; + &quot; &quot;+  Latest_Response__c  + BR() + 
+BR() 
++ PRIORVALUE(  Response__c  )</formula>
+        <name>Update Response Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>With_3rd_Party</fullName>
+        <field>With_3rd_Party__c</field>
+        <literalValue>1</literalValue>
+        <name>With 3rd Party</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>With_Sub</fullName>
+        <description>When PM/PEM submits an Outgoing RFI the With Sub checkbox becomes TRUE to indicate we are awaiting a response from theSub.</description>
+        <field>With_Sub__c</field>
+        <literalValue>1</literalValue>
+        <name>With Sub</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>X1st_Forecast_Resolution_Date</fullName>
+        <field>Date_of_1st_Forecasted_Res_Date__c</field>
+        <formula>Final_Response_Date__c</formula>
+        <name>1st Forecast Resolution Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>24 Hours No Forecast Date</fullName>
+        <active>true</active>
+        <formula>AND(ISPICKVAL(Status__c,&quot;Submitted/Pending&quot;),ISBLANK(Final_Response_Date__c), ISPICKVAL(ASProject__r.Overall_Project_Status__c,&quot;Construction&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X24_Hours_No_Forecast_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Request_for_Information_RFI__c.Date_Submitted__c</offsetFromField>
+            <timeLength>24</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>48 Hours No Forecast Date</fullName>
+        <active>true</active>
+        <formula>AND(ISPICKVAL(Status__c,&quot;Submitted/Pending&quot;),ISBLANK(Final_Response_Date__c), NOT(ISPICKVAL(ASProject__r.Overall_Project_Status__c,&quot;Construction&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X48_Hours_No_Forecast_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Request_for_Information_RFI__c.Date_Submitted__c</offsetFromField>
+            <timeLength>48</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>CC Issue Tracker</fullName>
+        <actions>
+            <name>CC_Issue_Tracker</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_CCIssueTracker</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.CCIssueTracker__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Send the CC User Notification email about being copied on an issue.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clarifications Entered RFI</fullName>
+        <actions>
+            <name>Clarifications_Entered_RFI</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Resubmitted</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clarifications Needed RFI</fullName>
+        <actions>
+            <name>Clarifications_Needed_RFI</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Clarification Needed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Created Date</fullName>
+        <actions>
+            <name>Created_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>NOT(ISBLANK( CreatedById ))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Date 1st Forecast Res Date</fullName>
+        <actions>
+            <name>Issue_Tracker_Forecasted_Date_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>X1st_Forecast_Resolution_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Final_Response_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Incoming RFI</value>
+        </criteriaItems>
+        <description>records 1st day of forecasted resolution</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Date Has Been Missed</fullName>
+        <active>true</active>
+        <formula>AND(ISPICKVAL(Status__c,&quot;Submitted/Pending&quot;),NOT(ISBLANK(Final_Response_Date__c)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RyanBryan_email_Issue_still_Open</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Request_for_Information_RFI__c.Final_Response_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Forecast Res Date Change</fullName>
+        <actions>
+            <name>Alert_to_Issue_Tracker_Requestor_that_Forecasted_Res_Date_has_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>email notification when Forecasted Res Date changes</description>
+        <formula>AND(   ISCHANGED(Final_Response_Date__c),   Date_of_1st_Forecasted_Res_Date__c &lt;&gt; Final_Response_Date__c,   RecordType.Name = &quot;Incoming RFI&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue Closed Date</fullName>
+        <actions>
+            <name>Issue_Closed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Closed,Resolved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue Rejected Date</fullName>
+        <actions>
+            <name>Issue_Rejected_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue Submitted Date</fullName>
+        <actions>
+            <name>Issue_Submitted_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted/Pending</value>
+        </criteriaItems>
+        <description>Update with today&apos;s date when the status = submitted/pending</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Issue Tracker - CC - MidAtlantic</fullName>
+        <actions>
+            <name>New_Issue_Tracker_alert_MidAtlantic</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to project team when construction control type issue tracker is created</description>
+        <formula>AND(RecordTypeId = &quot;012800000007huT&quot;,
+OR(
+BEGINS( ASProject__r.Job_Number__c , &quot;208&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;808&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;108&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;908&quot; )
+)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Issue Tracker - CC - Midwest</fullName>
+        <actions>
+            <name>New_Issue_Tracker_alert_Midwest</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to project team when construction control type issue tracker is created</description>
+        <formula>AND(
+RecordTypeId = &quot;012800000007huT&quot;,                
+OR(
+BEGINS( ASProject__r.Job_Number__c , &quot;207&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;807&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;907&quot; )
+)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Issue Tracker - CC - NE</fullName>
+        <actions>
+            <name>New_Issue_Tracker_alert_NE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to project team when construction control type issue tracker is created</description>
+        <formula>AND((RecordTypeId = &quot;012800000007huT&quot;),
+
+OR(
+BEGINS( ASProject__r.Job_Number__c , &quot;205&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;805&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;105&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;905&quot; )
+)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Issue Tracker - CC - NorCal</fullName>
+        <actions>
+            <name>New_Issue_Tracker_alert_NorCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Email alert to project team when construction control type issue tracker is created</description>
+        <formula>AND(RecordTypeId = &quot;012800000007huT&quot;, 
+
+OR(
+BEGINS( ASProject__r.Job_Number__c , &quot;201&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;801&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;902&quot; ),
+BEGINS( ASProject__r.Job_Number__c , &quot;901&quot; )
+)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Issue Tracker - CC - SoCal</fullName>
+        <actions>
+            <name>New_Issue_Tracker_alert_SoCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to project team when construction control type issue tracker is created</description>
+        <formula>AND(RecordTypeId = &quot;012800000007huT&quot;,  ISPICKVAL(ASProject__r.Branch__c, &quot;San Diego&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Project Team Email Update</fullName>
+        <actions>
+            <name>Internal_Civil_Engineer_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Internal_Electrical_Engineer_Email_Updat</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Internal_PE_Manager_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Internal_Structural_Engineer_Email_Updat</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ops_SDE_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Project_Coordinator_APM_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Project_Manager_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Site_Superintendent_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update the Porject specfic team memebers Email field upon construction control issue tracker creation</description>
+        <formula>OR( RecordTypeId = &quot;012800000007huT&quot;, RecordTypeId = &quot;01280000000U9s1&quot; , RecordTypeId = &quot;012800000007gsp&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Response Date Passed Without A Forecast Date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted/Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Final_Response_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>sends an e-mail alert to the Ryan and Bryan when Last Modified Date is 5 day earlier than Today&apos;s Date and Status &lt;&gt; Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RyanBryan_email_Issue_still_Open</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Request_for_Information_RFI__c.Request_Response_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Send Updated Response</fullName>
+        <actions>
+            <name>Send_updated_Response</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_Send_Updated_Response</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Send_Updated_Response__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Response__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Incoming RFI</value>
+        </criteriaItems>
+        <description>If box is checked, will email current Response.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Updated Response - Pre Kickoff Engineering</fullName>
+        <actions>
+            <name>Send_updated_Response_Project_Kickoff_Engineering</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_Send_Updated_Response</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Send_Updated_Response__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Response__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pre-Kickoff Engineering</value>
+        </criteriaItems>
+        <description>If box is checked, will email current Response.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Structural Issue Tracker Created</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Specs and Submittals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Request_for_Information_RFI__c.Subject__c</field>
+            <operation>contains</operation>
+            <value>Structural Submittals</value>
+        </criteriaItems>
+        <description>alerts structural engineers when issue tracker is auto created</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Issue_Tracker_Created_for_Project</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Request_for_Information_RFI__c.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Sub Portal - Inc RFI Closed</fullName>
+        <actions>
+            <name>Inc_RFI_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_Approval_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - when PM closes an Inc RFI and email alert is generated</description>
+        <formula>AND( ISPICKVAL( Status__c, &quot;Closed&quot; ), RecordType.Id = &quot;01280000000U9s1&quot;, ISPICKVAL( Response_Stage__c, &quot;Final&quot;  ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal - New Inc RFI</fullName>
+        <actions>
+            <name>Sub_Portal_New_Inc_RFI</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_IsNew</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - when a Sub creates an Inc RFI an email alert is generated</description>
+        <formula>AND( IsNew__c = TRUE, Submit_RFI__c = TRUE, With_Sub__c = TRUE, PM_Responded__c = FALSE, With_3rd_Party__c = FALSE, RecordTypeId = &apos;01280000000U9s1&apos; )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Inc_RFI_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Inc_RFI_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>4</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Inc_RFI_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>6</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Inc_RFI_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>8</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Inc_RFI_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>10</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Sub Portal - New Out RFI</fullName>
+        <actions>
+            <name>Outgoing_RFI_Created_Project_Team</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_IsNew</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Submitted_Pending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - when a Sub creates an Out RFI an email alert is generated</description>
+        <formula>AND( IsNew__c = TRUE, PM_Responded__c = TRUE, With_Sub__c = TRUE, Submit_RFI__c = FALSE, RecordTypeId = &apos;01280000000U9s6&apos; )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal - Out RFI Closed</fullName>
+        <actions>
+            <name>Out_RFI_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - when PM closes an Out RFI and email alert is generated</description>
+        <formula>AND( ISPICKVAL( Status__c, &quot;Closed&quot; ), RecordType.Id = &quot;01280000000U9s6&quot;, PM_Responded__c = TRUE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal Inc RFI - PM Response</fullName>
+        <actions>
+            <name>Portal_RFI_PM_Response</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_Approval_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Submitted_Pending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - When a PM responds to an Inc RFI an email alert is triggered</description>
+        <formula>AND( ISPICKVAL( Status__c, &quot;Closed&quot; ), ISPICKVAL( Response_Stage__c, &quot;Respond&quot; ), RecordType.Id = &quot;01280000000U9s1&quot; )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal Inc RFI - Sub Response</fullName>
+        <actions>
+            <name>Portal_RFI_Sub_Response</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - When a Sub responds to an Incoming RFI an email alert is triggered</description>
+        <formula>AND( RecordType.Id = &quot;01280000000U9s1&quot;, IsNew__c = FALSE, With_Sub__c = TRUE, PM_Responded__c = TRUE, Submit_RFI__c = TRUE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal Out RFI - PM Response</fullName>
+        <actions>
+            <name>Portal_RFI_PM_Response</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - When a PM responds to an Out RFI an email alert is triggered</description>
+        <formula>AND( NOT (ISPICKVAL( Status__c, &quot;Closed&quot; ) ), RecordType.Id = &quot;01280000000U9s6&quot;, PM_Responded__c = TRUE, IsNew__c = FALSE, Submit_RFI__c = FALSE, With_Sub__c = TRUE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal Out RFI - Sub Response</fullName>
+        <actions>
+            <name>Portal_RFI_Sub_Response</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - When a Sub responds to an Outgoing RFI an email alert is triggered</description>
+        <formula>AND( NOT( ISPICKVAL( Status__c, &quot;Closed&quot; ) ), RecordType.Id = &quot;01280000000U9s6&quot;, Submit_RFI__c = TRUE,  With_Sub__c = TRUE, PM_Responded__c = FALSE, IsNew__c= FALSE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal RFI - Re-assigned 3rd Party</fullName>
+        <actions>
+            <name>Sub_Portal_3rd_Party_Notify_Proj_Team</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_RFI_Notify_3rd_Party</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_Approval_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Response</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_With_Sub</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PM_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Re_assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>With_3rd_Party</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - Sends an email alert to the 3rd Party when they have been assigned and sends a separate email alert to the Project Team that it has been re-assigned</description>
+        <formula>AND( RecordTypeId = &apos;01280000000U9s1&apos;, ISPICKVAL( Status__c, &quot;Closed&quot; ), ISPICKVAL( Response_Stage__c, &quot;3rd Party&quot; ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Portal RFI- 3rd Party Response</fullName>
+        <actions>
+            <name>Portal_RFI_3rd_Party_Responded</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_3rd_Party_Response_Entered</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Clear_3rd_Party</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sub_Portal_Response_History</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Submitted_Pending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Subcontractor Portal - When a 3rd Party responds to an Inc RFI an email alert is triggered</description>
+        <formula>AND( RecordType.Id = &quot;01280000000U9s1&quot;, Submit_RFI__c = TRUE,  With_3rd_Party__c = TRUE, PM_Responded__c = TRUE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Response</fullName>
+        <actions>
+            <name>Update_Response_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>auto adds date and user initials to notes entered</description>
+        <formula>AND(OR( RecordType.Id = &quot;01280000000U9s1&quot;, RecordType.Id = &quot;01280000000U9s6&quot;, RecordType.Id = &quot;0123400000046VE&quot;, RecordType.Id = &quot;012800000007gnV&quot;),  ISCHANGED( Latest_Response__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

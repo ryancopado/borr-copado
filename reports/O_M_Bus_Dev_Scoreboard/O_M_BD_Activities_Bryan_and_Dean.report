@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Who</field>
+    </columns>
+    <columns>
+        <field>Account$O_M_Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$What</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Activity_Type_NEW__c</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$CompletedDateTime</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Last_Modified_Date_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Activities$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Bryan Martin,Dean Anderson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Activities$Activity_Type_NEW__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Call,Call - without VM,Call - conversation,Call - with message,Email,Standardized Email,Weekly Customer Update,Meeting,Customer Feedback,Testimonial,Email (Send Default Email),In Person Meeting,Initial on-site meeting,Initial conversation,Initial meeting,Internal,Development RFI,Drawing Revision,Document Execution,Return Call,Request Report,Request Quote,Request Site Visit,Request Meeting,Provide Follow Up,Other,Service Visit</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>O&amp;M BD Activities - Bryan and Dean</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Activity_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Activities$CompletedDateTime</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

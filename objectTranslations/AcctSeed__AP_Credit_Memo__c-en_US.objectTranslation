@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Payable Credit Memo --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Type field of the payable must be &quot;Credit Memo&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Account_Payable_Credit_Memo__c</name>
+        <relationshipLabel><!-- Applied Invoices to Credit Memo --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Payable Invoice --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Type field of the payable must be &quot;Invoice&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Account_Payable_Invoice__c</name>
+        <relationshipLabel><!-- Applied Credit Memos to Invoice --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applied Accounting Period --></label>
+        <lookupFilter>
+            <errorMessage><!-- The accounting period status must be open --></errorMessage>
+            <informationalMessage><!-- The accounting period status must be open --></informationalMessage>
+        </lookupFilter>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- AP Credit Memos --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applied Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Invoice and Credit Memo must have the same Payee. --></errorMessage>
+        <name>AcctSeed__Invoice_and_Credit_Memo_Same_Payee</name>
+    </validationRules>
+</CustomObjectTranslation>

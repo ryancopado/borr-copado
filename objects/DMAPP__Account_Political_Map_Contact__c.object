@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>DMAPP__Absolute_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(CASE(DMAPP__Status__c,
+&quot;Mentor&quot;, 3.1,
+&quot;Enemy&quot;, 3.2,
+&quot;Supporter&quot;, 2.1,
+&quot;Non-Supporter&quot;, 2.2,
+&quot;Neutral&quot;, 0,
+&quot;Unknown&quot;, 0,
+0))
++
+(CASE(DMAPP__Political__c,
+&quot;Inner Circle&quot;, 3,
+&quot;Political Structure&quot;, 2,
+&quot;Unknown&quot;, 0,
+&quot;Outside Political Structure&quot;, 0,
+0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Absolute Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Account_Relationship__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines the relationship between the Contact and the Political Map Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set to Internal for Contacts in the Politcal Map Account or External for Contacts outside of the Account</inlineHelpText>
+        <label>Account Relationship</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>true</default>
+                    <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                    <label>External</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Adaptability__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Adaptability</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Laggard</fullName>
+                    <default>false</default>
+                    <label>Laggard</label>
+                </value>
+                <value>
+                    <fullName>Conservative</fullName>
+                    <default>false</default>
+                    <label>Conservative</label>
+                </value>
+                <value>
+                    <fullName>Pragmatist</fullName>
+                    <default>false</default>
+                    <label>Pragmatist</label>
+                </value>
+                <value>
+                    <fullName>Visionary</fullName>
+                    <default>false</default>
+                    <label>Visionary</label>
+                </value>
+                <value>
+                    <fullName>Innovator</fullName>
+                    <default>false</default>
+                    <label>Innovator</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Always_On_Map__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Always On Map</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Color__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF((ISPICKVAL(DMAPP__Status__c, &quot;Supporter&quot;) || ISPICKVAL(DMAPP__Status__c, &quot;Mentor&quot;)), &quot;green&quot;,
+IF((ISPICKVAL(DMAPP__Status__c, &quot;Non-Supporter&quot;) || ISPICKVAL(DMAPP__Status__c, &quot;Enemy&quot;)), &quot;red&quot;,
+IF((ISPICKVAL(DMAPP__Political__c, &quot;Political Structure&quot;) || ISPICKVAL(DMAPP__Political__c, &quot;Inner Circle&quot;)), &quot;yellow&quot;,
+&quot;grey&quot;
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Color</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Completed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(OR(
+NOT(ISBLANK(TEXT(DMAPP__Adaptability__c))), 
+NOT(ISBLANK(TEXT(DMAPP__Political__c))), NOT(ISBLANK(TEXT(DMAPP__Decision_Orientation__c))), 
+NOT(ISBLANK(TEXT( DMAPP__Coverage__c ))),
+NOT(ISBLANK(TEXT( DMAPP__Status__c )))
+),
+1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Completed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Account Political Map Contacts</relationshipLabel>
+        <relationshipName>Account_Political_Map_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Coverage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Coverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>No Contact</fullName>
+                    <default>false</default>
+                    <label>No Contact</label>
+                </value>
+                <value>
+                    <fullName>Brief contact</fullName>
+                    <default>false</default>
+                    <label>Brief contact</label>
+                </value>
+                <value>
+                    <fullName>Multiple contacts</fullName>
+                    <default>false</default>
+                    <label>Multiple contacts</label>
+                </value>
+                <value>
+                    <fullName>In-depth</fullName>
+                    <default>false</default>
+                    <label>In-depth</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Decision_Orientation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Decision Orientation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Financial</fullName>
+                    <default>false</default>
+                    <label>Financial</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Relationship</fullName>
+                    <default>false</default>
+                    <label>Relationship</label>
+                </value>
+                <value>
+                    <fullName>Business</fullName>
+                    <default>false</default>
+                    <label>Business</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>1024</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DMAPP__On_Bench__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>On Bench</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Overall_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DMAPP__Relationship_Weight__c *  DMAPP__Political_Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__PlaceholderReportsTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>If Placeholder__c is true, then PlaceholderReportsTo__c may contain the Id of the Account Political Map Contact to which this Political Map Contact reports.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Placeholder__c is true, then PlaceholderReportsTo__c may contain the Id of the Account Political Map Contact to which this Political Map Contact reports.</inlineHelpText>
+        <label>PlaceholderReportsTo</label>
+        <referenceTo>DMAPP__Account_Political_Map_Contact__c</referenceTo>
+        <relationshipLabel>Account Political Map Contacts</relationshipLabel>
+        <relationshipName>Account_Political_Map_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__PlaceholderTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title of a Placeholder contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title of a Placeholder contact</inlineHelpText>
+        <label>PlaceholderTitle</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Placeholder__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(DMAPP__Contact__c = null, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Placeholder</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Political_Map__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Political Map</label>
+        <referenceTo>DMAPP__Account_Political_Map__c</referenceTo>
+        <relationshipLabel>Account Political Map Contacts</relationshipLabel>
+        <relationshipName>Account_Political_Map_Contacts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Political_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(DMAPP__Political__c,
+&apos;Unknown&apos;, 0,
+&apos;Outside Political Structure&apos;, 1,
+&apos;Political Structure&apos;, 4,
+&apos;Inner Circle&apos;, 5,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Political Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Political__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Political Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Outside Political Structure</fullName>
+                    <default>false</default>
+                    <label>Outside Political Structure</label>
+                </value>
+                <value>
+                    <fullName>Political Structure</fullName>
+                    <default>false</default>
+                    <label>Political Structure</label>
+                </value>
+                <value>
+                    <fullName>Inner Circle</fullName>
+                    <default>false</default>
+                    <label>Inner Circle</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Possible_Reports_To__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Possible Reports To</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Political Map Contacts (Possible Reports To)</relationshipLabel>
+        <relationshipName>Account_Political_Map_Contacts1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Relationship_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(DMAPP__Status__c,
+&apos;Unknown&apos;, 1,
+&apos;Enemy&apos;, -5,
+&apos;Non-Supporter&apos;, -3,
+&apos;Neutral&apos;, 1,
+&apos;Supporter&apos;, 3,
+&apos;Mentor&apos;, 5,
+1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relationship Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Squares__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>MIN(6,
+(CASE(DMAPP__Status__c,
+&quot;Mentor&quot;, 3,
+&quot;Enemy&quot;, 3,
+&quot;Supporter&quot;, 2,
+&quot;Non-Supporter&quot;, 2,
+&quot;Neutral&quot;, 0,
+&quot;Unknown&quot;, 0,
+0))
++
+(CASE(DMAPP__Political__c,
+&quot;Inner Circle&quot;, 3,
+&quot;Political Structure&quot;, 2,
+&quot;Unknown&quot;, 0,
+&quot;Outside Political Structure&quot;, 0,
+0))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Squares</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Your Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Enemy</fullName>
+                    <default>false</default>
+                    <label>Enemy</label>
+                </value>
+                <value>
+                    <fullName>Non-Supporter</fullName>
+                    <default>false</default>
+                    <label>Non-Supporter</label>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>Supporter</fullName>
+                    <default>false</default>
+                    <label>Supporter</label>
+                </value>
+                <value>
+                    <fullName>Mentor</fullName>
+                    <default>false</default>
+                    <label>Mentor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMAPP__Strategy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>&apos;XXX&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Strategy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMAPP__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Goto User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Political_Map_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Account Political Map Contact</label>
+    <nameField>
+        <label>Account Political Map Contact Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Political Map Contacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

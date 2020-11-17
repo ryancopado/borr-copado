@@ -1,0 +1,21 @@
+<apex:page standardController="Contract" extensions="contractReq">
+<style>
+.fewerMore { display: none;}
+</style>
+<apex:form >
+ <apex:pageMessages />
+ <apex:detail relatedList="true"></apex:detail>
+<apex:pageblock id="CustomList" title="Construction Requisitions"  >
+   <apex:pageBlockTable value="{!reqs}" var="o" rendered="{!NOT(ISNULL(reqs))}">
+        <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!o.Id}">{!o.Name}</apex:outputLink></apex:column>
+        <apex:column value="{!o.Status__c}"/>
+        <apex:column value="{!o.Total_Cost_Tax__c}"/>
+        <apex:column value="{!o.Project_PM__c}"/>
+        <apex:column value="{!o.Service_Visit__c}"/>
+        <apex:column value="{!o.RecordTypeId}"/>
+   </apex:pageBlockTable>
+   <apex:outputLabel value="No records to display" rendered="{!(ISNULL(reqs))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+ </apex:pageblock>
+</apex:form>
+<apex:relatedList list="NotesAndAttachments"/>
+</apex:page>

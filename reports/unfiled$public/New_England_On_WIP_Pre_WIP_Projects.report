@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Site__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Coordinator_APM__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.SiteContractValue__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 6 AND 7 AND 8 AND 9 AND 10)</booleanFilter>
+        <criteriaItems>
+            <column>Site__c.WIPStatus__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>On WIP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project_Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,New England</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project_Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Mid Atlantic,San Diego,Berkeley,Oakland,Midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>MIPA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.WIPStatus__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pre-WIP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project_Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,New England</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project_Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Mid Atlantic,San Diego,Berkeley,Oakland,Midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Dead</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>EPC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>O&amp;M</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>New England On WIP &amp; Pre-WIP Projects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

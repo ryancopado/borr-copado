@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>used in conjunction with Issue Tracker to track engineering requests</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Assigned_to__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>fills in with the name of the Approver from the related Issue Tracker, used in conjunction with approval processes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>fills in with the name of the Approver from the related Issue Tracker, used in conjunction with approval processes</inlineHelpText>
+        <label>Assigned to:</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Product_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>Enter the date the product quote was received from the field, defaults to today</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the product quote was received from the field, defaults to today</inlineHelpText>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Drawing_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawing Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Tracker__c</fullName>
+        <description>Issue Tracker number associated with this product quote</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Issue Tracker number associated with this product quote</inlineHelpText>
+        <label>Issue Tracker</label>
+        <referenceTo>Request_for_Information_RFI__c</referenceTo>
+        <relationshipLabel>Product Quotes</relationshipLabel>
+        <relationshipName>Product_Quotes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Notes_and_Additional_Information__c</fullName>
+        <description>Use this section to add detailed notes regarding the product quote</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this section to add detailed notes regarding the product quote</inlineHelpText>
+        <label>Notes and Additional Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OK_to_Submit_for_Approval__c</fullName>
+        <description>Used to determine if Product Quote can be submitted for approval.</description>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISBLANK(Project_Product__c )), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=015800000015Isw&quot;, &quot;WHITE&quot;),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=01534000002EjCQ&quot;, &quot;WHITE&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Product Quote must have a Project Product before it can be submitted for approval.</inlineHelpText>
+        <label>OK to Submit for Approval</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Displays the Product from the related Project Product.</description>
+        <externalId>false</externalId>
+        <formula>Project_Product__r.Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the Product from the related Project Product.</inlineHelpText>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.ASProject__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Search &quot;PP-&quot; to bring up all Project Products associated with that Project.</inlineHelpText>
+        <label>Project Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project_Products__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Products__c</referenceTo>
+        <relationshipLabel>Product Quotes</relationshipLabel>
+        <relationshipName>Product_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>link filled in by trigger?</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Product Quotes</relationshipLabel>
+        <relationshipName>Product_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Response_Date__c</fullName>
+        <description>The target date that you are asking the approver to respond by</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The target date that you are asking the approver to respond by</inlineHelpText>
+        <label>Requested Response Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <description>The response details to the quote submitted from the approver. Must be filled out before Submittal can be complete</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The response details to the quote submitted from the approver. Must be filled out before Submittal can be complete.</inlineHelpText>
+        <label>Response</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selected_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Selected Users</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Highlight__c</fullName>
+        <description>This changes based on the status of the product quote to call out Status on the page</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c,&quot;Approval Pending&quot;),IMAGE( &quot;/servlet.FileDownload?file=0154C0000005IRV&quot;, &quot;Submitted Pending1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Rejected&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=0154C0000005IRQ&quot;, &quot;Rejected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Cancelled&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=0158000000151bq&quot;, &quot;Cancelled&quot;), 
+IF(ISPICKVAL(Status__c,&quot;New&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=0154C0000005IR6&quot;, &quot;New&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Revise and Resubmit&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=015800000014viT&quot;, &quot;Revise and Resubmit1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved as Corrected&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=015800000014vhz&quot;, &quot;Approved as Corrected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=015800000014vi4&quot;, &quot;Approved&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Re-assigned&quot;),IMAGE( &quot;/servlet/servlet.FileDownload?file=0154C0000005IRa&quot;, &quot;Re-assigned&quot;), 
+&quot;&quot;))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This changes based on the status of the product quote</inlineHelpText>
+        <label>Status Highlight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Used to track and manage the status of the product quote</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track and manage the status of the product quote</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Not Approved</fullName>
+                    <default>false</default>
+                    <label>Not Approved</label>
+                </value>
+                <value>
+                    <fullName>Revise and Resubmit</fullName>
+                    <default>false</default>
+                    <label>Revise and Resubmit</label>
+                </value>
+                <value>
+                    <fullName>Approved as Corrected</fullName>
+                    <default>false</default>
+                    <label>Approved as Corrected</label>
+                </value>
+                <value>
+                    <fullName>Approval Pending</fullName>
+                    <default>false</default>
+                    <label>Approval Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>Free text entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Free text entry</inlineHelpText>
+        <label>Subject</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Quotes</label>
+    <nameField>
+        <label>Product Quotes Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Quotes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

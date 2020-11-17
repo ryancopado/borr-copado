@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Account_Payable__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c$AcctSeed__Vendor__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c$AcctSeed__Net_Amount__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c$Owner</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Account_Payable__c$AcctSeed__Vendor__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>expense report</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Invoice data with owner name</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AcctSeed__Accounts_Payable_withorwithout_AP_Disbursements__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Account_Payable__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

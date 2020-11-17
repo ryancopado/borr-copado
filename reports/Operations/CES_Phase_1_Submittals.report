@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Request_for_Information_RFI__c.ASProject__c</field>
+    </columns>
+    <columns>
+        <field>Request_for_Information_RFI__c.Issue_Number__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Request_for_Information_RFI__c.Subject__c</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE_NAME</field>
+    </columns>
+    <columns>
+        <field>Request_for_Information_RFI__c.Created_Date__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Issue_Closed_Date__c</field>
+    </columns>
+    <description>Submittals for the whole CES portfolio</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</booleanFilter>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.Record_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Specs and Submittals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>New Munich</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Stearns</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Olinda Trail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Clara City</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Winona</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request_for_Information_RFI__c.ASProject__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Wabasha</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>MN CES - Submittals</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Request_for_Information_RFI__c$Submittal_1__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Request_for_Information_RFI__c.Date_Submitted__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

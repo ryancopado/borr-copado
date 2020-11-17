@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>mmersereau@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>rdaniels@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Type_of_Request__c</field>
+        <field>Object_to_Update__c</field>
+        <field>Description__c</field>
+        <field>Stakeholders__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>acain@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>directs any SF update REQ&apos;s submitted by anyone from Sales to Amanda for 1st review/approval</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Profile</field>
+                <operation>startsWith</operation>
+                <value>Sales,Sales-</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.LastName</field>
+                <operation>notEqual</operation>
+                <value>Cain</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.LastName</field>
+                <operation>notEqual</operation>
+                <value>Martin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Sales_Segment__c</field>
+                <operation>equals</operation>
+                <value>EPC</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Group Approval- EPC</label>
+        <name>Sales_Group_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>directs all REQ&apos;s to Tom Skraby that are submitted by anyone with accounting profile</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Profile</field>
+                <operation>startsWith</operation>
+                <value>Accounting</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Accounting Approval</label>
+        <name>Accounting_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jthorpe@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>directs all requests from O&amp;M profiles for SF UPdates through Joe T</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Profile</field>
+                <operation>equals</operation>
+                <value>O&amp;M,O&amp;M Manager</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>O&amp;M Approval</label>
+        <name>OM_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aorozco@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>lraphael@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Routes Procurement reqs to Anita or Lesley</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Profile</field>
+                <operation>equals</operation>
+                <value>Procurement</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Procurement Approval</label>
+        <name>Procurement_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.ManagerSFID__c</field>
+                <operation>equals</operation>
+                <value>00530000000sGAF</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>IT Approval to Emily</label>
+        <name>IT_Approval_to_Emily</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>owner_manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Everyone else</description>
+        <entryCriteria>
+            <formula>AND(
+ OR(
+  NOT( BEGINS( $Profile.Name , &quot;Sales&quot; )),
+  NOT( ISPICKVAL( $User.Sales_Segment__c  , &quot;EPC&quot; ))
+  ),
+ NOT( BEGINS( $Profile.Name , &quot;Accounting&quot; )),
+ NOT( $Profile.Name = &quot;O&amp;M&quot; ),
+ NOT( $Profile.Name = &quot;O&amp;M Manager&quot; ),
+ NOT( $Profile.Name = &quot;Procurement&quot; ),
+ NOT( $User.ManagerId = &quot;00530000000sGAF&quot; ),
+ NOT( $User.Id = &quot;00530000000sGAF&quot; )
+)</formula>
+        </entryCriteria>
+        <label>Other</label>
+        <name>Other</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>For user whose manager is not the CEO and whose manager&apos;s manager is not the CEO.</description>
+    <emailTemplate>Alerts/Salesforce_Update_Submitted</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>(Owner:User.ManagerId &lt;&gt; &quot;00530000000j6Dk&quot; || 
+Owners_Managers_Manager__c &lt;&gt; &quot;00530000000j6Dk&quot;)
+&amp;&amp;
+RecordTypeId = &quot;01234000000GGj3&quot;</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Admin_Review</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Approval_Date_Update</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Salesforce_Request_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Salesforce_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Req_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>IT System Improvement  - Non CEO Staff</label>
+    <processOrder>20</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

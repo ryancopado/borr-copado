@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reporting Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reporting Summaries</value>
+    </caseValues>
+    <fields>
+        <help><!-- obtained by running this report and adjusting date filter to be LTM and using value in Amount in this field.
+https://na29.salesforce.com/00O80000005JVfs --></help>
+        <label><!-- Bookings LTM --></label>
+        <name>Bookings_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bookings/Revenue LTM --></label>
+        <name>Bookings_Revenue_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- CA Bookings --></label>
+        <name>CA_Bookings__c</name>
+    </fields>
+    <fields>
+        <label><!-- CA Revenue --></label>
+        <name>CA_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracted --></label>
+        <name>Contracted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate/Engineering Direct Margin LTM --></label>
+        <name>Corporate_Engineering_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Contracted --></label>
+        <name>Current_Year_Contracted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Direct Margin Calculation- Reports
+Body	https://na6.salesforce.com/00O80000005JsWr 
+
+https://na6.salesforce.com/00O80000005JsWw 
+
+for $: Numerator- denomonator --></help>
+        <label><!-- Direct Margin $ LTM --></label>
+        <name>Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Direct Margin Calculation- Reports
+Body	https://na6.salesforce.com/00O80000005JsWr 
+
+https://na6.salesforce.com/00O80000005JsWw 
+
+for %: 1-(numerator report/denomonator report) --></help>
+        <label><!-- Direct Margin % LTM --></label>
+        <name>Direct_Margin_Percent_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Margin $ on WIP --></label>
+        <name>Direct_Margin_on_WIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Margins/Fixed Exp --></label>
+        <name>Direct_Margins_Fixed_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Margins/ICOGS --></label>
+        <name>Direct_Margins_ICOGS__c</name>
+    </fields>
+    <fields>
+        <label><!-- East Other Direct Margin LTM --></label>
+        <name>East_Other_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed Exp --></label>
+        <name>Fixed_Exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handoff to CD --></label>
+        <name>Handoff_to_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handoff to Mobilization --></label>
+        <name>Handoff_to_Mobilization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indirects LTM/Revenue LTM --></label>
+        <name>Indirects_LTM_Revenue_LTM__c</name>
+    </fields>
+    <fields>
+        <help><!-- obtained by running this report and filtering date range for LTM and putting the amount into this field (not report amount but just the amount field)https://na29.salesforce.com/00O80000005JVrA --></help>
+        <label><!-- Indirects LTM --></label>
+        <name>Indirects_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Kickoff to CDIFR --></label>
+        <name>Kickoff_to_CDIFR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kickoff to CD --></label>
+        <name>Kickoff_to_CD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kickoff to Handoff --></label>
+        <name>Kickoff_to_Handoff__c</name>
+    </fields>
+    <fields>
+        <label><!-- L1 to Handoff --></label>
+        <name>L1_to_Handoff__c</name>
+    </fields>
+    <fields>
+        <label><!-- L1 to Kickoff --></label>
+        <name>L1_to_Kickoff__c</name>
+    </fields>
+    <fields>
+        <help><!-- filtered to remove specific projects per COO --></help>
+        <label><!-- L1 to PTO (Filtered) --></label>
+        <name>L1_to_PTO_Filtered__c</name>
+    </fields>
+    <fields>
+        <label><!-- L1 to PTO --></label>
+        <name>L1_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- MA Direct Margin LTM --></label>
+        <name>MA_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows actual MW&apos;s undermanagement, pulled monthly and update from this report:  https://na29.salesforce.com/00O80000005JzWK --></help>
+        <label><!-- MWs Actual --></label>
+        <name>MWs_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- MWs Target --></label>
+        <name>MWs_Target__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobilization to PTO --></label>
+        <name>Mobilization_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobilization to Mechanical Completion --></label>
+        <name>Mobilization_to_Substantial_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+        <picklistValues>
+            <masterLabel>April 2015</masterLabel>
+            <translation><!-- April 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>April 2016</masterLabel>
+            <translation><!-- April 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>April 2017</masterLabel>
+            <translation><!-- April 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>April 2018</masterLabel>
+            <translation><!-- April 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>August 2015</masterLabel>
+            <translation><!-- August 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>August 2016</masterLabel>
+            <translation><!-- August 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>August 2017</masterLabel>
+            <translation><!-- August 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>August 2018</masterLabel>
+            <translation><!-- August 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>December 2015</masterLabel>
+            <translation><!-- December 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>December 2016</masterLabel>
+            <translation><!-- December 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>December 2017</masterLabel>
+            <translation><!-- December 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>December 2018</masterLabel>
+            <translation><!-- December 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>February 2015</masterLabel>
+            <translation><!-- February 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>February 2016</masterLabel>
+            <translation><!-- February 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>February 2017</masterLabel>
+            <translation><!-- February 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>February 2018</masterLabel>
+            <translation><!-- February 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>January 2015</masterLabel>
+            <translation><!-- January 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>January 2016</masterLabel>
+            <translation><!-- January 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>January 2017</masterLabel>
+            <translation><!-- January 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>January 2018</masterLabel>
+            <translation><!-- January 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July 2015</masterLabel>
+            <translation><!-- July 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July 2016</masterLabel>
+            <translation><!-- July 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July 2017</masterLabel>
+            <translation><!-- July 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July 2018</masterLabel>
+            <translation><!-- July 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>June 2015</masterLabel>
+            <translation><!-- June 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>June 2016</masterLabel>
+            <translation><!-- June 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>June 2017</masterLabel>
+            <translation><!-- June 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>June 2018</masterLabel>
+            <translation><!-- June 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>March 2015</masterLabel>
+            <translation><!-- March 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>March 2016</masterLabel>
+            <translation><!-- March 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>March 2017</masterLabel>
+            <translation><!-- March 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>March 2018</masterLabel>
+            <translation><!-- March 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May 2015</masterLabel>
+            <translation><!-- May 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May 2016</masterLabel>
+            <translation><!-- May 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May 2017</masterLabel>
+            <translation><!-- May 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May 2018</masterLabel>
+            <translation><!-- May 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>November 2015</masterLabel>
+            <translation><!-- November 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>November 2016</masterLabel>
+            <translation><!-- November 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>November 2017</masterLabel>
+            <translation><!-- November 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>November 2018</masterLabel>
+            <translation><!-- November 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>October 2015</masterLabel>
+            <translation><!-- October 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>October 2016</masterLabel>
+            <translation><!-- October 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>October 2017</masterLabel>
+            <translation><!-- October 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>October 2018</masterLabel>
+            <translation><!-- October 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>September 2015</masterLabel>
+            <translation><!-- September 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>September 2016</masterLabel>
+            <translation><!-- September 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>September 2017</masterLabel>
+            <translation><!-- September 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>September 2018</masterLabel>
+            <translation><!-- September 2018 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NY Bookings --></label>
+        <name>NY_Bookings__c</name>
+    </fields>
+    <fields>
+        <label><!-- NY Direct Margin LTM --></label>
+        <name>NY_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- NY Revenue --></label>
+        <name>NY_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- New England Bookings --></label>
+        <name>New_England_Bookings__c</name>
+    </fields>
+    <fields>
+        <label><!-- New England Revenue --></label>
+        <name>New_England_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Direct Margin LTM --></label>
+        <name>O_M_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oakland Direct Margin LTM --></label>
+        <name>Oakland_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Direct Margin LTM --></label>
+        <name>Other_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <help><!-- obtained by adjusting date filter for LTM each month from this report and using column system size, entering that value into this field.https://na29.salesforce.com/00O80000005JVfs --></help>
+        <label><!-- Project Size LTM --></label>
+        <name>Project_Size_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remaining Revenue on WIP --></label>
+        <name>Remaining_Revenue_on_WIP__c</name>
+    </fields>
+    <fields>
+        <help><!-- obtained by running this report and adjusting date filter for LTM, using field Total $$ amount, posting in this field.
+https://na29.salesforce.com/00O80000005JUmJ --></help>
+        <label><!-- Revenue LTM --></label>
+        <name>Revenue_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SGA LTM/Revenue LTM --></label>
+        <name>SGA_Revenue_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SG&amp;A LTM --></label>
+        <name>SG_A_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- San Diego Direct Margin LTM --></label>
+        <name>San_Diego_Direct_Margin_LTM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mechanical Completion to PTO --></label>
+        <name>Substantial_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Award to Close --></label>
+        <name>VSM_Award_to_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM CDIFR to MOB- Onsite --></label>
+        <name>VSM_CDIFR_to_MOB_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM CDIFR to MOB-Dev --></label>
+        <name>VSM_CDIFR_to_MOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM HO to CDIFR- Dev --></label>
+        <name>VSM_HO_to_CDIFR_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM HO to CDIFR- Onsite --></label>
+        <name>VSM_HO_to_CDIFR_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM KO to HO- Dev --></label>
+        <name>VSM_KO_to_HO_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM KO to HO- Onsite --></label>
+        <name>VSM_KO_to_HO__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Kickoff to CDIFR- Onsite --></label>
+        <name>VSM_Kickoff_to_CDIFR_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Kickoff to Mob --></label>
+        <name>VSM_Kickoff_to_Mob__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM MOB to PTO- Dev --></label>
+        <name>VSM_MOB_to_PTO_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM MOB to PTO- Onsite --></label>
+        <name>VSM_MOB_to_PTO_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Qualification to KO- Dev --></label>
+        <name>VSM_Qualification_to_KO_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Qualification to KO- Onsite --></label>
+        <name>VSM_Qualification_to_KO_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Qualification to PTO-Dev --></label>
+        <name>VSM_Qualification_to_PTO_Dev__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM Qualification to PTO-Onsite --></label>
+        <name>VSM_Qualification_to_PTO_Onsite__c</name>
+    </fields>
+    <fields>
+        <label><!-- VSM RFI Response Time --></label>
+        <name>VSM_RFI_Response_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- WDG Bookings --></label>
+        <name>WDG_Bookings__c</name>
+    </fields>
+    <fields>
+        <label><!-- WDG Revenue --></label>
+        <name>WDG_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2012-2013</masterLabel>
+            <translation><!-- 2012-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013-2014</masterLabel>
+            <translation><!-- 2013-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014-2015</masterLabel>
+            <translation><!-- 2014-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015-2016</masterLabel>
+            <translation><!-- 2015-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016-2017</masterLabel>
+            <translation><!-- 2016-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017-2018</masterLabel>
+            <translation><!-- 2017-2018 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

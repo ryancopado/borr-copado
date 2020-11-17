@@ -1,0 +1,2698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Full Team</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision12</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>PM &amp; PEM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision12</name>
+        <label>myDecision12</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_A1</targetReference>
+            </connector>
+            <label>PM &amp; SS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision14</name>
+        <label>myDecision14</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision16</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_15</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_A1</targetReference>
+            </connector>
+            <label>PM &amp; APM/PC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>8.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision16</name>
+        <label>myDecision16</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision18</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_A1</targetReference>
+            </connector>
+            <label>PEM &amp; SS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>9.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision18</name>
+        <label>myDecision18</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision20</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_19</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_19</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_19_A1</targetReference>
+            </connector>
+            <label>PEM &amp; APM/PC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>No PM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>10.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision20</name>
+        <label>myDecision20</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision22</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_21</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_21</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_21_A1</targetReference>
+            </connector>
+            <label>SS &amp; APM/PC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>11.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision22</name>
+        <label>myDecision22</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision24</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_23</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_23</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_23_A1</targetReference>
+            </connector>
+            <label>PM Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>12.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision24</name>
+        <label>myDecision24</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision26</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_25</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_25</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_25_A1</targetReference>
+            </connector>
+            <label>PEM Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>13.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision26</name>
+        <label>myDecision26</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision28</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_27</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_27</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_27_A1</targetReference>
+            </connector>
+            <label>SS Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>14.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision28</name>
+        <label>myDecision28</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_29</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_29</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_29_A1</targetReference>
+            </connector>
+            <label>APM/PC Only</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision6</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>No PEM</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_7</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_A1</targetReference>
+            </connector>
+            <label>No APM/PC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>No SS</label>
+        </rules>
+    </decisions>
+    <description>Sets the Project Team when a Subcontractor creates a new Submittal from the portal</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_15</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_19</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_21</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_23</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_25</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_27</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_29</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ) ),
+ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_7</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ) ),
+ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Submittal_1__c].CreatedBy.ProfileId  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( [Submittal_1__c].Site__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Id  ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Manager__c ) ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Senior_Design_Engineer__c ) ), 
+ISBLANK( [Submittal_1__c].Site__c.Site_Superintendent__c ),
+NOT( ISBLANK( [Submittal_1__c].Site__c.Project_Coordinator_APM__c ) ) )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.CreatedBy.ProfileId}  = &quot;00e340000015RaKAAU&quot;,
+NOT( ISBLANK( {!myVariable_current.Site__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Id}  ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Manager__c} ) ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Senior_Design_Engineer__c} ) ), 
+ISBLANK( {!myVariable_current.Site__c.Site_Superintendent__c} ),
+NOT( ISBLANK( {!myVariable_current.Site__c.Project_Coordinator_APM__c} ) ) )</expression>
+    </formulas>
+    <interviewLabel>New_Subcontractor_Submittal-2_InterviewLabel</interviewLabel>
+    <label>New Subcontractor Submittal</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Submittal_1__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onCreateOnly</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>Populate Team</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>Populate Team</label>
+        <locationX>1300</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_15_A1</name>
+        <label>Populate Team</label>
+        <locationX>1500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
+        <label>Populate Team</label>
+        <locationX>1700</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_19_A1</name>
+        <label>Populate Team</label>
+        <locationX>1900</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Populate Team</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_21_A1</name>
+        <label>Populate Team</label>
+        <locationX>2100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_23_A1</name>
+        <label>Populate Team</label>
+        <locationX>2300</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_25_A1</name>
+        <label>Populate Team</label>
+        <locationX>2500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_27_A1</name>
+        <label>Populate Team</label>
+        <locationX>2700</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_29_A1</name>
+        <label>Populate Team</label>
+        <locationX>2900</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Populate Team</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Populate Team</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>Populate Team</label>
+        <locationX>700</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Site Super</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Site_Super__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Site_Superintendent__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Submittal_1__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>Populate Team</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>APM/PC</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>APM_PC__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Coordinator_APM__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Internal Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Internal_Contact__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Proj. Eng. Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Proj_Eng_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Senior_Design_Engineer__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Project Manager</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>myVariable_current.Site__r.Project_Manager__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Submittal_1__c</object>
+    </recordUpdates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Submittal_1__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Submittal_1__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

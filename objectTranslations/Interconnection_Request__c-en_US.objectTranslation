@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interconnection Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interconnection Requests</value>
+    </caseValues>
+    <fields>
+        <help><!-- The person you select will be the one who receives the request once you hit Submit for Approval --></help>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- Interconnection Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- product data sheet should be attached in notes &amp; attachments before final approvals --></help>
+        <label><!-- Are Product Data Sheets Attached? --></label>
+        <name>Are_Product_Data_Sheets_Attached__c</name>
+        <picklistValues>
+            <masterLabel>Not at this time</masterLabel>
+            <translation><!-- Not at this time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not necessary</masterLabel>
+            <translation><!-- Not necessary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- this is pulled over from the opportunity --></help>
+        <label><!-- Assigned Apps Engineer Email --></label>
+        <name>Assigned_Apps_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date AE Completed --></label>
+        <name>Date_AE_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date PE Approved --></label>
+        <name>Date_PE_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted by PD --></label>
+        <name>Date_Submitted_by_PD__c</name>
+    </fields>
+    <fields>
+        <help><!-- post link from box.com to the working application --></help>
+        <label><!-- Link to Application Technical Info --></label>
+        <name>Link_to_Application_Technical_Info__c</name>
+    </fields>
+    <fields>
+        <help><!-- post link from box.com to the pre application report --></help>
+        <label><!-- Link to Pre-Application Report --></label>
+        <name>Link_to_Pre_Application_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- post link from box.com for the single line diagram --></help>
+        <label><!-- Link to Single Line Diagram --></label>
+        <name>Link_to_Single_Line_Diagram__c</name>
+    </fields>
+    <fields>
+        <help><!-- post link from box.com to the documents related to the site layout --></help>
+        <label><!-- Link to Site Layout --></label>
+        <name>Link_to_Site_Layout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+        <relationshipLabel><!-- Interconnection Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- indicates status of the request --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>AE Approval</masterLabel>
+            <translation><!-- AE Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Approval</masterLabel>
+            <translation><!-- Final Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revise &amp; Resubmit</masterLabel>
+            <translation><!-- Revise &amp; Resubmit --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- A value must be selected. --></errorMessage>
+        <name>Product_Data_Sheet_Not_Blank</name>
+    </validationRules>
+</CustomObjectTranslation>

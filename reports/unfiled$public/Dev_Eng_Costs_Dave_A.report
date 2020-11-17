@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeedERP__Purchase_Order_Line__c.AcctSeedERP__Project__c</field>
+    </columns>
+    <columns>
+        <field>FK_CREATED</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order_Line__c.Additional_Notes__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.PO_Total__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.Change_Order_Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeedERP__Purchase_Order_Line__c.AcctSeedERP__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Shepards Park - Westerlo,355 Cronin Road - Warren,927 White Pond Road - Athol,0 Albany Post Road A - Montgomery,0 Albany Post Road B - Montgomery,0 Albany Post Road C - Montgomery,959 West Street - Gardner,15 Wilmarth Lane - Plainville,61 Upland Street - Plympton,263 Purgatory Road - Sutton,0 Horne Homestead Road - Charlton,328 Partridgeville Road - Athol,12 River Street - Palmer,519 Route 151 - Oppenheim - North (System B),519 Route 151 - Oppenheim - 2 of 2 - south (System A),72 Center Street,72 Center St - Carver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_CREATED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Jean Shih,Lesley Raphael,Jason Bierly,Jaymie Stanton,Jenifer Kraus,Elizabth Driscoll</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Dev Eng Costs - Dave A.</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeedERP__Purchase_Order__c$AcctSeedERP__Purchase_Order_Line__c@AcctSeedERP__Purchase_Order_Line__c.Construction_Req__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeedERP__Purchase_Order__c.AcctSeedERP__Order_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_81432380</developerName>
+        <masterLabel>Income Statement</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>FK_$AcctSeed__GL_Account__c.IncStmt_Type__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>01Revenue, Net</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>02Cost of Revenue - Directs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>03Cost of Revenue - Indirects</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>04Cost of Revenue-Comm &amp; Affil Fees</sourceValue>
+            </sourceValues>
+            <value>Gross Profits</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>05Marketing &amp; Sales Expenses</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>06Corporate Salaries &amp; Benefits</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>07G&amp;A Branch expenses</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>05Marketing &amp; Sales  Expenses</sourceValue>
+            </sourceValues>
+            <value>Operating Expenses</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>08Interest Income</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>09Other Income</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>10(Gain) Loss</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>11Interest Expense</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>12Financing Expense Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>13Other Expense</sourceValue>
+            </sourceValues>
+            <value>Other Income Expense</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>14Income Tax Expense</sourceValue>
+            </sourceValues>
+            <value>Income Tax Expense</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c.AcctSeed__Report_Amount__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND (4 or 5)</booleanFilter>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__GL_Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Balance Sheet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2020-01</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__Accounting_Year__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__GL_Account_Variable_3__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Dev</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__GL_Account_Variable_2__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Dev</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c.AcctSeed__GL_Account_Variable_3__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$AcctSeed__GL_Account__c.IncStmt_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Branch Income Statement - Dev</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Transaction__c@AcctSeed__Transaction__c.AcctSeed__GL_Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Transaction__c.AcctSeed__Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,466 @@
+<apex:page standardController="Daily_Site_Report__c" extensions="DailySiteReportCtlExt" tabStyle="Daily_Site_Report__c" action="{!initNewDSR}">
+    
+    <apex:form id="theForm">
+        <apex:pageMessages id="showmsg" />
+        
+        <apex:sectionHeader title="Daily Site Report" subtitle="{!newDSR.dsr.Name}" rendered="{!!editMode}"/>
+        <apex:sectionHeader title="Daily Site Report Edit" subtitle="{!newDSR.dsr.Name}" rendered="{!editMode && newDSR.dsr.Id != null}"/>
+        <apex:sectionHeader title="Daily Site Report Edit" subtitle="New Daily Site Report" rendered="{!editMode && newDSR.dsr.Id == null}"/>
+        
+        <!-- Page Detail Mode -->
+        <apex:pageBlock title="Daily Site Report Detail" id="mainPageBlock" mode="maindetail" rendered="{!!editMode}">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit" action="{!editDSR}" disabled="{!fatalError}"/>
+                <apex:commandButton value="New" action="https://na29.salesforce.com/apex/DailySiteReport_new?CF00N34000005St22={!Daily_Site_Report__c.Project__c}&CF00N34000005St22_lkid={!Daily_Site_Report__c.Project__c}&scontrolCaching=1&retURL=%2F{!Daily_Site_Report__c.Project__c}&sfdc.override=1"/>
+               <!-- <apex:commandButton value="Back" action="{!cancel}" immediate="true" rendered="{!fatalError}"/>-->
+               <apex:commandButton value="Back To Project" onclick="window.location='/{! Daily_Site_Report__c.Project__c}'; return false;"/>
+
+                
+                                
+            </apex:pageBlockButtons>
+            
+            <apex:outputPanel rendered="{!!fatalError}">
+                <apex:pageBlockSection columns="2">
+                    <apex:outputField value="{!newDSR.dsr.Name}"/>
+                    <apex:outputField value="{!newDSR.dsr.Project__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Date__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Project_Manager__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site_Address__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site_Supervisor__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site_City__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site_Install_Type__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Site_State__c}"/>
+                    <apex:pageBlockSectionItem />
+                    <apex:outputField value="{!newDSR.dsr.Site_Zip__c}"/>
+                    
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Weather" columns="2">
+                    <apex:outputField value="{!newDSR.dsr.Weather_Conditions_Today__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.X48_Hour_Temp__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Today_s_Temperature__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.X48_Hour_Forecast__c}"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Safety" columns="2">
+                    <apex:outputField value="{!newDSR.dsr.Verify_all_Workers_Have_Been_Oriented__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Incidents_Including_Near_Misses__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Notes_1__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Notes_2__c}"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Additional Information" columns="1">
+                    <apex:outputField value="{!newDSR.dsr.Inspections_and_Meetings__c}" />
+                    <apex:outputField value="{!newDSR.dsr.Overall_Progress__c}"/>
+                    <apex:outputField value="{!newDSR.dsr.Issues_and_Comments__c}"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="System Information" columns="2">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Created By" for="createdByLabel"/>
+                        <apex:outputPanel id="createdByLabel">
+                            <apex:outputField value="{!newDSR.dsr.CreatedById}"/>,&nbsp;<apex:outputField value="{!newDSR.dsr.CreatedDate}"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Last Modified By" for="modifiedByLabel"/>
+                        <apex:outputPanel id="modifiedByLabel">
+                            <apex:outputField value="{!newDSR.dsr.LastModifiedById}"/>,&nbsp;<apex:outputField value="{!newDSR.dsr.LastModifiedDate}"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+    <!-- ////////////// Adding new pageblock Labour Tracking combining Labor and Key tasks Labor Tracking ///////// -->
+    
+                    <p style="text-align: center; font-weight: bold; font-size: 18px">
+                            Labor Tracking
+                    </p>
+                    
+                    <apex:pageBlockTable value="{!newDSR.laborList}" var="lab">
+                    <apex:column headerValue="Subcontractor" value="{!lab.labor.Subcontractor__c}"/>
+                    <apex:column headerValue="Subcontractor #" value="{!lab.labor.Subcontractor_Number__c}"/>
+                    <apex:column headerValue="Cost Code" value="{!lab.labor.Cost_Code__c}"/>
+                    <apex:column headerValue="# of Workers" value="{!lab.labor.Number_of_Workers__c}"/>
+                    <apex:column headerValue="Hours Per Worker" value="{!lab.labor.Hours__c}"/>
+                    <apex:column headerValue="Total Daily Hours" value="{!lab.labor.Total_Hours__c}"/>
+                    <apex:column headerValue="Work Performed" value="{!lab.labor.Work_Performed__c}"/>
+                    
+                    </apex:pageBlockTable>
+                                          
+                    
+                     
+    <!-- //////////////////////////////       Ending Pageblock  /////////////////////////// -->  
+    
+       <!-- Hiding according to the requirement  Labor and Key Task Tracking      
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Labor
+                </p>
+                <apex:pageBlockTable value="{!newDSR.laborList}" var="lab">
+                    
+                  <apex:column headerValue="Name">
+                        <apex:outputLink value="/{!lab.labor.Id}" target="_blank">{!lab.labor.Name}</apex:outputLink>
+                    </apex:column> 
+                    <apex:column value="{!lab.labor.Subcontractor__c}"/>
+                    <apex:column headerValue="Subcontractor #" value="{!lab.labor.Subcontractor_Number__c}"/>
+                    <apex:column headerValue="# of Workers" value="{!lab.labor.Number_of_Workers__c}"/>
+                    <apex:column value="{!lab.labor.Hours__c}"/>
+                    <apex:column value="{!lab.labor.Total_Hours__c}"/>
+                    <apex:column value="{!lab.labor.Work_Performed__c}"/>
+                    
+                </apex:pageBlockTable>
+                
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Key Tasks Labor Tracking
+                </p>
+                <apex:pageBlockTable value="{!newDSR.keyTasksList}" var="kt">
+                    <apex:facet name="caption">
+                        For ALL tasks - labor hours recorded account for receiving material, installation, and clean up.
+                    </apex:facet>
+                    
+                    <apex:column headerValue="Name">
+                        <apex:outputLink value="/{!kt.keyTasks.Id}" target="_blank">{!kt.keyTasks.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!kt.keyTasks.TaskType__c}"/>
+                    <apex:column headerValue="# of Workers" value="{!kt.keyTasks.Number_of_Workers__c}"/>
+                    <apex:column value="{!kt.keyTasks.Hours__c}"/>
+                    <apex:column value="{!kt.keyTasks.Total_Hours__c}"/>
+                    <apex:column value="{!kt.keyTasks.Notes__c}"/>
+                    
+                </apex:pageBlockTable>
+                -->
+                
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Construction Equipment on Site
+                </p>
+                <apex:pageBlockTable value="{!newDSR.equipmentList}" var="eq" id="equipmentTable">
+                    
+                    <apex:column headerValue="Name">
+                        <apex:outputLink value="/{!eq.equipment.Id}" target="_blank">{!eq.equipment.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!eq.equipment.Equipment_Type__c}"/>
+                    <apex:column value="{!eq.equipment.Date_Arrived__c}"/>
+                    <apex:column value="{!eq.equipment.Subcontractor__c}"/>
+                    <apex:column headerValue="Subcontractor #" value="{!eq.equipment.Subcontractor_Compliance_Number__c}"/>
+                    <apex:column value="{!eq.equipment.Equipment_Used_Today__c}"/>
+                    <apex:column value="{!eq.equipment.Date_Picked_Up__c}"/>
+                    <apex:column value="{!eq.equipment.Days_on_Site_formula__c}"/>
+                    
+                </apex:pageBlockTable>
+                
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Materials Received
+                </p>
+                <apex:pageBlockTable value="{!newDSR.materialList}" var="mr" id="materialTable">
+                    
+                    <apex:column headerValue="Name">
+                        <apex:outputLink value="/{!mr.material.Id}" target="_blank">{!mr.material.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Line Item" value="{!mr.material.Line_Item__c}"/>
+                    <apex:column headerValue="Product" value="{!mr.material.Product__c}"/>
+                    <apex:column headerValue="PO #" value="{!mr.material.PO__c}"/>
+                    <apex:column headerValue="Receiving Individual" value="{!mr.material.Receiving_Individual__c}"/>
+                    <apex:column headerValue="Company" value="{!mr.material.Company__c}"/>
+                    <apex:column headerValue="Delivery in Full?" value="{!mr.material.Delivery_in_Full__c}"/>
+                    <apex:column headerValue="Issues and Comments" value="{!mr.material.Packing_Slip_BOL__c}"/>
+                    <apex:column headerValue="Date Received" value="{!mr.material.Date_Received__c}"/>
+                    
+                    
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <!-- Page Edit Mode -->
+        <apex:pageBlock title="Daily Site Report Edit" id="mainEditPageBlock" mode="edit" rendered="{!editMode}"> 
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveDSR}" disabled="{!fatalError}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" rendered="{!!fatalError}"/>
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true" rendered="{!fatalError}"/>
+                <!-- <apex:commandButton value="Cancel" action="{!cancelEditDSR}" immediate="true"/> -->
+            </apex:pageBlockButtons>
+            
+            <apex:outputPanel rendered="{!!fatalError}">
+                <apex:pageBlockSection title="Information" columns="2" >
+                   
+                      
+                    <apex:PageBlockSection >
+                   <apex:inputField value="{!newDSR.dsr.Project__c}"> 
+                   
+                     <apex:actionSupport event="onload" action="{!newDSR.dsrProjectChange}" rerender="theForm" /> 
+                   </apex:inputField>
+                   <!--   <apex:inputField value="{!newDSR.dsr.Name}"  /> -->
+                   
+                   
+                <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Site"/>
+                        <apex:selectList value="{!selectedSite}" title="Select a Site" size="1"   >
+                         <apex:selectOptions value="{!sites}"/ >
+                        
+                 <apex:actionsupport event="onchange" action="{!newDSR.dsrsiteChange}" rerender="dsrnam,laborTable,equipmentTable,materialTable" /> 
+                 </apex:selectList>
+                 </apex:pageBlockSectionItem>
+                 </apex:PageBlockSection>
+                 
+                  <apex:pageBlockSection id="dsrnam" > 
+                  <apex:inputField value="{!newDSR.dsr.Date__c}">
+                        <apex:actionSupport event="onchange" action="{!newDSR.dsrDateChange}" rerender="dsrnam" />  <!-- rerender="theForm" -->
+                    </apex:inputField>                                       
+                    <apex:inputfield value="{!newDSR.dsr.Name}"/> <!-- value="{!newDSR.dsr.Name}" /> -->
+                     
+                    </apex:pageBlockSection> 
+                              
+                 
+                </apex:pageBlockSection>
+                        
+                            
+                  
+                   
+                <apex:pageBlockSection title="Weather" columns="2">
+                    <apex:inputField value="{!newDSR.dsr.Weather_Conditions_Today__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.X48_Hour_Temp__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.Today_s_Temperature__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.X48_Hour_Forecast__c}"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Safety" columns="2">
+                    <apex:inputField value="{!newDSR.dsr.Verify_all_Workers_Have_Been_Oriented__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.Incidents_Including_Near_Misses__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.Notes_1__c}"/>
+                    <apex:inputField value="{!newDSR.dsr.Notes_2__c}"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Additional Information" columns="1">
+                    <apex:inputField value="{!newDSR.dsr.Inspections_and_Meetings__c}" style="width:75%;" />
+                    <apex:inputField value="{!newDSR.dsr.Overall_Progress__c}" style="width:75%;" />
+                    <apex:inputField value="{!newDSR.dsr.Issues_and_Comments__c}" style="width:75%;" />
+                </apex:pageBlockSection>
+                
+                                     
+                  <p style="text-align: center; font-weight: bold; font-size: 18px">
+                            Labor Tracking
+                   </p>          
+               
+                <apex:pageBlockTable value="{!newDSR.laborList}" var="lab" id="laborTable">
+                    <apex:column >
+                        <apex:commandLink action="{!lab.removeLaborRow}" rendered="{!!lab.addLabor}" rerender="laborTable" title="Remove Row" >    
+                            <apex:image id="xImage" value="{!$Resource.Delete_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!lab.addLaborRow}" rendered="{!lab.addLabor}" rerender="laborTable" title="Add Row" >  
+                            <apex:image id="plusImage" value="{!$Resource.Add_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Subcontractor">
+                        <apex:selectList value="{!lab.selectedSubConAcc}" title="Select a Subcontractor" size="1"  rendered="{!!lab.addLabor}">
+                            <apex:selectOptions value="{!lab.subConAccOptions}" />
+                            <apex:actionSupport event="onchange" action="{!lab.subConNumber}" rerender="laborTable"/> 
+                        </apex:selectList>
+                        
+                    </apex:column>
+                    
+                    <apex:column headerValue="Subcontractor #">
+                        <apex:inputField value="{!lab.labor.Subcontractor_Number__c}" rendered="{!!lab.addLabor}">
+                            <apex:actionSupport event="onchange" action="{!lab.subContractorNameLabor}" rerender="laborTable"/> 
+                        </apex:inputField>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Cost Code">
+                        <apex:inputField value="{!lab.labor.Cost_Code__c}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                    
+                   <!--
+                    <apex:column headerValue="# of Workers">
+                        <apex:inputField value="{!lab.labor.Number_of_Workers__c}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Hours per Worker">
+                        <apex:inputField value="{!lab.labor.Hours__c}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                    -->
+                    
+                    
+                    <apex:column headerValue="# of Workers">
+                        <apex:inputField value="{!lab.labor.Number_of_Workers__c}" rendered="{!!lab.addLabor}">
+                            <apex:actionSupport event="onchange" action="{!lab.changeLaborTotalHours}" rerender="laborTable"/>
+                        </apex:inputField>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Hours per Worker">
+                        <apex:inputField value="{!lab.labor.Hours__c}" rendered="{!!lab.addLabor}">
+                            <apex:actionSupport event="onchange" action="{!lab.changeLaborTotalHours}" rerender="laborTable"/>
+                        </apex:inputField>
+                    </apex:column>
+                    
+                    <!--
+                    <apex:column headerValue="Total Daily Hours">
+                        <apex:outputText value="{!lab.labor.Total_Hours__c}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                    -->
+                    
+                    
+                    <apex:column headerValue="Total Daily Hours">
+                        <apex:outputText value="{!lab.totalHours}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                   
+                    
+                    <apex:column headerValue="Work Performed">
+                        <apex:inputField value="{!lab.labor.Work_Performed__c}" rendered="{!!lab.addLabor}"/>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+                <!--
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Key Tasks Labor Tracking
+                </p>
+                <apex:pageBlockTable value="{!newDSR.keyTasksList}" var="kt" id="keyTasksTable">
+                    <apex:facet name="caption">
+                        For ALL tasks - labor hours recorded should account for receiving material, installation, and clean up.
+                    </apex:facet>
+                    <apex:column >
+                        <apex:commandLink action="{!kt.removeKeyTasksRow}" rendered="{!!kt.addKeyTasks}" rerender="keyTasksTable" title="Remove Row" >
+                            <apex:image id="xImage" value="{!$Resource.Delete_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!kt.addKeyTasksRow}" rendered="{!kt.addKeyTasks}" rerender="keyTasksTable" title="Add Row" >
+                            <apex:image id="plusImage" value="{!$Resource.Add_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Task Type">
+                        <apex:inputField value="{!kt.keyTasks.TaskType__c}" rendered="{!!kt.addKeyTasks}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="# of Workers">
+                        <apex:inputField value="{!kt.keyTasks.Number_of_Workers__c}" rendered="{!!kt.addKeyTasks}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Hours">
+                        <apex:inputField value="{!kt.keyTasks.Hours__c}" rendered="{!!kt.addKeyTasks}"/>
+                    </apex:column>
+                    
+                    -- 
+                    <apex:column headerValue="# of Workers">
+                        <apex:inputField value="{!kt.keyTasks.Number_of_Workers__c}" rendered="{!!kt.addKeyTasks}">
+                            <apex:actionSupport event="onchange" action="{!kt.changeKeyTasksTotalHours}" rerender="keyTasksTable"/>
+                        </apex:inputField>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Hours">
+                        <apex:inputField value="{!kt.keyTasks.Hours__c}" rendered="{!!kt.addKeyTasks}">
+                            <apex:actionSupport event="onchange" action="{!kt.changeKeyTasksTotalHours}" rerender="keyTasksTable"/>
+                        </apex:inputField>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Total Hours">
+                        <apex:outputText value="{!kt.totalHours}" rendered="{!!kt.addKeyTasks}"/>
+                    </apex:column>
+                    
+                    --
+                    <apex:column headerValue="Notes">
+                        <apex:inputField value="{!kt.keyTasks.Notes__c}" rendered="{!!kt.addKeyTasks}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                -->
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Construction Equipment on Site
+                </p>
+                                                     
+                <apex:pageBlockTable value="{!newDSR.equipmentList}" var="eq" id="equipmentTable">
+                    
+                    <apex:column >
+                        <apex:commandLink action="{!eq.removeEquipmentRow}" rendered="{!!eq.addEquipment}" rerender="equipmentTable" title="Remove Row" >
+                            <apex:image id="xImage" value="{!$Resource.Delete_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!eq.addEquipmentRow}" rendered="{!eq.addEquipment}" rerender="equipmentTable" title="Add Row" >
+                            <apex:image id="plusImage" value="{!$Resource.Add_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Equipment Type">
+                        <apex:inputField value="{!eq.equipment.Equipment_Type__c}" rendered="{!!eq.addEquipment}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Date Arrived">
+                        <apex:inputField value="{!eq.equipment.Date_Arrived__c}" rendered="{!!eq.addEquipment}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Subcontractor">
+                        <apex:selectList value="{!eq.selectedSubConAcc}" title="Select a Subcontractor" size="1"  rendered="{!!eq.addEquipment}">
+                            <apex:selectOptions value="{!eq.subConAccOptions}" />
+                            <apex:actionSupport event="onchange" action="{!eq.subConNumber}" rerender="equipmentTable"/>
+                        </apex:selectList>
+                        
+                    </apex:column>
+                    
+                    <apex:column headerValue="Subcontractor #">
+                        <apex:inputField value="{!eq.equipment.Subcontractor_Compliance_Number__c}" rendered="{!!eq.addEquipment}">
+                            <apex:actionSupport event="onchange" action="{!eq.subContractorNameEquipment}" rerender="equipmentTable"/>
+                        </apex:inputField>
+                    </apex:column>
+                    
+                   <apex:column headerValue="Equipment Used Today">
+                        <apex:inputField value="{!eq.equipment.Equipment_Used_Today__c}" rendered="{!!eq.addEquipment}"/>
+                     </apex:column> 
+                    
+                    <apex:column headerValue="Date Picked Up">
+                        <apex:inputField value="{!eq.equipment.Date_Picked_Up__c}" rendered="{!!eq.addEquipment}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Days on Site">
+                        <apex:inputField value="{!eq.equipment.Days_on_Site_formula__c}" rendered="{!!eq.addEquipment}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+                <p style="text-align: center; font-weight: bold; font-size: 18px">
+                    Materials Received
+                </p>
+                <apex:pageBlockTable value="{!newDSR.materialList}" var="mr" id="materialTable">
+                    
+                    <apex:column >
+                        <apex:commandLink action="{!mr.removeMaterialRow}" rendered="{!!mr.addMaterial}" rerender="materialTable" title="Remove Row" >
+                            <apex:image id="xImage" value="{!$Resource.Delete_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                        <apex:commandLink action="{!mr.addMaterialRow}" rendered="{!mr.addMaterial}" rerender="materialTable" title="Add Row" >
+                            <apex:image id="plusImage" value="{!$Resource.Add_Icon}" width="16" height="16"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Line Item">
+                        <apex:inputField value="{!mr.material.Line_Item__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Product">
+                        <apex:inputField value="{!mr.material.Product__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="PO #">
+                        <apex:inputField value="{!mr.material.PO__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Receiving Individual">
+                        <apex:inputField value="{!mr.material.Receiving_Individual__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Company">
+                        <apex:inputField value="{!mr.material.Company__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Delivery in Full?">
+                        <apex:inputField value="{!mr.material.Delivery_in_Full__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Issues and Comments">
+                        <apex:inputField value="{!mr.material.Packing_Slip_BOL__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Date Received">
+                        <apex:inputField value="{!mr.material.Date_Received__c}" rendered="{!!mr.addMaterial}"/>
+                    </apex:column>
+                    
+                    
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

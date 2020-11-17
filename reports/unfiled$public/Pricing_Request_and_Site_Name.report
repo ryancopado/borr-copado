@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Pricing_Tool_Approval__c$Name</field>
+    </columns>
+    <columns>
+        <field>Pricing_Tool_Approval__c$Site__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Pricing Request and Site Name</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Pricing_Requests__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Pricing_Tool_Approval__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

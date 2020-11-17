@@ -1,0 +1,59 @@
+<apex:page standardController="Opportunity" recordSetVar="unused" sidebar="false">
+
+<!-- for this page to work with a specific custom object, change standController="entityname" to custom object api name  
+    For example, if custom object name is Warehouse__c, change first part of the first line to standardController="warehouse__c" -->
+
+    
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+<apex:column headerValue="Name">
+<apex:inputField value="{!a.name}"/>
+</apex:column>
+<apex:column headerValue="Storage Segment">
+ <apex:inputField value="{!a.Storage_Segment__c}"/>
+ </apex:column>
+ <apex:column headerValue="Storage Stage">
+ <apex:inputField value="{!a.Storage_Stage__c}"/>
+ </apex:column>
+   <apex:column headerValue="Storage Close Date">
+ <apex:inputField value="{!a.Storage_Close_Date__c}"/>
+ </apex:column> 
+ <apex:column headerValue="Storage Next Steps">
+ <apex:inputField value="{!a.Storage__c}"/>
+ </apex:column> 
+  <apex:column headerValue="Storage Proposal Submitted Date">
+ <apex:inputField value="{!a.Storage_Proposal_Submitted_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESD Contract Value">
+ <apex:inputField value="{!a.ESDContractValue__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESD Probability BSS">
+ <apex:inputField value="{!a.ESD_Probability_BSS__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESD Probability Customer">
+ <apex:inputField value="{!a.ESD_Probability_customer__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESD Probability Viability">
+ <apex:inputField value="{!a.ESD_Probability_viability__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESS Energy">
+ <apex:inputField value="{!a.ESS_Energy_kWh__c}"/>
+ </apex:column>
+ <apex:column headerValue="ESS Power">
+ <apex:inputField value="{!a.ESS_Power_kW__c}"/>
+ </apex:column>
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

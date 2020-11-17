@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeed__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. Accounting period must have a value of Open. --></help>
+        <label><!-- Accounting  Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Journal Entry --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Accounting Year --></label>
+        <name>AcctSeed__Accounting_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeed__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to date transaction lines of journal entry line unless populates specifically on the journal entry line. --></help>
+        <label><!-- Journal Date --></label>
+        <name>AcctSeed__Journal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of journal entry lines associated with this record. --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Debits minus Total Credits. Shows the total amount a Journal Entry is Out of Balance. --></help>
+        <label><!-- Out of Balance --></label>
+        <name>AcctSeed__Out_of_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated recurring journal entry for this record. --></help>
+        <label><!-- Recurring Journal Entry --></label>
+        <name>AcctSeed__Recurring_Journal_Entry__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used in approvals of Journal Entries and therefore related detail lines. A value of &quot;Posted&quot; indicates the record is final all debit and credit lines have been entered into the transaction object. --></help>
+        <label><!-- Posting Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Approval</masterLabel>
+            <translation><!-- Waiting for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Credits from Journal entry Lines. Must equal Total Debits at time of posting. --></help>
+        <label><!-- Total Credits --></label>
+        <name>AcctSeed__Total_Credits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Debits from Journal entry Lines. Must equal Total Credits at time of posting. --></help>
+        <label><!-- Total Debits --></label>
+        <name>AcctSeed__Total_Debits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Do RollUp --></label>
+        <name>Do_RollUp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Filled in automatically. Inbound Inventory Movement that JEL was created from if applicable. --></help>
+        <label><!-- Inbound Inventory Movement --></label>
+        <name>Inbound_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Memo --></label>
+        <name>Memo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Filled in automatically. Outbound Inventory Movement that JEL was created from if applicable. --></help>
+        <label><!-- Outbound Inventory Movement --></label>
+        <name>Outbound_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check this field to set the record for limited visibility. Only users who can see payroll will be able to view the details. --></help>
+        <label><!-- Private/Payroll --></label>
+        <name>Private_Payroll__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Template Journal Entry --></label>
+        <name>Template_Journal_Entry__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Accounting_Period_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Journal Date must be within the Accouting Period --></errorMessage>
+        <name>Verify_Month</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone_Journal_Entry --></label>
+        <name>AcctSeed__Clone_Journal_Entry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_With_Lines --></label>
+        <name>AcctSeed__Clone_With_Lines</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post --></label>
+        <name>AcctSeed__Post</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Journal_Entries --></label>
+        <name>AcctSeed__Post_Journal_Entries</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reverse_Clone_Journal_Entry --></label>
+        <name>AcctSeed__Reverse_Clone_Journal_Entry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reverse_Clone_With_Lines --></label>
+        <name>AcctSeed__Reverse_Clone_With_Lines</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost --></label>
+        <name>AcctSeed__Unpost</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost_Journal_Entries --></label>
+        <name>AcctSeed__Unpost_Journal_Entries</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Execute_All_Roll_Ups --></label>
+        <name>Execute_All_Roll_Ups</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Execute_Roll_Ups --></label>
+        <name>Execute_Roll_Ups</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_WDG_Sales_team_that_Oppty_has_been_closed</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>WDG Email Alert</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_WDG_Sales_team_that_Oppty_has_been_closed</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Oppty_Closed_Lost_WESTERN_REGION</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>West Email Alert</label>
+        <locationX>1300</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Oppty_Closed_Lost_WESTERN_REGION</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Oppty_Closed_Lost_EASTERN_DIVISION</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>East Division Email Alert</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Oppty_Closed_Lost_EASTERN_DIVISION</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Offtaker_CLOSED_LOST_EAST</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Offtaker East Email</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Offtaker_CLOSED_LOST_EAST</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_NY_Sales_team_that_Oppty_has_been_Closed_Lost</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>NY Division Email</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_NY_Sales_team_that_Oppty_has_been_Closed_Lost</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Offtaker_CLOSED_LOST_NY</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>NY Offtaker Email</label>
+        <locationX>700</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Offtaker_CLOSED_LOST_NY</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <processMetadataValues>
+            <name>emailAlertSelection</name>
+            <value>
+                <stringValue>Email_Alert_to_O_M_team_that_Oppty_has_been_Closed_Lost</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>O&amp;M Email</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <actionName>Opportunity.Email_Alert_to_O_M_team_that_Oppty_has_been_Closed_Lost</actionName>
+        <actionType>emailAlert</actionType>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_pmetdec</targetReference>
+            </connector>
+            <label>East Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision12</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_pmetdec</targetReference>
+            </connector>
+            <label>WDG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision12</name>
+        <label>myDecision12</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_pmetdec</targetReference>
+            </connector>
+            <label>West Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>(2 OR 4 ) AND 1 AND 3</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>East</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012340000007kaFAAQ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New England</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_pmetdec</targetReference>
+            </connector>
+            <label>East Offtaker</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision6</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_pmetdec</targetReference>
+            </connector>
+            <label>NY Division</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New York</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012340000007kaFAAQ</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_pmetdec</targetReference>
+            </connector>
+            <label>NY Offtaker</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012800000007kGdAAI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_pmetdec</targetReference>
+            </connector>
+            <label>O&amp;M</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_11_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_11_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_11_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_13_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1300</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_13_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_13_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_1_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_1_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_1_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_3_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>300</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_3_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_3_pmetrule</name>
+            <conditionLogic>(2 OR 4 ) AND 1 AND 3</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>East</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012340000007kaFAAQ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New England</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_5_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>500</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_5_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_5_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5_pmetrule</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_7_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>700</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_7_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_7_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Opportunity_Owner_Division__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New York</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012340000007kaFAAQ</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_9_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>900</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_9_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_9_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>RecordType</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012800000007kGdAAI</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <description>actions that fire for different regions and record types when Oppty moves the stage Closed Lost</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+OR( [Opportunity].Opportunity_Owner_Division__c = &quot;East&quot;,
+        [Opportunity].Opportunity_Owner_Division__c = &quot;New England&quot;),
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Closed Lost&quot;) ,
+
+OR( {!myVariable_current.Opportunity_Owner_Division__c} = &quot;East&quot;,
+        {!myVariable_current.Opportunity_Owner_Division__c} = &quot;New England&quot;),
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;WDG&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;WDG&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;WDG&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;WDG&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;West&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;West&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;West&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;West&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+OR( [Opportunity].Opportunity_Owner_Division__c = &quot;East&quot;,
+        [Opportunity].Opportunity_Owner_Division__c = &quot;New England&quot;),
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Closed Lost&quot;) ,
+
+OR( {!myVariable_old.Opportunity_Owner_Division__c} = &quot;East&quot;,
+        {!myVariable_old.Opportunity_Owner_Division__c} = &quot;New England&quot;),
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;New York&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_current.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_current.Opportunity_Owner_Division__c} = &quot;New York&quot;,
+
+OR( {!myVariable_current.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_current.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_current.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(ISPICKVAL([Opportunity].StageName , &quot;Closed Lost&quot;) ,
+
+       [Opportunity].Opportunity_Owner_Division__c = &quot;New York&quot;,
+
+OR( [Opportunity].RecordTypeId = &quot;012340000007ka0AAA&quot; , 
+        [Opportunity].RecordTypeId = &quot;012340000007kaKAAQ&quot; ,
+        [Opportunity].RecordTypeId = &quot;012800000007g08AAA&quot;  ,
+        [Opportunity].RecordTypeId = &quot;012800000007g0DAAQ&quot; ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5_pmetrule</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISPICKVAL({!myVariable_old.StageName} , &quot;Closed Lost&quot;) ,
+
+       {!myVariable_old.Opportunity_Owner_Division__c} = &quot;New York&quot;,
+
+OR( {!myVariable_old.RecordTypeId} = &quot;012340000007ka0AAA&quot; , 
+        {!myVariable_old.RecordTypeId} = &quot;012340000007kaKAAQ&quot; ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g08AAA&quot;  ,
+        {!myVariable_old.RecordTypeId} = &quot;012800000007g0DAAQ&quot; ))</expression>
+    </formulas>
+    <interviewLabel>Opportunity_Stage_Closed_Lost-7_InterviewLabel</interviewLabel>
+    <label>Opportunity Stage Closed Lost</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Opportunity</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

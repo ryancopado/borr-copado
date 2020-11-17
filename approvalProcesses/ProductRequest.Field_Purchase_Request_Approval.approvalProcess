@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>RecordType</field>
+        <field>Owner</field>
+        <field>WorkOrder</field>
+        <field>WorkOrderLineItem</field>
+        <field>DestinationLocation</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>rallen@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Approve request</label>
+        <name>Approve_request</name>
+    </approvalStep>
+    <emailTemplate>Inventory_Email_Templates/Inventory_Request_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>ProductRequest.Status</field>
+            <operation>equals</operation>
+            <value>Submitted,Draft,Rejected</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ProductRequest.Request_Type__c</field>
+            <operation>equals</operation>
+            <value>Field Purchase</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Inventory_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Inventory_Request_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Field Purchase Request Approval</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

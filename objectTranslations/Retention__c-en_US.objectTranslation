@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Retention</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Retentions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Retentions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The total amount of all related AP Lines. --></help>
+        <label><!-- Roll Up AP Lines --></label>
+        <name>Roll_Up_AP_Lines__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of all related Billing Lines. --></help>
+        <label><!-- Roll Up Billing Lines --></label>
+        <name>Roll_Up_Billing_Lines__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendor/Customer --></label>
+        <name>Vendor_Customer__c</name>
+        <relationshipLabel><!-- Retentions --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- For use with AP Lines --></description>
+        <label><!-- AP Retention --></label>
+        <name>AP_Retention</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For use with Billing Lines --></description>
+        <label><!-- Billing Retention --></label>
+        <name>Billing_Retention</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

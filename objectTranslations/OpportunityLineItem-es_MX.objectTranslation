@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- GL Account Variable 1 --></label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Account Variable 2 --></label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Opportunity Product (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Account Variable 3 --></label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Opportunity Product (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Account Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Opportunity Product (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Calculated based on Total Price x Tax Group&apos;s Combined Tax Rate on Opportunity Product Line, unless using AvaTax. --></help>
+        <label><!-- Tax Amount --></label>
+        <name>AcctSeed__Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- If using native tax functionality, this determines the Combined Tax Rate percentage and the tax GL mappings and is used to calculate the Tax Amount. --></help>
+        <label><!-- Tax Group --></label>
+        <name>AcctSeed__Tax_Group__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Total Price + Tax Amount for the Opportunity Product Line --></help>
+        <label><!-- Total with Tax --></label>
+        <name>AcctSeed__Total_with_Tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Jurisdictions that were applied to the SalesTax Calculation, including name and rate. Cannot be Edited. --></help>
+        <label><!-- Sales Tax Details --></label>
+        <name>AvaAcctSeed__Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Tax Calculated For This Line - Cannot Be Edited --></help>
+        <label><!-- Sales Tax Amount --></label>
+        <name>AvaAcctSeed__LineTax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tax Rate applied to this line.  Cannot be Edited --></help>
+        <label><!-- Sales Tax Rate --></label>
+        <name>AvaAcctSeed__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Code --></label>
+        <name>AvaAcctSeed__Tax_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Catalog Price --></label>
+        <name>Catalog_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- FieldID --></label>
+        <name>FieldID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Supplied Product --></label>
+        <name>Owner_Supplied_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Watts Workflow2 --></label>
+        <name>Project_Watts_Workflow2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Watts Workflow --></label>
+        <name>Project_Watts_Workflow__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Watts --></label>
+        <name>Project_Watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qty Invoiced --></label>
+        <name>Qty_Invoiced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qty Issued --></label>
+        <name>Qty_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qty Requested --></label>
+        <name>Qty_Requested__c</name>
+    </fields>
+    <fields>
+        <help>Id. del producto de oportunidad que provino del paquete de este producto.</help>
+        <label><!-- Parent ID --></label>
+        <name>SBQQ__ParentID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Line --></label>
+        <name>SBQQ__QuoteLine__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Indica el tipo de suscripción para determinar el precio del contrato.</help>
+        <label><!-- Subscription Type --></label>
+        <name>SBQQ__SubscriptionType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Line TXnID --></label>
+        <name>Sales_Order_Line_TXnID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Qty Issued --></label>
+        <name>Total_Qty_Issued__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installed Spare</masterLabel>
+            <translation><!-- Installed Spare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare</masterLabel>
+            <translation><!-- Spare --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The product you selected is not approved for sale. Please select a product that is approved for sale. --></errorMessage>
+        <name>Approved_for_Sale</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+</CustomObjectTranslation>

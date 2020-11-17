@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>Request_for_Information_RFI__c.Approver__c</field>
+    </columns>
+    <columns>
+        <field>Request_for_Information_RFI__c.To_Borrego_Approver__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Assigned_To__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Internal_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.External_Contact__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>existing submittals</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Request_for_Information_RFI__c$Submittal_1__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Submittal_1__c.Assigned_To__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Request_for_Information_RFI__c.Created_Date__c</dateColumn>
+        <endDate>2018-02-28</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-09-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DMAPP__DM_Opportunity_Extras__r.DMAPP__DM_Qualifier_Answers__r$DMAPP__DM_Qualifier__c.DMAPP__Question__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DMAPP__DM_Opportunity_Extras__r.DMAPP__DM_Qualifier_Answers__r$DMAPP__Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.DMAPP__DM_Opportunity_Extras__r.DMAPP__DM_Qualifier_Answers__r$DMAPP__Comment__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>NextEra Energy Resources - Town of Bethlehem East</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.DMAPP__DM_Opportunity_Extras__r$DMAPP__Sales_Process_Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Dealmaker qualifier report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Dealmaker_Qualifier_Answers__c</reportType>
+    <roleHierarchyFilter>CEO</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Approximate_Install_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

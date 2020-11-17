@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoLogo</letterhead>
+    <name>Career Inquiries</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar: Responding to your inquiry</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+
+
+Thank you for your interest in Borrego Solar. All of our available positions are posted on our website at http://www.borregosolar.com/commercial-solar-energy-systems-company/careers/.
+
+If any of these openings are of interest to you, please follow the instructions to apply online.
+
+Best of luck,
+
+
+
+{!Lead.OwnerFullName}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

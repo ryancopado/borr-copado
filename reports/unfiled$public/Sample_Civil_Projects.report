@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_72443086</developerName>
+        <masterLabel>Employee Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c.AcctSeed__Employee__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Brandon Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carli Shroyer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louisa Deering</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Frantz Renard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Melissa Samaroo</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>David Albrecht</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Long</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dean Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Martin Zanghi</sourceValue>
+            </sourceValues>
+            <value>Civil PE</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_75246346</developerName>
+        <masterLabel>Pre and Post Handoff Grouping</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card_Line__c.Project_Grouping__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>0: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>1: 50 Set Development</sourceValue>
+            </sourceValues>
+            <value>1. Pre-Handoff</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2: CD IFR Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3: CD IFC Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>4: Post CD Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>5: CD Admin</sourceValue>
+            </sourceValues>
+            <value>2. Post Handoff</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FK_$Site__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_75246346</field>
+    </columns>
+    <columns>
+        <field>FK_$Site__c.Project_Kickoff_Date_editable__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Employee__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_72443086</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card_Line__c.Project_Grouping__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Time_Card_Line__c.AcctSeed__Total_Hours__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>development engineer,civil engineer,civil engineer - drafter,principal civil engineer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c.AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>david albrecht,steve long,dean smith,brandon smith,melissa samaroo,martin zanghi,frantz renard,louisa deering,carli shroyer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Site__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>453 Rounseville Road - Rochester,147 williamsville,959 west,15 wilmarth,happy hollow</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Sample Civil Projects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Time_Card__c$AcctSeed__Time_Card_Line__c@AcctSeed__Time_Card_Line__c.Site__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FK_$Site__c.Project__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Time_Card__c.AcctSeed__Week_Ending_Date__c</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-01-01</startDate>
+    </timeFrameFilter>
+</Report>

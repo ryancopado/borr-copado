@@ -1,0 +1,83 @@
+<apex:page controller="LeadsManager.ShowActivitiesList">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.0/css/jquery.dataTables.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+ 
+<script type="text/javascript">
+        $(document).ready( function() {
+            $('#rHistoryList').dataTable({"iDisplayLength": 50});
+            $('#rOpenActivityList').dataTable({"iDisplayLength": 50});
+        } );
+</script>
+<div style="margin:15px 0 45px 10px" ><apex:outputLink style="color:#015ba7" value="/apex/LeadsManagerView?id={!leadsManager.Id}">Leads - Company: {!leadsManager.Name}</apex:outputLink></div>
+  <apex:pageBlock rendered="{!IF(isHistory = 'true',true,false)}">
+            <div  class="pbBody">
+                <table id="rHistoryList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                    <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Action</th>
+                            <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                <th style="cursor:pointer;">{!$ObjectType.Task.Fields[f].label}</th>
+                            </apex:repeat>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!listActivityHistory}" var="activity" >
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                <td class="actionColumn"><a title="Edit - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?retURL={!leadsManager.Id}">Edit</a>&nbsp;|&nbsp;<a title="Close - {!activity.Subject}" class="actionLink" href="/setup/own/deleteredirect.jsp?delID={!activity.Id}&retURL={!leadsManager}" onClick="return confirmDelete();">Del</a></td>
+                                <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!activity.Id}" rendered="{!IF($ObjectType.Task.Fields[f].Label= 'Subject',true,false) }">{!activity[f]}</apex:outputLink>
+                                        <apex:outputField value="{!activity[f]}" rendered="{!AND($ObjectType.Task.Fields[f].Type != 'datetime', $ObjectType.Task.Fields[f].Type != 'date', $ObjectType.Task.Fields[f].Label != 'Subject')}"/>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.Task.Fields[f].Type = 'datetime', $ObjectType.Task.Fields[f].Type = 'date'), NOT(ISNULL(activity[f])))}">
+                                            {!MONTH(activity[f])}/{!DAY(activity[f])}/{!YEAR(activity[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!IF(isHistory = 'false',true,false)}">
+            <div id="{!leadsManager.Id}_RelatedActivityList_body" class="pbBody">
+                <table id="rOpenActivityList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                    
+                        <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn"  style="cursor:pointer;">
+                                Action
+                            </th>
+                            <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                <th style="cursor:pointer;">{!$ObjectType.Task.Fields[f].label}</th>
+                            </apex:repeat>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:variable value="{!0}" var="counter" />
+                        <apex:repeat value="{!listOpenActivity}" var="activity" id="oARepeater">
+                            <apex:variable value="{!counter+1}" var="counter" />
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                <td class="actionColumn">
+                                    <a title="Edit - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?retURL={!leadsManager.Id}">Edit</a>&nbsp;|&nbsp;<a title="Close - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?close=1&amp;retURL={!leadsManager}">Cls</a>
+                                </td>
+                                <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f" id="oAFieldSetRepeater">
+                                    <td>
+                                        <apex:outputLink value="/{!activity.Id}" rendered="{!IF($ObjectType.Task.Fields[f].Label= 'Subject',true,false) }">{!activity[f]}</apex:outputLink>
+                                        <apex:outputField value="{!activity[f]}" rendered="{!AND($ObjectType.Task.Fields[f].Type != 'datetime', $ObjectType.Task.Fields[f].Type != 'date', $ObjectType.Task.Fields[f].Type != 'reference',$ObjectType.Task.Fields[f].Label != 'Subject')}"/>
+                                        <apex:outputPanel rendered="{!AND($ObjectType.Task.Fields[f].Type = 'reference')}" id="oALeadName">
+                                            <apex:outputField value="{!activity[f]}" id="leadName"/>
+                                        </apex:outputPanel>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.Task.Fields[f].Type = 'datetime', $ObjectType.Task.Fields[f].Type = 'date'), NOT(ISNULL(activity[f])))}">
+                                            {!MONTH(activity[f])}/{!DAY(activity[f])}/{!YEAR(activity[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:pageBlock>
+</apex:page>

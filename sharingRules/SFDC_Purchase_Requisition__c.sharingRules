@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Account_Creation_Requests</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Account Creation Requests</label>
+        <sharedTo>
+            <role>ITManager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Account_Deactivation</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Account Deactivation</label>
+        <sharedTo>
+            <group>Execs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Account Deactivation Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Accounting_by_Creator</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>View Reqs from: Tanya Reas, Hannah Phillips, Brigitta Gayton</description>
+        <label>Accounting by Creator</label>
+        <sharedTo>
+            <group>Accounting_O_M</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00534000007nMqv</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00580000003RDrT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>00534000009pQa4</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BRM_IT_Requests</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>BRM IT Requests</label>
+        <sharedTo>
+            <role>Business_Relationship</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Request,IT Technical Support,IT System Improvement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CheckRequestApprovers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Check Request Approvers</label>
+        <sharedTo>
+            <group>CheckRequestApprovers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Check Requests</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Check_Requests_Share_all_non_confidential</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>shares all check requests that are not marked as confidential. Check requests were originally backfilled by whether project filed was filled out. HR check requests never had the project filled out</description>
+        <label>Check Requests Share all non confidential</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Confidential__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Check Requests,Legal Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Docusign</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Docusign record type on the Requisition Form</description>
+        <label>Docusign</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>DocuSign Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Employee_Bio_Request</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>gives access to marketing director to read/edit all employee bio requests</description>
+        <label>Employee Bio Request</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>MarketingDirector</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Employee Bio</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Energize_Award_view_edit_all</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Add users to &quot;Energize Award View permissions&quot; public group
+https://bssi.my.salesforce.com/setup/own/groupdetail.jsp?id=00G2H000004C1pW&amp;setupid=PublicGroups</description>
+        <label>Energize Award view/edit all</label>
+        <sharedTo>
+            <group>Energize_Award_View_permissions</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Energize Award</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>General_Purchase</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>General Purchase</label>
+        <sharedTo>
+            <group>Accounting_All</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Request,General Purchase</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>HRGeneralistA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>HR GeneralistA</label>
+        <sharedTo>
+            <role>VP_of_People_Culture</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Account Deactivation Request,Energize Award,Check Requests,Personnel Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IT_Manager</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Manager</label>
+        <sharedTo>
+            <role>ITManager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>DocuSign Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IT_Requests</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT Requests</label>
+        <sharedTo>
+            <group>Office_Furniture_Request_Approvals</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IT_Support_Req_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>IT Support Req Access</label>
+        <sharedTo>
+            <role>Applications_Developer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Technical Support</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Legal_Requests</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Legal Requests</label>
+        <sharedTo>
+            <group>Legal_AP_Invoice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>O_M_Coordinator_and_Admin_to_Joe_T</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>O&amp;M Coordinator and Admin to Joe T</label>
+        <sharedTo>
+            <role>DirectorOperationsandMaintenance</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>0052H00000BzfkB,00534000009pQgp,0052H00000BzDcO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Technical Support</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>O_M_Reqs</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>O&amp;M Reqs</label>
+        <sharedTo>
+            <group>O_M_Coordinator</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Request,General Purchase,IT System Improvement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Personnel_Change</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants access to view Personnel Change Requisition Forms</description>
+        <label>Personnel Change</label>
+        <sharedTo>
+            <group>Requisition_Personnel_Change</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Personnel Change</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Procurement_IT_Requests</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give Purchasing and Logistics Manager access to all Procurement IT requests as the assigned approver</description>
+        <label>Procurement IT Requests</label>
+        <sharedTo>
+            <role>PurchasingandLogisticsManager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IT Technical Support,IT System Improvement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Public_Legal_Reqs2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Public Legal Reqs2</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Privileged_and_Confidential__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.AcctSeed__Projects__r$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.AcctSeed__Projects__r$Project_Kickoff_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Opportunity_Owner_Division__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>west</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Shortlisted/Interviews,Project Awarded,Project Booked,EPC Signed,Contract Signed</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Opportunities with or without Projects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_or_without_Projects__c</reportType>
+    <roleHierarchyFilter>Executive_VP_of_Sales</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <endDate>2017-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

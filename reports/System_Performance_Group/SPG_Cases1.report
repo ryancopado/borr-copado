@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Case$Owner</field>
+    </columns>
+    <columns>
+        <field>Case$Origin</field>
+    </columns>
+    <columns>
+        <field>Case$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Case$Status</field>
+    </columns>
+    <columns>
+        <field>Case$Account</field>
+    </columns>
+    <columns>
+        <field>Case$Site__c</field>
+    </columns>
+    <columns>
+        <field>Case$Subject</field>
+    </columns>
+    <description>Cases opened by email to spgcases@borregosolar.com</description>
+    <filter>
+        <criteriaItems>
+            <column>Case$Origin</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>spgcases@borregosolar.com,System Performance Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$O_M_Issue_Tracking__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Performance Investigation</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>SPG Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_NEW__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Case$CreatedDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

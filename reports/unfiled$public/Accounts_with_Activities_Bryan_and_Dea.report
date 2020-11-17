@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$What</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Activity_Type_NEW__c</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Last_Modified_Date_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Activities$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Bryan Martin,Dean Anderson</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Accounts with Activities - Bryan and Dea</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Activity_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Activities$Last_Modified_Date_Time__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case.Quotes__r.SBQQ__LineItems__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case$Status</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$CaseNumber</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.Quotes__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Closed Cases with Quote Lines</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Case_with_Quotes_and_Quote_Line_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$Case_End_Date__c</dateColumn>
+        <endDate>2020-01-04</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-12-15</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$Job_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$SFDC_Project_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Permit_Reviews__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Permit_Reviews__r$Date_Approved__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Overall_Project_Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$SFDC_Project_Stage__c</field>
+    </columns>
+    <description>Used to determine OH allocation for the WIP</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$WIP_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>On WIP</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Project Status Report - WIP</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_or_without_Permits_AS__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Project__c$Job_Number__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c$X50_Baseline_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

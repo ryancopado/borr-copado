@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Co-marketing Partner --></label>
+        <name>Co_marketing_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Co-marketing $ --></label>
+        <name>Co_marketing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- total responses/total campaign members --></help>
+        <label><!-- Response Rate % --></label>
+        <name>Response_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculation of total leads+total contacts-converted leads --></help>
+        <label><!-- Total Number of Campaign Members --></label>
+        <name>Total_Number_of_Campaign_Members__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Campaign Id --></label>
+        <name>pi__Pardot_Campaign_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Has Dependencies --></label>
+        <name>pi__Pardot_Has_Dependencies__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- If Status = either &quot;Aborted&quot; or &quot;Completed&quot; then theActual Cost must be filled in. --></errorMessage>
+        <name>Actual_Cost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Status = either &quot;Aborted&quot; or &quot;Completed&quot; then the End Date must be filled in. --></errorMessage>
+        <name>End_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_to_Pardot_List --></label>
+        <name>Add_to_Pardot_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAllCampaignMembers --></label>
+        <name>ViewAllCampaignMembers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Attach_Files --></label>
+        <name>dropzone__Attach_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewCampaignInfluenceReport --></label>
+        <name>et4ae5__ViewCampaignInfluenceReport</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

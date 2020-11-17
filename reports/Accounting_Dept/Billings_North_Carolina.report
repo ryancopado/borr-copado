@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>AcctSeed__Billing__c.AcctSeed__Total__c:SUM/1+AcctSeed__Billing__c.Tax_Rate__c:AVG</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Sales Tax</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>AcctSeed__Billing__c.AcctSeed__Total__c:SUM /  ( 1 + AcctSeed__Billing__c.Tax_Rate__c:AVG)</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Gross Revenue Net of Sales Tax</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Net Revenue</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>AcctSeed__Billing__c.AcctSeed__Total__c:SUM /  ( 1 + AcctSeed__Billing__c.Tax_Rate__c:AVG)*AcctSeed__Billing__c.Tax_Rate__c:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Net Revenue x Tax Rate (Gross Revenue/(1+Tax Rate) x Tax Rate)</description>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Tax Due</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Customer__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.Service_Contract__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Status__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Accounting_Period__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Billing_Format__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.Application_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Proprietary_Billing_Number__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Billing__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Billing__c.AcctSeed__Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2017-10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.Tax_Group__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>NC-</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Billing_Format__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>EPC - SOV</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Billing__c.AcctSeed__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Posted</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Billing__c.Tax_Rate__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Billing__c.Tax_Group__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Billings - North Carolina</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Billing__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Billing__c.Application_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

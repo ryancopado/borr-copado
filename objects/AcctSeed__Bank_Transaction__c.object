@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AcctSeed__Account_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The account from which the transaction was made. This is basically the primary key of the account resource.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account from which the transaction was made. This is the primary key of the account resource.</inlineHelpText>
+        <label>Account Id</label>
+        <length>50</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount of the transaction as it appears at the FI site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount of the transaction as it appears at the financial institution site.</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Bank_Transaction_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An unique identifier for the transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A unique identifier for the transaction. The combination of the id and account container are unique in the system.</inlineHelpText>
+        <label>Bank Transaction Id</label>
+        <length>50</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Base_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the transaction appears as a debit or a credit transaction in the account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How the transaction appears on the FI site (debit v credit). Bank-Credit/Debit=Increase/Decrease. CreditCard - Credit/Debit=Decrease/Increase.</inlineHelpText>
+        <label>Base Type</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Debit</fullName>
+                    <default>false</default>
+                    <label>Debit</label>
+                </value>
+                <value>
+                    <fullName>Credit</fullName>
+                    <default>false</default>
+                    <label>Credit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Category_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The id of the category assigned to the transaction.</inlineHelpText>
+        <label>Category ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Category_Type2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Transaction Category Type might be set as either TRANSFER, DEFERRED_COMPENSATION, UNCATEGORIZE, INCOME or EXPENSE</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The category type of the category assigned to the transaction.</inlineHelpText>
+        <label>Category Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Category_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The category type of the category assigned to the transaction.</inlineHelpText>
+        <label>Category Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>expense</fullName>
+                    <default>false</default>
+                    <label>expense</label>
+                </value>
+                <value>
+                    <fullName>income</fullName>
+                    <default>false</default>
+                    <label>income</label>
+                </value>
+                <value>
+                    <fullName>transfer</fullName>
+                    <default>false</default>
+                    <label>transfer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the category assigned to the transaction.</inlineHelpText>
+        <label>Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Check_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The check number of the transaction as it appears on the financial institution site.</inlineHelpText>
+        <label>Check Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Container__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The account&apos;s container.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a type of financial account.</inlineHelpText>
+        <label>Container</label>
+        <length>255</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The post date or transaction date on the FI site. Post Date is higher priority than transaction date.</inlineHelpText>
+        <label>Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Original transaction description as it appears at the financial institution site.</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Detail_Category_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The id of the detail category that is assigned to the transaction.</inlineHelpText>
+        <label>Detail Category Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Detail_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the detail category that is assigned to the transaction.</inlineHelpText>
+        <label>Detail Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Mapping__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the GLAM record that is mapped to the Bank Transaction.</inlineHelpText>
+        <label>GL Account Mapping</label>
+        <referenceTo>AcctSeed__GL_Account_Mapping__c</referenceTo>
+        <relationshipLabel>Bank Transactions</relationshipLabel>
+        <relationshipName>Bank_Transactions</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__High_Level_Category_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The id of the high level category assigned to the transaction.</inlineHelpText>
+        <label>High Level Category Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__High_Level_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the high level category assigned to the transaction.</inlineHelpText>
+        <label>High Level Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Key__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The combination of the id and account container are unique in the system.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The combination of the id and account container are unique in the system.</inlineHelpText>
+        <label>Key</label>
+        <length>255</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Memo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional notes provided by the user for a particular transaction through application or API services.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional notes provided by the user for a particular transaction through application or API services.</inlineHelpText>
+        <label>Memo</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Merchant_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional category information from the Yodlee reference data, if available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional category information from the Yodlee reference data, if available.</inlineHelpText>
+        <label>Merchant Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Merchant_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The id of the merchant associated with the transaction.</inlineHelpText>
+        <label>Merchant Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Merchant_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the merchant associated with the transaction.</inlineHelpText>
+        <label>Merchant Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Merchant_Type2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Merchant Type can be set as BILLERS, SUBSCRIPTION or OTHERS</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides further information about a transaction, i.e., if the transaction is carried out on a biller or a subscriber.</inlineHelpText>
+        <label>Merchant Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Merchant_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides further information about a transaction, i.e., if the transaction is carried out on a biller or a subscriber.</inlineHelpText>
+        <label>Merchant Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Billers</fullName>
+                    <default>false</default>
+                    <label>Billers</label>
+                </value>
+                <value>
+                    <fullName>Subscription</fullName>
+                    <default>false</default>
+                    <label>Subscription</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Parent_Category_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The parentCategoryId of the category assigned to the transaction.
+Note: This field will be provided in the response if the transaction is assigned to a user-created category.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parentCategoryId of the category assigned to the transaction.
+Note: This field will be provided in the response if the transaction is assigned to a user-created category.</inlineHelpText>
+        <label>Parent Category Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Post_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date on which the transaction is posted to the account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date on which the transaction is posted to the account.</inlineHelpText>
+        <label>Post Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Running_Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The running balance in an account indicates the balance of the account after every transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The running balance in an account indicates the balance of the account after every transaction.</inlineHelpText>
+        <label>Running Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Simple_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>simplified transaction description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Simplified transaction description by Yodlee.</inlineHelpText>
+        <label>Simple Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Source__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the source from which this transaction was imported.  Possible values: Yodlee, Financial File Import</inlineHelpText>
+        <label>Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yodlee</fullName>
+                    <default>false</default>
+                    <label>Yodlee</label>
+                </value>
+                <value>
+                    <fullName>Financial File Import</fullName>
+                    <default>false</default>
+                    <label>Financial File Import</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The current status of this transaction in the system.  Possible values: Unmatched, Added, Matched, Deleted, Removed</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unmatched</fullName>
+                    <default>true</default>
+                    <label>Unmatched</label>
+                </value>
+                <value>
+                    <fullName>Added</fullName>
+                    <default>false</default>
+                    <label>Added</label>
+                </value>
+                <value>
+                    <fullName>Matched</fullName>
+                    <default>false</default>
+                    <label>Matched</label>
+                </value>
+                <value>
+                    <fullName>Deleted</fullName>
+                    <default>false</default>
+                    <label>Deleted</label>
+                </value>
+                <value>
+                    <fullName>Removed</fullName>
+                    <default>false</default>
+                    <label>Removed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Sub_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A more detailed classification that provides further information on the type of transaction; examples include purchases, payments, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A more detailed classification that provides further information on the type of transaction; examples include purchases, payments, etc.</inlineHelpText>
+        <label>Sub Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Transaction_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the transaction happens in the account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the transaction happens in the account.</inlineHelpText>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the nature of the intent behind the transaction, some examples being payments, purchases, charges &amp; fees, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes the nature of the intent behind the transaction, some examples being payments, purchases, charges &amp; fees, etc.</inlineHelpText>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Bank Transaction</label>
+    <nameField>
+        <displayFormat>BT-{00000}</displayFormat>
+        <label>Bank Transaction Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Bank Transactions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

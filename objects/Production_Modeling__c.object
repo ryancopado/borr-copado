@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Production_Modeling_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Production_Modeling_Lightning_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Production_Modeling_Lightning_Compact_Layout</fullName>
+        <fields>Opportunity__c</fields>
+        <fields>Request_Status__c</fields>
+        <fields>Person_Responsible__c</fields>
+        <fields>Status__c</fields>
+        <fields>System_Size__c</fields>
+        <fields>Annual_Production_MWh_formula__c</fields>
+        <fields>Specific_Yield_kWh_kWp2__c</fields>
+        <label>Production Modeling Lightning Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Derating_Loss__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any further losses to apply to the annual energy generation, e.g.: estimate of shading losses.</inlineHelpText>
+        <label>Additional Derating Loss (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_MWh__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Production (MWh)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_MWh_formula__c</fullName>
+        <description>previously calculations as MWh Raw_Annual_Production__c * (1- Additional_Derating_Loss__c) *(1- Percent_of_Downtime_Modeled__c), updated to kWh on 9.11.15</description>
+        <externalId>false</externalId>
+        <formula>(Raw_Annual_Production__c * (1- Additional_Derating_Loss__c) *(1- Percent_of_Downtime_Modeled__c))*1000</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Annual Production (kWh)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apps_Engineer_Logged_in__c</fullName>
+        <description>displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports</description>
+        <externalId>false</externalId>
+        <formula>IF( Person_Responsible__c = $User.Id , 1 , 
+
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports</inlineHelpText>
+        <label>Apps Engineer Logged in</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_Apps_Engineer_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>pull0s email address from assigned apps engineer field on related opportunity</inlineHelpText>
+        <label>Assigned Apps Engineer Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.Account.Branch__c )</formula>
+        <label>Branch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in WF to cancel Request for Production Model</inlineHelpText>
+        <label>Cancel Request</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Change_in_Site_Layout_Shading_Equipment__c</fullName>
+        <description>Changes in site layout/shading/equipment since previous approved model on Salesforce?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Record changes made since previous approved model on Salesforce.  &quot;Equipment&quot; refers to anything that impacts production such as modules, inverters, transformers and storage capacity.</inlineHelpText>
+        <label>Change in Site Layout/Shading/Equipment?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cleared_to_Approve_Production_Models__c</fullName>
+        <description>Used in Production Modeling Approval Process</description>
+        <externalId>false</externalId>
+        <formula>Person_Responsible__r.OK_to_Approve_Production_Models__c = TRUE</formula>
+        <inlineHelpText>Contact Bradley if you think Person Responsible should be able to self approve production models.</inlineHelpText>
+        <label>Cleared to Approve Production Models</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>indicates request for production modeling has been completed</inlineHelpText>
+        <label>Completed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contract_del__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Approved_Weather_Station__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The most recently approved weather station.</inlineHelpText>
+        <label>Current Approved Weather Station</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Contract_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Final_Contract_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Contract Price (from Opp)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Date_Completed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>auto date stamps when completed check-box is checked off</inlineHelpText>
+        <label>Date Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Created_for_Workflows__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Created for Workflows</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Needed_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Needed By</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Submitted__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>auto date stamps when request is submitted initially (not for approval)</inlineHelpText>
+        <label>Date Submitted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  Completed__c  = FALSE, TODAY()-  Date_Submitted__c  , 
+ Date_Completed__c  -  Date_Submitted__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>calculates # of calendar days between Date Submitted and Date Completed. If not complete it uses TODAY - Date Submitted.</inlineHelpText>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Degree_of_Certainty__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the degree of certainty that this is the final design, ie: 20%, 80%, etc</inlineHelpText>
+        <label>Degree of Certainty</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10%</fullName>
+                    <default>false</default>
+                    <label>10%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>50%</fullName>
+                    <default>false</default>
+                    <label>50%</label>
+                </value>
+                <value>
+                    <fullName>70%</fullName>
+                    <default>false</default>
+                    <label>70%</label>
+                </value>
+                <value>
+                    <fullName>90%</fullName>
+                    <default>false</default>
+                    <label>90%</label>
+                </value>
+                <value>
+                    <fullName>100%</fullName>
+                    <default>false</default>
+                    <label>100%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_of_Other_Modelling_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Description of Other Modelling Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Design_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the link to the PSD you are referencing</inlineHelpText>
+        <label>Design Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Design_Stage__c</fullName>
+        <description>Pulled from the most recently modified associated Project record (via the Opportunity) at Production Modeling record creation time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project record Design Stage value at Production Modeling record creation time.  Automatically set.</inlineHelpText>
+        <label>Design Stage</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Design_Tool_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a link to the Design Tool here</inlineHelpText>
+        <label>Design Tool Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EPC_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>EPC Price $/watt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ESS_AC_or_DC__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.ESSACorDC__c )</formula>
+        <inlineHelpText>From Opportunity</inlineHelpText>
+        <label>ESS AC or DC?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ESS__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the project have AC or DC energy storage</inlineHelpText>
+        <label>ESS</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expected_Completion_Date__c</fullName>
+        <description>Expected date of completion by person responsible</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected date of completion by person responsible</inlineHelpText>
+        <label>Expected Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Proposal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Final Proposal</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Financing_Source__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>brings over the value in this field from the opportunity when production modeling request was created</inlineHelpText>
+        <label>Financing Source</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Helioscope_Project_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Link to Helioscope Project, the live project in Helioscope not the printed report</inlineHelpText>
+        <label>Helioscope Project Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Horizon_Profile_Included__c</fullName>
+        <description>Is the horizon profile included? Dependent picklist. Depended on Production Modeling Stage = Development and 50% Design.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Make sure horizon profile e is created from the precise site location.</inlineHelpText>
+        <label>Horizon Profile Included?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Production_Modeling_Stage__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>NA</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsSubmittedForApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to check action is taken from approval process or any DML operation in trigger.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to check action is taken from approval process or any DML operation in trigger.</inlineHelpText>
+        <label>Is Submitted For Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Model_Based_On__c</fullName>
+        <description>Picklist based one the field Production Modeling Stage equal to Record Drawing</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply.</inlineHelpText>
+        <label>Model Based On?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Production_Modeling_Stage__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Record drawing set</fullName>
+                    <default>false</default>
+                    <label>Record drawing set</label>
+                </value>
+                <value>
+                    <fullName>Redlines</fullName>
+                    <default>false</default>
+                    <label>Redlines</label>
+                </value>
+                <value>
+                    <fullName>Feedback from project personnel</fullName>
+                    <default>false</default>
+                    <label>Feedback from project personnel</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Record Drawing</controllingFieldValue>
+                <valueName>Record drawing set</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Record Drawing</controllingFieldValue>
+                <valueName>Redlines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Record Drawing</controllingFieldValue>
+                <valueName>Feedback from project personnel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Record Drawing</controllingFieldValue>
+                <valueName>NA</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Washings__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of times the array will be washed annually, ensure that O&amp;M pricing reflects this.</inlineHelpText>
+        <label>Number of Washings</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OKtoSubmit__c</fullName>
+        <description>indicates if the records meets the necessary criteria to be submitted for approval</description>
+        <externalId>false</externalId>
+        <formula>IF(
+  AND(
+      NOT(ISPICKVAL(Status__c, &quot;Approved&quot;)),         
+      TEXT(Request_Status__c) &lt;&gt; &quot;New&quot;,
+      TEXT(Request_Status__c) &lt;&gt; &quot;Cancelled&quot;,
+         
+
+      OR(
+         ISBLANK(Additional_Derating_Loss__c ), 
+         ISBLANK(Number_of_Washings__c ), 
+         ISBLANK(Potential_Reduction_in_Yield__c ),
+         ISBLANK(TEXT(Change_in_Site_Layout_Shading_Equipment__c)),
+         ISBLANK(Snow_Soiling_Loss_Calculator_Link__c)
+        )
+      ),
+
+      IMAGE(&quot;/servlet/servlet.FileDownload?file=0152H0000034yPx&quot;, &quot;WHITE&quot;),
+
+IF(
+   AND(
+       ISPICKVAL(Status__c, &quot;Approved&quot;),
+       TEXT(Request_Status__c) &lt;&gt; &quot;New&quot;,
+       TEXT(Request_Status__c) &lt;&gt; &quot;Cancelled&quot;
+       ),
+   
+       IMAGE(&quot;/servlet/servlet.FileDownload?file=015800000015IuY&quot;,&quot;WHITE&quot;),
+
+IF(
+   AND(
+       NOT(ISPICKVAL(Status__c, &quot;Approved&quot;)),
+       TEXT(Request_Status__c) &lt;&gt; &quot;New&quot;,
+       TEXT(Request_Status__c) &lt;&gt; &quot;Cancelled&quot;, 
+      
+      OR(
+         ISPICKVAL(Production_Modeling_Stage__c, &quot;Development&quot;), 
+         ISPICKVAL(Production_Modeling_Stage__c, &quot;50% Design&quot;)
+         ),
+
+      OR(
+         ISBLANK(TEXT(Horizon_Profile_Included__c)),
+         ISBLANK(TEXT(Tree_Shade_Object_Height_Source__c))
+         )
+      ),
+
+       IMAGE(&quot;/servlet/servlet.FileDownload?file=01534000002XfP8&quot;, &quot;WHITE&quot;),
+
+
+IF(
+   AND(
+       NOT(ISPICKVAL(Status__c, &quot;Approved&quot;)),
+       TEXT(Request_Status__c) &lt;&gt; &quot;New&quot;,
+       TEXT(Request_Status__c) &lt;&gt; &quot;Cancelled&quot;, 
+       ISBLANK(TEXT(Change_in_Site_Layout_Shading_Equipment__c))
+       ),
+
+       IMAGE(&quot;/servlet/servlet.FileDownload?file=01534000002XfPD&quot;, &quot;WHITE&quot;),
+
+IF(
+   AND(
+       NOT(ISPICKVAL(Status__c, &quot;Approved&quot;)),
+       TEXT(Request_Status__c) &lt;&gt; &quot;New&quot;,
+       TEXT(Request_Status__c) &lt;&gt; &quot;Cancelled&quot;, 
+       ISPICKVAL(Production_Modeling_Stage__c, &quot;Record Drawing&quot;),
+       ISBLANK(Model_Based_On__c)
+       ),
+
+      IMAGE(&quot;/servlet/servlet.FileDownload?file=01534000002XfPI&quot;, &quot;WHITE&quot;),
+
+IF(
+   AND(
+       NOT(ISPICKVAL(Status__c, &quot;Approved&quot;)),
+      
+       OR(
+          TEXT(Request_Status__c) = &quot;New&quot;,
+          TEXT(Request_Status__c) = &quot;Cancelled&quot;
+          )
+       ),
+
+     &quot;You must submit a request first. Request Status cannot be New&quot;,
+
+   IMAGE(&quot;/servlet/servlet.FileDownload?file=01580000001wQ0Z&quot;, &quot;WHITE&quot;)
+
+))))))</formula>
+        <inlineHelpText>indicates if the records meets the necessary criteria to be submitted for approval</inlineHelpText>
+        <label>OK to Submit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Production Models</relationshipLabel>
+        <relationshipName>Production_Models</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PSD_Revision_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;https://na29.salesforce.com/&quot;&amp;PSD_Revision__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PSD Revision Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PSD_Revision__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the PSD Revision that is related to the production model.</inlineHelpText>
+        <label>PSD Revision</label>
+        <referenceTo>PSD_Revision__c</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Percent_of_Downtime_Modeled__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the percentage of downtime modeled.</inlineHelpText>
+        <label>Percent of Downtime Modeled</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Performance_Model_Report__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter link to performance model report on Box folder for the project.</inlineHelpText>
+        <label>Performance Model Report</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Person_Responsible__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the person you would like to perform the modeling</inlineHelpText>
+        <label>Person Responsible</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>contains</operation>
+                <value>Resources Group, Engineer, CTO</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Title</field>
+                <operation>contains</operation>
+                <value>Pre-Con</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Production_Modeling_Request</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Potential_Reduction_Reasons__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the potential reduction in specific yield exceeds 1%, enter the reasons for the reduction, i.e., weather station selection.</inlineHelpText>
+        <label>Potential Reduction Reasons</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Potential_Reduction_in_Yield__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the potential reduction in specific yield if modeling assumptions end up being a worst case.</inlineHelpText>
+        <label>Potential Reduction in Yield (%)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Sales_Design__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pre-Sales Design</label>
+        <referenceTo>PSD__c</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Process_Time__c</fullName>
+        <description>Capture process to as a metric for improvement</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter in quarter hours - time taken to complete Production Model</inlineHelpText>
+        <label>Process Time</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Guarantee_Included__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>brings over the value from the opportunity field upon creation of the request</inlineHelpText>
+        <label>Production Guarantee Included</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Modeling_Stage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the production modeling stage.</inlineHelpText>
+        <label>Production Modeling Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                    <label>Development</label>
+                </value>
+                <value>
+                    <fullName>50% Design</fullName>
+                    <default>false</default>
+                    <label>50% Design</label>
+                </value>
+                <value>
+                    <fullName>CD IFR</fullName>
+                    <default>false</default>
+                    <label>CD IFR</label>
+                </value>
+                <value>
+                    <fullName>Record Drawing</fullName>
+                    <default>false</default>
+                    <label>Record Drawing</label>
+                </value>
+                <value>
+                    <fullName>Performance Test</fullName>
+                    <default>false</default>
+                    <label>Performance Test</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Guarantee model</fullName>
+                    <default>false</default>
+                    <label>Guarantee model</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Raw_Annual_Production__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the annual production in MWh from the production model, note that specified downtime will be applied to this number.</inlineHelpText>
+        <label>Raw Annual Production (MWhs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Change__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>this is required whenever the request is not for a new model</inlineHelpText>
+        <label>Reason for Change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Request_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>include specifics about the request</inlineHelpText>
+        <label>Request Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>shows status of the request itself not the actual completed production model</inlineHelpText>
+        <label>Request Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Model</fullName>
+                    <default>false</default>
+                    <label>New Model</label>
+                </value>
+                <value>
+                    <fullName>Update Equipment</fullName>
+                    <default>false</default>
+                    <label>Update Equipment</label>
+                </value>
+                <value>
+                    <fullName>Update Layout</fullName>
+                    <default>false</default>
+                    <label>Update Layout</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requester</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Requester</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SiteCity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.ShippingCity</formula>
+        <label>Site City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Snow_Soiling_Loss_Calculator_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Box link to the Snow and/or Soiling Calculator used to complete the model,  enter N/A or per Design Tool as applicable</inlineHelpText>
+        <label>Snow/Soiling Loss Calculator Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Software__c</fullName>
+        <externalId>false</externalId>
+        <label>Software</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Helioscope</fullName>
+                    <default>false</default>
+                    <label>Helioscope</label>
+                </value>
+                <value>
+                    <fullName>PvSyst 5</fullName>
+                    <default>false</default>
+                    <label>PvSyst 5</label>
+                </value>
+                <value>
+                    <fullName>PvSyst 6</fullName>
+                    <default>false</default>
+                    <label>PvSyst 6</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Specific_Yield_RH__c</fullName>
+        <description>Used in rollup helper, rolls up to Specific Yield on the Site based on stage and status of the Prod Mod</description>
+        <externalId>false</externalId>
+        <formula>IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Borrego Solar Standard&quot; ), ISPICKVAL( Status__c, &quot;Approved&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Borrego Solar Standard&quot; ), ISPICKVAL( Status__c, &quot;Submitted&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Borrego Solar Standard&quot; ), ISPICKVAL( Status__c, &quot;Draft&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFR&quot; ), ISPICKVAL( Status__c, &quot;Approved&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFR&quot; ), ISPICKVAL( Status__c, &quot;Submitted&quot; ) ), Specific_Yield_kWh_kWp2__c,
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFR&quot; ), ISPICKVAL( Status__c, &quot;Draft&quot; ) ), Specific_Yield_kWh_kWp2__c,
+
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFC&quot; ), ISPICKVAL( Status__c, &quot;Approved&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFC&quot; ), ISPICKVAL( Status__c, &quot;Submitted&quot; ) ), Specific_Yield_kWh_kWp2__c,
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;CD IFC&quot; ), ISPICKVAL( Status__c, &quot;Draft&quot; ) ), Specific_Yield_kWh_kWp2__c,
+
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Record Drawing&quot; ), ISPICKVAL( Status__c, &quot;Approved&quot; ) ), Specific_Yield_kWh_kWp2__c, 
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Record Drawing&quot; ), ISPICKVAL( Status__c, &quot;Submitted&quot; ) ), Specific_Yield_kWh_kWp2__c,
+IF( AND( ISPICKVAL( Production_Modeling_Stage__c, &quot;Record Drawing&quot; ), ISPICKVAL( Status__c, &quot;Draft&quot; ) ), Specific_Yield_kWh_kWp2__c, 0
+))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Specific Yield RH</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Specific_Yield_kWh_kWp2__c</fullName>
+        <externalId>false</externalId>
+        <formula>( Annual_Production_MWh_formula__c)/( System_Size__c/1000)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Specific Yield ( kWh/kWp )</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Specific_Yield_kWh_kWp__c</fullName>
+        <externalId>false</externalId>
+        <label>Specific Yield (kWh/kWp)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Standards__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Buyer/Owner&apos;s Account for which the model is to be run. If the Buyer/Owner is not yet identified, select the Borrego Solar account.</inlineHelpText>
+        <label>Standards</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Production Modeling</relationshipLabel>
+        <relationshipName>Production_Modeling</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Previously Approved</fullName>
+                    <default>false</default>
+                    <label>Previously Approved</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Current Approved</fullName>
+                    <default>false</default>
+                    <label>Current Approved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>System_Size__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the system rating in STC DC Watts.</inlineHelpText>
+        <label>System Size (W)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Size_from_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Project_System_Size__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>System Size (from Opp)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>System_Size_from_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.Total_kW__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>System Size from Opportunity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tree_Shade_Object_Height_Source__c</fullName>
+        <description>Source for Tree heights/Shade object heights (attach document if applicable)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Source for Tree heights/Shade object heights (attach document if applicable)</inlineHelpText>
+        <label>Tree/Shade Object Height Source?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Production_Modeling_Stage__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aerial Imagery</fullName>
+                    <default>false</default>
+                    <label>Aerial Imagery</label>
+                </value>
+                <value>
+                    <fullName>Site Walk Verification</fullName>
+                    <default>false</default>
+                    <label>Site Walk Verification</label>
+                </value>
+                <value>
+                    <fullName>Wetlands Delineation</fullName>
+                    <default>false</default>
+                    <label>Wetlands Delineation</label>
+                </value>
+                <value>
+                    <fullName>Site Survey</fullName>
+                    <default>false</default>
+                    <label>Site Survey</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>NA</fullName>
+                    <default>false</default>
+                    <label>NA</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Aerial Imagery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Site Walk Verification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Wetlands Delineation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Site Survey</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Development</controllingFieldValue>
+                <controllingFieldValue>50% Design</controllingFieldValue>
+                <valueName>NA</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Turnkey__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Pre-GW revolution committed deals where MIPA and EPC are signed simultaneously</inlineHelpText>
+        <label>Turnkey/Pre-GW revolution committed deal</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Weather_Station_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If deviating from the original weather station please use this field to note the details.</inlineHelpText>
+        <label>Weather Station Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Weather_Station_Used__c</fullName>
+        <externalId>false</externalId>
+        <label>Weather Station Used</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.ShippingPostalCode</formula>
+        <label>Zip Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Production Modeling</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Production_Models</fullName>
+        <columns>NAME</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Date_Needed_By__c</columns>
+        <columns>System_Size__c</columns>
+        <columns>Specific_Yield_kWh_kWp2__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Apps_Engineer_Logged_in__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Date_Completed__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Completed</value>
+        </filters>
+        <label>My Production Models</label>
+        <sharedTo>
+            <role>Application_Engineer_East</role>
+            <role>ApplicationsEngineer</role>
+            <roleAndSubordinatesInternal>Development_Engineering_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Production Modeling Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Production Modeling</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Notes__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PSD_Revision__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Production_Modeling_Stage__c</lookupFilterFields>
+        <lookupFilterFields>CREATEDBY_USER</lookupFilterFields>
+        <lookupFilterFields>CREATED_DATE</lookupFilterFields>
+        <lookupFilterFields>Status__c</lookupFilterFields>
+        <lookupFilterFields>PSD_Revision__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>PSD_Revision__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Opportunity__c</searchFilterFields>
+        <searchFilterFields>Production_Modeling_Stage__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchFilterFields>PSD_Revision__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Cannot_Change_Fields_after_Submitted</fullName>
+        <active>true</active>
+        <description>Only SPG can change the request once submitted</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Request_Status__c ,&quot;Submitted&quot;), ISPICKVAL( Request_Status__c ,&quot;Completed&quot;)), NOT(ISPICKVAL( Production_Modeling_Stage__c, &quot;Development&quot;)), OR(ISCHANGED( Design_Tool_Link__c ), ISCHANGED( Request_Notes__c )))</errorConditionFormula>
+        <errorMessage>The Production Modeling Request cannot be edited after the request has been submitted or completed. To update the Production Modeling, clone this record and re-submit.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_Needed_By</fullName>
+        <active>true</active>
+        <description>Makes the field Date Needed By required for all new Production Models</description>
+        <errorConditionFormula>AND(
+ ISBLANK( Date_Needed_By__c ),
+ DATEVALUE( CreatedDate ) &gt; DATE(2019,3,4)
+    )</errorConditionFormula>
+        <errorDisplayField>Date_Needed_By__c</errorDisplayField>
+        <errorMessage>Please fill out Date Needed By before saving.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Production_Model_Design_Link_Required</fullName>
+        <active>true</active>
+        <description>requires a value in the design link field in order to submit request that is for the SPG group</description>
+        <errorConditionFormula>AND(
+ISBLANK( Design_Link__c ), 
+DATEVALUE(CreatedDate)  &gt;  DATE(2016,04,28),
+ISPICKVAL(Request_Status__c, &quot;Submitted&quot;),
+(Person_Responsible__r.Id = &quot;00530000000jcOD&quot;  || Person_Responsible__r.Id = &quot;00534000009I56Q&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Design_Link__c</errorDisplayField>
+        <errorMessage>Design Link is required in order to submit your request if you are submitted</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Requires_Reason_for_Change_when_not_new</fullName>
+        <active>true</active>
+        <description>Requires_Reason_for_Change_when_request type is not_new model</description>
+        <errorConditionFormula>AND(ISBLANK(Reason_for_Change__c), ISPICKVAL( Request_Type__c , &quot;Update Equipment&quot;) || ISPICKVAL( Request_Type__c , &quot;Update Layout&quot;))</errorConditionFormula>
+        <errorDisplayField>Reason_for_Change__c</errorDisplayField>
+        <errorMessage>If your request is not for a new model please provide details about your request in the reason for change field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Watts_Validation</fullName>
+        <active>true</active>
+        <description>System Size field must be entered in watts, not kW</description>
+        <errorConditionFormula>System_Size__c &lt;1000</errorConditionFormula>
+        <errorDisplayField>System_Size__c</errorDisplayField>
+        <errorMessage>Please enter the System Size in watts</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Cancel_Request</fullName>
+        <availability>online</availability>
+        <description>Changes the Status and the Request Status to Cancelled. Only works when the Request Status is New or Submitted</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Cancel Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/36.0/connection.js&quot;)} 
+
+if( 
+(&apos;{!Production_Modeling__c.Request_Status__c}&apos; == &apos;New&apos; || 
+&apos;{!Production_Modeling__c.Request_Status__c}&apos; == &apos;Submitted&apos;) &amp;&amp; 
+&apos;{!Production_Modeling__c.Status__c}&apos; != &apos;Submitted&apos; 
+) 
+
+
+{ 
+var PM = new sforce.SObject(&apos;Production_Modeling__c&apos;); 
+PM.Id = &apos;{!Production_Modeling__c.Id}&apos;; 
+PM.Cancel_Request__c = &apos;TRUE&apos;;
+result = sforce.connection.update([PM]); 
+window.location.reload();} 
+
+else{ 
+
+alert(&quot;Production Model \&quot;Request Status\&quot; must be &apos;New&apos; or &apos;Submitted&apos; and not presently in an Approval Process in order to be Cancelled. Also, record must not be locked.&quot;);}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Request for a Model</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+
+   var pms = &quot;{!Production_Modeling__c.Standards__c}&quot;;
+   var pr = new sforce.SObject(&quot;Production_Modeling__c&quot;);
+  
+ 
+   pr.id = &quot;{!Production_Modeling__c.Id}&quot;; 
+   pr.Request_Status__c = &apos;Submitted&apos;; 
+
+   if (pms !== &quot;&quot;) {
+
+   var result = sforce.connection.update([pr]);
+
+   if (result[0].success === &quot;false&quot;){
+      alert(result[0].errors.message);
+   }
+   else{
+       location.reload(true);
+   
+   }
+}
+else{
+    alert(&quot;The Standards field must be filled out before submitting the request.&quot;);
+}</url>
+    </webLinks>
+</CustomObject>

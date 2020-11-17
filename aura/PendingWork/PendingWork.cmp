@@ -1,0 +1,41 @@
+<aura:component controller="PendingWorkController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="workOrderList" type="List" />
+    <aura:attribute name="readonlyWO" type="Boolean" default="false" />
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:attribute name="workList" type="Pending_Work__c[]" />
+    <aura:attribute name="columns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div class="slds-box">
+    <aura:if isTrue="{!v.workList &amp;&amp; v.workOrderList}" >
+      <div class="slds-grid slds-gutters slds-grid_align-center slds-grid_vertical-align-end slds-m-bottom_x-small">
+        <div class="slds-col slds-size_1-of-6">  
+          <lightning:select name="workOrderId" disabled="{!v.readonlyWO}" label="Work Order:" aura:id="workOrderId" value="{!v.selectedValue}">
+            <aura:iteration items="{!v.workOrderList}" var="workOrder">
+                <option text="{!workOrder.WorkOrderNumber}" value="{!workOrder.Id}"/>
+            </aura:iteration>
+          </lightning:select>
+        </div>
+        <div class="slds-col slds-size_2-of-6">
+          <lightning:button label="Add To Work Order" title="Add To Work Order" onclick="{!c.addToWorkOrder}"/>
+        </div>
+      </div>
+      <div style="height: 200px" class="slds-border_top slds-border_bottom">
+      <lightning:datatable
+        aura:id="workTable"
+        columns="{!v.columns}"
+        data="{!v.workList}"
+        keyField="id"
+        showRowNumberColumn="true"
+        maxRowSelection="4"
+      />
+      </div>
+    </aura:if>
+    <aura:if isTrue="{!v.workList &amp;&amp; !v.workOrderList}" > 
+      <p>Please Create Work Order</p>
+    </aura:if>
+    <aura:if isTrue="{!!v.workList}" > 
+      <p>No pending Work</p>
+    </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.Production_Modeling_Request__r$Name</field>
+    </columns>
+    <description>Report showing all open models in the last 120 days that have been rejected or recalled and not cancelled. This should provide a list of people to follow up with for model status weekly.</description>
+    <filter>
+        <criteriaItems>
+            <column>User.Production_Modeling_Request__r$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Recalled,Rejected</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Production_Modeling_Request__r$Request_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Incomplete Rejected Models</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User_with_Production_Modeling__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>User.Production_Modeling_Request__r$Date_Submitted__c</dateColumn>
+        <interval>INTERVAL_LAST120</interval>
+    </timeFrameFilter>
+</Report>

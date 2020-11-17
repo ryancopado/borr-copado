@@ -1,0 +1,28 @@
+<apex:page standardController="Pricing_Tool_Approval__c" lightningStylesheets="true">
+ 
+     <apex:detail subject="{!Pricing_Tool_Approval__c.Id}" relatedList="true"  showChatter="true" inlineEdit="true"/>
+ 
+ <script>
+ 
+     var controlArray=document.getElementsByTagName("a");
+     
+     var index=0;
+     
+     for(index=0;index<controlArray.length;index++){
+         
+           
+         
+         if(controlArray[index].innerHTML =="Approve / Reject"){
+            
+            var url= controlArray[index].href;
+            
+           controlArray[index].href="PricingToolApproval_ApprovalPage?id=" + url.split('id=')[1] + "&ptaID={!Pricing_Tool_Approval__c.Id}";
+      
+         }
+      
+     }
+     
+ 
+ </script>
+  
+</apex:page>

@@ -1,0 +1,718 @@
+<apex:page standardController="AcctSeed__Project__c" extensions="UpdateBudgetsCls" tabStyle="AcctSeed__Project__c" sidebar="false" lightningStylesheets="true">
+<apex:stylesheet value="{!URLFOR($Resource.budget)}"/>
+<script type="text/javascript" src="{!$Resource.simpletreemenu}"/>
+<script type="text/javascript" src="{!URLFOR($Resource.jquery)}"></script>
+
+<script type="text/javascript">
+    function disableButtons(label) {
+        $('.btn').each(function(elem) {
+            this.className = 'btnDisabled';
+            this.disabled = true;
+            this.value = label;
+        })
+    }
+</script>
+
+
+<style>
+table#rounded-corner{
+    table-layout: fixed;
+    width: 1210px;
+}
+
+table#rounded-corner th,table#rounded-corner td {
+    overflow: hidden;
+}
+
+div.scroll {
+    height: 400px;
+    overflow: auto;
+}
+</style>
+<apex:form id="projectPart" >
+<apex:sectionHeader title="Project" subtitle="{!AcctSeed__Project__c.Name}" />
+<apex:pageMessages />
+<apex:outputPanel id="details">
+
+<apex:pageBlock title="Project Detail">
+    <!-- <apex:commandButton value="Save Budget Comment" action="{!saveBudgetComment}"  rerender="projectPart"  style="margin-left:40%;position: relative;" / > -->
+    <!-- <apex:commandButton value="Save Budget Comment" action="{!Save}"  rerender="projectPart"  style="margin-left:40%;position: relative;" / > -->
+    <apex:pageBlockSection >
+        
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Project"/><apex:outputLink value="/{!AcctSeed__Project__c.Id}" target="_blank">{!AcctSeed__Project__c.Name}</apex:outputLink>
+        </apex:pageBlockSectionItem>
+        <apex:outputField value="{!AcctSeed__Project__c.OwnerId}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.Original_Contract_Price__c}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.Sales_Budget_Locked__c}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.Current_Contract_Price_WIP__c}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.PM_Lock__c}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.Current_Project_System_Size2__c}"/>
+        <apex:outputField value="{!AcctSeed__Project__c.AcctSeed__Budgeted_Amount__c}"/>
+        <apex:outputField id="SalesBudTotal2"  styleclass="SalesBudTotal2" value="{!AcctSeed__Project__c.Sales_Budget__c}"/>
+        <apex:outputField id="SalesMargin" styleclass="SalesMargin" value="{!AcctSeed__Project__c.Margin_Sales__c}"/>
+        <apex:outputField id="PMTotal2"  styleclass="PMTotal2" value="{!AcctSeed__Project__c.PM_Budget__c}"/>
+        <apex:outputField id="PMMargin" styleclass="PMMargin" value="{!AcctSeed__Project__c.Margin_PM__c}"/>
+        <apex:outputField id="ActiveTotal2"  styleclass="ActiveTotal2" value="{!AcctSeed__Project__c.Active_Budget__c}"/>
+        <apex:outputField id="ActiveMargin" styleclass="ActiveMargin" value="{!AcctSeed__Project__c.Margin_Active__c}"/>
+        <apex:pageBlockSectionItem />
+        <apex:inputField value="{!AcctSeed__Project__c.Margin_Change_Explanation__c}"/>
+        
+        <div style="display:none;" class="FinalContractPrice">{!AcctSeed__Project__c.Final_Contract_PriceProject__c}</div>
+        <apex:pageBlockSectionItem />
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:outputPanel>
+
+<div id="dimmer" class="dimmer" style="width:100%; height:100%; display:none; position:absolute; left:0px; top:0px; background:#E0EEEE; z-index: 101; filter:alpha(opacity=40); -moz-opacity:.40; opacity:.40; "></div>
+<apex:pageBlock title="Project Tasks" id="projectTask_List">
+<div align="center">
+<apex:actionStatus id="saveStatus" onstart="disableButtons('Processing')" />
+<!-- 
+<apex:commandButton value="Save" action="{!SaveIt}"  status="saveStatus" rerender="projectPart" rendered="{!if(AmIPM , 'true', 'false')}" / >
+-->
+<apex:commandButton value="Save" action="{!SaveIt}"  status="saveStatus" rendered="{!if(AmIPM , 'true', 'false')}" / >
+<apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+<apex:commandButton value="Lock Sales Budget" action="{!LockSalesBudget}"  status="saveStatus" rendered="{!if(AmIPM && AcctSeed__Project__c.Sales_Budget_Locked__c == false, 'true', 'false')}" rerender="page" / >  
+<apex:commandButton value="unLock Sales Budget" action="{!unLockSalesBudget}"  status="saveStatus" rendered="{!if(AmISysAdmin && AcctSeed__Project__c.Sales_Budget_Locked__c == true, 'true', 'false')}" rerender="page" / >
+<apex:commandButton value="Lock PM Budget" action="{!LockIt}"  status="saveStatus" rendered="{!if((AmIPM && !AmIApps) && AcctSeed__Project__c.PM_Lock__c == false, 'true', 'false')}" rerender="page" / >  
+<apex:commandButton value="unLock PM Budget" action="{!unLockIt}"  status="saveStatus" rendered="{!if(AmISysAdmin && AcctSeed__Project__c.PM_Lock__c == true, 'true', 'false')}" rerender="page" / >
+
+
+<br/>         
+<a href="javascript:ddtreemenu.flatten('treemenu1', 'expand')">Expand All</a> | <a href="javascript:ddtreemenu.flatten('treemenu1', 'contact')">Contract All</a></div>          
+<br/>
+<table id="rounded-corner" width="1210px" style="{!lock}" align="center">
+        <tr>
+            <th width="130px" class="alt">
+                <apex:commandLink value="Name" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Name"/>
+                </apex:commandLink>
+            </th>
+            <th width="75px" class="alt">
+                CC&nbsp;
+                <apex:commandLink value="#" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Number"/>
+                </apex:commandLink>
+                /
+                <apex:commandLink value="Cat" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Category"/>
+                </apex:commandLink>
+            </th>
+            <th width="80px" class="alt">
+                <apex:commandLink value="Grouping" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Grouping"/>
+                </apex:commandLink>
+            </th>
+            <!-- <th width="130px" class="alt">Name</th> -->
+            <!-- <th width="50px" class="alt">Category</th> -->
+            <th width="80px" class="alt">Sales Budget</th>
+            <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                <th width="80px" class="alt">PM Budget</th>
+            </apex:outputPanel>
+            <th width="80px" class="alt">Line Item Total</th>
+            <th width="80px" class="alt">POs</th>
+            <th width="80px" class="alt">CO Total</th>
+            <th width="80px" class="alt">Non PO Costs</th>
+            <th width="80px" class="alt">Costs To Date</th>
+            <!-- <th width="150px" class="alt">Notes</th> -->
+            <th class="alt">Notes</th>
+        </tr>
+</table>
+<table id="rounded-corner" width="1210px" style="{!unlock}" align="center">
+        <tr>
+            <th width="130px" class="alt">
+                <apex:commandLink value="Name" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Name"/>
+                </apex:commandLink>
+            </th>
+            <th width="75px" class="alt">
+                CC&nbsp;
+                <apex:commandLink value="#" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Number"/>
+                </apex:commandLink>
+                /
+                <apex:commandLink value="Cat" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Category"/>
+                </apex:commandLink>
+            </th>
+            <th width="80px" class="alt">
+                <apex:commandLink value="Grouping" action="{!sortLineItems}">
+                    <apex:param name="columnSort" value="Grouping"/>
+                </apex:commandLink>
+            </th>
+            <!-- <th width="130px" class="alt">Name</th> -->
+            <!-- <th width="50px" class="alt">Category</th> -->
+            <th width="80px" class="alt">PM Budget</th>
+            <th width="80px" class="alt">Active Budget</th>
+            <th width="80px" class="alt">Line Item Total</th>
+            <th width="80px" class="alt">POs</th>
+            <th width="80px" class="alt">CO Total</th>
+            <th width="80px" class="alt">Non PO Costs</th>
+            <th width="80px" class="alt">Costs To Date</th>
+            <!-- <th width="150px" class="alt">Notes</th> -->
+            <th class="alt">Notes</th>
+        </tr>
+</table>
+<apex:outputPanel id="details1">
+<table id="rounded-corner" width="1210px" style="{!lock}" align="center">
+
+         <tr>
+             <th width="130px" >Totals</th>
+            <th width="75px" ></th>
+            <th width="80px" ></th>
+            <th width="80px"   style="color:#CC4400"  class="SalesBudTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!SalesTotal}"/>
+                </apex:outputText>
+            </th>
+             <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                <th width="80px"  style="color:#CC4400"  class="PMTotal">
+                    <apex:outputText value="{0,number,#,##0.00}">$    
+                        <apex:param value="{!PMBudgetTotal}"/>
+                    </apex:outputText>
+                </th>
+            </apex:outputPanel>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!POsTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!COsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!NonPOCostsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!CTDGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <!-- <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!RemCOsGrandTotal}"/>
+                </apex:outputText>
+            </th> -->
+            <th ></th>
+        </tr>
+
+
+       
+</table>
+<table id="rounded-corner" width="1210px" style="{!unlock}" align="center">
+       
+       <tr>
+            <th width="130px" >Totals</th>
+            <th width="75px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" >
+                 <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!PMBudgetTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px"  style="color:#CC4400" class="activeTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!ActiveBudgetTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!POsTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!COsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!NonPOCostsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!CTDGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <!-- <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!RemCOsGrandTotal}"/>
+                </apex:outputText>
+            </th> -->
+            <th ></th>
+        </tr>
+       
+       <tr>
+            <th style="color:#CC4400">Cost Remaining</th>
+            <th colspan="4"/>
+            <th style="color:#CC4400" class="remainingTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!ActiveBudgetTotal - LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th ></th>
+        </tr>
+       
+</table>
+</apex:outputPanel>
+<div class="scroll" align="center" id="datatable">
+<ul id="treemenu1" class="treeview" style="margin-left: 0px;padding-left: 0px;">
+<apex:repeat value="{!projectTasksWrappers}" var="lineItem">
+    <li style="margin-left: 0px;">
+    <table id="rounded-corner" class="tableWithValues" width="1210px">
+        <tr>
+            <td width="130px" style="">
+                <apex:outputLink value="/{!lineItem.projectTask.Id}" target="_blank">{!lineItem.projectTask.Name}</apex:outputLink>
+            </td>
+            <td width="75px" style="">
+                <apex:outputText value="{!lineItem.projectTask.Cost_Code__r.Number__c}"/>/<apex:outputText value="{!lineItem.projectTask.Cost_Code__r.Category__c}"/>
+            </td>
+            <td width="80px" style="">
+                <apex:outputText value="{!lineItem.projectTask.Cost_Code__r.Grouping__c}"/>
+            </td>
+            <!-- <td width="80px" style="{!lock}" class="budgetAmmount">
+                <apex:outputField value="{!lineItem.projectTask.AcctSeed__Budgeted_Amount__c}" id="sales"/>
+            </td> -->
+            
+            <apex:outputPanel rendered="{!!AcctSeed__Project__c.PM_Lock__c}" >
+                <td width="80px" class="SalesBudget1">
+                    <apex:outputPanel rendered="{!!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                        <apex:inputText onblur="updateSalesValues(this);"  value="{!lineItem.projectTask.Sales_Budget__c}" id="sales2" size="10" />
+                        <div style="display:none;" class="SalesBudget1Old">{!lineItem.projectTask.Sales_Budget__c}</div>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                        <apex:outputField value="{!lineItem.projectTask.Sales_Budget__c}" />
+                    </apex:outputPanel>
+                </td>
+                <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                    <td width="80px" class="PMBudget1">
+                        <apex:inputText onblur="updatePMValues(this);"  value="{!lineItem.projectTask.PM_Budget__c}" id="pm2" size="10" />
+                        <div style="display:none;" class="PMBudget1Old">{!lineItem.projectTask.PM_Budget__c}</div>
+                    </td>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!AcctSeed__Project__c.PM_Lock__c}" >
+                <td width="80px" class="PMBudget2">
+                    <apex:outputField value="{!lineItem.projectTask.PM_Budget__c}" id="pm" />
+                </td>
+                <td width="80px" class="ActiveBudget">
+                    <apex:inputText onblur="updateActiveValues(this);" value="{!lineItem.projectTask.Active_Budget__c}" id="active" size="10"/>
+                    <div style="display:none;" class="ActiveBudgetOld">{!lineItem.projectTask.Active_Budget__c}</div>
+                </td>
+            </apex:outputPanel>
+            
+            <!-- 
+            <td width="80px" style="{!lock}" class="SalesBudget1">
+                <apex:outputPanel rendered="{!!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                    <apex:inputText onblur="updateSalesValues(this);"  value="{!lineItem.projectTask.Sales_Budget__c}" id="sales2" size="10" />
+                    <div style="display:none;" class="SalesBudget1Old">{!lineItem.projectTask.Sales_Budget__c}</div>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                    <apex:outputField value="{!lineItem.projectTask.Sales_Budget__c}" />
+                </apex:outputPanel>
+            </td>
+            <td width="80px" style="{!lock}" class="PMBudget1">
+                <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                    <apex:inputText onblur="updatePMValues(this);"  value="{!lineItem.projectTask.PM_Budget__c}" id="pm2" size="10" />
+                    <div style="display:none;" class="PMBudget1Old">{!lineItem.projectTask.PM_Budget__c}</div>
+                </apex:outputPanel>
+            </td>
+            <td width="80px" style="{!unlock}" class="PMBudget2">
+                <apex:outputField value="{!lineItem.projectTask.PM_Budget__c}" id="pm" />
+            </td>
+            <td width="80px" style="{!unlock}"  class="ActiveBudget">
+                <apex:inputText onblur="updateActiveValues(this);" value="{!lineItem.projectTask.Active_Budget__c}" id="active" size="10"/>
+                <div style="display:none;" class="ActiveBudgetOld">{!lineItem.projectTask.Active_Budget__c}</div>
+            </td>
+            -->
+             <!-- <td width="80px"  class="totalPOCO">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalChangeOrder + lineItem.projectTask.Roll_Up_Purchase_Order_Line_Totals__c}"/>
+                </apex:outputText>
+            </td> -->
+            <td width="80px" class="totalPOCO">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalLineItem}"/>
+                </apex:outputText>
+            </td>
+            <td width="80px"  class="POTotal">
+                <apex:outputField value="{!lineItem.projectTask.Roll_Up_Purchase_Order_Line_Totals__c}" id="approved"/>
+            </td>
+            <td width="80px" class="totalCO">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalChangeOrder}"/>
+                </apex:outputText>
+            </td>
+            <td width="80px"  class="NonPOCosts">
+                <apex:outputField value="{!lineItem.projectTask.Non_PO_Costs_Currency__c}" />
+            </td>
+            <td width="80px"  class="POTotal">
+                <apex:outputField value="{!lineItem.projectTask.Total_Actual_Costs__c}" />
+            </td>
+            <!-- <td width="80px"  class="totalAPInvoice">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalAPInvoice}"/>
+                </apex:outputText>
+            </td> -->
+            <!-- <td width="80px"  class="totalAll">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalChangeOrder + lineItem.projectTask.Roll_Up_Purchase_Order_Line_Totals__c - lineItem.totalAPInvoice }"/>
+                </apex:outputText>
+            </td> -->
+            <!-- <td width="80px" class="totalAll">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!lineItem.totalRemCOs}"/>
+                </apex:outputText>
+            </td> -->
+            
+            
+            <td >
+                <apex:inputTextArea value="{!lineItem.projectTask.Notes__c}" id="notes" style="width:170px;height:18px;resize:both"/>
+                <!-- <apex:inputText value="{!lineItem.projectTask.Notes__c}" id="notes" style="width:180px"/> -->
+            </td>
+        </tr>
+    </table>
+        <ul>
+            <li>        
+                <apex:DataTable value="{!lineItem.pols}" var="req" width="910px" style="background-color:white" cellspacing="5px">
+                    <apex:column width="200px"><apex:outputLink value="/{!req.POL.Id}" target="_blank">{!req.POL.Name}</apex:outputLink></apex:column>
+                    <!--<apex:column width="15%"><apex:outputField value="{!req.POL.AcctSeedERP__Product__r.Name}"/></apex:column>-->
+                    <apex:column value="{!req.POL.AcctSeedERP__Purchase_Order__r.AcctSeedERP__Vendor__r.Name}" width="200px"/>
+                    <apex:column value="{!req.POL.AcctSeedERP__Purchase_Order__c}" width="200px"/>
+                    <apex:column value="{!req.POL.AcctSeedERP__Purchase_Order__r.AcctSeedERP__Status__c}" width="80px"/>
+                    <apex:column value="{!req.POL.POLine_Total__c}" width="80px"/>
+                    <apex:column value="{!req.POL.Roll_Up_All_Account_Payable_Lines__c}" width="80px"/>
+                    
+                    
+                   <!--     <apex:column width="10%">
+                        <apex:outputLink value="/{!req.SOL.Id}" target="_blank">
+                            {!req.SOL.Name}
+                        </apex:outputLink>
+                    </apex:column>  
+                    <apex:column value="{!req.SOL.Status__c}" width="10%"/> -->
+                
+                </apex:DataTable>
+                
+                <apex:DataTable value="{!lineItem.COs}" var="req" width="910px" style="background-color:white" cellspacing="5px">
+                    <apex:column width="200px"><apex:outputLink value="/{!req.Id}" target="_blank">{!req.Name}</apex:outputLink></apex:column>
+                    <!--<apex:column width="15%"><apex:outputField value="{!req.POL.AcctSeedERP__Product__r.Name}"/></apex:column>-->
+                    <apex:column value="{!req.Vendor_Account__r.name}" width="200px"/>
+                    <apex:column value="{!req.Purchase_Order2__c}" width="200px"/>
+                    <apex:column value="{!req.Status__c}" width="80px"/>
+                    <apex:column value="{!req.Amount_Requested__c}" width="80px"/>
+                    <apex:column value="{!req.AP_Line_CO_Total__c}" width="80px"/>
+                    
+                   <!--     <apex:column width="10%">
+                        <apex:outputLink value="/{!req.SOL.Id}" target="_blank">
+                            {!req.SOL.Name}
+                        </apex:outputLink>
+                    </apex:column>  
+                    <apex:column value="{!req.SOL.Status__c}" width="10%"/> -->
+                
+                </apex:DataTable>
+                
+            
+            </li>
+        </ul>   
+    </li>
+</apex:repeat>
+</ul>
+</div>
+<apex:outputPanel id="details2">
+<table id="rounded-corner" width="1210px" style="{!lock}" align="center">
+
+         <tr>
+             <th width="130px" >Totals</th>
+            <th width="75px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" style="color:#CC4400"  class="SalesBudTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!SalesTotal}"/>
+                </apex:outputText>
+            </th>
+            <apex:outputPanel rendered="{!AcctSeed__Project__c.Sales_Budget_Locked__c}" >
+                <th width="80px"  style="color:#CC4400"  class="PMTotal">
+                    <apex:outputText value="{0,number,#,##0.00}">$    
+                        <apex:param value="{!PMBudgetTotal}"/>
+                    </apex:outputText>
+                </th>
+            </apex:outputPanel>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!POsTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!COsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!NonPOCostsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!CTDGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <!-- <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!RemCOsGrandTotal}"/>
+                </apex:outputText>
+            </th> -->
+            <th ></th>
+        </tr>
+
+
+       
+</table>
+<table id="rounded-corner" width="1210px" style="{!unlock}" align="center">
+       
+       <tr>
+            <th width="130px" >Totals</th>
+            <th width="75px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" >
+                 <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!PMBudgetTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px"  style="color:#CC4400"  class="activeTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!ActiveBudgetTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!POsTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!COsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!NonPOCostsGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!CTDGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <!-- <th width="80px" >
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!RemCOsGrandTotal}"/>
+                </apex:outputText>
+            </th> -->
+            <th ></th>
+        </tr>
+       
+       <tr>
+            <th style="color:#CC4400">Cost Remaining</th>
+            <th colspan="4"/>
+            <th style="color:#CC4400"  class="remainingTotal">
+                <apex:outputText value="{0,number,#,##0.00}">$    
+                    <apex:param value="{!ActiveBudgetTotal - LineItemGrandTotal}"/>
+                </apex:outputText>
+            </th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th width="80px" ></th>
+            <th ></th>
+        </tr>
+       
+</table>
+</apex:outputPanel><br/>
+<div align="center">
+<apex:commandButton value="Save" action="{!SaveIt}"  rerender="page" rendered="{!if(AmIPM, 'true', 'false')}" / >
+<apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+<apex:commandButton value="Lock Sales Budget" action="{!LockSalesBudget}"  rendered="{!if(AmIPM && AcctSeed__Project__c.Sales_Budget_Locked__c == false, 'true', 'false')}" rerender="page" / >  
+<apex:commandButton value="unLock Sales Budget" action="{!unLockSalesBudget}"  rendered="{!if(AmISysAdmin && AcctSeed__Project__c.Sales_Budget_Locked__c == true, 'true', 'false')}" rerender="page" / >
+<apex:commandButton value="Lock PM Budget" action="{!LockIt}"  rendered="{!if((AmIPM && !AmIApps) && AcctSeed__Project__c.PM_Lock__c == false, 'true', 'false')}" rerender="page" / >  
+<apex:commandButton value="unLock PM Budget" action="{!unLockIt}"  rendered="{!if(AmISysAdmin && AcctSeed__Project__c.PM_Lock__c == true, 'true', 'false')}" rerender="page" / >
+</div> 
+</apex:pageBlock> 
+
+<script type="text/javascript">
+
+//ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
+
+ddtreemenu.createTree("treemenu1", true, 2)
+
+</script>
+<script>
+function close() {
+    document.getElementById('float').style.display = "none";
+    document.getElementById('dimmer').style.display = "none";
+    alert('Budget Saved.');
+}
+function lockAndSave() {
+    document.getElementById('float').style.display = "";
+    document.getElementById('dimmer').style.display = "";
+}
+function buildDimmerDiv(){
+    document.write('');
+}
+
+ function cleanInt(val) {
+    try {
+        val = val.replace(/[^0-9.-]/g,'');
+        if( val.length == 0 ) val = "0";
+        return parseFloat(val);
+    } catch (e) {}
+    return 0;
+}
+ 
+ function currencyFormat(val) {
+    val = val+"";
+    var parts = val.split('.');
+    
+    var tmp = "", pre = "";
+    var c = 0;
+    for( var i = parts[0].length-1; i >= 0; i--) {
+        tmp += parts[0][i];
+        c++;
+        if( c % 3 == 0 && i > 0 && parts[0][i-1] != "-" ) tmp += ",";
+    }
+    for( var i = 0; i < tmp.length; i++ ) pre = tmp[i]+pre;
+    
+    if( parts.length == 1 ) return "$"+pre+".00";
+    if( parts[1].length == 1 ) return "$"+pre+"."+parts[1]+"0";
+    
+    if( parts[1].length > 2 ) parts[1] = parts[1].substring(0,2);
+    
+    return "$"+pre+"."+parts[1];
+}
+ 
+function updateActiveValues( item){
+
+      var theTable = $(item).closest('table[class^="tableWithValues"]');
+      
+        var newValue = cleanInt(theTable.find('.ActiveBudget input').val());
+        var oldValue = cleanInt(theTable.find('.ActiveBudgetOld').text());
+        theTable.find('.ActiveBudgetOld').text(newValue);
+    
+        var delta = newValue - oldValue;
+        
+        var activeNewVal = cleanInt(jQuery('.activeTotal').text()) + delta;
+        
+        jQuery('.activeTotal').text(currencyFormat(activeNewVal));
+        
+        
+        var remainNewVal = cleanInt(jQuery('.remainingTotal').text()) + delta;
+        
+        jQuery('.remainingTotal').text(currencyFormat(remainNewVal));
+        
+        
+        jQuery("span[id*='ActiveTotal2']").text(currencyFormat(activeNewVal));
+        
+        var FinalContractPrice = cleanInt(jQuery('.FinalContractPrice').text());
+        if(FinalContractPrice != 0){
+            var marginActivePercent = (1-( activeNewVal / FinalContractPrice ))*100;
+            jQuery("span[id*='ActiveMargin']").text(floorFigure(marginActivePercent)+'%');
+            
+        }        
+       
+} 
+
+function floorFigure(figure, decimals){
+    if (!decimals) decimals = 2;
+    var d = Math.pow(10,decimals);
+    return (parseInt(figure*d)/d).toFixed(decimals);
+};
+
+
+function updatePMValues( item){
+    
+      var theTable = $(item).closest('table[class^="tableWithValues"]');
+      
+        var newValue = cleanInt(theTable.find('.PMBudget1 input').val());
+        var oldValue = cleanInt(theTable.find('.PMBudget1Old').text());
+        theTable.find('.PMBudget1Old').text(newValue);
+    
+        var delta = newValue - oldValue;
+        
+        var PMNewVal = cleanInt(jQuery('.PMTotal').text()) + delta;
+        
+        jQuery('.PMTotal').text(currencyFormat(PMNewVal));
+        
+        jQuery("span[id*='PMTotal2']").text(currencyFormat(PMNewVal));
+        
+        
+        var FinalContractPrice = cleanInt(jQuery('.FinalContractPrice').text());
+        if(FinalContractPrice != 0){
+            var marginPercent = (1-( PMNewVal / FinalContractPrice ))*100;
+            jQuery("span[id*='PMMargin']").text(floorFigure(marginPercent)+'%');
+            
+            
+        }
+       
+} 
+
+function updateSalesValues( item){
+    
+      var theTable = $(item).closest('table[class^="tableWithValues"]');
+      
+        var newValue = cleanInt(theTable.find('.SalesBudget1 input').val());
+        var oldValue = cleanInt(theTable.find('.SalesBudget1Old').text());
+        theTable.find('.SalesBudget1Old').text(newValue);
+    
+        var delta = newValue - oldValue;
+        
+        var SalesNewVal = cleanInt(jQuery('.SalesBudTotal').text()) + delta;
+        
+        jQuery('.SalesBudTotal').text(currencyFormat(SalesNewVal));
+        
+        jQuery("span[id*='SalesBudTotal2']").text(currencyFormat(SalesNewVal));
+        
+        
+        var FinalContractPrice = cleanInt(jQuery('.FinalContractPrice').text());
+        if(FinalContractPrice != 0){
+            var marginPercent = (1-( SalesNewVal / FinalContractPrice ))*100;
+            jQuery("span[id*='SalesMargin']").text(floorFigure(marginPercent)+'%');
+            
+            
+        }
+       
+}
+
+</script>    
+</apex:form>
+</apex:page>

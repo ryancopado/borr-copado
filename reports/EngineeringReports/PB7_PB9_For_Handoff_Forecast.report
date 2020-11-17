@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_PB7_Submitted_for_Approval__c</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_PB7_Final_Approved__c</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contract_Committee_Submittal__c.PB_7,Contract_Committee_Submittal__c.PB_9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract_Committee_Submittal__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0 Maries Way - Freetown,0 Tanglewood Circle - Becket</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>PB7 &amp; PB9 For Handoff Forecast</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Contract_Committee_Submittal__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contract_Committee_Submittal__c.X4D_Item_Resolution_Date_1__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

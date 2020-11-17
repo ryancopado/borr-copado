@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Civil_Engineering</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Civil Engineering</label>
+        <sharedTo>
+            <role>Civil_Engineer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AcctSeed__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Director_of_Engineering</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Director of Engineering</label>
+        <sharedTo>
+            <role>DirectorofEngineeringSystemDesigner</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CTO</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Time_Card_Available_for_all_Engineering</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Time Card Available for all Engineering</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>DirectorofEngineeringSystemDesigner</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>DirectorofEngineeringSystemDesigner</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,411 @@
+<apex:page showHeader="false" standardController="Case" extensions="CaseClosureFormController" renderAs="PDF" >
+    
+    <apex:stylesheet value="{!URLFOR($Resource.workorderform_style)}" /> 
+    
+    <table id="wof-table" width="100%" >
+        <tr>
+            <td width="50%">
+                <!-- 
+                <apex:image url="{!$Resource.borrego}" width="50%" height="50%" />
+                -->
+                <apex:image url="{!DocumentLogoUrl}" width="50%" height="50%" />
+            </td>
+            
+            <td width="50%" style="vertical-align:center; ">
+                <div id="wof-title-a" >
+                    SERVICE REPORT
+                </div>
+                <div id="wof-title-b" >
+                    Operations and Maintenance Department<br/>
+                    Case #: {!ccfCase.CaseNumber}
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <br/>
+            </td>
+            <td>
+                <br/>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="vertical-align:top;" >
+                <apex:dataTable value="{!ccfCase}" var="ccf">
+                
+                    
+                    <apex:column width="125px" >
+                        <div id="wof-label" >
+                            Customer Name:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Site Name:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Branch:<br />
+                        </div>
+                    </apex:column>
+                    
+                    
+                    <apex:column >
+                        <div id="wof-field" >
+                            <apex:outputText value="{!ccf.Account.Name}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!ccf.Project__r.Name}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!ccf.ServiceContract_Case__r.Branch__c}" /><br />
+                        </div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+
+            <td style="vertical-align:top;" >
+                <apex:dataTable value="{!ccfCase}" var="ccfB">
+                     
+                    <apex:column width="160px" style="vertical-align:top;" >
+                        <div id="wof-label" >
+                           Case Open Date:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Case Resolution Date:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Priority:<br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            Case Opened By:<br />
+                        </div>
+                    </apex:column>
+                    
+                    
+                    <apex:column >
+                        <div id="wof-field" >
+                            <apex:outputField value="{!ccfB.Case_Start_Date__c}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputField value="{!ccfB.Case_End_Date__c}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!ccfB.Priority}" /><br />
+                            <div id="wof-half-size" >
+                                <br />
+                            </div>
+                            <apex:outputText value="{!ccfB.Owner.Name}" /><br />
+                        </div>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <br/>
+            </td>
+            <td>
+                <br/>
+            </td>
+        </tr>
+<!-- 
+        <tr>
+            <td style="vertical-align:top;" colspan="2">
+                <apex:dataTable value="{!ccfCase}" var="ccfC">
+                     
+                    <apex:column width="70px" style="vertical-align:top;" >
+                        <div id="wof-label" >
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_1__c==null,false,true)}" >
+                                Photo 1:<br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_2__c==null,false,true)}" >
+                                Photo 2:<br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_3__c==null,false,true)}" >
+                                Photo 3:<br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_4__c==null,false,true)}" >
+                                Photo 4:<br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_5__c==null,false,true)}" >
+                                Photo 5:<br/>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <div id="wof-field" >
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_1__c==null,false,true)}" >
+                                <apex:outputText value="{!ccfC.Photo_1__c}" /><br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_2__c==null,false,true)}" >
+                                <apex:outputText value="{!ccfC.Photo_2__c}" /><br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_3__c==null,false,true)}" >
+                                <apex:outputText value="{!ccfC.Photo_3__c}" /><br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_4__c==null,false,true)}" >
+                                <apex:outputText value="{!ccfC.Photo_4__c}" /><br/>
+                                <div id="wof-half-size" >
+                                    <br />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!if(ccfC.Photo_5__c==null,false,true)}" >
+                                <apex:outputText value="{!ccfC.Photo_5__c}" /><br/>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:column> 
+                </apex:dataTable>
+            </td>
+        </tr>
+-->     
+        <tr>
+            <td>
+                <br/>
+            </td>
+            <td>
+                <br/>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="vertical-align:top;" colspan="2">
+                <div id="wof-label" >
+                    Subject:<br/>
+                </div>
+                <div id="wof-field" >
+                    <apex:outputText value="{!caseSubject}" /><br/>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <br/>
+            </td>
+            <td>
+                <br/>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="vertical-align:top;" colspan="2">
+                <div id="wof-label" >
+                    Additional Comments:<br/>
+                </div>
+                <div id="wof-field" >
+                    <apex:outputText value="{!caseManagerComments}" /><br/>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <br/>
+            </td>
+            <td>
+                <br/>
+            </td>
+        </tr>
+    
+    </table>
+    
+    <table id="wof-table" width="100%" >
+    	<tr>
+            <td width="100%" style="vertical-align:top;">
+                <div id="wof-label" >
+                    Service Visits:
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" style="vertical-align:top;">
+    			<table style="border: 1px solid black; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: normal; font-style: normal;">
+    			
+					<tr>
+						<th style="border: 1px solid black; padding: 5px;">SV #</th>
+						<th style="border: 1px solid black; padding: 5px;">Date</th>
+						<th style="border: 1px solid black; padding: 5px;">Technician</th>
+						<th style="border: 1px solid black; padding: 5px;">Work Hours</th>
+						<th style="border: 1px solid black; padding: 5px;">Travel Hours</th>
+						<th style="border: 1px solid black; padding: 5px;">Asset</th>
+						<th style="border: 1px solid black; padding: 5px;">Asset Offline</th>
+						<th style="border: 1px solid black; padding: 5px;">Asset Online</th>
+						<th style="border: 1px solid black; padding: 5px;">Description</th>
+						<th style="border: 1px solid black; padding: 5px;">Additional Comments</th>
+					</tr>
+		
+					<apex:repeat value="{!svWrapper}" var="sv">
+						<tr>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Name}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Visit_Date__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Technician__r.Name}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Total_Work_Hours__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Total_Travel_Time__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Asset__r.Name}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Asset_Offline__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Asset_Online__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;"><apex:outputField value="{!sv.serviceVisit.Notes__c}"/></td>
+							<td style="border: 1px solid black; padding: 5px;">{!sv.visitComments}</td>
+						</tr>
+					</apex:repeat>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+    <!-- 
+    <table id="wof-table" width="100%" >
+        <tr>
+            <td width="100%" style="vertical-align:top;">
+                <div id="wof-label" >
+                    Service Visits:
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" style="vertical-align:top;">
+                <table class="svtable">
+                	<tr>
+                		<th>SV #</th>
+                		<th>Date</th>
+                		<th>Technicican</th>
+                	</tr>
+                	
+                	<apex:repeat value="{!svWrapper}" var="sv">
+                		<tr>
+                			<td>{!sv.serviceVisit.Name}</td>
+                			<td>{!sv.serviceVisit.Visit_Date__c}</td>
+                			<td>{!sv.serviceVisit.Technician__r.Name}</td>
+                		</tr>
+                	</apex:repeat>
+                </table>
+            </td>
+            
+            <!-- 
+            <td width="100%" style="vertical-align:top;">
+                <div id="sv-table" >
+                    <apex:dataTable value="{!svWrapper}" var="sv" cellspacing="5px" styleClass="svtable">
+                        <apex:column headerValue="SV #" value="{!sv.serviceVisit.Name}" />
+                        <apex:column headerValue="Date" value="{!sv.serviceVisit.Visit_Date__c}" />
+                        <apex:column headerValue="Technician" value="{!sv.serviceVisit.Technician__r.Name}" />
+                        <apex:column headerValue="Hours" value="{!sv.serviceVisit.Total_Work_Hours__c}" />
+                        <apex:column headerValue="Asset" value="{!sv.serviceVisit.Asset__r.Name}" />
+                        <apex:column headerValue="Asset Offline" value="{!sv.serviceVisit.Asset_Offline__c}" />
+                        <apex:column headerValue="Asset Online" value="{!sv.serviceVisit.Asset_Online__c}" />
+                        <apex:column headerValue="Description" value="{!sv.serviceVisit.Notes__c}" />
+                        <apex:column headerValue="Additional Comments" value="{!sv.visitComments}" />
+                    </apex:dataTable>
+                </div>
+            </td>
+        </tr>
+    </table>
+    -->
+    
+	<!--
+    <table id="wof-table" width="100%" >
+        <tr>
+            <td style="vertical-align:top;" >
+                <div id="wof-label-blue" >
+                    Solution<br/>
+                </div>
+                <div id="wof-field" >
+                    <apex:outputText value="{!ccfSolution.SolutionNote}" /><br/>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <table id="wof-table" width="100%" >
+        <tr>
+            <td width="100%" style="vertical-align:top;">
+                <div id="wof-label-blue" >
+                    Service Visits
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%" style="vertical-align:top;">
+                <div id="wof-field" >
+                    <apex:dataTable value="{!ccfServiceVisits}" var="ccfSV" cellpadding="2px" border="1px" headerClass="hdr-center" >
+                        <apex:column >
+                            <apex:facet name="header">SV #</apex:facet>
+                            {!ccfSV.Name}
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Type</apex:facet>
+                            {!ccfSV.Visit_Reason__c}
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Date</apex:facet>
+                            <apex:outputField value="{!ccfSV.Visit_Date__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Description</apex:facet>
+                            {!ccfSV.Notes__c}
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Performed By</apex:facet>
+                            {!ccfSV.Performed_By__c}
+                        </apex:column>
+                    </apex:dataTable>
+                </div>
+            </td>
+        </tr>
+    </table>
+    -->
+    
+    <br/>
+    <br/>
+    
+    <table id="wof-table" width="100%" >
+        <tr>
+            <td width="50%" >
+            </td>
+            <td width="50%" style="vertical-align:top; padding-left:115px;">
+                <div id="wof-label-blue" >
+                    Borrego Solar Systems, Inc. <br /> 
+                </div>
+                <div id="wof-field" >
+                    5005 Texas Street, Suite 400<br /> San Diego, CA 92108<br />
+                    <apex:outputText style="color: #0047B2; font-weight: bold;" value="Main: " />619-961-4522<br/>
+                    <apex:outputText style="color: #0047B2; font-weight: bold;" value="FAX: " />888-843-6778<br/>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</apex:page>

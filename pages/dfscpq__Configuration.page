@@ -1,0 +1,141 @@
+<apex:page controller="dfscpq.ConfigurationController" showHeader="true" sideBar="false" action="{!onLoad}"
+           title="{!$Label.dfscpq__dfscpqconfig}">
+    <style type="text/css">
+        :root {
+            --arrow-drop-down: url({!$Resource.dsfs__ArrowDropDown});
+        }
+    </style>
+    <apex:stylesheet value="{!$Resource.dsfs__styles}"/>
+    <apex:includeScript value="{!$Resource.dsfs__UtilJS}"/>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery(document).ready(function ($) {
+            var $form = {
+                envelopeConfigurations: $('#ds-envelope-config'),
+                cancel: $('#ds-cancel'),
+                save: $('#ds-save-config'),
+                alert: $('#ds-alert')
+            };
+
+            function toggleSave(enabled) {
+                $form.alert.hide();
+                if (enabled) {
+                    $form.save.removeClass('inactive');
+                    $form.save.prop('disabled', false);
+                } else {
+                    $form.save.addClass('inactive');
+                    $form.save.prop('disabled', true);
+                }
+            }
+
+            function loadConfig() {
+                toggleSave(false);
+                setEnvelopeConfigurations(JSON.parse('{!JSENCODE(envelopeConfigurationJson)}'), '{!config.envelopeConfigurationId}');
+            }
+
+            function setEnvelopeConfigurations(configs, currentId) {
+                $form.envelopeConfigurations.empty();
+                $form.envelopeConfigurations.append($('<option>', {
+                    value: '', text: '{!JSENCODE($Label.DefaultConfiguration)}'
+                }));
+                if (DSUtil.isNotEmpty(configs)) {
+                    for (var i = 0; i < configs.length; i++) {
+                        var config = configs[i];
+                        $form.envelopeConfigurations.append($('<option>', {
+                            value: config.id, text: config.name
+                        }));
+                    }
+                    // TODO: Can I do this in one shot while building list?
+                    setSelectedEnvelopeConfiguration(currentId);
+                }
+            }
+
+            function setSelectedEnvelopeConfiguration(ecId) {
+                $selected = $form.envelopeConfigurations.find('option[value="' + ecId + '"]');
+                if ($selected) $selected.prop('selected', true);
+            }
+
+            $form.envelopeConfigurations.change(function () {
+                toggleSave(true);
+            });
+
+            $form.cancel.click(function () {
+                loadConfig();
+            });
+
+            function showError(err) {
+                $form.alert.removeClass('info');
+                $form.alert.removeClass('successful');
+                $form.alert.text(err);
+                $form.alert.show();
+                $('html, body').animate({scrollTop: 0}, 'fast');
+            }
+
+            function onSave(result, event) {
+                // TODO: check result
+                // TODO: add label for success message
+                $form.alert.addClass('successful');
+                $form.alert.text('{!$Label.SaveSuccessful}');
+                $form.alert.show();
+            }
+
+            $form.save.click(function () {
+                if ($(this).prop('disabled') === false) {
+                    try {
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ConfigurationController.save}', $form.envelopeConfigurations.find(':selected').val(), onSave);
+                    } catch (err) {
+                        showError(err);
+                    }
+                    toggleSave(false);
+                }
+            });
+
+            loadConfig();
+        });
+    </script>
+    <div class="docusign-container">
+        <div>
+            <h3 id="ds-alert" class="alert-messages" style="display: none"></h3>
+        </div>
+
+        <div class="title">
+            <img class="logo" src="{!$Resource.dsfs__DocuSign}"/>
+            <h1>{!$Label.dfscpq__dfscpqconfig}</h1>
+        </div>
+
+        <div class="row">
+            <div class="admin-container">
+                <section>
+                    <h2>{!$Label.CPQConfiguration}</h2>
+                    <p>{!$Label.CPQConfiguration_Intro}</p>
+                    <ol style="list-style-type: decimal; margin-left: 0; padding-left: 20px;">
+                        <li><a href="{!URLFOR("/apex/sbqq__EditSettings")}">{!$Label.CPQConfiguration_Step1}</a></li>
+                        <li>{!$Label.CPQConfiguration_Step2}</li>
+                        <li>{!$Label.CPQConfiguration_Step3}</li>
+                        <li>{!$Label.CPQConfiguration_Step4}</li>
+                    </ol>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="admin-container">
+                <section>
+                    <h2>{!$Label.EnvelopeConfiguration}</h2>
+                    <label>
+                        <select class="small" id="ds-envelope-config">
+                        </select>
+                    </label>
+                </section>
+            </div>
+        </div>
+
+        <div class="inline-button">
+            <ul>
+                <li><a href="#" class="next inactive" id="ds-save-config">{!$Label.Save}</a></li>
+                <li><a href="#" id="ds-cancel">{!$Label.Cancel}</a></li>
+            </ul>
+        </div>
+    </div>
+</apex:page>

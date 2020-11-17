@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Labor__c.Hours__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Daily_Site_Report__c.Site__c</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Huge</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Daily_Site_Report__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>Daily_Site_Report__c.Date__c</field>
+    </columns>
+    <columns>
+        <field>Labor__c.Subcontractor__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Labor__c.Hours__c</field>
+    </columns>
+    <columns>
+        <field>Labor__c.Total_Hours__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14)</booleanFilter>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sun Pacific</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0 Pleasant St - Dunstable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AES - Orchards - Ryan Road - N Brookfield</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>147 Williamsville Road - Hubbardston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0 Brook Street - Plympton (EPC)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>538 Clark Street - Gardner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Grooms Road - Clifton Park - 1 (MAIN)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>3846 Beals Rd - Medina</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>3962 Allis Rd - Medina</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1897 Swann Rd - Ransomville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>3254 Roosevelt Hwy - Hamlin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>267 Sugar Hill Rd - Clifton Park</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Greenbacker Portfolio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Daily_Site_Report__c.Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>131 Bullock Road - Freetown</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Daily_Site_Report__c.Site__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>EPC Labor Hours - Q1 &amp; Q2 2020</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Daily_Site_Report__c$Labor__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Daily_Site_Report__c.Project__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Daily_Site_Report__c.Date__c</dateColumn>
+        <endDate>2020-06-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2020-01-01</startDate>
+    </timeFrameFilter>
+</Report>

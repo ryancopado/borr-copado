@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_17593117</developerName>
+        <masterLabel>Count of WOs</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Case.Number_of_Work_Orders__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>No WOs</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+                <to>1</to>
+            </sourceValues>
+            <value>1 WO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1</from>
+            </sourceValues>
+            <value>2+ WOs</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_43904828</developerName>
+        <masterLabel>Count of WOs per Case</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Case.Number_of_Work_Orders__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>0 WOs</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+            </sourceValues>
+            <value>1+ WOs</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>Case.Number_of_Work_Orders__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Case.Special_Projects,Case.Additional_Services,Case.Service,Case.Maintenance_Case,Case.Construction_Closeout,Case.Design_Modification,Case.Landscaping,Case.Module_Washing,Case.Operational_Commissioning,Case.Performance_Investigation,Case.Preoperational_Commissioning,Case.Project,Case.Warranty,Case.O_M_Admin_Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Rejected,Closed,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Closed - Issue Resolved Automatically</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>RECORDTYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_17593117</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cases Inflight with count of Work Orders</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

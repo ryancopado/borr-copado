@@ -1,0 +1,11 @@
+<apex:page standardController="AcctSeed__Cash_Disbursement__c" recordSetVar="cashDisbRecords" extensions="CashDisbursementCtlExt" tabStyle="AcctSeed__Cash_Disbursement__c" action="{!sendACHEmail}">
+ 	<apex:pageBlock title="Cash Disbursements - Send ACH Email">
+        <apex:form >
+        	<apex:pageMessages />
+			<br/>
+			Click
+			<apex:outputLink value="{!retURL}" id="theLink"> here </apex:outputLink>
+			to return to the previous page.
+		</apex:form>
+	</apex:pageBlock>
+</apex:page>

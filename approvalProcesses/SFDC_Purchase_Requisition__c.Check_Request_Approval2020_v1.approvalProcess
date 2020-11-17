@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>owner_manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(ProjectAS__c  =&apos;&apos;,  $User.LastName &lt;&gt; &quot;Pitera&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Non-Project Request</label>
+        <name>Non_Project_Request</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Project_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND( ProjectAS__c &lt;&gt;&apos;&apos;, CreatedBy.Id &lt;&gt;  ProjectAS__r.OwnerId )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>PM Approval</label>
+        <name>PM_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jconnell@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ProjectAS__r.Hand_off_Date__c&gt;TODAY()
+||
+ISBLANK(ProjectAS__r.Hand_off_Date__c))
+&amp;&amp;
+((ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=125000
+&amp;&amp;
+ProjectAS__r.ofSites__c=1)
+||
+(ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=180000
+&amp;&amp;
+ProjectAS__r.ofSites__c&gt;1))
+&amp;&amp;
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;205&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;805&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;105&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;905&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Development Spending - New England</label>
+        <name>Development_Spending_New_England</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>amcdonough@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ProjectAS__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(ProjectAS__r.Hand_off_Date__c)) 
+&amp;&amp; 
+((ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=125000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c=1) 
+|| 
+(ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=180000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c&gt;1)) 
+&amp;&amp; 
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;208&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;808&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;908&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Development Spending - Mid Atlantic</label>
+        <name>Development_Spending_Mid_Atlantic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>afarkes@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ProjectAS__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(ProjectAS__r.Hand_off_Date__c)) 
+&amp;&amp; 
+((ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=125000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c=1) 
+|| 
+(ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=180000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c&gt;1)) 
+&amp;&amp; 
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;207&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;807&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;907&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Development Spending - Midwest</label>
+        <name>Development_Spending_Midwest</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kkearney@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(ProjectAS__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(ProjectAS__r.Hand_off_Date__c)) 
+&amp;&amp; 
+((ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=125000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c=1) 
+|| 
+(ProjectAS__r.TotalRequisitionCoststoDate__c&lt;=180000 
+&amp;&amp; 
+ProjectAS__r.ofSites__c&gt;1)) 
+&amp;&amp; 
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;201&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;801&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;902&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;901&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Development Spending - West Coast</label>
+        <name>Development_Spending_West_Coast</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbierly@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND( ProjectAS__c &lt;&gt;&apos;&apos;,ProjectAS__r.Hand_off_Date__c&lt;TODAY(),Amount_2__c &gt;5000, OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;208&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;808&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;908&quot; )
+)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Dir of Ops Mid Atlantic</label>
+        <name>Dir_of_Ops_Mid_Atlantic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jmeiltoft@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND( ProjectAS__c &lt;&gt;&apos;&apos;, ProjectAS__r.Hand_off_Date__c&lt;TODAY(),Amount_2__c &gt;5000,
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;207&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;807&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;907&quot; )
+)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Dir Ops Midwest</label>
+        <name>Dir_Ops_Midwest</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>nchaney@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND( ProjectAS__c &lt;&gt;&apos;&apos;, ProjectAS__r.Hand_off_Date__c&lt;TODAY(), Amount_2__c &gt;5000,
+OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;205&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;805&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;105&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;905&quot; )
+)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Dir of Ops MA</label>
+        <name>Dir_of_Ops_MA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbrooke@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND( ProjectAS__c &lt;&gt;&apos;&apos;, ProjectAS__r.Hand_off_Date__c&lt;TODAY(),Amount_2__c &gt;5000,  OR(
+BEGINS( ProjectAS__r.Job_Number__c , &quot;201&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;801&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;902&quot; ),
+BEGINS( ProjectAS__r.Job_Number__c , &quot;901&quot; )
+)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Dir of Ops West</label>
+        <name>Dir_of_Ops_West</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>NOT( ISBLANK( ProjectAS__c ) )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Finance Approval</label>
+        <name>Finance_Approval2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>arogge@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jborja@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kmarino@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(  ProjectAS__r.RecordTypeId   &lt;&gt;  &quot;012340000007kca&quot;, (OR(ProjectAS__c &lt;&gt;&apos;&apos;, Purchase_Order_Line__c &lt;&gt;&apos;&apos;)))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Accounting Approval Not O&amp;M</label>
+        <name>Accounting_Approval_Not_O_M</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>hphillips@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>treas@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(  ProjectAS__r.RecordTypeId   =  &quot;012340000007kca&quot;, (OR(ProjectAS__c &lt;&gt;&apos;&apos;, Purchase_Order_Line__c &lt;&gt;&apos;&apos;)))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Accounting Approval O&amp;M</label>
+        <name>Accounting_Approval_O_M</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>mike@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(ProjectAS__c =&apos;&apos;,  Amount_2__c &lt;10000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Under $10K Non Project</label>
+        <name>Under_10K_Non_Project</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>mike@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(ProjectAS__c =&apos;&apos;, Amount_2__c &gt;10000, Amount_2__c &lt;50000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Over $10K Non Project- CFO Approval</label>
+        <name>Over_10K_Non_Project_CFO_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>mike@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(ProjectAS__c =&apos;&apos;, Amount_2__c &gt;50000)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Over $50K- Non Project</label>
+        <name>Over_50K_Non_Project</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>hphillips@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kknight@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sbourque@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>treas@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>ProjectAS__c =&apos;&apos;</formula>
+        </entryCriteria>
+        <label>Accounting Approval</label>
+        <name>Accounting_Approval2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>must be after Marketing check request</description>
+    <emailTemplate>Alerts/Check_Request_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Check Requests</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.Status__c</field>
+            <operation>equals</operation>
+            <value>X - Rejected,New,On Hold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.Payroll_Check_Request__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Department</field>
+            <operation>notEqual</operation>
+            <value>O&amp;M</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Check_Request_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Check_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Check Request Approval2020 v1</label>
+    <processOrder>20</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

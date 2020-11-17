@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- AP+Journal Total --></label>
+        <name>AP_Journal_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Equals the Sales or Active Budget depending on the status of the project --></help>
+        <label><!-- Budgeted Expense --></label>
+        <name>AcctSeed__Budgeted_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Budget for Labor Hours. --></help>
+        <label><!-- Budgeted Hours --></label>
+        <name>AcctSeed__Budgeted_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Budgeted Revenue for a Project Task. Amount should be a positive value.
+Amount of the line item on the SOV, entered by Accounting --></help>
+        <label><!-- Budgeted Revenue --></label>
+        <name>AcctSeed__Budgeted_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Contact --></label>
+        <name>AcctSeed__Client_Contact__c</name>
+        <relationshipLabel><!-- Project Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check this box to enable the selection of this project task from the time card entry screen. --></help>
+        <label><!-- Display in Expense Report / Time Card --></label>
+        <name>AcctSeed__Display_in_Time_Card__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number in days between the Start Date and End Date of a Project Task. --></help>
+        <label><!-- Duration --></label>
+        <name>AcctSeed__Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date a project task ends on. --></help>
+        <label><!-- End Date --></label>
+        <name>AcctSeed__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Branch</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot; and must have a status of Active. One or more of these conditions have not been met. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Project Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 2 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot; and must have a status of Active. One or more of these conditions have not been met. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Project Tasks (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 3 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot; and must have a status of Active. One or more of these conditions have not been met. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Project Tasks (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Project Tasks (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Upon posting a Time Card. A debit entry will be made to this GL Account and a corresponding credit entry will be made to the Labor GL Account set in the Accounting Settings Tab for each Time Card Day. --></help>
+        <label><!-- Expense GL Account --></label>
+        <name>AcctSeed__Labor_GL_Account__c</name>
+        <relationshipLabel><!-- Project Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to determine an estimate for completeness in reporting. --></help>
+        <label><!-- % Complete --></label>
+        <name>AcctSeed__Percent_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>AcctSeed__Project_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project the line item is associated with- Automatically fills in when the line item is created from the Project --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel>Line Items</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Internally responsible employee. --></help>
+        <label><!-- Responsibility --></label>
+        <name>AcctSeed__Responsibility__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this field to control the order by which project tasks appear in lists and reports. --></help>
+        <label><!-- Sort Order --></label>
+        <name>AcctSeed__Sort_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date this Project Task is set to start on. --></help>
+        <label><!-- Start Date --></label>
+        <name>AcctSeed__Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in filtered lookups to eliminate inactive and completed projects from selection. --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Task Report Name --></label>
+        <name>AcctSeed__Task_Report_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to identify tasks that belong to a specific utilization category for reporting on productivity of time. --></help>
+        <label><!-- Utilization Category --></label>
+        <name>AcctSeed__Utilization_Category__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Time Off</masterLabel>
+            <translation><!-- Paid Time Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Related</masterLabel>
+            <translation><!-- Project Related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales &amp; Marketing</masterLabel>
+            <translation><!-- Sales &amp; Marketing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Active Budget History --></label>
+        <name>Active_Budget_History__c</name>
+    </fields>
+    <fields>
+        <help><!-- Active Budget/Current System Size --></help>
+        <label><!-- Active Budget $/Watt --></label>
+        <name>Active_Budget_Watt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current amount anticipated to spend on the line item- Managed by the PM
+Update this amount on the Update Budgets page --></help>
+        <label><!-- Active Budget --></label>
+        <name>Active_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Actual $/Watt --></help>
+        <label><!-- Actual $/Watt --></label>
+        <name>Actual_Watt__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Costs $/Watt --></label>
+        <name>All_Costs_Watt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roll up of Transactions:
+3600-Cost of revenue - installation 
+3601-Cost Reven - Instlltn  
+3602-Cost Revenue-Externl Cst-IntrC 
+3603-External Labor Allocatn- Intr
+3604-Unassigned COGS 
+3700-COGS - Service Contract 
+3701-COGS - Service Contract Int --></help>
+        <label><!-- All Costs --></label>
+        <name>All_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total amount of % completes --></help>
+        <label><!-- Amount Invoiced (% Complete) --></label>
+        <name>Amount_Invoiced_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount remaining to bill the customer: Budgeted Revenue- Amount Invoiced --></help>
+        <label><!-- Amount Remaining To Be Billed --></label>
+        <name>Amount_Remaining_To_Be_Billed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount approved by the Contracts Committee --></help>
+        <label><!-- Approved Development Amount --></label>
+        <name>Approved_Development_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associated project schedule milestone --></help>
+        <label><!-- Associated Milestone --></label>
+        <name>Associated_Milestone__c</name>
+        <picklistValues>
+            <masterLabel>CD IFR</masterLabel>
+            <translation><!-- CD IFR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUSTOM</masterLabel>
+            <translation><!-- CUSTOM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPC Signed</masterLabel>
+            <translation><!-- EPC Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPC- LOI</masterLabel>
+            <translation><!-- EPC- LOI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Completion</masterLabel>
+            <translation><!-- Final Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical Completion</masterLabel>
+            <translation><!-- Mechanical Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobilization Date</masterLabel>
+            <translation><!-- Mobilization Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTO Date</masterLabel>
+            <translation><!-- PTO Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Substantial Completion</masterLabel>
+            <translation><!-- Substantial Completion --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Balance Remaining on POs --></label>
+        <name>Balance_Remaining_on_POs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date we will be able to bill for this line item --></help>
+        <label><!-- Billing Date --></label>
+        <name>Billing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing type --></label>
+        <name>Billing_type__c</name>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material</masterLabel>
+            <translation><!-- Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Budget Changes --></label>
+        <name>Budget_Changes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Difference --></label>
+        <name>Budget_Difference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget - Total Costs To Date --></label>
+        <name>Budget_Total_Costs_To_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- References the category of the Cost Code listed --></help>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed PO and CO --></label>
+        <name>Committed_PO_and_CO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Committed PO and NonPO Costs --></label>
+        <name>Committed_PO_and_NonPO_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract and Development Approval --></label>
+        <name>Contract_and_Development_Approval__c</name>
+        <relationshipLabel><!-- MIPA Contract Milestone Schedule (Non-IX Cash Recognition SOV) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Code Grouping --></label>
+        <name>Cost_Code_Grouping__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost code of the line item. Lookup to the Cost Code Object- Must be equal to the Line Item Name --></help>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+        <relationshipLabel><!-- Project Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duplicate Line Item Test --></label>
+        <name>Duplicate_Line_Item_Test__c</name>
+    </fields>
+    <fields>
+        <help><!-- What grouping the EPC Cost belongs to. If this field is blank then this is not a Core EPC Cost --></help>
+        <label><!-- EPC Cost Grouping --></label>
+        <name>EPC_Cost_Grouping__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates related to Energy Storage and not EPC --></help>
+        <label><!-- ESD --></label>
+        <name>ESD__c</name>
+    </fields>
+    <fields>
+        <help><!-- MIPA Contract Value from Oppty (minus Intx) * % of Contract (Dev) --></help>
+        <label><!-- Pre 7C Forecasted Payment Amount --></label>
+        <name>ForecastedPaymentAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for forecasting- what is the date this payment is expected to be received? --></help>
+        <label><!-- Forecasted Payment Date --></label>
+        <name>ForecastedPaymentDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for forecasting- what is the % of the contract to be paid with this milestone? --></help>
+        <label><!-- % of Contract (Dev) --></label>
+        <name>ForecastedValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Estimate --></label>
+        <name>Internal_Estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item % Complete --></label>
+        <name>Line_Item_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Notes --></label>
+        <name>Line_Item_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total of Change Orders + Purchase Orders + Non-PO Costs on the line item --></help>
+        <label><!-- Line Item Total --></label>
+        <name>Line_Item_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module? --></label>
+        <name>Module__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically set via workflow rule: Non-PO Costs + Roll Up Journal Entries - Roll Up Cash Receipts - Roll Up In Bound Inventory Movements + Roll Up Out Bound Inventory Movements. --></help>
+        <label><!-- Non PO Costs --></label>
+        <name>Non_PO_Costs_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-PO Costs --></label>
+        <name>Non_PO_Costs_RollUp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non-PO Costs
+Total Actual Costs- PO Total --></help>
+        <label><!-- NonPO Costs --></label>
+        <name>Non_PO_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not In Rollup --></label>
+        <name>Not_In_Rollup__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes/Additional information about the line item --></help>
+        <label><!-- New Line Item Note --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for CC migration --></help>
+        <label><!-- Old --></label>
+        <name>Old__c</name>
+    </fields>
+    <fields>
+        <help><!-- Invoices with ON HOLD status, needing a PO --></help>
+        <label><!-- On Hold Invoices --></label>
+        <name>On_Hold_Invoices__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM Budget/Current System Size --></help>
+        <label><!-- PM Budget $/Watt --></label>
+        <name>PM_Budget_Watt__c</name>
+    </fields>
+    <fields>
+        <help><!-- PM estimate of amount to spend on the line item- Edit this amount on the Update Budgets page --></help>
+        <label><!-- PM Budget --></label>
+        <name>PM_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Lock timestamp --></label>
+        <name>PM_Lock_timestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manually entered by the PD post 7C, pulls into MIPA Contract Value on Oppty --></help>
+        <label><!-- Post 7C Forecasted Payment Amount --></label>
+        <name>Post7CForecastedPaymentAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to help filter Line Item Related List to show only Billing Lines on  Projects, updated via LH, no need to be on layouts --></help>
+        <label><!-- Project Lookup Billing Lines --></label>
+        <name>ProjectLookupBillingLines__c</name>
+        <relationshipLabel><!-- Billing Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- used to help filter Line Item Related List to show only Budget Line Items on Projects, updated via LH, no need to be on layouts --></help>
+        <label><!-- Project Lookup Budget Lines --></label>
+        <name>ProjectLookupBudgetLines__c</name>
+        <relationshipLabel><!-- Budget Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Projection Locked --></label>
+        <name>Project_Projection_Locked__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to filter related list to view only billing line items on a project --></help>
+        <label><!-- Project if Billing Line --></label>
+        <name>ProjectifBillingLine__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to filter related list to view only budget line items on a project, --></help>
+        <label><!-- Project if Budget Line --></label>
+        <name>ProjectifBudgetLine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recalculate --></label>
+        <name>Recalculate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Budget --></label>
+        <name>Report_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Total Actual Costs --></label>
+        <name>Report_Total_Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requisition Costs to Date --></label>
+        <name>Requisition_Costs_to_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total amount of posted AP Lines affiliated with the line item --></help>
+        <label><!-- Roll Up AP Lines --></label>
+        <name>Roll_Up_All_Account_Payable_Lines__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of the Total field of all related Billing Lines with Parent Status = Posted and the Project Task does not start with &apos;Ret&apos;. --></help>
+        <label><!-- Roll Up Billed To Date --></label>
+        <name>Roll_Up_Billed_To_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up Cash Receipts --></label>
+        <name>Roll_Up_Cash_Receipts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up In Bound Inventory Movements --></label>
+        <name>Roll_Up_In_Bound_Inventory_Movements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total amount of the posted Journal Entries affiliated with the line item --></help>
+        <label><!-- Roll Up Journal Entries --></label>
+        <name>Roll_Up_Journal_Entries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up Journal Entry Credit --></label>
+        <name>Roll_Up_Journal_Entry_Credit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up Journal Entry Debit --></label>
+        <name>Roll_Up_Journal_Entry_Debit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roll Up Out Bound Inventory Movements --></label>
+        <name>Roll_Up_Out_Bound_Inventory_Movements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total amount of the closed Purchase Orders affiliated with the line item --></help>
+        <label><!-- Roll Up Purchase Order Line Totals --></label>
+        <name>Roll_Up_Purchase_Order_Line_Totals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total of all transactions --></help>
+        <label><!-- Total Previously Invoiced --></label>
+        <name>Roll_Up_Transactions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Budget/Current System Size --></help>
+        <label><!-- Sales Budget $/Watt --></label>
+        <name>Sales_Budget_Watt__c</name>
+    </fields>
+    <fields>
+        <help><!-- From the Pricing Tool- Amount the line item was sold for --></help>
+        <label><!-- Sales Budget --></label>
+        <name>Sales_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sum of all transaction hitting 3600 (AP Lines, Journal Entries, Inbound/Outbound movements, Cash Receipts)- Must be posted to create a transaction and be included in this amount --></help>
+        <label><!-- WIP Costs --></label>
+        <name>Total_Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Amount of approved Change Orders affiliated with the Line Item --></help>
+        <label><!-- Total CO Amount --></label>
+        <name>Total_CO_Additional_Amount_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Roll Up ALL COSTS --></label>
+        <name>Transaction_Roll_Up_ALL_COSTS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Roll Up WIP COSTS --></label>
+        <name>Transaction_Roll_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Old CC --></label>
+        <name>Use_Old_CC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used on Project? --></label>
+        <name>Used_on_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- WIP Transaction Roll Up --></label>
+        <name>WIP_Transaction_Roll_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- $/Watt - Budgeted Expense --></label>
+        <name>Watt_Budgeted_Expense__c</name>
+    </fields>
+    <fields>
+        <help><!-- Change Order Total/Current System Size --></help>
+        <label><!-- $/Watt - Change Orders --></label>
+        <name>Watt_Change_Orders__c</name>
+    </fields>
+    <fields>
+        <help><!-- Line Item Total/Current System Size --></help>
+        <label><!-- $/Watt - Line Item --></label>
+        <name>Watt_Line_Item__c</name>
+    </fields>
+    <fields>
+        <help><!-- PO Total/Current System Size --></help>
+        <label><!-- $/Watt - Roll Up PO Lines --></label>
+        <name>Watt_Roll_Up_PO_Lines__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weighted Avg. $/Watt --></label>
+        <name>Weighted_Avg_Watt_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- % complete --></label>
+        <name>complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- $/Watt - Roll Up AP Lines --></label>
+        <name>watt__c</name>
+    </fields>
+    <nameFieldLabel>Line Item Name</nameFieldLabel>
+    <recordTypes>
+        <description><!-- OLD Budget Line Items- Do not use --></description>
+        <label><!-- A.Budget Line Item- Old --></label>
+        <name>A_Budget_Line_Item_Old</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Billing Line Items- Entered by Accounting for Billing --></description>
+        <label><!-- Billing Line Item --></label>
+        <name>Billing_Line_Item</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Budget Line Items- Entered and maintained by the Project Manager --></description>
+        <label><!-- Budget Line Item --></label>
+        <name>Budget_Line_Item</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- A project task must contain a value for the labor gl account field. --></errorMessage>
+        <name>AcctSeed__Value_for_Labor_GL_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A project task must contain a value for the project field. --></errorMessage>
+        <name>AcctSeed__Value_for_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You may not modify the Active Budget for OH/Indirects until the budget is locked. --></errorMessage>
+        <name>Active_budget_read_only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Accounting can edit Billing Line Items --></errorMessage>
+        <name>Billing_Line_Items_Edited_Only_by_Acctin</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot add/edit a PM Budget value once the PM budget is locked --></errorMessage>
+        <name>Budget_Locked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Budgeted Revenue is required for Billing Line Items --></errorMessage>
+        <name>Budgeted_Revenue_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the Cost Code or Line Item name. Please contact Accounting or Jason Askins to do this. --></errorMessage>
+        <name>Line_Item_Cost_Code_read_only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The line item name should be the same as the cost code name. --></errorMessage>
+        <name>Line_Item_and_Cost_Code_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Overhead/Indirects &amp; Internal Engineering Budget Line Items. can only be modified by Accounting &amp; Jason Askins. --></errorMessage>
+        <name>OH_Ind_Int_Eng_only_edit_by_Accting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When using Other Costs- Other cost code, the Line Item name must be either &quot;Expense Report&quot; or &quot;Other Costs- Other&quot; --></errorMessage>
+        <name>Other_Costs_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot add/edit a Sales Budget value once the Sales Budget is locked --></errorMessage>
+        <name>Sales_Budget_Locked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please contact Accounting or Jason Askins to make changes to Sales, PM or Active Budgets for Internal Engineering and Overhead Line Items --></errorMessage>
+        <name>Sales_Budget_read_only</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+</CustomObjectTranslation>

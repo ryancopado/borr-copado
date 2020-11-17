@@ -1,0 +1,21 @@
+<template>
+  <lightning-card >
+    <div class="slds-grid slds-gutters slds-grid_align-spread slds-p-horizontal_small">
+      <div class="slds-col slds-size_4-of-12">
+        <h1><b>Real Estate</b></h1>
+        {realEstatePercent}% Complete
+        <lightning-progress-bar value={realEstatePercent} size="large"></lightning-progress-bar>
+      </div>
+      <div class="slds-col slds-size_4-of-12">
+        <h1><b>Permitting & Engineer</b></h1>
+        {permittingPercent}% Complete
+        <lightning-progress-bar value={permittingPercent} size="large"></lightning-progress-bar>
+      </div>
+      <div class="slds-col slds-size_4-of-12">
+        <h1><b>Interconnection & Revenue</b></h1>
+        {interconnectionPercent}% Complete
+        <lightning-progress-bar value={interconnectionPercent} size="large"></lightning-progress-bar>
+      </div>
+    </div>
+  </lightning-card>
+</template>

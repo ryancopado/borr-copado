@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Procore Project Request</name>
+    <style>none</style>
+    <subject>Procore Project Setup Request: {!Site__c.Project__c}</subject>
+    <textOnly>The following items from the Salesforce project will be added to Procore. This information can be updated in Procore after the project is created.
+
+
+
+Submitted by: {!User.Name}
+
+Project Name: {!Site__c.Project__c}
+
+
+
+Team: {!Site__c.Project_Team__c}
+
+Address:  {!Site__c.Name}
+
+{!Site__c.Site_Address__c}
+
+{!Site__c.Site_City__c}, {!Site__c.Site_State__c} {!Site__c.Site_Zip__c}
+
+
+
+Project Manager: {!Site__c.Project_Manager__c}
+
+Asst Project Manager: {!Site__c.Project_Coordinator_APM__c}
+
+Ops SDE: {!Site__c.Senior_Design_Engineer__c}
+
+
+
+Site Details: {!Site__c.Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

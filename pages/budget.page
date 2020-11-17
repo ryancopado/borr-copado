@@ -1,0 +1,220 @@
+<apex:page controller="bli_detail" tabStyle="Budget__c" action="{!setBudget}" >
+<apex:stylesheet value="{!URLFOR($Resource.budget)}"/>
+<script type="text/javascript" src="{!$Resource.simpletreemenu}"/>
+<apex:form >                 
+<apex:sectionHeader title="Budget" subtitle="{!Budget.Name}" />
+<apex:outputPanel id="details">
+<apex:pageBlock title="Budget Detail">
+    <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Budget"/><apex:outputLink value="/{!Budget.Id}" target="_blank">{!Budget.Name}</apex:outputLink>
+        </apex:pageBlockSectionItem>
+        <apex:outputField value="{!Budget.OwnerId}"/>
+        <apex:outputField value="{!Budget.Project__c}"/>
+        <apex:outputField value="{!Budget.PM_Lock__c}"/>
+        <apex:outputField value="{!Budget.Total_Contract_Value__c}"/>
+        <apex:pageBlockSectionItem />
+        <apex:outputField value="{!Budget.Sales_Budget__c}"/>
+        <apex:outputField value="{!Budget.Margin_Sales__c}"/>
+        <apex:pageBlockSectionItem rendered="{!if(!Budget.PM_Lock__c == true, 'true', 'false')}">
+            <apex:outputLabel value="Total Sales/PM Variance"/>
+            <apex:outputText value="$ {!Budget.Total_Sales_PM_Discrepancy__c}" styleClass="orange"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}"/>
+        <apex:outputField value="{!Budget.Margin_PM__c}" rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}"/>
+         <apex:pageBlockSectionItem rendered="{!if(!budget.PM_Lock__c == true, 'true', 'false')}">
+            <apex:outputLabel value="PM Margin"/>
+            <apex:outputText value="{!Budget.Margin_PM__c}%" styleClass="orange"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}">
+            <apex:outputLabel value="Total PM/Active Variance"/>
+            <apex:outputText value="$ {!Budget.Total_PM_Active_Discrepancy__c}" styleClass="orange"/>
+        </apex:pageBlockSectionItem> 
+        <apex:pageBlockSectionItem rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}">
+            <apex:outputLabel value="Active Margin"/>
+            <apex:outputText value="{!Budget.Margin_Active__c}%" styleClass="orange"/>
+        </apex:pageBlockSectionItem>     
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:outputPanel>
+<div id="float" style="position: fixed; width:25%; left:40%; top:30%;z-index: 102; background:#C6E2FF; border:solid black 1px;padding:5px; display:none;" align="center">
+       <b> Would you like to lock your projection?<br/></b>
+       <font size="1">Note: Your changes will be saved either way.</font><br/><br/>
+       <apex:commandButton value="No" action="{!PMSave}" reRender="details, details1, details2" oncomplete="close()" / >
+       <apex:commandButton value="Yes" action="{!SaveAndLock}" oncomplete="close()"/ >  
+       <br/>
+</div>
+<div id="dimmer" class="dimmer" style="width:100%; height:100%; display:none; position:absolute; left:0px; top:0px; background:#E0EEEE; z-index: 101; filter:alpha(opacity=40); -moz-opacity:.40; opacity:.40; "></div>
+<apex:pageBlock title="Budget Line Items">
+<div align="center"><apex:commandButton value="Save" onclick="lockAndSave()" rendered="{!if(!budget.PM_Lock__c == true, 'true', 'false')}" rerender="page"/ >
+<apex:commandButton value="Save" action="{!PMSave}" rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}" reRender="details, details1, details2" oncomplete="alert('Budget Saved.')" / >
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+<br/>         
+<a href="javascript:ddtreemenu.flatten('treemenu1', 'expand')">Expand All</a> | <a href="javascript:ddtreemenu.flatten('treemenu1', 'contact')">Contract All</a></div>          
+<br/>
+<table id="rounded-corner" width="950px" style="{!lock}" align="center">
+        <tr>
+            <th width="90px" class="alt">Name</th>
+            <th width="140px" class="alt">Cost Code</th>
+            <th width="140px" class="alt">Category</th>
+            <th width="190px" class="alt">Sales Budget</th>
+            <th class="alt">PM Budget</th>
+            <th width="125px" class="alt">Notes</th>
+        </tr>
+</table>
+<table id="rounded-corner" width="950px" style="{!unlock}" align="center">
+        <tr>
+            <th width="70px" class="alt">Name</th>
+            <th width="110px" class="alt">Cost Code</th>
+            <th width="110px" class="alt">Category</th>
+            <th width="155px" class="alt">PM Budget</th>
+            <th width="145px" class="alt">Active Budget</th>
+            <th width="145px" class="alt">POs</th>
+            <th class="alt">Notes</th>
+        </tr>
+</table>
+<apex:outputPanel id="details1">
+<table id="rounded-corner" width="950px" style="{!lock}" align="center">
+        <tr>
+            <th width="100px">Totals</th>
+            <th width="100px"/>
+            <th width="160px"/>
+            <th width="185px"><apex:outputField value="{!Budget.Sales_Budget__c}"/></th>
+            <th style="color:#CC4400"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+        </tr>
+</table>
+<table id="rounded-corner" width="950px" style="{!unlock}" align="center">
+        <tr>
+            <th width="115px">Totals</th>
+            <th width="100px"/>
+            <th width="100px"/>
+            <th width="165px"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+            <th width="165px" style="color:#CC4400"><apex:outputField value="{!Budget.Active_Budget__c}"/></th>
+            <th width="165px"><apex:outputField value="{!Budget.PO_Total__c}"/></th>
+            <th width="145px"/>
+        </tr>
+        <tr>
+            <th style="color:#CC4400">Cost Remaining</th>
+            <th colspan="4"/>
+            <th style="color:#CC4400"><apex:outputField value="{!Budget.Total_Cost_Remaining__c}"/></th>
+            <th/>
+        </tr>
+</table>
+</apex:outputPanel>
+<div align="center" id="datatable">
+<ul id="treemenu1" class="treeview">
+<apex:repeat value="{!bli}" var="lineItem">
+    <li>
+    <table id="rounded-corner" width="950px">
+        <tr>
+            <td width="75px" style="">
+            <apex:outputLink value="/{!lineItem.Id}" target="_blank">{!lineItem.Name}</apex:outputLink>
+            </td>
+            <td width="125px" style="">
+            <apex:outputText value="{!lineItem.Cost_Code_Name__c}"/>
+            </td>
+            <td width="100px" style="">
+            <apex:outputText value="{!lineItem.Category_Code__c}"/>
+            </td>
+            <td width="150px" style="{!lock}">
+            <apex:outputField value="{!lineItem.Sales_Budget__c}" id="sales"/>
+            </td>
+            <td width="105px" style="{!lock}">
+            <apex:inputText value="{!lineItem.PM_Initial_Projection__c}" id="pm2" size="10" />
+            </td>
+            <td width="150px" style="{!unlock}">
+             <apex:outputField value="{!lineItem.PM_Initial_Projection__c}" id="pm" />
+            </td>
+            <td width="150px" style="{!unlock}">
+             <apex:inputText value="{!lineItem.Active_Budget__c}" id="active" size="10"/>
+            </td>
+            <td width="125px" style="{!unlock}">
+            <apex:outputField value="{!lineItem.Total_PO__c}" id="approved"/>
+            </td>
+            <td width="150px" align="center">
+             <apex:inputText value="{!lineItem.Notes__c}" id="notes"/>
+            </td>
+        </tr>
+    </table>
+        <ul>
+            <li>        
+                <apex:DataTable value="{!lineItem.ConReq__r}" var="req" width="910px" style="background-color:white">
+                <apex:column width="15%"><apex:outputLink value="/{!req.Id}" target="_blank">{!req.Name}</apex:outputLink></apex:column>
+                <apex:column width="15%"><apex:outputField value="{!req.Product__c}"/><apex:outputField value="{!req.Part_Number__c}"/></apex:column>
+                <apex:column value="{!req.Vendor_Account__c}" width="15%"/>
+                <apex:column value="{!req.Status__c}" width="10%"/>
+                <apex:column value="{!req.Total_Cost__c}" width="15%"/>
+                <apex:column value="{!req.Purchase_Order__c}" width="10%"/>
+                <apex:column value="{!req.PO_Status__c}" width="5%"/>
+                </apex:DataTable>
+            </li>
+            <li>        
+                <apex:DataTable value="{!lineItem.Expense_Line_Items__r}" var="eli" width="910px" style="background-color:white">
+                <apex:column width="15%"><apex:outputLink value="/{!eli.Id}" target="_blank">{!eli.Name}</apex:outputLink></apex:column>
+                <apex:column width="15%"><apex:outputField value="{!eli.Code__c}"/></apex:column>
+                <apex:column value="{!eli.Vendor_Account__c}" width="15%"/>
+                <apex:column value="{!eli.Approved_Amount__c}" width="15%"/>
+                <apex:column value="{!eli.Expense_Header__c}" width="10%"/>
+                </apex:DataTable>
+            </li>
+        </ul>   
+    </li>
+</apex:repeat>
+</ul>
+</div>
+<apex:outputPanel id="details2">
+<table id="rounded-corner" width="950px" style="{!unlock}" align="center">
+       <tr>
+            <th width="115px">Totals</th>
+            <th width="100px"/>
+            <th width="100px"/>
+            <th width="165px"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+            <th width="165px" style="color:#CC4400"><apex:outputField value="{!Budget.Active_Budget__c}"/></th>
+            <th width="165px"><apex:outputField value="{!Budget.PO_Total__c}"/></th>
+            <th width="145px"/>
+        </tr>
+        <tr>
+            <th style="color:#CC4400">Cost Remaining</th>
+            <th colspan="4"/>
+            <th style="color:#CC4400"><apex:outputField value="{!Budget.Total_Cost_Remaining__c}"/></th>
+            <th/>
+        </tr>
+</table>
+<table id="rounded-corner" width="950px" style="{!lock}" align="center">
+        <tr>
+            <th width="100px">Totals</th>
+            <th width="100px"/>
+            <th width="160px"/>
+            <th width="185px"><apex:outputField value="{!Budget.Sales_Budget__c}"/></th>
+            <th style="color:#CC4400"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+        </tr>
+</table>
+</apex:outputPanel><br/>
+<div align="center"><apex:commandButton value="Save" onclick="lockAndSave()" rerender="page" rendered="{!if(!budget.PM_Lock__c == true, 'true', 'false')}"/ >
+<apex:commandButton value="Save" action="{!PMSave}" rendered="{!if(!budget.PM_Lock__c == true, 'false', 'true')}" reRender="details, details1, details2" oncomplete="alert('Budget Saved.')"/ >
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</div> 
+</apex:pageBlock> 
+<script type="text/javascript">
+
+//ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
+
+ddtreemenu.createTree("treemenu1", true, 2)
+
+</script>
+<script>
+function close() {
+    document.getElementById('float').style.display = "none";
+    document.getElementById('dimmer').style.display = "none";
+    alert('Budget Saved.');
+}
+function lockAndSave() {
+    document.getElementById('float').style.display = "";
+    document.getElementById('dimmer').style.display = "";
+}
+function buildDimmerDiv(){
+    document.write('');
+}
+</script>    
+</apex:form>
+</apex:page>

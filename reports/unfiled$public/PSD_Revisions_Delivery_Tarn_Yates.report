@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>FLOOR(
+RowCount/PARENTGROUPVAL(RowCount,PSD_Revision__c.IEI_PSD_Completion_Date__c) * 100 )</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_24869371</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% On Time</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_24869371</developerName>
+        <masterLabel>On Time</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>PSD__c.PSD_Revisions__r$Days_Open__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>On Time</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+            </sourceValues>
+            <value>Not On Time</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>PSD__c.PSD_Revisions__r$Name</field>
+    </columns>
+    <columns>
+        <field>PSD__c$Name</field>
+    </columns>
+    <columns>
+        <field>PSD__c.PSD_Revisions__r$Days_Open__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>PSD__c.PSD_Revisions__r$PSD_Apps_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>yates</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PSD__c.PSD_Revisions__r$Revision_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled,On Hold</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Quarter</dateGranularity>
+        <field>PSD__c.PSD_Revisions__r$IEI_PSD_Completion_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_24869371</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PSD Revisions Delivery - Tarn Yates</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Pre_Sales_Designs_with_PSD_Revisions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>PSD__c$CreatedDate</dateColumn>
+        <endDate>2017-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,17 @@
+<apex:page standardController="Service_PO__c" extensions="ServicePO">
+<style>
+.fewerMore {display: none;}
+</style>
+<apex:form >
+ <apex:detail relatedList="true"></apex:detail>
+  
+ <apex:pageblock id="CustomList" title="Service Construction Requisition Attachments"  >
+   <apex:pageBlockTable value="{!Attachments}" var="Attachment" rendered="{!NOT(ISNULL(Attachments))}">
+        <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!Attachment.Id}">{!Attachment.Name}</apex:outputLink></apex:column>
+        <apex:column value="{!Attachment.OwnerId}"/>
+        <apex:column value="{!Attachment.CreatedDate}"/>
+   </apex:pageBlockTable>
+   <apex:outputLabel value="No records to display" rendered="{!(ISNULL(Attachments))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+ </apex:pageblock>  
+</apex:form>
+</apex:page>

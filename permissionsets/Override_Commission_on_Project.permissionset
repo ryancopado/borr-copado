@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>override commission checkbox and commission override amount</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AcctSeed__Project__c.CommissionOverride__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AcctSeed__Project__c.UseCommissionOverride__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Override Commission on Project</label>
+    <license>Salesforce</license>
+</PermissionSet>

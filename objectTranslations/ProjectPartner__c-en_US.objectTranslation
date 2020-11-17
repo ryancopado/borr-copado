@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Subcontractor Compliance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Subcontractor Compliance</value>
+    </caseValues>
+    <fields>
+        <help><!-- Project that the partner worked on (Lookup to Project) --></help>
+        <label><!-- Project --></label>
+        <name>ASProject__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project Partner Account (lookup to Account) --></help>
+        <label><!-- Vendor Account --></label>
+        <name>AccountId__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- list any agreement exceptions that need to be tracked throughout the project --></help>
+        <label><!-- Agreement Exceptions --></label>
+        <name>Agreement_Exceptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Has the Sub filled out the Pre-qual packet? Is it on file? --></help>
+        <label><!-- Approved Pre-Qualification Package --></label>
+        <name>Approved_Pre_Qualification_Package__c</name>
+    </fields>
+    <fields>
+        <label><!-- Borrego COI Issued to Client? --></label>
+        <name>Borrego_COI_Issued_to_Client__c</name>
+    </fields>
+    <fields>
+        <help><!-- For CPG subcontractors - the commitment number assigned by Accounting --></help>
+        <label><!-- Commitment Number --></label>
+        <name>Commitment_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- date the DIR # expires, must be filled out at Vendor level --></help>
+        <label><!-- DIR# Exp Date --></label>
+        <name>DIRExpDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DIR Number --></label>
+        <name>DIR_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Edit Link --></label>
+        <name>Edit_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Injury and Illness Prevention Program --></help>
+        <label><!-- IIPP --></label>
+        <name>IIPP__c</name>
+    </fields>
+    <fields>
+        <help><!-- field used to store url where project coi can be found --></help>
+        <label><!-- Link to Project COI --></label>
+        <name>Link_to_Project_COI__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSA Exceptions --></label>
+        <name>MSA_Exceptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSA Executed Date --></label>
+        <name>MSA_Executed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSA Obtained? --></label>
+        <name>MSA_Obtained__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSA? --></label>
+        <name>MSA__c</name>
+    </fields>
+    <fields>
+        <label><!-- MSA or Insurance Notes --></label>
+        <name>MSA_or_Insurance_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDA Expiration Date --></label>
+        <name>NDA_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDA Obtained? --></label>
+        <name>NDA_Obtained__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- If ALL required Compliance items are obtained, this is the trigger for the ROD to counter-sign the SAR --></help>
+        <label><!-- OK to Issue Con Req --></label>
+        <name>OK_to_Issue_Con_Req__c</name>
+    </fields>
+    <fields>
+        <help><!-- List other personnel besides the primary contact you would like to include in the rating. If no other personnel exist, enter &quot;N/A&quot; --></help>
+        <label><!-- Other Personnel on the Project --></label>
+        <name>Other_Personnel_on_the_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- completed P3 document that was sent to Smart Safety --></help>
+        <label><!-- PB3 --></label>
+        <name>PB3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subcontractors SAR total, including CO’s --></help>
+        <label><!-- PO Total --></label>
+        <name>PO_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Bond Received --></label>
+        <name>Payment_Bond_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Performance Bond --></help>
+        <label><!-- Performance Bond Received --></label>
+        <name>Performance_Bond_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>Primary_Contact__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>ProjectId__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Auto - Expiration date of project specific COI auto coverage --></help>
+        <label><!-- Project COI Expiration Date - Auto --></label>
+        <name>Project_COI_Expiration_Date_Auto__c</name>
+    </fields>
+    <fields>
+        <help><!-- GL - Expiration date of project specific COI general liability coverage --></help>
+        <label><!-- Project COI Expiration Date - GL --></label>
+        <name>Project_COI_Expiration_Date_GL__c</name>
+    </fields>
+    <fields>
+        <help><!-- PLI - Expiration date of project specific COI professional liability coverage (if applicable) --></help>
+        <label><!-- Project COI Expiration Date - PLI --></label>
+        <name>Project_COI_Expiration_Date_PLI__c</name>
+    </fields>
+    <fields>
+        <help><!-- Umbrella - Expiration date of project specific COI umbrella coverage (if applicable) --></help>
+        <label><!-- Project COI Expiration Date - Umbrella --></label>
+        <name>Project_COI_Expiration_Date_Umbrella__c</name>
+    </fields>
+    <fields>
+        <help><!-- WC - Expiration date of project specific COI workers comp coverage (if applicable) --></help>
+        <label><!-- Project COI Expiration Date - WC --></label>
+        <name>Project_COI_Expiration_Date_WC__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Rating By --></label>
+        <name>Project_Manager_Rating_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Rating Date --></label>
+        <name>Project_Manager_Rating_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- PM Rating Management Skill --></label>
+        <name>Project_Manager_Rating_Management_Skill__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter any negative notes or feedback about your experience with the Partner working on the project --></help>
+        <label><!-- PM Rating Negative Notes --></label>
+        <name>Project_Manager_Rating_Negative_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Rating Numeric --></label>
+        <name>Project_Manager_Rating_Numeric__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any positive notes or feedback about your experience with the Partner working on the project --></help>
+        <label><!-- PM Rating Positive Notes --></label>
+        <name>Project_Manager_Rating_Positive_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- PM Rating Professionalism --></label>
+        <name>Project_Manager_Rating_Professionalism__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- PM Rating Quality --></label>
+        <name>Project_Manager_Rating_Quality__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- PM Rating Timeliness --></label>
+        <name>Project_Manager_Rating_Timliness__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Project Manager- Enter your overall rating of the Partner
+5 is highest, 1 is lowest --></help>
+        <label><!-- PM Rating Overall --></label>
+        <name>Project_Manager_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name of the Project Manager on the Project --></help>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Specific COI, has it been approved by Brendan Quinlan? --></help>
+        <label><!-- Project Specific COI Approved by AJG --></label>
+        <name>Project_Specific_COI_Approved_by_AJG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Specific COI Expiration Date --></label>
+        <name>Project_Specific_COI_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Specific Insurance? --></label>
+        <name>Project_Specific_Insurance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subcontractors PO for this project --></help>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order__c</name>
+        <relationshipLabel><!-- Subcontractor Compliance --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What role did the partner play in the project? --></help>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Add&apos;l Engineer</masterLabel>
+            <translation><!-- Add&apos;l Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CEQA</masterLabel>
+            <translation><!-- CEQA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cameras</masterLabel>
+            <translation><!-- Cameras --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carport Construction</masterLabel>
+            <translation><!-- Carport Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Civil</masterLabel>
+            <translation><!-- Civil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultant</masterLabel>
+            <translation><!-- Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design sub (tap work etc)</masterLabel>
+            <translation><!-- Design sub (tap work etc) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EV Chargers</masterLabel>
+            <translation><!-- EV Chargers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment Vendor</masterLabel>
+            <translation><!-- Equipment Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fencing (permanent)</masterLabel>
+            <translation><!-- Fencing (permanent) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundations</masterLabel>
+            <translation><!-- Foundations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ground Mount</masterLabel>
+            <translation><!-- Ground Mount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Irrigation</masterLabel>
+            <translation><!-- Irrigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscaping</masterLabel>
+            <translation><!-- Landscaping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Line Side Tap</masterLabel>
+            <translation><!-- Line Side Tap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical</masterLabel>
+            <translation><!-- Mechanical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Installer</masterLabel>
+            <translation><!-- Module Installer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Painter</masterLabel>
+            <translation><!-- Painter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Racking Installer</masterLabel>
+            <translation><!-- Racking Installer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roofer</masterLabel>
+            <translation><!-- Roofer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWPPP</masterLabel>
+            <translation><!-- SWPPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Street Sweeper</masterLabel>
+            <translation><!-- Street Sweeper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey</masterLabel>
+            <translation><!-- Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp Labor</masterLabel>
+            <translation><!-- Temp Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp Services/Fencing (temp)</masterLabel>
+            <translation><!-- Temp Services/Fencing (temp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welder</masterLabel>
+            <translation><!-- Welder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SS Rating By --></label>
+        <name>Site_Supervisor_Rating_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- SS Rating Date --></label>
+        <name>Site_Supervisor_Rating_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- SS Rating Management Skill --></label>
+        <name>Site_Supervisor_Rating_Management_Skill__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter any negative notes or feedback about your experience with the Partner working on the project --></help>
+        <label><!-- SS Rating Negative Notes --></label>
+        <name>Site_Supervisor_Rating_Negative_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- SS Rating Numeric --></label>
+        <name>Site_Supervisor_Rating_Numeric__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any positive notes or feedback about your experience with the Partner working on the project --></help>
+        <label><!-- SS Rating Positive Notes --></label>
+        <name>Site_Supervisor_Rating_Positive_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- SS Rating Professionalism --></label>
+        <name>Site_Supervisor_Rating_Professionalism__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- SS Rating Quality --></label>
+        <name>Site_Supervisor_Rating_Quality__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 5 is highest, 1 is lowest --></help>
+        <label><!-- SS Rating Timeliness --></label>
+        <name>Site_Supervisor_Rating_Timliness__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Site Super- Enter your overall rating of the Partner
+5 is highest, 1 is lowest --></help>
+        <label><!-- SS Rating Overall --></label>
+        <name>Site_Supervisor_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Site Supervisor on the Project- Pulls from the Site Super field on the related Project --></help>
+        <label><!-- Site Supervisor --></label>
+        <name>Site_Supervisor__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Rate_This_Partner --></label>
+        <name>Rate_This_Partner</name>
+    </webLinks>
+</CustomObjectTranslation>

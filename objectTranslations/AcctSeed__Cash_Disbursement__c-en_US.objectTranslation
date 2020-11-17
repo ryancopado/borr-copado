@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Pay Batch Screen --></label>
+        <name>AcctSeed__Pay_Batch_Screen</name>
+    </fieldSets>
+    <fields>
+        <label><!-- ACH OK RW --></label>
+        <name>ACH_OK_RW__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACH OK --></label>
+        <name>ACH_OK__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACH Payment Date RW --></label>
+        <name>ACH_Payment_Date_RW__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACH Payment Date --></label>
+        <name>ACH_Payment_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts the number of account payable vouchers in the cash disbursement. --></help>
+        <label><!-- AP Voucher Count --></label>
+        <name>AcctSeed__AP_Voucher_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. Accounting period must have a value of Open. --></help>
+        <label><!-- Accounting  Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Accounting Year --></label>
+        <name>AcctSeed__Accounting_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Payee Name --></label>
+        <name>AcctSeed__Alternate_Payee_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of money to be disbursed. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount In Words --></label>
+        <name>AcctSeed__Amount_in_Words__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applied Amount --></label>
+        <name>AcctSeed__Applied_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>AcctSeed__Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upon posting a credit entry will be made to this account and a corresponding debit entry will be made to the AP Control account set in the Accounting Settings Tab. --></help>
+        <label><!-- Bank Account --></label>
+        <name>AcctSeed__Bank_Account__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Id --></label>
+        <name>AcctSeed__Bank_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated bank reconciliation this cash disbusrement was cleared. --></help>
+        <label><!-- Bank Reconciliation --></label>
+        <name>AcctSeed__Bank_Reconciliation__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Transaction --></label>
+        <name>AcctSeed__Bank_Transaction__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash Disbursement Batch --></label>
+        <name>AcctSeed__Cash_Disbursement_Batch__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize records in Cash Flow Statement. --></help>
+        <label><!-- Cash Flow Category --></label>
+        <name>AcctSeed__Cash_Flow_Category__c</name>
+        <relationshipLabel><!-- Cash Disbursements (Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Check Number --></label>
+        <name>AcctSeed__Check_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date this cash disbursement was cleared in the associated bank reconciliation. --></help>
+        <label><!-- Cleared Date --></label>
+        <name>AcctSeed__Cleared_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A Cash Disbursement can have either the Account (Vendor), Contact or User (Employee) as the Payee. One object must be chosen. --></help>
+        <label><!-- Contact --></label>
+        <name>AcctSeed__Contact__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The currency conversion rate for the currency. --></help>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeed__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used if the Cash Disbursement Type is a Customer Refund or Other. A Debit is made to this GL account while a corresponding Credit is made to the Bank Account. --></help>
+        <label><!-- Debit GL Account --></label>
+        <name>AcctSeed__Debit_GL_Account__c</name>
+        <relationshipLabel><!-- Cash Disbursements (Refund GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Default 1099 Box --></label>
+        <name>AcctSeed__Default_1099_Box__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date in which the Cash Disbursement was made. --></help>
+        <label><!-- Disbursement Date --></label>
+        <name>AcctSeed__Disbursement_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A Cash Disbursement can have either the Account (Vendor), Contact or User (Employee) as the Payee. One object must be chosen. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Accounting Seed Check printing PDF can support  up to the display of 5 AP Vouchers on the check remittance. If you consolidate over 5 AP Vouchers you need to print the Full Remittance. This field indicates if a Full Remittance is necessary. --></help>
+        <label><!-- Full Remittance --></label>
+        <name>AcctSeed__Full_Remittance__c</name>
+    </fields>
+    <fields>
+        <label>Branch</label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sales Segment</label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Cash Disbursements (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ops Division</label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Cash Disbursements (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Cash Disbursements (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name of Customer/Vendor from Bank Direct Connect or Import Financial File --></help>
+        <label><!-- Import Vendor Name --></label>
+        <name>AcctSeed__Import_Vendor_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount normalized to the base currency. This is Total divided by the Currency Conversion Rate. --></help>
+        <label><!-- Ledger Amount --></label>
+        <name>AcctSeed__Ledger_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to provide memo on printed check. --></help>
+        <label><!-- Memo --></label>
+        <name>AcctSeed__Memo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee City State Zip --></label>
+        <name>AcctSeed__Payee_City_State_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee City --></label>
+        <name>AcctSeed__Payee_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Country --></label>
+        <name>AcctSeed__Payee_Country2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Country --></label>
+        <name>AcctSeed__Payee_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lists either the vendor, contact or the employee as the Payee Id. --></help>
+        <label><!-- Payee --></label>
+        <name>AcctSeed__Payee_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Postal Code --></label>
+        <name>AcctSeed__Payee_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee State --></label>
+        <name>AcctSeed__Payee_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Street --></label>
+        <name>AcctSeed__Payee_Street2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payee Street --></label>
+        <name>AcctSeed__Payee_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula field that lists either the vendor, contact or the employee as the Payee. Used in reporting and as a convenient reference to the source record for the Payee. --></help>
+        <label><!-- Payee --></label>
+        <name>AcctSeed__Payee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>AcctSeed__Payment_Status__c</name>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Represents Check number for traditional paper checks or a payment reference provided by your bank if it is electronic. --></help>
+        <label><!-- Reference --></label>
+        <name>AcctSeed__Reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the source of the cash disbursement either &quot;Manual&quot; or &quot;Account Payable&quot;. --></help>
+        <label><!-- Source --></label>
+        <name>AcctSeed__Source__c</name>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used in approvals of Cash Disbursements.  A value of &quot;Posted&quot; indicates the record is final and a debit and credit line have been entered into the transaction object for the Cash Disbursement. --></help>
+        <label><!-- Posting Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Denotes the method in which the disbursement was made. Check indicated traditional paper check. Electronic would be used to represent ACH, Wires or any other form of electronic payment. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+        <picklistValues>
+            <masterLabel>Check</masterLabel>
+            <translation><!-- Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic</masterLabel>
+            <translation><!-- Electronic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A Cash Disbursement can have either the Account (Vendor), Contact or User (Employee) as the Payee. One object must be chosen. --></help>
+        <label><!-- Vendor --></label>
+        <name>AcctSeed__Vendor__c</name>
+        <relationshipLabel><!-- Cash Disbursements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Void Date --></label>
+        <name>AcctSeed__Void_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Void Description --></label>
+        <name>AcctSeed__Void_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1099 Vendor --></label>
+        <name>AcctSeed__X1099_Vendor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Records the calendar year a cash disbursement was made based on the disbursement date. --></help>
+        <label><!-- 1099 Year --></label>
+        <name>AcctSeed__X1099_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Memo --></label>
+        <name>Memo__c</name>
+    </fields>
+    <fields>
+        <label><!-- OK To Email --></label>
+        <name>OK_To_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment --></label>
+        <name>Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Vendor --></label>
+        <name>X2nd_Vendor__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You cannot edit the amount field if the cash disbursement is sourced from account payable records --></errorMessage>
+        <name>AcctSeed__Amount_No_Update_Account_Payable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A cash disbursement cannot be a negative amount. --></errorMessage>
+        <name>AcctSeed__Cash_Disbursement_must_be_positive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The GL Variable must have a Type of &quot;GL Account Variable 3&quot;. --></errorMessage>
+        <name>AcctSeed__GL_Account_Variable_3_Correct_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The GL Variable must have a Type of &quot;GL Account Variable 4&quot;. --></errorMessage>
+        <name>AcctSeed__GL_Account_Variable_4_Correct_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only select one of the following as a payee: vendor, contact, or employee. --></errorMessage>
+        <name>AcctSeed__Only_One_Selected_Vendor_Contact_Or_Empl</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A project task is required if a project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must specify a contact, vendor or employee as the payee. --></errorMessage>
+        <name>AcctSeed__Required_Vendor_Contact_Or_Employee</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Accounting_Period</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Bank_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Disbursement_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A cash disbursement cannot be made to an vendor that is not &quot;Accounting Active&quot;. --></errorMessage>
+        <name>vendor_Accounting_Active_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Apply --></label>
+        <name>AcctSeed__Apply</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Apply_Unapply --></label>
+        <name>AcctSeed__Apply_Unapply</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_1099_File --></label>
+        <name>AcctSeed__Create_1099_File</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Match --></label>
+        <name>AcctSeed__Match</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post --></label>
+        <name>AcctSeed__Post</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Check --></label>
+        <name>AcctSeed__Print_Check</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Checks --></label>
+        <name>AcctSeed__Print_Checks</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Full_Remittance --></label>
+        <name>AcctSeed__Print_Full_Remittance</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost --></label>
+        <name>AcctSeed__Unpost</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Void --></label>
+        <name>AcctSeed__Void</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_CheckCustom --></label>
+        <name>Print_CheckCustom</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ACH_Email --></label>
+        <name>Send_ACH_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ACH_Payment --></label>
+        <name>Send_ACH_Payment</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,262 @@
+<apex:page standardController="Invoices__c" extensions="createInvoice" renderAs="PDF">
+<apex:stylesheet value="{!URLFOR($Resource.po_style)}"/>
+<apex:form >
+<table width="100%">
+    <tr>
+        <td style="vertical-align:top;" width="35%">
+            <apex:dataTable value="{!Invoices__c}" var="bs">
+                <apex:column >
+                    <b>Borrego Solar Systems, Inc.</b><br/>
+                    5005 Texas Street, Suite 400<br/>
+                    San Diego, CA 92108<br/>
+                </apex:column>
+            </apex:dataTable>
+        </td>
+        <td width="30%"/>     
+        <td style="text-align:right">
+            <apex:image url="{!$Resource.borrego}" width="50%" height="50%" />
+            <br/><br/>
+        </td>
+    </tr>
+</table>
+<table width="100%">    
+    <tr> 
+        <td style="vertical-align:top;" width="65%">
+            <apex:outputField value="{!Invoices__c.ATTN__c}"/><br/>
+            <apex:outputField value="{!Invoices__c.Billing_Account2__c}"/><br/>
+            {!address}<br/>
+            {!other}
+        </td>
+        <td style="vertical-align:top; text-align:right;" width="35%">
+            <apex:dataTable value="{!Invoices__c}" var="order" style="text-align:right">
+                <apex:column width="175px" style="vertical-align:top">
+                    <b>Invoice Number:<br/>
+                    Job Number:<br/>
+                    Date:<br/>
+                    Payment Terms:<br/>
+<!--                    Total Previously Invoiced: --> </b><br/>
+                </apex:column>
+                <apex:column width="80px" style="vertical-align:top">
+                    <apex:outputField value="{!order.Name}"/><br/>
+                    <apex:outputField value="{!order.Job_Number__c}"/><br/>
+                    <apex:outputField value="{!order.Date__c}"/><br/>
+                    <apex:outputField value="{!order.Payment_Terms__c}"/><br/>
+<!--
+                    <apex:outputText rendered="{!NOT(ISNULL(NTE))}">${!NTE}</apex:outputText><br/>
+                    <apex:outputText rendered="{!NOT(ISNULL(pinv))}">${!pinv}</apex:outputText>
+-->
+                </apex:column>
+            </apex:dataTable>
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background:#D3D3D3; text-align:center">Consulting & Development Services Invoice</td>  
+    </tr>
+    <tr>
+        <td colspan="2" style="vertical-align:top">
+            <apex:dataTable value="{!Invoices__c}" var="r">
+                <apex:column width="85px" style="vertical-align:top;">
+                    <b>Scope Items:</b>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!r.Scope_Items__c}"/>
+                </apex:column>
+            </apex:dataTable>
+        </td>   
+    </tr>    
+</table> 
+<br/>
+
+<apex:variable var="f" value="{!fixedcost}" >
+    <apex:outputText rendered="{!if(f, 'true', 'false')}" >
+        <table id="box-table-a" width="100%">
+            <tr>
+                <td class="title" width="70%">
+                    Services Rendered/Description
+                </td>
+                <td width="15%" class="title">
+                </td>
+                <td width="15%" class="title">
+                    Amount
+                </td> 
+            </tr>
+            <apex:repeat value="{!fixedcosts}" var="fc">
+                <tr>
+                    <td class="co"><apex:outputText value="{!fc.fixednote}"/></td>
+                    <td class="co" style="text-align:right"></td>
+                    <td class="co" style="text-align:right"><apex:outputText value="{!fc.fixedamount}" /></td>
+                </tr>
+            </apex:repeat>
+            <tr>
+                <td class="co_total_value"></td>
+                <td colspan="2" style="background:#000000"/>
+            </tr>
+            <tr>
+                <td class="co_total_text" colspan="2">Total Charges:</td>
+                <td class="co_total_value"><apex:outputField value="{!Invoices__c.Total_Charges__c}"/></td>    
+            </tr>
+        </table>
+    </apex:outputText>
+    <apex:outputText rendered="{!if(f, 'false', 'true')}" >
+        <table id="box-table-a" width="100%">
+            <tr>
+                <td class="title" width="25%">
+                    Team Member/Vendor
+                </td>
+                <td width="35%" class="title">
+                    Role/Description
+                </td>
+                <td width="10%" class="title">
+                    Hours
+                </td>
+                <td width="15%" class="title">
+                    Rate
+                </td>
+                <td width="15%" class="title">
+                    Totals
+                </td> 
+            </tr>
+            <apex:repeat value="{!time}" var="t">
+            <tr>
+                <td class="co"><apex:outputText value="{!t.name}"/></td> 
+                <td class="co"><apex:outputText value="{!t.task}"/></td>
+                <td class="co" style="text-align:right"><apex:outputText value="{!t.hours}"/></td>
+                <td class="co" style="text-align:right"><apex:outputText value="{!t.rate}"/></td>
+                <td class="co" style="text-align:right"><apex:outputText value="{!t.total}"/></td>
+            </tr>
+            </apex:repeat>
+<!--    
+            <tr>
+                <td class="co" style="color:#FFFFFF">:)</td>
+                <td class="co">
+                    <apex:outputLabel >Expenses</apex:outputLabel>
+                </td>
+                <td class="co"/>
+                <td class="co"/>
+                <td class="co" style="text-align:right">
+                    <apex:outputText value="{!expense}"/>
+                </td>
+            </tr>
+-->
+   
+            <apex:repeat value="{!costs}" var="c">
+            <tr>
+                <td class="co"><apex:outputText value="{!c.vendor}"/></td> 
+                <td class="co"><apex:outputText value="{!c.note}"/></td>
+                <td class="co" style="text-align:right"></td>
+                <td class="co" style="text-align:right"></td>
+                <td class="co" style="text-align:right"><apex:outputText value="{!c.amount}" /></td>
+            </tr>
+            </apex:repeat>
+
+            <apex:outputPanel layout="none" rendered="{!IF(expense <> '0.00', 'true', 'false')}" >
+                <tr>
+                    <td class="co" style="color:#FFFFFF">:)</td>
+                    <td class="co">
+                        <apex:outputLabel >Expenses</apex:outputLabel>
+                    </td>
+                    <td class="co"/>
+                    <td class="co"/>
+                    <td class="co" style="text-align:right">
+                        <apex:outputText value="{!expense}"/>
+                    </td>
+                </tr>
+            </apex:outputPanel>
+    
+            <apex:outputPanel layout="none" rendered="{!IF(Invoices__c.Retainer_Amount__c <> 0, 'true', 'false')}" >
+                <tr>
+                    <td class="co" style="color:#FFFFFF">:)</td>
+                    <td class="co">
+                        <apex:outputLabel >Retainer</apex:outputLabel>
+                    </td>
+                    <td class="co"/>
+                    <td class="co"/>
+                    <td class="co" style="text-align:right">
+                        <apex:outputField value="{!Invoices__c.Retainer_Amount__c}" />
+                    </td>
+                </tr>
+            </apex:outputPanel>
+     
+            <tr>
+                <td colspan="2" class="co_total_value">Total Hours:</td>
+                <td class="co_total_value"><apex:outputField value="{!Invoices__c.Total_Hours__c}"/></td>
+                <td colspan="2" style="background:#000000"/>
+            </tr>
+            <tr>
+                <td class="co_total_text" colspan="4">Invoice Total:</td>
+                <td class="co_total_value"><apex:outputField value="{!Invoices__c.Total_Cost_Invoice__c}"/></td>    
+            </tr>
+            <tr>
+                <td class="co_total_text" colspan="4">Retainer Balance:</td>
+                <td class="co_total_value"><apex:outputField value="{!Invoices__c.Retainer_Available__c}"/></td>    
+            </tr>
+            <tr>
+                <td class="co_total_text" colspan="4">Total Charges:</td>
+                <td class="co_total_value"><apex:outputField value="{!Invoices__c.Total_Charges__c}"/></td>    
+            </tr>
+        </table>    
+    </apex:outputText>
+</apex:variable>    
+
+<br/>
+<div style="font-size:10px">
+<b>Make Checks payable to Borrego Solar, Inc.</b> 
+<table>
+    <tr>
+        <td style="vertical-align:top" width="115px">
+            Mail payment to:
+        </td>
+        <td>
+            Borrego Solar Systems, Inc.<br/>
+            5005 Texas Street, Suite 400<br/>
+            San Diego, CA  92108
+        </td>
+    </tr>
+</table>
+<br/>
+<b>For Wire Transfer payments:</b> 
+<table>
+    <tr>
+        <td style="vertical-align:top" width="115px">
+            Beneficiary Bank:       
+        </td>
+        <td>
+            Bank of the West <br/>
+            300 S. Grand Ave, 7th Floor <br/>
+            Los Angeles, CA  90071
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top" width="115px">
+            Routing/ABA Number:     
+        </td>
+        <td>
+            122242843
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top" width="115px">
+            Beneficiary:
+        </td>
+        <td>
+            Borrego Solar Systems, Inc.
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align:top" width="115px">
+            Account Number:     
+        </td>
+        <td>
+            767005440
+        </td>
+    </tr>
+</table>
+<br/><br/>    
+Questions&#63; Call Accounts Receivable Administrator&#44; Michael Crum at (619)-961-4526 <br/>
+Or Project Manager TJ Morton at (619)-961-4514
+</div>
+<apex:inputHidden value="{!Invoices__c.Project__c}"/>
+<apex:inputHidden value="{!Invoices__c.Stage__c}"/>
+</apex:form>   
+</apex:page>

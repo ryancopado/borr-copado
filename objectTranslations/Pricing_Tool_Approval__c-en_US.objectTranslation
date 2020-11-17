@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pricing Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pricing Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- AE Design Notes and Scope Concerns --></label>
+        <name>AE_Design_Notes_and_Scope_Concerns__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Branch --></label>
+        <name>Account_Branch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Affiliate or Acquisition Costs --></help>
+        <label><!-- Affiliate/Dev Fees --></label>
+        <name>Affiliate_Dev_Fees__c</name>
+    </fields>
+    <fields>
+        <help><!-- Updated with value from PVbid using PVbid sync button. --></help>
+        <label><!-- Affiliate Fee --></label>
+        <name>Affiliate_Fee__c</name>
+    </fields>
+    <fields>
+        <help><!-- If wetlands exist, enter all info here. --></help>
+        <label><!-- Any sign of wetlands? --></label>
+        <name>Any_sign_of_wetlands__c</name>
+    </fields>
+    <fields>
+        <help><!-- Has anyone walked the site to verify Topo, Wetlands, etc?  Enter all info here. --></help>
+        <label><!-- Anyone walked the site? --></label>
+        <name>Anyone_walked_the_site__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the applications engineer that you are working with on the pricing tool approval. --></help>
+        <label><!-- Applications Engineer --></label>
+        <name>Applications_Engineer__c</name>
+        <picklistValues>
+            <masterLabel>Ben Foss-Michaelis</masterLabel>
+            <translation><!-- Ben Foss-Michaelis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ed Condreay</masterLabel>
+            <translation><!-- Ed Condreay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patrick Canning</masterLabel>
+            <translation><!-- Patrick Canning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJ Murphy</masterLabel>
+            <translation><!-- TJ Murphy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tarn Yates</masterLabel>
+            <translation><!-- Tarn Yates --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the Person Responsible is the one logged in, used mostly for filters/reports --></help>
+        <label><!-- Apps Engineer Logged in --></label>
+        <name>Apps_Engineer_Logged_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any union labor requirements. --></help>
+        <label><!-- Are there union labor requirements? --></label>
+        <name>Are_there_union_labor_requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- this pulls the email address of the apps engineer assigned field on the related opportunity --></help>
+        <label><!-- Assigned Apps Engineer Email --></label>
+        <name>Assigned_Apps_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of the bid within the PVBid system. --></help>
+        <label><!-- BidId --></label>
+        <name>BidId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bid Bond --></label>
+        <name>Bid_Bond__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bid Title --></label>
+        <name>Bid_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bid URL --></label>
+        <name>Bid_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Buy American --></label>
+        <name>Buy_American__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CC Submittal Link --></label>
+        <name>CC_Submittal_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC Submittal Status --></label>
+        <name>CC_Submittal_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please list out anything that has changed since the last submission. --></help>
+        <label><!-- Changes Since Last Submission --></label>
+        <name>Changes_Since_Last_Submission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Contract Signed --></label>
+        <name>Check_Contract_Signed__c</name>
+    </fields>
+    <fields>
+        <help><!-- System size pulled through from the related opportunity --></help>
+        <label><!-- Current System Size from Opportunity --></label>
+        <name>Current_System_Size_from_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any requirements above and beyond the code, such as requiring use of copper electrical conductors, etc. --></help>
+        <label><!-- Customer requirements relative to code? --></label>
+        <name>Customer_requirements_beyond_code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please allow more than 1 day to process this request. --></help>
+        <label><!-- Date Pricing Needed By --></label>
+        <name>Date_Pricing_Needed_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- autopopulates the date when approval is given --></help>
+        <label><!-- Date  Pricing Tool Approved --></label>
+        <name>Date_Pricing_Tool_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- autopopulates the date the pricing tool as submitted for approval --></help>
+        <label><!-- Date Pricing Tool Submitted for Approval --></label>
+        <name>Date_Pricing_Tool_Submitted_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Auto-populates the date the pricing request was completed. --></help>
+        <label><!-- Date Pricing Request Completed --></label>
+        <name>Date_Request_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Auto-populates the created date for this record. --></help>
+        <label><!-- Date Request Entered --></label>
+        <name>Date_Request_Entered__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date AE started working on Request, filled in manually by the AE --></help>
+        <label><!-- Date Request Started --></label>
+        <name>Date_Request_Started__c</name>
+    </fields>
+    <fields>
+        <help><!-- autopopulates date that the request for a pricing tool is submitted --></help>
+        <label><!-- Date Pricing Request Submitted --></label>
+        <name>Date_Request_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Synced to Opportunity --></label>
+        <name>Date_Synced_to_Opportunity_Formula__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates the # of calendar days between Date Pricing Tool was submitted for approval and Date Pricing Tool was approved. --></help>
+        <label><!-- Days to Approve Pricing Tool --></label>
+        <name>Days_to_Approve_Pricing_Tool__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of calendar days between Date Pricing Request was submitted and Date Pricing Request was Completed.   If not complete it uses TODAY - Date Pricing Request Submitted. --></help>
+        <label><!-- Days to Complete Pricing Request --></label>
+        <name>Days_to_Complete_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Type --></label>
+        <name>Deal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease</masterLabel>
+            <translation><!-- Lease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan</masterLabel>
+            <translation><!-- Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPA</masterLabel>
+            <translation><!-- PPA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Cash Direct to town or standard bond --></help>
+        <label><!-- Decommissioning Bond --></label>
+        <name>Decommissioning_Bond__c</name>
+    </fields>
+    <fields>
+        <help><!-- Updated with value from PVbid using PVbid sync button. --></help>
+        <label><!-- Dev COGS --></label>
+        <name>Dev_COGS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Solar and Storage Total Direct Cost of Goods Sold --></help>
+        <label><!-- Total Direct COGS $ --></label>
+        <name>Direct_COGS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Solar and Storage Direct Cost of Goods Sold in dollars per watt --></help>
+        <label><!-- Total DCOGS $/W --></label>
+        <name>Direct_COGS_w__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Direct Margin % from the pricing tool, driven by the markup value within PVbid --></help>
+        <label><!-- Direct Margin % from Pricing Tool --></label>
+        <name>Direct_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Margin $ --></label>
+        <name>Direct_Margins__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final contract price pulled through from the related opportunity --></help>
+        <label><!-- EPC Contract Price from Opportunity --></label>
+        <name>EPC_Contract_Price_from_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final price including first year O&amp;M (Pricing summary cell J57) --></help>
+        <label><!-- EPC Contract Price from Pricing Tool --></label>
+        <name>EPC_Contract_Price_from_Pricing_Tool__c</name>
+    </fields>
+    <fields>
+        <help><!-- Energy Storage Department Contribution Margin --></help>
+        <label><!-- Storage Margin (%) --></label>
+        <name>ESD_Contribution_Margin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Energy Storage Division Direct Cost of Goods Sold. Required if Opportunity includes Storage. --></help>
+        <label><!-- Storage Direct COGS --></label>
+        <name>ESD_Direct_COGS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Energy Storage Department Final Price --></help>
+        <label><!-- Storage Contract Value --></label>
+        <name>ESD_Final_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Energy Storage Unit $/kWh --></label>
+        <name>ESU_kWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated COD Date --></label>
+        <name>Estimated_COD_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter estimated Notice to Proceed date. --></help>
+        <label><!-- Estimated NTP Date --></label>
+        <name>Estimated_NTP_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimating Tool --></label>
+        <name>Estimating_Tool__c</name>
+        <picklistValues>
+            <masterLabel>PT Lite</masterLabel>
+            <translation><!-- PT Lite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBid</masterLabel>
+            <translation><!-- PVBid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Exclusions --></label>
+        <name>Exclusions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Completion Date --></label>
+        <name>Expected_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Date PSD Completion --></label>
+        <name>Expected_Date_PSD_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Project Award Date --></label>
+        <name>Expected_Project_Award_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fields Complete --></label>
+        <name>Fields_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- (S+S Direct COGS* Markup %) + S+S Direct COGS --></help>
+        <label><!-- Total Contract Value --></label>
+        <name>Final_EPC_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC $/W --></label>
+        <name>Final_EPC_W__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gross Margin Percentage from Pricing Tool --></help>
+        <label><!-- Gross Margin Percentage --></label>
+        <name>Gross_Margin_Percentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Gross Margin $ amount from the Pricing Tool --></help>
+        <label><!-- Gross Margin $ from the Pricing Tool --></label>
+        <name>Gross_Margin_from_the_Pricing_Tool__c</name>
+    </fields>
+    <fields>
+        <help><!-- USED FOR CARPORT COST REDUCTION --></help>
+        <label><!-- Includes SSS --></label>
+        <name>IncludesSSS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only check this box if the pricing request includes energy storage --></help>
+        <label><!-- Includes Storage --></label>
+        <name>Includes_Storage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ineligible costs --></label>
+        <name>Ineligible_costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsSubmittedForApproval --></label>
+        <name>IsSubmittedForApproval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kickoff minus PT Request --></label>
+        <name>Kickoff_minus_PT_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- LH_UserID_Apps Engineer --></label>
+        <name>LH_OppID_Child__c</name>
+    </fields>
+    <fields>
+        <help><!-- Commercial Operation Date(COD/PTO),Site Mobilization or Other --></help>
+        <label><!-- Lease Start Terms --></label>
+        <name>Lease_Start_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to AE Approved PSD for Pricing --></label>
+        <name>Link_to_AE_Approved_PSD_for_Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to AE Due Diligence --></label>
+        <name>Link_to_AE_Due_Diligence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Abstracts Folder --></label>
+        <name>Link_to_Abstracts_Folder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Assumptions and Exclusion --></label>
+        <name>Link_to_Assumptions_and_Exclusion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Bids Folder --></label>
+        <name>Link_to_Bids_Folder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Contracts --></label>
+        <name>Link_to_Contracts__c</name>
+    </fields>
+    <fields>
+        <help><!-- this field was previously Link_to_PSD_or_Helioscope_being_priced, which has been relocated to the PSD revision page in a new section called Design.  this field is for reference only. --></help>
+        <label><!-- Previous design links --></label>
+        <name>Link_to_PSD_or_Helioscope_being_priced__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the pricing tool spreadsheet on Box --></help>
+        <label><!-- Link to Estimating Tool on box.com --></label>
+        <name>Link_to_Pricing_Tool_on_box_com__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links to files on Box --></help>
+        <label><!-- Links to Additional Documents --></label>
+        <name>Links_to_Additional_Documents__c</name>
+    </fields>
+    <fields>
+        <help><!-- paste box.com link to ESD pricing tool --></help>
+        <label><!-- Link to Storage Estimating Tool --></label>
+        <name>LinktoESDPricingTool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Liquidated Damages --></label>
+        <name>Liquidated_Damages__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pulls in the approximate install date, unless blank. Field is manually filled in in that case. --></help>
+        <label><!-- Mobilization Date --></label>
+        <name>Mobilization_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Brand --></label>
+        <name>Module_Brand__c</name>
+        <relationshipLabel><!-- Pricing Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Module Price Assumption --></label>
+        <name>Module_Price_Assumption__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes RE: Contractual Scope --></label>
+        <name>Notes_RE_Contractual_Scope__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to call out special design and contract requirements as well any scope clarifications --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- If none enter in NONE. For items that are unique to the project such as LD’s, special specifications, work hours, Preveiling wage requirements, Bonding requirements, Buy American clauses, Union labor, or other such items or potential price concerns. --></help>
+        <label><!-- Notes or special pricing concerns --></label>
+        <name>Notes_or_special_pricing_concerns__c</name>
+    </fields>
+    <fields>
+        <help><!-- If YES and you are ready to submit for approval, click on Submit for approval button.
+If NO it means the Pricing Response section is not yet complete. --></help>
+        <label><!-- OK to Submit for Approval --></label>
+        <name>OK_to_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- The opportunity that the pricing tool approval is related to --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Pricing Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PSD Revision Link --></label>
+        <name>PSD_Revision_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- PSD Revision --></label>
+        <name>PSD_Revision__c</name>
+        <relationshipLabel><!-- Pricing Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The timestamp on the PVBid snapshot that is creating when synchronizing the bid. --></help>
+        <label><!-- PVBid Snapshot Time --></label>
+        <name>PVBid_Snapshot_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- PV Direct COGS $ --></label>
+        <name>PV_Direct_COGS__c</name>
+    </fields>
+    <fields>
+        <label><!-- PV Total $ --></label>
+        <name>PV_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Payment Bond --></label>
+        <name>Performance_Payment_Bond__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Are the permit costs validated?  If so, by who? --></help>
+        <label><!-- Permit costs validated with the town? --></label>
+        <name>Permit_costs_validated_with_the_town__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to user table, select person who will be responsible for completing this request. --></help>
+        <label><!-- Person Responsible --></label>
+        <name>Person_Responsible__c</name>
+        <relationshipLabel><!-- Pricing Requests (Person Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Picasa Album --></label>
+        <name>Picasa_Album__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Construction Manager --></label>
+        <name>Pre_Construction_Manager__c</name>
+        <relationshipLabel><!-- Pricing Requests (Pre-Construction Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Link to the final revision --></help>
+        <label><!-- Pre-Sales Design --></label>
+        <name>Pre_Sales_Design__c</name>
+        <relationshipLabel><!-- Pricing Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Brought over from Opportunity --></help>
+        <label><!-- Pre-Vailing Wage --></label>
+        <name>Pre_Vailing_Wage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prelim Pricing Tool EPC Contract Price --></label>
+        <name>Prelim_Pricing_Tool_EPC_Contract_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Priced_System_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dual Use/Ag Canopy</masterLabel>
+            <translation><!-- Dual Use/Ag Canopy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Tilt Ground</masterLabel>
+            <translation><!-- Fixed Tilt Ground --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Floating Solar</masterLabel>
+            <translation><!-- Floating Solar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landfill</masterLabel>
+            <translation><!-- Landfill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof</masterLabel>
+            <translation><!-- Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSS</masterLabel>
+            <translation><!-- SSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Axis Tracker</masterLabel>
+            <translation><!-- Single Axis Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standalone Storage</masterLabel>
+            <translation><!-- Standalone Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wind</masterLabel>
+            <translation><!-- Wind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Difference between the Prelim Pricing and the Final Pricing --></help>
+        <label><!-- Pricing Differences --></label>
+        <name>Pricing_Differences__c</name>
+    </fields>
+    <fields>
+        <help><!-- By checking this box you are indicating that the request is complete and ready for review. An email will automatically go to the requester with the details. --></help>
+        <label><!-- Pricing Request Completed --></label>
+        <name>Pricing_Request_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of hours the Project Pricing portion only, took per site to complete. Required when the Pricing Status changes to Completed --></help>
+        <label><!-- Process Time (hours per Site) --></label>
+        <name>Process_Time_hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- should include % ;  if none, put none; also include duration --></help>
+        <label><!-- Production Guarantee Level and Duration --></label>
+        <name>Production_Guarantee_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of the project within the PVBid system. --></help>
+        <label><!-- ProjectId --></label>
+        <name>ProjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Developer --></label>
+        <name>Project_Developer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Builder&apos;s Risk or other Premium non-standard insurance --></help>
+        <label><!-- Project Specific Insurance --></label>
+        <name>Project_Specific_Insurance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Racking Tilt Angle --></label>
+        <name>Racking_Tilt_Angle__c</name>
+    </fields>
+    <fields>
+        <help><!-- Refer to the &quot;Pre-con Request Menu&quot; for description of levels --></help>
+        <label><!-- Request Level --></label>
+        <name>RequestLevel__c</name>
+        <picklistValues>
+            <masterLabel>L0 - Indicative, No Design</masterLabel>
+            <translation><!-- L0 - Indicative, No Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L1 - Indicative, With Design</masterLabel>
+            <translation><!-- L1 - Indicative, With Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2 - At RFP / For Shortlist</masterLabel>
+            <translation><!-- L2 - At RFP / For Shortlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L3 - At Shortlist / For Award</masterLabel>
+            <translation><!-- L3 - At Shortlist / For Award --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L4 - At Award / For Contract</masterLabel>
+            <translation><!-- L4 - At Award / For Contract --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Shows the current status of the request for pricing. --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reviewed with Civil Eng --></label>
+        <name>Reviewed_with_Civil_Eng__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed with Utility Eng --></label>
+        <name>Reviewed_with_Utility_Eng__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled through from Opportunity Stage --></help>
+        <label><!-- Sales Status --></label>
+        <name>Sales_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scope Changes --></label>
+        <name>Scope_Changes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the link to the Scope Documents folder. --></help>
+        <label><!-- Scope Documents --></label>
+        <name>Scope_Documents__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the completed site visit checklist --></help>
+        <label><!-- Site Visit Checklist --></label>
+        <name>Site_Visit_Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Pricing Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approval status of the current pricing tool approval record --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Pending</masterLabel>
+            <translation><!-- Approval Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Approval</masterLabel>
+            <translation><!-- Final Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preliminary Approval</masterLabel>
+            <translation><!-- Preliminary Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previously Approved</masterLabel>
+            <translation><!-- Previously Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Storage Energy (kWh) --></label>
+        <name>Storage_Energy_kWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Storage Power (kW) --></label>
+        <name>Storage_Power_kW__c</name>
+    </fields>
+    <fields>
+        <help><!-- STC Watts (Pricing inputs cell K188) --></help>
+        <label><!-- PV System Size from Estimating Tool --></label>
+        <name>System_Size_from_Pricing_Tool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Energy Storage System $/kWh --></label>
+        <name>System_kWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target EPC $/watt --></label>
+        <name>Target_EPC_watt__c</name>
+    </fields>
+    <fields>
+        <help><!-- If no Planning board decision, list any town restrictions or mandates. --></help>
+        <label><!-- Town restrictions or mandates? --></label>
+        <name>Town_restrictions_or_mandates__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from development/captive-onsite opportunities --></help>
+        <label><!-- Union --></label>
+        <name>Union_Oppty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Union-DO NOT USE --></label>
+        <name>Union__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this the pricing request that will be used for the PB3 Approval process? --></help>
+        <label><!-- Used for PB3 Approval? --></label>
+        <name>Used_for_PB3_Approval__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is checked if the Opportunity is identified as Utility Scale --></help>
+        <label><!-- Utility Scale --></label>
+        <name>Utility_Scale__c</name>
+    </fields>
+    <fields>
+        <help><!-- Updated with value from PVbid using PVbid sync button. --></help>
+        <label><!-- Utility Upgrades --></label>
+        <name>Utility_Upgrades__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wage Type as listed on the Opportunity --></help>
+        <label><!-- Wage Type --></label>
+        <name>Wage_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Sites included in the Pricing Tool --></help>
+        <label><!-- # of Sites priced (in this request) --></label>
+        <name>of_Sites_priced_in_this_request__c</name>
+    </fields>
+    <fields>
+        <help><!-- $/watt pulled through from the related opportunity --></help>
+        <label><!-- $/watt from Opportunity --></label>
+        <name>watt_from_Opportunity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pricing Summary cell I57 --></help>
+        <label><!-- $/watt from Pricing Tool --></label>
+        <name>watt_from_Pricing_Tool__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Development --></label>
+        <name>Development</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPC --></label>
+        <name>EPC</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please allow at least 1 business day for this request to be processed. --></errorMessage>
+        <name>Date_Pricing_Needed_by_Must_be_24_hours</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Pricing Request includes energy storage, ESD Final Price and ESD Direct COGS must be filled out in the Response Section before marking Pricing Request Complete --></errorMessage>
+        <name>Includes_Energy_Storage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Mobilization Date is required (except on initial record creation). --></errorMessage>
+        <name>Mobilization_Date_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter estimated process time (in hours) that it took the AE to complete this Pricing Request --></errorMessage>
+        <name>PT_Required_upon_completion</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Person Responsible must be filled out in order to submit a request. --></errorMessage>
+        <name>Person_Responsible_Required_to_Submit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Pricing Request Completed cannot be checked off if any of the field within the Pricing Request Response section are blank. --></errorMessage>
+        <name>Pricing_Request_Completed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Production Guarantee Level is required upon creation. If there is none, enter &quot;none&quot; in the field. --></errorMessage>
+        <name>Production_Guarantee_Level_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this pricing request is uses for the PB3 Approval Process a Site Visit Checklist is required --></errorMessage>
+        <name>Site_Visit_Checklist</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Union field cannot be blank on EPC Opportunities.  To updated the Union field you need to go to the related Opportunity and update it there.  Once updated you will be able to save your record. --></errorMessage>
+        <name>Union_Field_Has_a_Value</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Cancel_Request --></label>
+        <name>Cancel_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Pricing_Request --></label>
+        <name>Clone_Pricing_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_Request --></label>
+        <name>Submit_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Sync_With_PVBid --></label>
+        <name>Sync_With_PVBid</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Sync_to_Opportunity --></label>
+        <name>Sync_to_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

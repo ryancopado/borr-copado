@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Capture_Plan_Ready_for_Review_Mid_Atlantic</fullName>
+        <description>Capture Plan Ready for Review - Mid Atlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_MidAtlantic</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Capture_Plan_Ready_for_Review_NE</fullName>
+        <description>Capture Plan Ready for Review - NE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NE</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Capture_Plan_Ready_for_Review_NorCal</fullName>
+        <description>Capture Plan Ready for Review - NorCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NorCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Capture_Plan_Ready_for_Review_SoCal</fullName>
+        <description>Capture Plan Ready for Review - SoCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_SoCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Capture_Plan_West_Coast</fullName>
+        <description>Capture Plan West Coast</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alarner@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>astice@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>asudhir@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dberwick@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kkearney@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mtea@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tsunderland@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Draft_Ready_for_Review_Mid_Atlantic</fullName>
+        <description>Draft Ready for Review -Mid Atlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_MidAtlantic</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Ready_for_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Draft_Ready_for_Review_NE</fullName>
+        <description>Draft Ready for Review -NE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NE</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Ready_for_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Draft_Ready_for_Review_NorCal</fullName>
+        <description>Draft Ready for Review -NorCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NorCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Ready_for_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Draft_Ready_for_Review_SoCal</fullName>
+        <description>Draft Ready for Review -SoCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_SoCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Ready_for_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Due_Date_Reminder</fullName>
+        <description>Due Date Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Due_Date_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>East_Coast_Proposal_Review_Team</fullName>
+        <description>East Coast Proposal Review Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_East</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Ready_for_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Reminder_to_west_coast_proposal_team_that_Review_Session_Start_Date_is_app</fullName>
+        <description>Email Reminder to west coast proposal team that Review Session Start Date is approaching</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NorCal</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Review_Session_Start_Date_Approaching</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_alert_to_Review_TeamEast</fullName>
+        <description>Email alert to Review Team East</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alarner@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>areed@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>astice@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>asudhir@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dberwick@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tsunderland@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Capture_Plan_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_alert_to_proposal_manager_whenever_prosposal_request_status_changes</fullName>
+        <description>Email alert to proposal manager whenever prosposal request status changes</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dbacchetti@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Request_Status_Change_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_reminder_to_proposal_review_team_regarding_Review_Session_Start_Date</fullName>
+        <description>Email reminder to East Cost Proposal Review team regarding Review Session Start Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_East</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Review_Session_Start_Date_Approaching</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_REview_complete_Mid_Atlantic</fullName>
+        <description>Proposal REview complete- Mid Atlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>astice@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dberwick@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rgarrity@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Review_SEssion_Ended</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Accepted</fullName>
+        <description>Proposal Request Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Completed</fullName>
+        <description>Proposal Request Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jpitera@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Proposal_Request_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Due_Date_PAST</fullName>
+        <description>Proposal Request Due Date PAST</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Proposal_Due_Date_PAST</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Due_Date_change_notification_to_proposal_manager</fullName>
+        <description>Proposal Request Due Date change notification to proposal manager</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dbacchetti@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Request_Due_Date_Change_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Due_Today</fullName>
+        <description>Proposal Request Due Today</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Request_Due_Today</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_Submitted</fullName>
+        <description>Proposal Request Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>etam@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Request_has_been_submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Request_on_Hold</fullName>
+        <description>Proposal Request on Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Request_on_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_Complete_Mid_Atlantic1</fullName>
+        <description>Proposal Review Complete- Mid Atlantic1</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_MidAtlantic</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Review_SEssion_Ended</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_East</fullName>
+        <description>Proposal Review East</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>areed@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mtea@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_West</fullName>
+        <description>Proposal Review West</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mtea@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Review</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_complete_NE</fullName>
+        <description>Proposal Review complete- NE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NE</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Review_SEssion_Ended</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_complete_NorCal</fullName>
+        <description>Proposal Review complete- NorCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NorCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Review_SEssion_Ended</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_Review_complete_SoCal</fullName>
+        <description>Proposal Review complete- SoCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_SoCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Review_SEssion_Ended</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_is_complete_Mid_Atlantic</fullName>
+        <description>Proposal is complete - Mid Atlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>acain@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>astice@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dberwick@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jpitera@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rgarrity@borregosolar.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_is_complete_Mid_Atlantic1</fullName>
+        <description>Proposal is complete Mid Atlantic</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_MidAtlantic</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_is_complete_NE</fullName>
+        <description>Proposal is complete NE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NE</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_is_complete_NorCal</fullName>
+        <description>Proposal is complete- NorCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_NorCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Proposal_is_complete_SoCal</fullName>
+        <description>Proposal is complete- SoCal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Project_Review_Team_SoCal</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Proposal_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Slice_and_Dice_Complete</fullName>
+        <description>Slice and Dice Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Alerts/Slice_and_Dice_Complete</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Assign_Sales_Associate_EAST</fullName>
+        <field>Sales_Associate_Responsible__c</field>
+        <literalValue>Michael Tea</literalValue>
+        <name>Assign Sales Associate- EAST</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Sales_Associate_WEST</fullName>
+        <field>Sales_Associate_Responsible__c</field>
+        <literalValue>Michael Tea</literalValue>
+        <name>Assign Sales Associate-WEST</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>On_Hold_update</fullName>
+        <field>Status__c</field>
+        <literalValue>On Hold</literalValue>
+        <name>On Hold update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ProposalCompletedDate</fullName>
+        <field>Proposal_Completed_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>ProposalCompletedDate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Proposal_Accepted</fullName>
+        <field>Status__c</field>
+        <literalValue>Accepted by Sales Associate</literalValue>
+        <name>Proposal Accepted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Proposal_Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Proposal Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_Update_Status_to_Cancelled</fullName>
+        <field>Status__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Recall Update Status to Cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_update_to_Submit</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Status update to Submit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Capture Plan Ready for Review - NorCal</fullName>
+        <actions>
+            <name>Capture_Plan_Ready_for_Review_NorCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Capture_Plan_Ready_for_Review__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Nor Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Capture Plan Ready for Review - SoCal</fullName>
+        <actions>
+            <name>Capture_Plan_Ready_for_Review_SoCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Capture_Plan_Ready_for_Review__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>So Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Capture Plan Ready for Review Mid Atlantic</fullName>
+        <actions>
+            <name>Capture_Plan_Ready_for_Review_Mid_Atlantic</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Capture_Plan_Ready_for_Review__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Mid Atlantic</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Capture Plan Ready for Review NE</fullName>
+        <actions>
+            <name>Capture_Plan_Ready_for_Review_NE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Capture_Plan_Ready_for_Review__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>New England</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Draft Ready for Review- Mid Atlantic</fullName>
+        <actions>
+            <name>Draft_Ready_for_Review_Mid_Atlantic</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Draft Posted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Mid Atlantic</value>
+        </criteriaItems>
+        <description>emails the review team when the status of the proposal request is &quot;Draft Posted&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Draft Ready for Review- NE</fullName>
+        <actions>
+            <name>Draft_Ready_for_Review_NE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Draft Posted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>New England</value>
+        </criteriaItems>
+        <description>emails the review team when the status of the proposal request is &quot;Draft Posted&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Draft Ready for Review- NorCal</fullName>
+        <actions>
+            <name>Draft_Ready_for_Review_NorCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Draft Posted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Nor Cal</value>
+        </criteriaItems>
+        <description>emails the review team when the status of the proposal request is &quot;Draft Posted&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Draft Ready for Review- SoCal</fullName>
+        <actions>
+            <name>Draft_Ready_for_Review_SoCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Draft Posted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>So Cal</value>
+        </criteriaItems>
+        <description>emails the review team when the status of the proposal request is &quot;Draft Posted&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Due Date Reminder</fullName>
+        <active>true</active>
+        <formula>AND(OR(ISPICKVAL(Status__c,&quot;New&quot;),ISPICKVAL(Status__c,&quot;Proposal Request Submitted&quot;)), DATEVALUE(Due_Date_Reminder__c) &gt; TODAY())</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Due_Date_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date_Reminder__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Proposal Completed - MidAtlantic</fullName>
+        <actions>
+            <name>Proposal_is_complete_Mid_Atlantic1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Mid Atlantic</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Completed - NE</fullName>
+        <actions>
+            <name>Proposal_is_complete_NE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>New England</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Completed- NorCal</fullName>
+        <actions>
+            <name>Proposal_is_complete_NorCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Nor Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Completed- SoCal</fullName>
+        <actions>
+            <name>Proposal_is_complete_SoCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>So Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Due Date PAST</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Due_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,On Hold,Cancelled</value>
+        </criteriaItems>
+        <description>Email notification to Oppty Owner when Date Date of proposal has passed and it has not been submitted</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Proposal_Request_Due_Date_PAST</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Proposal_Request_Due_Date_PAST</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date__c</offsetFromField>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Proposal_Request_Due_Date_PAST</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date__c</offsetFromField>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Proposal_Request_Due_Date_PAST</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date__c</offsetFromField>
+            <timeLength>4</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Proposal_Request_Due_Date_PAST</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Proposal_Request__c.Due_Date__c</offsetFromField>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Proposal Request Complete</fullName>
+        <actions>
+            <name>Proposal_Request_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Request Due Date Change Notification</fullName>
+        <actions>
+            <name>Proposal_Request_Due_Date_change_notification_to_proposal_manager</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(  Due_Date__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Request Due Today</fullName>
+        <actions>
+            <name>Proposal_Request_Due_Today</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(DATEVALUE(Due_Date__c) = TODAY(),
+OR(NOT(ISPICKVAL(Status__c,&quot;Completed&quot;)),
+NOT(ISPICKVAL(Status__c,&quot;Cancelled&quot;)),
+NOT(ISPICKVAL(Status__c,&quot;On Hold&quot;)))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Request Status Change Notification</fullName>
+        <actions>
+            <name>Email_alert_to_proposal_manager_whenever_prosposal_request_status_changes</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Status__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ProposalCompletedDate</fullName>
+        <actions>
+            <name>ProposalCompletedDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Status__c ), ISPICKVAL(Status__c , &quot;Completed&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Review Session Ended-Mid Atlantic</fullName>
+        <actions>
+            <name>Proposal_Review_Complete_Mid_Atlantic1</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Review Session Ended</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Mid Atlantic</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Review Session Ended-NE</fullName>
+        <actions>
+            <name>Proposal_Review_complete_NE</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Review Session Ended</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>New England</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Review Session Ended-NorCal</fullName>
+        <actions>
+            <name>Proposal_Review_complete_NorCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Review Session Ended</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>Nor Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Review Session Ended-SoCal</fullName>
+        <actions>
+            <name>Proposal_Review_complete_SoCal</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Review Session Ended</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Branch__c</field>
+            <operation>equals</operation>
+            <value>So Cal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Slice and Dice Complete</fullName>
+        <actions>
+            <name>Slice_and_Dice_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Proposal_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Slice n Dice Complete</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

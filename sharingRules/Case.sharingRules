@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>All_Internal_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>All Internal Access</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Project,Landscaping,Module Washing,Performance Investigation,Maintenance Case,Construction Closeout,Design Modification,Reactive,Preoperational Commissioning,Operational Commissioning,O&amp;M Admin Support</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Lucas_Electric</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Lucas Electric</label>
+        <sharedTo>
+            <portalRole>LucasElectricCustomerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>ContactId</field>
+            <operation>equals</operation>
+            <value>0033400001tvxYz</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Cases_with_Resources_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Cases with Resources Group</label>
+        <sharedTo>
+            <role>DirectorofTechnology</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Reactive</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>00580000005MdXH</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_all_Service_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>View all Service Cases Performance Engineers</label>
+        <sharedTo>
+            <role>Engineering_Resource_Group</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Reactive</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value>00580000005MdXH</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

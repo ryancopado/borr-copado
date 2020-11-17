@@ -1,0 +1,29 @@
+<apex:page controller="clsPSDEditAttachment">
+<apex:form >
+  <apex:pageBlock title="Attachment Edit">
+  <apex:pagemessages id="MsgSection"></apex:pagemessages>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!SaveAttachment}">
+<apex:param name="id" value="{!Attch.Id}"/>
+</apex:commandButton>
+<apex:commandButton value="Cancel" action="{!CancelAttach}"/>
+
+</apex:pageBlockButtons>
+  <apex:pageBlockSection title="Attachment Edit">
+
+      
+                     <apex:inputField value="{!Attch.IsPrivate}"/> 
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                      <apex:inputField value="{!Attch.Name}"/>  
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>        
+                     <apex:inputField value="{!FileAttachment.WorkDesign__c}"/> 
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+                      <apex:inputField value="{!Attch.BodyLength}"/> 
+                 
+
+
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  
+  </apex:form>
+</apex:page>

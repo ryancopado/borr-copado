@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>-65*(AcctSeed__Transaction__c.Case__c.TotalLaborHours__c:SUM + AcctSeed__Transaction__c.Case__c.TotalLaborHoursfromWOs__c:SUM+ AcctSeed__Transaction__c.SV__c.Total_Work_Hours__c:SUM)</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Three Hours fields * 65 by GL category</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>AcctSeed__Transaction__c$AcctSeed__Project__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Labor Cost by Project Name &amp; GL</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>-65*(AcctSeed__Transaction__c.Case__c.TotalLaborHours__c:SUM + AcctSeed__Transaction__c.Case__c.TotalLaborHoursfromWOs__c:SUM+ AcctSeed__Transaction__c.SV__c.Total_Work_Hours__c:SUM)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>AcctSeed__Transaction__c$Project_Account__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Labor Cost by Project Account</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>AcctSeed__Transaction__c.AcctSeed__Report_Amount__c:SUM - (65*(AcctSeed__Transaction__c.Case__c.TotalLaborHours__c:SUM + AcctSeed__Transaction__c.Case__c.TotalLaborHoursfromWOs__c:SUM+ AcctSeed__Transaction__c.SV__c.Total_Work_Hours__c:SUM))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>AcctSeed__Transaction__c$AcctSeed__Project__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Profit by Project Name &amp; GL</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>AcctSeed__Transaction__c.AcctSeed__Report_Amount__c:SUM- (65*(AcctSeed__Transaction__c.Case__c.TotalLaborHours__c:SUM + AcctSeed__Transaction__c.Case__c.TotalLaborHoursfromWOs__c:SUM+ AcctSeed__Transaction__c.SV__c.Total_Work_Hours__c:SUM))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA4</developerName>
+        <downGroupingContext>AcctSeed__Transaction__c$Project_Account__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Profit by Project Account</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c$AcctSeed__Report_Amount__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Transaction__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c$AcctSeed__Project__c.Overall_Project_Size_Watts_STC__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c$Case__c.TotalLaborHoursfromWOs__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c$Case__c.TotalLaborHours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Transaction__c$SV__c.Total_Work_Hours__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Transaction__c$AcctSeed__Project__c.Site_State__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c$AcctSeed__GL_Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Balance Sheet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c$AcctSeed__GL_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>3100,3700,3102,3702</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c$AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>2019-07</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c$AcctSeed__Accounting_Period__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>2020-08</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c$AcctSeed__GL_Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c$AcctSeed__Project__c.Contract__c.O_M_Package__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c$Project_Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c$AcctSeed__Project__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>O&amp;M Revenue &amp; COGS per Project T12</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Transactions_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Transaction__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>MaintenancePlan</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Maintenance Plans with Maintenance Assets</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>MaintenanceAssets</relationship>
+    </join>
+    <label>Maintenance Plans with Maintenance Assets</label>
+    <sections>
+        <masterLabel>Maintenance Plans</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Maintenance Assets</masterLabel>
+    </sections>
+</ReportType>

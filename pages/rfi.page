@@ -1,0 +1,371 @@
+<apex:page standardController="Request_for_Information_RFI__c" renderAs="pdf" extensions="rfi_imbed"   >
+    <!-- <apex:stylesheet value="{!URLFOR($Resource.po_style)}"/>
+    <apex:variable var="labelWidth" value="160px"/>
+    <apex:variable var="labelWidthWide" value="200px"/>
+    <apex:variable var="dataWidth" value="160px"/>
+    <apex:variable var="wideDataWidth" value="500px"/>  -->
+
+    <apex:form >
+        <table width="700px">
+
+              <tr>
+                <td  colspan="5" width="100%" height="20%" >
+                     <table>
+                        <tr>
+                            <td align="left" width="35%" >
+                                <apex:image url="{!$Resource.borrego}" width="65%" height="65%"/>
+                            </td>
+                            <td align="center" width="50%" style="vertical-align:top; text-align:center; font-size:18px" height="50px">
+                            <br/><br/>
+                                <b>REQUEST FOR INFORMATION       </b>
+                            </td>
+                        </tr>
+                     </table>                       
+                     
+                </td>
+                  
+            </tr>
+            
+            
+            
+            <tr><td colspan="5"><hr /></td></tr>
+           <!-- <tr><td><br /><br /></td></tr>-->
+             
+            <tr>
+          
+                <td style="font-weight:bold;width:27%">RFI No</td>
+                <td style="width:23%">{!Request_for_Information_RFI__c.Name}</td>
+                <!--<td style="font-weight:bold;width:35%">Response Date</td>
+                <td style="width:20%">
+                        <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!Request_for_Information_RFI__c.Response_Date__c}" /> 
+                        </apex:outputText>
+                </td>-->
+                <td style="vertical-align:top; text-align:right; font-weight:bold; width:28%">Requested Response Date</td>
+                <td style="vertical-align:top; text-align:right; width:20%">
+                        <apex:outputText style="vertical-align:top;" value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!Request_for_Information_RFI__c.Request_Response_Date__c}" /> 
+                        </apex:outputText>
+                </td> 
+          </tr>
+           <tr><td></td></tr>
+          <tr>
+          
+                <td style="vertical-align:top;font-weight:bold">Project</td>
+                <td >{!project.Name}</td>
+                <td style="vertical-align:top;font-weight:bold;"></td>
+                <td style="width:20%">
+                         
+                </td>
+            
+          </tr>
+           <tr><td></td></tr>
+       <!--   <tr>          
+            <td style="vertical-align:top;font-weight:bold;">To</td>
+            <td>{!Request_for_Information_RFI__c.Account__r.Name}</td>
+            <td></td>
+            <td></td>                         
+          </tr>-->
+          <tr>          
+            <td style="vertical-align:top;font-weight:bold;">ATTN:</td>
+            <td style="vertical-align:top">{!Request_for_Information_RFI__c.Contact__r.Name}</td>
+             <td></td>
+            <td></td>                   
+          </tr>
+          
+            <tr><td colspan="5"><hr /></td></tr>
+            <!-- <tr><td><br /><br /></td></tr>-->
+                       
+          
+           <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Subject</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.Subject__c}</td>
+                                   
+          </tr> 
+            <tr><td><br/></td></tr>              
+          <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Specification</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.Specification_Reference__c}</td>
+                                    
+          </tr>     
+           <tr><td><br/></td></tr>    
+          <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Drawing Reference</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.Drawing_Reference__c}</td>
+                                  
+          </tr>     
+           <tr><td><br/></td></tr>
+          <tr>          
+            <td style="vertical-align:top;font-weight:bold;vertical-align:top">Request</td>
+            <td colspan="3"><apex:outputField value="{!Request_for_Information_RFI__c.Detailed_Description__c}"/></td>
+                                   
+          </tr>    
+          
+          <tr><td><br/></td></tr>
+                  
+           <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Recommended Solution</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.Recommended_Solution__c}</td>
+                                      
+          </tr>  
+           <tr><td><br/></td></tr>
+          <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Attachments</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.Attachments__c}</td>
+                                  
+          </tr>   
+           <tr><td><br/></td></tr> 
+           <tr>          
+            <td style="vertical-align:top;font-weight:bold;"># Of Sheets</td>
+            <td colspan="3">{!Request_for_Information_RFI__c.No_of_Sheets__c}</td>
+                                    
+          </tr>    
+          
+          <tr><td colspan="5"><hr /></td></tr>
+           <!-- <tr><td><br /><br /></td></tr>-->
+          
+          <tr>          
+            <td Colspan="3" style="vertical-align:top;font-weight:bold;">Return Response via Email or Fax To:</td>
+            <td> </td>
+                                   
+          </tr>  
+           <tr><td><br/></td></tr>
+          <tr>          
+            <td style="vertical-align:bottom;font-weight:bold;">Borrego Solar Systems ATTN:</td>
+            <td style="vertical-align:bottom;">{!Request_for_Information_RFI__c.CreatedBy.Name}</td>
+             <td style="vertical-align:bottom; text-align:center; font-weight:bold;">Submitted By</td>
+            <td style="vertical-align:bottom; text-align:left;">{!Request_for_Information_RFI__c.CreatedBy.Name}</td> 
+                             
+          </tr>    
+          <tr><td></td></tr>
+         <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Email</td>
+            <td style="vertical-align:top;">{!Request_for_Information_RFI__c.CreatedBy.Email}</td>
+              <td style="vertical-align:top; text-align:center; font-weight:bold;">Email</td>
+            <td style="vertical-align:top; text-align:right;">{!Request_for_Information_RFI__c.CreatedBy.Email}</td>     
+                                
+          </tr>  
+           <tr><td></td></tr>     
+         <tr>          
+            <td style="vertical-align:top;font-weight:bold;">Fax</td>
+            <td style="vertical-align:top;">{!Request_for_Information_RFI__c.CreatedBy.Fax}</td>
+              <td style="vertical-align:top; text-align:center; font-weight:bold;">Phone</td>
+            <td style="vertical-align:top;">{!Request_for_Information_RFI__c.CreatedBy.Phone}</td>                          
+          </tr>           
+        </table>
+    </apex:form>
+</apex:page>
+
+
+<!-- 
+
+ <tr>
+                <td  colspan="4" width="100%" align="center" >
+                    <apex:image url="{!$Resource.borrego}" width="20%" height="20%"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="vertical-align:top; text-align:center; font-size:18px" width="100%" height="50px">
+                    <b>REQUEST FOR INFORMATION</b>
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                        <apex:column width="{!labelWidth}" style="text-align:right">
+                            <b>ATTENTION: <br/>
+                            PROJECT: <br/>
+                            JOB NUMBER: </b><br/>
+                        </apex:column>
+                        <apex:column width="{!dataWidth}">
+                            <b>{!contact.Name}<br/>
+                             {!project.Name}<br/>
+                             {!rfi.Project_Number__c}</b><br/>
+                    </apex:column>
+                    </apex:dataTable>
+                </td>   
+                <td colspan="2" style="vertical-align:top;" >
+                   <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                        <apex:column width="{!labelWidthWide}" style="text-align:right">
+                            <b>RFI No: </b><br/>
+                            Date: <br/>
+                        </apex:column>
+                        <apex:column width="{!dataWidth}">
+                            <b><apex:outputField value="{!rfi.Name}"/></b><br/>
+                             {!rfiDate}<br/>
+                        </apex:column>
+                    </apex:dataTable>
+                    <br/><br/>
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                        <apex:column width="{!labelWidth}" style="text-align:right">
+                            Requested by: <br/>
+                            Contact: <br/>
+                        </apex:column>
+                        <apex:column width="{!dataWidth}">
+                            Borrego Solar Systems<br/>
+                            {!rfiOwner.Name}<br/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>   
+                <td style="vertical-align:top;" >
+                   <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                        <apex:column width="{!labelWidthWide}" style="text-align:right">
+                            <b>Request Response Date: </b><br/>
+                        </apex:column>
+                        <apex:column width="{!dataWidth}">
+                            <b><apex:outputField value="{!rfi.Request_Response_Date__c}"/></b><br/>
+                        </apex:column>
+                    </apex:dataTable>
+                    <br/>
+                </td>
+            </tr>
+            
+             <tr>
+                <td colspan="2" style="vertical-align:top" maxWidth="310">
+                    <table width="310" >
+                        <tr>
+                            <td width="{!labelWidth}" style="vertical-align:top;text-align:right;">
+                                <b>Subject: </b>
+                            </td>
+                            <td width="{!dataWidth}" style="vertical-align:top;text-align:left;">
+                                <b>{!Request_for_Information_RFI__c.Subject__c}</b>
+                            </td>
+                        </tr>
+                    </table>
+                </td> 
+                 <td colspan="2" style="vertical-align:top" > 
+                 
+<table width= "310">
+             
+
+          </table>
+
+                 </td> 
+            </tr>
+
+          
+
+       </table>
+
+<br></br>
+
+        <table width="725" height="400" >
+            <tr style="text-wrap:normal; word-wrap:break-word;">
+                <td colspan="1" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                        <b>Drawing Reference: </b><br/><br/>
+ 
+                      </apex:column>
+                    <apex:column width="{!wideDataWidth}">&nbsp;<br/><br/>
+                          
+                         <apex:outputField value="{!rfi.Drawing_Reference__c}"/><br/>    
+                       </div>        
+                    </apex:column>
+                </apex:dataTable>
+             </td>  
+            </tr>
+            
+            </table>
+
+<br></br>
+
+
+        <table width="725" height="400" >
+            <tr style="text-wrap:normal; word-wrap:break-word;">
+                <td colspan="1" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                        <b>Specification Reference: </b><br/><br/>
+ 
+                      </apex:column>
+                    <apex:column width="{!wideDataWidth}">&nbsp;<br/><br/>
+                       <div style="width:75%; text-wrap:normal; word-wrap:break-word;">     
+                         <apex:outputField value="{!rfi.Specification_Reference__c}"/><br/>    
+                       </div>        
+                    </apex:column>
+                </apex:dataTable>
+             </td>  
+            </tr>
+            
+            </table>
+
+<br></br>
+<br></br>
+
+        <table width="725" height="400" >
+            <tr style="text-wrap:normal; word-wrap:break-word;">
+                <td colspan="1" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                        <b>Attachments: </b><br/><br/>
+ 
+                      </apex:column>
+                    <apex:column width="{!wideDataWidth}">&nbsp;<br/><br/>
+                       <div style="width:75%; text-wrap:normal; word-wrap:break-word;">     
+                         <apex:outputField value="{!rfi.Attachments__c}"/><br/>    
+                       </div>        
+                    </apex:column>
+                </apex:dataTable>
+             </td>  
+            </tr>
+            
+            </table>
+
+<br></br>
+
+        <table width="725" height="400" >
+            <tr style="text-wrap:normal; word-wrap:break-word;">
+                <td colspan="1" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                        <b>Request: </b><br/><br/>
+ 
+                      </apex:column>
+                    <apex:column width="{!wideDataWidth}">&nbsp;<br/><br/>
+                       <div style="width:75%; text-wrap:normal; word-wrap:break-word;">     
+                         <apex:outputField value="{!rfi.Detailed_Description__c}"/><br/>    
+                       </div>        
+                    </apex:column>
+                </apex:dataTable>
+             </td>  
+            </tr>
+           
+            
+            
+            <td colspan="2" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                   
+                   
+                    </apex:column>
+                    <apex:column width="{!dataWidth}">
+                        
+                   
+                    </apex:column>
+                </apex:dataTable>
+             </td> 
+             
+             <td colspan="2" style="vertical-align:top">
+                <apex:dataTable value="{!Request_for_Information_RFI__c}" var="rfi">
+                    <apex:column width="{!labelWidth}" style="text-align:right">
+                  
+                    </apex:column>
+                    <apex:column width="{!dataWidth}">
+                 
+                    </apex:column>
+                </apex:dataTable>
+             </td>   
+
+             </tr>   
+
+
+ -->

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Drawing Releases/Revisions</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Drawing Releases/Revisions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned Apps Engineer Email --></label>
+        <name>Assigned_Apps_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- the initials of person that checked drawing --></help>
+        <label><!-- Checked By --></label>
+        <name>Checked_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Civil Engineer Email --></label>
+        <name>Civil_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Civil Engineer --></label>
+        <name>Civil_Engineer__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions (Civil Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- list of documents that are impacted by changes --></help>
+        <label><!-- Contract Documents Affected --></label>
+        <name>Contract_Documents_Affected__c</name>
+    </fields>
+    <fields>
+        <help><!-- date revision was created --></help>
+        <label><!-- Date Created --></label>
+        <name>Date_Created__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email of the Development SDE pulled from the Site --></help>
+        <label><!-- Development SDE Email --></label>
+        <name>Development_SDE_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- initials of person who completed the drawing revision --></help>
+        <label><!-- Drawn By --></label>
+        <name>Drawn_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electrical Engineer Email --></label>
+        <name>Electrical_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electrical Engineer --></label>
+        <name>Electrical_Engineer__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions (Electrical Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- pre-fills upon creation with email from Estimator field on related project via a WF --></help>
+        <label><!-- Estimator Email --></label>
+        <name>Estimator_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the link where the PDF of the revision can be found --></help>
+        <label><!-- Link to PDF of Release --></label>
+        <name>Link_to_PDF_of_Release__c</name>
+    </fields>
+    <fields>
+        <help><!-- autofills with  pre construction manager email from related Site upon creation via WF --></help>
+        <label><!-- PCM Email --></label>
+        <name>PCM_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email from the Site of the Project Coordinator/ APM --></help>
+        <label><!-- Project Coordinator/ APM Email --></label>
+        <name>Project_Coordinator_APM_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Developer Email --></label>
+        <name>Project_Developer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager Email --></label>
+        <name>Project_Manager_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- project revisions are related to --></help>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- revision number --></help>
+        <label><!-- Rev# --></label>
+        <name>Rev__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email from Site of SDE --></help>
+        <label><!-- SDE Email --></label>
+        <name>SDE_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Super Email --></label>
+        <name>Site_Super_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Super --></label>
+        <name>Site_Super__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions (Site Super) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Structural Engineer Email --></label>
+        <name>Structural_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Structural Engineer --></label>
+        <name>Structural_Engineer__c</name>
+        <relationshipLabel><!-- Drawing Releases/Revisions (Structural Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>50% Set Initial Release</masterLabel>
+            <translation><!-- 50% Set Initial Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50% Set Releases</masterLabel>
+            <translation><!-- 50% Set Releases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFC Initial Revision</masterLabel>
+            <translation><!-- CD IFC Initial Revision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFC Revisions</masterLabel>
+            <translation><!-- CD IFC Revisions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFR Initial Release</masterLabel>
+            <translation><!-- CD IFR Initial Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFR Releases</masterLabel>
+            <translation><!-- CD IFR Releases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Engineering Initial Release</masterLabel>
+            <translation><!-- Development Engineering Initial Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Engineering Releases</masterLabel>
+            <translation><!-- Development Engineering Releases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IFP</masterLabel>
+            <translation><!-- IFP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record Drawings</masterLabel>
+            <translation><!-- Record Drawings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Use Permit Initial Release</masterLabel>
+            <translation><!-- Site Use Permit Initial Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Use Permit Releases</masterLabel>
+            <translation><!-- Site Use Permit Releases --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- When entering CD IFC revision you need to enter in a Rev# --></errorMessage>
+        <name>CD_IFC_Revisions_requires_Rev_Number</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This project is being managed in Procore. --></errorMessage>
+        <name>Procore_projects</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Drawing_Release_Revision --></label>
+        <name>New_Drawing_Release_Revision</name>
+    </webLinks>
+</CustomObjectTranslation>

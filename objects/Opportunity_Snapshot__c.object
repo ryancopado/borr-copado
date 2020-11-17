@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>created to be used for analytic snapshot for opportunity pipeline</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunity Snapshots</relationshipLabel>
+        <relationshipName>Opportunity_Snapshots</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Approximate_Energy_Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Approximate Energy Credit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approximate_Install_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Approximate Install Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bookings_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Bookings Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <externalId>false</externalId>
+        <label>Branch</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Current_Project_System_Size_MW__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Project System Size (w)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Project_System_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Project System Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_PB3_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Date PB3 Complete</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Snapshot__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Snapshot</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Est_PB3_Submission__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_PB3_Submission_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Est PB3 Submission</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_PB3_Submission_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated PB3 Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Yearly_Production_in_kWh__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Yearly Production in kWh</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Financing_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Financing Source</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Forecast_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Forecast Category</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Source_Specific__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Source Specific</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>San Diego Home Show 2007</fullName>
+                    <default>false</default>
+                    <label>San Diego Home Show 2007</label>
+                </value>
+                <value>
+                    <fullName>Shades of Green</fullName>
+                    <default>false</default>
+                    <label>Shades of Green</label>
+                </value>
+                <value>
+                    <fullName>Solano Stroll 2007</fullName>
+                    <default>false</default>
+                    <label>Solano Stroll 2007</label>
+                </value>
+                <value>
+                    <fullName>Solar Homes Tour</fullName>
+                    <default>false</default>
+                    <label>Solar Homes Tour</label>
+                </value>
+                <value>
+                    <fullName>Solar Power 2006</fullName>
+                    <default>false</default>
+                    <label>Solar Power 2006</label>
+                </value>
+                <value>
+                    <fullName>Solar Power 2007</fullName>
+                    <default>false</default>
+                    <label>Solar Power 2007</label>
+                </value>
+                <value>
+                    <fullName>West Coast Green</fullName>
+                    <default>false</default>
+                    <label>West Coast Green</label>
+                </value>
+                <value>
+                    <fullName>Print</fullName>
+                    <default>false</default>
+                    <label>Print</label>
+                </value>
+                <value>
+                    <fullName>Radio</fullName>
+                    <default>false</default>
+                    <label>Radio</label>
+                </value>
+                <value>
+                    <fullName>Radio - NPR</fullName>
+                    <default>false</default>
+                    <label>Radio - NPR</label>
+                </value>
+                <value>
+                    <fullName>Radio - The River</fullName>
+                    <default>false</default>
+                    <label>Radio - The River</label>
+                </value>
+                <value>
+                    <fullName>TV</fullName>
+                    <default>false</default>
+                    <label>TV</label>
+                </value>
+                <value>
+                    <fullName>Google</fullName>
+                    <default>false</default>
+                    <label>Google</label>
+                </value>
+                <value>
+                    <fullName>MSN</fullName>
+                    <default>false</default>
+                    <label>MSN</label>
+                </value>
+                <value>
+                    <fullName>Yahoo</fullName>
+                    <default>false</default>
+                    <label>Yahoo</label>
+                </value>
+                <value>
+                    <fullName>Other Search Engine</fullName>
+                    <default>false</default>
+                    <label>Other Search Engine</label>
+                </value>
+                <value>
+                    <fullName>CalFinder</fullName>
+                    <default>false</default>
+                    <label>CalFinder</label>
+                </value>
+                <value>
+                    <fullName>Construction Industry</fullName>
+                    <default>false</default>
+                    <label>Construction Industry</label>
+                </value>
+                <value>
+                    <fullName>Diamond Certified</fullName>
+                    <default>false</default>
+                    <label>Diamond Certified</label>
+                </value>
+                <value>
+                    <fullName>Employee</fullName>
+                    <default>false</default>
+                    <label>Employee</label>
+                </value>
+                <value>
+                    <fullName>Existing Customer</fullName>
+                    <default>false</default>
+                    <label>Existing Customer</label>
+                </value>
+                <value>
+                    <fullName>FindSolar</fullName>
+                    <default>false</default>
+                    <label>FindSolar</label>
+                </value>
+                <value>
+                    <fullName>Other Installer</fullName>
+                    <default>false</default>
+                    <label>Other Installer</label>
+                </value>
+                <value>
+                    <fullName>Renewable Energy Access</fullName>
+                    <default>false</default>
+                    <label>Renewable Energy Access</label>
+                </value>
+                <value>
+                    <fullName>Vendor</fullName>
+                    <default>false</default>
+                    <label>Vendor</label>
+                </value>
+                <value>
+                    <fullName>Vendor - Evergreen</fullName>
+                    <default>false</default>
+                    <label>Vendor - Evergreen</label>
+                </value>
+                <value>
+                    <fullName>Vendor - GE</fullName>
+                    <default>false</default>
+                    <label>Vendor - GE</label>
+                </value>
+                <value>
+                    <fullName>Vendor - Sharp</fullName>
+                    <default>false</default>
+                    <label>Vendor - Sharp</label>
+                </value>
+                <value>
+                    <fullName>Verde Energy</fullName>
+                    <default>false</default>
+                    <label>Verde Energy</label>
+                </value>
+                <value>
+                    <fullName>Miscellaneous</fullName>
+                    <default>false</default>
+                    <label>Miscellaneous</label>
+                </value>
+                <value>
+                    <fullName>Berkeley/Oakland</fullName>
+                    <default>false</default>
+                    <label>Berkeley/Oakland</label>
+                </value>
+                <value>
+                    <fullName>Campbell</fullName>
+                    <default>false</default>
+                    <label>Campbell</label>
+                </value>
+                <value>
+                    <fullName>Contra Costa Central</fullName>
+                    <default>false</default>
+                    <label>Contra Costa Central</label>
+                </value>
+                <value>
+                    <fullName>Contra Costa County</fullName>
+                    <default>false</default>
+                    <label>Contra Costa County</label>
+                </value>
+                <value>
+                    <fullName>Marin</fullName>
+                    <default>false</default>
+                    <label>Marin</label>
+                </value>
+                <value>
+                    <fullName>Napa</fullName>
+                    <default>false</default>
+                    <label>Napa</label>
+                </value>
+                <value>
+                    <fullName>Oakland</fullName>
+                    <default>false</default>
+                    <label>Oakland</label>
+                </value>
+                <value>
+                    <fullName>Orange County Central</fullName>
+                    <default>false</default>
+                    <label>Orange County Central</label>
+                </value>
+                <value>
+                    <fullName>Orange County Coastal</fullName>
+                    <default>false</default>
+                    <label>Orange County Coastal</label>
+                </value>
+                <value>
+                    <fullName>Orange County South</fullName>
+                    <default>false</default>
+                    <label>Orange County South</label>
+                </value>
+                <value>
+                    <fullName>San Diego Coastal</fullName>
+                    <default>false</default>
+                    <label>San Diego Coastal</label>
+                </value>
+                <value>
+                    <fullName>San Diego North Coastal</fullName>
+                    <default>false</default>
+                    <label>San Diego North Coastal</label>
+                </value>
+                <value>
+                    <fullName>San Jose</fullName>
+                    <default>false</default>
+                    <label>San Jose</label>
+                </value>
+                <value>
+                    <fullName>Sonoma</fullName>
+                    <default>false</default>
+                    <label>Sonoma</label>
+                </value>
+                <value>
+                    <fullName>Other Yellow Pages</fullName>
+                    <default>false</default>
+                    <label>Other Yellow Pages</label>
+                </value>
+                <value>
+                    <fullName>Banner</fullName>
+                    <default>false</default>
+                    <label>Banner</label>
+                </value>
+                <value>
+                    <fullName>Prius</fullName>
+                    <default>false</default>
+                    <label>Prius</label>
+                </value>
+                <value>
+                    <fullName>Truck</fullName>
+                    <default>false</default>
+                    <label>Truck</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Campaign</fullName>
+                    <default>false</default>
+                    <label>Campaign</label>
+                </value>
+                <value>
+                    <fullName>Press</fullName>
+                    <default>false</default>
+                    <label>Press</label>
+                </value>
+                <value>
+                    <fullName>News</fullName>
+                    <default>false</default>
+                    <label>News</label>
+                </value>
+                <value>
+                    <fullName>Seminar</fullName>
+                    <default>false</default>
+                    <label>Seminar</label>
+                </value>
+                <value>
+                    <fullName>Talk</fullName>
+                    <default>false</default>
+                    <label>Talk</label>
+                </value>
+                <value>
+                    <fullName>Unknown Other</fullName>
+                    <default>false</default>
+                    <label>Unknown Other</label>
+                </value>
+                <value>
+                    <fullName>Unknown Web</fullName>
+                    <default>false</default>
+                    <label>Unknown Web</label>
+                </value>
+                <value>
+                    <fullName>Sam&apos;s Club</fullName>
+                    <default>false</default>
+                    <label>Sam&apos;s Club</label>
+                </value>
+                <value>
+                    <fullName>Store #6651 Fountain Valley</fullName>
+                    <default>false</default>
+                    <label>Store #6651 Fountain Valley</label>
+                </value>
+                <value>
+                    <fullName>Store #6234 Vista</fullName>
+                    <default>false</default>
+                    <label>Store #6234 Vista</label>
+                </value>
+                <value>
+                    <fullName>Store #6618 Irvine</fullName>
+                    <default>false</default>
+                    <label>Store #6618 Irvine</label>
+                </value>
+                <value>
+                    <fullName>Store #6612 Concord</fullName>
+                    <default>false</default>
+                    <label>Store #6612 Concord</label>
+                </value>
+                <value>
+                    <fullName>Store # 4709 Corona</fullName>
+                    <default>false</default>
+                    <label>Store # 4709 Corona</label>
+                </value>
+                <value>
+                    <fullName>Store # 4735 La Habra</fullName>
+                    <default>false</default>
+                    <label>Store # 4735 La Habra</label>
+                </value>
+                <value>
+                    <fullName>Store # 4822 Murrietta</fullName>
+                    <default>false</default>
+                    <label>Store # 4822 Murrietta</label>
+                </value>
+                <value>
+                    <fullName>Store # 6240 Glendora</fullName>
+                    <default>false</default>
+                    <label>Store # 6240 Glendora</label>
+                </value>
+                <value>
+                    <fullName>Store # 6610 Chino</fullName>
+                    <default>false</default>
+                    <label>Store # 6610 Chino</label>
+                </value>
+                <value>
+                    <fullName>Store # 6613 Long Beach</fullName>
+                    <default>false</default>
+                    <label>Store # 6613 Long Beach</label>
+                </value>
+                <value>
+                    <fullName>Store # 6619 Ontario</fullName>
+                    <default>false</default>
+                    <label>Store # 6619 Ontario</label>
+                </value>
+                <value>
+                    <fullName>Store # 6628 Torrance</fullName>
+                    <default>false</default>
+                    <label>Store # 6628 Torrance</label>
+                </value>
+                <value>
+                    <fullName>Bond List</fullName>
+                    <default>false</default>
+                    <label>Bond List</label>
+                </value>
+                <value>
+                    <fullName>MA Superintendents list</fullName>
+                    <default>false</default>
+                    <label>MA Superintendents list</label>
+                </value>
+                <value>
+                    <fullName>Superintendent List</fullName>
+                    <default>false</default>
+                    <label>Superintendent List</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lead_Source_Text__c</fullName>
+        <description>text value of lead source</description>
+        <externalId>false</externalId>
+        <inlineHelpText>text value of lead source</inlineHelpText>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Lead_Source_Specifics__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Lead Source Specifics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Lead_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Lead Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Affiliate</fullName>
+                    <default>false</default>
+                    <label>Affiliate</label>
+                </value>
+                <value>
+                    <fullName>Direct Marketing Campaign</fullName>
+                    <default>false</default>
+                    <label>Direct Marketing Campaign</label>
+                </value>
+                <value>
+                    <fullName>Event/Tradeshow</fullName>
+                    <default>false</default>
+                    <label>Event/Tradeshow</label>
+                </value>
+                <value>
+                    <fullName>Referral</fullName>
+                    <default>false</default>
+                    <label>Referral</label>
+                </value>
+                <value>
+                    <fullName>MQL notification</fullName>
+                    <default>false</default>
+                    <label>MQL notification</label>
+                </value>
+                <value>
+                    <fullName>Bid Boards</fullName>
+                    <default>false</default>
+                    <label>Bid Boards</label>
+                </value>
+                <value>
+                    <fullName>Prospected</fullName>
+                    <default>false</default>
+                    <label>Prospected</label>
+                </value>
+                <value>
+                    <fullName>Customer Originated - Email</fullName>
+                    <default>false</default>
+                    <label>Customer Originated - Email</label>
+                </value>
+                <value>
+                    <fullName>Customer Originated - Phone</fullName>
+                    <default>false</default>
+                    <label>Customer Originated - Phone</label>
+                </value>
+                <value>
+                    <fullName>Customer Originated - RFP</fullName>
+                    <default>false</default>
+                    <label>Customer Originated - RFP</label>
+                </value>
+                <value>
+                    <fullName>Customer Originated - Website</fullName>
+                    <default>false</default>
+                    <label>Customer Originated - Website</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Owner</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Record Type</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Oppty_Owner_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>opportunity owner manager</inlineHelpText>
+        <label>Oppty Owner Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Snapshots</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner Manager</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PB7_Approval_Date_from_CC_Submittal__c</fullName>
+        <externalId>false</externalId>
+        <label>PB7 Approval Date from CC Submittal</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PB7_Submittal_Date_from_Project__c</fullName>
+        <externalId>false</externalId>
+        <label>PB7 Submittal Date from Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Likelihood__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Likelihood</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposal_Submitted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposal Submitted Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_System_Size_watts__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed System Size (watts)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_ID__c</fullName>
+        <description>from SF</description>
+        <externalId>false</externalId>
+        <label>Record ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Site State</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Snapshot_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Snapshot Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospecting</fullName>
+                    <default>false</default>
+                    <label>Prospecting</label>
+                </value>
+                <value>
+                    <fullName>Qualified</fullName>
+                    <default>false</default>
+                    <label>Qualified</label>
+                </value>
+                <value>
+                    <fullName>LOI Signed</fullName>
+                    <default>false</default>
+                    <label>LOI Signed</label>
+                </value>
+                <value>
+                    <fullName>Option Lease Executed</fullName>
+                    <default>false</default>
+                    <label>Option Lease Executed</label>
+                </value>
+                <value>
+                    <fullName>Proposal Submitted</fullName>
+                    <default>false</default>
+                    <label>Proposal Submitted</label>
+                </value>
+                <value>
+                    <fullName>Shortlisted/Interviews</fullName>
+                    <default>false</default>
+                    <label>Shortlisted/Interviews</label>
+                </value>
+                <value>
+                    <fullName>Project Awarded</fullName>
+                    <default>false</default>
+                    <label>Project Awarded</label>
+                </value>
+                <value>
+                    <fullName>Project Booked</fullName>
+                    <default>false</default>
+                    <label>Project Booked</label>
+                </value>
+                <value>
+                    <fullName>EPC Signed</fullName>
+                    <default>false</default>
+                    <label>EPC Signed</label>
+                </value>
+                <value>
+                    <fullName>No Decision</fullName>
+                    <default>false</default>
+                    <label>No Decision</label>
+                </value>
+                <value>
+                    <fullName>Closed Lost</fullName>
+                    <default>false</default>
+                    <label>Closed Lost</label>
+                </value>
+                <value>
+                    <fullName>Not Ready / Pushed Out</fullName>
+                    <default>false</default>
+                    <label>Not Ready / Pushed Out</label>
+                </value>
+                <value>
+                    <fullName>Disqualified - Sales</fullName>
+                    <default>false</default>
+                    <label>Disqualified - Sales</label>
+                </value>
+                <value>
+                    <fullName>Disqualified - Technical</fullName>
+                    <default>false</default>
+                    <label>Disqualified - Technical</label>
+                </value>
+                <value>
+                    <fullName>Contract Signed</fullName>
+                    <default>false</default>
+                    <label>Contract Signed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>System_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>System Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_Text__c</fullName>
+        <description>text value of TYPE field on opportunity</description>
+        <externalId>false</externalId>
+        <inlineHelpText>text value of TYPE field on opportunity</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consulting Services</fullName>
+                    <default>false</default>
+                    <label>Consulting Services</label>
+                </value>
+                <value>
+                    <fullName>Design Only</fullName>
+                    <default>false</default>
+                    <label>Design Only</label>
+                </value>
+                <value>
+                    <fullName>Direct Sales</fullName>
+                    <default>false</default>
+                    <label>Direct Sales</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+                <value>
+                    <fullName>Sub-Contract Install</fullName>
+                    <default>false</default>
+                    <label>Sub-Contract Install</label>
+                </value>
+                <value>
+                    <fullName>Turnkey System</fullName>
+                    <default>false</default>
+                    <label>Turnkey System</label>
+                </value>
+                <value>
+                    <fullName>Upgrades</fullName>
+                    <default>false</default>
+                    <label>Upgrades</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Weight_Pipeline_Watts__c</fullName>
+        <externalId>false</externalId>
+        <label>Weight Pipeline Watts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weighted_Contract_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Weighted Pipeline Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Opportunity Snapshot</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Created_Date__c</columns>
+        <columns>Snapshot_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Opportunity Snapshot Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Opportunity Snapshots</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

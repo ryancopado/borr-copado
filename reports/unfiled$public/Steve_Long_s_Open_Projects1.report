@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Kickoff_Date_editable__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Size_Watts_STC__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Opportunity.Bookings_Value__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Site__c.Civil_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>steve long</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Site__c.Design_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New,Site Use Permit Set,50% Set,CD IFR,CD IFC,As Built,On Hold</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Site__c.Design_Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Steve Long&apos;s Open Projects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site__c@Site__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Site__c.Project_Kickoff_Date_editable__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

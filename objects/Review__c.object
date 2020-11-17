@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <description>Ongoing notes on performance reviews.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Areas_of_Improvement__c</fullName>
+        <description>Areas where the employee could improve</description>
+        <externalId>false</externalId>
+        <label>Areas of Improvement</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Performance Reviews</relationshipLabel>
+        <relationshipName>R00N300000018a65EAA</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Date_of_Note__c</fullName>
+        <description>Date of the incident, event, or note.</description>
+        <externalId>false</externalId>
+        <label>Date of Note</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Self_Evaluation__c</fullName>
+        <description>Employees self evaluation</description>
+        <externalId>false</externalId>
+        <label>Employee Self Evaluation</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Frustrations__c</fullName>
+        <description>Any frustrations the employee is dealing with.</description>
+        <externalId>false</externalId>
+        <label>Frustrations</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Happiness_Level__c</fullName>
+        <description>Empyee&apos;s rating of his/her happiness with their job and the company.</description>
+        <externalId>false</externalId>
+        <label>Happiness Level</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Income_Level_Review__c</fullName>
+        <description>A summary of the review of the employees current compensation package.</description>
+        <externalId>false</externalId>
+        <label>Income Level Review</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Positive_Performance_Highlights__c</fullName>
+        <description>Employee positive performance highlights</description>
+        <externalId>false</externalId>
+        <label>Positive Performance Highlights</label>
+        <length>3000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suggestions_Commetns__c</fullName>
+        <description>Any suggestions or comments from the employee on how thing are going or how company or his/her job could be improved.</description>
+        <externalId>false</externalId>
+        <label>Suggestions/Comments</label>
+        <length>3000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <description>A summary of the review note.</description>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>3000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>This is the type of review note you are entering.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive Performance</fullName>
+                    <default>true</default>
+                    <label>Positive Performance</label>
+                </value>
+                <value>
+                    <fullName>Negative Performance</fullName>
+                    <default>false</default>
+                    <label>Negative Performance</label>
+                </value>
+                <value>
+                    <fullName>Write Up</fullName>
+                    <default>false</default>
+                    <label>Write Up</label>
+                </value>
+                <value>
+                    <fullName>Question/Clarification</fullName>
+                    <default>false</default>
+                    <label>Question/Clarification</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Employee of Month</fullName>
+                    <default>false</default>
+                    <label>Employee of Month</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Review</label>
+    <nameField>
+        <label>Subject</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Reviews</pluralLabel>
+    <recordTypes>
+        <fullName>FormalReview</fullName>
+        <active>true</active>
+        <description>Any formal review</description>
+        <label>Formal Review</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Negative Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive Performance</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Question%2FClarification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Write Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OngoingReviewNote</fullName>
+        <active>true</active>
+        <description>Any notes on employee performance other than formal reviews.</description>
+        <label>Ongoing Review Note</label>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Employee of Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative Performance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive Performance</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Question%2FClarification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Write Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

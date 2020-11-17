@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Service_PO__c$Name</field>
+    </columns>
+    <columns>
+        <field>Service_PO__c$SCR_Description__c</field>
+    </columns>
+    <columns>
+        <field>Service_PO__c$Account__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Service_PO__c$SCR_Total_Cost__c</field>
+    </columns>
+    <columns>
+        <field>Service_PO__c$SCR_Vendor_Account__c</field>
+    </columns>
+    <description>DASHBOARD REPORT</description>
+    <filter>
+        <criteriaItems>
+            <column>Service_PO__c$SCR_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled,Rejected</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Quarter</dateGranularity>
+        <field>Service_PO__c$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Service PO&apos;s to Date</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Service_Purchase_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Service_PO__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

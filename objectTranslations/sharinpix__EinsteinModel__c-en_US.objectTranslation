@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Album Id --></label>
+        <name>sharinpix__AlbumId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>sharinpix__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Einstein Dataset --></label>
+        <name>sharinpix__EinsteinDataset__c</name>
+        <relationshipLabel><!-- Einstein Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Einstein Model Id --></label>
+        <name>sharinpix__EinsteinModelId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Number of training iterations for the neural network. Valid values are 1–100. If not specified, the default is calculated based on the dataset size. The larger the number, the longer the training takes to complete. --></help>
+        <label><!-- Epochs --></label>
+        <name>sharinpix__Epochs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Specifies how much the gradient affects the optimization of the model at each time step. Use this parameter to tune your model. Valid values are between 0.0001 and 0.01. If not specified, the default is 0.0001. --></help>
+        <label><!-- LearningRate --></label>
+        <name>sharinpix__LearningRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SharinPix Model Id --></label>
+        <name>sharinpix__ModelId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. JSON that contains parameters that specify how the model is created. Valid values:
+{&quot;trainSplitRatio&quot;: 0.n}—Lets you specify the ratio of data used to train the dataset and the data used to test the model. --></help>
+        <label><!-- TrainParams --></label>
+        <name>sharinpix__TrainParams__c</name>
+    </fields>
+</CustomObjectTranslation>

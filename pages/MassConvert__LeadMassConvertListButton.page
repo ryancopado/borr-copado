@@ -1,0 +1,17 @@
+<apex:page standardController="Lead" extensions="MassConvert.MassConvertExtension"  recordSetVar="Leads">
+        <script>
+   window.onload = function(e) {
+       var currentURL = window.location.href;
+       var recordId = '{!JSENCODE(recordId)}';
+       if(recordId == ''){
+           alert('Please select a record.');
+           window.history.back();
+       }
+       else{
+           var strID = recordId.replace(/[^\w\a,]/gi,'');
+           console.log(strID);
+           window.location.href = '/apex/MassConvert__Base_VFP_ConvertLeads?selectedRecords='+strID + '&retURL=' + location.href; 
+       }
+   };
+   </script>
+</apex:page>

@@ -1,0 +1,62 @@
+<apex:page standardController="Case" extensions="CaseSiteController" tabStyle="Case">
+	
+	<apex:form id="theForm">
+		<apex:pageMessages />
+		
+		<apex:outputPanel rendered="{!showRecordTypes}">
+			<apex:sectionHeader title="New Case" subtitle="Select Case Record Type" />
+			
+			<apex:pageBlock title="Select Case Record Type">
+				<apex:pageBlockButtons location="bottom">
+					<apex:commandButton value="Continue" action="{!saveRecordType}" disabled="{!fatalError}"/>
+					<apex:commandButton value="Cancel" action="{!cancelProject}" immediate="true"/>
+				</apex:pageBlockButtons>
+				
+				<apex:pageBlockSection >
+					<apex:selectList label="Record Type of new record" value="{!selectedRecordTypeId}" multiselect="false" size="1" required="true">
+						<apex:selectOptions value="{!recordTypeList}"/>
+					</apex:selectList>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:outputPanel>
+		
+		<apex:outputPanel rendered="{!!showRecordTypes}">
+			<apex:sectionHeader title="Case: Select Project" subtitle="{!caseRec.CaseNumber}" />
+			
+			<apex:pageBlock title="Case Select Project" mode="edit">
+				
+				<apex:pageBlockButtons >
+					<apex:commandButton value="Continue" action="{!saveProject}" rendered="{!isNewCase}" disabled="{!fatalError}"/>
+					<apex:commandButton value="Save" action="{!saveProject}" rendered="{!!isNewCase}" disabled="{!fatalError}"/>
+					<apex:commandButton value="Cancel" action="{!cancelProject}" immediate="true" />
+				</apex:pageBlockButtons>
+				
+				<apex:pageBlockSection columns="1" >
+					<apex:inputField value="{!caseRec.AccountId}" required="true" >
+						<apex:actionSupport event="onchange" reRender="theForm" action="{!changeAccount}"/>
+					</apex:inputField>
+					
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Project" />
+						<apex:selectList value="{!selectedProject}" title="Select a Project" size="1" >
+							<apex:selectOptions value="{!projectOptions}" />
+							<apex:actionSupport event="onchange" reRender="theForm" action="{!changeProject}"/>
+						</apex:selectList>
+					</apex:pageBlockSectionItem>
+					
+					<!-- 
+					<apex:pageBlockSectionItem rendered="{!showAsset}" >
+						<apex:outputLabel value="Asset" />
+						<apex:selectList value="{!selectedAsset}" title="Select an Asset" size="1" >
+							<apex:selectOptions value="{!assetOptions}" />
+						</apex:selectList>
+					</apex:pageBlockSectionItem>
+					-->
+				</apex:pageBlockSection>
+				
+			</apex:pageBlock>
+		</apex:outputPanel>
+		
+	</apex:form>
+	
+</apex:page>

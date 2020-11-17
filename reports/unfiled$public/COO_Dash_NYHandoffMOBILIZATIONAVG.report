@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Hand_off_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.SFDC_Project_Start_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>AcctSeed__Project__c.Days_between_Handoff_and_Mobilization__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Days_between_Handoff_and_Mobilization__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Newark Airport PPA (ConEd-BLDG 157),Newark Airport PPA (ConEd-BLDG 121),Newark Airport PPA (ConEd-BLDG 79)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Dead</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Ops_Division__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New York</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>COO Dash - NYHandoffMOBILIZATIONAVG</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.SFDC_Project_Start_Date__c</dateColumn>
+        <endDate>2015-05-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-06-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Safety Incident</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Safety Incidents</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the date that the incident occurred. --></help>
+        <label><!-- Date of Incident --></label>
+        <name>Date_of_Incident__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter details of the incident that occurred. --></help>
+        <label><!-- Incident Details --></label>
+        <name>Incident_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Safety Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the subcontractor that you are creating this safety incident for. --></help>
+        <label><!-- Subcontractor --></label>
+        <name>Subcontractor__c</name>
+        <relationshipLabel><!-- Safety Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Warning: Any time Sub is not following site specific safety plan 
+Near Miss: Something but no property damage/personal injury 
+Accident: Property damage/personal injury 
+3rd Party Violation: OSHA/client/city, etc. formally writes up safety violation --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>3rd Party Violation</masterLabel>
+            <translation><!-- 3rd Party Violation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accident</masterLabel>
+            <translation><!-- Accident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Near Miss</masterLabel>
+            <translation><!-- Near Miss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warning</masterLabel>
+            <translation><!-- Warning --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Assumption</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Assumptions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Vertical Assumption --></label>
+        <name>Active_Yearly_Cost_Assumption__c</name>
+        <relationshipLabel><!-- Active Sales Assumptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vertical Assumption --></label>
+        <name>Cost_Assumption__c</name>
+        <relationshipLabel><!-- Sales Assumptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Deactivated --></label>
+        <name>Date_Deactivated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-IX Dev $/W --></label>
+        <name>Non_IX_Dev_W__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Year and Non-IX Dev $/W cannot be changed. To adjust these values, clone the record or create a new one. --></errorMessage>
+        <name>Cannot_edit_sales_assumption_values</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Cares About --></label>
+        <name>DMAPP__Cares_About__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealmaker ID --></label>
+        <name>DMAPP__DealmakerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>DMAPP__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insight Namespace --></label>
+        <name>DMAPP__Namespace__c</name>
+        <relationshipLabel><!-- Personas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Personal Info --></label>
+        <name>DMAPP__Personal_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Success Measures --></label>
+        <name>DMAPP__Success_Measures__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>DMAPP__Title__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Dealmaker ID field cannot be updated after creation --></errorMessage>
+        <name>DMAPP__Prevent_Field_Update</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,3154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Configurator Filters --></label>
+        <name>SBQQ__ConfiguratorFilter</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Configurator Lookup --></label>
+        <name>SBQQ__ConfiguratorLookup</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Search Filters --></label>
+        <name>SBQQ__SearchFilters</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Search Results --></label>
+        <name>SBQQ__SearchResults</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Measured at the PCS AC terminals, not including auxiliary loads --></help>
+        <label><!-- AC-AC Round Trip Efficiency (%) --></label>
+        <name>AC_AC_Round_Trip_Efficiency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe supplied or optional AC disconnecting means --></help>
+        <label><!-- AC Disconnect --></label>
+        <name>AC_Disconnect__c</name>
+    </fields>
+    <fields>
+        <label><!-- AC Entry Positions --></label>
+        <name>AC_Entry_Positions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost of recommended solution --></help>
+        <label><!-- AC Equipment Cost --></label>
+        <name>AC_Equipment_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe preferred AC solution in terms of equipment required, constraints, etc --></help>
+        <label><!-- AC Equipment Required --></label>
+        <name>AC_Equipment_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- AC Grounding Conductor Sizes and Qty --></label>
+        <name>AC_Grounding_Conductor_Sizes_and_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- AC Output Terminal Temp Rating (°C) --></label>
+        <name>AC_Output_Terminal_Temp_Rating_C__c</name>
+        <picklistValues>
+            <masterLabel>60°C</masterLabel>
+            <translation><!-- 60°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75°C</masterLabel>
+            <translation><!-- 75°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90°C</masterLabel>
+            <translation><!-- 90°C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AC System Grounding --></label>
+        <name>AC_System_Grounding__c</name>
+    </fields>
+    <fields>
+        <label><!-- AC Terminal Alum Conductor Compatible? --></label>
+        <name>AC_Terminal_Alum_Conductor_Compatible__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AC Terminal Type --></label>
+        <name>AC_Terminal_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Terminal Lug or Bending Radius Constraints --></help>
+        <label><!-- AC Conductor Sizes and Quantity --></label>
+        <name>AC_Wire_Size_Limitations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the product compliant with ARRA guidelines? Checked = Yes, Unchecked = No --></help>
+        <label><!-- ARRA Compliant --></label>
+        <name>ARRA_Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Information --></label>
+        <name>Account_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Vendor --></label>
+        <name>AcctSeedERP__Default_Vendor__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This checkbox enables asset management for this product. With asset management an asset record is created when an inventory product is allocated to a sales order. The asset record is associated with the customer (account) and is used to track the product. --></help>
+        <label><!-- Inventory Asset --></label>
+        <name>AcctSeedERP__Inventory_Asset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Time --></label>
+        <name>AcctSeedERP__Lead_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturing Order Template --></label>
+        <name>AcctSeedERP__Manufacturing_Order_Template__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Minimum Order Quantity --></label>
+        <name>AcctSeedERP__Minimum_Order_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Safety Stock Quantity --></label>
+        <name>AcctSeedERP__Safety_Stock_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checking this field will exclude creating a Sales Order Line for any Opportunity Product associated with this Product when using the &quot;Create Sales Order&quot; button on an Opportunity. --></help>
+        <label><!-- Sales Order Exclude --></label>
+        <name>AcctSeedERP__Sales_Order_Exclude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serialized --></label>
+        <name>AcctSeedERP__Serialized__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Type --></label>
+        <name>AcctSeed__Accounting_Type__c</name>
+        <picklistValues>
+            <masterLabel>Tax Exempt Product</masterLabel>
+            <translation><!-- Tax Exempt Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Rate</masterLabel>
+            <translation><!-- Tax Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxable Product</masterLabel>
+            <translation><!-- Taxable Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Default Expense GL Account- Must be filled out to be used --></help>
+        <label><!-- Expense GL Account --></label>
+        <name>AcctSeed__Expense_GL_Account__c</name>
+        <relationshipLabel><!-- Products (Expense GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 1 --></label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 2 --></label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Products (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 3 --></label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Products (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Products (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Default Inventory GL Account- Must be filled out to be used --></help>
+        <label><!-- Inventory GL Account --></label>
+        <name>AcctSeed__Inventory_GL_Account__c</name>
+        <relationshipLabel><!-- Products (Inventory GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes whether the product is a managed inventory product --></help>
+        <label><!-- Inventory Product --></label>
+        <name>AcctSeed__Inventory_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of Inventory for Accounting Seed- Default to Purchased --></help>
+        <label><!-- Inventory Type --></label>
+        <name>AcctSeed__Inventory_Type__c</name>
+        <picklistValues>
+            <masterLabel>Kit</masterLabel>
+            <translation><!-- Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufactured</masterLabel>
+            <translation><!-- Manufactured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased</masterLabel>
+            <translation><!-- Purchased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raw Material</masterLabel>
+            <translation><!-- Raw Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is no longer used --></help>
+        <label><!-- zDep-Non-Inventoried Item --></label>
+        <name>AcctSeed__Non_Inventoried_Item__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default Revenue GL Account for the product- Must be filled in to use in a PO --></help>
+        <label><!-- Revenue GL Account --></label>
+        <name>AcctSeed__Revenue_GL_Account__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used when Avalara Tax Calculation is enabled. Enter the specific Avalara tax code to determine taxability. --></help>
+        <label><!-- Tax Code --></label>
+        <name>AcctSeed__Tax_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Group --></label>
+        <name>AcctSeed__Tax_Group__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate --></label>
+        <name>AcctSeed__Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used throughout Accounting Seed- Enter $1 for default
+Borrego does not use this functionality --></help>
+        <label><!-- Unit Cost --></label>
+        <name>AcctSeed__Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Basis for data on this product page --></help>
+        <label><!-- Active Data Sheet --></label>
+        <name>Active_Data_Sheet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional costs related to the product. Described in the &quot;Additional Equipment Costs Description&quot; field. Filled out by Procurement or the RG. --></help>
+        <label><!-- Additional Equipment Costs --></label>
+        <name>Additional_Equipment_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allowable C-Rate --></label>
+        <name>Allowable_C_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Altitude Rating (meters) --></label>
+        <name>Altitude_Rating_meters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications and Specifications --></label>
+        <name>Applications_and_Specifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Aux Output Terminal Temp Rating (C°), material --></help>
+        <label><!-- Aux Output Terminal Temp Rating (°C) --></label>
+        <name>Aux_Output_Terminal_Temp_Rating_C__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Avalara Tax Code for product level taxabiltiy rules. --></help>
+        <label><!-- Tax Code --></label>
+        <name>AvaAcctSeed__Tax_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the UPC Code for product level taxabiltiy rules. --></help>
+        <label><!-- UPC --></label>
+        <name>AvaAcctSeed__UPC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Nominal DC capacity of the battery --></help>
+        <label><!-- BOL Energy Capacity (Wh) --></label>
+        <name>BOL_Energy_Capacity_Wh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Install Manual Version Number --></label>
+        <name>Battery_Install_Manual_Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Installation Manual --></label>
+        <name>Battery_Installation_Manual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to battery module included in the energy storage unit --></help>
+        <label><!-- Battery Module --></label>
+        <name>Battery_Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Rack Fuse(A) --></label>
+        <name>Battery_Rack_Fuse_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Rack Vmax --></label>
+        <name>Battery_Rack_Vmax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Rack Vmin --></label>
+        <name>Battery_Rack_Vmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Battery Rack Vnom --></label>
+        <name>Battery_Rack_Vnom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bi-Polar Array? --></label>
+        <name>Bi_Polar_Array__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Borrego Local Archived Data Sheet --></label>
+        <name>Borrego_Local_Archived_Data_Sheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Borrego Standard Solution --></label>
+        <name>Borrego_Standard_Solution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the controller make predictions of system peak conditions to reduce coincident peaks? --></help>
+        <label><!-- Capacity Charge Management --></label>
+        <name>Capacity_Charge_Management__c</name>
+    </fields>
+    <fields>
+        <help><!-- Width of individual cells within panel --></help>
+        <label><!-- Cell Size --></label>
+        <name>Cell_Size__c</name>
+        <picklistValues>
+            <masterLabel>5&quot;</masterLabel>
+            <translation><!-- 5&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6&quot;</masterLabel>
+            <translation><!-- 6&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of cells in the module --></help>
+        <label><!-- Cell Type --></label>
+        <name>Cell_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amphorous</masterLabel>
+            <translation><!-- Amphorous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIGS</masterLabel>
+            <translation><!-- CIGS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CdTe</masterLabel>
+            <translation><!-- CdTe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monocrystalline</masterLabel>
+            <translation><!-- Monocrystalline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monocrystalline + Amphorous</masterLabel>
+            <translation><!-- Monocrystalline + Amphorous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polycrystalline</masterLabel>
+            <translation><!-- Polycrystalline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polycrystalline + Amorphous</masterLabel>
+            <translation><!-- Polycrystalline + Amorphous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ribbon</masterLabel>
+            <translation><!-- Ribbon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of cells in panel --></help>
+        <label><!-- Cells In Series --></label>
+        <name>Cells_In_Series__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clearance Drawing --></label>
+        <name>Clearance_Drawing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes regarding the commissioning by manufacturer --></help>
+        <label><!-- Commissioning Notes --></label>
+        <name>Commissioning_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communications Interface --></label>
+        <name>Communications_Interface__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communications Protocol --></label>
+        <name>Communications_Protocol__c</name>
+    </fields>
+    <fields>
+        <help><!-- wire size range --></help>
+        <label><!-- Conductor Size Rating- Output Terminals --></label>
+        <name>Conductor_Size_Rating_Output_Terminals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wire size range --></help>
+        <label><!-- Conductor Size Rating on Input Terminals --></label>
+        <name>Conductor_Size_Rating_on_Input_Terminals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conduit Entrance Drawing --></label>
+        <name>Conduit_Entrance_Drawing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Connection type on lead --></help>
+        <label><!-- Connector Type --></label>
+        <name>Connector_Type__c</name>
+        <picklistValues>
+            <masterLabel>Amphenol H4</masterLabel>
+            <translation><!-- Amphenol H4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amphenol UTX</masterLabel>
+            <translation><!-- Amphenol UTX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Changshu Friends</masterLabel>
+            <translation><!-- Changshu Friends --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evo2 (MC4)</masterLabel>
+            <translation><!-- Evo2 (MC4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosiden</masterLabel>
+            <translation><!-- Hosiden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kostal</masterLabel>
+            <translation><!-- Kostal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linyang Electronics</masterLabel>
+            <translation><!-- Linyang Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC3 Solarline 1</masterLabel>
+            <translation><!-- MC3 Solarline 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC4 Solarline 2</masterLabel>
+            <translation><!-- MC4 Solarline 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QC4.10</masterLabel>
+            <translation><!-- QC4.10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radox</masterLabel>
+            <translation><!-- Radox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMK</masterLabel>
+            <translation><!-- SMK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TYCO Solarlok</masterLabel>
+            <translation><!-- TYCO Solarlok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varies - see spec sheet</masterLabel>
+            <translation><!-- Varies - see spec sheet --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Construction Requirements --></label>
+        <name>Construction_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Container Description --></label>
+        <name>Container_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Container Installation Manual --></label>
+        <name>Container_Installation_Manual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is a system with the nominal size above enclosed in a single container? --></help>
+        <label><!-- Containerized? --></label>
+        <name>Containerized__c</name>
+    </fields>
+    <fields>
+        <help><!-- Controls System Auxiliary Power Required(kW) --></help>
+        <label><!-- Control System Aux Power Required (kW) --></label>
+        <name>Control_System_Aux_Power_Required_kW__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to controller included in the energy storage unit, if applicable --></help>
+        <label><!-- Controller --></label>
+        <name>Controller__c</name>
+    </fields>
+    <fields>
+        <label><!-- Controls --></label>
+        <name>Controls__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost of the product, filled out by Procurement --></help>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional cost to increase warranty for 10 years --></help>
+        <label><!-- Cost to Increase to 10 yrs ($) --></label>
+        <name>Cost_to_Increase_to_10_yrs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional cost to increase warranty for 15 years --></help>
+        <label><!-- Cost to Increase to 15 yrs ($) --></label>
+        <name>Cost_to_Increase_to_15_yrs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional cost to increase warranty for 20 years --></help>
+        <label><!-- Cost to Increase to 20 yrs ($) --></label>
+        <name>Cost_to_Increase_to_20_yrs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes regarding DAS Options that are compatible with the Product --></help>
+        <label><!-- DAS Options --></label>
+        <name>DAS_Options__c</name>
+    </fields>
+    <fields>
+        <help><!-- DC-DC Converter Install Manual Version Number --></help>
+        <label><!-- DC-DC Converter Install Manual Version # --></label>
+        <name>DC_DC_Converter_Install_Manual_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC-DC Converter Installation Manual --></label>
+        <name>DC_DC_Converter_Installation_Manual__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC-DC Converter --></label>
+        <name>DC_DC_Converter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe supplied or optional DC disconnecting means --></help>
+        <label><!-- DC Disconnect --></label>
+        <name>DC_Disconnect__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Entry Positions --></label>
+        <name>DC_Entry_Positions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost of recommended solution --></help>
+        <label><!-- DC Equipment Cost --></label>
+        <name>DC_Equipment_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe preferred DC solution in terms of equipment required, constraints, etc --></help>
+        <label><!-- DC Equipment Required --></label>
+        <name>DC_Equipment_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Ground Fault Detection --></label>
+        <name>DC_Ground_Fault_Detection__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Grounding Conductor Sizes and Quantit --></label>
+        <name>DC_Grounding_Conductor_Sizes_and_Quantit__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Output Terminal Temp Rating (°C) --></label>
+        <name>DC_Output_Terminal_Temperature_Rating_C__c</name>
+        <picklistValues>
+            <masterLabel>60°C</masterLabel>
+            <translation><!-- 60°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75°C</masterLabel>
+            <translation><!-- 75°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90°C</masterLabel>
+            <translation><!-- 90°C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DC System Grounding --></label>
+        <name>DC_System_Grounding__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Terminal Alum Conductor Compatible? --></label>
+        <name>DC_Terminal_Alum_Conductor_Compatible__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DC Terminal Type --></label>
+        <name>DC_Terminal_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Terminal Lug or Bending Radius Constraints --></help>
+        <label><!-- DC Conductor Size and Quantity --></label>
+        <name>DC_Wire_Size_Limitations__c</name>
+    </fields>
+    <fields>
+        <label><!-- AM Solution --></label>
+        <name>DMAPP__AM_Solution__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Manufacturers version/revision number found on manufacturer&apos;s data sheet. --></help>
+        <label><!-- Data Sheet Version Number --></label>
+        <name>Data_Sheet_Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Reference Yields Updated --></label>
+        <name>Date_Reference_Yields_Updated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the controller support behind-the-meter demand charge management? --></help>
+        <label><!-- Demand Charge Management --></label>
+        <name>Demand_Charge_Management__c</name>
+    </fields>
+    <fields>
+        <help><!-- Depth of the product in inches --></help>
+        <label><!-- Depth (inches) --></label>
+        <name>Depth_inches__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes the additional costs associated to the product specified in the &quot;Additional Equipment Costs&quot; field. Filled out by Procurement or the RG. --></help>
+        <label><!-- Description of Additional Equipment Cost --></label>
+        <name>Description_of_Additional_Equipment_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Design Ambient Site Temp (°C) for Rated Power --></help>
+        <label><!-- Design Ambient Site Temp(°C) Rated Power --></label>
+        <name>Design_Ambient_Site_Temp__c</name>
+    </fields>
+    <fields>
+        <help><!-- (HxWxD) --></help>
+        <label><!-- Dimensions --></label>
+        <name>Dimensions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance Between Holes Along Length (in) --></label>
+        <name>Distance_Between_Holes_Along_Length_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance Between Holes Along Width (in) --></label>
+        <name>Distance_Between_Holes_Along_Width_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance - Mounting Hole/Long Edge (in) --></label>
+        <name>Distance_Mounting_Hole_Long_Edge_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance - Mounting Hole/Short Edge (in) --></label>
+        <name>Distance_Mounting_Hole_to_Short_Edge__c</name>
+    </fields>
+    <fields>
+        <label><!-- ESU Warranty Start Date --></label>
+        <name>ESU_Warranty_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emergency Response Plan Version Date --></label>
+        <name>Emergency_Response_Plan_Version_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emergency Response Plan --></label>
+        <name>Emergency_Response_Plan__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder coated steel/fiberglass/polycarbonate/SS? --></help>
+        <label><!-- Enclosure Material Options --></label>
+        <name>Enclosure_Material_Options__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the warranty cost stated above include guaranteed energy retention? --></help>
+        <label><!-- Energy Retention Guarantee --></label>
+        <name>Energy_Retention_Guarantee__c</name>
+        <picklistValues>
+            <masterLabel>Additional Cost</masterLabel>
+            <translation><!-- Additional Cost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Included</masterLabel>
+            <translation><!-- Included --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Estimated Annual Change in RTE(%decrease/year) --></help>
+        <label><!-- Estimated Annual Change in RTE (%) --></label>
+        <name>Estimated_Annual_Change_in_RTE__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of lead days if using expedited shipping --></help>
+        <label><!-- Expedited Lead Time (Days) --></label>
+        <name>Expedited_Lead_Time_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- The shipping cost if using expedited shipping --></help>
+        <label><!-- Expedited Shipping Cost ($) --></label>
+        <name>Expedited_Shipping_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Protocols supported from the site controller to SCADA --></help>
+        <label><!-- External Communications Protocols --></label>
+        <name>External_Communications_Protocols__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is fire detection and suppression integrated into the container? --></help>
+        <label><!-- Fire Suppression Agent --></label>
+        <name>Fire_Detection_and_Suppression__c</name>
+        <picklistValues>
+            <masterLabel>Integral</masterLabel>
+            <translation><!-- Integral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Fire Suppression System Auxiliary Power Required(kW) --></help>
+        <label><!-- Fire Suppression System Aux Power Req(kW --></label>
+        <name>Fire_Suppression_System_Aux_Power_Req_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fire Suppression and Detection System --></label>
+        <name>Fire_Suppression_and_Detection_System__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the controller vendor provide a market interface to support frequency regulation? --></help>
+        <label><!-- Frequency Regulation --></label>
+        <name>Frequency_Regulation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fuse Notes --></label>
+        <name>Fuse_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- GEC Termination Limitations --></label>
+        <name>GEC_Termination_Limitations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ground Hole Diameter (in) --></label>
+        <name>Ground_Hole_Diameter_mm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grounding Method --></label>
+        <name>Grounding_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grounding Specifications --></label>
+        <name>Grounding_Specifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Guidelines for Usage --></label>
+        <name>Guidelines_for_Usage__c</name>
+    </fields>
+    <fields>
+        <help><!-- HVAC Auxiliary Power Required - Non-Operating(kW) --></help>
+        <label><!-- HVAC Aux Power Required -Non-Op (kW) --></label>
+        <name>HVAC_Aux_Power_Required_Non_Op_kW__c</name>
+    </fields>
+    <fields>
+        <help><!-- HVAC Auxiliary Power Required – In Rush(kW) --></help>
+        <label><!-- HVAC Auxiliary Power Required- Rush(kW) --></label>
+        <name>HVAC_Auxiliary_Power_Required_Rush_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Height (inches) --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- Historic Additional Equipment Costs --></label>
+        <name>Historic_Additional_Equipment_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to IAM test report --></help>
+        <label><!-- IAM Report --></label>
+        <name>IAM_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value for the parameter &apos;b0&apos; in the ASHRAE model for Incident Angle Modifier Loss for the module --></help>
+        <label><!-- Incident Angle Modifier &apos;b0&apos; Parameter --></label>
+        <name>Incident_Angle_Modifier_b0_Parameter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the controller make hourly/sub-hourly decisions on charge and discharge? --></help>
+        <label><!-- Includes Economic Dispatch Optimization --></label>
+        <name>Includes_Economic_Dispatch_Optimization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indoor Discount on 10 yrs ($) --></label>
+        <name>Indoor_Discount_on_10_yrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indoor Discount on 15 yrs ($) --></label>
+        <name>Indoor_Discount_on_15_yrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indoor Discount on 20 yrs ($) --></label>
+        <name>Indoor_Discount_on_20_yrs__c</name>
+    </fields>
+    <fields>
+        <help><!-- may influence wire sizing based on NEC --></help>
+        <label><!-- Input Terminal Temperature Rating (°C) --></label>
+        <name>Input_Terminal_Temperature_Rating_C__c</name>
+        <picklistValues>
+            <masterLabel>60°C</masterLabel>
+            <translation><!-- 60°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75°C</masterLabel>
+            <translation><!-- 75°C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90°C</masterLabel>
+            <translation><!-- 90°C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to manufacturer&apos;s install manuals. If there are more than one, enter on subsequent lines --></help>
+        <label><!-- Install Manuals --></label>
+        <name>Install_Manual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter some identifying characteristics of the revised document. This could be date of update, version #, rev # etc. --></help>
+        <label><!-- Installation Manual version date/numbers --></label>
+        <name>Installation_Manual_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Specifications --></label>
+        <name>Installation_Specifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is HVAC integrated into the container? --></help>
+        <label><!-- Integral HVAC --></label>
+        <name>Integral_HVAC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integrator --></label>
+        <name>Integrator__c</name>
+    </fields>
+    <fields>
+        <help><!-- internal numbering sequence for O&amp;M internal parts --></help>
+        <label><!-- Internal Part Number --></label>
+        <name>Internal_Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum ratio DC/AC --></help>
+        <label><!-- Inverter Loading Limits --></label>
+        <name>Inverter_Loading_Limits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Code --></label>
+        <name>Item_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Type --></label>
+        <name>Job_Type__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to PAN test report. --></help>
+        <label><!-- LID Report --></label>
+        <name>LID_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Purchase Price --></label>
+        <name>Last_Purchase_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Length (Inches) --></label>
+        <name>Lead_Length_Inches_New__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Length (MM) --></label>
+        <name>Lead_Length_MM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Length Note --></label>
+        <name>Lead_Length_Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Length of the Lead in inches --></help>
+        <label><!-- Lead Length (inches) --></label>
+        <name>Lead_Length__c</name>
+    </fields>
+    <fields>
+        <help><!-- Length of the product in inches --></help>
+        <label><!-- Length (inches) --></label>
+        <name>Length_inches__c</name>
+    </fields>
+    <fields>
+        <help><!-- Avg. LID the module is expected to experience. Should be a documented (indep testing or compelling evidence from manuf) value or the default value of 2% for p-type poly cSi and 3% for p type mono cSi. Refer to the RG for other module technologies. --></help>
+        <label><!-- Light Induced Degradation (%) --></label>
+        <name>Light_Induced_Degradation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the Product Evaluation Report for the product --></help>
+        <label><!-- Link to Product Evaluation Report --></label>
+        <name>Link_to_Product_Evaluation_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manufacturers spec sheets may list power tolerance as +/- watts. These need to be converted to percentage for upper and lower tolerance. --></help>
+        <label><!-- Lower Power Tolerance (%) --></label>
+        <name>Lower_Power_Tolerance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the product made in America? Does it meet the Made in America qualifications? Checked = Yes, Unchecked = No --></help>
+        <label><!-- Made in America --></label>
+        <name>Made_in_America__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Manufacturer Account record --></help>
+        <label><!-- Manufacturer/Integrator --></label>
+        <name>Manufacturer_Account__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Link to vendor website. Check currently vendor web-hosted product page to see if it differs from the Active data sheet linked above. Bring discrepancies to the attention of the Procurement department. --></help>
+        <label><!-- Vendor Website for Confirmation --></label>
+        <name>Manufacturer_Data_Sheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>Manufacturer__c</name>
+        <picklistValues>
+            <masterLabel>BP</masterLabel>
+            <translation><!-- BP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conergy</masterLabel>
+            <translation><!-- Conergy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enphase</masterLabel>
+            <translation><!-- Enphase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evergreen</masterLabel>
+            <translation><!-- Evergreen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Solar</masterLabel>
+            <translation><!-- First Solar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GE</masterLabel>
+            <translation><!-- GE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isophoton</masterLabel>
+            <translation><!-- Isophoton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaneka</masterLabel>
+            <translation><!-- Kaneka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kyocera</masterLabel>
+            <translation><!-- Kyocera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitsubishi</masterLabel>
+            <translation><!-- Mitsubishi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nanosolar</masterLabel>
+            <translation><!-- Nanosolar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMA America</masterLabel>
+            <translation><!-- SMA America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanyo</masterLabel>
+            <translation><!-- Sanyo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schott</masterLabel>
+            <translation><!-- Schott --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schuco</masterLabel>
+            <translation><!-- Schuco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharp</masterLabel>
+            <translation><!-- Sharp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solarworld</masterLabel>
+            <translation><!-- Solarworld --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solectria</masterLabel>
+            <translation><!-- Solectria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunpower</masterLabel>
+            <translation><!-- Sunpower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suntech</masterLabel>
+            <translation><!-- Suntech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunwize</masterLabel>
+            <translation><!-- Sunwize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uni-Solar</masterLabel>
+            <translation><!-- Uni-Solar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xantrex</masterLabel>
+            <translation><!-- Xantrex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yingli</masterLabel>
+            <translation><!-- Yingli --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- link to MSDS file from manufacturer --></help>
+        <label><!-- Material Safety Data Sheet --></label>
+        <name>Material_Safety_Data_Sheet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of years the warranty from the manufacturer covers the product --></help>
+        <label><!-- Materials Warranty (Yrs.) --></label>
+        <name>Materials_Warranty_Yrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Materials --></label>
+        <name>Materials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. AC Output Current Per Phase (A) --></label>
+        <name>Max_AC_Output_Current_Per_Phase_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Branch Circuit Size --></label>
+        <name>Max_Branch_Circuit_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. Constant Power Charging Rate(%SOC) --></label>
+        <name>Max_Constant_Power_Changing_Rate_SOC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. DC Input Current (A) --></label>
+        <name>Max_DC_Input_Current_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. DC Input Power (W) --></label>
+        <name>Max_DC_Input_Power_W__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. DC Input Voltage (V) --></label>
+        <name>Max_DC_Input_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max MPPT DC Voltage (V) --></label>
+        <name>Max_MPPT_DC_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Power Current (Imp) --></label>
+        <name>Max_Power_Current_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Power Voltage (Vmp) --></label>
+        <name>Max_Power_Current_V__c</name>
+    </fields>
+    <fields>
+        <help><!-- system, not the battery operating range. --></help>
+        <label><!-- Max. Ambient Operating Temperature (C) --></label>
+        <name>Maximum_Ambient_Operating_Temperature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Annual 100% Cycle --></label>
+        <name>Maximum_Annual_100_Cycle__c</name>
+    </fields>
+    <fields>
+        <help><!-- maximum size of the input OCPD --></help>
+        <label><!-- Maximum OCPD Size --></label>
+        <name>Maximum_OCPD_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the vendor supply metering for the energy storage unit? --></help>
+        <label><!-- Metering Included --></label>
+        <name>Metering_Included__c</name>
+    </fields>
+    <fields>
+        <label><!-- Min MPPT DC Voltage (V) --></label>
+        <name>Min_MPPT_DC_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <help><!-- For the system, not the battery operating range. --></help>
+        <label><!-- Min. Ambient Operating Temperature (C) --></label>
+        <name>Minimum_Ambient_Operating_Temperature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Miscellaneous notes regarding the design- can be entered by anyone on the Engineering team
+ENTER NOTES WITH INITIALS AND DATE OF ENTRY --></help>
+        <label><!-- Misc Design Notes --></label>
+        <name>Misc_Design_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Miscellaneous notes regarding Project Management and Construction- can be entered by anyone on the Operations team
+ENTER NOTES WITH INITIALS AND DATE OF ENTRY --></help>
+        <label><!-- Misc Project Management Notes --></label>
+        <name>Misc_Project_Management_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Miscellaneous notes regarding the sale- can be entered by anyone on the Sales team
+ENTER NOTES WITH INITIALS AND DATE OF ENTRY --></help>
+        <label><!-- Misc Sales Notes --></label>
+        <name>Misc_Sales_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modeling Notes --></label>
+        <name>Modeling_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Compatibility --></label>
+        <name>Module_Compatibility__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Efficiency Loss (%) --></label>
+        <name>Module_Efficiency_Loss__c</name>
+    </fields>
+    <fields>
+        <help><!-- Efficiency % of the module --></help>
+        <label><!-- Module Efficiency --></label>
+        <name>Module_Efficiency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Orientation --></label>
+        <name>Module_Orientation__c</name>
+        <picklistValues>
+            <masterLabel>Landscape</masterLabel>
+            <translation><!-- Landscape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscape or Portrait</masterLabel>
+            <translation><!-- Landscape or Portrait --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portrait</masterLabel>
+            <translation><!-- Portrait --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Modules / Ray Tracker --></label>
+        <name>Modules_Ray_Tracker__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Modules per Pallet --></help>
+        <label><!-- Modules per Pallet --></label>
+        <name>Modules_per_Pallet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mounting Hole Diameter (in) --></label>
+        <name>Mounting_Hole_Diameter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Free standing, wall mounted or other --></help>
+        <label><!-- Mounting Requirements --></label>
+        <name>Mounting_Requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- available enclosure ratings --></help>
+        <label><!-- Nema Rating Options --></label>
+        <name>Nema_Rating_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- Neutral Conductor Required? --></label>
+        <name>Neutral_Conductor_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Night Time Power Consumption (W) --></label>
+        <name>Night_Time_Power_Consumption_W__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nominal AC Voltage (V) --></label>
+        <name>Nominal_AC_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <help><!-- NOTC on spec sheet --></help>
+        <label><!-- Nominal Operating Cell Temp (Celsius) --></label>
+        <name>Nominal_Operating_Cell_Temperature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Battery Rack Fuse --></label>
+        <name>Number_of_Battery_Rack_Fuse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Containers --></label>
+        <name>Number_of_Containers__c</name>
+    </fields>
+    <fields>
+        <help><!-- this is the number of input circuits the unit can accomodate --></help>
+        <label><!-- Number of Input Circuits/Poles --></label>
+        <name>Number_of_Input_Circuits_Poles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of O&amp;M parts manufacturer --></help>
+        <label><!-- OEM Manufacturer --></label>
+        <name>OEM_Manufacturer__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to box.com location --></help>
+        <label><!-- OND File --></label>
+        <name>OND_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Circuit Voltage (Voc) --></label>
+        <name>O_C_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Costs --></label>
+        <name>O_M_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Id --></label>
+        <name>Old_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost for on-site commissioning by manufacturer --></help>
+        <label><!-- On Site Commissioning ($) --></label>
+        <name>On_Site_Commissioning__c</name>
+    </fields>
+    <fields>
+        <label><!-- Onsite Storage Allowable Time(months) --></label>
+        <name>Onsite_Storage_Allowable_Time_months__c</name>
+    </fields>
+    <fields>
+        <help><!-- box links --></help>
+        <label><!-- Operating Manuals --></label>
+        <name>Operating_Manual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter some identifying characteristics of the revised documents. This could be date of update, version #, rev # etc. --></help>
+        <label><!-- Operation Manual version date/numbers --></label>
+        <name>Operation_Manual_version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation and Maintenance Manuals --></label>
+        <name>Operation_and_Maintenance_Manuals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation and Maintenance Notes --></label>
+        <name>Operation_and_Maintenance_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Optimum Application --></label>
+        <name>Optimum_Applicatoin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Conditions --></label>
+        <name>Other_Conditions__c</name>
+    </fields>
+    <fields>
+        <help><!-- the other warranty details apply after the warranty periods identified by power warranty #1, 2, or 3 entered above --></help>
+        <label><!-- Other Warranty (Years) --></label>
+        <name>Other_Warranty_Years__c</name>
+    </fields>
+    <fields>
+        <help><!-- the other warranty details apply after the warranty periods identified by power warranty #1, 2, or 3 entered above --></help>
+        <label><!-- Other Warranty (%) --></label>
+        <name>Other_Warranty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Output Number of Phases --></label>
+        <name>Output_Number_of_Phases__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to PAN file test report. --></help>
+        <label><!-- PAN File Report --></label>
+        <name>PAN_File_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- PCS/Central Inverter Installation Manual --></label>
+        <name>PCS_Central_Inverter_Installation_Manual__c</name>
+    </fields>
+    <fields>
+        <help><!-- PCS/Central Inverter Install Manual Version Number --></help>
+        <label><!-- PCS/Central Inverter Version Number --></label>
+        <name>PCS_Central_Inverter_Version_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the PCS included in the same container as battery modules? --></help>
+        <label><!-- PCS Type --></label>
+        <name>PCS_Type__c</name>
+        <picklistValues>
+            <masterLabel>Integral</masterLabel>
+            <translation><!-- Integral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standalone Pad Mounted</masterLabel>
+            <translation><!-- Standalone Pad Mounted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PTC/STC --></label>
+        <name>PTC_STC__c</name>
+    </fields>
+    <fields>
+        <label><!-- PV Start Voltage (V) --></label>
+        <name>PV_Start_Voltage_V__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deviation between nominal power rating (manuf specs) and the PVsyst internal model result for the max. power of the module. Pos. value represents a PVsyst model rating &gt; than nominal and a Neg. value represents a PVsyst model rating &lt; than nominal. --></help>
+        <label><!-- PVsyst Deviation From Nominal (%) --></label>
+        <name>PVsyst_Deviation_From_Nominal__c</name>
+    </fields>
+    <fields>
+        <label><!-- PVsyst OND File Revision --></label>
+        <name>PVsyst_OND_File_Revision__c</name>
+    </fields>
+    <fields>
+        <label><!-- PVsyst PAN File Revision --></label>
+        <name>PVsyst_PAN_File_Revision__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pallet LxWxH in inches --></help>
+        <label><!-- Packaging Dimensions --></label>
+        <name>Packaging_Dimensions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pallet weight in pounds --></help>
+        <label><!-- Packaging Weight --></label>
+        <name>Packaging_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Also on Construction Sheet --></help>
+        <label><!-- Packaging and Shipping Terms --></label>
+        <name>Packaging_and_Shipping_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to box.com location --></help>
+        <label><!-- Pan File --></label>
+        <name>Pan_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Panel Claw- Additional Information --></label>
+        <name>Panel_Claw_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Panel Claw- Standard Claw Approved --></label>
+        <name>Panel_Claw_Standard_Claw_Approved__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Part Type --></label>
+        <name>Part_Type__c</name>
+        <picklistValues>
+            <masterLabel>AC Disconnects</masterLabel>
+            <translation><!-- AC Disconnects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Circuit Breakers</masterLabel>
+            <translation><!-- Circuit Breakers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combiner Box</masterLabel>
+            <translation><!-- Combiner Box --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAS</masterLabel>
+            <translation><!-- DAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fuses</masterLabel>
+            <translation><!-- Fuses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Hardware</masterLabel>
+            <translation><!-- General Hardware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter - Central</masterLabel>
+            <translation><!-- Inverter - Central --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter - String</masterLabel>
+            <translation><!-- Inverter - String --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter Central - Air Filters</masterLabel>
+            <translation><!-- Inverter Central - Air Filters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter Central - Electronic Parts/PCBs</masterLabel>
+            <translation><!-- Inverter Central - Electronic Parts/PCBs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter Central - Other Parts</masterLabel>
+            <translation><!-- Inverter Central - Other Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscaping</masterLabel>
+            <translation><!-- Landscaping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modules 200W-300W</masterLabel>
+            <translation><!-- Modules 200W-300W --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modules &lt;200W</masterLabel>
+            <translation><!-- Modules &lt;200W --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modules &gt;300W</masterLabel>
+            <translation><!-- Modules &gt;300W --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPE</masterLabel>
+            <translation><!-- PPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switchgear</masterLabel>
+            <translation><!-- Switchgear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker</masterLabel>
+            <translation><!-- Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformer</masterLabel>
+            <translation><!-- Transformer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Truck Safety</masterLabel>
+            <translation><!-- Truck Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wire</masterLabel>
+            <translation><!-- Wire --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Captures the reason for modification along with the users initials and date. --></help>
+        <label><!-- Past modifications --></label>
+        <name>Past_modifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Peak Efficiency (%) --></label>
+        <name>Peak_Efficiency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending Product Improvements --></label>
+        <name>Pending_Product_Improvements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required for controllers --></help>
+        <label><!-- Performance Guarantee Available --></label>
+        <name>Performance_Guarantee_Available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picasa Album --></label>
+        <name>Picasa_Album__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to power conversion system included in the energy storage unit --></help>
+        <label><!-- Power Conversion System --></label>
+        <name>Power_Conversion_System__c</name>
+    </fields>
+    <fields>
+        <help><!-- Equal to 1/4 of the range from lower to upper power tolerance (should be closer to the lower tolerance). The value may be neg. or pos. A pos. value represents a value &lt; than the nominal rating and a neg. value represents a value &gt; than the nominal rating. --></help>
+        <label><!-- Module Efficiency Loss % --></label>
+        <name>Power_Tolerance_Adjustment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 1 (Years) --></label>
+        <name>Power_Warranty_1_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 1 (%) --></label>
+        <name>Power_Warranty_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 2 (Years) --></label>
+        <name>Power_Warranty_2_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 2 (%) --></label>
+        <name>Power_Warranty_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 3 (Years) --></label>
+        <name>Power_Warranty_3_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Power Warranty 3 (%) --></label>
+        <name>Power_Warranty_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yearly Preventative Maintenance Cost ($) --></label>
+        <name>Preventative_Maintenance_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Guidelines --></label>
+        <name>Price_Guidelines__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Inclusions/Exclusions --></label>
+        <name>Price_Includes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pricing Information --></label>
+        <name>Pricing_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 10° --></label>
+        <name>PrimaryRow_Spacing_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 15° --></label>
+        <name>PrimaryRow_Spacing_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 20° --></label>
+        <name>PrimaryRow_Spacing_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 25° --></label>
+        <name>PrimaryRow_Spacing_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 30° --></label>
+        <name>PrimaryRow_Spacing_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Row Spacing 5° --></label>
+        <name>PrimaryRow_Spacing_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Primary Contact used at Primary Vendor --></help>
+        <label><!-- Primary Vendor Contact --></label>
+        <name>Primary_Vendor_Contact__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Primary Vendor used for this product --></help>
+        <label><!-- Primary Vendor --></label>
+        <name>Primary_Vendor__c</name>
+        <relationshipLabel><!-- Products (Primary Vendor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- auto fills based on WF That updates with prior value whenever Cost field is changed on Inverters --></help>
+        <label><!-- Prior Unit Cost --></label>
+        <name>Prior_Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Advantages --></label>
+        <name>Product_Advantages__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize on Edit Quote Line page --></help>
+        <label><!-- Product Family, Part Type --></label>
+        <name>Product_Family_Part_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product ID --></label>
+        <name>Product_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- UL, etc. --></help>
+        <label><!-- Product Listing and Listing Agency --></label>
+        <name>Product_Listing_and_Listing_Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Safety Notes --></label>
+        <name>Product_Safety_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Spec/Data Sheet --></label>
+        <name>Product_Spec_Data_Sheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Technical Specifications --></label>
+        <name>Product_Technical_Specifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check box after adding module PAN file or inverter OND file to Helioscope licenses (OND files may have to be emailed to Helioscope team for uploading. --></help>
+        <label><!-- Product added to Helioscope? --></label>
+        <name>Product_added_to_Helioscope__c</name>
+    </fields>
+    <fields>
+        <help><!-- description needed --></help>
+        <label><!-- Provisions for Parallel Conductors --></label>
+        <name>Provisions_for_Parallel_Conductors__c</name>
+    </fields>
+    <fields>
+        <help><!-- From gosolarcalifornia.com --></help>
+        <label><!-- CEC Weighted Efficiency (%) --></label>
+        <name>Rated_Efficiency_CEC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ray Tracker Base Price (per Module) --></label>
+        <name>Ray_Tracker_Base_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reason Product Status = &quot;Not in Use,&quot; is listed here. Controlled by Procurement and the Resources Group. 
+Pending Approval= Pending Approval from the CC
+Rejected= Project was Rejected by CC
+Obsolete= No longer available, supported, or preferred --></help>
+        <label><!-- Reason Not In Use --></label>
+        <name>Reason_Not_In_Use__c</name>
+        <picklistValues>
+            <masterLabel>Bad Data</masterLabel>
+            <translation><!-- Bad Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discontinued by Manufacturer</masterLabel>
+            <translation><!-- Discontinued by Manufacturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Replaced</masterLabel>
+            <translation><!-- Product Replaced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected-Product Evaluation</masterLabel>
+            <translation><!-- Rejected-Product Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter what you updated on the product and the reason why. --></help>
+        <label><!-- Reason for modification --></label>
+        <name>Reason_for_modification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Modeling Notes --></label>
+        <name>Reference_Modeling_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Yield Boston (kWh/kW) --></label>
+        <name>Reference_Yield_Boston_kWh_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Yield San Diego (kWh/kW) --></label>
+        <name>Reference_Yield_San_Diego_kWh_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required Screw Size for Grounding Hole --></label>
+        <name>Required_Screw_Size_for_Grounding_Hole__c</name>
+    </fields>
+    <fields>
+        <label><!-- Restrictions --></label>
+        <name>Restrictions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Row Spacing Notes --></label>
+        <name>Row_Spacing_Notes__c</name>
+    </fields>
+    <fields>
+        <help>この商品を表す納入商品を修正する場合の動作を選択してください。デフォルトでは、アップグレードが追加されない限り、納入商品の数量を減らすことはできず、返金は適用されません。</help>
+        <label><!-- Asset Amendment Behavior --></label>
+        <name>SBQQ__AssetAmendmentBehavior__c</name>
+        <picklistValues>
+            <masterLabel>Allow Refund</masterLabel>
+            <translation>返金を許可</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>デフォルト</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この商品を納入商品に変換する方法を示します。</help>
+        <label><!-- Asset Conversion --></label>
+        <name>SBQQ__AssetConversion__c</name>
+        <picklistValues>
+            <masterLabel>One per quote line</masterLabel>
+            <translation>見積品目ごとに 1 つ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One per unit</masterLabel>
+            <translation>単位ごとに 1 つ</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>空白以外の値を設定すると、この商品がバッチで販売されることを指定します。各バッチに含める数量を入力します。見積に入力された数量は、この値で割って最も近い整数に切り上げられます。</help>
+        <label><!-- Batch Quantity --></label>
+        <name>SBQQ__BatchQuantity__c</name>
+    </fields>
+    <fields>
+        <help>この商品の請求頻度を決定します。</help>
+        <label><!-- Billing Frequency --></label>
+        <name>SBQQ__BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <help>請求の発生タイミングを定義する請求種別。[前払い請求] の場合は、商品またはサービスを提供する前に顧客に請求でき、[後払い請求] の場合は、商品またはサービスの提供後に顧客に請求することができます。</help>
+        <label><!-- Billing Type --></label>
+        <name>SBQQ__BillingType__c</name>
+    </fields>
+    <fields>
+        <help>ブロック価格設定の計算に使用する項目。</help>
+        <label><!-- Block Pricing Field --></label>
+        <name>SBQQ__BlockPricingField__c</name>
+        <picklistValues>
+            <masterLabel>Quantity</masterLabel>
+            <translation>数量</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>商品の課金の種別。</help>
+        <label><!-- Charge Type --></label>
+        <name>SBQQ__ChargeType__c</name>
+    </fields>
+    <fields>
+        <help>この商品をコンポーネントとしてマークし、商品ルックアップの選択から除外します。</help>
+        <label><!-- Component --></label>
+        <name>SBQQ__Component__c</name>
+    </fields>
+    <fields>
+        <help>数量に従って大きくなる割引率。</help>
+        <label><!-- Compound Discount (%) --></label>
+        <name>SBQQ__CompoundDiscountRate__c</name>
+    </fields>
+    <fields>
+        <help>これは、この商品の [商品の設定] 画面が表示された場合の制御に使用します。初期設定に限定する場合は [追加] を選択します。その後の設定を行う場合は [編集] を選択します。</help>
+        <label><!-- Configuration Event --></label>
+        <name>SBQQ__ConfigurationEvent__c</name>
+        <picklistValues>
+            <masterLabel>Add</masterLabel>
+            <translation>加算</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Always</masterLabel>
+            <translation>常に</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edit</masterLabel>
+            <translation>編集</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>設定時にこの商品に使用される項目セットの API 参照名。</help>
+        <label><!-- Configuration Field Set --></label>
+        <name>SBQQ__ConfigurationFieldSet__c</name>
+        <picklistValues>
+            <masterLabel>OptionConfiguration</masterLabel>
+            <translation>OptionConfiguration</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Configuration Fields --></label>
+        <name>SBQQ__ConfigurationFields__c</name>
+    </fields>
+    <fields>
+        <help>指定された設定項目を基に表示される設定フォームのタイトル。</help>
+        <label><!-- Configuration Form Title --></label>
+        <name>SBQQ__ConfigurationFormTitle__c</name>
+    </fields>
+    <fields>
+        <help>この商品の設定種別。ユーザが商品/バンドルの設定を許可されているが必須ではない場合は [許可] を、バンドルのオプションが自動的に選択される場合は [無効] を、商品/バンドルの設定が必須の場合は [必須] を選択します。</help>
+        <label><!-- Configuration Type --></label>
+        <name>SBQQ__ConfigurationType__c</name>
+        <picklistValues>
+            <masterLabel>Allowed</masterLabel>
+            <translation>許可</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disabled</masterLabel>
+            <translation>無効</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required</masterLabel>
+            <translation>必須</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この商品の設定の検証に使用される JavaScript 関数。</help>
+        <label><!-- Configuration Validator --></label>
+        <name>SBQQ__ConfigurationValidator__c</name>
+    </fields>
+    <fields>
+        <help>設定対象の商品の商品コード (SKU) を生成するために使用されるパターン。</help>
+        <label><!-- Configured Code Pattern --></label>
+        <name>SBQQ__ConfiguredCodePattern__c</name>
+    </fields>
+    <fields>
+        <help>設定対象の商品の動的な商品説明を生成するために使用されるパターン。</help>
+        <label><!-- Configured Description Pattern --></label>
+        <name>SBQQ__ConfiguredDescriptionPattern__c</name>
+    </fields>
+    <fields>
+        <help>この商品のコストを個々の見積で変更可能かどうかを制御します。</help>
+        <label><!-- Cost Editable --></label>
+        <name>SBQQ__CostEditable__c</name>
+    </fields>
+    <fields>
+        <help>この商品のコスト表として使用される割引率表。</help>
+        <label><!-- Cost Schedule --></label>
+        <name>SBQQ__CostSchedule__c</name>
+        <relationshipLabel><!-- Products (Cost Schedule) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Custom Configuration Page --></label>
+        <name>SBQQ__CustomConfigurationPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Configuration Required --></label>
+        <name>SBQQ__CustomConfigurationRequired__c</name>
+    </fields>
+    <fields>
+        <help>カスタマーコミュニティでこの商品を使用可能にする方法を選択します。</help>
+        <label><!-- Customer Community Availability --></label>
+        <name>SBQQ__CustomerCommunityAvailability__c</name>
+        <picklistValues>
+            <masterLabel>Always</masterLabel>
+            <translation>常に</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never</masterLabel>
+            <translation>表示しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Only when already owned</masterLabel>
+            <translation>すでに所有されている場合のみ</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Default Pricing Table --></label>
+        <name>SBQQ__DefaultPricingTable__c</name>
+        <picklistValues>
+            <masterLabel>Segmented</masterLabel>
+            <translation>分割</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation>標準</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>追加時の商品の開始数量を指定します。</help>
+        <label><!-- Default Quantity --></label>
+        <name>SBQQ__DefaultQuantity__c</name>
+    </fields>
+    <fields>
+        <help>この商品の説明がロックされている (見積上で編集できない) ことを示すフラグ。</help>
+        <label><!-- Lock Description --></label>
+        <name>SBQQ__DescriptionLocked__c</name>
+    </fields>
+    <fields>
+        <help>この商品の割引カテゴリを指定します。</help>
+        <label><!-- Discount Category --></label>
+        <name>SBQQ__DiscountCategory__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この商品に使用する割引率表</help>
+        <label><!-- Discount Schedule --></label>
+        <name>SBQQ__DiscountSchedule__c</name>
+        <relationshipLabel><!-- Quantity Discounted Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>動的に計算される価格に対して制約を適用するために使用します。</help>
+        <label><!-- Percent Of Total Constraint --></label>
+        <name>SBQQ__DynamicPricingConstraint__c</name>
+        <picklistValues>
+            <masterLabel>List price is maximum</masterLabel>
+            <translation>リスト価格が最高</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List price is minimum</masterLabel>
+            <translation>リスト価格が最低</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>バンドル設定中にパフォーマンスエラーが発生した場合、有効にする必要があります。バンドルが非同期で処理されます。</help>
+        <label><!-- Enable Large Configuration --></label>
+        <name>SBQQ__EnableLargeConfiguration__c</name>
+    </fields>
+    <fields>
+        <help>この商品を全体に対する割合の計算から常に除外する場合は、オンにします (通常、非サブスクリプション商品は全体に対する割合の計算に含まれます)。</help>
+        <label><!-- Exclude From Percent Of Total --></label>
+        <name>SBQQ__ExcludeFromMaintenance__c</name>
+    </fields>
+    <fields>
+        <help>この商品を商談に移行できないことを示します。</help>
+        <label><!-- Exclude From Opportunity --></label>
+        <name>SBQQ__ExcludeFromOpportunity__c</name>
+    </fields>
+    <fields>
+        <help>オンの場合、この商品を設定すると自動的に、Salesforce CPQ 設定に定義された外部設定 URL が起動することを示します。</help>
+        <label><!-- Externally Configurable --></label>
+        <name>SBQQ__ExternallyConfigurable__c</name>
+    </fields>
+    <fields>
+        <help>フラグが付いている場合、調整済み見積品目に基づいて契約価格を生成します。</help>
+        <label><!-- Generate Contracted Price --></label>
+        <name>SBQQ__GenerateContractedPrice__c</name>
+        <picklistValues>
+            <masterLabel>Discount Schedule</masterLabel>
+            <translation>割引率表</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Generate</masterLabel>
+            <translation>生成しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation>価格</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Has Configuration Attributes --></label>
+        <name>SBQQ__HasConfigurationAttributes__c</name>
+    </fields>
+    <fields>
+        <help>この商品に少なくとも 1 つの消費スケジュールがあるかどうかを示します</help>
+        <label><!-- Has Consumption Schedules --></label>
+        <name>SBQQ__HasConsumptionSchedule__c</name>
+    </fields>
+    <fields>
+        <help>この商品を見積 PDF への表示から除外します。</help>
+        <label><!-- Hidden --></label>
+        <name>SBQQ__Hidden__c</name>
+    </fields>
+    <fields>
+        <help>商品検索結果でこの商品の価格を非表示にする場合は、チェックボックスをオンにします。</help>
+        <label><!-- Hide Price in Search Results --></label>
+        <name>SBQQ__HidePriceInSearchResults__c</name>
+    </fields>
+    <fields>
+        <help>この商品を全体に対する割合の計算に常に含める場合は、オンにします (通常、サブスクリプション商品は全体に対する割合の計算から除外されます)。</help>
+        <label><!-- Include In Percent Of Total --></label>
+        <name>SBQQ__IncludeInMaintenance__c</name>
+    </fields>
+    <fields>
+        <help>この商品が追加されたときに新しい見積グループを作成する (現在のグループが空の場合を除く) 場合は、オンにします。</help>
+        <label><!-- New Quote Group --></label>
+        <name>SBQQ__NewQuoteGroup__c</name>
+    </fields>
+    <fields>
+        <help>この商品を割引不可能とマークします。</help>
+        <label><!-- Non Discountable --></label>
+        <name>SBQQ__NonDiscountable__c</name>
+    </fields>
+    <fields>
+        <help>この商品をパートナーが割引できないようにする場合は、オンにします。</help>
+        <label><!-- Non Partner Discountable --></label>
+        <name>SBQQ__NonPartnerDiscountable__c</name>
+    </fields>
+    <fields>
+        <help>オプションをユーザに表示する方法を決定します。</help>
+        <label><!-- Option Layout --></label>
+        <name>SBQQ__OptionLayout__c</name>
+        <picklistValues>
+            <masterLabel>Sections</masterLabel>
+            <translation>セクション</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tabs</masterLabel>
+            <translation>タブ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wizard</masterLabel>
+            <translation>ウィザード</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ユーザがこの商品に付随するオプションを選択する方法を決定します。[クリック] の場合は、オプションの横にチェックボックスが表示されます。[追加] の場合は、使用可能なオプションを表示するダイアログボックスを開くボタンが表示されます。</help>
+        <label><!-- Option Selection Method --></label>
+        <name>SBQQ__OptionSelectionMethod__c</name>
+        <picklistValues>
+            <masterLabel>Add</masterLabel>
+            <translation>加算</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Click</masterLabel>
+            <translation>クリック</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この商品がデフォルトでオプションの場合は選択します。オプション商品は、見積合計に加算されず、商談にも移行されません。</help>
+        <label><!-- Optional --></label>
+        <name>SBQQ__Optional__c</name>
+    </fields>
+    <fields>
+        <help>見積を作成するときに、この商品の価格を自由に編集できることを示します。</help>
+        <label><!-- Price Editable --></label>
+        <name>SBQQ__PriceEditable__c</name>
+    </fields>
+    <fields>
+        <help>この商品で使用する価格設定ガイダンス。</help>
+        <label><!-- Pricing Guidance --></label>
+        <name>SBQQ__PricingGuidance__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この商品を見積に追加するときに価格方式を変更できる場合は選択します。</help>
+        <label><!-- Pricing Method Editable --></label>
+        <name>SBQQ__PricingMethodEditable__c</name>
+    </fields>
+    <fields>
+        <help>この商品に適用される価格方式。</help>
+        <label><!-- Pricing Method --></label>
+        <name>SBQQ__PricingMethod__c</name>
+        <picklistValues>
+            <masterLabel>Block</masterLabel>
+            <translation>ブロック</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost</masterLabel>
+            <translation>コスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation>リスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent Of Total</masterLabel>
+            <translation>全体に対する割合</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この商品の写真を保持するドキュメントまたはコンテンツレコードの ID。</help>
+        <label><!-- Product Picture Id --></label>
+        <name>SBQQ__ProductPictureID__c</name>
+    </fields>
+    <fields>
+        <help>この商品の数量の変更を許可または禁止します。</help>
+        <label><!-- Quantity Editable --></label>
+        <name>SBQQ__QuantityEditable__c</name>
+    </fields>
+    <fields>
+        <help>数量項目で使用される小数位の桁数を指定します。</help>
+        <label><!-- Quantity Scale --></label>
+        <name>SBQQ__QuantityScale__c</name>
+    </fields>
+    <fields>
+        <help>オンの場合、この商品は見積に最初に追加するときのみ設定できます。選択されている場合、ユーザは商品が追加された後に [品目の編集] ページの [設定] リンクにアクセスできなくなります。</help>
+        <label><!-- Disable Reconfiguration --></label>
+        <name>SBQQ__ReconfigurationDisabled__c</name>
+    </fields>
+    <fields>
+        <help>更新時にこの商品を置き換える商品。更新時に異なる SKU の見積を作成する場合はこれを使用します。</help>
+        <label><!-- Renewal Product --></label>
+        <name>SBQQ__RenewalProduct__c</name>
+        <relationshipLabel><!-- Original Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>[商品ルックアップ] ページでの商品のデフォルトの並び替え順を決定します。この順序で商品が見積に追加されます。</help>
+        <label><!-- Sort Order --></label>
+        <name>SBQQ__SortOrder__c</name>
+    </fields>
+    <fields>
+        <help>この商品の書式設定済みの仕様。見積テンプレートで仕様シートを生成するために使用されます。</help>
+        <label><!-- Specifications --></label>
+        <name>SBQQ__Specifications__c</name>
+    </fields>
+    <fields>
+        <help>全体に対する割合が商品のリスト価格と正価のどちらに基づいて計算されるかを決定します。</help>
+        <label><!-- Percent Of Total Base --></label>
+        <name>SBQQ__SubscriptionBase__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation>顧客</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation>リスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net</masterLabel>
+            <translation>正価</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation>通常</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>全体に対する割合の計算を特定の商品カテゴリに限定する場合にこれを使用します。たとえば、ソフトウェアメンテナンスでは、全体に対する割合のカテゴリがソフトウェアメンテナンスである商品の割合のみを計算します。</help>
+        <label><!-- Percent Of Total Category --></label>
+        <name>SBQQ__SubscriptionCategory__c</name>
+        <picklistValues>
+            <masterLabel>Hardware</masterLabel>
+            <translation>ハードウェア</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation>ソフトウェア</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>このサブスクリプションの価格として使用する非サブスクリプション全体に対する割合。</help>
+        <label><!-- Percent Of Total (%) --></label>
+        <name>SBQQ__SubscriptionPercent__c</name>
+    </fields>
+    <fields>
+        <help>このサブスクリプションに使用する価格設定の種類。[なし] は、この商品がサブスクリプションではないことを意味します。</help>
+        <label><!-- Subscription Pricing --></label>
+        <name>SBQQ__SubscriptionPricing__c</name>
+        <picklistValues>
+            <masterLabel>Fixed Price</masterLabel>
+            <translation>固定価格:</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent Of Total</masterLabel>
+            <translation>全体に対する割合</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>全体に対する割合の計算に含まれる商品を上書きする場合は、この項目を使用します。このルックアップが、現在の商品の全体に対する割合の計算で使用するリスト価格が設定されている商品を指し示すようにします。</help>
+        <label><!-- Percent Of Total Target --></label>
+        <name>SBQQ__SubscriptionTarget__c</name>
+        <relationshipLabel><!-- Subscription Targeting Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このサブスクリプションの期間。商品がサブスクリプションの場合のみ適用されます。</help>
+        <label><!-- Subscription Term --></label>
+        <name>SBQQ__SubscriptionTerm__c</name>
+    </fields>
+    <fields>
+        <help>更新可能なサブスクリプションは更新見積に移行されます。1 回限りのサブスクリプションは移行されません。</help>
+        <label><!-- Subscription Type --></label>
+        <name>SBQQ__SubscriptionType__c</name>
+        <picklistValues>
+            <masterLabel>Evergreen</masterLabel>
+            <translation>エバーグリーン</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One-time</masterLabel>
+            <translation>1 回</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewable</masterLabel>
+            <translation>更新可能</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewable/Evergreen</masterLabel>
+            <translation>更新可能/エバーグリーン</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>課税規則の税コードを指定します。</help>
+        <label><!-- Tax code --></label>
+        <name>SBQQ__TaxCode__c</name>
+    </fields>
+    <fields>
+        <help>この商品が課税対象かどうかを示します。</help>
+        <label><!-- Taxable --></label>
+        <name>SBQQ__Taxable__c</name>
+    </fields>
+    <fields>
+        <help>期間割引の計算に使用するサブスクリプション期間レベルを指定します。デフォルトを示す場合は空白のままにします。</help>
+        <label><!-- Term Discount Level --></label>
+        <name>SBQQ__TermDiscountLevel__c</name>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation>グループ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Line</masterLabel>
+            <translation>品目</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation>見積</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>サブスクリプション期間に基づく割引率表。</help>
+        <label><!-- Term Discount Schedule --></label>
+        <name>SBQQ__TermDiscountSchedule__c</name>
+        <relationshipLabel><!-- Term Discounted Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この商品へのアップグレードの見積を作成するときにクレジットを指定する場合は使用します。</help>
+        <label><!-- Upgrade Credit --></label>
+        <name>SBQQ__UpgradeCredit__c</name>
+        <relationshipLabel><!-- Credited Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この商品の数量とそのソース商品との間の換算レート。</help>
+        <label><!-- Upgrade Ratio --></label>
+        <name>SBQQ__UpgradeRatio__c</name>
+    </fields>
+    <fields>
+        <help>アップグレード対象商品。この項目に入力すると、この商品がアップグレードになります。</help>
+        <label><!-- Upgrade Source --></label>
+        <name>SBQQ__UpgradeSource__c</name>
+        <relationshipLabel><!-- Target Upgrades --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>アップグレード後の商品を指定します。[アップグレード元] 項目への入力または関連する [アップグレード元] レコードの存在によってこの商品がアップグレードであることが示されている場合のみ適用されます。</help>
+        <label><!-- Upgrade Target --></label>
+        <name>SBQQ__UpgradeTarget__c</name>
+        <relationshipLabel><!-- Source Upgrades --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Short Circuit Current (Isc) --></label>
+        <name>S_C_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Pitch --></label>
+        <name>Sales_Pitch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schletter Base Price (per Module) --></label>
+        <name>Schletter_Base_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 10° --></label>
+        <name>Secondary_Row_Spacing_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 15° --></label>
+        <name>Secondary_Row_Spacing_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 20° --></label>
+        <name>Secondary_Row_Spacing_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 25° --></label>
+        <name>Secondary_Row_Spacing_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 30° --></label>
+        <name>Secondary_Row_Spacing_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Row Spacing 5° --></label>
+        <name>Secondary_Row_Spacing_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Secondary Unit Cost --></help>
+        <label><!-- Secondary Unit Cost --></label>
+        <name>Secondary_Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Secondary Vendor used for this product (O&amp;M) --></help>
+        <label><!-- Secondary Vendor Contact --></label>
+        <name>Secondary_Vendor_Contact__c</name>
+        <relationshipLabel><!-- Products (Secondary Vendor Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Secondary Vendor Part Number --></help>
+        <label><!-- Secondary Vendor Part Number --></label>
+        <name>Secondary_Vendor_Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- List Website used for secondary vendor --></help>
+        <label><!-- Secondary Vendor Website for Confirm --></label>
+        <name>Secondary_Vendor_Website_for_Confirm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Secondary Vendor used for this product (O&amp;M) --></help>
+        <label><!-- Secondary Vendor --></label>
+        <name>Secondary_Vendor__c</name>
+        <relationshipLabel><!-- Products (Secondary Vendor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Seismic restrictions on the product --></help>
+        <label><!-- Seismic --></label>
+        <name>Seismic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Seismic rating --></label>
+        <name>Seismic_rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Select Product --></label>
+        <name>Select_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serialized --></label>
+        <name>Serialized__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Series Fuse Rating (A) --></label>
+        <name>Series_Fuse_Rating_A__c</name>
+    </fields>
+    <fields>
+        <help><!-- How modules are shipped- used by procurement for reporting --></help>
+        <label><!-- Shipping Configuration --></label>
+        <name>Shipping_Configuration__c</name>
+        <picklistValues>
+            <masterLabel>Double Stack</masterLabel>
+            <translation><!-- Double Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Stack</masterLabel>
+            <translation><!-- Single Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Triple Stack</masterLabel>
+            <translation><!-- Triple Stack --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Approximate cost to ship the product to the East Coast --></help>
+        <label><!-- Shipping Cost to East Coast ($) --></label>
+        <name>Shipping_Cost_East__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approximate cost to ship the product to the West Coast --></help>
+        <label><!-- Shipping Cost to West Coast ($) --></label>
+        <name>Shipping_Cost_to_West_Coast__c</name>
+    </fields>
+    <fields>
+        <help><!-- Terms for shipping the product. Filled out by Procurement. --></help>
+        <label><!-- Shipping Terms --></label>
+        <name>Shipping_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- Protocols used for communication between site controller, PCS, and BMS --></help>
+        <label><!-- Site Communications Protocols --></label>
+        <name>Site_Communications_Protocols__c</name>
+    </fields>
+    <fields>
+        <help><!-- For combiners often this is 15A and for recombiners it may vary, and may be a breaker, not a fuse and that should be noted. --></help>
+        <label><!-- Size of Fuse Included --></label>
+        <name>Size_of_Fuse_Included__c</name>
+    </fields>
+    <fields>
+        <help><!-- Snow restrictions on the product --></help>
+        <label><!-- Snow --></label>
+        <name>Snow__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Product Compatibility --></label>
+        <name>Specific_Product_Compatibility__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days needed as lead time when ordering the product- Filled out and managed by Procurement --></help>
+        <label><!-- Standard Lead Time (days) --></label>
+        <name>Standard_Lead_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standby Power Consumption (W) --></label>
+        <name>Standby_Power_Consumption_W__c</name>
+    </fields>
+    <fields>
+        <label><!-- States Taxable List --></label>
+        <name>States_Taxable_List__c</name>
+    </fields>
+    <fields>
+        <label><!-- States where Product is Taxable --></label>
+        <name>StateswhereProductisTaxable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not In Use: See Reasons Not In Use-Requires approval from CC
+Project Specific Approved: CC has approved this product for a specific job only
+CC Approved for Sale: CC has approved the product
+Standard: CC Approved plus installed on min of 2 jobs --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>1- Standard</masterLabel>
+            <translation><!-- 1- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2- Conditionally Approved</masterLabel>
+            <translation><!-- 2- Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3- Under Evaluation</masterLabel>
+            <translation><!-- 3- Under Evaluation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4- Not in Use</masterLabel>
+            <translation><!-- 4- Not in Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5- O&amp;M In Use</masterLabel>
+            <translation><!-- 5- O&amp;M In Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6- O&amp;M Not In Use</masterLabel>
+            <translation><!-- 6- O&amp;M Not In Use --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How modules are stored- used by procurement for reporting --></help>
+        <label><!-- Storage Configuration --></label>
+        <name>Storage_Configuration__c</name>
+        <picklistValues>
+            <masterLabel>Double Stack</masterLabel>
+            <translation><!-- Double Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Stack</masterLabel>
+            <translation><!-- Single Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Triple Stack</masterLabel>
+            <translation><!-- Triple Stack --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Storage Relative Humidity Allowable Range --></help>
+        <label><!-- Storage Relative Humidity Allow Range --></label>
+        <name>Storage_Relative_Humidity_Allow_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Storage Temperature Allowable Range --></label>
+        <name>Storage_Temperature_Allowable_Range__c</name>
+    </fields>
+    <fields>
+        <help><!-- Define mounting angle for inverter from vertical (90°) to horizontal/flat (0°) --></help>
+        <label><!-- String Inverter Mounting --></label>
+        <name>String_Inverter_Mounting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunlink Base Price --></label>
+        <name>Sunlink_Base_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunlink Row Spacing 10° --></label>
+        <name>Sunlink_Row_spacing_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunlink Row Spacing 15° --></label>
+        <name>Sunlink_Row_spacing_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunlink Row Spacing 20° --></label>
+        <name>Sunlink_Row_spacing_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunlink Row Spacing 5° --></label>
+        <name>Sunlink_Row_spacing_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Module per Sunlink (X by 1) --></label>
+        <name>Sunlink_X_by_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplied with 690.5 (C) Placard --></label>
+        <name>Supplied_with_690_5_C_Placard__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Vendors that supply the product --></help>
+        <label><!-- Suppliers --></label>
+        <name>Suppliers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supported Communication Protocol --></label>
+        <name>Supported_Communication_Protocol__c</name>
+    </fields>
+    <fields>
+        <label><!-- Surge Protection Information --></label>
+        <name>Surge_Protection_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the product exempt from tariffs? Checked = Yes (Exempt), Unchecked = No (not Exempt) --></help>
+        <label><!-- Tariff Exempt --></label>
+        <name>Tariff_Exempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Category --></label>
+        <name>Tax_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is given as %/C on the specification sheet, it must be converted to A/Celsius. Example calculation:
+Tcoef Isc   = .05 %/Celsius
+Isc = 8.73A
+Tcoef Isc = 8.73 X .0005 = 0.0044 A/Celsius --></help>
+        <label><!-- Temp Coefficient of Isc (A/Celsius) --></label>
+        <name>Temp_Cf_Isc_A_C__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the temperature coefficient of Pmax from the module data sheet as a percentage per degree Celsius without the % symbol, e.g., -0.45 --></help>
+        <label><!-- Temp Coefficient of Pmax (%/Celsius) --></label>
+        <name>Temp_Cf_Power_PMP_C__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is given as  %/C on the specification sheet, it must be converted to V/Celsius. Example calculation:
+ Tcoef Voc   = -0.32 %/Celsius
+ Voc = 44.8V
+Tcoef Voc = 44.8 X -.0032 = -0.1434 V/Celsius --></help>
+        <label><!-- Temp. Coefficient of Voc (V/Celsius) --></label>
+        <name>Temp_Cf_Voc_V_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Coeff of Isc Percent: --></label>
+        <name>Temp_Coeff_of_Isc_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Coeff of Vmp Percent --></label>
+        <name>Temp_Coeff_of_Vmp_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Coeff of Voc Percent --></label>
+        <name>Temp_Coeff_of_Voc_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Coefficient Notes --></label>
+        <name>Temp_Coefficient_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Coefficient of Isc (A/Celsius) --></label>
+        <name>Temp_Coefficient_of_Isc_A_C_New__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the temperature coefficient of Isc from the module data sheet as a percentage per degree Celsius without the % symbol, e.g., 0.05 --></help>
+        <label><!-- Temp Coefficient of Isc (%/°C): --></label>
+        <name>Temp_Coefficient_of_Isc_C__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the temperature coefficient of Vmp from the module data sheet as a percentage per degree Celsius without the % symbol, e.g., -0.42. If there is no stated temperature coefficient of Vmp use the temperature coefficient of Pmax. --></help>
+        <label><!-- Temp Coefficient of Vmp (%/°C): --></label>
+        <name>Temp_Coefficient_of_Vmp_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp. Coefficient of Vmp (V/Celsius) --></label>
+        <name>Temp_Coefficient_of_Vmp_V_C_New__c</name>
+    </fields>
+    <fields>
+        <help><!-- If shown as %/C on spec sheet, convert to V/Celsius. 
+Calculation: 
+Tcoef Vmp= -0.42 %/Celsius
+Vmp= 35.3V
+Tcoef Vmp= 35.3 X -.0042= -0.1483 V/Celsius
+If Temp Coeff of Vmp is not provided use Temp Coeff of Pmax % and multiply by Vmp value --></help>
+        <label><!-- Temp. Coefficient of Vmp (V/Celsius) --></label>
+        <name>Temp_Coefficient_of_Vmp_V_Celcius__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the temperature coefficient of Voc from the module data sheet as a percentage per degree Celsius without the % symbol, e.g., -0.33. --></help>
+        <label><!-- Temp Coefficient of Voc (%/°C): --></label>
+        <name>Temp_Coefficient_of_Voc_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp. Coefficient of Voc (V/Celsius) --></label>
+        <name>Temp_Coefficient_of_Voc_V_C_New__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thermal Parameter --></label>
+        <name>Thermal_Parameter__c</name>
+    </fields>
+    <fields>
+        <help><!-- The rated current of the box. this should specify if the current given is for the bus rating and/or the main disconnect rating --></help>
+        <label><!-- Total Ampere Rating --></label>
+        <name>Total_Ampere_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Harmonic Distortion (%) --></label>
+        <name>Total_Harmonic_Distortion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transformer LV Winding Configuration --></label>
+        <name>Transformer_LV_Winding_Configuration_1__c</name>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta or Wye</masterLabel>
+            <translation><!-- Delta or Wye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grounded Wye</masterLabel>
+            <translation><!-- Grounded Wye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wye</masterLabel>
+            <translation><!-- Wye --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transformer Requirements --></label>
+        <name>Transformer_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 1642 --></label>
+        <name>UL_1642__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 1741-SA --></label>
+        <name>UL_1741_SA__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 1741 --></label>
+        <name>UL_1741__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 1973 --></label>
+        <name>UL_1973__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 2703 Additional Info --></label>
+        <name>UL_2703_AddInfo__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 2703 --></label>
+        <name>UL_2703__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 9540A --></label>
+        <name>UL_9540A__c</name>
+    </fields>
+    <fields>
+        <label><!-- UL 9540 --></label>
+        <name>UL_9540__c</name>
+    </fields>
+    <fields>
+        <label><!-- UN 38.3 --></label>
+        <name>UN_38_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Product Name --></label>
+        <name>Unique_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unirac End Clip Part Number --></label>
+        <name>Unirac_End_Clip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unirac Mid Clip Part Number --></label>
+        <name>Unirac_Mid_Clip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Type --></label>
+        <name>Unit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ea</masterLabel>
+            <translation><!-- Ea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pkg</masterLabel>
+            <translation><!-- Pkg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Manufacturers spec sheets may list power tolerance as +/- watts. These need to be converted to percentage for upper and lower tolerance. --></help>
+        <label><!-- Upper Power Tolerance (%) --></label>
+        <name>Upper_Power_Tolerance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Useful Life(years) --></label>
+        <name>Useful_Life_years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Data Reporting Requirements --></label>
+        <name>Vendor_Data_Reporting_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Onsite Storage Monitoring --></label>
+        <name>Vendor_Onsite_Storage_Monitoring__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Part Number --></label>
+        <name>Vendor_Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to vendor website. --></help>
+        <label><!-- Vendor Product Page --></label>
+        <name>Vendor_Product_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verification of SOC --></label>
+        <name>Verification_of_SOC__c</name>
+    </fields>
+    <fields>
+        <help><!-- max rated voltage, typically 600v or 1000v --></help>
+        <label><!-- Voltage Rating --></label>
+        <name>Voltage_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional information and warranty details --></help>
+        <label><!-- Warranty Details/Abnormalities --></label>
+        <name>Warranty_Details_Abnormalities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Link --></label>
+        <name>Warranty_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to the Warranty for the product --></help>
+        <label><!-- Warranty --></label>
+        <name>Warranty_PDF__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the warranty becomes effective --></help>
+        <label><!-- Warranty Start Date --></label>
+        <name>Warranty_Start_Date__c</name>
+        <picklistValues>
+            <masterLabel>Date Shipped</masterLabel>
+            <translation><!-- Date Shipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date of Delivery</masterLabel>
+            <translation><!-- Date of Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date of Installation</masterLabel>
+            <translation><!-- Date of Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date of Purchase</masterLabel>
+            <translation><!-- Date of Purchase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of years the product is covered under warranty from the manufacturer --></help>
+        <label><!-- Warranty (years) --></label>
+        <name>Warranty_years__c</name>
+    </fields>
+    <fields>
+        <help><!-- From Go Solar California website --></help>
+        <label><!-- Watts (PTC) --></label>
+        <name>Watts_PTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max. AC Power Output (W) --></label>
+        <name>Watts_Rated_Inverter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watts (STC) --></label>
+        <name>Watts_STC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Weight of the product in pounds --></help>
+        <label><!-- Weight (lb) --></label>
+        <name>Weight_lb__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the controller take in LMP data to make hourly charge and discharge decisions? --></help>
+        <label><!-- Wholesale Energy Arbitrage --></label>
+        <name>Wholesale_Energy_Arbitrage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Width of the product in inches --></help>
+        <label><!-- Width (inches) --></label>
+        <name>Width_inches__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wind restrictions on the product --></help>
+        <label><!-- Wind --></label>
+        <name>Wind__c</name>
+    </fields>
+    <fields>
+        <label><!-- 10 Year Service Plan ($) --></label>
+        <name>X10_Year_Service_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- 10 Year UPTG ($) --></label>
+        <name>X10_Year_UPTG__c</name>
+    </fields>
+    <fields>
+        <label><!-- 15 Year Service Plan ($) --></label>
+        <name>X15_Year_Service_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- 15 Year UPTG ($) --></label>
+        <name>X15_Year_UPTG__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Cost --></label>
+        <name>X1_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Fuse Rating (A) --></label>
+        <name>X1_Fuse_Rating_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1. Number of Inputs --></label>
+        <name>X1_Number_of_Inputs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 20 Year Service Plan ($) --></label>
+        <name>X20_Year_Service_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- 20 Year UPTG ($) --></label>
+        <name>X20_Year_UPTG__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Cost --></label>
+        <name>X2_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Fuse Rating (A) --></label>
+        <name>X2_Fuse_Rating_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2. Number of Inputs --></label>
+        <name>X2_Number_of_Inputs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Cost --></label>
+        <name>X3_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Fuse Rating (A) --></label>
+        <name>X3_Fuse_Rating_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3. Number of Inputs --></label>
+        <name>X3_Number_of_Inputs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. Cost --></label>
+        <name>X4_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. Fuse Rating (A) --></label>
+        <name>X4_Fuse_Rating_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4. Number of Inputs --></label>
+        <name>X4_Number_of_Inputs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5. Cost --></label>
+        <name>X5_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5. Fuse Rating (A) --></label>
+        <name>X5_Field_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5. Number of Inputs --></label>
+        <name>X5_Number_of_Inputs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5 Year Service Plan ($) --></label>
+        <name>X5_Year_Service_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5 Year UPTG ($) --></label>
+        <name>X5_Year_UPTG__c</name>
+    </fields>
+    <fields>
+        <label><!-- 80% Power Warranty (Yrs.) --></label>
+        <name>X80_Power_Warranty_Yrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 80% Production (W) --></label>
+        <name>X80_Production_W__c</name>
+    </fields>
+    <fields>
+        <label><!-- 90% Power Warranty (Yrs.) --></label>
+        <name>X90_Power_Warranty_Yrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- 90% Production (W) --></label>
+        <name>X90_Production_W__c</name>
+    </fields>
+    <fields>
+        <help><!-- Yearly Borrego Preventative Maintenance Cost ($) --></help>
+        <label><!-- Yearly Borrego Prevent Maint. Cost($) --></label>
+        <name>Yearly_Borrego_Prevent_Maint_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Yearly Vendor Preventative Maintenance Cost ($) --></help>
+        <label><!-- Yearly Vendor Prevent Maintenance Cost $ --></label>
+        <name>Yearly_Vendor_Prevent_Maintenance_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Level Monitoring Solution --></label>
+        <name>Zone_Level_Monitoring_Solution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter dBa level and distance. E.G. - &lt;50dBA @3m --></help>
+        <label><!-- dBA (Decibel) Rating --></label>
+        <name>dBA_Decibel_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- used in conjunction with Internal Part number formula field to assign random part numbers to O&amp;M products --></help>
+        <label><!-- internal parts auto number --></label>
+        <name>internal_parts_auto_number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of pallets contained in a full truckload. Used by procurement for reporting. --></help>
+        <label><!-- # of Pallets in Full-Truckload --></label>
+        <name>of_Pallets_in_Full_Truckload__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- PV string combiners and re-combiners --></description>
+        <label><!-- Combiner Box --></label>
+        <name>Combiner_Box</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- All data acquisition and display kiosk related hardware and software --></description>
+        <label><!-- DAS --></label>
+        <name>DAS</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Business Development - Energy management system within the Energy Storage Unit --></description>
+        <label><!-- ESU Component --></label>
+        <name>ESU_Component</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Electrical Materials --></label>
+        <name>Electrical_Materials</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Business Development - Integrated product using battery modules and power conversion systems. --></description>
+        <label><!-- Energy Storage Unit --></label>
+        <name>Energy_Storage_Unit</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- DC to AC inverters- Central, Micro --></description>
+        <label><!-- Inverter --></label>
+        <name>Inverter</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Hardware and materials specified by BSS but not covered in other categories --></description>
+        <label><!-- Miscellaneous --></label>
+        <name>Miscellaneous</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- old products that are not in use anymore --></description>
+        <label><!-- OLD --></label>
+        <name>OLD</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- O&amp;M Product/Services as part of CPQ Implementation --></description>
+        <label><!-- O&amp;M Product --></label>
+        <name>O_M_Product</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Industry Solar Racking solutions and BSS solutions --></description>
+        <label><!-- Racking --></label>
+        <name>Racking</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- All PV module types --></description>
+        <label><!-- Solar Module --></label>
+        <name>SolarModule</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- solor modules specific to O&amp;M business --></description>
+        <label><!-- Solar Module-O&amp;M --></label>
+        <name>Solar_Module_O_M</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Subcontractor --></label>
+        <name>Subcontractor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Transformer --></label>
+        <name>Transformer</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Require_Expense_GL_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Require_Inventory_GL_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Require_Inventory_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Require_Revenue_GL_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Require_Unit_Cost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the Resources Group or Procurement can change the Status to Approved for Sale. --></errorMessage>
+        <name>Approved_for_Sale</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name, Manufacturer, Cost, and All Technical Specs are required before the product can be Approved for Sale --></errorMessage>
+        <name>Combier_Approved_for_Sale</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please contact someone in the RG or Procurement to change the cost of a product. --></errorMessage>
+        <name>Cost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Install Manual has changed, you must update the version of the manual. --></errorMessage>
+        <name>Install_Manual_version_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name, Manufacturer, Cost, Warranty Information, All Technical Specs and All Physical Specs are required before the product can be Approved for Sale --></errorMessage>
+        <name>Inverter_Approved_for_Sale</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- O&amp;M Users should only be using Status = 5 - O&amp;M In Use or 6. - O&amp;M Not in Use. --></errorMessage>
+        <name>Limit_Status_for_OM_Managers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name, Manufacturer, Cost, Warranty Information, All ElectricalSpecs, All Physical Specs, and All Production Modeling Specs are required before the product can be Approved for Sale --></errorMessage>
+        <name>Module_Approved_for_Sale</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Operating Manual has changed, you must update the version of the manual. --></errorMessage>
+        <name>Operation_Manual_version_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Performance Guarantee is required if this Product is a Controller. --></errorMessage>
+        <name>Perf_Guarantee</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name, Manufacturer, and Materials are required before the product can be Approved for Sale --></errorMessage>
+        <name>Racking_Approved_for_Sale</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a Reason Not In Use --></errorMessage>
+        <name>Reason_Not_In_Use</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter what you updated and why. --></errorMessage>
+        <name>Reason_for_modification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only RG, Procurement, Engineering Coordinator or Electrical Engineers can change the technical specifications --></errorMessage>
+        <name>Restricted_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must check either Include In Maintenance or Exclude From Maintenance checkbox. --></errorMessage>
+        <name>SBQQ__Include_or_Exclude_Maintenance</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Charge Type is Recurring, a Billing Type must be selected. --></errorMessage>
+        <name>SBQQ__RecurringChargeTypeMustHaveBillingType</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only subscription products may specify term discount schedule --></errorMessage>
+        <name>SBQQ__Term_schedule_requires_subscription</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Charge Type is One-Time, a Billing Frequency value cannot be selected. --></errorMessage>
+        <name>SBQQ__Validate_billing_frequency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Charge Type is One-Time or Usage, a Billing Type value cannot be selected. --></errorMessage>
+        <name>SBQQ__Validate_billing_type</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Manufacturing_Order --></label>
+        <name>AcctSeedERP__Create_Manufacturing_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CloneWithRelated --></label>
+        <name>SBQQ__CloneWithRelated</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CloneWithRelatedClassic --></label>
+        <name>SBQQ__CloneWithRelatedClassic</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Translate --></label>
+        <name>SBQQ__Translate</name>
+    </webLinks>
+</CustomObjectTranslation>

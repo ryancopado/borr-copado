@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$AcctSeed__Account__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Contracts__r$ContractNumber</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$TaxGroup__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Service_Contract_Branch__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Contracts__r$Site_Address__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>O&amp;M Project by Branch and Site Address</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Service_Contracts_and_Assets__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Project__c$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Contracts__r$StartDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

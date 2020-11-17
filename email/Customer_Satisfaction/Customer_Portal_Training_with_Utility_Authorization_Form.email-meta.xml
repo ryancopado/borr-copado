@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoLogo</letterhead>
+    <name>Customer Portal Training (with Utility Authorization Form)</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar Customer Portal Training</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+I hope you&apos;re doing well. I&apos;m reaching out to let you know that as part of our VIP initiative we&apos;ve set up a Customer Portal for {!Opportunity.Id} that includes:
+- electronic copies of product specification sheets, warranty information and your closeout documentation (including As-Built drawings)
+- quick access to your data monitoring platform
+- the ability to report issues with your solar system online at any time, day or night
+
+I&apos;d like to set up a time to train you on the functionality of the Customer Portal and answer any questions you may have regarding the portal or your solar installation in general. Do you have half an hour this week or next to discuss? As the portal is web-based, there will be an online component to the training. Anyone within your organization that is concerned with maintaining and monitoring the solar system can attend - just let me know who else should be included on the invitation (name and e-mail address).
+
+Additionally, we&apos;d also like to perform a detailed true-up report to compare the actual amount of energy produced by your system versus the amount expected. We have access to the data monitoring reports but we&apos;ll be able to compose a more thorough report if we have access to the historical energy usage associated with the electrical account. To access that, we&apos;d need a copy of the following form executed on your behalf (also attached to this e-mail):  http://www.sdge.com/sites/default/files/documents/1953410162/release.pdf
+
+Let me know if you have questions on the form above and what day and time you&apos;d be available in the coming weeks to hold a formal training on the portal. I look forward to hearing from you.
+
+Cheers,
+Tommy Sunderland</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

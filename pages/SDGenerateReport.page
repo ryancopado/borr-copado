@@ -1,0 +1,23 @@
+<apex:page action="{!generateReport}" controller="SDGenerateReport">
+  <apex:form >
+    <apex:actionPoller action="{!redirectWhenJobsAreCompleted}" interval="5" reRender="info_panel" />
+  </apex:form>
+  <apex:outputPanel id="info_panel">
+    <div style="display: block; margin-left: 20%; margin-top: 5%;">
+      <apex:outputPanel rendered="{!NOT(doneGenerating)}" layout="none">
+        <img style="width: 16px;" src="{!URLFOR($Resource.SDOC__SDoc,'spinner.gif')}" />
+        <strong>&nbsp;&nbsp;Generating report...</strong>
+      </apex:outputPanel>
+      <apex:outputPanel rendered="{!doneGenerating}" layout="none">
+        <apex:outputPanel rendered="{!NOT(ranFileDownloadJavascript)}" layout="none">
+          <script type="text/javascript">
+            window.location.href = '{!downloadLink}';
+          </script>
+        </apex:outputPanel>
+        <img style="width: 16px;" src="{!URLFOR($Resource.SDOC__SDoc,'checkbox_checked.gif')}" />
+        <strong>&nbsp;&nbsp;Report successfully generated.</strong>
+        <a href="{!downloadLink}">Click here</a> if the report was not automatically downloaded.
+      </apex:outputPanel>
+    </div>
+  </apex:outputPanel>
+</apex:page>

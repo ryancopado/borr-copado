@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The total amount of expenses which can be billed. --></help>
+        <label><!-- Billable Expenses --></label>
+        <name>AcctSeed__Billable_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of expenses which have been billed. --></help>
+        <label><!-- Billed Expenses --></label>
+        <name>AcctSeed__Billed_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the employee that is submitting the expense report. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Expense Reports (Employee) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Expense Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of expense lines associated with this record. --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of expenses which have been paid to either an employee or credit card vendor. --></help>
+        <label><!-- Paid Expenses --></label>
+        <name>AcctSeed__Paid_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of expenses which are employee reimbursable or credit card vendor payable. --></help>
+        <label><!-- Payable Expenses --></label>
+        <name>AcctSeed__Payable_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the expense report controlled by the approval process. --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Posted</masterLabel>
+            <translation><!-- Posted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The sum of all the expense lines related to the expense report. --></help>
+        <label><!-- Total Expenses --></label>
+        <name>AcctSeed__Total_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of expenses which have not been billed. --></help>
+        <label><!-- Unbilled Expenses --></label>
+        <name>AcctSeed__Unbilled_Expenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of expenses which have not been paid. --></help>
+        <label><!-- Unpaid Expenses --></label>
+        <name>AcctSeed__Unpaid_Expenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch-OLD- --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager ID --></label>
+        <name>ManagerID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manager of the employee that is submitting the expense report. --></help>
+        <label><!-- Manager for Approval --></label>
+        <name>Manager_for_Approval__c</name>
+        <relationshipLabel><!-- Expense Reports (Manager for Approval) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Ops_Division__c</name>
+        <relationshipLabel><!-- Expense Reports (Ops Division) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Expense Report Branch. This is automatically set based on the user profile. --></help>
+        <label><!-- Branch --></label>
+        <name>ReportBranch__c</name>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Atlantic</masterLabel>
+            <translation><!-- Mid Atlantic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midwest</masterLabel>
+            <translation><!-- Midwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New England</masterLabel>
+            <translation><!-- New England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nor Cal</masterLabel>
+            <translation><!-- Nor Cal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>So Cal</masterLabel>
+            <translation><!-- So Cal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Sales_Segment__c</name>
+        <relationshipLabel><!-- Expense Reports (Sales Segment) --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Employee_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the Branch, Ops Division or Sales Segment --></errorMessage>
+        <name>Branch_OpsDiv_SalesSeg</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Accounts_Payable --></label>
+        <name>AcctSeed__Create_Accounts_Payable</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Billings --></label>
+        <name>AcctSeed__Create_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Journal_Entry --></label>
+        <name>Create_Journal_Entry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Line_Items --></label>
+        <name>Edit_Line_Items</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Attach_Files --></label>
+        <name>Mass_Attach_Files</name>
+    </webLinks>
+</CustomObjectTranslation>

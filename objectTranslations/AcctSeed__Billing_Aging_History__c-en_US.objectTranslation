@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. Accounting period must have a value of &quot;Open&quot; in order to be selected. --></help>
+        <label><!-- Accounting Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Billing Aging History --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the age of the billing for the given accounting period. --></help>
+        <label><!-- Age --></label>
+        <name>AcctSeed__Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- Balance of the billing for the given accounting period. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Billing associated with this record. --></help>
+        <label><!-- Billing --></label>
+        <name>AcctSeed__Billing__c</name>
+        <relationshipLabel><!-- Billing Aging History --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of days the billing is past due. This is derived by subtracting the due date from the end date associated with the accounting period. --></help>
+        <label><!-- Days Past Due --></label>
+        <name>AcctSeed__Days_Past_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- Due date associated with this billing. --></help>
+        <label><!-- Due Date --></label>
+        <name>AcctSeed__Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The end date associated with the accounting period. --></help>
+        <label><!-- Period End Date --></label>
+        <name>AcctSeed__Period_End_Date__c</name>
+    </fields>
+</CustomObjectTranslation>

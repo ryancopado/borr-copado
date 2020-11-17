@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Per unit amount. Currency field. --></help>
+        <label><!-- Labor Billing Rate --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The rate used in a calculation will be the one with the most recent effective date. Pre-dated or Post dated rates are not supported. --></help>
+        <label><!-- Effective Date --></label>
+        <name>AcctSeed__Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Salesforce User. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Billing Rates --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The percentage to markup on an expense line which is billed for the given Project, Project Task, and Employee. --></help>
+        <label><!-- Expense Markup --></label>
+        <name>AcctSeed__Expense_Markup__c</name>
+    </fields>
+    <fields>
+        <help><!-- The billing rate that is used if the overtime field is checked on the time card line. --></help>
+        <label><!-- Overtime Labor Billing Rate --></label>
+        <name>AcctSeed__Overtime_Labor_Billing_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Work break down structure for projects, such as: Phases, Deliverables or Roles. --></help>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Billing Rates --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related Project or Job for allocation of Revenue. --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Billing Rates --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

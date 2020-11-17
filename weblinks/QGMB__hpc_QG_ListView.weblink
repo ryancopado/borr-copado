@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>QueryGuru List Views (Object)</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/resource/QGMB__jquery_1_11_1_min&quot;)}
+
+{!REQUIRESCRIPT(&quot;../../soap/ajax/32.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;../../soap/ajax/32.0/apex.js&quot;)}
+
+var $j = jQuery.noConflict();
+
+{!REQUIRESCRIPT(&quot;/resource/QGMB__QG_BtnTools&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/QGMB__QG_BtnHelper&quot;)} 
+
+
+var invokeUrl = &apos;{!URLFOR(&quot;/apex/qgmb__displayListViews&quot;)}&apos;.toLowerCase();
+
+//url = url + &apos;?sid={!$Api.Session_ID}&amp;objurl=&apos; + window.location.href;
+
+debugMode = true;
+
+getObjListView_HPC(sfdcPage.entityId, &quot;{!$Api.Session_ID}&quot;,window.location.href, invokeUrl, debugMode );
+
+//window.open(url);
+
+//ck = writeCookie (&apos;superSid&apos;, &quot;{!$Api.Session_ID}&quot;, 1);
+//console.log(&apos;cookie: &apos;, ck);</url>
+</CustomPageWebLink>

@@ -1,0 +1,12 @@
+<apex:page standardController="Asset" extensions="Asset_ServiceVisitCtlExt" tabStyle="Asset" action="{!initRecordTypes}">
+	
+	<apex:form id="theForm">
+		<apex:pageMessages />
+		
+		<apex:sectionHeader title="Asset Edit" subtitle="New Asset" />
+		
+		Click&nbsp;<apex:outputLink value="{!retURL}">here</apex:outputLink> to return to the previous page.
+		
+	</apex:form>
+	
+</apex:page>

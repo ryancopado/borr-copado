@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Cirrus Insight</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.CreatedById</field>
+                <operation>equals</operation>
+                <value>Cirrus Insight</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Industry</field>
+                <operation>equals</operation>
+                <value>Land</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>ME,NH,VT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Maine,New Hampshire,Vermont</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/Land_Lead_Assignment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>MA,CT,RI</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Industry</field>
+                <operation>equals</operation>
+                <value>Land</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Massachusetts,Connecticut,Rhode Island</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/Land_Lead_Assignment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>IL,PA,VA,MD,MN</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Industry</field>
+                <operation>equals</operation>
+                <value>Land</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Illinois,Virginia,Maryland,Pennsylvania,Minnesota</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/Land_Lead_Assignment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Industry</field>
+                <operation>equals</operation>
+                <value>Land</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>New York</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>NY</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/Land_Lead_Assignment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.Industry</field>
+                <operation>equals</operation>
+                <value>Land</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>notEqual</operation>
+                <value>IL,PA,VA,MD,MN,NY,MA,CT,RI,ME,NH,VT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>notEqual</operation>
+                <value>Maine,New Hampshire,Vermont,Massachusetts,Connecticut,Rhode Island,Illinois,Virginia,Maryland,Pennsylvania,Minnesota,New York</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/Land_Lead_Assignment</template>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Lead from zipcode</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>etam@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Employment Applicant,Affirmative Action</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>acain@borregosolar.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND 2 AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Jigsaw</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedById</field>
+                <operation>equals</operation>
+                <value>Emily Tam</value>
+            </criteriaItems>
+            <template>X1_Lead_Management/LeadsWebtoLeademailresponse</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.Jigsaw</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

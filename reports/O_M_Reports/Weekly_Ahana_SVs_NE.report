@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contract.Service_Visits__r$Branch__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r$ProjectName__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r$Case_Record_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r$Visit_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r$Notes__c</field>
+    </columns>
+    <columns>
+        <field>Contract.Service_Visits__r.Visit_Comments__r$Comment__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contract$Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>ahana</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Service_Visits__r$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New England</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Weekly Ahana SVs - NE</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contracts_with_Visits_w_wo_Comments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contract.Service_Visits__r$Visit_Date__c</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

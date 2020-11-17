@@ -1,0 +1,61 @@
+<apex:page standardController="Site__c" recordSetVar="unused" sidebar="false">
+
+<!-- for this page to work with a specific custom object, change standController="entityname" to custom object api name  
+    For example, if custom object name is Warehouse__c, change first part of the first line to standardController="warehouse__c" -->
+
+    
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+<apex:column headerValue="Name">
+<apex:inputField value="{!a.name}"/>
+</apex:column>
+ <apex:column headerValue="Permit Date">
+ <apex:inputField value="{!a.Site_Use_Permit_Set_Release__c}"/>
+ </apex:column> 
+ <apex:column headerValue="Site Discovery Date">
+ <apex:inputField value="{!a.Complete_Site_Discovery_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="50% Date">
+ <apex:inputField value="{!a.X50_Forecast_Release_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="Handoff Date">
+ <apex:inputField value="{!a.Handoff_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="CD IFR Date">
+ <apex:inputField value="{!a.CD_Forecast_Release_Date__c}"/>
+ </apex:column>
+<apex:column headerValue="CD IFC Date">
+ <apex:inputField value="{!a.CD_IFC_Release_Date__c}"/>
+</apex:column> 
+<apex:column headerValue="Mob Date">
+ <apex:inputField value="{!a.Mobilization_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="Mech Comp Date">
+ <apex:inputField value="{!a.Substantial_Completion_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="Sub Comp Date">
+ <apex:inputField value="{!a.Substantial_Completion_NEW__c}"/>
+ </apex:column> 
+ <apex:column headerValue="PTO Date">
+ <apex:inputField value="{!a.PTO_Date__c}"/>
+ </apex:column>
+ <apex:column headerValue="New Comments On Schedule">
+ <apex:inputField value="{!a.New_Comments_on_Schedule__c}"/>
+</apex:column> 
+<apex:column headerValue="New Design Note">
+ <apex:inputField value="{!a.New_Design_Note__c}"/>
+</apex:column> 
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

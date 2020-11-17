@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Denotes if the GL Account is active. Most filtered lookups to the GL Account object look for an active status. --></help>
+        <label><!-- Active --></label>
+        <name>AcctSeed__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the GL Account is a Bank account and can be selected to record Cash Receipts, Cash Disbursements and use the Bank Reconciliation. --></help>
+        <label><!-- Bank --></label>
+        <name>AcctSeed__Bank__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is an alternate name for the GL Account when used in Billings to display a more customer Friendly description of the GL Account. This feature only is applicable to Revenue GL Accounts. --></help>
+        <label><!-- Billing Description --></label>
+        <name>AcctSeed__Billing_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in expense report entry screen to provide a more user friendly name for a GL Account. --></help>
+        <label><!-- Expense Report Name --></label>
+        <name>AcctSeed__Expense_Report_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The GL Category type classifies GL accounts according to where they are are found on your financial statements. In this way they are similar to Type and Sub Type 1 fields which are reporting driven. This field tells the system what function it serves. --></help>
+        <label><!-- GL Category --></label>
+        <name>AcctSeed__GL_Category__c</name>
+        <picklistValues>
+            <masterLabel>Input VAT</masterLabel>
+            <translation><!-- Input VAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Output VAT</masterLabel>
+            <translation><!-- Output VAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box if the account is to be used to track Mileage in Expenses Reports. --></help>
+        <label><!-- Mileage Account --></label>
+        <name>AcctSeed__Mileage_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for mileage rate for expenses. --></help>
+        <label><!-- Mileage Rate --></label>
+        <name>AcctSeed__Mileage_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in conjunction with the Type field to further classify GL Accounts in reports. This pick list is dependent on Type. --></help>
+        <label><!-- Sub Type 1 --></label>
+        <name>AcctSeed__Sub_Type_1__c</name>
+        <picklistValues>
+            <masterLabel>Assets</masterLabel>
+            <translation><!-- Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost of Goods Sold</masterLabel>
+            <translation><!-- Cost of Goods Sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facilities</masterLabel>
+            <translation><!-- Facilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General &amp; Administrative</masterLabel>
+            <translation><!-- General &amp; Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liabilities</masterLabel>
+            <translation><!-- Liabilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owners Equity</masterLabel>
+            <translation><!-- Owners Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Revenue</masterLabel>
+            <translation><!-- Product Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales &amp; Marketing</masterLabel>
+            <translation><!-- Sales &amp; Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Revenue</masterLabel>
+            <translation><!-- Service Revenue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used in conjunction with the Type and Subtype 1 fields to further classify GL Accounts in reports. This pick list is dependent on Subtype 1. --></help>
+        <label><!-- Sub Type 2 --></label>
+        <name>AcctSeed__Sub_Type_2__c</name>
+        <picklistValues>
+            <masterLabel>Accounting</masterLabel>
+            <translation><!-- Accounting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advertising</masterLabel>
+            <translation><!-- Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefits</masterLabel>
+            <translation><!-- Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation><!-- Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Assets</masterLabel>
+            <translation><!-- Current Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Liabilities</masterLabel>
+            <translation><!-- Current Liabilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equity</masterLabel>
+            <translation><!-- Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Benefits</masterLabel>
+            <translation><!-- Executive Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Assets</masterLabel>
+            <translation><!-- Fixed Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Resources</masterLabel>
+            <translation><!-- Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal and professional</masterLabel>
+            <translation><!-- Legal and professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Assets</masterLabel>
+            <translation><!-- Long Term Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Liabilities</masterLabel>
+            <translation><!-- Long Term Liabilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing Events</masterLabel>
+            <translation><!-- Marketing Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Materials</masterLabel>
+            <translation><!-- Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overhead</masterLabel>
+            <translation><!-- Overhead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll Taxes</masterLabel>
+            <translation><!-- Payroll Taxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Family 1</masterLabel>
+            <translation><!-- Product Family 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Family 2</masterLabel>
+            <translation><!-- Product Family 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Family 3</masterLabel>
+            <translation><!-- Product Family 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rent</masterLabel>
+            <translation><!-- Rent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salary &amp; Wages</masterLabel>
+            <translation><!-- Salary &amp; Wages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Travel</masterLabel>
+            <translation><!-- Sales Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Family 1</masterLabel>
+            <translation><!-- Service Family 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Family 2</masterLabel>
+            <translation><!-- Service Family 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Family 3</masterLabel>
+            <translation><!-- Service Family 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is relevant for expense transactions used in Time and Material Billings. This GL Account assignment maps the expense to the proper Revenue Account when processing expense transactions for Time and Material Billings. --></help>
+        <label><!-- Time and Expense Revenue Conversion --></label>
+        <name>AcctSeed__TM_Revenue_Conversion__c</name>
+        <relationshipLabel><!-- GL Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the major grouping for financial reporting. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+        <picklistValues>
+            <masterLabel>Balance Sheet</masterLabel>
+            <translation><!-- Balance Sheet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expense</masterLabel>
+            <translation><!-- Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revenue</masterLabel>
+            <translation><!-- Revenue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The filtered look up on the Expense object uses a value of True to be available for selection in submitting an expense. --></help>
+        <label><!-- Used in Expense Reports --></label>
+        <name>AcctSeed__Used_in_Expense_Reports__c</name>
+    </fields>
+    <fields>
+        <help><!-- Assign each GL Account to a BalSheet Type (including all Revenue and Expense GL Accounts are assigned to &quot;Income Statement&quot; --></help>
+        <label><!-- BalSheet Type --></label>
+        <name>BalSheet_Type__c</name>
+        <picklistValues>
+            <masterLabel>01Cash</masterLabel>
+            <translation><!-- 01Cash --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02Accounts Receivable</masterLabel>
+            <translation><!-- 02Accounts Receivable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03Accounts Receivable - Inter Company EPC</masterLabel>
+            <translation><!-- 03Accounts Receivable - Inter Company EPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04Accounts Receivable - Development Company</masterLabel>
+            <translation><!-- 04Accounts Receivable - Development Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05Inventory</masterLabel>
+            <translation><!-- 05Inventory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06Cost/Est Earning in Exc of Billing</masterLabel>
+            <translation><!-- 06Cost/Est Earning in Exc of Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07Deferred Costs -ST</masterLabel>
+            <translation><!-- 07Deferred Costs -ST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08Other Receivable</masterLabel>
+            <translation><!-- 08Other Receivable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09Prepaid Expense &amp; Deposits</masterLabel>
+            <translation><!-- 09Prepaid Expense &amp; Deposits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10PROPERTY AND EQUIPMENT</masterLabel>
+            <translation><!-- 10PROPERTY AND EQUIPMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Deposits - Facilities</masterLabel>
+            <translation><!-- 11Deposits - Facilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Other Receivables</masterLabel>
+            <translation><!-- 12Other Receivables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Deferred Costs -LT</masterLabel>
+            <translation><!-- 13Deferred Costs -LT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Accounts Payable</masterLabel>
+            <translation><!-- 14Accounts Payable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15Accrued Contract Costs</masterLabel>
+            <translation><!-- 15Accrued Contract Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16Other Accrued Expenses</masterLabel>
+            <translation><!-- 16Other Accrued Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17Advances from Cus</masterLabel>
+            <translation><!-- 17Advances from Cus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18Deferred Revenue -ST</masterLabel>
+            <translation><!-- 18Deferred Revenue -ST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19Billing in Exc of Cost/Est Earning</masterLabel>
+            <translation><!-- 19Billing in Exc of Cost/Est Earning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20Line of Credit</masterLabel>
+            <translation><!-- 20Line of Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21Notes Payable - Other</masterLabel>
+            <translation><!-- 21Notes Payable - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22Deferred Tax</masterLabel>
+            <translation><!-- 22Deferred Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23Notes Payable -Other</masterLabel>
+            <translation><!-- 23Notes Payable -Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24Deferred Revenue-LT</masterLabel>
+            <translation><!-- 24Deferred Revenue-LT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25Accrued Service Costs-LT</masterLabel>
+            <translation><!-- 25Accrued Service Costs-LT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26COMMON STOCK</masterLabel>
+            <translation><!-- 26COMMON STOCK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27RETAINED EARNINGS</masterLabel>
+            <translation><!-- 27RETAINED EARNINGS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28Income Statement</masterLabel>
+            <translation><!-- 28Income Statement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IS Grouping --></label>
+        <name>IS_Grouping__c</name>
+        <picklistValues>
+            <masterLabel>A. EPC Revenue</masterLabel>
+            <translation><!-- A. EPC Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B. O&amp;M Revenue</masterLabel>
+            <translation><!-- B. O&amp;M Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C. Other Revenue</masterLabel>
+            <translation><!-- C. Other Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D. EPC COGs</masterLabel>
+            <translation><!-- D. EPC COGs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E. O&amp;M COGs</masterLabel>
+            <translation><!-- E. O&amp;M COGs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F. Other COGs</masterLabel>
+            <translation><!-- F. Other COGs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G. Commissions</masterLabel>
+            <translation><!-- G. Commissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H. Salaries</masterLabel>
+            <translation><!-- H. Salaries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I. Bonus</masterLabel>
+            <translation><!-- I. Bonus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J. Payroll Burden</masterLabel>
+            <translation><!-- J. Payroll Burden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>K. Expense Reports</masterLabel>
+            <translation><!-- K. Expense Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L. Other</masterLabel>
+            <translation><!-- L. Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M. Warranty</masterLabel>
+            <translation><!-- M. Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N. Insurance/Depreciation</masterLabel>
+            <translation><!-- N. Insurance/Depreciation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O. Eng/O&amp;M Allocation</masterLabel>
+            <translation><!-- O. Eng/O&amp;M Allocation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Apply each Rev and Expense GL Account to one of these categories --></help>
+        <label><!-- IncStmt Type --></label>
+        <name>IncStmt_Type__c</name>
+        <picklistValues>
+            <masterLabel>01Revenue, Net</masterLabel>
+            <translation><!-- 01Revenue, Net --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02Cost of Revenue - Directs</masterLabel>
+            <translation><!-- 02Cost of Revenue - Directs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03Cost of Revenue - Indirects</masterLabel>
+            <translation><!-- 03Cost of Revenue - Indirects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04Cost of Revenue-Comm &amp; Affil Fees</masterLabel>
+            <translation><!-- 04Cost of Revenue-Comm &amp; Affil Fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05Marketing &amp; Sales  Expenses</masterLabel>
+            <translation><!-- 05Marketing &amp; Sales  Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>05Marketing &amp; Sales Expenses</masterLabel>
+            <translation><!-- 05Marketing &amp; Sales Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>06Corporate Salaries &amp; Benefits</masterLabel>
+            <translation><!-- 06Corporate Salaries &amp; Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>07G&amp;A Branch expenses</masterLabel>
+            <translation><!-- 07G&amp;A Branch expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08Interest Income</masterLabel>
+            <translation><!-- 08Interest Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09Other Income</masterLabel>
+            <translation><!-- 09Other Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10(Gain) Loss</masterLabel>
+            <translation><!-- 10(Gain) Loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11Interest Expense</masterLabel>
+            <translation><!-- 11Interest Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12Financing Expense Other</masterLabel>
+            <translation><!-- 12Financing Expense Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13Other Expense</masterLabel>
+            <translation><!-- 13Other Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14Income Tax Expense</masterLabel>
+            <translation><!-- 14Income Tax Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20BalanceSheet</masterLabel>
+            <translation><!-- 20BalanceSheet --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subtotal --></label>
+        <name>Subtotal__c</name>
+        <picklistValues>
+            <masterLabel>1. Direct Margin Total</masterLabel>
+            <translation><!-- 1. Direct Margin Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1. O&amp;M Direct Margin Total</masterLabel>
+            <translation><!-- 1. O&amp;M Direct Margin Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1. Revenue</masterLabel>
+            <translation><!-- 1. Revenue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. Commissions</masterLabel>
+            <translation><!-- 2. Commissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. Cost of Revenue- Direct</masterLabel>
+            <translation><!-- 2. Cost of Revenue- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. Cost of Revenue- Indirect</masterLabel>
+            <translation><!-- 3. Cost of Revenue- Indirect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. ICOGS Total</masterLabel>
+            <translation><!-- 3. ICOGS Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. O&amp;M ICOGS Total</masterLabel>
+            <translation><!-- 3. O&amp;M ICOGS Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4. Cost of Revenue- Commissions</masterLabel>
+            <translation><!-- 4. Cost of Revenue- Commissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5. Marketing and Sales Expenses</masterLabel>
+            <translation><!-- 5. Marketing and Sales Expenses --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must specify a mileage rate for a mileage account. --></errorMessage>
+        <name>AcctSeed__Mileage_Acccount_Require_Rate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GL_Detail_Report --></label>
+        <name>GL_Detail_Report</name>
+    </webLinks>
+</CustomObjectTranslation>

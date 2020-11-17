@@ -1,0 +1,211 @@
+<apex:page doctype="html-5.0" showChat="false" standardController="NVMStatsSF__NVM_Agent_Summary__c" standardStylesheets="false" showHeader="false" sidebar="false" readOnly="true">
+<apex:form >
+
+<script>
+
+var isIE = false;
+try {
+   isIE = (navigator.userAgent.indexOf('MSIE') + navigator.userAgent.indexOf('rv:11')) > -2;
+   }
+catch(err){
+   //assume not IE
+   ieIE = false;
+   }
+
+
+
+var maxWidth = isIE ? 8192 : 32768;
+var maxHeight = 130;
+var zoom = 1;
+var ready = false;
+var data='<apex:outputText value="{!NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__Key_Event_String__c}"/>';
+var majorState='<apex:outputText value="{!NVMStatsSF__NVM_Agent_Summary__c.NVMStatsSF__ChkStr__c}"/>';
+
+//Write a Canvas:
+var canvas = document.createElement('canvas');
+canvas.height = maxHeight;
+canvas.width = 750;//init value for rendering
+canvas.onclick = function(){doZoom();};
+document.body.appendChild(canvas);
+
+
+//load data in one long string in form:
+//28805Ready:18|28823Busy Inbound:127|28950Wrap Up (Auto):15|28965Ready:49|29014Busy Inbound:96|29110Wrap Up (Auto):15|
+//work out start time - first 5 digit number at start of data
+//work out end time - last event time, after penultimate |
+
+
+if (data != undefined && data!= null && data.indexOf('|') > 0) drawTimeline(data);
+
+function drawTimeline(data) {
+
+	var evts = data.split('|');
+	var evtTypes = majorState.split('-');
+		
+	//get canvas bounds from first and last evts:
+	var minTime = (evts[0].substr(0,5));
+	//last | not followed by an event so last event is at array subscript length-2:
+	
+	var maxTime = 1.0 * (evts[evts.length-2].substr(0,5));
+	
+	//maxTime must include length of last event, unless it's logged out
+	if (evts[evts.length-2].indexOf('og') < 0) {
+	  //Allow : in labels in new API
+	  var lastLen = 1.0 * evts[evts.length-2].substr(evts[evts.length-2].lastIndexOf(':')+1);
+	  maxTime += lastLen;
+	  //if that runs past midnight, agent time, truncate at midnight:
+	  if(maxTime > 86400) maxTime = 86400;
+	
+	}
+	//browser limits: IE can only cope with 8192px width canvas; others 32768
+	
+	//var scaleX = Math.ceil(maxTime/16384);
+	var scaleX = Math.ceil(maxTime/(zoom * maxWidth));
+	if (scaleX == 0) scaleX = 1;
+	
+	
+	//allow extra text space 50px
+	canvas.width = (maxTime - minTime)/scaleX + 100;
+	
+	//rough measure of expected text density - proportional to no of event label characters per unit area
+	var density = evts.length * 50 /canvas.width * (maxHeight-20);
+	//alert(density);
+	
+	var ctx = canvas.getContext('2d');
+	ctx.strokeStyle = '#000000';
+	ctx.fillStyle = '#000000';
+	ctx.font = 'italic 8pt Calibri';
+	ctx.globalAlpha = 0.9;
+	var xpos;
+	
+	//Draw hour and 15 min divisions
+	var hour = ('12am,1am,2am,3am,4am,5am,6am,7am,8am,9am,10am,11am,12pm,1pm,2pm,3pm,4pm,5pm,6pm,7pm,8pm,9pm,10pm,11pm,12am').split(',');
+	var hrNum = 0;
+	var interHour;
+	for (var j = 0; j < 86401; j+=3600) {
+	    if (j+3600 >= minTime && j <= maxTime) {
+	      ctx.beginPath();
+	      ctx.lineWidth = 0.5;
+	
+	      //Always add 0.5 to the line position to prevent anti-aliasing!
+	      xpos = Math.floor((j- minTime)/scaleX);
+	
+	      //full height line for hour gridline:
+	      ctx.moveTo(xpos + 0.5, 0);
+	      ctx.lineTo(xpos + 0.5, maxHeight-2);
+	      ctx.stroke();
+	
+	      //slightly shorter grid lines every 5 minutes:
+	      for(var f = 5; f < 60; f+=5) {
+	         var minutePos = Math.floor(xpos + (f*60)/scaleX);
+	         ctx.moveTo(minutePos + 0.5, 7);
+	         ctx.lineTo(minutePos + 0.5, maxHeight - 8);
+	         ctx.stroke();
+	      }
+	      //write hour
+	      ctx.fillText(hour[hrNum], xpos + 1, 7);
+	      ctx.fillText(hour[hrNum], xpos + 1, maxHeight-2);
+	
+	     //only draw sub-divisions if we have more than 45px between the labels
+	     if(scaleX < 20) {
+		      xpos += 900/scaleX;
+		      //write hour:15
+		      interHour = hour[hrNum].replace('am',':15am').replace('pm',':15pm');
+		      ctx.fillText(interHour, xpos + 1, 7);
+		      ctx.fillText(interHour, xpos + 1, maxHeight - 2);
+		
+		      xpos += 900/scaleX;
+		      //write hour:30
+		      interHour = interHour.replace('15','30');
+		      ctx.fillText(interHour, xpos + 1, 7);
+		      ctx.fillText(interHour, xpos + 1, maxHeight - 2);
+		
+		      xpos += 900/scaleX;
+		      //write hour:45
+		      interHour = interHour.replace('30','45');
+		      ctx.fillText(interHour, xpos + 1, 7);
+		      ctx.fillText(interHour, xpos + 1, maxHeight - 2);
+	      }
+	    }
+	    hrNum++;
+	}
+	
+	var len;
+	var lbl;
+	var ypos = 17;
+	var DEFAULT_COLOUR = '#ff7800';//Vonage Orange vs '#ee7d25';
+	
+	for (var i = 0; i < evts.length-1 && i < evtTypes.length-1; i++) {//
+	    xpos = (evts[i].substr(0,5) - minTime)/scaleX;
+	    lbl = evts[i].substr(5);
+	    lbl = lbl.slice(0, lbl.lastIndexOf(':'));
+	
+		//default for events we don't call out (orange hue)
+	    ctx.strokeStyle = DEFAULT_COLOUR;
+	    
+	    //match colours on call timelines for talk/wrap events; use same grey for Break as Hold
+	    //TODO > css
+	    if (evtTypes[i].indexOf('B') > -1 || lbl.indexOf('Busy') > -1) ctx.strokeStyle = '#3A9971';
+	    if (evtTypes[i].indexOf('A') > -1) ctx.strokeStyle = '#9D9FA2';
+	    if (evtTypes[i].indexOf('I') > -1 || evtTypes[i].indexOf('O') > -1) ctx.strokeStyle = '#0073be';//Vonage Blue vs NVM #609DD6';    
+	    if (evtTypes[i].indexOf('R') > -1 || evtTypes[i].indexOf('S') > -1) ctx.strokeStyle = '#d0d0be';
+	    if (evtTypes[i].indexOf('W') > -1) ctx.strokeStyle = '#4EB996';
+	    if (lbl.indexOf('Trans') > -1) ctx.strokeStyle = '#357AB9';
+	    if (evtTypes[i].indexOf('P') > -1) ctx.strokeStyle = '#FFFFFF';//Parked
+	    if (evtTypes[i].indexOf('X') > -1) ctx.strokeStyle = DEFAULT_COLOUR;//Interrupted
+	    	    
+	    len = evts[i].substr(evts[i].lastIndexOf(':')+1);
+	    ctx.beginPath();
+	    ctx.lineWidth = 8;
+	
+	    ctx.globalAlpha = 0.9;
+	    ctx.moveTo(xpos + 0.5, ypos + 0.0 -4);
+	    ctx.lineTo(xpos+len/scaleX + 0.5,ypos + 0.0 -4);
+	    ctx.stroke();
+	
+	
+	    ctx.beginPath();
+	
+	    ctx.globalAlpha = 0.4;
+	    ctx.lineWidth = maxHeight - 18;
+	    ctx.moveTo(xpos + 0.5, maxHeight/2);
+	    ctx.lineTo(Math.ceil(xpos+len/scaleX) + 0.5, maxHeight/2);
+	    ctx.stroke();
+	    
+	    //only label bars if text not too dense at this level of zoom
+	    if (density < 1000) {
+	       ctx.globalAlpha = 1;
+	       ctx.fillText(lbl + ' ' + formatTime(len), xpos, ypos - 1);
+	    }
+	    if (ypos < maxHeight - 10) ypos += 8;
+	    else ypos = 17;
+	}
+	ready = true;
+	//alert('Final XPos + length: ' + xpos + len);
+}
+
+function formatTime(val) {
+
+   if (val < 60) return val + 's';
+   
+   var mins = Math.floor(val/60);
+   
+   return mins + 'm' + (val % 60) + 's';
+
+}
+
+function doZoom() {
+  if (!ready) return;
+  var zoomFactor = 0.5;
+  if(zoom > 0 && (canvas.width*zoomFactor) > 600) zoom *= zoomFactor;
+  else zoom = 1;
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  canvas.width = 1;
+  drawTimeline(data);
+}
+
+
+</script>
+</apex:form>
+</apex:page>

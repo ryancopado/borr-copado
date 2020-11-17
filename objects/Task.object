@@ -1,0 +1,3439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Task_Record_Page3</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>O_M_Task_Compact_Layout</fullName>
+        <fields>Activity_Type_NEW__c</fields>
+        <fields>Subject</fields>
+        <fields>Project__c</fields>
+        <fields>WhatId</fields>
+        <label>O&amp;M Task Compact Layout</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <fieldSets>
+        <fullName>LeadsManager__FieldSetForTasks</fullName>
+        <availableFields>
+            <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CallType</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsClosed</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Type</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>WhatId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>This field set is used for Tasks related list on Leads Manager detail view.</description>
+        <displayedFields>
+            <field>Subject</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>WhoId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Priority</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ActivityDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallDisposition</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>FieldSetForTasks</label>
+    </fieldSets>
+    <fields>
+        <fullName>ActivityDate</fullName>
+        <inlineHelpText>The date that the task is set to be completed.</inlineHelpText>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <inlineHelpText>The user that will be responsible for the task.</inlineHelpText>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <inlineHelpText>The level of priority that the user has assigned to the task.</inlineHelpText>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <inlineHelpText>An indicator of the status of the task.</inlineHelpText>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <inlineHelpText>Select the action to be taken.</inlineHelpText>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <inlineHelpText>The type of task to be completed.</inlineHelpText>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>Amanda_s_tasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/1/2019 12:00 AM</value>
+        </filters>
+        <label>Amanda&apos;s tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>CompletedTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>TODAY,LAST_N_DAYS:30</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_CompletedTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>DelegatedTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Delegated</filterScope>
+        <label>ENCODED:{!FilterNames.Task_DelegatedTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Tasks_OM</fullName>
+        <columns>Project__c</columns>
+        <columns>Case__c</columns>
+        <columns>SUBJECT</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>Activity_Type_NEW__c</columns>
+        <columns>Request_From__c</columns>
+        <columns>Resolution_Comments__c</columns>
+        <columns>Completed__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>STATUS</field>
+            <operation>equals</operation>
+            <value>Not Started,In Progress</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>10/1/2019 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Task.O_M_Task,Task.Standard</value>
+        </filters>
+        <label>My Open Tasks</label>
+        <sharedTo>
+            <group>O_M_Group</group>
+            <role>Engineering_Resource_Group</role>
+            <roleAndSubordinatesInternal>DirectorofTechnology</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>O_M_Open_Tasks</fullName>
+        <columns>Project__c</columns>
+        <columns>Case__c</columns>
+        <columns>SUBJECT</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>Activity_Type_NEW__c</columns>
+        <columns>Request_From__c</columns>
+        <columns>Resolution_Comments__c</columns>
+        <columns>Completed__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>STATUS</field>
+            <operation>equals</operation>
+            <value>Not Started,In Progress</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>10/1/2019 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Task.O_M_Task</value>
+        </filters>
+        <label>O&amp;M Open Tasks</label>
+        <sharedTo>
+            <group>O_M_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OpenTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_OpenTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>OverdueTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_OverdueTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>RecurringTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_RecurringTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY,LAST_N_DAYS:30</value>
+        </filters>
+        <label>ENCODED:{!FilterNames.z_TodaysTasks}</label>
+    </listViews>
+    <listViews>
+        <fullName>UnscheduledTasks</fullName>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>DUE_DATE</columns>
+        <columns>STATUS</columns>
+        <columns>PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>IS_CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>IS_RECURRENCE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+        </filters>
+        <label>ENCODED:{!FilterNames.Task_UnscheduledTasks}</label>
+    </listViews>
+    <recordTypes>
+        <fullName>Log_a_Call</fullName>
+        <active>true</active>
+        <description>Record type intended for sales</description>
+        <label>Log a Call</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial on-site meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>O_M_Business_Development</fullName>
+        <active>true</active>
+        <description>used by O&amp;M Sales team</description>
+        <label>O&amp;M Business Development</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create %26 Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantee Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stalled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DMAPP__TTG_Prime_Action_Type__c</picklist>
+            <values>
+                <fullName>Emphasize your strengths</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insulate against competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minimize your weaknesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prove your value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrieve missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create %26 Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email %28Send Default Email%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stalled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>O_M_Task</fullName>
+        <active>true</active>
+        <description>Used by regional managers and Ops Center personnel</description>
+        <label>O&amp;M Task</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provide Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Site Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Call</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DMAPP__TTG_Prime_Action_Type__c</picklist>
+            <values>
+                <fullName>Emphasize your strengths</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insulate against competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minimize your weaknesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prove your value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrieve missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email %28Send Default Email%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimonial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Ops_Center_Calls</fullName>
+        <active>true</active>
+        <description>For Tasks created by CTI calls for the OPs Center</description>
+        <label>Ops Center - Calls</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create %26 Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development RFI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Execution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drawing Revision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email %28Send Default Email%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial on-site meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provide Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Site Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimonial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DMAPP__TTG_Prime_Action_Type__c</picklist>
+            <values>
+                <fullName>Emphasize your strengths</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insulate against competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minimize your weaknesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prove your value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrieve missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create %26 Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email %28Send Default Email%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search %26 Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set Discovery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimonial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Ops_Engineering</fullName>
+        <active>true</active>
+        <description>To be used to log activities related to the interconnection application process</description>
+        <label>Ops/Engineering</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Development RFI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Execution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drawing Revision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DMAPP__TTG_Prime_Action_Type__c</picklist>
+            <values>
+                <fullName>Emphasize your strengths</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insulate against competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minimize your weaknesses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prove your value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retrieve missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email %28Send Default Email%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimonial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <description>Covers all standard tasks</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Activity_Type_NEW__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial on-site meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Testimonial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FSL__Event_Type__c</picklist>
+            <values>
+                <fullName>Resource Absence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Appointment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>If_you_would_not_recommend_why__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Regions__c</picklist>
+            <values>
+                <fullName>Mid Atlantic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multiple Regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NorCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SoCal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_From__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP%2FDirector</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_3_things_on_which_we_could_improve__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Top_three_things_BS_does_well__c</picklist>
+            <values>
+                <fullName>%24%24 Value of services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy %26 timliness of invoicing and documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy of issue detection %26 proactive communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accuracy%2C timliness%2C formating%2C %26 sophistication of reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adequate staffing strengths within regions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ancillary costs %26 timing within expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized corrective maintenance trips only %28for Preventative contract%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Borrego%27s ownership responsibility %28when valid%29 of events %2F actions %2F inactions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication %26 documentation of safety measures and reporting from the sites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexibility %26 professionalism on outside-of-the-contract requests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal %26 weekend POC Hierarchy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On site response time after issue detection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personality conflicts %2F misperceptions impacting customer relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Optimimization Suggestions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sophistication %2F number of product offerings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Summary %26 simple reports%2C cases%2C site visits%2C and complexities for owners%27 AM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call - conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - with message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - without VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standardized Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Weekly Customer Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>NVMContactWorld__Interac_Quality_Must_Be_Between_1_and_10</fullName>
+        <active>true</active>
+        <errorConditionFormula>NVMContactWorld__InteractionQuality__c &lt; 1  ||  NVMContactWorld__InteractionQuality__c &gt; 10</errorConditionFormula>
+        <errorMessage>Interaction Quality must be a number between 1 and 10</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Resolution_Comments_Required_to_Complete</fullName>
+        <active>true</active>
+        <description>When updating an O&amp;M Task to Complete, Resolution/Comments are required</description>
+        <errorConditionFormula>AND(
+RecordType.Name = &quot;O&amp;M Task&quot; ,
+ISPICKVAL(  Status , &quot;Completed&quot; ) ,
+ISBLANK(  Resolution_Comments__c )
+)</errorConditionFormula>
+        <errorMessage>Resolution/Comments are required to complete this task</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>AcctSeed__Reassign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Reassign</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__TaskReassign</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_A_Call_Opportunity</fullName>
+        <availability>online</availability>
+        <description>custom button that has custom defaults and links to specific opportunity</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Opportunity Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Opportunity.Id}&amp;followup=1&amp;saveURL={!Opportunity.Id}&amp;RecordType={!Task.RecordTypeId}&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_O_M_Activity</fullName>
+        <availability>online</availability>
+        <description>auto fills task field and displays O&amp;M page specific layou</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log O&amp;M Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Account.Id}&amp;followup=1&amp;saveURL={!Account.Id}&amp;RecordType={!Task.RecordTypeId}&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_a_Call_Account</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Account Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Account.Id}&amp;followup=1&amp;saveURL={!Account.Id}&amp;RecordType={!Task.RecordTypeId}&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_a_Call_Contacts</fullName>
+        <availability>online</availability>
+        <description>Custom log a call button for contacts that allows for specific defaults on Subject/Type</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log a Contact Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;who_id={!Contact.Id}&amp;followup=1&amp;saveURL={!Contact.Id}&amp;RecordType={!Task.RecordTypeId}&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_a_Call_Leads</fullName>
+        <availability>online</availability>
+        <description>Custom log a call button that allows for custom defaults for Subject and Type</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log a Lead Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;who_id={!Lead.Id}&amp;followup=1&amp;saveURL={!Lead.Id}&amp;RecordType={!Task.RecordTypeId}&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_O_M_Activity</fullName>
+        <availability>online</availability>
+        <description>auto populates certain fields within specific O&amp;M Page layout</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an O&amp;M Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Account.Id}&amp;followup=1&amp;saveURL={!Account.Id}&amp;RecordType=01234000000URXn&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SDOC__S_Docs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>S-Docs</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/SDOC__SDCreate1?id={!Task.Id}&amp;Object=Task</url>
+    </webLinks>
+</CustomObject>

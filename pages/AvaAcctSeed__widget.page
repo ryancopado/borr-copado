@@ -1,0 +1,28 @@
+<apex:page sidebar="false" showHeader="false">
+<apex:form >
+<apex:includeScript value="{!$Resource.AvaAcctSeed__jquery}"/>
+<apex:includeScript value="{!$Resource.AvaAcctSeed__jqueryAvaWidget}"/>
+<div id="avalaraDiv" style="height:500px;width:1000px;"></div>
+<script> var previousOnload = window.onload; window.onload = function() { 
+
+$("#avalaraDiv").AvaWidget({
+     AvalaraOnboardingObject:new AvalaraOnboarding("Test Connector", "", "", "", "", "", "", "", "", "", "", "", "", "",""),
+    onAvaTaxCompanyCreated: function (onboardingData) {
+        //your code for further processing.
+    }
+});
+if (previousOnload) { previousOnload(); } } </script>
+<!-- <script> 
+function test() {
+$("#avalaraDiv").AvaWidget({
+     AvalaraOnboardingObject:new AvalaraOnboarding("Test Connector", "", "", "", "", "", "", "", "", "", "", "", "", "",""),
+    onAvaTaxCompanyCreated: function (onboardingData) {
+        //your code for further processing.
+    }
+});
+}
+</script>-->
+  <!-- Begin Default Content REMOVE THIS 
+  <apex:commandButton value="Test" onclick="test()" />-->
+  </apex:form>
+</apex:page>

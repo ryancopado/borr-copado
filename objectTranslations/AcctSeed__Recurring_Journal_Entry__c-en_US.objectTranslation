@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Leave this checkbox unchecked so Journal Entries are created from this Recurring Journal Entry when you have automation set up. Check it to exclude Journal Entries from being automatically created. --></help>
+        <label><!-- Exclude From Automation --></label>
+        <name>AcctSeed__Exclude_From_Automation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bi-weekly, Monthly, Quarterly, Semi-Annual, Annual --></help>
+        <label><!-- Journal Entry Frequency --></label>
+        <name>AcctSeed__Journal_Entry_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bi-weekly</masterLabel>
+            <translation><!-- Bi-weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-annual</masterLabel>
+            <translation><!-- Semi-annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The last date a journal entry was created. --></help>
+        <label><!-- Last Journal Entry Date --></label>
+        <name>AcctSeed__Last_Journal_Entry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Recurring Journal Entries --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of recurring journal entry lines associated with this record. --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time frame to create next journal entry. --></help>
+        <label><!-- Next Journal Entry Create --></label>
+        <name>AcctSeed__Next_Journal_Entry_Create__c</name>
+    </fields>
+    <fields>
+        <help><!-- The next date a journal entry should be created. --></help>
+        <label><!-- Next Journal Entry Date --></label>
+        <name>AcctSeed__Next_Journal_Entry_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Debits - Total Credits. Shows the total amount a Journal Entry is Out of Balance. --></help>
+        <label><!-- Out of Balance --></label>
+        <name>AcctSeed__Out_of_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines if the recurring journal entry should still be used. --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Credits from Recurring Journal entry Lines. --></help>
+        <label><!-- Total Credits --></label>
+        <name>AcctSeed__Total_Credits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Debits from Recurring Journal entry Lines. --></help>
+        <label><!-- Total Debits --></label>
+        <name>AcctSeed__Total_Debits__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Create_Journal_Entries --></label>
+        <name>AcctSeed__Create_Journal_Entries</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Journal_Entry --></label>
+        <name>AcctSeed__Create_Journal_Entry</name>
+    </webLinks>
+</CustomObjectTranslation>

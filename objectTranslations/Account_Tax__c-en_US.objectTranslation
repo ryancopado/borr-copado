@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Tax</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Taxes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Taxes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate --></label>
+        <name>Tax_Rate__c</name>
+        <relationshipLabel><!-- Account Taxes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Type --></label>
+        <name>Tax_Type__c</name>
+        <picklistValues>
+            <masterLabel>Purchase</masterLabel>
+            <translation><!-- Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

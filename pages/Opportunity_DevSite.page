@@ -1,0 +1,76 @@
+<apex:page standardController="Opportunity" tabStyle="Site__c" showHeader="true" sidebar="false" extensions="OpportunityDev_SiteControllerExt">
+ <!-- Define Tab panel .css styles -->
+    <style>
+        .activeTab {background-color: #A6A600; color:white; background-image:none; font-size:12px; border-radius:20px;}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none; font-size:12px; border-radius:20px;}
+        .rich-tabhdr-side-border { background-image: none; }
+        .rich-tabhdr-side-cell { border-top: none; }
+    </style>
+    
+    <script type="text/javascript">
+        function plusTabSelected(tabName) {
+            tabselect(tabName);
+        }
+        function rfpage() {
+            rfp();
+        }
+            
+    </script>
+    
+    <apex:form id="theForm">
+        <apex:actionfunction name="tabselect" action="{!setplusTab}" reRender="theForm">
+            <apex:param assignTo="{!plusTabName}" value="" name="plusTabName"/>
+        </apex:actionfunction>
+        <apex:actionfunction name="rfp" action="{!refreshPage}" reRender="theForm"/>
+        
+        <apex:pageMessages />
+        <apex:pageBlock id="thePageBlock">
+            
+            <apex:pageBlockButtons >
+               
+                <apex:commandButton value="Refresh" action="{!refreshPage}" style="display:none;"/>
+                <apex:commandButton value="Edit" action="{!editAllSites}" rendered="{!!editMode && !plusMode && sitesCount > 0}"/>
+                <apex:commandButton value="Clone" action="{!cloneSite}" rendered="{!!editMode && !plusMode && sitesCount > 0}" reRender="theForm"/>
+                <apex:commandButton value="Save" action="{!saveAllSites}" rendered="{!editMode}"/>
+                <apex:commandButton value="Cancel" action="{!cancelAllSites}" immediate="true" rendered="{!editMode}"/>
+                
+                <apex:commandButton disabled="{!currentTabNo==0||editMode}" rendered="{!!plusMode}" value="Previous Site" reRender="thePageBlock" action="{!doPrevious}" />
+                <apex:commandButton disabled="{!currentTabNo+1>=tabCount||editMode}" rendered="{!!plusMode}" value="Next Site" reRender="thePageBlock" action="{!doNext}" />
+                <apex:outputText rendered="{!!plusMode}" value="{!IF(sites.size!=0,currentTabNo+1,0)} of {!sites.size} site(s)" />
+            </apex:pageBlockButtons>
+            
+            
+            <br/>
+            <apex:tabPanel switchType="server" value="{!selectedTab}" id="SiteTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab" contentStyle="font-size: 12px;">
+                <apex:tab label="{!sites[currentTabNo].Name}" name="{!sites[currentTabNo].Name}" rendered="{!currentTabNo < sites.size}" >
+                    <c:Site_detail activeSite="{!sites[currentTabNo]}" isEdit="{!editMode}" isDevLayout="{!devLayout}" isWestLayout="{!westLayout}" isotherLayout="{!otherLayout}"></c:Site_detail>
+                </apex:tab>
+                <apex:tab label="+" name="+" rendered="{!sitesCount > tabCount}" >
+                    <apex:pageBlockTable value="{!sitesColumns}" var="sc">
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.leftSite.Name}" onclick="plusTabSelected('{!sc.leftSite.Name}');return false;"/>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Site Name</apex:facet>
+                            <apex:commandLink value="{!sc.rightSite.Name}" onclick="plusTabSelected('{!sc.rightSite.Name}');return false;"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:tab>
+                
+                
+            </apex:tabPanel>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+
+
+
+
+
+
+
+
+</apex:page>

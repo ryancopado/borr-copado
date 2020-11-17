@@ -1,0 +1,156 @@
+<apex:page standardController="Service_PO__c" renderAs="pdf" extensions="ReviewServicePurchaseOrder">
+<apex:stylesheet value="{!URLFOR($Resource.po_style)}"/>
+<table width="100%">
+    <tr>
+        <td width="25%">
+            <apex:image url="{!$Resource.borrego}" width="50%" height="50%"/>
+        </td>
+        <td width="30%" style="vertical-align:top; text-align:center; font-size:16px">
+            <b>SERVICE<br/>PURCHASE ORDER</b>
+        </td>
+        <td width="40%" style="vertical-align:top; padding-left:35px;">
+        <font size="1">Billing Address:</font><br/>
+        <b>Borrego Solar Systems, Inc. <br/>
+      5005 Texas Street, Suite 400<br/>
+         San Diego, CA 92108<br/>
+        (619) 961-4518</b>
+        </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td style="vertical-align:top" colspan="2">
+            <apex:dataTable value="{!Service_PO__c}" var="vendor">
+                <apex:column width="80px" style="vertical-align:top;"><b>To:</b></apex:column>
+                <apex:column style="text-align:top;">
+                    <apex:outputField value="{!Service_PO__c.SCR_Vendor_Account__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Vendor_Contact__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Vendor_Address__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Vendor_Address1__c}"/><br/>
+                    PHONE: &nbsp;<apex:outputField value="{!Service_PO__c.SCR_Vendor_Phone__c}"/><br/>
+                    FAX: &nbsp;<apex:outputField value="{!Service_PO__c.SCR_Vendor_Fax__c}"/>
+                </apex:column>
+            </apex:dataTable>
+        </td>  
+        <td style="text-align:top; padding-left:25px; font-size:16px">
+            <apex:dataTable value="{!Service_PO__c}" var="order">
+                <apex:column width="200px" style="text-align:top;">
+                    <b>Account:<br/>
+                    Order Date:<br/>
+                    PO Number:<br/>
+                    Service Visit #:</b>
+                </apex:column>
+                <apex:column style="text-align:top;">
+                    <apex:outputField value="{!Service_PO__c.Service_Construction_Requisition__r.Account__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Today__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.Name}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Project_Name__c}"/>
+                </apex:column>
+            </apex:dataTable>
+            <div style="font-size:12px"></div>
+            <br/>
+        </td>
+    </tr>    
+    <tr>
+        <td style="vertical-align:top;font-size:16px" colspan="2">
+            <apex:dataTable value="{!Service_PO__c}" var="ship">
+                <apex:column width="75px" style="vertical-align:top;"><b>Delivery To:</b></apex:column>
+                <apex:column width="300px">
+                    <apex:outputField value="{!Service_PO__c.SCR_Ship_To__c}"/><br/>
+                    <apex:outputField value="{!Service_PO__c.SCR_Ship_Address__c}"/><br/>
+                    ATTN: &nbsp;<apex:outputField value="{!Service_PO__c.SCR_Ship_To_Contact__c}"/>
+                </apex:column>
+            </apex:dataTable>
+        </td>
+        <td style="vertical-align:top; padding-left:35px; font-size:16px">
+            <apex:dataTable value="{!Service_PO__c}" var="order">
+                <apex:column width="140px">
+                    <b>Delivery Date***:<br/>
+                    <!--Requested By:--><br/></b>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!Service_PO__c.SCR_Date__c}"/><br/>
+                   <!-- <apex:outputField value="{!Service_PO__c.SCR_Requested_By__c}"/>--><br/>
+                </apex:column>
+            </apex:dataTable>
+        </td>
+    </tr>    
+</table>
+<br/>
+<div>Delivery Notes:&nbsp;<b>{!Service_PO__c.SCR_Delivery_Notes__c}</b></div>
+<div>Special Notes:&nbsp;{!Service_PO__c.SCR_Special_Notes__c}</div>
+<br/>
+<table id="box-table-a" width="100%" >
+    <tr>
+        <td class="title" width="10%">
+            Del. Date
+        </td>
+        <td width="20%" class="title">
+            Vendor Item Code
+        </td>    
+        <td width="15%" class="title">
+            Borrego Code
+        </td>
+        <td width="30%" class="title">
+            Description
+        </td>
+        <td width="11%" class="title">
+            Quantity
+        </td>
+        <td width="9%" class="title">
+            Rate
+        </td>
+        <td width="10%" class="title">
+            Amount
+        </td>  
+    </tr>
+    <tr >
+        <td height="200px"><apex:outputField value="{!Service_PO__c.SCR_Date__c}"/></td>
+        <td><apex:outputField value="{!Service_PO__c.Product_Code__c}"/></td>   
+        <td><apex:outputField value="{!Service_PO__c.SCR_Cost_Code_Cat__c}"/></td>  
+        <td><apex:outputField value="{!Service_PO__c.SCR_Description__c}"/><apex:outputField value="{!Service_PO__c.SCR_Product__c}"/></td>   
+        <td><apex:outputField value="{!Service_PO__c.SCR_Quantity__c}"/></td>   
+        <td><apex:outputField value="{!Service_PO__c.SCR_Unit_Cost__c }"/></td>     
+        <td>{!Total}</td>    
+    </tr>
+    <tr>
+        <td class="co_total_white" colspan="4" style="border-top:1px solid #000000"></td>
+        <td colspan="2" class="co_total_text" style="border-top:1px solid #000000">Subtotal:</td>
+        <td width="9%" class="co_total_value">{!Total}</td>          
+    </tr>
+    <tr>
+        <td class="co_total_white" colspan="4"></td>
+        <td colspan="2" class="co_total_text">Shipping:</td>
+        <td width="9%" class="co_total_value"><apex:outputField value="{!Service_PO__c.SCR_Shipping__c}"/></td>    
+    </tr>
+    <tr>
+        <td class="co_total_white" colspan="4"></td>
+        <td colspan="2" class="co_total_text">Sales Tax ({!Service_PO__c.SCR_Tax_Rate__c}%):</td>
+        <td width="9%" class="co_total_value"><apex:outputField value="{!Service_PO__c.SCR_Sales_Tax__c}"/></td>    
+    </tr>
+    <tr>
+        <td class="co_total_white" colspan="4">Max Freight Allowance:&nbsp;&nbsp;<apex:outputField value="{!Service_PO__c.SCR_Max_Freight_Allowance__c}"/></td>
+        <td colspan="2" class="co_total_text">Order Total:</td>
+        <td width="9%" class="co_total_value"><apex:outputField value="{!Service_PO__c.SCR_Total_Cost__c}"/></td>    
+    </tr>
+</table>
+<br/>
+<div style="color:black; font-weight:bold; font-size:16px">
+<u>You may receive more than one copy of this Purchase order. The latest dated order will prevail as shown here. &nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!Service_PO__c.SCR_Today__c}"/>
+&nbsp;&nbsp;&nbsp;&nbsp;***Note: Line item shipping dates to take precedence.<br/><br/></u>
+</div>
+<div style="color:red; font-weight:bold; font-size:16px">
+PO #{!Service_PO__c.Name} must be included on all delivery documents,<br/>including those of third party carriers.
+</div>  
+<br/>
+<!--<div style="font-weight:bold; font-size:13px">
+Please send confirmation of receipt and all correspondence to {!PM.Name} at {!PM.Username} or (888) 898-6273.
+</div>-->  
+<br/><br/>
+<div align="center" style="color:#458B00; font-size:14px">
+    <i>
+    Borrego Solar is solving the world’s energy problems by accelerating the adoption of renewable energy.<br/>
+    Our people are committed to excellence in every aspect of solar design and construction.
+    </i>
+</div> 
+</apex:page>

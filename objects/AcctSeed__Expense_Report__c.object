@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>AcctSeed__ExpenseReportEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>ExpenseReportEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Expense_Report_Record_Home2</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AcctSeed__Expense_Report_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AcctSeed__Expense_Report_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AcctSeed__Employee__c</fields>
+        <fields>AcctSeed__Total_Expenses__c</fields>
+        <fields>AcctSeed__Status__c</fields>
+        <label>Expense Report Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Used to document expenses incurred by an employee.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AcctSeed__Billable_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of expenses which can be billed.</inlineHelpText>
+        <label>Billable Expenses</label>
+        <summarizedField>AcctSeed__Expense_Line__c.AcctSeed__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>AcctSeed__Expense_Line__c.AcctSeed__Billable__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billed_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of expenses which have been billed.</inlineHelpText>
+        <label>Billed Expenses</label>
+        <summarizedField>AcctSeed__Expense_Line__c.AcctSeed__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>AcctSeed__Expense_Line__c.AcctSeed__Billed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Employee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the employee that is submitting the expense report.</inlineHelpText>
+        <label>Employee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Expense_Reports</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Ledger__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes the associated ledger.</inlineHelpText>
+        <label>Ledger</label>
+        <referenceTo>AcctSeed__Ledger__c</referenceTo>
+        <relationshipLabel>Expense Reports</relationshipLabel>
+        <relationshipName>Expense_Reports</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Line_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of expense lines associated with this record.</inlineHelpText>
+        <label>Line Count</label>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Paid_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of expenses which have been paid to either an employee or credit card vendor.</inlineHelpText>
+        <label>Paid Expenses</label>
+        <summarizedField>AcctSeed__Expense_Line__c.AcctSeed__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>AcctSeed__Expense_Line__c.AcctSeed__Vendor_Employee_Paid__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Payable_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of expenses which are employee reimbursable or credit card vendor payable.</inlineHelpText>
+        <label>Payable Expenses</label>
+        <summarizedField>AcctSeed__Expense_Line__c.AcctSeed__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>AcctSeed__Expense_Line__c.AcctSeed__Vendor_Employee_Payable__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the expense report controlled by the approval process.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>true</default>
+                    <label>In Process</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Posted</fullName>
+                    <default>false</default>
+                    <label>Posted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Total_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The sum of all the expense lines related to the expense report.</inlineHelpText>
+        <label>Total Expenses</label>
+        <summarizedField>AcctSeed__Expense_Line__c.AcctSeed__Amount__c</summarizedField>
+        <summaryForeignKey>AcctSeed__Expense_Line__c.AcctSeed__Expense_Report__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Unbilled_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Billable_Expenses__c - AcctSeed__Billed_Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The total amount of expenses which have not been billed.</inlineHelpText>
+        <label>Unbilled Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Unpaid_Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Payable_Expenses__c - AcctSeed__Paid_Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The total amount of expenses which have not been paid.</inlineHelpText>
+        <label>Unpaid Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <description>used with lookup helper to populate the branch</description>
+        <externalId>false</externalId>
+        <formula>TEXT(AcctSeed__Employee__r.Branch__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Branch-OLD-</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerID__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Employee__r.ManagerSFID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manager ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager_for_Approval__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Manager of the employee that is submitting the expense report.</inlineHelpText>
+        <label>Manager for Approval</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Expense_Reports</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ops_Division__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 3</value>
+            </filterItems>
+            <infoMessage>Must be of Type &quot;GL Account Variable 3&quot;.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Expense Reports (Ops Division)</relationshipLabel>
+        <relationshipName>Expense_Reports</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReportBranch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Expense Report Branch. This is automatically set based on the user profile.</inlineHelpText>
+        <label>Branch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Mid Atlantic</fullName>
+                    <default>false</default>
+                    <label>Mid Atlantic</label>
+                </value>
+                <value>
+                    <fullName>New England</fullName>
+                    <default>false</default>
+                    <label>New England</label>
+                </value>
+                <value>
+                    <fullName>Nor Cal</fullName>
+                    <default>false</default>
+                    <label>Nor Cal</label>
+                </value>
+                <value>
+                    <fullName>So Cal</fullName>
+                    <default>false</default>
+                    <label>So Cal</label>
+                </value>
+                <value>
+                    <fullName>Midwest</fullName>
+                    <default>false</default>
+                    <label>Midwest</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Segment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 2</value>
+            </filterItems>
+            <infoMessage>Must be of Type &quot;GL Account Variable 2&quot;.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Expense Reports (Sales Segment)</relationshipLabel>
+        <relationshipName>Expense_Reports1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Expense Report</label>
+    <listViews>
+        <fullName>AcctSeed__Unbilled_Expense_Reports</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Employee__c</columns>
+        <columns>AcctSeed__Status__c</columns>
+        <columns>AcctSeed__Billable_Expenses__c</columns>
+        <columns>AcctSeed__Billed_Expenses__c</columns>
+        <columns>AcctSeed__Unbilled_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Unbilled_Expenses__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Unbilled Expense Reports</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Accounting</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Unpaid_Expense_Reports</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Employee__c</columns>
+        <columns>AcctSeed__Status__c</columns>
+        <columns>AcctSeed__Payable_Expenses__c</columns>
+        <columns>AcctSeed__Unpaid_Expenses__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Unpaid_Expenses__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Unpaid Expense Reports</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Accounting</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Current_Year_Expense_Reports</fullName>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Employee__c</columns>
+        <columns>AcctSeed__Status__c</columns>
+        <columns>AcctSeed__Total_Expenses__c</columns>
+        <columns>AcctSeed__Paid_Expenses__c</columns>
+        <columns>Manager_for_Approval__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>My Current Months Expense Reports</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Expense_Reports</fullName>
+        <columns>NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>AcctSeed__Status__c</columns>
+        <columns>AcctSeed__Total_Expenses__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>AcctSeed__Status__c</field>
+            <operation>equals</operation>
+            <value>In Process,Pending Approval</value>
+        </filters>
+        <label>My Open Expense Reports</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Expense Report Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Expense Reports</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>AcctSeed__Employee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Total_Expenses__c</customTabListAdditionalFields>
+        <listViewButtons>AcctSeed__Create_Accounts_Payable</listViewButtons>
+        <listViewButtons>Create_Journal_Entry</listViewButtons>
+        <lookupDialogsAdditionalFields>AcctSeed__Employee__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Total_Expenses__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Employee__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Total_Expenses__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AcctSeed__Employee__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Status__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Total_Expenses__c</searchFilterFields>
+        <searchResultsAdditionalFields>AcctSeed__Employee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Total_Expenses__c</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>AcctSeed__Create_Accounts_Payable</searchResultsCustomButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>AcctSeed__Employee_Is_Required</fullName>
+        <active>true</active>
+        <description>The employee field is required</description>
+        <errorConditionFormula>ISBLANK(AcctSeed__Employee__c)</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Employee__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Branch_OpsDiv_SalesSeg</fullName>
+        <active>false</active>
+        <description>Only certain users in Accounting</description>
+        <errorConditionFormula>AND(
+AND(
+$User.ProfileId &lt;&gt; &quot;00e800000018oPc&quot;,
+$User.Id &lt;&gt; &quot;00580000005JBok&quot;,
+$User.Id &lt;&gt; &quot;00534000009rrG4&quot;,
+$User.Id &lt;&gt; &quot;00534000008xZ72&quot;,
+$User.Id &lt;&gt; &quot;00580000005LfBw&quot;,
+$User.Id &lt;&gt; &quot;005800000076grS&quot;,
+$User.Id &lt;&gt; &quot;005340000077Q4s&quot;,
+$User.Id &lt;&gt; &quot;005300000013ty7&quot;,
+$User.Id &lt;&gt; &quot;00580000003wolt&quot;,
+$User.Id &lt;&gt; &quot;00580000005JjIv&quot;,
+$User.Id &lt;&gt; &quot;00530000000sGAF&quot;,
+
+$User.Id &lt;&gt; &quot;005800000074KAY&quot;,
+$User.Id &lt;&gt; &quot;00580000003AOIC&quot; ),
+OR( 
+ISCHANGED ( ReportBranch__c ),
+ISCHANGED ( Ops_Division__c ),
+ISCHANGED ( Sales_Segment__c ) ) )</errorConditionFormula>
+        <errorMessage>You cannot change the Branch, Ops Division or Sales Segment</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>AcctSeed__Create_Accounts_Payable</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Payables</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__AccountPayableFromExpenseReport</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>AcctSeed__Create_Billings</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Billings</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__BillingFromExpenseReport</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Journal_Entry</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Journal Entry</masterLabel>
+        <openType>sidebar</openType>
+        <page>ExpenseReports</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Line_Items</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Edit Line Items</masterLabel>
+        <openType>sidebar</openType>
+        <page>ExpenseReportEdit</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Attach_Files</fullName>
+        <availability>online</availability>
+        <description>allows for the attachment of multiple files at one time</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Mass Attach Files</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/dropzone__AttachFiles?id={!AcctSeed__Expense_Report__c.Id}</url>
+    </webLinks>
+</CustomObject>

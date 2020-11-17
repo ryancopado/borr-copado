@@ -1,0 +1,15 @@
+<apex:page id="AccountingSetttingsAddressValidator" title="Accounting Settings | Accounting Seed" standardController="AcctSeed__Accounting_Settings__c" extensions="AcctSeed.AddressValidatorCommonControllerExt">
+    <apex:sectionHeader title="Avalara" subtitle="Address Validation" />
+
+    <apex:form rendered="{!isError}">
+        <apex:pageBlock title="Validate Address">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Back" action="{!backToAccountingSettings}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+    <c:AddressValidator record="{!theRecordId}" billingAddress="{!billingAddressInfo}" shippingAddress="{!shippingAddressInfo}" rendered="{!!isError}"/>
+
+</apex:page>

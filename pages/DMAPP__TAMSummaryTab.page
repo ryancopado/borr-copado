@@ -1,0 +1,1137 @@
+<apex:page standardController="DMAPP__DM_Account_Plan__c" extensions="DMAPP.TAMStandardController,DMAPP.StandardControllerPPTExtension,DMAPP.TAMSummaryTabDisableController,DMAPP.TAMCustomTabController">
+    <!-- l10n data -->
+    <apex:includeScript value="{!$Resource.DMAPP__l10njs}"/>
+    <apex:includeScript value="{!URLFOR($Resource.DMAPP__prefix)}"/>
+    <!--<apex:includeScript value="{!URLFOR($Resource.ttgomjs, 'ttg/lib/ttgutils.js')}"/>-->
+
+    <apex:variable var="hasRetURL" value="{!IF(OR(ISNULL($CurrentPage.parameters.retURL), ISBLANK($CurrentPage.parameters.retURL)),false,true)}"/>
+    <apex:variable var="detailsSelected" value="{!IF(CONTAINS(selectedPage,'AccountPlanDetail'),true,false)}"/>
+    <apex:variable var="segmentationSelected" value="{!IF(CONTAINS(selectedPage,'Segmentation'),true,false)}"/>
+    <apex:variable var="oppMapSelected" value="{!IF(CONTAINS(selectedPage,'am_opp_map_app'),true,false)}"/>
+    <apex:variable var="valueMapSelected" value="{!IF(CONTAINS(selectedPage,'ValueMap'),true,false)}"/>
+    <apex:variable var="objectivesSelected" value="{!IF(CONTAINS(selectedPage,'PlanObjectives'),true,false)}"/>
+    <apex:variable var="scorecardSelected" value="{!IF(CONTAINS(selectedPage,'AM_Scorecard'),true,false)}"/>
+	<apex:variable var="completenessSelected" value="{!IF(CONTAINS(selectedPage,'PlanCompleteness'),true,false)}"/>
+
+    <apex:outputPanel layout="block" styleClass="smartOMPanel" rendered="{!NOT(isPhone) && isLicensedForAccountManager}">
+
+        <div class="smartOMOpportunitySummary"> 
+            <span class="breadcrumb_altify_logo"></span>
+            <div class="accountPlanListLinkContainer">
+                <c:outputLink target="_top" value="{! IF(useStandardListPage, '/' + $ObjectType.DM_Account_Plan__c.keyPrefix, URLFOR($Page.AccountPlan)) }" styleClass="breadcrumb">Account Plans</c:outputLink> - </div> {!accountPlan.Name} ({!accountPlan.Plan_Type__r.Name}) : {!$Label.DMAPP__resource_PlanRevenue} {!formattedRevenueTarget}
+            <apex:outputText value=" - Read Only Access" styleClass="readOnlyText" rendered="{!NOT(editable)}"/>
+            
+           <div class="chatterContainer">                   
+                <apex:include pageName="DMAPP__ChatterPostAM"/>
+            </div>
+        </div>
+            
+        <div class="smartOMTabContainer">
+        
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/AccountPlanDetail?id={!accountPlan.Id}" rendered="{! (isLicensedForAccountManager && !isPlanDetailsDisabledOnPlanType)}">
+                <div class="{!IF(detailsSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                	<div class="am_tooltip" id="PLAN_DETAILS"></div>
+                    <strong>{!$Label.resource_PlanDetails}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>
+            
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/Segmentation?id={!accountPlan.Id}" rendered="{! (isLicensedForAccountManagerAndIsSegementationMapEnabled && !isSegmentationDisabledOnPlanType)}">
+                <div class="{!IF(segmentationSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="SEGMENTATION"></div>
+                    <strong>{!$Label.resource_Segmentation}</strong>
+                    <div class="smartOMTabInfo"  id="segementation_smartomtab">&nbsp;</div>
+                </div>
+            </c:outputLink>
+
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/am_opp_map_app?id={!accountPlan.Id}" rendered="{!isLicensedForAccountManager}">
+                <div class="{!IF(oppMapSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="OPP_MAP"></div>
+                    <strong>{!$Label.resource_OpportunityMap}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>
+
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/ValueMap?id={!accountPlan.Id}" rendered="{! (shouldDisplayValueMap && !isValueMapDisabledOnPlanType)}">
+                <div class="{!IF(valueMapSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="VALUE_MAP"></div>
+                    <strong>{!$Label.resource_ValueMap}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>
+
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/PlanObjectives?id={!accountPlan.Id}" rendered="{! (isLicensedForAccountManager && !isObjectivesDisabledOnPlanType)}">
+                <div class="{!IF(objectivesSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="OBJECTIVES"></div>
+                    <strong>{!$Label.resource_Objectives}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/AM_Scorecard?id={!accountPlan.Id}" rendered="{! (isLicensedForAccountManagerAndIsScorecardEnabled && !isScorecardDisabledOnPlanType && MultiTabCheck)}">
+                <div class="{!IF(scorecardSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="SCORECARD"></div>
+                    <strong>{!$Label.resource_Scorecard}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>
+            
+            <c:outputLink styleClass="smartOMLink toolTipTab" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/PlanCompleteness?id={!accountPlan.Id}" rendered="{! (isLicensedForAccountManagerAndIsCompletenessEnabled && !isCompletenessDisabledOnPlanType && MultiTabCheck)}">
+                <div class="{!IF(completenessSelected,'smartOMTab smartOMTabSelected','smartOMTab')}">
+                    <div class="am_tooltip" id="COMPLETENESS"></div>
+                    <strong>{!$Label.resource_Completeness}</strong>
+                    <div class="smartOMTabInfo">&nbsp;</div>
+                </div>
+            </c:outputLink>           
+
+			<!-- AM Custom Tabs Start -->
+            <c:outputLink styleClass="smartOMLink" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/AM_CustomTab?id={!accountPlan.Id}&tabIndex=1" rendered="{!isTabOneEnabled}">
+                <div class="smartOMTab am_customTab1" style="max-width : 170px; height : 36px;">
+                    <strong class="am_custom_tab_text">{!tabOneLabel}</strong>
+                </div>
+            </c:outputLink> 
+            
+            <c:outputLink styleClass="smartOMLink" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/AM_CustomTab?id={!accountPlan.Id}&tabIndex=2" rendered="{!isTabTwoEnabled}">
+                <div class="smartOMTab am_customTab2" style="max-width:170px; height: 36px;">
+                    <strong class="am_custom_tab_text">{!tabTwoLabel}</strong>
+                </div>
+            </c:outputLink> 
+            
+            <c:outputLink styleClass="smartOMLink" target="{!IF(isWin8Touch, '_self', '_top')}" value="/apex/AM_CustomTab?id={!accountPlan.Id}&tabIndex=3" rendered="{!isTabThreeEnabled}">
+                <div class="smartOMTab am_customTab3" style="max-width:170px; height: 36px;">
+                    <strong class="am_custom_tab_text">{!tabThreeLabel}</strong>
+                </div>
+            </c:outputLink> 
+            <!-- AM Custom Tabs End -->
+         
+            <div class="helpAndPPTContainer">
+	            <apex:outputPanel layout="block" styleClass="TAMAdminLink" rendered="{!isLicensedForAccountManager}">
+	                <a id="TAMADMINLINK">Settings</a>
+	            </apex:outputPanel>  
+	            <div class="smartOMHelpLink">
+                    <a id="TASHELPLINK" class="showHelp" onclick="javascript: help.showHelpDropdown();">Help</a>
+                    <a id="TASHELPLINK" class="hideHelp" style='display:none' onclick="javascript: help.hideHelpDropdown();">Help</a>
+
+                    <ul class="helpDropdown" style='display:none'>
+                        <li onclick="javascript: help.showHelp();" >Online Help</li>
+                        <li><a href="http://www.altify.com/altify-community/" target="_blank">Ask the Community</a></li>
+                        <li><a href="http://content.altify.com/submit-feedback" target="_blank">Send us Feedback</a></li>
+                    </ul>
+
+	            </div> 
+	            
+	            <div id='smartOMPPTLink' class="smartOMPPTLink"  style='display:none'>
+	                <apex:form >
+	                    <a id="PPTEXPORT2" onclick="javascript: handlePPTX();" title="Click the icon to export to Powerpoint"></a>
+	                </apex:form> 
+	            </div>
+            </div>
+            
+        </div>
+        
+        <div class="smartOMTabContainerBottom"></div>
+    </apex:outputPanel>  
+    <style>
+
+    /**
+    * Nelson Ramalho : Styles for breadcrumblinks
+    */
+    div.accountPlanListLinkContainer {
+        display: inline-block;
+    }
+
+    .accountPlanListLinkContainer a.breadcrumb {
+        color : #00396b;
+        text-decoration: underline;
+    }
+
+    .smartOMOpportunitySummary .breadcrumb_altify_logo {
+        background: url('{!URLFOR($Resource.Common, 'images/altify_logo@2x.png')}') no-repeat;
+        background-size: 100%;
+        float: left;
+        width: 17px;
+        height: 30px;
+        margin-right: 7px;
+    }
+
+    /**
+    * DMDEV-8127 - Users access Community Pages/Feedback pages Dealmaker 
+    */
+
+    ul.helpDropdown{
+        position: absolute;
+        right: 67px;
+        top: 97px;
+        background-color: white;
+        border-radius: 5px;
+        z-index: 15;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,.16);
+        border: 1px solid #d8dde6;
+        padding: 10px 0px 5px 0px;
+        color: rgb(22, 50, 92);
+        margin: 0;
+    }
+
+    ul.helpDropdown:before {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: inherit;
+        left: 7rem;
+        top: -.55rem;
+        margin-left: -.5rem;
+        border-top: solid 1px #d8dde6;
+        border-left: solid 1px #d8dde6;
+    }
+
+        ul.helpDropdown li{
+            list-style-type: none;
+            margin: 0;
+        }
+
+            ul.helpDropdown li:hover{
+                background-color: #f4f6f9;
+            }
+
+        ul.helpDropdown li{
+            float: none;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            ul.helpDropdown li:first-child{
+                border-bottom: 1px solid #d8dde6;
+                padding: 6px 10px 8px 15px;
+            }
+
+            ul.helpDropdown li a{
+                background: url('');
+                float: none;
+                padding: 10px 11px 8px 14px;
+                display: block;
+            }
+
+    /**
+     * =============================================================================================
+     * From: angular_apps/app/styles/ppt_export_dialog.css  
+     * =============================================================================================
+     */
+    .ttg_section_picker_dialog ul {
+        margin:0.5em 0 0 0;
+        padding: 0;
+    }
+    .ttg_section_picker_dialog ul li,
+    .ttg_section_picker_dialog .instructions,
+    .ttg_section_picker_dialog .system_msg,
+    .ttg_section_picker_dialog .wrapper_labelinput {
+        float: none;
+        clear: both;
+        display: block;
+        margin:0;
+        padding:0;
+    }
+    .ttg_section_picker_dialog ul li {
+        list-style-type: none;
+        margin:0 0 0.5em;
+    }
+    .ttg_section_picker_dialog ul {
+        margin:0.5em 0 0 0;
+        padding: 0;
+    }
+    .ttg_section_picker_dialog .wrapper_label,
+    .ttg_section_picker_dialog .wrapper_input {
+        float: left;
+        display: block;
+        margin:0;
+        padding:0;
+    }
+    .ttg_section_picker_dialog .wrapper_label {
+        margin:0 0 0 1em;
+    }
+    .ttg_section_picker_dialog .system_msg {
+        margin: 0 0 1.5em 0;
+        /*padding: 0.6em 1.2em;*/
+    }
+    /*
+    .ttg_section_picker_dialog .system_msg p {
+        margin: 0;
+    }
+    .ttg_section_picker_dialog .system_msg.success {
+        background-color: #ddede3;
+    }
+    .ttg_section_picker_dialog .system_msg.warning {
+        background-color: #fcefde;
+    }
+    .ttg_section_picker_dialog .system_msg.danger {
+        background-color: #f7e7e7;
+    }
+    */
+    </style>
+    <script>
+    
+		/* 
+		 * Copyright © {! $Setup.DMAPP__Company_Information__c.DMAPP__Company_Name__c}. All rights reserved.
+		 *  
+		 */    
+        var ttg = ttg || {};
+
+        var spinnerImg = jQuery("<img id=\"tas_ajax_spinner\" class=\"spinner\" src=\"{!JSENCODE(URLFOR($Resource.ttgomjs, '/ttg/graph/images/loader.gif'))}\">");
+
+        var _HELP = function(spec) {
+        
+            var that = { };
+
+        
+            function showHelpDropdown(){
+                jQuery('.helpDropdown').show();
+                jQuery('.showHelp').hide();
+                jQuery('.hideHelp').show();
+            }  
+
+            function hideHelpDropdown(){
+                jQuery('.helpDropdown').hide();
+                jQuery('.showHelp').show();
+                jQuery('.hideHelp').hide();   
+            }
+
+            function showHelp() {
+            
+                var url = '{!helpURLBase}' + '/Default.htm#Smart_AM/';
+            
+                if ({!detailsSelected}) {
+                    url += '2.Plan_Details.htm';
+                }
+                else if ({!segmentationSelected}) {
+                    url += '3.Segmentation.htm';
+                }
+                else if ({!oppMapSelected}) {
+                    url += '4.Opportunity_Map/1.Opportunity_Map.htm';
+                }
+                else if ({!valueMapSelected}) {
+                    url += '6.Value_Map/1.Value_Map.htm';
+                }
+                else if ({!objectivesSelected}) { 
+                    url += '7.Objectives/Objectives.htm';
+                }
+                else if ({!scorecardSelected}) { 
+                    url += '8.Scorecard/1.Scorecard.htm';
+                }
+                else if ({!completenessSelected}) { 
+                    url += '9.Completeness/1.Completeness.htm';
+                }                                                
+                else {
+                    alert('Sorry, help not available')
+                }
+                
+                var testwindow = window.open(url, "TAS", "resizable=1,location=1,status=1,scrollbars=1,width=600,height=600");
+
+            }
+	
+            that.showHelpDropdown = showHelpDropdown;
+            that.hideHelpDropdown = hideHelpDropdown;
+            that.showHelp = showHelp;
+            
+            return that;
+        }
+        
+        var help = _HELP({});
+
+        jQuery(document).mouseup(function (e)
+        {
+            var container = jQuery('.helpDropdown');
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            {
+                container.hide();
+                jQuery('.showHelp').show();
+                jQuery('.hideHelp').hide(); 
+            }
+        });
+        
+        var getFile = function() {
+        
+            var api = ttg.apiLayer.sfdcDelegate( { sessionid : '{!JSENCODE($Api.Session_ID)}', opportunityid : '{!JSENCODE(accountPlan.Id)}' } );
+            api.getPPTGenerator('{!accountPlan.Id}' , function(data) {
+                var d = data;
+            }, function() {}, function() {});
+        
+        };
+
+        ttg.localStorageService = (function(){
+
+            'use strict';
+
+            /**
+             * We can store JSON objects on the localStorage.
+             * This method, allows us to get the JSON object stored in localStorage
+             *
+             * objName:{
+             *     prop: value,
+             *     prop: value,
+             *     prop: value
+             * }
+             *
+             * @param objName {String}: Name of the object to get
+             */
+            function getStorageObj( objName ){
+                return ( JSON && localStorage ) ? 
+                    localStorage.getItem( objName ) :
+                    null;
+            }
+
+            /**
+             * @param objName {String}: Name of the object to get
+             * @param value {Object}: MUST BE a javascript Object!
+             */
+            function setStorageObj( objName, objValue ){
+                if( JSON && localStorage ){
+                    localStorage.setItem( objName, JSON.stringify( objValue ) );
+                }
+            }
+
+            /**
+             * Gets the localstorage value of the specified property, from the
+             * localStorage specified object
+             *
+             * @param objName {String}: Name of the object to get
+             * @param propName {String}: Name of the property to get
+             */
+            function getStorageProp( objName, propName ){
+                var objName = getStorageObj( objName ),
+                    objParsed = JSON.parse( objName );
+
+                if( objParsed === null || typeof objParsed != "object" ){
+                    return null;
+                }
+                
+                return objParsed[ propName ];
+            }
+
+            function setStorageProp( objName, propName, propValue ){
+                var objName = getStorageObj( objName ),
+                    objParsed = JSON.parse( objName );
+
+                if( objParsed === null || typeof objParsed != "object" ){
+                    return;
+                }
+
+                objParsed[ propName ] = propValue;
+                setStorageObj( objName, objParsed );
+
+            }
+
+            return {
+                getStorageObj: getStorageObj,
+                setStorageObj: setStorageObj,
+                getStorageProp: getStorageProp,
+                setStorageProp: setStorageProp
+            }
+        })();
+
+        /**
+         * sectionPickerPPTExporter
+         *
+         * A UI dialog is displayed to the user, which allows him to choose whatever sections he/she
+         * wants to export to the PPT.
+         *
+         * - We store the user preferences on the UA localStorage.
+         * - We send via XHR POST (api.postPPTX) the data stored on the UA localStorage, instead of  
+         *   the checkbox. We are not using any <form> to do that.
+         */
+
+        ttg.sectionPickerPPTExporter = function(){
+
+            // Quick configuration object
+            var config = {
+                cssClass: "ttg_section_picker_dialog",
+                title: "Export Plan to PPT",
+                width: "500px",
+                localStorageObjectName: "pptexportsetting",
+                instructions: "<p>Which plan elements do you want to include in your export?</p>",
+                errors: {
+                    noChecksChecked: "<p>At least one plan element has to be checked</p>",
+                    noChecksDisplayed: "<p>At the moment your configuration means that no plan elements are available for selection.</p><p>Please ask an appropriate user, such as the system administrator, to check the Dealmaker Powerpoint custom settings and the settings in the relevant Plan Type.</p>"
+                }
+            };
+
+            /**
+             * User can export a section if isAvailable, which depends on:
+             *      - License Settings
+             *      - DealMaker PPT Settings
+             *      - Plan Detail Settings
+             *
+             * Regardless of the model structure, we can display or not the checkbox on the dialong, 
+             * depending on the "isDisplayed" property value.
+             *
+             * {
+             *    label       : DOM <label> text
+             *    id          : DOM <input id> 
+             *    isAvailable : Check for Licences, PPT Settings and Plan Detail Settings
+             *    isDisplayed : If we want to hide the checkbox to the user
+             *    dependsOnId : We check first if we can export the parent!
+             * }
+             */
+
+            var sectionsModel = [
+                
+                // Plan Details
+                {
+
+                    label: '{!JSENCODE($Label.resource_PlanDetails)}',
+                    id: "amAddPlanDetails", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsPlanDetailsEnabled && !isPlanDetailsDisabledOnPlanType },
+                    isDisplayed: true
+                },
+
+                // Opportunity Map
+                { 
+                    label: '{!JSENCODE($Label.resource_OpportunityMap)}',
+                    id: "amAddOpportunityMap", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsOppMapEnabled },
+                    isDisplayed: true
+                }, 
+
+                // Opportunity List
+                // If user doesn't check amAddOpportunityMap, amAddOpportunities should be false
+                { 
+                    label: "Opportunity List", 
+                    id: "amAddOpportunities", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsOppListEnabled },
+                    isDisplayed: false,
+                    dependsOnId: "amAddOpportunityMap" 
+                }, 
+
+                // Insight Map
+                { 
+                    label: '{!JSENCODE($Label.resource_InsightMap)}',
+                    id: "amAddStrategyMap", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsIMXEnabled },
+                    isDisplayed: true
+                },
+
+                // Political Map
+                { 
+                    label: "{! labelPoliticalMaps }", 
+                    id: "amAddOrgChart", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsPMXEnabled },
+                    isDisplayed: true
+                },
+
+                // Objectives
+                {
+                    label: '{!JSENCODE($Label.resource_Objectives)}', 
+                    id: "amAddObjectives", 
+                    isAvailable: {! isLicensedForAccountManager && isPPTSettingsObjectivesEnabled && !isObjectivesDisabledOnPlanType },
+                    isDisplayed: true
+                }
+            ];
+
+            var sectionsView = _.template("<% if ( isAvailable === true && isDisplayed === true ) { %>" +
+                "   <li class=\"ui-helper-clearfix\">\n" +
+                "       <div class=\"wrapper_labelinput ui-helper-clearfix\">\n" +
+                "           <div class=\"wrapper_input\">\n" +
+                "               <input type=\"checkbox\" id=\"<%= id %>\" value=\"<%= id %>\" />\n" +
+                "           </div>\n" +
+                "           <div class=\"wrapper_label\">\n" +
+                "               <label for=\"<%= id %>\"><%= label %></label>\n" +
+                "           </div>\n" +
+                "       </div>\n" +
+                "   </li>\n" +
+                "<% } %>");
+
+            function getDialogContentHtml(){
+                return "<div class=\"wrapper_content\">\n" + 
+                    "   <div class=\"instructions\">" + config.instructions + "</div>\n" +
+                    "   <div class=\"system_msg\"></div>\n" +
+                    "   <div class=\"wrapper_sections\">\n" +
+                    "       <ul>\n\t" + _.map( sectionsModel, sectionsView ).join('') + "</ul>\n" +
+                    "   </div>\n" +
+                    "</div>";
+            }
+
+            /**
+             * @desc: Giving an sectionId, get the value of the specified property from the 
+             *        sectionModel.
+             *
+             * @param sectionId {String}
+             * @param propName {String}
+             * @return { whatever } or empty {String}
+             */
+            function getSectionModelProp( sectionId, propName ){
+               var obj = _.find( sectionsModel, function( section ){
+                   return section.id === sectionId;
+               });
+
+               return obj[ propName ] || "";
+            }
+
+            function strToBoolean( str ){
+                return ( str === "true" || str === true ) ? true : false;
+            }
+
+            /**
+             * @param sectionId {String}
+             * @return {Boolean}
+             */
+            function isChecked( sectionId ){
+                var jqCheckbox = jqContent.find( "#" + sectionId );
+                
+                return ( jqCheckbox.length > 0 ) ?
+                    jqCheckbox.prop( "checked" ) :
+                    false;
+            }
+
+            /**
+             * Check if we have at least one checkbox to display on the dialog
+             *
+             * "isDisplayed" must be true
+             * "isAvailable" must be true
+             *
+             * @return {Boolean}
+             */
+            function isAllCheckboxHidden(){
+                var atLeastOneDisplayed = _.findWhere( sectionsModel, {
+                    "isDisplayed":true,
+                    "isAvailable":true
+                });
+                return atLeastOneDisplayed ? false : true;
+            }
+
+            /**
+             * @desc: We check if that sectionId
+             *       - has isAvailable === true (depending on license and settings)
+             *       - has been displayed and has been checked by user
+             *       - has not been displayed but isAvailable
+             *       - depends on any other section to be displayed or not
+             *
+             * @param sectionId {String}
+             * @return {Boolean}
+             */
+            function canBeExported( sectionId ){
+                var secIsChecked   = isChecked( sectionId ), // Boolean
+                    secIsDisplayed = getSectionModelProp( sectionId, "isDisplayed" ), // Boolean
+                    secIsAvailable = getSectionModelProp( sectionId, "isAvailable" ), // Boolean
+                    secDependsId   = getSectionModelProp( sectionId, "dependsOnId" ); // String
+
+                // No license or settings off
+                if( secIsAvailable === false ){
+                    return false;
+                }
+                
+                // Depends on other section to be displayed
+                if( secDependsId !== "" ){
+                    return canBeExported( secDependsId );
+                }
+
+                if( secIsDisplayed === true ){
+                    return secIsChecked; // Displayed and checked
+                }
+                
+                return true; // Not displayed but available
+
+            }
+
+            /**
+             * @desc: Set the checkbox value of the given sectionId
+             * @param sectionId {String}
+             * @param checked {String} or {Boolean}
+             */
+            function setCheckbox( sectionId, checked ){
+                jqContent.find( "#" + sectionId ).prop( "checked",  strToBoolean( checked ) );     
+            }
+
+            /**
+             * @desc: Updates all checkboxes with the value stored in localstorage.
+             */
+            function setupChecboxes(){
+                if( isAllCheckboxHidden() ){
+                    displaySystemMsg( config.errors.noChecksDisplayed );
+                    return;
+                }
+                _.each( sectionsModel, function( elm, index, list ){
+                    setCheckbox(
+                        elm.id,
+                        ttg.localStorageService.getStorageProp(
+                            config.localStorageObjectName,
+                            elm.id
+                        ) || "true" // Default value if not set before
+                    );
+                });
+            }
+
+            /**
+             * @desc: Updates localStorage object with the data we have to send to server
+             */
+            function updateLocalStorage(){
+                var param = {};
+                _.each( sectionsModel, function( elm, index, list ){
+                    param[ elm.id ] = canBeExported( elm.id ).toString();
+                });
+                ttg.localStorageService.setStorageObj( config.localStorageObjectName, param );
+            }
+
+            function getTotalChecked(){
+                return jqContent.find( "input:checked" ).length;
+            }
+
+            function displaySystemMsg( msg ){
+                jqContent
+                    .find( ".system_msg" )
+                        .addClass( "warning" )
+                        .html( msg );
+            }
+
+            function clearSystemMsg(){
+                jqContent
+                    .find( ".system_msg" )
+                        .removeClass( "success warning danger" )
+                        .empty();
+            }
+
+            function disableExport(){
+                jqContent
+                    .parents( "." + config.cssClass )
+                    .find( "button.export" )
+                        .button( "disable" );
+            }
+
+            function enableExport(){
+                jqContent
+                    .parents( "." + config.cssClass )
+                    .find( "button.export" )
+                        .button( "enable" );
+            }
+
+            function getElmIdFromEvent( evt ){
+                return evt.target && evt.target.id;
+            }
+
+            function onClickCheckbox( evt ){
+                evt.stopPropagation();
+                //updateSectionsModel( getElmIdFromEvent( evt ) );
+                validateForm();
+            }
+
+            function unbindEvents(){
+                jqContent.off( "click", "input" );
+            }
+
+            function bindEvents(){
+                jqContent.on( "click", "input", onClickCheckbox );
+            }
+
+            function validateForm(){
+                if( getTotalChecked() <= 0 ){
+                    // Uncomment this line if you want to display an error message on the UI dialog
+                    //displaySystemMsg( config.errors.noChecksChecked );
+                    disableExport();
+                } else {
+                    // Uncomment this line if you want to display an error message on the UI dialog
+                    //clearSystemMsg();
+                    enableExport();
+                }
+            }
+
+            function onOpen( event, ui ) {
+                bindEvents();
+                setupChecboxes();
+                validateForm();
+            }
+
+            function onClose( event, ui ) {
+                jqContent.dialog( "destroy" );
+                jqContent.empty().remove();
+                jqContent = null;
+            }
+
+            function onExport() {
+                unbindEvents();
+                updateLocalStorage();
+                jqContent.dialog( "close" );
+
+                // Generate PPT!
+                ttg.simpleFlatPPTExporter( "{!accountPlan.Id}", {!isLicensedForPPT} );
+            }
+            
+            function onCancel() {
+                jqContent.dialog( "close" );
+            }
+
+            var jqContent = jQuery( getDialogContentHtml() );
+
+            jqContent.dialog({
+                "modal": true,
+                "title": config.title,
+                "width": config.width,
+                "dialogClass": config.cssClass,
+                "open" : onOpen,
+                "close": onClose,
+                "buttons": [{ 
+                    "text" : "Export", 
+                    "click": onExport,
+                    "class": "export"
+                },{ 
+                    "text" : "Cancel", 
+                    "click": onCancel,
+                    "class": "cancel"
+                }]
+            });
+
+        };
+
+        ttg.simpleFlatPPTExporter = function(anchorOppId, isLicensedForPP) {
+        
+            var api = ttg.apiLayer.sfdcDelegate( { sessionid : '{!JSENCODE($Api.Session_ID)}', opportunityid : '{!JSENCODE(accountPlan.Id)}' } );
+            var dialogOpen = true;
+            var callCount = 0;               
+
+            function createSimpleDownloadAdvice() {
+                return jQuery('<ol autofocus />')
+                    .append(jQuery('<li/>').text('Click the link below to save the powerpoint presentation.'))
+                    .append(jQuery('<li/>').text('Open the downloaded file with powerpoint.'))
+                    .append(jQuery('<li/>').text('Close this dialog when then \'save as\' has completed.'))
+            }
+
+            function createFutureDownloadAdvice() {
+                if (isLicensedForPP) {
+                    return jQuery('<ol autofocus />')
+                            .append(jQuery('<li/>').text('Dealmaker is preparing your powerpoint presentation.'))
+                            .append(jQuery('<li/>').text('Once complete a link will appear below.'))
+                }
+                else {
+                    return jQuery('<ol autofocus />')
+                            .append(jQuery('<li/>').text('Dealmaker is preparing your powerpoint presentation.'))
+                            .append(jQuery('<li/>').text('Once complete a link will appear below.'))
+                            //.append(jQuery('<li/>').text('Right click this link and save the file with an extention of \'.xml\'.'))
+                            //.append(jQuery('<li/>').text('Open this saved file with powerpoint.'))
+                            //.append(jQuery('<li/>').text('Close this dialog when then \'save as\' has completed.'))
+                }
+            }
+
+            function createPPTXDownloadAdvice() {
+                return jQuery('<ol autofocus />')
+                    .append(jQuery('<li/>').text('Click to download'))
+            }
+
+            function createLinkDiv(linkref) {
+                return  jQuery('<div/>')
+                    .css({ 'margin-top': '20px', width : '100%', 'text-align' : 'center'})
+                    .addClass('ttg_simple_ppt_exporter_linkdiv')
+                    .append(jQuery('<a/>', { href : linkref})
+                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                        .text('Click to save'));
+                    
+            }
+
+            function createFutureLinkDiv() {
+                callCount = 0;
+                return  jQuery('<div/>')
+                    .css({ 'margin-top': '20px', width : '100%', 'text-align' : 'center'})
+                    .addClass('ttg_future_ppt_exporter_linkdiv')
+                    .append(jQuery('<span/>').text('Preparing'));
+                    
+            }
+                
+                        
+            function createRemoteDiv() {
+                
+                return jQuery('<div/>')
+                            .css({'margin-top': '20px', width:'100%', 'text-align' : 'center' })
+                            .append(jQuery('<iframe/>', {src : remotePPTPageURL, height : '20px', width : '100%', frameBorder : 0, seamless : 'seamless' }))
+                        ;
+                
+            }
+
+            function deletefuturePPTX(id) {
+                api.deletePPTX(id,
+                
+                    function() { createfuturePPTX(id) },                    
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+            }           
+
+            function createfuturePPTX(id) {
+
+                api.postPPTX(
+                    id,
+                    {
+                        'param': {
+                            'id': id,
+                            'amAddPlanDetails'    : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddPlanDetails' ),
+                            'amAddOrgChart'       : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddOrgChart' ),
+                            'amAddStrategyMap'    : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddStrategyMap' ),
+                            'amAddObjectives'     : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddObjectives' ),
+                            'amAddOpportunityMap' : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddOpportunityMap' ),
+                            'amAddOpportunities'  : ttg.localStorageService.getStorageProp( 'pptexportsetting', 'amAddOpportunities' )
+                        }
+                    },
+                    function() { checkForFuturePPTXUrl(id) },                   
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+            }           
+
+            function checkForFuturePPTXUrl(id) {
+                api.getPPTX(id,
+                
+                    function(responseData) { 
+                        if (responseData != null && responseData.downloadURL != null) {
+
+                            jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+
+                            if (isLicensedForPP) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<div/>')
+                                            .css({'margin-top': '20px', width:'100%', 'text-align' : 'center' })
+                                            .append(jQuery('<iframe/>', {src : 'https://' + document.domain.replace('dmapp', 'dmppt') + responseData.downloadURL, height : '40px', width : '100%', frameBorder : 0, seamless : 'seamless' }))
+                                )
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>', {href: responseData.downloadURL })
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                                        .text('Click to save')
+                                )
+                            }
+
+                        }
+                        else {
+                            if (++callCount > 40) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>')
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer', 'margin-top': '20px'})
+                                        .text('Taking too long.  Continue waiting?')
+                                        .click(function() { callCount = 0; checkForFuturePPTXUrl(id)}) 
+                                )
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<span/>').css({'display': 'inline-block', 'margin-top': '20px', width: '100px', 'text-align': 'left'}).text('Waiting' + dots(callCount, 4))
+                                )
+
+                                if (dialogOpen) {
+                                    checkForFuturePPTXUrl(id);
+                                }
+                            }
+                            
+                        } 
+                    },
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+
+            }
+            
+            function dots(num, mnum) {
+            
+                var s = '';
+                while(s.length < (num % mnum)) {
+                    s += '.';
+                }
+
+                while(s.length < mnum) {
+                    s += ' ';
+                }
+                
+                return s;
+            }
+            
+            function futureFailure() {
+            }
+                
+            function closeDialog() {
+                dialogOpen = false;
+                jQuery('#ttg_simple_ppt_exporter_div').remove();
+            }
+            
+            function showDialog() {
+                
+                
+                jQuery('<div/>',{ id : 'ttg_simple_ppt_exporter_div'})
+                    .addClass('ttg_simple_ppt_exporter')
+                    .append(
+                        createFutureDownloadAdvice(isLicensedForPP) 
+                    )
+                    .append(
+                        createFutureLinkDiv() 
+                    )
+                    .dialog({
+                        title       :   'Export Plan to Powerpoint'
+                        , width     :   '500px',
+                        close: closeDialog
+                    });
+                
+            }
+                    
+            showDialog();
+            deletefuturePPTX(anchorOppId)
+            
+            return {
+            }
+        }
+        
+		ttg.am = ttg.am || { };
+        
+		// This is referenced by OpportunityMapConfiguration, which is a staticresource, so need to ensure this is visible to it
+		ttg.am.showSettingsHelp = function() {
+			window.open('{!helpURLBase}' + "/Default.htm#Smart_AM/1.Plan_Creation/1.Plan_Creation.htm", "TAS", "resizable=1,location=1,status=1,scrollbars=1,width=1000,height=600");
+		}
+
+        
+        jQuery(document).ready(function() {
+        
+            if(jQuery('div.smartOMTab').length == 7) {
+                jQuery("div.smartOMTab:eq(0)").addClass("planDetails");
+                jQuery("div.smartOMTab:eq(2)").addClass("longTitleTab");
+                jQuery("div.smartOMTab:eq(3)").addClass("planDetails");
+            }
+            
+            //
+            // we show the link 
+            //  if your on windows as we can download the flat XML 
+            //  if you have the PPTX extension installed
+            //
+            //
+            if ({!showPPTLink}) {
+                if (navigator.appVersion.indexOf("Win")!=-1 || {!isLicensedForPPT}) {
+                    jQuery('#smartOMPPTLink').show();
+                }
+            }
+            
+            var reportsList	= [
+            	{} 
+				<apex:repeat value="{! aMReportsList }" var="reportItem" id="contactRules">, 
+					{ name: '{! reportItem.displayas }', url: '{! reportItem.url }', folderName: '{! reportItem.folderName }' }
+				</apex:repeat>
+			];
+			
+			reportsList.shift();  
+            
+            if (reportsList && reportsList.length > 0) {
+	           
+	            reportsList.sort(function(a, b) {
+	            	return a.name.toUpperCase() < b.name.toUpperCase() ? -1 : +1;
+	            });
+	            
+	            var customReportsDropDown = jQuery('<div />').addClass('customReportsDropdown')
+	            	.append(jQuery('<a />').attr('title', 'Reports')
+                		.append(jQuery('<img />', { alt: 'Reports', src: '{! JSENCODE(URLFOR($Resource.TAM, "/images/reportIcon.png")) }' }).addClass('customReportsDropdown')));
+	           
+	            var customReportsDropDownContainer = jQuery('<div />').addClass('reports-dropdown dropdown-relative');
+				var customReportsTitle = jQuery('<div />').addClass('dropdown-title').text('Related Salesforce Reports');	            
+	            var customReportsUnorderedList = jQuery('<ul />').addClass('dropdown-menu').append(customReportsTitle);	            
+	            
+				customReportsDropDownContainer.append(customReportsUnorderedList);            
+	            
+				jQuery.each(reportsList, function(id, reportItem) {
+            		var trimmedId = '{! accountPlan.Id }';
+            		if(trimmedId.length > 15) {
+            			trimmedId = trimmedId.substring(0, 15);
+            		}	
+            		var link = null;
+            		if(reportItem.name !== 'Dummy') {
+	            		link = jQuery('<a />', { href: '/' + reportItem.url + (reportItem.url.indexOf('?') !== -1 ? '&' : '?') + 'pv0=' + trimmedId, target: '_blank' }).text(reportItem.name);
+            		}			
+            		else {
+            			link = jQuery('<div />').text('You don\'t have access');
+            		}   		
+	            	customReportsUnorderedList.append(jQuery('<li />').append(link));
+	            });
+	            
+	            customReportsDropDown.append(customReportsDropDownContainer)
+	            	.click(function() {
+	            		customReportsDropDownContainer.toggle();
+	            });
+	            
+	            jQuery('div.smartOMTabContainer').append(customReportsDropDown);
+	            
+	            jQuery(document).click(function(e) {
+	            	var elementClicked = jQuery(e.target);
+	            	if (!customReportsDropDown.is(elementClicked) && customReportsDropDown.has(elementClicked).length === 0) {
+	            		customReportsDropDownContainer.hide();
+	            	}
+	            });          
+            }    
+        });        
+        
+        function handlePPTX() {
+            //ttg.simpleFlatPPTExporter('{!accountPlan.Id}', {!isLicensedForPPT});
+            ttg.sectionPickerPPTExporter();
+        }
+
+        /* Navigation */
+        jQuery('a.smartOMLink').click(function() {        
+            jQuery('.overlay').toggle();
+        });        
+                        
+        var isTouchScreen = ttg.isTouchScreen();
+        var isWindows8Tab = ttg.isWindows8Tab();
+
+        /** 
+        * Checks if we're on an iPad AND in S1.
+        * 
+        * Back link will be hidden in S1 only.
+        * It should still display in Lightning and Aloha
+        */
+        if (ttg.urlServiceInstance.isSalesforce1()) {
+            jQuery('div.accountPlanListLinkContainer').hide();
+        }
+
+         if(isTouchScreen || isWindows8Tab || {!tooltipsDisabled}){
+         	jQuery('.am_tooltip').addClass('hide_tooltip');
+         }
+         
+         if (!isTouchScreen) {
+             jQuery('.am_tooltip').tooltip({ delay: 0, showURL: false, bodyHandler: function() { return getHelpInformation(jQuery(this).attr('id')); } });
+         }
+
+         function getHelpInformation(id) {
+             var msg;
+             try {
+                 id = id.replace(/^[^A-Z]+/,"");
+                 
+                 if(id === 'PLAN_DETAILS'){
+                 	msg = "<div class='am_tooltip_text'>Record background information and research relating to your plan. Provide a high-level summary of the plan goals, and requirements to deliver to the goals.</div>";
+                 }
+                 else if(id === 'SEGMENTATION'){
+                 	msg = "<div class='am_tooltip_text'>Determine which plan units should get higher priority. Answer specific questions about each unit (company or division) in your plan. Dealmaker will determine the priority that should be placed on each unit.</div>" +
+						  "<div class='am_tooltip_text'><ul><li>In a portfolio plan, this is based on analysis of the customer's current revenue and their future revenue potential.</li><div class='am_tooltip_text'></div>" +
+						  "<li>In an account plan, this is based on analysis of the business or service unit's importance to the customer and to you.</li></ul></div><div class='keepItTogether'></div> ";
+                 }
+                 else if(id === 'OPP_MAP'){
+                 	msg = "<div class='am_tooltip_text'>Visually identify what solutions you're currently selling, and where. Easily see 'white space' areas of potential opportunity where the customer has not yet purchased a solution.</div>" +
+						  "<div class='am_tooltip_text'>Access the political maps and " +'{!JSENCODE($Label.resource_InsightMap)}'+ "s for each of the plan units.</div>"+
+						  "<div class='am_tooltip_text'>See who you're working with and their impact within their organization.</div>" +
+						  "<div class='am_tooltip_text'>Visualize what the customer cares about and collaborate to determine how you can help them achieve their desired business outcomes.</div>";
+                 }
+                 else if(id === 'VALUE_MAP'){
+                 	msg = "<div class='am_tooltip_text'>Focus on the right deals: See which potential and current opportunities can deliver the highest mutual value for the customer and you.</div>"+
+						  "<div class='am_tooltip_text'>Click into an opportunity to specify information that determines Value to Customer (VTC) and Value to Us (VTU), and positions the opportunity on the value map.</div>";
+                 }
+                 else if(id === 'OBJECTIVES'){
+                 	msg = "<div class='am_tooltip_text'>Create a detailed execution plan with Objectives and Actions, and monitor their status to ensure you are staying on top of your plan.</div>";
+                 }
+                 else if(id === 'SCORECARD'){
+                 	msg = "<div class='am_tooltip_text'>Get an overview of how well you are performing on your account plan.</div>" +
+						  "<div class='am_tooltip_text'>Are you closing enough to help you achieve your goal? Do you have enough in your pipeline? Are you focusing on the right deals? And are you taking action to build relationships? Ultimately, are you improving your situation as time passes?</div>";
+                 }
+                 else if(id === 'COMPLETENESS'){
+                 	msg = "<div class='am_tooltip_text'>See an overview of how well you are progressing through your account plan, and the level of activity on it.</div>";
+                 }
+                 
+                 return jQuery('<div class="HOVERHELP"></div>').html(msg);
+             }
+             catch(e) {
+                 return '';
+             }
+        }
+                 
+    </script>   
+</apex:page>

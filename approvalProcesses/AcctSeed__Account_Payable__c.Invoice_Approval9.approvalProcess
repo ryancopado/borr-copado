@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>etam@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <label>Invoice Approval</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approved_BY_Paula</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>hfaustino@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Patty or Kristan go to Tom or Rebekah</description>
+        <entryCriteria>
+            <formula>OwnerId = &quot;00534000008xxkN&quot;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Tom/Hannah Approval</label>
+        <name>Tom_Hannah_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bgayton@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Tanya go to Tom or Brigitta</description>
+        <entryCriteria>
+            <formula>OwnerId  = &quot;00580000003RDrT&quot;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Tom/Brigitta Approval</label>
+        <name>Tom_Brigitta_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>hfaustino@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Kim or Lauren go to Hannah</description>
+        <entryCriteria>
+            <formula>OR(
+OwnerId = &quot;005340000077cEB&quot;,
+OwnerId = &quot;005800000074WOu&quot;, 
+OwnerId = &quot;00534000009pQa4&quot;,
+OwnerId = &quot;005340000097OxH&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Hannah Approval</label>
+        <name>Hannah_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Hannah go to Tom</description>
+        <entryCriteria>
+            <formula>OwnerId   = &quot;00580000005LK1V&quot;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Tom Approval</label>
+        <name>Tom_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Any AP Invoice owned by anyone else goes to Tom</description>
+        <entryCriteria>
+            <formula>NOT(
+OR(
+OwnerId   = &quot;00534000008xxkN&quot;,
+OwnerId   = &quot;00580000003RDrT&quot;,
+OwnerId   = &quot;005340000077cEB&quot;,
+OwnerId   = &quot;005800000074WOu&quot;,
+OwnerId   = &quot;00534000007nK9a&quot;,
+OwnerId   = &quot;00534000007nMqv&quot;,
+OwnerId   = &quot;00580000005LK1V&quot; ) )</formula>
+        </entryCriteria>
+        <label>Other Final Approval</label>
+        <name>Other_Final_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Alerts/Invoice_ready_to_approve</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+OR( ISPICKVAL( Approval_Status__c, &quot;New&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Recalled&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Rejected&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Approved&quot; )),
+Account_Active__c = &quot;Yes&quot;,
+Invoice_Amount_and_Total_Match__c = &quot;Yes&quot;,
+NOT( ISBLANK( Remit_to__c ) ) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Invoice_has_been_approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>PO_Invoice_has_been_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Invoice Approval9</label>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Set_Status_to_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

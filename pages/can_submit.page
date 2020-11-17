@@ -1,0 +1,149 @@
+<apex:page standardController="Con_Req__c" extensions="con_req" id="can_submit_page" showHeader="false" sidebar="false" >
+
+   <style>
+      .notOk {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: bold;
+			font-style: normal;
+			color: #DD0000;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+      .ok { 
+          	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: bold;
+			font-style: normal;
+			color: #329555;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      }
+      
+      .customTable {
+      		top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      		background-color: transparent;
+      }
+      
+      .customTableInvisible {
+      		display: none;
+      }
+      
+      .customRow {
+      		top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      		background-color: transparent;
+      }
+      
+      .customRowInvisible {
+      		display: none;
+      }
+      
+      
+            
+      
+      .customLabelCol {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 10.9167px;
+			font-weight: bold;
+			font-style: normal;
+			color: #333333;
+			line-height: 13.35px;
+      		text-align: right;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 10px 2px 2px;
+			border: 0px 0px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+      
+      .customDataCol {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: 400;
+			font-style: normal;
+			color: #000000;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+
+   </style>
+	
+	<body style="background-color:#F3F3EC;">
+
+		<table cellspacing="0" cellpadding="0" border="0" width="100%">
+			<tr class="customRow" width="100%">
+				<td class="customLabelCol" width="35%">Ok to Submit</td>
+				<td class="customDataCol" width="65%"  class="{!if(Con_Req__c.Ok_to_Submit__c == 'Yes', 'ok', 'notOk' ) }">
+				{!if ( Con_Req__c.Ok_to_Submit__c = "Yes", "Yes" , "No")}
+				</td>
+			</tr>
+			<tr class="{!if ( Con_Req__c.Ok_to_Submit__c == 'Yes','customRowInvisible', 'customRow') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp;</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk">
+				You cannot submit this Request because:</td>
+			</tr>
+			<tr class="{!if ( Contains ( Con_Req__c.Submit_Errors__c , 'SUBMIT' ),'customRow', 'customRowInvisible') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp;</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk" >
+				• Already submitted</td>
+			</tr>
+			<tr class="{!if ( Contains ( Con_Req__c.Submit_Errors__c , 'REJECT' ),'customRow', 'customRowInvisible') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp;</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk" >
+				• Has been rejected or recalled </td>
+			</tr>
+			<tr class="{!if ( Contains ( Con_Req__c.Submit_Errors__c , 'TOTAL' ),'customRow', 'customRowInvisible') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp;</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk" >
+				• <apex:outputField value="{!Con_Req__c.Project_Manager_Budget_Check__c}" /></td>
+			</tr>
+			<tr class="{!if ( Contains ( Con_Req__c.Submit_Errors__c , 'PO' ),'customRow', 'customRowInvisible') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk">
+				• You must select a PO Number</td>
+			</tr>
+			<tr class="{!if ( Contains ( Con_Req__c.Submit_Errors__c , 'CC' ),'customRow', 'customRowInvisible') }" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="notOk">
+				• You must select a Cost Code</td>
+			</tr>
+		</table>
+	</body>
+
+</apex:page>

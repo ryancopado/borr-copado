@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Calculated annual amount. --></help>
+        <label><!-- Annual Amount --></label>
+        <name>AcctSeed__Annual_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- shared picklist should should match values of Payment Options in contract as well as Payment Options in Opportunity --></help>
+        <label><!-- Billing Frequency --></label>
+        <name>AcctSeed__Billing_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Anniversary Semi-Annual in Arrears</masterLabel>
+            <translation><!-- Anniversary Semi-Annual in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anniversary in Advance</masterLabel>
+            <translation><!-- Anniversary in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual in Advance-Jan to Dec</masterLabel>
+            <translation><!-- Annual in Advance-Jan to Dec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arrears Per % of visits completed</masterLabel>
+            <translation><!-- Arrears Per % of visits completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term in Advance</masterLabel>
+            <translation><!-- Long Term in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Semi-Annual</masterLabel>
+            <translation><!-- Mid Semi-Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly in Advance</masterLabel>
+            <translation><!-- Monthly in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly in Arrears</masterLabel>
+            <translation><!-- Monthly in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Advance</masterLabel>
+            <translation><!-- Quarterly in Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Advance Equal Installments</masterLabel>
+            <translation><!-- Quarterly in Advance Equal Installments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Arrears</masterLabel>
+            <translation><!-- Quarterly in Arrears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly in Arrears Equal Installments</masterLabel>
+            <translation><!-- Quarterly in Arrears Equal Installments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annual In Advance</masterLabel>
+            <translation><!-- Semi-Annual In Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annual in Arrears</masterLabel>
+            <translation><!-- Semi-Annual in Arrears --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>AcctSeed__Customer__c</name>
+        <relationshipLabel><!-- Recurring Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Leave this checkbox unchecked so Billings are created from this Recurring Billing when you have automation set up. Check it to exclude Billings from being automatically created. --></help>
+        <label><!-- Exclude From Automation --></label>
+        <name>AcctSeed__Exclude_From_Automation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Billing Date --></label>
+        <name>AcctSeed__Last_Billing_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Recurring Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of recurring billing lines associated with this record. --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated monthly amount. --></help>
+        <label><!-- Monthly Amount --></label>
+        <name>AcctSeed__Monthly_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time frame to create next billing. --></help>
+        <label><!-- Next Billing Create --></label>
+        <name>AcctSeed__Next_Billing_Create__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Billing Date --></label>
+        <name>AcctSeed__Next_Billing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>AcctSeed__Opportunity__c</name>
+        <relationshipLabel><!-- Recurring Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Summary of the Recurring Billing Lines&apos; Tax Amount fields --></help>
+        <label><!-- Sales Tax --></label>
+        <name>AcctSeed__Sales_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Summary of all the Recurring Billing Lines&apos; Sub-Total fields --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Days in Current Escalator --></label>
+        <name>BillingDaysinCurrentEscalator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Days in Previous Escalator --></label>
+        <name>BillingDaysinPreviousEscalator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Days in Next Escalator --></label>
+        <name>BillingDaysin__c</name>
+    </fields>
+    <fields>
+        <help><!-- PDF Format for the billing --></help>
+        <label><!-- Billing Format --></label>
+        <name>Billing_Format__c</name>
+        <relationshipLabel><!-- Recurring Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- End date of the current billing period --></help>
+        <label><!-- Current Period End Date --></label>
+        <name>CurrentPeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of the current billing period start --></help>
+        <label><!-- Current Period Start Date --></label>
+        <name>CurrentPeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Months in Current Billing Period --></label>
+        <name>DaysinCurrentBillingPeriod__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract --></label>
+        <name>Service_Contract__c</name>
+        <relationshipLabel><!-- Recurring Billings --></relationshipLabel>
+    </fields>
+    <webLinks>
+        <label><!-- Create_Billing --></label>
+        <name>AcctSeed__Create_Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Billings --></label>
+        <name>AcctSeed__Create_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Billing_and_Billing_Line --></label>
+        <name>Create_Billing_and_Billing_Line</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Createbilling --></label>
+        <name>Createbilling</name>
+    </webLinks>
+</CustomObjectTranslation>

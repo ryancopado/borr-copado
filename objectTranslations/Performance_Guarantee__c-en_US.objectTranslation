@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Performance Guarantee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Performance Guarantees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Analysis Interval --></label>
+        <name>Analysis_Interval__c</name>
+        <picklistValues>
+            <masterLabel>120 Days</masterLabel>
+            <translation><!-- 120 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30 Days</masterLabel>
+            <translation><!-- 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>365 Days</masterLabel>
+            <translation><!-- 365 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Days</masterLabel>
+            <translation><!-- 60 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90 Days</masterLabel>
+            <translation><!-- 90 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Analysis Method --></label>
+        <name>Analysis_Method__c</name>
+        <picklistValues>
+            <masterLabel>Against Contract Values</masterLabel>
+            <translation><!-- Against Contract Values --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GSPI via PVSyst</masterLabel>
+            <translation><!-- GSPI via PVSyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEAMC via PVSyst</masterLabel>
+            <translation><!-- SEAMC via PVSyst --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEAMC within TOU Buckets</masterLabel>
+            <translation><!-- SEAMC within TOU Buckets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Availability</masterLabel>
+            <translation><!-- System Availability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target Adjusted for Actual Irradiance</masterLabel>
+            <translation><!-- Target Adjusted for Actual Irradiance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Contact for reporting --></label>
+        <name>Customer_Contact_for_reporting__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- recommended date for subsequent analysis based on End Date or most recent analysis plus interval --></help>
+        <label><!-- Date for Next Analysis --></label>
+        <name>Date_for_Next_Analysis__c</name>
+    </fields>
+    <fields>
+        <help><!-- recommended date to complete first analysis based on interval and PTO date of project.  If manual is selected as an interval the default value of 365 days from PTO Date is used. --></help>
+        <label><!-- First Analysis Date --></label>
+        <name>First_Analysis_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Irradiance Threshold (W/m2) --></label>
+        <name>Irradiance_Threshold_W_m2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter performance or availability guarantee level --></help>
+        <label><!-- Guarantee Level --></label>
+        <name>Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Contract --></label>
+        <name>Link_to_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to SPG Documents --></label>
+        <name>Link_to_SPG_Documents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Analysis Date --></label>
+        <name>Most_Recent_Analysis_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Analysis Date --></label>
+        <name>Next_Analysis_Date_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- add analysis interval to the most recent analysis end date --></help>
+        <label><!-- Next Analysis Date --></label>
+        <name>Next_Analysis_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next True-up Report Due Client --></label>
+        <name>Next_True_up_Report_Due_Client__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record any site activities required as part of the PG, such as recalibration of Met sensors or Meters. --></help>
+        <label><!-- O &amp; M Notes --></label>
+        <name>O_M_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PTO Date --></label>
+        <name>PTO_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Penalty rate ($/kwh) --></label>
+        <name>Penalty_rate_kwh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SPG Notes --></label>
+        <name>SPG_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Draft - Initial status, should be changed when O&amp;M takes responsibility for a project;  Active - Active guarantee; 
+Completed - term has been completed; Dead - not Active, but the term was not completed. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dead</masterLabel>
+            <translation><!-- Dead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Term --></label>
+        <name>Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- specify time interval for PG analysis - Annual, 3-year, 5-year, 3-6-10, etc. --></help>
+        <label><!-- True-up Interval --></label>
+        <name>True_up_Interval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Guarantee --></label>
+        <name>Type_of_Guarantee__c</name>
+        <picklistValues>
+            <masterLabel>Availability</masterLabel>
+            <translation><!-- Availability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation><!-- Performance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter uncertainty from guarantee --></help>
+        <label><!-- Uncertainty (%) --></label>
+        <name>Uncertainty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upside Notes --></label>
+        <name>Upside_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Yes if PG includes financial benefit to Borrego for exceeding PG targets. --></help>
+        <label><!-- Upside --></label>
+        <name>Upside__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Weather Sensor Installation Notes --></label>
+        <name>Weather_Sensor_Installation_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- determines if it is 30 days prior to the next true up report due date --></help>
+        <label><!-- 30 Days Until True Up Report Due --></label>
+        <name>X30_Days_Until_True_Up_Report_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto-updates contract associated with project --></help>
+        <label><!-- Service Contract --></label>
+        <name>service_contract__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

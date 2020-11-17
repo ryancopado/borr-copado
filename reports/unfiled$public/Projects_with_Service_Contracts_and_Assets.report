@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Contracts__r$ContractNumber</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Contracts__r$Account__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Contracts__r.Assets__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$DAS_Platform_Site_ID__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$DAS_Provider__c</field>
+    </columns>
+    <description>for Bradley</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Contracts__r$Contract_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AcctSeed__Project__c.O_M_Project</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Projects with Service Contract and Asset</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Service_Contracts_and_Assets__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c$X50_Baseline_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

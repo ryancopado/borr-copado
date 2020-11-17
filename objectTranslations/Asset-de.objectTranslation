@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Search Filters --></label>
+        <name>SBQQ__SearchFilters</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Search Results --></label>
+        <name>SBQQ__SearchResults</name>
+    </fieldSets>
+    <fields>
+        <label><!-- AccountActiveAssets --></label>
+        <name>AccountActiveAssets__c</name>
+        <relationshipLabel><!-- Active Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Inventory Movement --></label>
+        <name>AcctSeedERP__Sales_Order_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>AcctSeedERP__Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add to WO --></label>
+        <name>Add_to_WO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Party who originally installed Asset (Internal = Borrego, External = 3rd Party) --></help>
+        <label><!-- Asset Origin --></label>
+        <name>Asset_Origin__c</name>
+        <picklistValues>
+            <masterLabel>External Installation</masterLabel>
+            <translation><!-- External Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Installation</masterLabel>
+            <translation><!-- Internal Installation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Inactive Asset = Asset is on site but not being utilized
+Active = Asset is on site and being utilized
+Archived = Asset is not on site or being used. Used to indicate a mistake in entry or bad data but kept due to historical relationship that may exist --></help>
+        <label><!-- Asset Status --></label>
+        <name>Asset_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RMA</masterLabel>
+            <translation><!-- RMA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Auto Create --></label>
+        <name>Auto_Create__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of months Borrego Solar is warrantying system for. --></help>
+        <label><!-- Borrego Solar Warranty Term (months) --></label>
+        <name>Borrego_Solar_Warranty_Term_months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compass Orientation 1 --></label>
+        <name>Compass_Orientation_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compass Orientation 2 --></label>
+        <name>Compass_Orientation_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compass Orientation 3 --></label>
+        <name>Compass_Orientation_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose what type of asset --></help>
+        <label><!-- Asset Type --></label>
+        <name>Component_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContractActiveAssets --></label>
+        <name>ContractActiveAssets__c</name>
+        <relationshipLabel><!-- Active Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The service contract associated with the Asset --></help>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- adds quantity of this item used on related service visits --></help>
+        <label><!-- Count of Inventory Used 2 --></label>
+        <name>Count_of_Inventory_Used_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts items used in service visits --></help>
+        <label><!-- Count of Inventory Used --></label>
+        <name>Count_of_Inventory_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows current available balance based on Original Qty - anything used in service visits --></help>
+        <label><!-- Current Qty Available --></label>
+        <name>Current_Qty_Available__c</name>
+    </fields>
+    <fields>
+        <help><!-- identifies internal inventory we are storing on location for the customer, usually the result in a purchase that had surplus --></help>
+        <label><!-- Customer Owned --></label>
+        <name>Customer_Owned__c</name>
+    </fields>
+    <fields>
+        <help><!-- DAS device ID from the DAS platform --></help>
+        <label><!-- DAS Device ID --></label>
+        <name>DAS_Device_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DNS Server --></label>
+        <name>DNS_Server__c</name>
+    </fields>
+    <fields>
+        <help><!-- should be the date it was put into inventory not date this record of it was recorded/entered --></help>
+        <label><!-- Date Added to Inventory --></label>
+        <name>Date_Added_to_Inventory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any special notes regarding inverter or system design. --></help>
+        <label><!-- Description Special Notes --></label>
+        <name>Description_Special_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Efficiency --></label>
+        <name>Efficiency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gateway --></label>
+        <name>Gateway__c</name>
+    </fields>
+    <fields>
+        <label><!-- IP Address --></label>
+        <name>IP_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Notes --></label>
+        <name>Install_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Install Type --></label>
+        <name>Install_Type__c</name>
+        <picklistValues>
+            <masterLabel>Awning</masterLabel>
+            <translation><!-- Awning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ground</masterLabel>
+            <translation><!-- Ground --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Tiles</masterLabel>
+            <translation><!-- Integrated Tiles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pole</masterLabel>
+            <translation><!-- Pole --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof</masterLabel>
+            <translation><!-- Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof (kick up)</masterLabel>
+            <translation><!-- Roof (kick up) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter notes to help describe where the inverter can be found. --></help>
+        <label><!-- Inverter Location --></label>
+        <name>Inverter_Location__c</name>
+        <picklistValues>
+            <masterLabel>Inside</masterLabel>
+            <translation><!-- Inside --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outside Covered</masterLabel>
+            <translation><!-- Outside Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outside Exposed</masterLabel>
+            <translation><!-- Outside Exposed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of the Inverter in the installation --></help>
+        <label><!-- Inverter Number --></label>
+        <name>Inverter_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of months manufacturer is warrantying inverter for. --></help>
+        <label><!-- Manufacturer Warranty Terms (months) --></label>
+        <name>Manufacturer_Warranty_Terms_months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model # --></label>
+        <name>Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Watts STC --></label>
+        <name>Module_Watts_STC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes on Shading --></label>
+        <name>Notes_on_Shading__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Different Orientations --></label>
+        <name>Number_of_Different_Orientations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Modules Per String --></label>
+        <name>Number_of_Modules_Per_String__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Modules --></label>
+        <name>Number_of_Modules__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Modules in Orientation 1 --></label>
+        <name>Number_of_Modules_in_Orientation_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Modules in Orientation 2 --></label>
+        <name>Number_of_Modules_in_Orientation_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Modules in Orientation 3 --></label>
+        <name>Number_of_Modules_in_Orientation_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Strings --></label>
+        <name>Number_of_Strings__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related opportunity from which the assets were created. --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- shows amount originally on hand at this location --></help>
+        <label><!-- Original Stock Quantity --></label>
+        <name>Original_Stock_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch Orientation 1 --></label>
+        <name>Pitch_Orientation_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch Orientation 2 --></label>
+        <name>Pitch_Orientation_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch Orientation 3 --></label>
+        <name>Pitch_Orientation_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date in which the warranty should start. This is the same as the project PTO Date. --></help>
+        <label><!-- Product Warranty Start Date --></label>
+        <name>Product_Warranty_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProjectActiveAssets --></label>
+        <name>ProjectActiveAssets__c</name>
+        <relationshipLabel><!-- Active Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Project End date on the related project. --></help>
+        <label><!-- Project End Date --></label>
+        <name>Project_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>Mid Atlantic</masterLabel>
+            <translation><!-- Mid Atlantic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NorCal</masterLabel>
+            <translation><!-- NorCal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northeast</masterLabel>
+            <translation><!-- Northeast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SoCal</masterLabel>
+            <translation><!-- SoCal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southeast</masterLabel>
+            <translation><!-- Southeast --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check box if this is a replacement product. --></help>
+        <label><!-- Replacement Product? --></label>
+        <name>Replacement_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Roof Type --></label>
+        <name>Roof_Type__c</name>
+        <picklistValues>
+            <masterLabel>Comp Shingle</masterLabel>
+            <translation><!-- Comp Shingle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curved Concrete</masterLabel>
+            <translation><!-- Curved Concrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat Concrete</masterLabel>
+            <translation><!-- Flat Concrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foam</masterLabel>
+            <translation><!-- Foam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membrane</masterLabel>
+            <translation><!-- Membrane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rolled Roofing</masterLabel>
+            <translation><!-- Rolled Roofing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tar and Gravel</masterLabel>
+            <translation><!-- Tar and Gravel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torch Down</masterLabel>
+            <translation><!-- Torch Down --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Zusätzlicher Rabatt für diesen Vermögenswert, angegeben als Betrag.</help>
+        <label><!-- Additional Disc. (Amt) --></label>
+        <name>SBQQ__AdditionalDiscountAmount__c</name>
+    </fields>
+    <fields>
+        <help>Legt die Abrechnungshäufigkeit fest.</help>
+        <label><!-- Billing Frequency --></label>
+        <name>SBQQ__BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <help>Die Abrechnungsart definiert, wann die Abrechnung erfolgt. Bei der Abrechnung im Voraus stellen Sie Kunden Produkte oder Services in Rechnung, bevor diese geliefert bzw. geleistet wurden. Bei der rückwirkenden Abrechnung stellen Sie Kunden eine Rechnung, nachdem die Produkte oder Services geliefert bzw. erbracht wurden.</help>
+        <label><!-- Billing Type --></label>
+        <name>SBQQ__BillingType__c</name>
+    </fields>
+    <fields>
+        <help>Gibt an, ob dieser Belegposten ein Paket darstellt, das heißt, ob er andere Belegposten in diesem Angebot beinhaltet.</help>
+        <label><!-- Package --></label>
+        <name>SBQQ__Bundle__c</name>
+    </fields>
+    <fields>
+        <help>Bei Posten mit berechneten Mengen enthält dieses Feld die ursprüngliche Menge, die der Benutzer eingegeben hat.</help>
+        <label><!-- Original Quantity --></label>
+        <name>SBQQ__BundledQuantity__c</name>
+    </fields>
+    <fields>
+        <help>Gibt an, dass das Produkt in diesem Belegposten mit einem anderen Produkt in diesem Angebot in einem Paket gebündelt ist. Bei in Paketen gebündelten Belegposten lautet der Preis Null und die Änderung von Preis oder Menge ist nicht möglich.</help>
+        <label><!-- Bundled --></label>
+        <name>SBQQ__Bundled__c</name>
+    </fields>
+    <fields>
+        <help>Die Art der Produktkosten. Dies ist ein Systemfeld, das vom zugeordneten Produkt abgeleitet wird.</help>
+        <label><!-- Charge Type --></label>
+        <name>SBQQ__ChargeType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Combine Key --></label>
+        <name>SBQQ__CombineKey__c</name>
+    </fields>
+    <fields>
+        <help>Legt einen zusätzlichen Rabatt für diese Komponente fest, der zum Rabatt für das übergeordnete Paket hinzukommt.</help>
+        <label><!-- Component Discounted By Package --></label>
+        <name>SBQQ__ComponentDiscountedByPackage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Product Id --></label>
+        <name>SBQQ__CreditProductId__c</name>
+    </fields>
+    <fields>
+        <help>Abonnement, das diesen Vermögenswert derzeit abdeckt. Wird automatisch eingetragen, wenn nur ein einziges Abonnement diesen Vermögenswert abdeckt. Verlängerungen werden mit neuem Abonnement überschrieben.</help>
+        <label><!-- Current Subscription --></label>
+        <name>SBQQ__CurrentSubscription__c</name>
+        <relationshipLabel><!-- Covered Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Name der Preisdimension, aus der dieser Vermögenswert stammt</help>
+        <label><!-- Price Dimension Name --></label>
+        <name>SBQQ__Dimension__c</name>
+    </fields>
+    <fields>
+        <help>Art der Rabattregelung. Wird aus dem Feld &quot;Typ&quot; in der verknüpften Rabattregelung kopiert.</help>
+        <label><!-- Discount Schedule Type --></label>
+        <name>SBQQ__DiscountScheduleType__c</name>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation>Bereich</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slab</masterLabel>
+            <translation>Durchschnitt</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Geben Sie Rabatte als Prozentwert oder Betrag an, der auf der Grundlage von gekaufter Menge oder Laufzeit vom Produktpreis abgezogen wird. Legen Sie Mengen-/Laufzeitbereiche in Klassen unterschiedlicher Rabattsätze fest. Der Rabatt wird auf den Listenpreis gewährt und der sich daraus ergebende Gesamtwert wird als &quot;Regulärer Preis&quot; gespeichert.</help>
+        <label><!-- Discount Schedule --></label>
+        <name>SBQQ__DiscountSchedule__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Zusätzlicher Rabatt für diesen Vermögenswert, angegeben als Prozentsatz.</help>
+        <label><!-- Additional Disc. (%) --></label>
+        <name>SBQQ__Discount__c</name>
+    </fields>
+    <fields>
+        <help>Rabatt, der zusätzlich zum Partnerrabatt abgezogen werden soll.</help>
+        <label><!-- Distributor Discount --></label>
+        <name>SBQQ__DistributorDiscount__c</name>
+    </fields>
+    <fields>
+        <help>Bezeichnet Funktions- und dynamische Optionen für diesen Belegposten.</help>
+        <label><!-- Dynamic Option ID --></label>
+        <name>SBQQ__DynamicOptionId__c</name>
+    </fields>
+    <fields>
+        <help>Gibt an, ob Service Cloud beim Erstellen dieses Vermögenswerts aktiviert war.</help>
+        <label><!-- From Service Cloud --></label>
+        <name>SBQQ__FromServiceCloud__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Quote Line --></label>
+        <name>SBQQ__LatestQuoteLine__c</name>
+        <relationshipLabel><!-- Assets (Latest Quote Line) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Listenpreis für dieses Vermögenswertprodukt.</help>
+        <label><!-- List Price --></label>
+        <name>SBQQ__ListPrice__c</name>
+    </fields>
+    <fields>
+        <help>Aufschlag für diesen Vermögenswert, angegeben als Betrag.</help>
+        <label><!-- Markup (Amt) --></label>
+        <name>SBQQ__MarkupAmount__c</name>
+    </fields>
+    <fields>
+        <help>Aufschlag für diesen Vermögenswert, angegeben als Prozentsatz.</help>
+        <label><!-- Markup (%) --></label>
+        <name>SBQQ__MarkupRate__c</name>
+    </fields>
+    <fields>
+        <help>Nummer, die die Position dieses Belegpostens innerhalb seiner Gruppe oder seines Angebots angibt.</help>
+        <label><!-- Number --></label>
+        <name>SBQQ__Number__c</name>
+    </fields>
+    <fields>
+        <help>Rabatt, der für dieses Produkt gewährt wird, da es Teil eines Pakets ist.</help>
+        <label><!-- Option Discount (Amt) --></label>
+        <name>SBQQ__OptionDiscountAmount__c</name>
+    </fields>
+    <fields>
+        <help>Wenn dieser Belegposten für eine optionale SKU gilt, spiegelt dieses Feld den Rabatt wider, der möglicherweise für das Paket gewährt und auf die Option ausgeweitet wurde.</help>
+        <label><!-- Option Discount (%) --></label>
+        <name>SBQQ__OptionDiscount__c</name>
+    </fields>
+    <fields>
+        <help>Gibt die Verschachtelungsebene dieser Option an (gilt nur für Belegposten, die aus Optionen erstellt werden).</help>
+        <label><!-- Option Level --></label>
+        <name>SBQQ__OptionLevel__c</name>
+    </fields>
+    <fields>
+        <help>Gibt den Optionstyp an, der aus der zugehörigen Produktoption kopiert wurde. Bestimmt, wie die Menge berechnet wird.</help>
+        <label><!-- Option Type --></label>
+        <name>SBQQ__OptionType__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation>Zubehör</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Component</masterLabel>
+            <translation>Komponente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related Product</masterLabel>
+            <translation>Zugehöriges Produkt</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Product --></label>
+        <name>SBQQ__OrderProduct__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Ursprüngliche Stückkosten des Vermögenswerts zum Zeitpunkt des Kaufs, bevor Kostenregelungen angewandt wurden.</help>
+        <label><!-- Original Unit Cost --></label>
+        <name>SBQQ__OriginalUnitCost__c</name>
+    </fields>
+    <fields>
+        <help>Ein Code, der jede Komponente dieses Pakets basierend auf ihren Komponentencodes auflistet.</help>
+        <label><!-- Package Product Code --></label>
+        <name>SBQQ__PackageProductCode__c</name>
+    </fields>
+    <fields>
+        <help>Eine Beschreibung jeder Komponente in diesem Paket.</help>
+        <label><!-- Package Product Description --></label>
+        <name>SBQQ__PackageProductDescription__c</name>
+    </fields>
+    <fields>
+        <help>Partnerrabatte werden angewandt, nachdem alle automatischen und nach Ermessen gewährten Rabatte angewandt wurden. Der Partnerrabatt ist beim Partnerpreis bereits berücksichtigt.</help>
+        <label><!-- Partner Discount --></label>
+        <name>SBQQ__PartnerDiscount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Dimension --></label>
+        <name>SBQQ__PriceDimension__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Gibt an, wie der Preis für diesen Belegposten berechnet wird: Bei &quot;Liste&quot; wird der Rabatt vom Listenpreis abgezogen, bei &quot;Kosten&quot; wird ein Aufschlag zu den Kosten addiert.</help>
+        <label><!-- Pricing Method --></label>
+        <name>SBQQ__PricingMethod__c</name>
+        <picklistValues>
+            <masterLabel>Block</masterLabel>
+            <translation>Zone</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost</masterLabel>
+            <translation>Kosten</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation>Benutzerdefiniert</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation>Liste</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent Of Total</masterLabel>
+            <translation>Prozent vom Gesamtwert</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Die Produktoption, die diesen Belegposten erzeugt hat (sofern vorhanden).</help>
+        <label><!-- Product Option --></label>
+        <name>SBQQ__ProductOption__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quote Line --></label>
+        <name>SBQQ__QuoteLine__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Regulärer Preis für diesen Vermögenswert.</help>
+        <label><!-- Regular Price --></label>
+        <name>SBQQ__RegularPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Uplift (%) --></label>
+        <name>SBQQ__RenewalUpliftRate__c</name>
+    </fields>
+    <fields>
+        <help>Der übergeordnete Vermögenswert. Wenn hier ein Eintrag vorhanden ist, handelt es sich bei diesem Vermögenswert um ein untergeordnetes Element in einem Bündel.</help>
+        <label><!-- Required By Asset --></label>
+        <name>SBQQ__RequiredByAsset__c</name>
+        <relationshipLabel><!-- Assets (Required By Asset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Die ID des übergeordneten Datensatzes, der diesen Datensatz erfordert.</help>
+        <label><!-- Required By Id --></label>
+        <name>SBQQ__RequiredById__c</name>
+    </fields>
+    <fields>
+        <help>Übergeordnetes Produkt dieses Vermögenswerts.</help>
+        <label><!-- Parent Product --></label>
+        <name>SBQQ__RequiredByProduct__c</name>
+        <relationshipLabel><!-- Child Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Das übergeordnete Abonnement. Wenn hier ein Eintrag vorhanden ist, handelt es sich bei diesem Vermögenswert um ein untergeordnetes Element in einem Bündel.</help>
+        <label><!-- Required By Subscription --></label>
+        <name>SBQQ__RequiredBySubscription__c</name>
+        <relationshipLabel><!-- Assets (Required By Subscription) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revised Asset --></label>
+        <name>SBQQ__RevisedAsset__c</name>
+        <relationshipLabel><!-- Revised Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Oberstes, diesem Vermögenswert übergeordnetes Bündel.</help>
+        <label><!-- Root Asset (CPQ) --></label>
+        <name>SBQQ__RootAsset__c</name>
+        <relationshipLabel><!-- Assets (RootAsset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Die ID des Abonnements oder Vermögenswerts, das oder der dem Paket mit diesem Vermögenswert zugrunde liegt.</help>
+        <label><!-- Root Id --></label>
+        <name>SBQQ__RootId__c</name>
+    </fields>
+    <fields>
+        <help>Bei Produkten mit mehreren Segmenten ist dies der Index, der die Position dieses Angebotsbelegpostens in der Segmenttabelle angibt.</help>
+        <label><!-- Segment Index --></label>
+        <name>SBQQ__SegmentIndex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment Key --></label>
+        <name>SBQQ__SegmentKey__c</name>
+    </fields>
+    <fields>
+        <help>Bei Produkten mit mehreren Segmenten ist dies die Bezeichnung der Spaltenüberschrift (z. B. &quot;Jahr 1&quot;), die mit diesem Posten verknüpft ist.</help>
+        <label><!-- Segment Label --></label>
+        <name>SBQQ__SegmentLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription End Date --></label>
+        <name>SBQQ__SubscriptionEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Quote Line --></label>
+        <name>SBQQ__SubscriptionQuoteLine__c</name>
+        <relationshipLabel><!-- Assets (Quote Line) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Subscription Start Date --></label>
+        <name>SBQQ__SubscriptionStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscribed Product --></label>
+        <name>SBQQ__Subscription__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Regelung für Rabatte, die auf der Abonnementlaufzeit basieren. Bei der Einstellung &quot;Gruppe&quot; gilt der Rabattsatz für die Gruppenlaufzeit, während bei &quot;Angebot&quot; der Rabattsatz für die gesamte Angebotslaufzeit gilt, unabhängig von den unterschiedlichen Laufzeiten Ihrer Gruppen.</help>
+        <label><!-- Term Discount Schedule --></label>
+        <name>SBQQ__TermDiscountSchedule__c</name>
+        <relationshipLabel><!-- Assets (Term Discouned) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Stückkosten für diesen Vermögenswert.</help>
+        <label><!-- Unit Cost --></label>
+        <name>SBQQ__UnitCost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Virtual Asset --></label>
+        <name>SBQQ__VirtualAsset__c</name>
+        <relationshipLabel><!-- Assets (Virtual Asset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the unique 18 digit ID for each Asset --></help>
+        <label><!-- Salesforce ID --></label>
+        <name>Salesforce_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The case lookup field on the Service Visit record that was used to create the Asset at the time the Asset was created. Set automatically by the Create Asset button on the Service Visit record. --></help>
+        <label><!-- Service Visit Case --></label>
+        <name>Service_Visit_Case__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Site listed on the Project Product upon creation. Can be entered or changed after the Asset is created if not filled in. --></help>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Solar Module Brand --></help>
+        <label><!-- Solar Module Manufacturer --></label>
+        <name>Solar_Module_Manufacturer__c</name>
+        <picklistValues>
+            <masterLabel>Astropower</masterLabel>
+            <translation><!-- Astropower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BP</masterLabel>
+            <translation><!-- BP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evergreen</masterLabel>
+            <translation><!-- Evergreen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GE</masterLabel>
+            <translation><!-- GE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kyocera</masterLabel>
+            <translation><!-- Kyocera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matrix</masterLabel>
+            <translation><!-- Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nanosolar</masterLabel>
+            <translation><!-- Nanosolar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanyo</masterLabel>
+            <translation><!-- Sanyo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schott</masterLabel>
+            <translation><!-- Schott --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sharp</masterLabel>
+            <translation><!-- Sharp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shell</masterLabel>
+            <translation><!-- Shell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunpower</masterLabel>
+            <translation><!-- Sunpower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yingli</masterLabel>
+            <translation><!-- Yingli --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- location of item --></help>
+        <label><!-- Storage Location --></label>
+        <name>Storage_Location__c</name>
+        <picklistValues>
+            <masterLabel>CA - San Diego 1 (Main)</masterLabel>
+            <translation><!-- CA - San Diego 1 (Main) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA - San Diego 2</masterLabel>
+            <translation><!-- CA - San Diego 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA - San Jose - Public Storage</masterLabel>
+            <translation><!-- CA - San Jose - Public Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA - St. Carlos - Bay Area Self Storage</masterLabel>
+            <translation><!-- CA - St. Carlos - Bay Area Self Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA - Borrego Lowell Office</masterLabel>
+            <translation><!-- MA - Borrego Lowell Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA - Milton</masterLabel>
+            <translation><!-- MA - Milton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA - Plymouth</masterLabel>
+            <translation><!-- MA - Plymouth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA- Mansfield (Advanced)</masterLabel>
+            <translation><!-- MA- Mansfield (Advanced) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC - Guardian Logisitics Solutions</masterLabel>
+            <translation><!-- NC - Guardian Logisitics Solutions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subnet --></label>
+        <name>Subnet__c</name>
+    </fields>
+    <fields>
+        <help><!-- adds together 2 count of inventory fields that are rolling qty used from related service visits --></help>
+        <label><!-- Total Count Used --></label>
+        <name>Total_Count_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Login --></label>
+        <name>Unit_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Password --></label>
+        <name>Unit_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watts --></label>
+        <name>Watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Login --></label>
+        <name>Website_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Password --></label>
+        <name>Website_Password__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if the inverter has been changed out. --></help>
+        <label><!-- Inverter Swapped Out --></label>
+        <name>inverter_swaped_out__c</name>
+    </fields>
+    <fields>
+        <label><!-- kW (STC) --></label>
+        <name>kW_STC__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Operations Assets used for PM visits --></description>
+        <label><!-- Operations Asset --></label>
+        <name>Operations_Asset</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used to track excess inventory stored on location for O&amp;M --></description>
+        <label><!-- Spare Parts --></label>
+        <name>Spare_Parts</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Older assets used only in customer portal, not used in PM visits --></description>
+        <label><!-- Portal Asset --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- If the Project is a Storage Project, the Assets can only be BOP, Communication Cabinets, Inverters, Battery Enclosure, or Battery Bank --></errorMessage>
+        <name>Storage_Project_Battery_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Watts are required whenever product type is anything but inverter, module, racking or sub --></errorMessage>
+        <name>Watts_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Service_Visit --></label>
+        <name>Create_Service_Visit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Asset_Contract --></label>
+        <name>New_Asset_Contract</name>
+    </webLinks>
+</CustomObjectTranslation>

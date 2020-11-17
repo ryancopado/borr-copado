@@ -1,0 +1,514 @@
+<apex:page standardController="LeadsManager__Leads_Manager__c" extensions="LeadsManager.LeadsManagerExtension" id="pg">
+<script>
+    var selectedRecordId = '';
+    
+    String.prototype.startsWith = function(str)
+        {
+            return (this.match("^"+str)==str)
+        }
+    
+    function redirectToNewPage(redirectPath)
+        {
+            location.href = redirectPath + 'retURL=' + location.href;
+        }
+        
+</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.0/css/jquery.dataTables.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+ 
+<script type="text/javascript">
+        $(document).ready( function() {
+            $('#rHistoryList').dataTable({
+                "lengthMenu": [[10, 25, 50], [10, 25, 50]]
+            });
+            $('#rOpenActivityList').dataTable({
+                "lengthMenu": [[10, 25, 50], [10, 25, 50]]
+            });
+            $('<a href="/apex/LeadsManager__ShowActivitiesList?recordid={!LeadsManager__Leads_Manager__c.Id}&ishistory=true" style="float:left;margin:8px 0px 4px 15px">Go to list <span style="font-size:8px">>></span></a>' ).insertAfter('#rHistoryList_info');
+            $('<a href="/apex/LeadsManager__ShowActivitiesList?recordid={!LeadsManager__Leads_Manager__c.Id}&ishistory=false" style="float:left;margin:8px 0px 4px 15px">Go to list <span style="font-size:8px">>></span></a>' ).insertAfter('#rOpenActivityList_info');
+
+        } );
+</script>
+<style>
+     .paginator td {vertical-align: middle !important;}
+      table.dataTable tbody th, table.dataTable tbody td{
+      padding:4px 2px 4px 5px !important;
+     }
+</style>
+
+<apex:includeScript value="{!$Resource.LeadsManager__SortTable}" />
+
+<apex:sectionHeader title="Leads Manager" subtitle="{!LeadsManager__Leads_Manager__c.Name}"/>
+    <div style="margin:20px 0"><chatter:feedWithFollowers entityId="{!LeadsManager__Leads_Manager__c.Id}"/></div>
+    <apex:detail subject="{!LeadsManager__Leads_Manager__c.Id}" relatedList="false" title="false" inlineEdit="true"/>
+    <div id="relatedListsLC" >
+        
+        <apex:repeat value="{!relatedListsToDisplayForLC}" var="rlist">
+        <div class="listRelatedObject">
+        <div class="bPageBlock secondaryPalette">
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle"><img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt="" src="/s.gif" /><h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_title">Leads-Company Hierarchy</h3></td>
+                            <td>
+                                <apex:form >
+                                        <apex:commandButton value="New Lead Company" action="{!URLFOR($Action.LeadsManager__Leads_Manager__c.New,null,[retURL=Leads_Manager__c.Id,CF00NA0000008sWnc = Leads_Manager__c.Name])}"/>
+                                </apex:form>  
+                            </td>                  
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+             <apex:outputPanel id="sobjectList" rendered="{!IF(rlist.relatedListToDisplay.Size > 0,true,false)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="headerRow">
+                                <th scope="col" class="actionColumn">
+                                    Action
+                                </th>
+                                <apex:repeat value="{!rlist.fields}" var="f">
+                                    <th style="cursor:pointer;">{!f.label}</th>
+                                </apex:repeat>
+                            </tr>
+                            <apex:repeat value="{!rlist.relatedListToDisplay}" var="sobject" >
+                                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                    <td class="actionColumn">
+                                        <a title="Edit - {!sobject['name']}" class="actionLink" href="/{!sobject.Id}/e?retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;
+                                        <a title="Del - {!sobject['name']}" class="actionLink" href="{!URLFOR($Action[rlist.objectApiName].Delete, sobject.Id, [retURL=Leads_Manager__c.Id])}" onClick="return confirmDelete();">Del</a>
+                                    </td>
+                                    
+                                <apex:repeat value="{!rlist.fields}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!sobject.Id}" rendered="{!IF($ObjectType.LeadsManager__Leads_Manager__c.Fields[f].Label = rlist.nameFieldLable,true,false) }">{!sobject[f]}</apex:outputLink>
+                                        <apex:outputField value="{!sobject[f]}" rendered="{!AND(f.Type != 'datetime', f.Type != 'date', f.Label != rlist.nameFieldLable)}"/>
+                                        <apex:outputLabel rendered="{!AND(OR(f.Type = 'datetime', f.Type = 'date'), NOT(ISNULL(sobject[f])))}">
+                                            {!MONTH(sobject[f])}/{!DAY(sobject[f])}/{!YEAR(sobject[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!IF(rlist.relatedListToDisplay.Size > 0,false,true)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="noRowsHeader">
+                                <td class="noRowsHeader" scope="col">No records to display</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+           <apex:form id="frm1">
+            <apex:panelGrid styleClass="paginator" columns="4" rendered="{!IF(rlist.relatedListToDisplay.Size > 0,true,false)}" >
+                <apex:commandLink action="{!rlist.first}" rendered="{!IF(rlist.totalRecord > 10,true,false)}" rerender="sobjectList,frm1"><img src="/s.gif" title="First Page" alt="First Page" class="first" /></apex:commandlink>
+                <apex:commandLink action="{!rlist.previous}" style="text-decoration:none" rendered="{!rlist.hasPrevious}" rerender="sobjectList,frm1"><img src="/s.gif" title="Previous" alt="Previous" class="prev" /> Previous</apex:commandlink>
+                <apex:commandLink action="{!rlist.next}" style="text-decoration:none" rendered="{!rlist.hasNext}" rerender="sobjectList,frm1"> Next<img src="/s.gif" class="next" alt="Next" /></apex:commandlink>
+                <apex:commandLink action="{!rlist.last}" rendered="{!IF(rlist.totalRecord > 10,true,false)}" rerender="sobjectList,frm1"><img src="/s.gif" title="Last Page" alt="Last Page" class="last" /></apex:commandlink>
+           </apex:panelGrid>
+         
+          </apex:form>
+        </div>
+    </div>
+        </apex:repeat>
+        <apex:relatedList list="LeadsManager__Leads__r" />
+    </div>
+    <!-- Contact related list -->
+   <apex:outputPanel rendered="{!IF(enableContactList,true,false)}">
+    <div class="listRelatedObject contactBlock">
+        <div class="bPageBlock secondaryPalette">
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle"><img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt="" src="/s.gif" /><h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_title">Contacts</h3></td>
+                            <td class="pbHelp"><span title="Contacts Help (New Window)" class="help"><a class="linkCol" href="javascript:openPopupFocusEscapePounds(%27/help/doc/user_ed.jsp?loc=help&amp;target=activity_open.htm&amp;section=Activities%27, %27Help%27, 700, 600, %27width=700,height=600,resizable=yes,toolbar=yes,status=no,scrollbars=yes,menubar=yes,directories=no,location=no,dependant=no%27, false, false);"><span class="linkSpan">Contacts Help</span> <img title="Contacts Help (New Window)" class="helpIcon" alt="Contacts Help (New Window)" src="/s.gif" /></a></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <apex:outputPanel id="contactList" rendered="{!IF(LeadsManagerExtension.Size > 0,true,false)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="headerRow">
+                                <th scope="col" class="actionColumn">
+                                    Action
+                                </th>
+                                <apex:repeat value="{!$ObjectType.Contact.FieldSets.LeadsManager__FieldSetForContacts}" var="f">
+                                    <th style="cursor:pointer;">{!$ObjectType.Contact.Fields[f].label}</th>
+                                </apex:repeat>
+                            </tr>
+                            <apex:repeat value="{!LeadsManagerExtension}" var="contact" >
+                                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                    <td class="actionColumn">
+                                        <a title="Edit - {!contact.Name}" class="actionLink" href="/{!contact.Id}/e?retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;
+                                        <a title="Del - {!contact.Name}" class="actionLink" href="{!URLFOR($Action.Contact.Delete, contact.Id, [retURL=Leads_Manager__c.Id])}" onClick="return confirmDelete();">Del</a>
+                                    </td>
+                                    
+                                <apex:repeat value="{!$ObjectType.Contact.FieldSets.LeadsManager__FieldSetForContacts}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!contact.Id}" rendered="{!IF($ObjectType.Contact.Fields[f].Label= 'Full Name',true,false) }">{!contact[f]}</apex:outputLink>
+                                        <apex:outputField value="{!contact[f]}" rendered="{!AND($ObjectType.Contact.Fields[f].Type != 'datetime', $ObjectType.Contact.Fields[f].Type != 'date', $ObjectType.Contact.Fields[f].Label != 'Full Name')}"/>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.Contact.Fields[f].Type = 'datetime', $ObjectType.Contact.Fields[f].Type = 'date'), NOT(ISNULL(contact[f])))}">
+                                            {!MONTH(contact[f])}/{!DAY(contact[f])}/{!YEAR(contact[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!IF(LeadsManagerExtension.Size > 0,false,true)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="noRowsHeader">
+                                <td class="noRowsHeader" scope="col">No records to display</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+           <apex:form id="frm">
+            <apex:panelGrid styleClass="paginator" columns="4" rendered="{!IF(LeadsManagerExtension.Size > 0,true,false)}" >
+                <apex:commandLink action="{!first}" rendered="{!IF(totalContact > 10,true,false)}" rerender="contactList,frm"><img src="/s.gif" title="First Page" alt="First Page" class="first" /></apex:commandlink>
+                <apex:commandLink action="{!previous}" style="text-decoration:none" rendered="{!hasPrevious}" rerender="contactList,frm"><img src="/s.gif" title="Previous" alt="Previous" class="prev" /> Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" style="text-decoration:none" rendered="{!hasNext}" rerender="contactList,frm"> Next<img src="/s.gif" class="next" alt="Next" /></apex:commandlink>
+                <apex:commandLink action="{!last}" rendered="{!IF(totalContact > 10,true,false)}" rerender="contactList,frm"><img src="/s.gif" title="Last Page" alt="Last Page" class="last" /></apex:commandlink>
+           </apex:panelGrid>
+         
+          </apex:form>
+        </div>
+    </div>
+   </apex:outputPanel>  
+  <!-- sobject lists --> 
+   <div id="relatedLists" >
+        
+        <apex:repeat value="{!relatedListsToDisplay}" var="rlist">
+        <div class="listRelatedObject">
+        <div class="bPageBlock secondaryPalette">
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle"><img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt="" src="/s.gif" /><h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_title">{!rlist.sobjectName}</h3></td>
+                             <td>
+                                 <apex:form >
+                                    <apex:commandButton value="{!'New ' + rlist.sobjectName}" action="{!URLFOR($Action[rlist.objectApiName].New,null,[retURL=Leads_Manager__c.Id])}"/>
+                                 </apex:form>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <apex:outputPanel id="sobjectList" rendered="{!IF(rlist.relatedListToDisplay.Size > 0,true,false)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="headerRow">
+                                <th scope="col" class="actionColumn">
+                                    Action
+                                </th>
+                                <apex:repeat value="{!rlist.fields}" var="f">
+                                    <th style="cursor:pointer;">{!f.label}</th>
+                                </apex:repeat>
+                            </tr>
+                            <apex:repeat value="{!rlist.relatedListToDisplay}" var="sobject" >
+                                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                    <td class="actionColumn">
+                                        <a title="Edit - {!sobject['name']}" class="actionLink" href="/{!sobject.Id}/e?retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;
+                                        <a title="Del - {!sobject['name']}" class="actionLink" href="{!URLFOR($Action[rlist.objectApiName].Delete, sobject.Id, [retURL=Leads_Manager__c.Id])}" onClick="return confirmDelete();">Del</a>
+                                    </td>
+                                    
+                                <apex:repeat value="{!rlist.fields}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!sobject.Id}" rendered="{!IF(f.Label= rlist.nameFieldLable,true,false) }">{!sobject[f]}</apex:outputLink>
+                                        <apex:outputField value="{!sobject[f]}" rendered="{!AND(f.Type != 'datetime', f.Type != 'date', f.Label != rlist.nameFieldLable)}"/>
+                                        <apex:outputLabel rendered="{!AND(OR(f.Type = 'datetime', f.Type = 'date'), NOT(ISNULL(sobject[f])))}">
+                                            {!MONTH(sobject[f])}/{!DAY(sobject[f])}/{!YEAR(sobject[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!IF(rlist.relatedListToDisplay.Size > 0,false,true)}">
+                <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedContactList_body" class="pbBody">
+                    <table cellspacing="0" cellpadding="0" border="0" class="list">
+                        <tbody>
+                            <tr class="noRowsHeader">
+                                <td class="noRowsHeader" scope="col">No records to display</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </apex:outputPanel>
+           <apex:form id="frm1">
+            <apex:panelGrid styleClass="paginator" columns="4" rendered="{!IF(rlist.relatedListToDisplay.Size > 0,true,false)}" >
+                <apex:commandLink action="{!rlist.first}" rendered="{!IF(rlist.totalRecord > 10,true,false)}" rerender="sobjectList,frm1"><img src="/s.gif" title="First Page" alt="First Page" class="first" /></apex:commandlink>
+                <apex:commandLink action="{!rlist.previous}" style="text-decoration:none" rendered="{!rlist.hasPrevious}" rerender="sobjectList,frm1"><img src="/s.gif" title="Previous" alt="Previous" class="prev" /> Previous</apex:commandlink>
+                <apex:commandLink action="{!rlist.next}" style="text-decoration:none" rendered="{!rlist.hasNext}" rerender="sobjectList,frm1"> Next<img src="/s.gif" class="next" alt="Next" /></apex:commandlink>
+                <apex:commandLink action="{!rlist.last}" rendered="{!IF(rlist.totalRecord > 10,true,false)}" rerender="sobjectList,frm1"><img src="/s.gif" title="Last Page" alt="Last Page" class="last" /></apex:commandlink>
+           </apex:panelGrid>
+         
+          </apex:form>
+        </div>
+    </div>
+        </apex:repeat>
+    </div>
+    <!-- Open Activities -->
+    <div class="bPageBlock secondaryPalette" id="openActivityDiv">
+        <div class="pbHeader" >
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="pbTitle"><img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt="" src="/s.gif" /><h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedActivityList_title">Leads - Open Activities</h3></td>
+                        <td class="pbButton">
+                            <!-- <input type="button" title="New Task" onclick="redirectToNewPage('/00T/e?what_id={!LeadsManager__Leads_Manager__c.Id}&');" name="task" class="btn" value="New Task"> -->
+                            <!-- <input type="button" title="New Event" onclick="redirectToNewPage('/00U/e?what_id={!LeadsManager__Leads_Manager__c.Id}&');" name="event" class="btn" value="New Event"> -->
+                        </td>
+                        <td class="pbHelp"><span title="Open Activities Help (New Window)" class="help"><a class="linkCol" href="javascript:openPopupFocusEscapePounds(%27/help/doc/user_ed.jsp?loc=help&amp;target=activity_open.htm&amp;section=Activities%27, %27Help%27, 700, 600, %27width=700,height=600,resizable=yes,toolbar=yes,status=no,scrollbars=yes,menubar=yes,directories=no,location=no,dependant=no%27, false, false);"><span class="linkSpan">Open Activities Help</span> <img title="Open Activities Help (New Window)" class="helpIcon" alt="Open Activities Help (New Window)" src="/s.gif" /></a></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <apex:outputPanel rendered="{!IF(listOpenActivity.Size > 0,true,false)}">
+            <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedActivityList_body" class="pbBody">
+                <table id="rOpenActivityList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                   
+                        <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn"  style="cursor:pointer;">
+                                Action
+                            </th>
+                            <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                <th style="cursor:pointer;">{!$ObjectType.Task.Fields[f].label}</th>
+                            </apex:repeat>
+                        </tr>
+                        </thead>
+                         <tbody>
+                        <apex:variable value="{!0}" var="counter" />
+                        <apex:repeat value="{!listOpenActivity}" var="activity" id="oARepeater">
+                            <apex:variable value="{!counter+1}" var="counter" />
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                <td class="actionColumn">
+                                    <a title="Edit - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;<a title="Close - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?close=1&amp;retURL={!Leads_Manager__c}">Cls</a>
+                                </td>
+                                <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f" id="oAFieldSetRepeater">
+                                    <td>
+                                        <apex:outputLink value="/{!activity.Id}" rendered="{!IF($ObjectType.Task.Fields[f].Label= 'Subject',true,false) }">{!activity[f]}</apex:outputLink>
+                                        <apex:outputField value="{!activity[f]}" rendered="{!AND($ObjectType.Task.Fields[f].Type != 'datetime', $ObjectType.Task.Fields[f].Type != 'date', $ObjectType.Task.Fields[f].Type != 'reference',$ObjectType.Task.Fields[f].Label != 'Subject')}"/>
+                                        <apex:outputPanel rendered="{!AND($ObjectType.Task.Fields[f].Type = 'reference')}" id="oALeadName">
+                                            <apex:outputField value="{!activity[f]}" id="leadName"/>
+                                        </apex:outputPanel>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.Task.Fields[f].Type = 'datetime', $ObjectType.Task.Fields[f].Type = 'date'), NOT(ISNULL(activity[f])))}">
+                                            {!MONTH(activity[f])}/{!DAY(activity[f])}/{!YEAR(activity[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!IF(listOpenActivity.Size > 0,false,true)}">
+            <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedPartnerList_body" class="pbBody">
+                <table cellspacing="0" cellpadding="0" border="0" class="list">
+                    <tbody>
+                        <tr class="noRowsHeader">
+                            <td class="noRowsHeader" scope="col">No records to display</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </apex:outputPanel>
+        
+    </div>
+    
+    <!-- Activities History -->
+    <div class="bPageBlock secondaryPalette">
+        <div class="pbHeader">
+            <table cellspacing="0" cellpadding="0" border="0" >
+                <tbody>
+                    <tr>
+                        <td class="pbTitle"><img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt="" src="/s.gif" /><h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedActivityList_title">Leads - Activity History</h3></td>
+                        <td class="pbButton">
+                            <!-- <input type="button" title="Log A Call" onclick="redirectToNewPage('/00T/e?title=Call&followup=1&tsk5=Call&');" name="new" class="btn" value="Log A Call"> -->
+                            <!-- <input type="button" title="Mail Merge" onclick="redirectToNewPage('/mail/mmchoose.jsp?');" name="mm" class="btn" value="Mail Merge"> -->
+                            <!-- <input type="button" title="Send An Email" onclick="redirectToNewPage('/_ui/core/email/author/EmailAuthor?');" name="email" class="btn" value="Send An Email"> -->
+                        </td>
+                        <td class="pbHelp"><span title="Activity History Help (New Window)" class="help"><a class="linkCol" href="javascript:openPopupFocusEscapePounds(%27/help/doc/user_ed.jsp?loc=help&amp;target=activity_history.htm&amp;section=Activities%27, %27Help%27, 700, 600, %27width=700,height=600,resizable=yes,toolbar=yes,status=no,scrollbars=yes,menubar=yes,directories=no,location=no,dependant=no%27, false, false);"><span class="linkSpan">Activity History Help</span> <img title="Activity History Help (New Window)" class="helpIcon" alt="Activity History Help (New Window)" src="/s.gif" /></a></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <apex:outputPanel rendered="{!IF(listActivityHistory.Size > 0,true,false)}">
+            <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedActivityHistoryList_body" class="pbBody">
+                <table id="rHistoryList" cellspacing="0" cellpadding="0" border="0" class="list sortable" >
+                    <thead>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn" style="cursor:pointer;">Action</th>
+                            <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                <th style="cursor:pointer;">{!$ObjectType.Task.Fields[f].label}</th>
+                            </apex:repeat>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!listActivityHistory}" var="activity" >
+                            <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                <td class="actionColumn"><a title="Edit - {!activity.Subject}" class="actionLink" href="/{!activity.Id}/e?retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;<a title="Close - {!activity.Subject}" class="actionLink" href="{!URLFOR($Action.Task.Delete, activity.Id, [retURL=Leads_Manager__c.Id])}" onClick="return confirmDelete();">Del</a></td>
+                                <apex:repeat value="{!$ObjectType.Task.FieldSets.LeadsManager__FieldSetForTasks}" var="f">
+                                    <td>
+                                        <apex:outputLink value="/{!activity.Id}" rendered="{!IF($ObjectType.Task.Fields[f].Label= 'Subject',true,false) }">{!activity[f]}</apex:outputLink>
+                                        <apex:outputField value="{!activity[f]}" rendered="{!AND($ObjectType.Task.Fields[f].Type != 'datetime', $ObjectType.Task.Fields[f].Type != 'date', $ObjectType.Task.Fields[f].Label != 'Subject')}"/>
+                                        <apex:outputLabel rendered="{!AND(OR($ObjectType.Task.Fields[f].Type = 'datetime', $ObjectType.Task.Fields[f].Type = 'date'), NOT(ISNULL(activity[f])))}">
+                                            {!MONTH(activity[f])}/{!DAY(activity[f])}/{!YEAR(activity[f])}
+                                        </apex:outputLabel>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!IF(listActivityHistory.Size > 0,false,true)}">
+            <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedPartnerList_body" class="pbBody">
+                <table cellspacing="0" cellpadding="0" border="0" class="list">
+                    <tbody>
+                        <tr class="noRowsHeader">
+                            <td class="noRowsHeader" scope="col">No records to display</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </apex:outputPanel>
+     
+    </div>
+    
+    <!-- Campaign History -->
+    <div class="bPageBlock secondaryPalette">
+        <div class="pbHeader">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="pbTitle">
+                            <img height="1" width="1" title="" class="minWidth" alt="" src="/s.gif" />
+                            <img title="" class="relatedListIcon" alt="" src="/s.gif" />
+                            <h3 id="{!LeadsManager__Leads_Manager__c.Id}_RelatedCampaignList_title">Leads - Campaign History</h3>
+                        </td>
+                        <td class="pbHelp">
+                            <span title="Campaign History Help (New Window)" class="help">
+                                <a class="linkCol" href="javascript:openPopupFocusEscapePounds(%27/help/doc/user_ed.jsp?loc=help&amp;target=campaigns_history.htm &amp;section=Campaigns%27, %27Help%27, 700, 600, %27width=700,height=600,resizable=yes,toolbar=yes,status=no,scrollbars=yes,menubar=yes,directories=no,location=no,dependant=no%27, false, false);">
+                                    <span class="linkSpan">Campaign History Help</span>
+                                    <img title="Campaign History Help (New Window)" class="helpIcon" alt="Campaign History Help (New Window)" src="/s.gif" />
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <apex:outputPanel rendered="{!IF(listCampaignHistory.Size > 0,true,false)}">
+             <div id="{!LeadsManager__Leads_Manager__c.Id}_RelatedActivityList_body" class="pbBody">
+                 <table cellspacing="0" cellpadding="0" border="0" class="list">
+                     <tbody>
+                         <tr class="headerRow">
+                             <th scope="col" class="actionColumn">
+                                Action
+                             </th>
+                             <th class="" scope="col">Name</th>
+                             <th class="" scope="col">Lead</th>
+                             <th class="" scope="col">StartDate</th>
+                             <th class="" scope="col">Type</th>
+                             <th class="" scope="col">Status</th>
+                             <th class="booleanColumn" scope="col">Responded</th>
+                             <th class="DateElement" scope="col">Member Status Updated</th>
+                         </tr>
+                         <apex:variable value="{!0}" var="counter" />
+                         <apex:repeat value="{!listCampaignHistory}" var="campaign" >
+                             <apex:variable value="{!counter+1}" var="counter" />
+                             <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                                 <td class="actionColumn">
+                                    <a title="Edit - {!campaign.Campaign.Name}" class="actionLink" href="/{!campaign.Id}/e?parent_id={!campaign.LeadId}&retURL={!LeadsManager__Leads_Manager__c.Id}">Edit</a>&nbsp;|&nbsp;
+                                    <a title="Del - {!campaign.Campaign.Name}" class="actionLink" href="/setup/own/deleteredirect.jsp?delID={!campaign.Id}&retURL={!LeadsManager__Leads_Manager__c.Id}" onClick="return confirmDelete();">Del</a>&nbsp;|&nbsp;
+                                    <a title="Del - {!campaign.Campaign.Name}" class="actionLink" href="/{!campaign.Id}?retURL={!LeadsManager__Leads_Manager__c.Id}" > View </a> 
+                                    </td>
+                                 <th class=" dataCell  " scope="row"><a href="/{!campaign.Campaign.Id}?retURL={!LeadsManager__Leads_Manager__c.Id}">{!campaign.Campaign.Name}</a></th>
+                                 <td class=" dataCell  "><a href="/{!campaign.LeadId}">{!campaign.Lead.Name}</a></td>
+                                 <td class=" dataCell  ">
+                                    <apex:outputLabel rendered="{!NOT(ISNULL(campaign.Campaign.StartDate))}">
+                                        <apex:outputText value="{0,date,MM/dd/yy}">
+                                <apex:param value="{!campaign.Campaign.StartDate}"  />
+                            </apex:outputText>
+                                    </apex:outputLabel>
+                                </td>
+                                 <td class=" dataCell  ">{!campaign.Campaign.Type}</td>
+                                 <td class=" dataCell  ">{!campaign.Campaign.Status}</td>
+                                 <td class=" dataCell  booleanColumn"><img height="16" width="21" title="{!IF(campaign.HasResponded,'Checked','Not Checked')}" class="checkImg" alt="{!IF(campaign.HasResponded,'Checked','Not Checked')}" src="{!IF(campaign.HasResponded,'/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}" /></td>
+                                 <td class=" dataCell  ">
+                                    <apex:outputText value="{0,date,MM/dd/yy}">
+                            <apex:param value="{!campaign.LastModifiedDate}"  />
+                        </apex:outputText>
+                     </td>
+                             </tr>
+                         </apex:repeat>
+                     </tbody>
+                 </table>
+             </div>
+         </apex:outputPanel>
+         <apex:outputPanel rendered="{!IF(listCampaignHistory.Size > 0,false,true)}">
+             <div id="{!LeadsManager__Leads_Manager__c.Id}}_RelatedPartnerList_body" class="pbBody">
+                 <table cellspacing="0" cellpadding="0" border="0" class="list">
+                     <tbody>
+                         <tr class="noRowsHeader">
+                             <td class="noRowsHeader" scope="col">No records to display</td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </apex:outputPanel>
+    </div>
+    <apex:relatedList list="CombinedAttachments" />
+
+    <script>
+    
+        //get the open activity list element
+        var oA = document.getElementById('{!LeadsManager__Leads_Manager__c.Id}' + '_RelatedActivityList_body');
+        //get the activity history list element
+        var aH = document.getElementById('{!LeadsManager__Leads_Manager__c.Id}' + '_RelatedActivityHistoryList_body');
+        
+        //call method to remove suffix
+        removeSuffix(oA);
+        removeSuffix(aH);
+        
+        //this method is to remove the company anme from activities list
+        function removeSuffix(relateListObject) {
+            var items = relateListObject.getElementsByTagName("a");
+            for (var i = 0; i < items.length; i++) {   
+                var compId = items[i].getAttribute("id");
+                if(compId != null){
+                    var temp = compId.indexOf('Who', compId.length - 'Who'.length);
+                    if(temp != -1) {
+                        items[i].innerHTML = items[i].innerHTML.substring(0,items[i].innerHTML.indexOf(","));
+                    }
+                }
+            }
+        }
+        
+    </script>
+</apex:page>

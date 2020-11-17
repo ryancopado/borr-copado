@@ -1,0 +1,42 @@
+<apex:page Controller="PricingToolApproval_ApprovalCTL" >
+
+<style>
+        
+        /* === Hides Action Column for Approval History === */
+        
+        
+        [class$='actionColumn']
+        
+        {display:none}
+        
+
+        /* === END === */
+
+.bRelatedList .bPageBlock .pbButton {
+white-space: normal;
+visibility: hidden;
+}
+
+</style>
+	<apex:form >
+		<apex:pageblock >
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Approve" action="{!approve}" rendered="{!isDOApproval=false}"/>
+				<apex:commandButton value="Preliminary Approval" action="{!preliminaryApproval}" rendered="{!isDOApproval}"/>
+				<apex:commandButton value="Final Approval" action="{!finalApproval}" rendered="{!isDOApproval}"/>
+				<apex:commandButton value="Reject" action="{!reject}"/>
+				<apex:commandButton value="Cancel" action="{!cancel}"/>   
+			</apex:pageblockButtons>
+			
+			<apex:pageBlockSection columns="1">  
+				<apex:outputField value="{!ptaRecord.Name}"/>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel >Comment</apex:outputLabel>
+					<apex:inputTextarea value="{!comment}" />
+				</apex:pageBlockSectionItem>                                                                                   
+			</apex:pageBlockSection>
+		</apex:pageblock>
+	</apex:form>
+	<apex:relatedList list="ProcessSteps" subject="{!ptaRecord.Id}" />
+	
+</apex:page>

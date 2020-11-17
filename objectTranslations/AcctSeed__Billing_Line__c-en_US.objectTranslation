@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- BillingFromOpportunity --></label>
+        <name>AcctSeed__BillingFromOpportunity</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeed__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Accounting period that the Billing is in- Set by the Billing parent record --></help>
+        <label><!-- Accounting Period --></label>
+        <name>Accounting_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Line --></label>
+        <name>AcctSeedERP__Sales_Order_Line__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to parent object. --></help>
+        <label><!-- Billing --></label>
+        <name>AcctSeed__Billing__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Comment for display on Billing Line. --></help>
+        <label><!-- Comment --></label>
+        <name>AcctSeed__Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Product or Service was rendered. --></help>
+        <label><!-- Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Amount --></label>
+        <name>AcctSeed__Discount_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount % --></label>
+        <name>AcctSeed__Discount_Pct__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for service billings to identify service rendered by an employee. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Overrides the expense GL account set on the product in the posting process if populated. This feature requires product costing on the Accounting Settings tab to be enabled. --></help>
+        <label><!-- Expense GL Account --></label>
+        <name>AcctSeed__Expense_GL_Account__c</name>
+        <relationshipLabel><!-- Billing Lines (Expense GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Branch</label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel>Billing Lines (Branch)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Business Unit</label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Billing Lines (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Team</label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Billing Lines (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Billing Lines (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity for Product Pricing, Hours for Service pricing. --></help>
+        <label><!-- Quantity --></label>
+        <name>AcctSeed__Hours_Units__c</name>
+    </fields>
+    <fields>
+        <help><!-- Overrides the inventory GL account set on the product in the posting process if populated. This feature requires product costing on the Accounting Settings tab to be enabled. --></help>
+        <label><!-- Inventory GL Account --></label>
+        <name>AcctSeed__Inventory_GL_Account__c</name>
+        <relationshipLabel><!-- Billing Lines (Inventory GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Populated via code. Checked if the related Tax Group is an Avalara VAT Reporting tax group. --></help>
+        <label><!-- Is VAT Related --></label>
+        <name>AcctSeed__Is_VAT_Related__c</name>
+    </fields>
+    <fields>
+        <help><!-- List price of product or service sold. Used typically in conjunction with discount field to try and convey to customer that they are extra special and are getting a heck of a deal. --></help>
+        <label><!-- List Price --></label>
+        <name>AcctSeed__List_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Id of the opportunity product this billing line was sourced. --></help>
+        <label><!-- Opportunity Product Id --></label>
+        <name>AcctSeed__Opportunity_Product_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the Billing that the Billing Line is related to --></help>
+        <label><!-- Parent Status --></label>
+        <name>AcctSeed__Parent_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Tax Type --></label>
+        <name>AcctSeed__Product_Tax_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Overrides the unit cost set on the product in the posting process if populated. This feature requires product costing on the Accounting Settings tab to be enabled. --></help>
+        <label><!-- Product Unit Cost --></label>
+        <name>AcctSeed__Product_Unit_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Salesforce Products. Drives GL Revenue Account if selected and no Revenue GL Account is selected in the Billing Line. Also drives GL Account Variables on transaction line if no Project Task is selected on the Billing Line. --></help>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Work break down structure for projects, such as: Phases, Deliverables or Roles. Drives Revenue GL Account and GL Account Variables when Posting to the Transaction object if populated. --></help>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Project the Billing Line is related to --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Required- Product or Service Rate --></help>
+        <label><!-- Unit Price --></label>
+        <name>AcctSeed__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Billing Line --></label>
+        <name>AcctSeed__Recurring_Billing_Line__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Upon posting a credit entry will be made to this GL Account and a corresponding debit entry will be made to the AR Control Account set in the Accounting Settings Tab. --></help>
+        <label><!-- Revenue GL Account --></label>
+        <name>AcctSeed__Revenue_GL_Account__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity x Unit Price for the Billing Line --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated based on Sub-Total x Tax Group&apos;s Combined Tax Rate on Billing Line, unless using AvaTax. --></help>
+        <label><!-- Tax Amount --></label>
+        <name>AcctSeed__Tax_Amount2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deprecated in version 1.17 --></help>
+        <label><!-- zDep-Tax Amount --></label>
+        <name>AcctSeed__Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- If using native tax functionality, this determines the Combined Tax Rate percentage and the tax GL mappings and is used to calculate the Tax Amount. --></help>
+        <label><!-- Tax Group --></label>
+        <name>AcctSeed__Tax_Group__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Line --></label>
+        <name>AcctSeed__Tax_Line__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tax rate percentage used to calculate tax amount. --></help>
+        <label><!-- Tax Rate --></label>
+        <name>AcctSeed__Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project. --></help>
+        <label><!-- Time Card Variable 1 --></label>
+        <name>AcctSeed__Time_Card_Variable_1__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project. --></help>
+        <label><!-- Time Card Variable 2 --></label>
+        <name>AcctSeed__Time_Card_Variable_2__c</name>
+        <relationshipLabel><!-- Billing Lines (Time Card Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- zDep-Total Before Tax --></label>
+        <name>AcctSeed__Total_Before_Tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Billing Line Total: Hours * Units + Tax --></help>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to Credit side of related transaction created in the posting process. --></help>
+        <label><!-- zDep-Transaction --></label>
+        <name>AcctSeed__Transaction__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Jurisdictions that were applied to the SalesTax Calculation, including name and rate. Cannot be Edited. --></help>
+        <label><!-- Sales Tax Details --></label>
+        <name>AvaAcctSeed__Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Tax Calculated For This Line - Cannot Be Edited --></help>
+        <label><!-- Sales Tax Amount --></label>
+        <name>AvaAcctSeed__LineTax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tax Rate applied to this line. Cannot be Edited --></help>
+        <label><!-- Sales Tax Rate --></label>
+        <name>AvaAcctSeed__Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of the Billing Borrego has received --></help>
+        <label><!-- Billing Amount Received --></label>
+        <name>Billing_Amount_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Amount of the Billing the Billing Line is related to --></help>
+        <label><!-- Billing Total --></label>
+        <name>Billing_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls type of case from the related SV/Case, used mostly for reporting buckets, no need to put on layout --></help>
+        <label><!-- Case Record Type --></label>
+        <name>Case_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Categorize the Billing Line - for O&amp;M Billings --></help>
+        <label><!-- Tax Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Cell Modem Data Plan</masterLabel>
+            <translation><!-- Cell Modem Data Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Storage</masterLabel>
+            <translation><!-- Data Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Time/Travel - Internal</masterLabel>
+            <translation><!-- Drive Time/Travel - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Time/Travel - Sub-C</masterLabel>
+            <translation><!-- Drive Time/Travel - Sub-C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Output</masterLabel>
+            <translation><!-- Electronic Output --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Services</masterLabel>
+            <translation><!-- Engineering Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment Rental/Leases</masterLabel>
+            <translation><!-- Equipment Rental/Leases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insulation Testing</masterLabel>
+            <translation><!-- Insulation Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor - Internal</masterLabel>
+            <translation><!-- Labor - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor - Sub-C</masterLabel>
+            <translation><!-- Labor - Sub-C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Washing</masterLabel>
+            <translation><!-- Module Washing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional Extended Warranties</masterLabel>
+            <translation><!-- Optional Extended Warranties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts/Material</masterLabel>
+            <translation><!-- Parts/Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PeGu</masterLabel>
+            <translation><!-- PeGu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursable Expenses</masterLabel>
+            <translation><!-- Reimbursable Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;H</masterLabel>
+            <translation><!-- S&amp;H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Tax</masterLabel>
+            <translation><!-- Sales Tax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Contract</masterLabel>
+            <translation><!-- Service Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow Removal</masterLabel>
+            <translation><!-- Snow Removal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storage</masterLabel>
+            <translation><!-- Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vegetation Management</masterLabel>
+            <translation><!-- Vegetation Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter a description of the Billing Line --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Monthly Statement --></label>
+        <name>IncludeinMonthlyStatement__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings up value from related SV Labor Billing field, used mostly in reporting for bucketing, no need to place on layout --></help>
+        <label><!-- Labor Billing --></label>
+        <name>Labor_Billing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not CPQ Process --></label>
+        <name>Not_CPQ_Process__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Record from Quote. --></help>
+        <label><!-- Quote Product --></label>
+        <name>Product2__c</name>
+        <relationshipLabel><!-- Billing Lines (Product2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>Project_Task__c</name>
+        <relationshipLabel><!-- Billing Lines (Project Task) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quote Line Item --></label>
+        <name>Quote_Line_Item__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Retention related to the Billing --></help>
+        <label><!-- Retention --></label>
+        <name>Retention__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Tax Rate Formula --></label>
+        <name>SalesTaxRateFormula__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the Service Visit related to the Billing Line- For Service/O&amp;M only --></help>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Tax Product ID --></label>
+        <name>TaxProductID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the Billing Line Taxable? Checked = Yes, Not Checked = NO --></help>
+        <label><!-- Taxable --></label>
+        <name>Taxable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debit</masterLabel>
+            <translation><!-- Debit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Work Order --></label>
+        <name>WorkOrder__c</name>
+        <relationshipLabel><!-- Billing Lines --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The project you have selected is not associated with the customer listed in the billing header. The account (customer) field on this project must be the same as the customer on the billing header. --></errorMessage>
+        <name>AcctSeed__Project_must_be_associated_with_customer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A billing line must contain a value for the rate field. --></errorMessage>
+        <name>AcctSeed__Value_for_Rate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A billing line must contain a value for the revenue GL account field. --></errorMessage>
+        <name>AcctSeed__Value_for_Revenue_GL_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A billing line must contain a value for the quantity field. --></errorMessage>
+        <name>AcctSeed__Value_for_Units</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Enter a Branch --></errorMessage>
+        <name>Branch_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The expense GL Account should be &quot;1202-Retentions Receivable&quot;. --></errorMessage>
+        <name>Retention_GL_Account</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Add_Edit_Rows --></label>
+        <name>AcctSeed__Mass_Add_Edit_Rows</name>
+    </webLinks>
+</CustomObjectTranslation>

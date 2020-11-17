@@ -1,0 +1,139 @@
+<apex:page standardController="ER__c" contentType="application/vnd.ms-excel">   
+<table>
+    <tr>
+        <td>
+            APIF 
+        </td>
+        <td>
+            <apex:outputField value="{!ER__c.User__c}"/>
+        </td>
+        <td>
+            <apex:outputField value="{!ER__c.Name}"/>
+        </td>
+        <td> 
+            Expense Report
+        </td>
+        <td> 
+            <apex:outputField value="{!ER__c.Total__c}"/>
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+            <apex:outputField value="{!ER__c.Month_Ending__c}"/>
+        </td>
+        <td> 
+            <apex:outputField value="{!ER__c.Month_Ending__c}"/>
+        </td>
+        <td> 
+        </td>
+        <td> 
+            <apex:outputField value="{!ER__c.Month_Ending__c}"/>
+        </td>
+        <td>
+            <apex:outputField value="{!ER__c.Month_Ending__c}"/> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+    </tr>
+</table>
+<apex:repeat value="{!ER__c.ExpRep__r}" var="e">     
+<table>    
+    <tr>
+        <td> 
+            APDF
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td>
+        </td>
+        <td> 
+        </td>
+        <td> 
+            <apex:outputField value="{!e.Job_Number__c}"/>
+        </td>
+        <td> 
+            <apex:outputField value="{!e.Extra__c}" rendered="{!IF(e.Pre_Contract__c == 'true', 'true', 'false')}"/>
+        </td>
+        <td> 
+            <apex:outputField value="{!e.Cost_Code_Number__c}" rendered="{!IF(e.RecordTypeId != '012800000007UwQAAU', 'true', 'false')}"/> 
+        </td>
+        <td> 
+            <apex:outputField value="{!e.Category_Code__c}"/> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+            <apex:outputText value="{!e.Code__c}.00" rendered="{!IF(e.RecordTypeId == '012800000007UwQAAU', 'true', 'false')}"/> 
+        </td>
+        <td>    
+<!--          
+            <apex:outputText value="01-000-2010.00" rendered="{!IF(e.RecordTypeId == '012800000007UwQAAU', 'true', 'false')}"/>
+-->            
+            <apex:outputText value="01-000-2010.00" />
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+        </td>
+        <td> 
+            <apex:outputField value="{!e.Expenditure_Amount__c}"/> 
+        </td>
+        <td> 
+            0.00
+        </td>
+        <td> 
+            0.00
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <apex:outputField value="{!e.Brief_Description__c}"/>
+        </td>
+    </tr>
+</table>
+</apex:repeat>
+</apex:page>

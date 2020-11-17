@@ -1,0 +1,46 @@
+<apex:page standardController="Shop_Drawing__c" extensions="ShopDrawingApprovalController">
+<style>
+        
+        /* === Hides Action Column for Approval History === */
+        
+        
+        [class$='actionColumn']
+        
+        {display:none}
+        
+
+        /* === END === */
+
+
+</style>
+     <apex:detail subject="{!Shop_Drawing__c.Id}" relatedList="false"  showChatter="true" inlineEdit="true"/>
+     <apex:relatedList list="ProcessSteps"></apex:relatedList>
+
+
+
+
+        <apex:form >
+        
+            <apex:pageBlock id="appRej">
+            
+                <apex:pageBlockButtons location="top" id="appHistButtons">
+                
+                    <apex:actionRegion >
+                    
+                        <apex:commandLink value="Approve/Reject" id="appRejectBtn" styleClass="btn" style="padding:2px 5px 3px 5px; text-decoration:none;" action="{!ApprRej}" />
+                    
+                    </apex:actionRegion>
+                
+                    <apex:actionRegion >
+                    
+                        <apex:commandLink value="Reassign" id="ReassignBtn" styleClass="btn" style="padding:2px 5px 3px 5px; text-decoration:none;" action="{!Reassign}" />
+                    
+                    </apex:actionRegion>
+                    
+                </apex:pageBlockButtons>
+            
+            </apex:pageBlock>
+        
+        </apex:form>
+  
+</apex:page>

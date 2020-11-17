@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AcctSeed__Recurring_Journal_Entry_Line_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AcctSeed__Recurring_Journal_Entry_Line_Compact_Layout</fullName>
+        <fields>AcctSeed__Recurring_Journal_Entry__c</fields>
+        <fields>AcctSeed__Account__c</fields>
+        <fields>AcctSeed__Contact__c</fields>
+        <fields>AcctSeed__Employee__c</fields>
+        <fields>AcctSeed__GL_Account__c</fields>
+        <fields>AcctSeed__Debit__c</fields>
+        <fields>AcctSeed__Credit__c</fields>
+        <label>Recurring Journal Entry Line Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Defines the line level detail of a recurring journal entry. Aggregation of recurring journal entry lines constitute a recurring journal entry.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>AcctSeed__Recurring_Journal_Entry</fullName>
+        <description>Used for the Recurring Journal Entry functionality.</description>
+        <label>Recurring Journal Entry</label>
+    </fieldSets>
+    <fields>
+        <fullName>AcctSeed__Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Customer or Vendor</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Flow_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to categorize records in Cash Flow Statement.</inlineHelpText>
+        <label>Cash Flow Category</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Cash Flow</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines (Cash Flow Category)</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to Salesforce Contact</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Credit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The right side of a double entry accounting transaction. Represented as a negative amount in the transactions table.</inlineHelpText>
+        <label>Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Debit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The left side of a double entry accounting transaction. Represented as a positive amount in the transactions table.</inlineHelpText>
+        <label>Debit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Employee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to Salesforce User.</inlineHelpText>
+        <label>Employee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>General Ledger segment used for reporting of a business unit such as division or department.</inlineHelpText>
+        <label>GL Variable 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot; and must have a status of Active. One or more of these conditions have not been met.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 1</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>General Ledger segment used for reporting of a business unit such as division or department.</inlineHelpText>
+        <label>GL Variable 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot; and must have a status of Active. One or more of these conditions</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 2</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines (GL Variable 2)</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>General Ledger segment used for reporting of a business unit such as division or department.</inlineHelpText>
+        <label>GL Variable 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot; and must have a status of Active. One or more of these conditions</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 3</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines (GL Variable 3)</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>General Ledger segment used for reporting of a business unit such as division or department.</inlineHelpText>
+        <label>GL Variable 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot; and must have a status of Active. One or more of these conditions have not been met.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 4</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines (GL Variable 4)</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The credit GL Account used to record the transaction in the general ledger.</inlineHelpText>
+        <label>GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related product.</inlineHelpText>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track a detailed component of Project.</inlineHelpText>
+        <label>Project Task</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.AcctSeed__Project__c</field>
+                <operation>equals</operation>
+                <valueField>AcctSeed__Project_Task__c.AcctSeed__Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Project_Task__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Typically used to track customer engagements or events.</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity for Product Pricing, Hours for Service pricing or costing.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Recurring_Journal_Entry__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent record for this line.</inlineHelpText>
+        <label>Recurring Journal Entry</label>
+        <referenceTo>AcctSeed__Recurring_Journal_Entry__c</referenceTo>
+        <relationshipLabel>Recurring Journal Entry Lines</relationshipLabel>
+        <relationshipName>Recurring_Journal_Entry_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Reference__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to capture any external source document identifier or description.</inlineHelpText>
+        <label>Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Recurring Journal Entry Line</label>
+    <nameField>
+        <displayFormat>RJEL-{00000}</displayFormat>
+        <label>Recurring Journal Entry Line Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Recurring Journal Entry Lines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AcctSeed__Project_Task_Required_With_Project</fullName>
+        <active>true</active>
+        <description>Rule ensures a Project Task is Required if the Project field is used.</description>
+        <errorConditionFormula>!ISBLANK(AcctSeed__Project__c) &amp;&amp; ISBLANK(AcctSeed__Project_Task__c)</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Project_Task__c</errorDisplayField>
+        <errorMessage>A Project Task is required if a Project is selected.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

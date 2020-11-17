@@ -1,0 +1,28 @@
+<apex:page standardController="Record_Drawing_1__c">
+ 
+     <apex:detail subject="{!Record_Drawing_1__c.Id}" relatedList="true"  showChatter="true" inlineEdit="true"/>
+ 
+ <script>
+ 
+     var controlArray=document.getElementsByTagName("a");
+     
+     var index=0;
+     
+     for(index=0;index<controlArray.length;index++){
+         
+           
+         
+         if(controlArray[index].innerHTML =="Approve / Reject"){
+            
+            var url= controlArray[index].href;
+            
+           controlArray[index].href="ProcessInstanceWorkItemRecordDrawing1?id=" + url.split('id=')[1] + "&SD={!Record_Drawing_1__c.Id}";
+      
+         }
+      
+     }
+     
+ 
+ </script>
+  
+</apex:page>

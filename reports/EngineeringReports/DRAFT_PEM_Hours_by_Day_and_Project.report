@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$AcctSeed__Project__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$AcctSeed__Time_Card_Variable_2__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r.AcctSeed__Time_Card_Days__r$AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r.AcctSeed__Time_Card_Days__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r.AcctSeed__Time_Card_Days__r$AcctSeed__Hours__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r.AcctSeed__Time_Card_Days__r$AcctSeed__Employee__c</field>
+    </columns>
+    <description>[2/28/19] Complete, ready for use
+[2/5/19] DRAFT</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c$AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Igor Sobkowicz,Eric Bastoul,Frans Van Bodengraven,Trent Schutte,Brent Stafford,Lucas Danker</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>PEM Hours by Day and Project</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AcctSeed__Time_Cards_with_Time_Card_Lines_with_Time_Card_Days__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$AcctSeed__Time_Card_Variable_2__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Time_Card__c$AcctSeed__Week_Ending_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

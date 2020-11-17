@@ -1,0 +1,13 @@
+{!SFDC_Purchase_Requisition__c.OwnerFullName} has submitted a Subcontractor Change Order for approval for {!Con_Req__c.Project__c}.
+
+Vendor: {!Con_Req__c.Vendor_Account__c}
+Subject: {!Con_Req__c.Subject__c}
+Description: {!Con_Req__c.Description__c}
+
+Original Contract Price:{!Con_Req__c.Original_Unit_Price2__c}
+Current Change Order Amount: {!Con_Req__c.Amount_Requested__c}
+Prior Change Order Amount: {!Con_Req__c.Prior_Sub_CO__c}
+Adjusted Contract Price: {!Con_Req__c.Adjusted_Contract_Price__c} 
+
+Please approve or deny this request:
+{!ApprovalRequest.Internal_URL}

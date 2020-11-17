@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Dealmaker ID --></label>
+        <name>DMAPP__DealmakerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insight High Yield Question --></label>
+        <name>DMAPP__Insight_High_Yield_Question__c</name>
+        <relationshipLabel><!-- HYQ Personas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Insight Persona --></label>
+        <name>DMAPP__Insight_Persona__c</name>
+        <relationshipLabel><!-- HYQ Personas --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Dealmaker ID field cannot be updated after creation --></errorMessage>
+        <name>DMAPP__Prevent_Field_Update</name>
+    </validationRules>
+</CustomObjectTranslation>

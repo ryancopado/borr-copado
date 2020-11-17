@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Used in the Time &amp; Material Billings process to help filter transactions in or out of the process. --></help>
+        <label><!-- Billable --></label>
+        <name>AcctSeed__Billable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes whether the time card line has been billed --></help>
+        <label><!-- Billed --></label>
+        <name>AcctSeed__Billed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day Count --></label>
+        <name>AcctSeed__Day_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overtime --></label>
+        <name>AcctSeed__Overtime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Status --></label>
+        <name>AcctSeed__Parent_Status__c</name>
+    </fields>
+    <fields>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Time Card Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Time Card Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter one of the following Categories: 
+Development 
+Engineering 
+Change 
+Construction Administration
+Overhead - Admin Project --></help>
+        <label><!-- Time Card Variable 1 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;Time Card Variable 1&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Time_Card_Variable_1__c</name>
+        <relationshipLabel><!-- Time Card Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Time Card Variable 2 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;Time Card Variable 2&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Time_Card_Variable_2__c</name>
+        <relationshipLabel><!-- Time Card Lines (Time Card Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Time Card --></label>
+        <name>AcctSeed__Time_Card__c</name>
+        <relationshipLabel><!-- Time Card Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Hours --></label>
+        <name>AcctSeed__Total_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- CD IFR Date from Site --></label>
+        <name>CD_IFR_Date_from_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Engineer Time Reporting --></help>
+        <label><!-- Construction Admin --></label>
+        <name>Construction_Admin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>Employee__c</name>
+    </fields>
+    <fields>
+        <help><!-- reporting field, groups time card line entries into Engineering Stages any hours prior to Hand off are considered development hours, anything post hand off is considered operations. --></help>
+        <label><!-- Engineering Stage --></label>
+        <name>Engineering_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for reporting metrics to record if the hours worked were in the engineering phase or the construction phase. Based on the IFR date of the Site. --></help>
+        <label><!-- Engineering or Construction Hours --></label>
+        <name>Engineering_or_Construction_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item ID --></label>
+        <name>Internal_Engineering_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Employee Dev SDE? --></label>
+        <name>Is_Employee_Dev_SDE__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Reporting --></help>
+        <label><!-- Project Grouping --></label>
+        <name>Project_Grouping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Job Number --></label>
+        <name>Project_Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Rate --></label>
+        <name>Project_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by trigger based upon the Project lookup and the Time Card Variable 2 fields. --></help>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Time Card Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Time Card Grouping - DEV --></label>
+        <name>Time_Card_Grouping_DEV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Card Grouping - EPC --></label>
+        <name>Time_Card_Grouping_EPC__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls from related time card --></help>
+        <label><!-- Time Card Week End Date --></label>
+        <name>Time_Card_Week_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates total hours * project rate from user record --></help>
+        <label><!-- Total Project Cost --></label>
+        <name>Total_Project_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- employee sf id --></label>
+        <name>employee_sf_id__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter one of the following values in the Category field:
+Development, Engineering, Construction Administration, Change, Overhead. --></errorMessage>
+        <name>Require_Category_Upon_Creation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a Site --></errorMessage>
+        <name>Require_Site_Upon_Creation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a Site for each line item. --></errorMessage>
+        <name>TEMP_Require_Site_Upon_Creation</name>
+    </validationRules>
+</CustomObjectTranslation>

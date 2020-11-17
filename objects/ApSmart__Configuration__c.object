@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>APSmart invoice processing configuration</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>ApSmart__APLine_FieldList__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional fields on an Account Payable Line that will be extracted from the Invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter custom Account Payable Line fields that should be extracted from the invoice. If the field is named &apos;Extra_Information&apos;, then that name is used in the FieldList. Multiple fields are comma-separated.</inlineHelpText>
+        <label>APLine FieldList</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__AP_FieldList__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional fields on an Account Payable that will be extracted from the Invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter custom Account Payable fields that should be extracted from the invoice. If the field is named &apos;Extra_Information&apos;, then that name is used in the FieldList. Multiple fields are comma-separated.</inlineHelpText>
+        <label>AP FieldList</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__AccountRecordType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the RecordType that defines an Account Payable Vendor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter the name of the Record Type that defines an AP Vendor.</inlineHelpText>
+        <label>AccountRecordType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__Account_FieldList__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional fields on an Account. Those fields will be extracted from the Invoice. List is comma separated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter custom Account fields that should be extracted from the invoice. If the field is named &apos;Extra_Information&apos;, then that name is used in the FieldList. Multiple fields are comma-separated.</inlineHelpText>
+        <label>Account FieldList</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__Currency__c</fullName>
+        <defaultValue>&quot;USD&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The currency name that will be used on invoices.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter the currency name that will be used on invoices. e.g. USD, CAD, EUR, AUD, GBP</inlineHelpText>
+        <label>Currency</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__DefaultGLAccount__c</fullName>
+        <defaultValue>&quot;0000-APSmart Default&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The name of the GL Account that will be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: Enter the name of the GL Account that will be used by default.</inlineHelpText>
+        <label>DefaultGLAccount</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__DefaultInvoiceNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This describes how an invoice number is constructed if the invoice number is not on the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter a string that shows how the invoice number should be constructed if no invoice number is on the invoice. e.g. &apos;date-accountnumber&apos;, &apos;bookingreference&apos;</inlineHelpText>
+        <label>DefaultInvoiceNumber</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__DefaultTaxGLAccount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Tax GL Account name to be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter the name of the Tax GL Account.</inlineHelpText>
+        <label>DefaultTaxGLAccount</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__DefaultTerms__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of the default terms in days.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: Enter the value of the default terms in days. It will be used if there are no terms on the invoice and no terms on the Vendor Account.</inlineHelpText>
+        <label>DefaultTerms</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__DefaultVendor__c</fullName>
+        <defaultValue>&quot;OCR in Progress&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Account name that is used to save the placeholder AP.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the Account name that is used while the invoice date is being extracted. Changing this value will cause an Account to be created with the new name.</inlineHelpText>
+        <label>DefaultVendor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__ExceptionEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional field: This is the email address that will recieve exception messages.</inlineHelpText>
+        <label>ExceptionEmail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__LibraryName__c</fullName>
+        <defaultValue>&quot;APSmart&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the Saleforce Library name that is used to hold File attachments.</inlineHelpText>
+        <label>Library Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__Locale__c</fullName>
+        <defaultValue>&quot;en_US&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the ISO language and region code. e.g. en_US, en_AU</inlineHelpText>
+        <label>Locale</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__OcrComplete__c</fullName>
+        <defaultValue>&quot;OCR Complete&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the AP status that is set once the AP record is updated with invoice data.</inlineHelpText>
+        <label>OcrComplete</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApSmart__OcrEmailBody__c</fullName>
+        <defaultValue>&quot;Here is an invoice for processing&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the text that is sent with the outgoing PDF invoice file.</inlineHelpText>
+        <label>OcrEmailBody</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ApSmart__UnknownVendor__c</fullName>
+        <defaultValue>&quot;OCR Unknown Vendor&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required field: This is the Account name that is used when the invoice vendor name cannot be found. Changing this value will cause an Account to be created with the new name.</inlineHelpText>
+        <label>UnknownVendor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>APSmart Configuration</label>
+    <listViews>
+        <fullName>ApSmart__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Configuration Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>APSmart Configurations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

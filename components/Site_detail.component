@@ -1,0 +1,632 @@
+<apex:component >
+    <apex:attribute name="activeSite" type="Site__c" description="Active Site" required="true"/>
+    <apex:attribute name="isEdit" type="Boolean" description="Display Mode" required="true"/>
+    <apex:attribute name="isWestLayout" type="Boolean" description="Layout" required="true"/>
+    <apex:attribute name="isDevLayout" type="Boolean" description="Layout" required="true"/>
+    <apex:attribute name="isOtherLayout" type="Boolean" description="Layout" required="true"/>
+    
+    
+    <style>
+    .test input {width:35px}
+   </style>
+
+    <apex:outputPanel id="detailView" rendered="{!!isEdit}">
+        <apex:pageBlock title="Site Detail" mode="detail" rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Site Name"/>
+                    <apex:outputLink value="/{!activeSite.Id}" target="_blank">{!activeSite.Name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:outputField value="{!activeSite.Design_Stage__c}"/>
+                <apex:outputField value="{!activeSite.Site_Address__c}"/>
+                <apex:outputField value="{!activeSite.Construction_Stage__c}"/>
+                <apex:outputField value="{!activeSite.Site_City__c}"/>
+                <apex:outputField value="{!activeSite.Checklist_Status__c}"/>
+                <apex:outputField value="{!activeSite.Site_State__c}"/>
+                <apex:outputField value="{!activeSite.Type__c}"/>
+                <apex:outputField value="{!activeSite.Site_Zip__c}"/>
+                <apex:outputField value="{!activeSite.Project_Size_Watts_STC__c}"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+       
+        
+        <apex:pageBlock title="Project Team" mode="detail" rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!activeSite.Development_SDE__c}"/>
+                <apex:outputField value="{!activeSite.Opportunity_Owner__c}"/>
+                
+                <apex:outputField value="{!activeSite.Development_DE1_Drafter__c}"/>
+                <apex:outputField value="{!activeSite.Project_Manager__c}"/>
+                
+                <apex:outputField value="{!activeSite.Senior_Design_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.ESD_Project_Manager__c}"/>
+                
+                <apex:outputField value="{!activeSite.Ops_DE1_Drafter__c}"/>
+                <apex:outputField value="{!activeSite.Site_Superintendent__c}"/>
+                
+                <apex:outputField value="{!activeSite.Civil_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Project_Coordinator_APM__c}"/>
+                   
+                <apex:outputField value="{!activeSite.Internal_Civil_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Applications_Engineer__c}"/>
+                
+                <apex:outputField value="{!activeSite.External_Civil_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.O_M_Manager__c}"/>
+                
+                <apex:outputField value="{!activeSite.External_Electrical_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Reviewer__c}"/>
+                
+                <apex:outputField value="{!activeSite.Electrical_Engineer__c}"/>
+                               
+                
+                <apex:outputField value="{!activeSite.Project_Finance_Manager__c}"/>
+                <apex:outputField value="{!activeSite.Structural_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Project_Finance_Associate__c}"/> 
+                
+                
+                <apex:outputField value="{!activeSite.External_Structural_Engineer__c}"/> 
+                 <apex:outputField value="{!activeSite.Pre_Construction_Manager__c}"/> 
+                 <apex:outputField value="{!activeSite.Estimator__c}"/> 
+                
+                
+                <apex:pageBlockSectionItem />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+     
+        
+        <!----- start of DEV & standalone Layout  detail mode  MG-->
+        
+                
+        <apex:pageBlock title="Site Detail" mode="detail" rendered="{!isdevLayout}">
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Site Name"/>
+                    <apex:outputLink value="/{!activeSite.Id}" target="_blank">{!activeSite.Name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:outputField value="{!activeSite.Parcel_ID__c}"/>
+                <apex:outputField value="{!activeSite.Site_Address__c}"/>
+                <apex:outputField value="{!activeSite.Latitude__c}"/>
+                <apex:outputField value="{!activeSite.Site_City__c}"/>
+                <apex:outputField value="{!activeSite.Longitude__c}"/>
+                <apex:outputField value="{!activeSite.Site_State__c}"/>
+                <apex:outputField value="{!activeSite.Acreage__c}"/>
+                <apex:outputField value="{!activeSite.Site_Zip__c}"/>  
+                <div align="right">                          
+                <apex:outputField value="{!activeSite.Site_County__c}"/>
+                </div>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+             
+
+            <apex:pageBlock title="Project Team" mode="detail" rendered="{!isDevLayout}">
+            <apex:pageBlockSection columns="2">
+                
+                 
+                <apex:outputField value="{!activeSite.Development_SDE__c}"/>
+                <apex:outputField value="{!activeSite.Electrical_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Development_DE1_Drafter__c}"/>
+                 <apex:outputField value="{!activeSite.External_Electrical_Engineer__c}"/>
+                <apex:outputField value="{!activeSite.Civil_Engineer__c}"/>
+               <apex:outputField value="{!activeSite.Project_Finance_Manager__c}"/>
+               
+              
+               <apex:outputField value="{!activeSite.External_Civil_Engineer__c }"/>
+               <apex:outputField value="{!activeSite.Project_Finance_Associate__c}"/>
+               <apex:outputField value="{!activeSite.Internal_Civil_Engineer__c}"/>
+               <div align="right">
+               <apex:outputField value="{!activeSite.Subcontracted_Civil__c }"/>   
+               </div>
+                <div align="right">            
+               <apex:outputField value="{!activeSite.Civil_Engineer__c}"/>
+                </div>
+                
+                </apex:pageBlockSection>
+           </apex:pageBlock>
+
+            <apex:pageBlock title="Project Milestones" mode="detail" rendered="{!isDevLayout}">
+            <apex:pageBlockSection columns="2">
+            
+            
+                <apex:outputField value="{!activeSite.Design_Stage__c}"/>       
+                <apex:outputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:outputField value="{!activeSite.Site_Use_Permit_Set_Release__c}"/> 
+                <apex:outputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:outputField value="{!activeSite.First_AHJ_Meeting_Date__c}"/>
+                <apex:outputField value="{!activeSite.X25PaymentDate__c}"/>
+                 <apex:outputField value="{!activeSite.Entitlement_Approval_Actual__c}"/>
+                 <apex:outputField value="{!activeSite.X75PaymentDate__c}"/>                  
+                <apex:outputField value="{!activeSite.Wetlands_Delineated_Actual__c}"/>                
+                <apex:outputField value="{!activeSite.PTO_Date__c}"/>                
+                <apex:outputField value="{!activeSite.Development_Engineering_Start_Date__c }"/>                 
+                 <div align="right">
+                <apex:outputField value="{!activeSite.X50_Forecast_Release_Date__c}"/>
+                </div>
+                 <div align="right">
+                <apex:outputField value="{!activeSite.New_Design_Note__c}"/>
+                </div>
+                
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+  <!-- end of Dev  & standalone layout detail mode  -->
+
+
+
+        
+        <apex:pageBlock title="Project Milestones" mode="detail" rendered="{!isWestLayout}" > 
+            <apex:pageBlockSection columns="2">
+             <!-- New layout created  6/24/2020 MG -->
+                <apex:outputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:outputField value="{!activeSite.ProductDeliveryDateUpdated__c}"/> 
+                <apex:outputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:outputField value="{!activeSite.FNTP_Date__c}"/>
+                <apex:outputField value="{!activeSite.PB9CCApprovalDate__c}"/>
+                <apex:outputField value="{!activeSite.Mobilization_Date__c}"/>
+                <apex:outputField value="{!activeSite.Handoff_Date__c}"/>
+                <apex:outputField value="{!activeSite.Energy_Storage_Unit_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.ISA_Received_Date__c  }"/>
+                <apex:outputField value="{!activeSite.Racking_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.X25PaymentDate__c}"/>
+                <apex:outputField value="{!activeSite.Module_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.X75PaymentDate__c}"/>
+                <apex:outputField value="{!activeSite.Transformer_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.UtilityDesignCompletionDate__c}"/>
+                <apex:outputField value="{!activeSite.Inverter_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.UtilityConstructionCompletionDate__c}"/> 
+                <apex:outputField value="{!activeSite.Switchboard_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.CD_Forecast_Release_Date__c}"/>
+                <apex:outputField value="{!activeSite.Switchgear_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.CD_IFC_Release_Date__c}"/>
+                <apex:outputField value="{!activeSite.Substantial_Completion_Date__c}"/>
+                <apex:outputField value="{!activeSite.EPC_Signed_Date__c}"/>
+                <apex:outputField value="{!activeSite.PTO_Date__c}"/>
+                <apex:outputField value="{!activeSite.BuildingPermitObtainedDate__c}"/> 
+                <apex:outputField value="{!activeSite.Substantial_Completion_NEW__c}"/> <!--<align --> 
+                <apex:outputField value="{!activeSite.LNTP_Date__c}"/>         
+                <apex:outputField value="{!activeSite.Final_Completion__c}"/><!--<align=right/> -->
+                <apex:outputField value="{!activeSite.New_Comments_on_Schedule__c}"/>
+             
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+                   
+        <apex:pageBlock title="Project Milestones" mode="detail" rendered="{!isotherlayout}" >
+            <apex:pageBlockSection columns="2">
+            <!-- Re-arraging the layout 6/19/2020  MG-->
+                <apex:outputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:outputField value="{!activeSite.ProductDeliveryDateUpdated__c}"/> 
+                <apex:outputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:outputField value="{!activeSite.FNTP_Date__c}"/>
+                <apex:outputField value="{!activeSite.PB9CCApprovalDate__c}"/>
+                <apex:outputField value="{!activeSite.Mobilization_Date__c}"/>
+                <apex:outputField value="{!activeSite.Handoff_Date__c}"/>
+                <apex:outputField value="{!activeSite.Energy_Storage_Unit_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.ISA_Received_Date__c  }"/>
+                <apex:outputField value="{!activeSite.Racking_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.X25PaymentDate__c}"/>
+                <apex:outputField value="{!activeSite.Module_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.X75PaymentDate__c}"/>
+                <apex:outputField value="{!activeSite.Transformer_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.UtilityDesignCompletionDate__c}"/>
+                <apex:outputField value="{!activeSite.Inverter_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.UtilityConstructionCompletionDate__c}"/> 
+                <apex:outputField value="{!activeSite.Switchboard_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.CD_Forecast_Release_Date__c}"/>
+                <apex:outputField value="{!activeSite.Switchgear_Delivery_Date__c}"/>
+                <apex:outputField value="{!activeSite.CD_IFC_Release_Date__c}"/>
+                <apex:outputField value="{!activeSite.Substantial_Completion_Date__c}"/>
+                <apex:outputField value="{!activeSite.EPC_Signed_Date__c}"/>
+                <apex:outputField value="{!activeSite.PTO_Date__c}"/>
+                <apex:outputField value="{!activeSite.BuildingPermitObtainedDate__c}"/> 
+                <apex:outputField value="{!activeSite.Substantial_Completion_NEW__c}"/> <!--<align --> 
+                <apex:outputField value="{!activeSite.LNTP_Date__c}"/>         
+                <apex:outputField value="{!activeSite.Final_Completion__c}"/><!--<align=right/> -->
+               <apex:outputField value="{!activeSite.New_Comments_on_Schedule__c}"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>  
+
+           
+        <apex:pageBlock title="Project Schedule" mode="detail" rendered="{!isWestLayout}" >
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!activeSite.System_Design_Start__c}"/>
+                <apex:outputField value="{!activeSite.Complete_Site_Discovery_Date__c}"/>            
+                <apex:outputField value="{!activeSite.AHJ_Submission__c}"/>
+                <apex:outputField value="{!activeSite.AHJ_Comments_Received__c}"/>
+                <apex:outputField value="{!activeSite.AHJ_Re_submission__c}"/>
+                <apex:outputField value="{!activeSite.As_Built_Completed__c}"/>
+                <apex:outputField value="{!activeSite.New_Design_Note__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Project Schedule" mode="detail"  rendered="{!isotherlayout}" > <!-- rendered="{!!isWestLayout}"-->
+            <apex:pageBlockSection columns="2">                 
+                
+                <apex:outputField value="{!activeSite.Development_Engineering_Start_Date__c}"/>
+                <apex:outputField value="{!activeSite.Site_Use_Permit_Set_Release__c}"/>
+                <apex:outputField value="{!activeSite.Entitlement_Approval_Actual__c}"/>  
+                <apex:outputField value="{!activeSite.Complete_Site_Discovery_Date__c}"/>
+                <apex:outputField value="{!activeSite.Civil_Management_Notes__c}"/>
+                <apex:outputField value="{!activeSite.Expected_ISA__c}"/>
+                <apex:outputField value="{!activeSite.Ready_for_ISA__c}"/>
+                <apex:outputField value="{!activeSite.Executed_ISA__c}"/>
+                <apex:outputField value="{!activeSite.Ops_Engineering_Start_DAte__c}"/>
+                <apex:outputField value="{!activeSite.As_Built_Completed__c}"/>
+                <apex:outputField value="{!activeSite.New_Design_Note__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Design Notes History" mode="detail" >
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!activeSite.Design_Notes__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Comments On Schedule History" mode="detail"  rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!activeSite.Comments_on_Schedule__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+                
+        <apex:pageBlock title="Interconnection" mode="detail" rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="1">
+            <apex:outputField value="{!activeSite.Interconnection_Status__c}"/>
+          </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Product Information" mode="detail" rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!activeSite.Modules_Status__c}"/>
+                <apex:outputField value="{!activeSite.Racking_Status__c}"/>
+                <apex:outputField value="{!activeSite.Inverter_Status__c}"/>
+                <apex:outputField value="{!activeSite.Delivery_Notes__c}"/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+        
+        <apex:pageBlock title="Pre-mob/Closeout/O&M Consolidated Projec" mode="detail"  rendered="{!!isdevLayout}">
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!activeSite.Commissioning_Date__c}"/>
+                <apex:outputField value="{!activeSite.O_M_Handoff_Status__c}"/>
+                <apex:outputField value="{!activeSite.Commissioning_Agent__c}"/>
+                <apex:outputField value="{!activeSite.O_M_Handoff_Date__c}"/>
+                <apex:outputField value="{!activeSite.Submit_to_Quality_Assurance__c}"/>
+                <apex:outputField value="{!activeSite.Performance_Reporting__c}"/>
+                <apex:outputField value="{!activeSite.Commissioning_Status__c}"/>
+                <apex:outputField value="{!activeSite.Paid_Contract__c}"/>
+                <apex:outputField value="{!activeSite.Submit_to_Quality_AssurancePost__c}"/>
+                <apex:outputField value="{!activeSite.Contract__c}"/>
+                <apex:outputField value="{!activeSite.Operational_Commissioning_Status__c}"/>
+                <apex:outputField value="{!activeSite.Pre_mob_Closeout_O_M_Consolidated_Projec__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" >
+                <apex:outputField value="{!activeSite.Closeout_Document__c}"/>
+                <apex:outputField value="{!activeSite.Commissioning_Status_Notes__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Created By"/>
+                    <apex:outputPanel >
+                        <apex:outputField value="{!activeSite.CreatedBy.Name}"/>,&nbsp;<apex:outputField value="{!activeSite.CreatedDate}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Modified By"/>
+                    <apex:outputPanel >
+                        <apex:outputField value="{!activeSite.LastModifiedBy.Name}"/>,&nbsp;<apex:outputField value="{!activeSite.LastModifiedDate}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:outputPanel>
+    
+    
+    <!-- End of Details Section of Site Page -->
+    
+    
+    <!-- Start of Edit section of Site Page -->
+    
+    
+    <apex:outputPanel id="editView" rendered="{!isEdit}">
+        <apex:pageBlock title="Site Edit" mode="edit"  >
+            <apex:pageBlockSection title="Information" columns="" rendered="{!!isDevLayout}" >
+          <apex:inputField value="{!activeSite.Name}"  required="true"  /> 
+              <apex:inputField value="{!activeSite.Design_Stage__c}"/> 
+                <apex:inputField value="{!activeSite.Site_Address__c}" required="true"/>
+                <apex:inputField value="{!activeSite.Construction_Stage__c}"/>
+                <apex:inputField value="{!activeSite.Site_City__c}" required="true"/>
+                <apex:inputField value="{!activeSite.Checklist_Status__c}"/>
+                <apex:inputField value="{!activeSite.Site_State__c}" required="true"/>
+                <apex:inputField value="{!activeSite.Type__c}" required="true"/>
+                <apex:inputField value="{!activeSite.Site_Zip__c}" required="true"/>
+                <apex:outputField value="{!activeSite.Project_Size_Watts_STC__c}"/>   
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="ProjectTeam" columns="2" rendered="{!!isDevLayout}">
+                
+                <apex:inputField value="{!activeSite.Development_SDE__c}" />
+                <apex:inputField value="{!activeSite.Opportunity_Owner__c}"/>
+                
+                <apex:inputField value="{!activeSite.Development_DE1_Drafter__c}"/>
+                <apex:inputField value="{!activeSite.Project_Manager__c}"/>
+                
+                 <apex:inputField value="{!activeSite.Senior_Design_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.ESD_Project_Manager__c}"/>
+                
+                <apex:inputField value="{!activeSite.Ops_DE1_Drafter__c}"/>
+                <apex:inputField value="{!activeSite.Site_Superintendent__c}"/>
+                
+               <apex:inputField value="{!activeSite.Civil_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Project_Coordinator_APM__c}"/>
+                   
+                <apex:inputField value="{!activeSite.Internal_Civil_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Applications_Engineer__c}"/>
+                
+                <apex:inputField value="{!activeSite.External_Civil_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.O_M_Manager__c}"/>
+                
+                <apex:inputField value="{!activeSite.External_Electrical_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Reviewer__c}"/>
+                
+                <apex:inputField value="{!activeSite.Electrical_Engineer__c}"/>
+                
+                <apex:inputField value="{!activeSite.Project_Finance_Manager__c}"/>
+                <apex:inputField value="{!activeSite.Structural_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Project_Finance_Associate__c}"/> 
+                
+                <apex:inputField value="{!activeSite.External_Structural_Engineer__c}"/> <!--  </div><div align=left/> -->
+                 <apex:inputField value="{!activeSite.Pre_Construction_Manager__c}"/> 
+                 <apex:inputField value="{!activeSite.Estimator__c}"/> 
+                
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem />
+            </apex:pageBlockSection>
+            
+                    <!----- start of DEV & standalone Layout  detail mode  MG-->
+        
+                
+           
+           <apex:pageBlockSection title="Information" columns="" rendered="{!isDevLayout}" >
+          <apex:inputField value="{!activeSite.Name}"  required="true"  /> 
+                <apex:inputField value="{!activeSite.Parcel_ID__c}"/>
+                <apex:inputField value="{!activeSite.Site_Address__c}"/>
+                <apex:inputField value="{!activeSite.Latitude__c}"/>
+                <apex:inputField value="{!activeSite.Site_City__c}"/>
+                <apex:inputField value="{!activeSite.Longitude__c}"/>
+                <apex:inputField value="{!activeSite.Site_State__c}"/>
+                <apex:inputField value="{!activeSite.Acreage__c}"/>
+                <apex:inputField value="{!activeSite.Site_Zip__c}"/>  
+                <div align="right">                          
+                <apex:inputField value="{!activeSite.Site_County__c}"/>
+                </div>
+                
+            </apex:pageBlockSection>
+        
+        
+             
+ <apex:outputPanel rendered="{!isDevLayout}" >
+            <apex:pageBlock title="Project Team"  >
+            <apex:pageBlockSection columns="2">
+                
+                 
+                <apex:inputField value="{!activeSite.Development_SDE__c}"/>
+                <apex:inputField value="{!activeSite.Electrical_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Development_DE1_Drafter__c}"/>
+                 <apex:inputField value="{!activeSite.External_Electrical_Engineer__c}"/>
+                <apex:inputField value="{!activeSite.Civil_Engineer__c}"/>
+               <apex:inputField value="{!activeSite.Project_Finance_Manager__c}"/>
+               
+              
+               <apex:inputField value="{!activeSite.External_Civil_Engineer__c }"/>
+               <apex:inputField value="{!activeSite.Project_Finance_Associate__c}"/>
+               <apex:inputField value="{!activeSite.Internal_Civil_Engineer__c}"/>
+               <div align="right">
+               <apex:inputField value="{!activeSite.Subcontracted_Civil__c }"/>   
+               </div>
+                <div align="right">            
+               <apex:inputField value="{!activeSite.Civil_Engineer__c}"/>
+                </div>
+                
+                </apex:pageBlockSection>
+           </apex:pageBlock>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!isDevLayout}" >
+            <apex:pageBlock title="Project Milestones"  rendered="{!isDevLayout}">
+            <apex:pageBlockSection columns="2">
+            
+            
+                <apex:inputField value="{!activeSite.Design_Stage__c}"/>       
+                <apex:inputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:inputField value="{!activeSite.Site_Use_Permit_Set_Release__c}"/> 
+                <apex:inputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:inputField value="{!activeSite.First_AHJ_Meeting_Date__c}"/>
+                <apex:inputField value="{!activeSite.X25PaymentDate__c}"/>
+                 <apex:inputField value="{!activeSite.Entitlement_Approval_Actual__c}"/>
+                 <apex:inputField value="{!activeSite.X75PaymentDate__c}"/>                  
+                <apex:inputField value="{!activeSite.Wetlands_Delineated_Actual__c}"/>                
+                <apex:inputField value="{!activeSite.PTO_Date__c}"/>                
+                <apex:inputField value="{!activeSite.Development_Engineering_Start_Date__c }"/>                 
+                 <div align="right">
+                <apex:inputField value="{!activeSite.X50_Forecast_Release_Date__c}"/>
+                </div>
+                 <div align="right">
+                <apex:inputField value="{!activeSite.New_Design_Note__c}"/>
+                </div>
+                
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+            </apex:outputPanel>
+  <!-- end of Dev  & standalone layout Edit mode  -->
+            
+            
+            
+            
+            <apex:outputPanel rendered="{!iswestLayout}" >
+              <apex:pageBlockSection title="Project Milestones" columns="2" >
+              
+               <!---  layout change    -->  
+                     <!-- New layout for edit section -->
+                <apex:inputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:inputField value="{!activeSite.ProductDeliveryDateUpdated__c}"/> 
+                <apex:inputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:inputField value="{!activeSite.FNTP_Date__c}"/>
+                <apex:inputField value="{!activeSite.PB9CCApprovalDate__c}"/>
+                <apex:inputField value="{!activeSite.Mobilization_Date__c}"/>
+                <apex:inputField value="{!activeSite.Handoff_Date__c}"/>
+                <apex:inputField value="{!activeSite.Energy_Storage_Unit_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.ISA_Received_Date__c  }"/>
+                <apex:inputField value="{!activeSite.Racking_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.X25PaymentDate__c}"/>
+                <apex:inputField value="{!activeSite.Module_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.X75PaymentDate__c}"/>
+                <apex:inputField value="{!activeSite.Transformer_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.UtilityDesignCompletionDate__c}"/>
+                <apex:inputField value="{!activeSite.Inverter_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.UtilityConstructionCompletionDate__c}"/> 
+                <apex:inputField value="{!activeSite.Switchboard_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.CD_Forecast_Release_Date__c}"/>
+                <apex:inputField value="{!activeSite.Switchgear_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.CD_IFC_Release_Date__c}"/>
+                <apex:inputField value="{!activeSite.Substantial_Completion_Date__c}"/>
+                <apex:inputField value="{!activeSite.EPC_Signed_Date__c}"/>
+                <apex:inputField value="{!activeSite.PTO_Date__c}"/>
+                <apex:inputField value="{!activeSite.BuildingPermitObtainedDate__c}"/> 
+                <apex:inputField value="{!activeSite.Substantial_Completion_NEW__c}"/>  
+                <apex:inputField value="{!activeSite.LNTP_Date__c}"/>         
+                <apex:inputField value="{!activeSite.Final_Completion__c}"/>                 
+                 <apex:inputField value="{!activeSite.New_Comments_on_Schedule__c}"/> 
+                  
+                  
+             </apex:pageBlockSection>
+             </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!isotherlayout}" >
+                       <apex:pageBlockSection title="Project Milestones" columns="2">
+                     <!-- layout change 6-24-2020 MG   -->
+                                                  
+                       <!-- New layout for edit section -->
+                <apex:inputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/>
+                <apex:inputField value="{!activeSite.ProductDeliveryDateUpdated__c}"/> 
+                <apex:inputField value="{!activeSite.MarkettoOwnerDate__c}"/>
+                <apex:inputField value="{!activeSite.FNTP_Date__c}"/>
+                <apex:inputField value="{!activeSite.PB9CCApprovalDate__c}"/>
+                <apex:inputField value="{!activeSite.Mobilization_Date__c}"/>
+                <apex:inputField value="{!activeSite.Handoff_Date__c}"/>
+                <apex:inputField value="{!activeSite.Energy_Storage_Unit_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.ISA_Received_Date__c  }"/>
+                <apex:inputField value="{!activeSite.Racking_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.X25PaymentDate__c}"/>
+                <apex:inputField value="{!activeSite.Module_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.X75PaymentDate__c}"/>
+                <apex:inputField value="{!activeSite.Transformer_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.UtilityDesignCompletionDate__c}"/>
+                <apex:inputField value="{!activeSite.Inverter_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.UtilityConstructionCompletionDate__c}"/> 
+                <apex:inputField value="{!activeSite.Switchboard_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.CD_Forecast_Release_Date__c}"/>
+                <apex:inputField value="{!activeSite.Switchgear_Delivery_Date__c}"/>
+                <apex:inputField value="{!activeSite.CD_IFC_Release_Date__c}"/>
+                <apex:inputField value="{!activeSite.Substantial_Completion_Date__c}"/>
+                <apex:inputField value="{!activeSite.EPC_Signed_Date__c}"/>
+                <apex:inputField value="{!activeSite.PTO_Date__c}"/>
+                <apex:inputField value="{!activeSite.BuildingPermitObtainedDate__c}"/> 
+                <apex:inputField value="{!activeSite.Substantial_Completion_NEW__c}"/>  
+                <apex:inputField value="{!activeSite.LNTP_Date__c}"/>         
+                <apex:inputField value="{!activeSite.Final_Completion__c}"/> 
+                <apex:inputField value="{!activeSite.New_Comments_on_Schedule__c}"/>      
+                           
+                       
+              
+                       </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+            
+            <apex:outputPanel rendered="{!isWestLayout}">
+                <apex:pageBlockSection title="Project Schedule" columns="2">
+                     <apex:inputField value="{!activeSite.System_Design_Start__c}"/>
+                                        
+                    <apex:inputField value="{!activeSite.Complete_Site_Discovery_Date__c}"/>
+                   
+                    
+                
+                    <apex:inputField value="{!activeSite.AHJ_Submission__c}"/>
+                    <apex:inputField value="{!activeSite.AHJ_Comments_Received__c}"/>
+                    <apex:inputField value="{!activeSite.AHJ_Re_submission__c}"/>
+                    <apex:inputField value="{!activeSite.As_Built_Completed__c}"/>
+                     
+                    <apex:inputField value="{!activeSite.New_Design_Note__c}"/>
+              
+            
+                     <!--<apex:inputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/> -->
+                    <!--apex:inputField value="{!activeSite.Project_Kickoff_Date_editable__c}"/-->
+                    
+                    <apex:inputField value="{!activeSite.Development_Engineering_Start_Date__c}"/>
+                  
+                    <apex:inputField value="{!activeSite.Site_Use_Permit_Set_Release__c}"/>
+                   
+                    <apex:inputField value="{!activeSite.Entitlement_Approval_Actual__c}"/>
+                   
+                    <apex:inputField value="{!activeSite.Complete_Site_Discovery_Date__c}"/>
+                    
+                    <apex:inputField value="{!activeSite.Civil_Management_Notes__c}"/>                    
+                   
+                    <apex:inputField value="{!activeSite.Executed_ISA__c  }"/>
+                   
+                    <apex:inputField value="{!activeSite.Ops_Engineering_Start_DAte__c}"/>
+                    <apex:inputField value="{!activeSite.As_Built_Completed__c}"/>
+                  
+                    <apex:inputField value="{!activeSite.New_Design_Note__c}"/>
+                   
+
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            
+            <apex:pageBlockSection title="Design Notes History" columns="2">
+                <apex:outputField value="{!activeSite.Design_Notes__c}"/>
+            </apex:pageBlockSection>
+        
+            <apex:pageBlockSection title="Comments On Schedule History" columns="1" rendered="{!!isDevLayout}">
+                <apex:outputField value="{!activeSite.Comments_on_Schedule__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Interconnection" columns="2" rendered="{!!isDevLayout}">            
+                <apex:inputField value="{!activeSite.Interconnection_Status__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Product Information" columns="2" rendered="{!!isDevLayout}">
+                <apex:inputField value="{!activeSite.Modules_Status__c}"/>
+                <apex:inputField value="{!activeSite.Racking_Status__c}"/>
+                <apex:inputField value="{!activeSite.Inverter_Status__c}"/>
+                <apex:inputField value="{!activeSite.Delivery_Notes__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Pre-mob, Commissioning, Closeout" columns="2" rendered="{!!isDevLayout}">
+                <apex:inputField value="{!activeSite.Commissioning_Date__c}"/>
+                <apex:inputField value="{!activeSite.O_M_Handoff_Status__c}"/>
+                <apex:inputField value="{!activeSite.Commissioning_Agent__c}"/>
+                <apex:inputField value="{!activeSite.O_M_Handoff_Date__c}"/>
+                <apex:inputField value="{!activeSite.Submit_to_Quality_Assurance__c}"/>
+                <apex:inputField value="{!activeSite.Performance_Reporting__c}"/>
+                <apex:inputField value="{!activeSite.Commissioning_Status__c}"/>
+                <apex:inputField value="{!activeSite.Paid_Contract__c}"/>
+                <apex:inputField value="{!activeSite.Submit_to_Quality_AssurancePost__c}"/>
+                <apex:inputField value="{!activeSite.Contract__c}"/>
+                <apex:inputField value="{!activeSite.Operational_Commissioning_Status__c}"/>
+                <apex:inputField value="{!activeSite.Pre_mob_Closeout_O_M_Consolidated_Projec__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2"  rendered="{!!isDevLayout}">
+                <apex:inputField value="{!activeSite.Closeout_Document__c}"/>
+                <apex:inputField value="{!activeSite.Commissioning_Status_Notes__c}"/>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:outputPanel>
+    
+</apex:component>

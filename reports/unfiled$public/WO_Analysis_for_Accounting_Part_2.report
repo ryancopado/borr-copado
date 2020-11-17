@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders$Name</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r.Construction_Requisitions__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r.Construction_Requisitions__r$AcctSeedERP__Quantity_Ordered__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r.Construction_Requisitions__r$Unit_Cost__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r$Requisition_Total_Roll_Up__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r$Vendor__c</field>
+    </columns>
+    <columns>
+        <field>Case.WorkOrders.Con_Req_Group__r$Project__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>WO Analysis for Accounting Part 2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Work_Orders_with_or_without_CRGs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

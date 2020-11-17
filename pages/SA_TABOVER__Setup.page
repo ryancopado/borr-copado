@@ -1,0 +1,583 @@
+<apex:page controller="SA_TABOVER.SetupController" title="Standard Tab Override Configuration" showHeader="true" sidebar="true" standardStylesheets="true">
+  <apex:slds />
+  <apex:includeScript value="{!URLFOR($Resource.SA_TABOVER__Jquery, '/jquery.min.js')}"/>
+  <apex:form styleClass="slds-form--stacked" id="standardTabForm">
+    <apex:outputPanel id="errorPanel">
+      <apex:outputPanel rendered="{!IF(isSuccess == false && lstOfErrors.size > 0,true,false)}">
+        <ul class="slds-list--dotted">
+          <apex:repeat value="{!lstOfErrors}" var="errorMessage">
+            <li>{!errorMessage}</li>
+          </apex:repeat>
+        </ul>
+      </apex:outputPanel>
+    </apex:outputPanel>
+
+    <!-- Default List Views Section !-->
+    <div class="slds-section slds-is-open" id="topSection" style="margin-top: 20px;" >
+      <h3 class="slds-section__title">
+          <button class="slds-button slds-section__title-action" id="topSectionBtn" aria-expanded="true" aria-controls="topSectionContent">
+            <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="false">
+              <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#switch')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+            </svg>
+            <span class="slds-truncate" title="Section Title">Default List Views</span>
+          </button>
+      </h3>
+      <div aria-hidden="false" class="slds-section__content" id="topSectionContent">
+        <div class="slds-tabs_scoped">
+          <ul class="slds-tabs_scoped__nav" role="tablist" id="tablist">
+            <li class="slds-tabs_scoped__item slds-text-heading_small slds-active" title="Organization Defaults" role="presentation" id="orgDefault">
+              <a class="slds-tabs_scoped__link" href="#void" role="tab" tabindex="0" aria-selected="true" aria-controls="orgDefaultContent" id="tab-scoped-1__item">
+                Organization
+              </a>
+            </li>
+            <li class="slds-tabs_scoped__item slds-text-heading_small " title="Profile" role="presentation" id="profile">
+              <a class="slds-tabs_scoped__link" href="#void" role="tab" tabindex="1" aria-selected="false" aria-controls="profileContent" id="tab-scoped-2__item">
+                Profile
+              </a>
+            </li>
+            <li class="slds-tabs_scoped__item slds-text-heading_small" title="User" role="presentation" id="user">
+              <a class="slds-tabs_scoped__link" href="#void" role="tab" tabindex="2" aria-selected="false" aria-controls="userContent" id="tab-scoped-3__item">
+                User
+              </a>
+            </li>
+          </ul>
+          
+          <!-- First Tab Content Start-->
+          <div id="orgDefaultContent" class="slds-tabs_scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+            <table class="slds-table slds-table_bordered slds-max-medium-table_stacked">
+              <thead>
+                <tr class="slds-text-heading_small">
+                  <th class="slds-is-sortable" scope="col">
+                    <div class="slds-truncate">
+                      Object
+                    </div>
+                  </th>
+                  <th class="slds-is-sortable" scope="col">
+                    <div class="slds-truncate">
+                      Default List Views
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <apex:repeat value="{!lstOfSObject}" var="objName">
+                  <tr class="slds-hint-parent">
+                    <th class="slds-truncate" scope="row" data-label="{!objName}">
+                      {!objName}
+                    </th>
+                    <td class="slds-truncate">
+                      <apex:selectList multiselect="false" size="1" value="{!settingDefaultValueMap[objName].listViewId}">
+                        <apex:selectOptions value="{!mapOfSelectOption[objName]}"/>
+                      </apex:selectList>
+                    </td>
+                  </tr>
+                </apex:repeat>
+              </tbody>
+            </table>
+
+            <div style="margin-top: 14px;" class="slds-clearfix">
+              <button class="slds-button slds-button_brand slds-float_left"  style="margin-right: 20px!important;" id="defaultSettingBtn" onclick="saveSettingAction(this.id); return false;">
+                  Save
+              </button>
+              <apex:outputPanel Id="defaultSuccessMessagePanel">
+                <apex:outputPanel rendered="{!defaultSuccessMessage!=null}">
+                  <div id="saveMessageDefault" style="font-size: 17px;color: green;">
+                    {!defaultSuccessMessage}
+                  </div>
+                </apex:outputPanel>
+                <script>$("#saveMessageDefault").show().delay(2000).fadeOut();</script>
+              </apex:outputPanel>
+              <!-- This is an action function to update the custom setting and it accepts a parameter elementId to determine from which button it is called. -->
+              <apex:actionFunction action="{!saveSetting}" name="saveSettingAction" reRender="profilePanel,userPanel,errorPanel,defaultSuccessMessagePanel">
+                <apex:param assignTo="{!elementId}" name="elementId" value=""/>
+              </apex:actionFunction>
+            </div>
+          </div>
+          <!-- First Tab Content End -->
+          
+          <!-- Second Tab Content Start-->
+          <div id="profileContent" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+            <!-- Below action function is to navigate to edit profile mode and It accepts profileId parameter.-->
+            <apex:actionFunction action="{!navigateToProfileDetail}" name="navigateToProfile" reRender="profilePanel,errorPanel">
+              <apex:param assignTo="{!profileId}" value="" name="profileId"/>
+            </apex:actionFunction>
+            
+            <!-- Action function to navigate back to the profile tab. -->
+            <apex:actionFunction action="{!backToProfileTab}" name="navigateToProfileTab" reRender="profilePanel,errorPanel"/>
+            
+            <!-- Action function to delete custom setting. -->
+            <apex:actionFunction action="{!deleteCustomSetting}" name="deleteCustomSettingFn" reRender="profilePanel,userPanel,errorPanel,defaultSuccessMessagePanel">
+              <apex:param assignTo="{!indexVar}" value="" name="indexVar"/>
+              <apex:param assignTo="{!elementId}" value="" name="elementId"/>
+            </apex:actionFunction>
+            
+            <!-- Action function for add new profile view. -->
+            <apex:actionFunction action="{!goToAddProfile}" name="goToAddProfile" reRender="profilePanel,errorPanel"/>
+            
+            <!-- Action function to save the new profile.-->
+            <apex:actionFunction action="{!addNewProfile}" name="addNewProfile" reRender="profilePanel,errorPanel"/>
+            
+            <apex:panelGroup id="profilePanel">
+              <!-- Profile Tab Content Start-->
+              <apex:outputPanel rendered="{!IF(showProfileEdit == false && showAddProfile == false && profileSelectOptions.size > 0,true,false)}">
+                <button class="slds-button slds-button_brand" style="margin-bottom : 10px;margin-right: 10px;" id="addProfileBtn" onclick="goToAddProfile(); return false;">
+                  Add Profile
+                </button>
+              </apex:outputPanel>
+
+              <apex:outputPanel rendered="{!IF(showProfileEdit == false && showAddProfile == false && lstOfTabOverrideProfile.size > 0,true,false)}">
+                <table class="slds-table slds-table_bordered slds-max-medium-table_stacked">
+                  <thead>
+                    <tr class="slds-text-heading_small">
+                      <th class="slds-is-sortable" scope="col">
+                        <div class="slds-truncate">
+                          Action
+                        </div>
+                      </th>
+                      <th class="slds-is-sortable" scope="col">
+                        <div class="slds-truncate">
+                          Profile Name
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <apex:variable value="{!0}" var="indexVar"/>
+                    <apex:repeat value="{!lstOfTabOverrideProfile}" var="profileSetting">
+                      <apex:variable value="{!indexVar + 1}" var="indexVar"/>
+                      <tr class="slds-hint-parent">
+                        <th class="slds-truncate" scope="row" data-label="" style="padding: 3px;">
+                          <button 
+                            class="slds-button slds-button_small" 
+                            onclick="navigateToProfile('{!profileSetting.SetupOwnerId}');return false;" 
+                            style="line-height: 0;" 
+                            id="profileEditBtn">
+                              Edit
+                          </button> | 
+                          <button 
+                            class="slds-button slds-button_small" 
+                            onclick="deleteCustomSettingFn('{!indexVar}',this.id);return false;" 
+                            style="line-height: 0;" 
+                            id="profileDelBtn">
+                              Del
+                          </button>
+                        </th>
+                        <td class="slds-truncate">
+                            {!profileNameMap[profileSetting.SetupOwnerId]}
+                        </td>
+                      </tr>
+                    </apex:repeat>
+                  </tbody>
+                </table>
+                <apex:outputPanel rendered="{!profileSuccessMessage!=null}"><div id="saveMessageProfile" style="font-size: 17px;color: green;display: none;margin-top:10px;">{!profileSuccessMessage}</div>
+                <script>$("#saveMessageProfile").show().delay(2000).fadeOut();</script>
+                </apex:outputPanel>
+              </apex:outputPanel>
+
+              <apex:outputText rendered="{!IF(showProfileEdit == false && showAddProfile == false && lstOfTabOverrideProfile.size <= 0,true,false)}">
+                No ListViews are set up for the profile.
+              </apex:outputText>
+              <!-- Profile Tab Content End -->
+              
+              <!-- Add Profile Content Start-->
+              <apex:outputPanel layout="block" rendered="{!IF(showProfileEdit == false && showAddProfile == true && profileSelectOptions.size > 0,true,false)}">
+                <div class="slds-grid slds-wrap">
+                  <div style="margin-right: 20px;margin-bottom: 20px;"> 
+                    Select a Profile
+                  </div>
+                  <div>
+                    <apex:selectList size="1" multiselect="false" value="{!profileId}">
+                      <apex:selectOptions value="{!profileSelectOptions}"/>
+                    </apex:selectList>
+                  </div>
+                </div>
+
+                <button class="slds-button slds-button_brand" style="margin-top: 7px;" id="addNewProfileBtn" onclick="addNewProfile(); return false;">
+                  Next
+                </button>
+                <button class="slds-button slds-button_neutral" style="margin-top: 7px;" id="cancelNewProfileBtn" onclick="navigateToProfileTab(); return false;">
+                  Cancel
+                </button>
+              </apex:outputPanel>
+              <!-- Add Profile Content End -->
+
+              <!-- Profile Detail Content Start -->
+              <apex:outputPanel rendered="{!IF(showProfileEdit == true && showAddProfile == false,true,false)}">
+                <span class="slds-page-header__title">{!profileName}</span>
+                <div class="slds-grid slds-wrap">
+                  <div class="slds-col">
+                    <table class="slds-table slds-table_bordered slds-max-medium-table_stacked">
+                      <thead>
+                        <tr class="slds-text-heading_small">
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Object
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Default List Views (Org)
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Object
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Default List Views (Profile)
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <apex:repeat value="{!lstOfSObject}" var="objName">
+                          <tr class="slds-hint-parent">
+                            <td class="slds-truncate" scope="row" data-label="{!objName}">
+                              {!objName}
+                            </td>
+                            <td class="slds-truncate">
+                              {!settingDefaultValueMap[objName].listViewName}
+                            </td>
+                            <td class="slds-truncate" scope="row" data-label="{!objName}">
+                              {!objName}
+                            </td>
+                            <td class="slds-truncate">
+                              <apex:selectList multiselect="false" size="1" value="{!settingProfileValueMap[objName].listViewId}" style="margin: -1px 0 0px;">
+                                <apex:selectOptions value="{!mapOfSelectOption[objName]}"/>
+                              </apex:selectList>
+                            </td>
+                          </tr>
+                        </apex:repeat>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div style="margin-top: 14px;">
+                  <apex:commandButton value="Save" 
+                    styleClass="slds-button slds-button_brand" 
+                    id="profileDetailBtn" 
+                    onclick="saveSettingAction('profileDetailBtn');return false;"/>
+                  <apex:commandButton value="Cancel" 
+                    styleClass="slds-button slds-button_neutral" 
+                    id="profileCancelWizardBtn" 
+                    onclick="deleteCustomSettingFn('{!indexVar}','profileCancelWizardBtn');return false;" 
+                    rendered="{!wizardProfile}"/>
+                  <apex:commandButton value="Cancel" 
+                    styleClass="slds-button slds-button_neutral" 
+                    id="profileCancelSaveBtn" 
+                    onclick="navigateToProfileTab(); return false;" 
+                    rendered="{!(!wizardProfile)}"/>
+                </div>
+              </apex:outputPanel>
+              <!-- Profile Detail Content Start -->
+            </apex:panelGroup>
+          </div>
+          <!-- Second Tab Content End-->
+          
+          <!-- Third Tab Content Start-->
+          <div id="userContent" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-3__item">
+            
+            <!-- Below action function is to navigate to edit user mode and It accepts userId parameter.-->
+            <apex:actionFunction action="{!navigateToUserDetail}" name="navigateToUserDetail" reRender="userPanel,errorPanel">
+                <apex:param assignTo="{!userId}" value="" name="userId"/>
+            </apex:actionFunction>
+            
+            <!-- Action function to navigate back to the user tab. -->
+            <apex:actionFunction action="{!backToUserTab}" name="navigateToUserTab" reRender="userPanel,errorPanel"/>
+            
+            <!-- Action function for add new user view. -->
+            <apex:actionFunction action="{!goToAddUser}" name="goToAddUser" reRender="userPanel,errorPanel"/>
+            
+            <!-- Action function to save the new user.-->
+            <apex:actionFunction action="{!addNewUser}" name="addNewUser" reRender="userPanel,errorPanel"/>
+
+            <apex:panelGroup id="userPanel">
+              <!-- User Tab Content Start-->
+              <apex:outputPanel rendered="{!IF(showUserEdit == false && showAddUser == false && userSelectOptions.size > 0,true,false)}">
+                <button class="slds-button slds-button_brand" style="margin-bottom : 10px;margin-right: 10px;" id="addUserBtn" onclick="goToAddUser(); return false;">
+                  Add User
+                </button>
+              </apex:outputPanel>
+              <apex:outputPanel rendered="{!IF(showUserEdit == false && showAddUser == false && lstOfTabOverrideUser.size > 0,true,false)}">
+                <table class="slds-table slds-table_bordered slds-max-medium-table_stacked">
+                  <thead>
+                    <tr class="slds-text-heading_small">
+                      <th class="slds-is-sortable" scope="col">
+                        <div class="slds-truncate">
+                          Action
+                        </div>
+                      </th>
+                      <th class="slds-is-sortable" scope="col">
+                        <div class="slds-truncate">
+                          User Name
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <apex:variable value="{!0}" var="indexVar"/>
+                    <apex:repeat value="{!lstOfTabOverrideUser}" var="userSetting">
+                      <apex:variable value="{!indexVar + 1}" var="indexVar"/>
+                      <tr class="slds-hint-parent">
+                        <th class="slds-truncate" scope="row" data-label="" style="padding: 3px;">
+                          <button class="slds-button slds-button_small" style="line-height: 0;" id="userEditBtn" onclick="navigateToUserDetail('{!userSetting.SetupOwnerId}'); return false;">
+                              Edit
+                          </button> | 
+                          <button class="slds-button slds-button_small" onclick="deleteCustomSettingFn('{!indexVar}',this.id); return false;" style="line-height: 0;" id="userDelBtn">
+                              Del
+                          </button>
+                        </th>
+                        <td class="slds-truncate">
+                          {!userNameMap[userSetting.SetupOwnerId]}
+                        </td>
+                      </tr>
+                    </apex:repeat>
+                  </tbody>
+                </table>
+                <apex:outputPanel rendered="{!userSuccessMessage!=null}"><div id="saveMessageUser" style="font-size: 17px;color: green;display: none;margin-top:10px;">{!userSuccessMessage}</div>
+                  <script>$("#saveMessageUser").show().delay(2000).fadeOut();</script>
+                </apex:outputPanel>
+              </apex:outputPanel>
+              <apex:outputText rendered="{!IF(showUserEdit == false && showAddUser == false && lstOfTabOverrideUser.size <= 0,true,false)}">
+                No ListViews are set up for the user.
+              </apex:outputText>
+              
+              <!-- User Tab Content End -->
+              <!-- Add User Content Start -->
+              
+              <apex:outputPanel layout="block" rendered="{!IF(showUserEdit == false && showAddUser == true && userSelectOptions.size > 0,true,false)}">
+                <div class="slds-grid slds-wrap">
+                  <div style="margin-right: 20px;margin-bottom: 20px;"> 
+                    Select a User
+                  </div>
+                  <div>
+                    <apex:selectList size="1" multiselect="false" value="{!userId}">
+                      <apex:selectOptions value="{!userSelectOptions}" />
+                    </apex:selectList>
+                  </div>
+                </div>
+                <button class="slds-button slds-button_brand" style="margin-top: 7px;" id="addNewUserBtn" onclick="addNewUser(); return false;">
+                    Next
+                </button>
+                <button class="slds-button slds-button_neutral" style="margin-top: 7px;" id="cancelNewUserBtn" onclick="navigateToUserTab(); return false;">
+                    Cancel
+                </button>
+              </apex:outputPanel>
+              
+              <!-- Add User Content End -->
+              <!-- User Detail Content Start -->
+              
+              <apex:outputPanel rendered="{!IF(showUserEdit == true && showAddUser == false,true,false)}">
+                <span class="slds-page-header__title">{!userName}</span>
+                <div class="slds-grid slds-wrap">
+                  <div class="slds-col">
+                    <table class="slds-table slds-table_bordered slds-max-medium-table_stacked">
+                      <thead>
+                        <tr class="slds-text-heading_small">
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Object
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Default List Views (Org)
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Object
+                            </div>
+                          </th>
+                          <th class="slds-is-sortable" scope="col">
+                            <div class="slds-truncate">
+                              Default List Views (User)
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <apex:repeat value="{!lstOfSObject}" var="objName">
+                          <tr class="slds-hint-parent">
+                            <td class="slds-truncate" scope="row" data-label="{!objName}">
+                              {!objName}
+                            </td>
+                            <td class="slds-truncate">
+                              {!settingDefaultValueMap[objName].listViewName}
+                            </td>
+                            <td class="slds-truncate" scope="row" data-label="{!objName}">
+                              {!objName}
+                            </td>
+                            <td class="slds-truncate">
+                              <apex:selectList multiselect="false" size="1" value="{!settingUserValueMap[objName].listViewId}" style="margin: -1px;">
+                                <apex:selectOptions value="{!mapOfSelectOption[objName]}"/>
+                              </apex:selectList>
+                            </td>
+                          </tr>
+                        </apex:repeat>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div style="margin-top: 14px;">
+                  <apex:commandButton value="Save" 
+                    styleClass="slds-button slds-button_brand" 
+                    id="userDetailBtn" 
+                    onclick="saveSettingAction('userDetailBtn');return false;"/>
+                  <apex:commandButton value="Cancel" 
+                    styleClass="slds-button slds-button_neutral" 
+                    id="userCancelWizardBtn" 
+                    onclick="deleteCustomSettingFn('{!indexVar}','userCancelWizardBtn');return false;" 
+                    rendered="{!wizardUser}"/>
+                  <apex:commandButton value="Cancel" 
+                    styleClass="slds-button slds-button_neutral" 
+                    id="userCancelSaveBtn" 
+                    onclick="navigateToUserTab(); return false;" 
+                    rendered="{!(!wizardUser)}"/>
+                </div>
+              </apex:outputPanel>
+              <!-- User Detail Content End -->
+                
+              </apex:panelGroup>
+          </div>
+          <!-- Third Tab Content End-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Preferences Section !-->
+    <div class="slds-section slds-is-open" id="firstSection" style="margin-top: 20px;">
+      <h3 class="slds-section__title">
+        <button class="slds-button slds-section__title-action" id="firstSectionBtn" aria-expanded="true" aria-controls="firstSectionContent">
+          <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="false">
+            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#switch')}" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </svg>
+          <span class="slds-truncate" title="Section Title">Other Preferences</span>
+        </button>
+      </h3>
+
+      <div aria-hidden="false" class="slds-section__content" id="firstSectionContent">
+        <div class="slds-form-element" style="margin-left:20px;">
+          <div class="slds-form-element__control">
+            <span class="slds-checkbox">
+              <input id="disablePS" type="checkbox"/>
+              <label class="slds-checkbox__label" for="disablePS">
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-form-element__label">Disable Permission Set Assignments</span>
+              </label>
+            </span>
+          </div>
+          <div style="margin-top: 14px;" class="slds-clearfix">
+            <button class="slds-button slds-button_brand slds-float_left" style=" margin-right: 20px!important; margin-left: -3px!important;" id="savePermissionSetBtn" onclick="setOtherPreferences(); return false;">
+              Save
+            </button>
+            <apex:outputPanel id="disablePermissionPanel">
+              <apex:outputPanel rendered="{!disablePermissionSetMsg!=null}">
+                <div id="disablePermissionMsg" style="font-size: 17px;color: green;display: none;">
+                  {!disablePermissionSetMsg}
+                </div>
+                <script>$("#disablePermissionMsg").show().delay(2000).fadeOut();</script>
+              </apex:outputPanel>
+            </apex:outputPanel>
+            <apex:actionFunction action="{!setCheckBoxValue}" name="setCheckBoxValue" reRender="disablePermissionPanel">
+              <apex:param assignTo="{!disablePermissionSet}" name="disablePermissionSet" value=""/>
+            </apex:actionFunction>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $('a').click(function(){
+        var tabindex = $(this).prop("tabindex");
+        if (tabindex == 0) {
+          $('#profile').removeClass('slds-active');
+          $('#user').removeClass('slds-active');
+          $("#profileContent").removeClass("slds-show").addClass("slds-hide");
+          $("#userContent").removeClass("slds-show").addClass("slds-hide");
+          $('#orgDefault').addClass('slds-active');
+          $('#orgDefaultContent').removeClass("slds-hide").addClass("slds-show");
+          $('#tab-scoped-1__item').attr('aria-selected',true);
+          $('#tab-scoped-2__item').attr('aria-selected',false);
+          $('#tab-scoped-3__item').attr('aria-selected',false);
+        } else if (tabindex == 1) {
+          $('#orgDefault').removeClass('slds-active');
+          $('#user').removeClass('slds-active');
+          $("#orgDefaultContent").removeClass("slds-show").addClass("slds-hide");
+          $("#userContent").removeClass("slds-show").addClass("slds-hide");
+          $('#profile').addClass('slds-active');
+          $('#profileContent').removeClass("slds-hide").addClass("slds-show");
+          $('#tab-scoped-1__item').attr('aria-selected',false);
+          $('#tab-scoped-2__item').attr('aria-selected',true);
+          $('#tab-scoped-3__item').attr('aria-selected',false);
+          navigateToProfileTab();
+        } else {
+          $('#profile').removeClass('slds-active');
+          $('#orgDefault').removeClass('slds-active');
+          $("#profileContent").removeClass("slds-show").addClass("slds-hide");
+          $("#orgDefaultContent").removeClass("slds-show").addClass("slds-hide");
+          $('#user').addClass('slds-active');
+          $('#userContent').removeClass("slds-hide").addClass("slds-show");
+          $('#tab-scoped-1__item').attr('aria-selected',false);
+          $('#tab-scoped-2__item').attr('aria-selected',false);
+          $('#tab-scoped-3__item').attr('aria-selected',true);
+          navigateToUserTab();
+        }
+      });
+
+      $('#firstSectionBtn').click(function(){
+        if ($("#firstSectionBtn").attr("aria-expanded") != undefined && 
+            $("#firstSectionBtn").attr("aria-expanded") != '' && 
+            $("#firstSectionBtn").attr("aria-expanded") == "true" && 
+            $("#firstSectionContent").attr("aria-hidden") != undefined && 
+            $("#firstSectionContent").attr("aria-hidden") != '' && 
+            $("#firstSectionContent").attr("aria-hidden") == "false")
+        {
+          $('#firstSection').removeClass('slds-is-open');
+          $("#firstSectionBtn").attr("aria-expanded",false);
+          $("#firstSectionContent").attr("aria-hidden",true);
+        } else {
+          $('#firstSection').addClass('slds-is-open');
+          $("#firstSectionBtn").attr("aria-expanded",true);
+          $("#firstSectionContent").attr("aria-hidden",false);
+        }
+        return false;
+      });
+
+      $('#topSectionBtn').click(function(){
+        if ($("#topSectionBtn").attr("aria-expanded") != undefined && 
+            $("#topSectionBtn").attr("aria-expanded") != '' && 
+            $("#topSectionBtn").attr("aria-expanded") == "true" && 
+            $("#topSectionContent").attr("aria-hidden") != undefined && 
+            $("#topSectionContent").attr("aria-hidden") != '' && 
+            $("#topSectionContent").attr("aria-hidden") == "false")
+        {
+          $('#topSection').removeClass('slds-is-open');
+          $("#topSectionBtn").attr("aria-expanded",false);
+          $("#topSectionContent").attr("aria-hidden",true);
+        } else {
+          $('#topSection').addClass('slds-is-open');
+          $("#topSectionBtn").attr("aria-expanded",true);
+          $("#topSectionContent").attr("aria-hidden",false);
+        }
+        return false;
+      });
+
+      $(document).ready(function(){
+        if ('{!disablePermissionSet}' == "true") {
+          $('#disablePS').attr("checked",true);
+        }
+      });
+
+      function setOtherPreferences() {
+        setCheckBoxValue($('#disablePS').is(":checked"));
+      }
+    </script>
+  </apex:form>
+
+  
+</apex:page>

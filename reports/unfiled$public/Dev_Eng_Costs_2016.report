@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeedERP__Purchase_Order_Line__c.AcctSeedERP__Project__c</field>
+    </columns>
+    <columns>
+        <field>FK_CREATED</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order_Line__c.Additional_Notes__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.AcctSeedERP__Vendor__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.PO_Total__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeedERP__Purchase_Order__c.Change_Order_Total__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_CREATED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Jean Shih,Lesley Raphael,Jason Bierly,Jaymie Stanton,Jenifer Kraus,Elizabeth Driscoll,Amy Eitleman,Erin Grenier,Jason Rossi,Alysia Worthen,charles barbanti,john coles,matt martunas,scott sargent</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeedERP__Purchase_Order_Line__c.AcctSeedERP__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>466 Stafford St-Leicester-Site ABC,466 Stafford St- Leicester-Site B,466 Stafford St- Leicester-Site C,North Adams - W Shaft Rd,127 Stow Street - Acton,247&amp;249 Bullock Road - Freetown,249 Bullock Road - OLD,1077 Center St - Ludlow,1718 Route 1 - Minisink SOUTH,1229 State Road - Plymouth,Log City Road 1,Log City Road 2,Elmwood Avenue - West,Elmwood Avenue - East,218 Buckley - Whitehall - B - West,Greenmount Cemetery Lane - Whitehall,NY,218 Buckley - Whitehall - A - East,373A Old Stage Road,Knox,Route 19 - Livingston - Red Wing,134 Brook Street - Plympton,Pierson Hill Road - Mt Hope - West 2,1448 NY Rt 211 - Mt. Hope - 3 of 4,1448 Route 211 - Mt Hope - Old 2 of 4,Pierson Hill Road - Mt Hope - East 1,5813A Minaville Road,Florida NY,5813B Minaville Road,5813E Minaville System E,414 Main Street - Barnstable,77 Scotch Settlement Rd - Gouverneur_2,Crans Mill Project 1 - 2.8 MW,68 Woodland Avenue - Seekonk</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>12/31/2015 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Dev Eng Costs - 2016</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeedERP__Purchase_Order__c$AcctSeedERP__Purchase_Order_Line__c@AcctSeedERP__Purchase_Order_Line__c.Construction_Req__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2016-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-01-01</startDate>
+    </timeFrameFilter>
+</Report>

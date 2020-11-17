@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$RecordType</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$Subject__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$Request_Response_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Issue_Tracker__r$To_Borrego_Approver__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Coast Citrus Distributors - Union City</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Coast Citrus Union City - Issue Tracker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Issue_Trackers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

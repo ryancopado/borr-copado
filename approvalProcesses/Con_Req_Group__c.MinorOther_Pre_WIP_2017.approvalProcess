@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+        <field>Project__c</field>
+        <field>Project_PM__c</field>
+        <field>Vendor__c</field>
+        <field>Requisition_Total_Roll_Up__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>areed@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.TotalRequisitionCoststoDate__c&lt;=125000
+&amp;&amp;
+Project__r.ofSites__c=1)
+||
+(Project__r.TotalRequisitionCoststoDate__c&lt;=180000
+&amp;&amp;
+Project__r.ofSites__c&gt;1)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>EVP Sales Approval</label>
+        <name>EVP_Sales_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.TotalRequisitionCoststoDate__c&gt;125000 
+&amp;&amp; 
+Project__r.TotalRequisitionCoststoDate__c&lt;=400000 
+&amp;&amp; 
+Project__r.ofSites__c=1) 
+|| 
+(Project__r.TotalRequisitionCoststoDate__c&gt;180000 
+&amp;&amp; 
+Project__r.TotalRequisitionCoststoDate__c&lt;=400000 
+&amp;&amp; 
+Project__r.ofSites__c&gt;1)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Contracts Committee Approval</label>
+        <name>Contracts_Committee_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>Project__r.TotalRequisitionCoststoDate__c&gt;=400000</formula>
+        </entryCriteria>
+        <label>Board Approval- Over $400K Pre-WIP</label>
+        <name>Board_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Minor-Other Pre-WIP</description>
+    <emailTemplate>unfiled$public/Con_Req_Group_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( IsAttachment__c = TRUE, 
+ RecordTypeId = &quot;01234000000BnNr&quot;,
+Vendor__r.AcctSeed__Accounting_Active__c =TRUE, 
+ISPICKVAL(Project__r.WIP_Status__c , &quot;Pre-WIP&quot;), 
+NOT(CONTAINS( Cost_Code_Number__c ,&quot;02-1540&quot;)), NOT(CONTAINS( Cost_Code_Number__c,&quot;02-1535&quot;)), OR(CONTAINS(Category__c, &quot;F&quot;),CONTAINS(Category__c, &quot;E&quot;),CONTAINS(Category__c, &quot;O&quot;), CONTAINS(Category__c, &quot;M&quot;)))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Con_Req_Group_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>CRG_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Date_of_Final_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Con_Req_Group_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Rejected_Con_Req_Group</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Con_Req_Group_Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Minor/Other- Pre-WIP 2017</label>
+    <processOrder>5</processOrder>
+    <recallActions>
+        <action>
+            <name>Con_Req_Group_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

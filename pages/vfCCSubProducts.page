@@ -1,0 +1,43 @@
+<apex:page standardController="Contract_Committee_Submittal__c" extensions="clsCCSubProducts">
+	
+	<!-- 
+	<script type="text/javascript">
+		function verifyproductsconfirm() {
+			var r = confirm('Click "OK" if the Project Products are accurate.');
+			vP(r);
+		}
+	</script>
+	-->
+	
+    <apex:form id="theForm">
+    	<!-- 
+    	<apex:actionfunction name="vP" action="{!verifyProducts}" reRender="theForm">
+			<apex:param assignTo="{!accurateProducts}" value="" name="accurateProducts"/>
+		</apex:actionfunction>
+		-->
+    	
+    	<apex:pageMessages />
+        <apex:pageBlock >
+			<!-- 
+			<apex:pageBlockButtons location="top">
+				<apex:commandButton value="Verify Products" onclick="verifyproductsconfirm();return false;"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection >
+				<apex:outputField value="{!ccSub.Are_the_Products_accurate__c}"/>
+			</apex:pageBlockSection>
+			-->
+            <apex:pageBlockTable value="{!Products}" var="Product" >
+                <apex:column >
+					<apex:facet name="header">Product</apex:facet>
+					<apex:outputLink value="/{!Product.Id}" target="_blank">{!Product.Product__r.Name}</apex:outputLink>
+				</apex:column>
+                <apex:column value="{!Product.Quantity__c}" headerValue="Quantity"/>
+				<apex:column >
+					<apex:facet name="header">Site</apex:facet>
+					<apex:outputLink value="/{!Product.Site__c}" target="_blank">{!Product.Site__r.Name}</apex:outputLink>
+				</apex:column>
+                <apex:column value="{!Product.Product__r.Family}" headerValue="Type"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Performance_Data__c.Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Performance_Data__c.Measured_Production__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Performance_Data__c.Estimated_Production__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Performance_Data__c.Actual_Estimate__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Performance_Data__c.Actual_Expected__c</field>
+    </columns>
+    <columns>
+        <field>Performance_Data__c.GHI_Percent__c</field>
+    </columns>
+    <columns>
+        <field>Performance_Data__c.Performance_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Performance_Data__c.Perf_Model_Notes__c</field>
+    </columns>
+    <description>Last Month&apos;s Performance sorted by Borrego Branch Office</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Site__c.Project_Branch__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Production Tracker by Branch GB</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Performance_Data__c@Performance_Data__c.Site__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Performance_Data__c.Start_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

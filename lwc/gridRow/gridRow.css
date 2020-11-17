@@ -1,0 +1,46 @@
+:host {
+  --offset1: 15px;
+  --offset2: 30px;
+  --offset3: 45px;
+  --offset4: 60px;
+  --offset5: 75px;
+  --offset6: 90px;
+}
+.row {
+  padding: 0.3em;
+  border: 0.1em solid transparent;
+  border-radius: 0.7em 0.7em;
+}
+
+.row:hover {
+  background-color: whitesmoke;
+  border-color: rgb(99, 93, 93);
+}
+.row.overdue {
+  background-color: rgba(165, 19, 19, 0.17);
+}
+
+.row > div {
+  margin-top: 0.5em;
+}
+.row > div.nameCol {
+  margin-top: 0em;
+}
+.offset1 {
+  padding-left: var(--offset1);
+}
+.offset2 {
+  padding-left: var(--offset2);
+}
+.offset3 {
+  padding-left: var(--offset3);
+}
+.offset4 {
+  padding-left: var(--offset4);
+}
+.offset5 {
+  padding-left: var(--offset5);
+}
+.offset6 {
+  padding-left: var(--offset6);
+}

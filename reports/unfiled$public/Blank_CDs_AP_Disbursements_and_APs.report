@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c.AcctSeed__Account_Payable_Cash_Disbursements__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c.AcctSeed__Account_Payable_Cash_Disbursements__r$AcctSeed__Account_Payable__c.AP_Line__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c.AcctSeed__Account_Payable_Cash_Disbursements__r$AcctSeed__Account_Payable__c.Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c.AcctSeed__Account_Payable_Cash_Disbursements__r$AcctSeed__Account_Payable__c.Project__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Cash_Disbursement__c.AcctSeed__Account_Payable_Cash_Disbursements__r$AcctSeed__Account_Payable__c.AcctSeed__Vendor__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Blank CDs, AP Disbursements and APs</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CDs_AP_Disbursements_with_APs_and_AP_Lines2__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Cash_Disbursement__c$AcctSeed__Cleared_Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

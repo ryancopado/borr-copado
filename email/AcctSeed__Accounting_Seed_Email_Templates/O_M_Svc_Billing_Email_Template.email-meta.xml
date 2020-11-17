@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Billing email template for O&amp;M Service Billings</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>O&amp;M Svc Billing Email Template</name>
+    <style>none</style>
+    <subject>Billing #{!AcctSeed__Billing__c.Name} Is Due ({!AcctSeed__Billing__c.AcctSeed__Due_Date2__c})</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

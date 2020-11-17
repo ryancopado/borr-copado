@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interconnection Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interconnection Applications</value>
+    </caseValues>
+    <fields>
+        <help><!-- The name of the related project. --></help>
+        <label><!-- Project --></label>
+        <name>ASProject__c</name>
+        <relationshipLabel><!-- Interconnection Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Acknowledge Receipt of App- Notes --></label>
+        <name>Acknowledge_Receipt_of_App_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays person assigned to any open tasks, if blank no tasks are currently open --></help>
+        <label><!-- Action Assignee --></label>
+        <name>Action_Assignee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field as a toggle to have it show on a Interconnection Application report. --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any additional days required to harmonize Borrego calculated dates with utility-provided expected dates --></help>
+        <label><!-- Additional Days --></label>
+        <name>Additional_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Information from Utility --></label>
+        <name>Additional_Information_from_Utility__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aggregate AC Nameplate --></label>
+        <name>Aggregate_AC_Nameplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto-populated via WF the date application moves to the next phase, Ready SIS?CESIR, used to calculate # of days in this phase --></help>
+        <label><!-- Initial Review End --></label>
+        <name>App_Accepted_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps via WF the date Applicatoin accepted by Utility is updated --></help>
+        <label><!-- App Accepted Start --></label>
+        <name>App_Accepted_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Initial Review Total Days --></label>
+        <name>App_Accepted_Total_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates with a date when the application leaves the App Submitted phase and enters a different one --></help>
+        <label><!-- App Submitted End --></label>
+        <name>App_Submitted_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application submitted field was populated iwth a value --></help>
+        <label><!-- App Submitted Start --></label>
+        <name>App_Submitted_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates $ of business days between app start and end or uses today if end has not been updated. --></help>
+        <label><!-- App Submitted Total Days --></label>
+        <name>App_Submitted_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application AC Size --></label>
+        <name>Application_AC_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+APP ACKNOWLEDGEMENT_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Application Acknowledgement Link --></label>
+        <name>Application_Acknowledgement_LInk__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com
+APP REVIEW COMPLETENESS_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Application Review for Completeness Link --></label>
+        <name>Application_Review_for_Completeness_LInk__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Application Submitted Notes --></label>
+        <name>Application_Submitted_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+        <picklistValues>
+            <masterLabel>CA Fast Track</masterLabel>
+            <translation><!-- CA Fast Track --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Level 2</masterLabel>
+            <translation><!-- IL Level 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL Level 4</masterLabel>
+            <translation><!-- IL Level 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL SGIP</masterLabel>
+            <translation><!-- IL SGIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA Complex</masterLabel>
+            <translation><!-- MA Complex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA Expedited</masterLabel>
+            <translation><!-- MA Expedited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA Standard</masterLabel>
+            <translation><!-- MA Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY Expedited</masterLabel>
+            <translation><!-- NY Expedited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY Standard</masterLabel>
+            <translation><!-- NY Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+APP ID #_APPROVED WITNESS TEST RESULTS_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Approved Witness Test Result Link --></label>
+        <name>Approved_Witness_Test_Result_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- provide data sheets for proposed Modules, Interter and AC Equipment (e.g.  switchgear, transformer, recloser, etc) --></help>
+        <label><!-- Are Product Data Sheets Attached? --></label>
+        <name>Are_Product_Data_Sheets_Attached__c</name>
+        <picklistValues>
+            <masterLabel>Not at this time</masterLabel>
+            <translation><!-- Not at this time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not necessary</masterLabel>
+            <translation><!-- Not necessary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- this is pulled over from the apps engineering selected on the related opportunity. --></help>
+        <label><!-- Assigned Apps Engineer Email --></label>
+        <name>Assigned_Apps_Engineer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Apps Engineer --></label>
+        <name>Assigned_Apps_Engineer__c</name>
+        <relationshipLabel><!-- Interconnection Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot; --></help>
+        <label><!-- Borrego Days- Acknowledge Receipt --></label>
+        <name>Borrego_Days_Acknowledge_Receipt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Application Submitted --></label>
+        <name>Borrego_Days_Application_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- COC --></label>
+        <name>Borrego_Days_COC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Complete Rev of All Screen --></label>
+        <name>Borrego_Days_Complete_Rev_of_All_Screen__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Detailed Study --></label>
+        <name>Borrego_Days_Detailed_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Exhibit D --></label>
+        <name>Borrego_Days_Exhibit_D__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Exhibit E --></label>
+        <name>Borrego_Days_Exhibit_E__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Follow On Studies --></label>
+        <name>Borrego_Days_Follow_On_Studies__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Impact Study --></label>
+        <name>Borrego_Days_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- PTO --></label>
+        <name>Borrego_Days_PTO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Pre-Test --></label>
+        <name>Borrego_Days_Pre_Test__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Rec Fully Ex Agmt --></label>
+        <name>Borrego_Days_Rec_Fully_Ex_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Rev App for Completeness --></label>
+        <name>Borrego_Days_Rev_App_for_Completeness__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Schedule Z --></label>
+        <name>Borrego_Days_Schedule_Z__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Send Back Impact Study --></label>
+        <name>Borrego_Days_Send_Back_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Std Process Intl Review --></label>
+        <name>Borrego_Days_Std_Process_Intl_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Supp Review --></label>
+        <name>Borrego_Days_Supp_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Utility Sys Des Approval --></label>
+        <name>Borrego_Days_Utility_Sys_Des_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business days for which the utility is exempt from timelines (i.e. force majeure). If no exemption, enter &quot;0&quot;. --></help>
+        <label><!-- Borrego Days- Witness Test --></label>
+        <name>Borrego_Days_Witness_Test__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings over branch from related project --></help>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- CoC Submitted to Utility Notes --></label>
+        <name>CoC_Submitted_to_Utility_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Utility meter communication type, wireless cellular or landline --></help>
+        <label><!-- Communication Type --></label>
+        <name>Communication_Type__c</name>
+        <picklistValues>
+            <masterLabel>POTS</masterLabel>
+            <translation><!-- POTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless</masterLabel>
+            <translation><!-- Wireless --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Complete Review of All Screens- Notes --></label>
+        <name>Complete_Review_of_All_Screens_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Complete Std Process Initial Review Note --></label>
+        <name>Complete_Std_Process_Initial_Review_Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Completed Detailed Study Notes --></label>
+        <name>Completed_Detailed_Study_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed ISO Form Notes --></label>
+        <name>Completed_ISO_Form_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Completed Impact Study (if needed) Notes --></label>
+        <name>Completed_Impact_Study_if_needed_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+APP ID #_CONDITIONAL APPROVAL TO CONSTRUCT_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Conditional Agmt to Construct Link --></label>
+        <name>Conditional_Agmt_to_Construct_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Construction Timeline Notes --></label>
+        <name>Construction_Timeline_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Estimate Notes --></label>
+        <name>Cost_Estimate_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Estimate --></label>
+        <name>Cost_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows a cumulative # of days the application has been on hold, will include current days but also days from a previous hold if there were any --></help>
+        <label><!-- Cumulative Days on Hold --></label>
+        <name>Cumulative_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- if the application is currently on hold (indicated by a check in the hold box above) this field calculates the # of days between today and start date of most recent hold.  If there is no current hold this field value should be 0. --></help>
+        <label><!-- Current Days on Hold --></label>
+        <name>Current_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Intx Cost Estimate --></label>
+        <name>Current_Intx_Cost_Estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Intx Timeline Estimate --></label>
+        <name>Current_Intx_Timeline_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps upon completion --></help>
+        <label><!-- Date AE Completed --></label>
+        <name>Date_AE_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Acknowledge Receipt of Application --></label>
+        <name>Date_Acknowledge_Receipt_of_Application__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Borrego submits intx application and payment --></help>
+        <label><!-- Date Application Submitted to Utility --></label>
+        <name>Date_Application_Submitted_to_Utility__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date approver approved request --></help>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date on which the COC was submitted to the utility. --></help>
+        <label><!-- Date CoC Submitted to Utility --></label>
+        <name>Date_CoC_Submitted_to_Utility__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Complete Review of All Screens --></label>
+        <name>Date_Complete_Review_of_All_Screens__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Complete Std Process Initial Review --></label>
+        <name>Date_Complete_Std_Process_Initial_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Completed Detailed Study (if needed --></label>
+        <name>Date_Completed_Detailed_Study_if_needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Completed ISO Form Submitted --></label>
+        <name>Date_Completed_ISO_Form_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Completed Impact Study (if needed) --></label>
+        <name>Date_Completed_Impact_Study_if_needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Detailed Study Complete - Notes --></label>
+        <name>Date_Detailed_Study_Complete_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the utility notification was received. --></help>
+        <label><!-- Date Detailed Study Completed --></label>
+        <name>Date_Detailed_Study_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date on which the detailed study was submitted. --></help>
+        <label><!-- Date Detailed Study Submitted --></label>
+        <name>Date_Detailed_Study_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Exhibit D Should Be Returned --></label>
+        <name>Date_Exhibit_D_Should_Be_Returned__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Borrego submits SIS/CESIR payment and all document. Start date for SIS/CESIR --></help>
+        <label><!-- Study Underway --></label>
+        <name>Date_Exhibit_D_Submitted_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Exhibit E Should Be Returned --></label>
+        <name>Date_Exhibit_E_Should_Be_Returned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Exhibit E Submitted --></label>
+        <name>Date_Exhibit_E_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Exhibit F Submitted (IntConn Agmt) --></label>
+        <name>Date_Exhibit_F_Submitted_IntConn_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date utility provides SIS/CESIR Results. Start date for ISA Decision Point. --></help>
+        <label><!-- Ready for Agreement --></label>
+        <name>Date_Exhibit_G_Submitted_3rd_Pty_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- updated via workflow formula --></help>
+        <label><!-- Date Expected ISA --></label>
+        <name>Date_Expected_ISA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date on which the Utility Insurance Certificate was submitted. --></help>
+        <label><!-- Date Insurance Cert Submitted --></label>
+        <name>Date_Insurance_Cert_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Notice/Witness Test --></label>
+        <name>Date_Notice_Witness_Test__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto-date stamps via approval process --></help>
+        <label><!-- Date PE Approved --></label>
+        <name>Date_PE_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date that the Pre App was received. --></help>
+        <label><!-- Date Pre App Received --></label>
+        <name>Date_Pre_App_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date on which the Pre App was submitted. --></help>
+        <label><!-- Date Pre App Report Submitted --></label>
+        <name>Date_Pre_App_Report_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Pretest Prior to Witness Test --></label>
+        <name>Date_Pretest_Prior_to_Witness_Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Rec&apos;d Fully Executed Agreement PM --></label>
+        <name>Date_Rec_d_Fully_Executed_Agreement_PM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Received Impact Study --></label>
+        <name>Date_Received_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applications Engineer should record the date the Intx App was started. Used to track lead time. --></help>
+        <label><!-- Date Request Started --></label>
+        <name>Date_Request_Started__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps upon submission for approval --></help>
+        <label><!-- Date Request Submitted --></label>
+        <name>Date_Request_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date utility confirms that the application is received, is complete, and is under review. --></help>
+        <label><!-- Application Complete --></label>
+        <name>Date_Review_App_for_Completeness__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Schedule Z Submitted (Net Metering) --></label>
+        <name>Date_Schedule_Z_Submitted_Net_Metering__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date utility provides Screening Memo/Prelim Review. Start date for SIS/CESIR Decision Point --></help>
+        <label><!-- Ready Study --></label>
+        <name>Date_Send_Follow_on_Studies_Cost_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Date Supplemental Review Complete- Notes --></label>
+        <name>Date_Supplemental_Review_Complete_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Supplemental Review Complete --></label>
+        <name>Date_Supplemental_Review_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Supplemental Review Starts --></label>
+        <name>Date_Supplemental_Review_Starts__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps date Withdrawn box is checked off --></help>
+        <label><!-- Date Withdrawn --></label>
+        <name>Date_Withdrawn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining --></label>
+        <name>Days_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff-Comp Rev of Scn --></label>
+        <name>Days_Remaining_in_Tariff_Comp_Rev_of_Scn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff- Cpt Detail Std --></label>
+        <name>Days_Remaining_in_Tariff_Cpt_Detail_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff- Cpt Impt Stdy --></label>
+        <name>Days_Remaining_in_Tariff_Cpt_Impt_Stdy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff- Follow on Std --></label>
+        <name>Days_Remaining_in_Tariff_Follow_on_Std__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff- Std Prs Int Rv --></label>
+        <name>Days_Remaining_in_Tariff_Std_Prs_Int_Rv__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff- Supp Rev --></label>
+        <name>Days_Remaining_in_Tariff_Supp_Rev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tariff --></label>
+        <name>Days_Remaining_in_Tariff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Remaining in Tarriff- Rev App for C --></label>
+        <name>Days_Remaining_in_Tarriff_Rev_App_for_C__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days in Current Status --></label>
+        <name>Days_in_Current_Status_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of days that have passed since the status has been updated. --></help>
+        <label><!-- Days in Current Status --></label>
+        <name>Days_in_Current_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Study Estimated Completion Date --></label>
+        <name>Detail_Study_Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Detail Study Estimated Completion Notes --></label>
+        <name>Detail_Study_Estimated_Completion_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Detailed Study Submitted Notes --></label>
+        <name>Detailed_Study_Submitted_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application left this phase --></help>
+        <label><!-- Detailed Study Underway End --></label>
+        <name>Detailed_Study_Underway_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application entered this phase --></help>
+        <label><!-- Detailed Study Underway Start --></label>
+        <name>Detailed_Study_Underway_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Detailed Study Underway Total Days --></label>
+        <name>Detailed_Study_Underway_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detailed Study --></label>
+        <name>Detailed_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Existing SLD shows equipment from the transformer to the building electrical infrastructure.  This document allows Engineering to determine most efficient intx design for OnSite and all jobs interconnecting behind the meter. --></help>
+        <label><!-- Do you have customer supplied diagrams? --></label>
+        <name>Do_you_have_customer_supplied_diagrams__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dtld Study Underway Note --></label>
+        <name>Dtld_Study_UnderwayEarly_ISA_Exectd_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dtld Study Underway --></label>
+        <name>Dtld_Study_Underway_Early_ISA_Executed__c</name>
+    </fields>
+    <fields>
+        <label><!-- DueDate --></label>
+        <name>DueDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- if a red flag appears it means that a milestone is due today or overdue, if blank nothing is due today
+
+IF( 
+TODAY() &gt;= DueDate__c , IMAGE(&quot;/servlet/servlet.FileDownload?file=0158000000162zS&quot;, &quot;*&quot;, 18, 18),&quot;&quot;) --></help>
+        <label><!-- Due Flag --></label>
+        <name>Due_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Early ISA Received --></label>
+        <name>Early_ISA_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Early ISA Requested --></label>
+        <name>Early_ISA_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Energy Storage AC Nameplate --></label>
+        <name>Energy_Storage_AC_Nameplate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Energy Storage --></label>
+        <name>Energy_Storage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Overall Completion date --></label>
+        <name>Estimated_Overall_Completion_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Acknowledge Receipt --></label>
+        <name>Excusable_Delays_Acknowledge_Receipt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays - Comp Rev Screens --></label>
+        <name>Excusable_Delays_Comp_Rev_Screens__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Detailed Study --></label>
+        <name>Excusable_Delays_Detailed_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Follow On Studies --></label>
+        <name>Excusable_Delays_Follow_On_Studies__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Impact Study --></label>
+        <name>Excusable_Delays_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Review Application --></label>
+        <name>Excusable_Delays_Review_Application__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays - Supp Review --></label>
+        <name>Excusable_Delays_Supp_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays - Witness Test --></label>
+        <name>Excusable_Delays_Witness_Test__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total business days attributable to Borrego delays (i.e. response to utility RFI). If no delays, enter &quot;0&quot; --></help>
+        <label><!-- Excusable Delays- Std Process Intl Rev --></label>
+        <name>Excusable_Delays__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with date application left this phase --></help>
+        <label><!-- Executed Agreement End --></label>
+        <name>Executed_Final_ISA_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto poulates with date this phase of the application was started --></help>
+        <label><!-- Executed Agreement Start --></label>
+        <name>Executed_Final_ISA_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days application was in this phase --></help>
+        <label><!-- Executed Agreement Total Days --></label>
+        <name>Executed_Final_ISA_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executed Notes --></label>
+        <name>Executed_ISA_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Borrego executes ISA. Triggers customer compliance timelines. --></help>
+        <label><!-- Executed Agreement --></label>
+        <name>Executed_ISA__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com:
+   APP ID #_IMPACT STUDY AGGREMENT EXHIBIT D_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Exhibit D- Impact Study Agmt Link --></label>
+        <name>Exhibit_D_Impact_Study_Agmt_LInk__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Exhibit D Submitted Notes --></label>
+        <name>Exhibit_D_Submitted_Notes_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Exhibit E Submitted Notes --></label>
+        <name>Exhibit_E_Submitted_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+APP ID #_INTX SERVICE AGREEMENT EXHIBIT F_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Exhibit G- Intx Service Agmt Link --></label>
+        <name>Exhibit_F_Intx_Service_Agmt_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exhibit F Submitted Notes (IntConn Agmt) --></label>
+        <name>Exhibit_F_Submitted_Notes_IntConn_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+  APP ID #_ THIRD PARTY AGREEMENT EXHIBIT G_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Exhibit H- 3rd Party Agmt Link --></label>
+        <name>Exhibit_G_3rd_Party_Agmt_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Exhibit G Submitted Notes --></label>
+        <name>Exhibit_G_Submitted_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Generator Nameplate --></label>
+        <name>Existing_Generator_Nameplate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Generator --></label>
+        <name>Existing_Generator__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Acknowledge Receipt --></label>
+        <name>Expected_Date_Acknowledge_Receipt__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Complete Review of Screens --></label>
+        <name>Expected_Date_Complete_Review_of_Screens__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Complete Std Prcs Intl Rev --></label>
+        <name>Expected_Date_Complete_Std_Prcs_Intl_Rev__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Complete Supp Review --></label>
+        <name>Expected_Date_Complete_Supp_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Detailed Study Complete SC --></label>
+        <name>Expected_Date_Detailed_Study_Complete_SC__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Detailed Study Completed --></label>
+        <name>Expected_Date_Detailed_Study_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Follow On Studies Cost/Agm --></label>
+        <name>Expected_Date_Follow_On_Studies_Cost_Agm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Date ISA- TEXT --></label>
+        <name>Expected_Date_ISA_TEXT__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates the ISA date by adding one day each day to the date until SIS/CESIR Underway (Date_Exhibit_D_Submitted_Impact_Study__c) is set with a date. --></help>
+        <label><!-- Expected Date ISA --></label>
+        <name>Expected_Date_ISA__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Impact Study Completion SC --></label>
+        <name>Expected_Date_Impact_Study_Completion_SC__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Impact Study Completion --></label>
+        <name>Expected_Date_Impact_Study_Completion__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Rec Fully Ex Agreement --></label>
+        <name>Expected_Date_Rec_Fully_Ex_Agreement__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that we expect to receive the notification from the utility. --></help>
+        <label><!-- Expected Date Review for Completeness --></label>
+        <name>Expected_Date_Review_for_Completeness__c</name>
+    </fields>
+    <fields>
+        <help><!-- Autocalculated based on dates in various phases of application process, used in conjunction with Expected ISA Date field which is visible to all.   Should be manually updated only when Override checkbox is being used. --></help>
+        <label><!-- Expected ISA DateX --></label>
+        <name>Expected_ISA_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Target PTO date based on ISA timeline and date of customer payment --></help>
+        <label><!-- Expected PTO --></label>
+        <name>Expected_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Agreement Received --></label>
+        <name>Final_ISA_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Agreement Requested --></label>
+        <name>Final_ISA_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Study --></label>
+        <name>Group_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- should display HOLD in red font to indicate hold box above has been checked off, should display NONE in green font if the box is unchecked. --></help>
+        <label><!-- Hold Status --></label>
+        <name>Hold_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to indicate that the interconnection application is on hold.  Should be unchecked as soon as hold is no longer in place. --></help>
+        <label><!-- Hold --></label>
+        <name>Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a percent value for your certainty in the estimates provided above. --></help>
+        <label><!-- IR Confidence Interval --></label>
+        <name>IR_Confidence_Interval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter &quot;Most Likely&quot; or &quot;Worst Case&quot; cost estimate based on the received Initial Review Report --></help>
+        <label><!-- IR Cost Estimate --></label>
+        <name>IR_Cost_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Records most recent date subsection was modified. --></help>
+        <label><!-- IR Date Modified --></label>
+        <name>IR_Date_Modified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter timeline estimate corresponding to cost estimate case entered above. --></help>
+        <label><!-- IR Estimated Timeline (months) --></label>
+        <name>IR_Estimated_Timeline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Copy and paste the box link to the evaluation spreadsheet where further estimate cases can be seen. --></help>
+        <label><!-- IR Link to Evaluation Spreadsheet --></label>
+        <name>IR_Link_to_Evaluation_Spreadsheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- IR Notes --></label>
+        <name>IR_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Timeline (in days) from ISA --></help>
+        <label><!-- Construction Timeline --></label>
+        <name>ISA_Construction_Timeline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary field to label New Application Types. Will eventually be combined with Application Type picklist. Please Note Next Milestone Date will not accurately reflect new location dates yet. --></help>
+        <label><!-- Illinois or Oregon? --></label>
+        <name>Illlinois__c</name>
+        <picklistValues>
+            <masterLabel>IL 2</masterLabel>
+            <translation><!-- IL 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL 4</masterLabel>
+            <translation><!-- IL 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL SGIP</masterLabel>
+            <translation><!-- IL SGIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Impact Study Completed Date --></label>
+        <name>Impact_Study_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Impact Study Costs Notes --></label>
+        <name>Impact_Study_Costs_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact Study Costs --></label>
+        <name>Impact_Study_Costs_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact Study Estimated Completion Date --></label>
+        <name>Impact_Study_Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Study Underway Notes --></label>
+        <name>Impact_Study_Estimated_Completion_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+ APP ID #_ IMPACT STUDY RESULTS_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Impact Study Link --></label>
+        <name>Impact_Study_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Impact Study Timeline Notes --></label>
+        <name>Impact_Study_Timeline_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact Study Timeline --></label>
+        <name>Impact_Study_Timeline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this option if this estimate is also you&apos;re &quot;Most Likely&quot; estimate. When box goes from unchecked to checked, it will push field values to the Best Estimate section. --></help>
+        <label><!-- IR Best Estimate? --></label>
+        <name>Initial_Review_Best_Estimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insurance Cert Submitted Notes --></label>
+        <name>Insurance_Cert_Submitted_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- link from box.com: 
+INTX APP_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Interconnection Application Link --></label>
+        <name>Interconnection_Application_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interconnection Notes --></label>
+        <name>Interconnection_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interconnection Program --></label>
+        <name>Interconnection_Program__c</name>
+        <picklistValues>
+            <masterLabel>NEM</masterLabel>
+            <translation><!-- NEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEM Aggregation</masterLabel>
+            <translation><!-- NEM Aggregation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEM Multiple Tariff</masterLabel>
+            <translation><!-- NEM Multiple Tariff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEM Paired Storage</masterLabel>
+            <translation><!-- NEM Paired Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Export</masterLabel>
+            <translation><!-- Non-Export --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RES-BCT</masterLabel>
+            <translation><!-- RES-BCT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- auto-links to interconnection request if there is one.  Do not fill out if one does not exist. --></help>
+        <label><!-- Interconnection Request --></label>
+        <name>Interconnection_Request__c</name>
+        <relationshipLabel><!-- Interconnection Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Internal Civil Engineer --></label>
+        <name>Internal_Civil_Engineer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal EE from Project Site --></label>
+        <name>Internal_EE_from_Project_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Intx Method --></label>
+        <name>Intx_Method__c</name>
+        <picklistValues>
+            <masterLabel>Line-Side</masterLabel>
+            <translation><!-- Line-Side --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Load-Side</masterLabel>
+            <translation><!-- Load-Side --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- box.com link --></help>
+        <label><!-- Link to Application Technical Info --></label>
+        <name>Link_to_Application_Technical_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Design on File with Utility --></label>
+        <name>Link_to_Design_on_File_with_Utility__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Pre-Application Report --></label>
+        <name>Link_to_Pre_Application_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Single Line Diagram --></label>
+        <name>Link_to_Single_Line_Diagram__c</name>
+    </fields>
+    <fields>
+        <help><!-- box.com link --></help>
+        <label><!-- Link to Site Layout --></label>
+        <name>Link_to_Site_Layout__c</name>
+    </fields>
+    <fields>
+        <help><!-- SLD link on box.com --></help>
+        <label><!-- Link to customer supplied diagrams --></label>
+        <name>Link_to_customer_supplied_diagrams__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Projects limited with reverse power relay --></help>
+        <label><!-- Maximum Facility Output (kW) --></label>
+        <name>Maximum_Facility_Output_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meet with Utility Field Team Notes --></label>
+        <name>Meet_with_Utility_Field_Team_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meet with Utility Field Team --></label>
+        <name>Meet_with_Utility_Field_Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Milestone Date --></label>
+        <name>Next_Milestone_Date_New__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates expected date of completion for next step in process from the one its currently in. --></help>
+        <label><!-- Next Milestone Date (old) --></label>
+        <name>Next_Milestone_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Notice/Witness Test Notes --></label>
+        <name>Notice_Witness_Test_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a percent value for your certainty in the estimates provided above. --></help>
+        <label><!-- Confidence Interval --></label>
+        <name>OB_Confidence_Interval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter &quot;Most Likely&quot; or &quot;Worst Case&quot; cost estimate based on the received Initial Review Report --></help>
+        <label><!-- Cost Estimate --></label>
+        <name>OB_Cost_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Records most recent date subsection was modified. --></help>
+        <label><!-- Date Modified --></label>
+        <name>OB_Date_Modified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter timeline estimate corresponding to cost estimate case entered above. --></help>
+        <label><!-- Estimated Timeline (months) --></label>
+        <name>OB_Estimated_Timeline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>OB_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the timeline provided in the ISA. --></help>
+        <label><!-- Utility Provided Timeline (months) --></label>
+        <name>OB_Utility_Provided_Timeline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oppty Owner Email --></label>
+        <name>Oppty_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- brings over the overall project status from the related project --></help>
+        <label><!-- Overall project Status --></label>
+        <name>Overall_project_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box to override the automatic calculation of Expected ISA DateX allowing a date to be entered manually. --></help>
+        <label><!-- Override Expected ISA Date --></label>
+        <name>Override_Expected_ISA_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE Notes --></label>
+        <name>PE_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Professional Engineer that is working on the Interconnection Application. --></help>
+        <label><!-- PE --></label>
+        <name>PE__c</name>
+    </fields>
+    <fields>
+        <help><!-- This date is pulled through from the related project --></help>
+        <label><!-- Project PTO Date --></label>
+        <name>PTO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+APP ID #_PTO_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- PTO Link --></label>
+        <name>PTO_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTO Notes --></label>
+        <name>PTO_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- box should be checked when we have been given permission to operate --></help>
+        <label><!-- PTO --></label>
+        <name>PTO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if this application includes energy storage --></help>
+        <label><!-- Plus Storage --></label>
+        <name>Plus_Storage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Owner/maintainer of poleset at project.  If TELCO then initiate TELCO EDC --></help>
+        <label><!-- Pole Custodian --></label>
+        <name>Pole_Custodian__c</name>
+        <picklistValues>
+            <masterLabel>Teleco</masterLabel>
+            <translation><!-- Teleco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility</masterLabel>
+            <translation><!-- Utility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pre App Report Link --></label>
+        <name>Pre_App_Report_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pretest Prior to Witness Test Notes --></label>
+        <name>Pretest_Prior_to_Witness_Test_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- The address that is being used on the Interconnection Application. --></help>
+        <label><!-- Project Location --></label>
+        <name>Project_LocationTEXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Location --></label>
+        <name>Project_Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the Project Manager from the related Site --></help>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Size DC --></label>
+        <name>Project_Size_DC__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Interconnection Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ready SIS/CESIR - Date Set --></label>
+        <name>Ready_SIS_CESIR_Date_Set__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates date applicatoin left this phase and entered the next phase --></help>
+        <label><!-- Ready Study End --></label>
+        <name>Ready_SIS_CESIR_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- autopops with date in this field --></help>
+        <label><!-- Ready Study Start --></label>
+        <name>Ready_SIS_CESIR_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Ready Study Total Days --></label>
+        <name>Ready_SIS_CESIR_Total_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ready for Detailed Study/Early ISA Notes --></label>
+        <name>Ready_for_Detailed_Study_Early_ISA_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ready for Detailed Study --></label>
+        <name>Ready_for_Detailed_Study_Early_ISA__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application leaves this phase field was populated with a value --></help>
+        <label><!-- Ready for Dtld Study End --></label>
+        <name>Ready_for_Dtld_Study_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application entered this phase --></help>
+        <label><!-- Ready for Dtld Study Start --></label>
+        <name>Ready_for_Dtld_Study_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Ready for Dtld Study Total Days --></label>
+        <name>Ready_for_Dtld_Study_Total_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application left this phase --></help>
+        <label><!-- Ready for Agreement End --></label>
+        <name>Ready_for_Final_ISA_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto updates current date of when the application entered this phase --></help>
+        <label><!-- Ready for Agreement Start --></label>
+        <name>Ready_for_Final_ISA_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Ready for Agreement Total Days --></label>
+        <name>Ready_for_Final_ISA_Total_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Ready for Agreement Notes --></label>
+        <name>Rec_d_Fully_Executed_Agmt_PM_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recalculate --></label>
+        <name>Recalculate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates the status of the Interconnection Request (not the application itself) --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>AE Approved</masterLabel>
+            <translation><!-- AE Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Approved</masterLabel>
+            <translation><!-- Request Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revise &amp; Resubmit</masterLabel>
+            <translation><!-- Revise &amp; Resubmit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Initial Review Notes --></label>
+        <name>Review_App_for_Completeness_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this option if this estimate is also you&apos;re &quot;Most Likely&quot; estimate. When box goes from unchecked to checked, it will push field values to the Best Estimate section. --></help>
+        <label><!-- SIS Best Estimate? --></label>
+        <name>SIS_Best_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto pops date application left this phase, --></help>
+        <label><!-- Study Underway End --></label>
+        <name>SIS_CESIR_Underway_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto pops date the application entered this phase, --></help>
+        <label><!-- Study Underway Start --></label>
+        <name>SIS_CESIR_Underway_Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to calculate # of days application is in the application accepted phase --></help>
+        <label><!-- Study Underway Total Days --></label>
+        <name>SIS_CESIR_Underway_Total_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter &quot;Most Likely&quot; or &quot;Worst Case&quot; cost estimate based on the received Initial Review Report --></help>
+        <label><!-- SIS Cost Estimate --></label>
+        <name>SIS_Cost_Estimate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Records most recent date subsection was modified. --></help>
+        <label><!-- SIS Date Modified --></label>
+        <name>SIS_Date_Modified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter timeline estimate corresponding to cost estimate case entered above. --></help>
+        <label><!-- SIS Estimated Timeline (months) --></label>
+        <name>SIS_Estimated_Timeline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Copy and paste the box link to the evaluation spreadsheet where further estimate cases can be seen. --></help>
+        <label><!-- SIS Link to Evaluation Spreadsheet --></label>
+        <name>SIS_Link_to_Evaluation_Spreadsheet__c</name>
+    </fields>
+    <fields>
+        <label><!-- SIS Notes --></label>
+        <name>SIS_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the timeline provided in the ISA. --></help>
+        <label><!-- SIS Utility Provided Timeline (months) --></label>
+        <name>SIS_Utility_Provided_Timeline__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to box.com location:
+ SCHEDULE Z_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Schedule Z Link --></label>
+        <name>Schedule_Z_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Schedule Z Submitted Notes (Net Metering --></label>
+        <name>Schedule_Z_Submitted_Notes_Net_Metering__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to location on box.com: 
+ APP ID #_SCREENING MEMO_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Screening Memo Link --></label>
+        <name>Screening_Memo_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Ready for Study Notes --></label>
+        <name>Send_Follow_on_Studies_Cost_Agmt_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulled from related Site --></help>
+        <label><!-- Site PTO Date --></label>
+        <name>Site_PTO_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Interconnection Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays date that the most recent hold has started.  if the hold box is unchecked the date displayed represents a previous hold. --></help>
+        <label><!-- Start Date Most Recent Hold --></label>
+        <name>Start_Date_Most_Recent_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Change Date --></label>
+        <name>Status_Change_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the status of the interconnection application. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Acknowledge Receipt of Application</masterLabel>
+            <translation><!-- Acknowledge Receipt of Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Approved</masterLabel>
+            <translation><!-- Application Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Requested</masterLabel>
+            <translation><!-- Application Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Submitted</masterLabel>
+            <translation><!-- Application Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego Owes Material</masterLabel>
+            <translation><!-- Borrego Owes Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CoC Submitted to Utility</masterLabel>
+            <translation><!-- CoC Submitted to Utility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Review of all Screens</masterLabel>
+            <translation><!-- Complete Review of all Screens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Standard Process Initial Review</masterLabel>
+            <translation><!-- Complete Standard Process Initial Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction Timeline</masterLabel>
+            <translation><!-- Construction Timeline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detailed Study</masterLabel>
+            <translation><!-- Detailed Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detailed Study Underway</masterLabel>
+            <translation><!-- Detailed Study Underway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executed Agreement</masterLabel>
+            <translation><!-- Executed Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial Review</masterLabel>
+            <translation><!-- Initial Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notice/Witness Test</masterLabel>
+            <translation><!-- Notice/Witness Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold Per Utility</masterLabel>
+            <translation><!-- On Hold Per Utility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Permission To Operate</masterLabel>
+            <translation><!-- Permission To Operate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Test Complete</masterLabel>
+            <translation><!-- Pre-Test Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Agreement</masterLabel>
+            <translation><!-- Ready for Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Detailed Study</masterLabel>
+            <translation><!-- Ready for Detailed Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Study</masterLabel>
+            <translation><!-- Ready for Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Study Underway</masterLabel>
+            <translation><!-- Study Underway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplemental Review</masterLabel>
+            <translation><!-- Supplemental Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility System Design Approval</masterLabel>
+            <translation><!-- Utility System Design Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supplemental Review Link --></label>
+        <name>Supplemental_Review_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- System Owner/Financier --></help>
+        <label><!-- System Owner --></label>
+        <name>System_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size AC-CEC (kW) --></label>
+        <name>System_Size_AC_CEC_kW__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size AC watts --></label>
+        <name>System_Size_AC_watts2__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size AC (watts) --></label>
+        <name>System_Size_AC_watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Size DC watts --></label>
+        <name>System_Size_DC_watts2__c</name>
+    </fields>
+    <fields>
+        <help><!-- brought over from related opportunity field project system size --></help>
+        <label><!-- System Size DC (watts) --></label>
+        <name>System_Size_DC_watts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text value of Status --></label>
+        <name>Text_value_of_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Borrego and Excusable Days --></label>
+        <name>Total_Borrego_Days__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with a workflow that cumulatively adds days on hold --></help>
+        <label><!-- Total Days on Hold --></label>
+        <name>Total_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Utility Days --></label>
+        <name>Total_Utility_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Track --></label>
+        <name>Track__c</name>
+        <picklistValues>
+            <masterLabel>Expedited</masterLabel>
+            <translation><!-- Expedited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Utility Construction End Date --></label>
+        <name>Utility_Construction_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Borrego issues ISA payment. --></help>
+        <label><!-- Utility Construction Start Date --></label>
+        <name>Utility_Construction_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Acknowledge Receipt --></label>
+        <name>Utility_Days_Acknowledge_Receipt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Complete Rev of All Screen --></label>
+        <name>Utility_Days_Complete_Rev_of_All_Screen__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Detailed Study --></label>
+        <name>Utility_Days_Detailed_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Follow On Studies --></label>
+        <name>Utility_Days_Follow_On_Studies__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Impact Study --></label>
+        <name>Utility_Days_Impact_Study__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Rec Fully Ex Agmt --></label>
+        <name>Utility_Days_Rec_Fully_Ex_Agmt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Rev App for Completeness --></label>
+        <name>Utility_Days_Rev_App_for_Completeness__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Std Process Intl Review --></label>
+        <name>Utility_Days_Std_Process_Intl_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days elapsed in current step. --></help>
+        <label><!-- Utility Days- Supp Review --></label>
+        <name>Utility_Days_Supp_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date utility has completed system modification design --></help>
+        <label><!-- Utility Design Completion Date --></label>
+        <name>Utility_Design_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you we need the Utility Insurance Certificate. --></help>
+        <label><!-- Utility Insurance Cert Needed? --></label>
+        <name>Utility_Insurance_Cert_Needed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Application ID# issued by utility --></help>
+        <label><!-- Utility Project ID --></label>
+        <name>Utility_Project_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there infringement on existing utility right of way?  If so, then must coordinate with utility real estate department to obtain licensing agreement. --></help>
+        <label><!-- Utility ROW Activity --></label>
+        <name>Utility_ROW_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility Service Address --></label>
+        <name>Utility_Service_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility Shutdown Needed? --></label>
+        <name>Utility_Shutdown_Needed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section for notes regarding this milestone. --></help>
+        <label><!-- Utility System Design Approval Notes --></label>
+        <name>Utility_System_Design_Approval_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility System Design Approval --></label>
+        <name>Utility_System_Design_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the utility company as noted on the opportunity. --></help>
+        <label><!-- Utility --></label>
+        <name>Utility__c</name>
+    </fields>
+    <fields>
+        <help><!-- check off if the application has been withdrawn --></help>
+        <label><!-- Withdrawn --></label>
+        <name>Withdrawn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Receipt Link --></label>
+        <name>Work_Order_Receipt_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- link from box.com: 
+   WORK ORDER REQUEST_Utility Name_Opportunity Name_System #_#MW AC_Date --></help>
+        <label><!-- Work Order Request Link --></label>
+        <name>Work_Order_Request_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Application construction work order number issued by the utility --></help>
+        <label><!-- Work Order# --></label>
+        <name>Work_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Party Agreement (Exhibit H) Notes --></label>
+        <name>X3rd_Party_Agreement_Exhibit_H_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date on which exhibit H was submitted. --></help>
+        <label><!-- 3rd Party Agreement (Exhibit H) --></label>
+        <name>X3rd_Party_Agreement_Exhibit_H__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date the balance of payment for utility system modifications was made. --></help>
+        <label><!-- 75% Payment --></label>
+        <name>X75_Payment__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- should be used for all Interconnection Applications/Request as of 2/1/2016 --></description>
+        <label><!-- All Applications --></label>
+        <name>All_Applications</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CA - Fast Track --></label>
+        <name>CA_Fast_Track</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- MA - Expedited Process --></description>
+        <label><!-- MA - Expedited --></label>
+        <name>Expedited</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- NY - Standard Process --></description>
+        <label><!-- NY - Standard --></label>
+        <name>NY_Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- MA - Standard Process --></description>
+        <label><!-- MA - Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- MA - Standard Complex --></description>
+        <label><!-- MA - Standard Complex --></label>
+        <name>Standard_Complex</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Dates must be entered for all of the following fields:
+Date Pre App Report Submitted
+Date Pre App Received
+Date Application Submitted to Utility --></errorMessage>
+        <name>Acknowledge_Receipt_of_Application</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Complete_Review_of_All_Screens</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Complete_Std_Process_Initial_Review</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you answered Yes, to Do you have customer supplied diagrams, you need to provide a link to those diagrams --></errorMessage>
+        <name>Customer_Supplied_Diagrams</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Detailed_Study</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Follow_On_Studies_Cost_Agreement</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Fully_Executed_Agreement</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Impact_Study</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the following people can edit the Hold checkbox, Robert Tompkins, Sarah Field, Michael Conway, Pat Ratelle, Jess Riano, Dave Moyer --></errorMessage>
+        <name>Prevent_Editing_Hold_Except_Intx_Mgrs</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Review_Application_for_Completeness</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Dates must be enter a date before you can move to the next step in the process. --></errorMessage>
+        <name>Supplemental_Review</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_New_Application --></label>
+        <name>Create_New_Application</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Accounting periods are typically used as months. This denotes the end of the period. Fiscal Months are supported. A period end date can not cross over into the start and end date range of another period. --></help>
+        <label><!-- End Date --></label>
+        <name>AcctSeed__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Accounting periods are typically used as months. This denotes the beginning of the period. Fiscal Months are supported. A period beginning date can not cross over into the start and end date range of another period. --></help>
+        <label><!-- Start Date --></label>
+        <name>AcctSeed__Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Open&quot; allows new transactions to be saved to this period. &quot;Closed&quot; prevents new records from being saved to this period. --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Days in Period --></label>
+        <name>DaysinPeriod__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Accounting Period must be a numerical value between 1 and 12. --></errorMessage>
+        <name>AcctSeed__Period_between_1_and_12</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The start date cannot be greater than the end date. --></errorMessage>
+        <name>AcctSeed__Start_Date_Not_Greater_End_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Accounting Periods must be in the format YYYY-MM and must be numerical values. --></errorMessage>
+        <name>AcctSeed__YYYY_MM_Format</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Archive --></label>
+        <name>AcctSeed__Archive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Balance_Sheet --></label>
+        <name>Balance_Sheet</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Current_Month_Profit_and_Loss --></label>
+        <name>Current_Month_Profit_and_Loss</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Trial_Balance --></label>
+        <name>Trial_Balance</name>
+    </webLinks>
+</CustomObjectTranslation>

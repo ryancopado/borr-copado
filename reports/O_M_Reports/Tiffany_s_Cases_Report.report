@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>Case</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Case$CaseNumber</field>
+        </columns>
+        <columns>
+            <field>Case.Service_Visits__r$Name</field>
+        </columns>
+        <columns>
+            <field>Case$ServiceContract_Case__c.Branch__c</field>
+        </columns>
+        <format>Tabular</format>
+        <name>Cases with Service Visits and Se block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Cases_with_Service_Visits_and_Service_Contracts__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Case$Admin_Support_Completion_Date__c</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>s</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CASE_COMMENT</field>
+        </columns>
+        <format>Summary</format>
+        <name>Cases block 2</name>
+        <params>
+            <name>units</name>
+            <value>h</value>
+        </params>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CaseList</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>CREATED_DATEONLY</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>Case</joinTable>
+    </blockInfo>
+    <description>Cases with Service Visits, Service Contracts, and Case Comments</description>
+    <format>MultiBlock</format>
+    <name>Tiffany&apos;s Cases Report</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Service_Visits_and_Service_Contracts__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

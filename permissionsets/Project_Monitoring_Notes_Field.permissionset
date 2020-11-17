@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>used by O&amp;M Ops Center to enter notes - permission to give only those in Ops Center Role permission to edit</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AcctSeed__Project__c.Monitoring_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Project Monitoring Notes Field</label>
+    <license>Salesforce</license>
+    <recordTypeVisibilities>
+        <recordType>AcctSeed__Project__c.O_M_Project</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$Project__c</field>
+    </columns>
+    <columns>
+        <field>Case$Status</field>
+    </columns>
+    <columns>
+        <field>Case$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Case$ClosedDate</field>
+    </columns>
+    <columns>
+        <field>Case$Turn_Around_Time__c</field>
+    </columns>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Account</field>
+    </columns>
+    <columns>
+        <field>Case.Con_Req_Groups__r.Construction_Requisitions__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.Con_Req_Groups__r.Construction_Requisitions__r$AcctSeedERP__Purchase_Order_Line__c.POLine_Total__c</field>
+    </columns>
+    <columns>
+        <field>Case.Con_Req_Groups__r.Construction_Requisitions__r$CreatedDate</field>
+    </columns>
+    <description>shows cases with or without CRG&apos;s</description>
+    <format>Tabular</format>
+    <name>My Cases with or without CRG</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_or_Without_CRG__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$Case_Start_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

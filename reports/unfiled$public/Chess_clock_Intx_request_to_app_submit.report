@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Interconnection_Request__c.Date_Submitted_by_PD__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_Application_Submitted_to_Utility__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <description>Days between interconnection request and application submission</description>
+    <format>Tabular</format>
+    <name>Chess clock: Intx request to app submit</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Interconnection_Application__c@Interconnection_Application__c.Interconnection_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Interconnection_Application__c.Date_Application_Submitted_to_Utility__c</dateColumn>
+        <interval>INTERVAL_CURPREV1</interval>
+    </timeFrameFilter>
+</Report>

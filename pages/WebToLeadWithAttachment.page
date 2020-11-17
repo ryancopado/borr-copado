@@ -1,0 +1,16 @@
+<apex:page standardController="Lead" extensions="WebToLeadWithAttachment" action="{!webtolead}" >
+
+	<apex:form rendered="{!isError}" >
+		<!-- {!errorMsg} -->
+		<script type="text/javascript" language="javascript">
+			window.top.location.href='http://borregosolar.com/commercial-solar-energy-systems-company/careers/apply?error=true';
+		 </script>
+	</apex:form>
+	<apex:form rendered="{!isError = FALSE}" >
+		<!-- Success: your employment application has been submitted. -->
+		<script type="text/javascript" language="javascript">
+			window.top.location.href='http://borregosolar.com/commercial-solar-energy-systems-company/careers/apply?success=true&first_name={!first_name}&last_name={!last_name}&requisition={!requisition}';
+    	</script>
+	</apex:form>
+
+</apex:page>

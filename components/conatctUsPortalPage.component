@@ -1,0 +1,170 @@
+<apex:component controller="ContactUsPortalController" allowDML="true">
+    <apex:attribute name="Accountid" required="true" type="string" description="Account id" assignTo="{!AccountId}" />
+     <apex:attribute name="ProjectID" required="true" type="string" description="Project id" assignTo="{!ProjectID}" />
+     <apex:attribute name="Account" required="false" type="Account" description="CurrentAccount" assignTo="{!CurrentAccount}" />
+   <apex:attribute name="Branch" required="false" type="string" description="Branch" assignTo="{!Branch}" />
+   <!-- <apex:attribute name="systemNotworking" required="true" type="boolean" assignTo="{!isSystemNotWorking}" description="checkbox" />-->
+     
+  
+       
+   
+    
+    <!--<apex:attribute name="FAQlist" type="FAQ__c[]" description="FAQ List" />-->
+   <apex:outputPanel style="margin-left:10%; margin-top:5%; width:60%">
+                    <script>
+    
+                        function changeRadioStatus(ctrl){
+                         
+                         var n = ctrl.id.charAt(ctrl.id.length-1);
+                        
+                         if(n=='0')
+                             changeRadioStatusAction(1);
+                         if(n=='1')
+                             changeRadioStatusAction(0);                         
+                          
+                        }
+
+                        function checkRadioStatus(ctrl){
+                         
+                         var n = ctrl.value;
+                         
+                         if(n=='My System Is Not Working')
+                             changeRadioStatusAction(1);
+                         if(n=='General Inquiries/Feedback')
+                             changeRadioStatusAction(0);                         
+                                              
+                        }
+    
+                         
+
+                    </script>
+                    <style>
+                        textarea {
+                                    font-family: 'Arial','Helvetica',sans-serif;
+                                    font-size: 100%;
+                                    width: 300px;
+                                    height: 200px;
+                                    }
+                    </style>
+    
+                    
+  <!--  <apex:pageBlock rendered="{!isRecordSaved==true}">
+            <apex:pageBlockButtons location="bottom" style="padding-top:10%">
+                    <apex:commandButton action="{!RecSaved}" value="New Case" />
+            </apex:pageBlockButtons>       
+        <div style="padding-left:5%;padding-right:5%;padding-top:3%;padding-bottom:15%;font-family:Arial Verdana,sans-serif;text-align:center">
+           
+                  
+            <p style="font-size:180%;">Case Created Successfully! </p>
+       
+       </div>
+    </apex:pageBlock>-->
+    
+      <apex:actionFunction name="changeRadioStatusAction"  action="{!DoNothing}" reRender="pageBlock" status="status"> 
+                        <apex:param name="booleanvalue" assignTo="{!no}" value="" /> 
+     </apex:actionFunction>
+     
+	<apex:outputPanel id="pageBlock">
+    <!-- <apex:pageBlock id="pageBlock"> -->
+            <apex:actionStatus id="status" startText="Loading..." stopText=""></apex:actionStatus>
+<!--
+            <apex:pageBlockButtons location="bottom" style="padding-top:10%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:commandButton action="{!Save}"  reRender="idpgBlock" oncomplete="alert('Case Submitted Successfully!');" value="Submit Inquiry" />
+            </apex:pageBlockButtons>       
+-->
+                    
+            <apex:pageBlockSection ID="pgBlock" columns="1" title="Contact Us / Log a Case" collapsible="false">
+                     
+    
+                   
+                <!-- <apex:selectRadio id="CaseType" onclick="changeRadioStatus(this);" >                   
+                     <apex:selectOption id="SystemsNotWorking" onclick="changeRadioStatus('true');"  itemLabel="Systems Not Working" itemValue="true"   ></apex:selectOption>
+                     <apex:selectOption id="GeneralInquiries"  onclick="changeRadioStatus('false');" itemLabel="General Inquiries/Feedback" itemValue="" ></apex:selectOption>                     
+                 </apex:selectRadio>-->
+               <apex:inputField required="true" onchange="checkRadioStatus(this);"
+               label="Inquiry Type" 
+               value="{!NewCase.Portal_Inquiry_Type__c}"/> 
+               
+                <apex:pageBlockSectionItem id="idReason">
+                         Issue
+                         <apex:selectList value="{!NewCase.Reason}"  size="1">
+                            <apex:selectOptions value="{!CaseReasons}"/>
+                        </apex:selectList>
+                 </apex:pageBlockSectionItem>
+                
+				<apex:pageBlockSectionItem id="vipContact">
+					Send Notifications To
+					<apex:selectList value="{!NewCase.Notifications_Contact__c}"  size="1">
+ 						<apex:selectOptions value="{!VIPContacts}"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>    
+
+                 <!--    <apex:actionSupport action="{!RecSaved}" rerender="pgBlock" status="status" event="onchange"/>
+                </apex:inputField>  -->
+                   </apex:pageBlockSection>
+               <apex:outputPanel id="idpgBlock"  >    
+                 
+                <apex:pageBlockSection columns="2" id="CaseDetsec"  title="Case Details" collapsible="false" >
+           <!-- <apex:pageBlockSectionItem >
+                         Component
+                         <apex:selectList value="{!NewCase.Component__c}" size="1">
+                            <apex:selectOptions value="{!CaseComponents}"/>
+                        </apex:selectList>
+                     </apex:pageBlockSectionItem>  -->
+                      
+                       <apex:actionFunction action="{!RecSaved}" name="ChangeContact">
+                                <apex:param assignTo="{!NewCase.Contactid}" value=""/>
+                       </apex:actionFunction>
+
+                     <apex:inputHidden value="{!CurrentAccount.TempContact__c}" />
+                    <!-- <apex:inputField label="Name" id="contact" onchange="ChangeContact(this.value);"  value="{!CurrentAccount.TempContact__c}" >        
+                      </apex:inputField> -->
+                     <!--<apex:inputField label="Contact Name" id="contact1" onchange="ChangeContact(this.value);"  value="{!NewCase.Contactid}" >     
+                                                   
+                     </apex:inputField>-->
+                             
+                     
+                 </apex:pageBlockSection>
+               
+               <!-- <apex:pageBlockSection columns="2" id="CaseDetsec" rendered="{!isclicked}" title="Case Details" collapsible="false" >
+                     <apex:inputField label="Component" value="{!NewCase.Component__c}" rendered="{!isSystemNotWorking && isclicked }"/>
+                     <apex:inputField label="Name" value="{!NewCase.Contactid}" />                     
+                     <apex:inputField label="Case Reason" value="{!NewCase.Reason}" rendered="{!isSystemNotWorking && isclicked }"/>
+
+                 </apex:pageBlockSection>-->
+            
+          
+              <apex:pageBlockSection columns="1" id="sec1"  collapsible="false" >
+                     <apex:inputField label="Contact Name"  value="{!NewCase.Contact_Name__c}" />
+                     <apex:inputField label="Subject" value="{!NewCase.Subject}" />
+                     <apex:inputField label="Comment" value="{!NewCase.Description}" />
+                 </apex:pageBlockSection>
+          
+             <!--   <apex:pageBlockSection columns="1" id="sec1" title="Systems Not Working" collapsible="false" rendered="{!isSystemNotWorking && isclicked }">
+                     <apex:inputField label="Subject" value="{!NewCase.Subject}" />
+                     <apex:inputField label="Comment" value="{!NewCase.Description}" />
+                 </apex:pageBlockSection>
+                 
+             
+           
+                <apex:pageBlockSection columns="1" id="sec2" title="General Inquiries/Feedback" collapsible="false" rendered="{!if(isSystemNotWorking ==true,false,true) && isclicked}">
+                      <apex:inputField label="Subject" value="{!NewCase.Subject}" />      
+                      <apex:inputField label="Comment" value="{!NewCase.Description}" />
+                 </apex:pageBlockSection>-->
+             </apex:outputPanel> 
+             <br/><br/>
+
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <apex:commandButton action="{!Save}" style="text-align:right;" reRender="idpgBlock" oncomplete="alert('Case Submitted Successfully!');" value="Submit Inquiry" /> 
+           
+      <!-- </apex:pageBlock> -->
+	</apex:outputPanel>
+  </apex:outputPanel>
+</apex:component>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The aggregate amount of all associated cash receipts. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The bank account which will be associated with this bank deposit. Only cash receipts associated with this bank account will be associated with this bank deposit. --></help>
+        <label><!-- Bank Account --></label>
+        <name>AcctSeed__Bank_Account__c</name>
+        <relationshipLabel><!-- Bank Deposits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Id --></label>
+        <name>AcctSeed__Bank_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated bank reconciliation this bank deposit was cleared. --></help>
+        <label><!-- Bank Reconciliation --></label>
+        <name>AcctSeed__Bank_Reconciliation__c</name>
+        <relationshipLabel><!-- Bank Deposits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Transaction --></label>
+        <name>AcctSeed__Bank_Transaction__c</name>
+        <relationshipLabel><!-- Bank Deposits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date this bank deposit was cleared in the associated bank reconciliation. --></help>
+        <label><!-- Cleared Date --></label>
+        <name>AcctSeed__Cleared_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of the bank deposit. --></help>
+        <label><!-- Deposit Date --></label>
+        <name>AcctSeed__Deposit_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associated reference or description for the bank deposit. --></help>
+        <label><!-- Deposit Reference --></label>
+        <name>AcctSeed__Deposit_Reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 1 --></label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Bank Deposits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 2 --></label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Bank Deposits (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 3 --></label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Bank Deposits (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Bank Deposits (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Bank Deposits --></relationshipLabel>
+    </fields>
+    <webLinks>
+        <label><!-- Manage_Cash_Receipts --></label>
+        <name>AcctSeed__Manage_Cash_Receipts</name>
+    </webLinks>
+</CustomObjectTranslation>

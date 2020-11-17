@@ -1,0 +1,2205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Reported Issue</value>
+        </caseValues>
+        <name>case_reason</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Portal Inquiry Type</value>
+        </caseValues>
+        <name>type_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AP Line Total --></label>
+        <name>APLineTotal__c</name>
+    </fields>
+    <fields>
+        <help><!-- formula calculates $ amount as “Actual Price” minus the sum of “Actual Material Cost” and “Actual Labor Cost”. --></help>
+        <label><!-- Actual Gross Profit --></label>
+        <name>Actual_Gross_Profit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula calculates % amount as “Actual Price” minus the sum of “Actual Material Cost” and “Actual Labor Cost” divided by “Actual Price --></help>
+        <label><!-- Actual Gross Profit % --></label>
+        <name>Actual_Gross_Profit_x__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Labor Costs --></label>
+        <name>Actual_Labor_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Material Cost --></label>
+        <name>Actual_Material_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Price --></label>
+        <name>Actual_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- checkbox that allows multiple holds to be used on this case, can only be edited by O&amp;M Director --></help>
+        <label><!-- Additional Holds Allowed --></label>
+        <name>Additional_Holds_Allowed__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter date request was completed --></help>
+        <label><!-- Admin Support Completion Date --></label>
+        <name>Admin_Support_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- date field used to estimate completion date of internal O&amp;M request for support --></help>
+        <label><!-- Admin Support Est Completion Date --></label>
+        <name>Admin_Support_Est_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- captures the alert ID from the subject of the email --></help>
+        <label><!-- Alert ID --></label>
+        <name>Alert_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Billed --></label>
+        <name>AmountBilled__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of days a Case has been on its current status, updated whenever the status changes. --></help>
+        <label><!-- Time in Current Status --></label>
+        <name>Amount_of_days_on_most_recent_status__c</name>
+    </fields>
+    <fields>
+        <help><!-- determines if there are any billable service requisitions associated with the service visits tied to this case. --></help>
+        <label><!-- Billable Con Reqs --></label>
+        <name>Billable_Con_Reqs__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays Yes if any related service visits  have YES in billable field --></help>
+        <label><!-- Billable Visits --></label>
+        <name>Billable_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Completed - Billing has been posted/completed; 
+In process - Billing has been created but is not completed/posted; 
+Needs to be Billed - is a billable visit but billing has yet to be created; 
+Not Billable - visit does not contain any billable items. --></help>
+        <label><!-- Billing Status --></label>
+        <name>Billing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs to be Billed</masterLabel>
+            <translation><!-- Needs to be Billed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Billable</masterLabel>
+            <translation><!-- Not Billable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- brought over from the related service contract --></help>
+        <label><!-- Branch --></label>
+        <name>Branch__c</name>
+        <picklistValues>
+            <masterLabel>Berkeley</masterLabel>
+            <translation><!-- Berkeley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boston</masterLabel>
+            <translation><!-- Boston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid Atlantic</masterLabel>
+            <translation><!-- Mid Atlantic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midwest</masterLabel>
+            <translation><!-- Midwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New England</masterLabel>
+            <translation><!-- New England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nor Cal</masterLabel>
+            <translation><!-- Nor Cal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oakland</masterLabel>
+            <translation><!-- Oakland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Diego</masterLabel>
+            <translation><!-- San Diego --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>So Cal</masterLabel>
+            <translation><!-- So Cal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southeast</masterLabel>
+            <translation><!-- Southeast --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- counts # of CRG&apos;s associated with related Service Visits --></help>
+        <label><!-- # CRG&apos;s --></label>
+        <name>CRG_s__c</name>
+    </fields>
+    <fields>
+        <help><!-- count of 1 if within current billing year --></help>
+        <label><!-- CY Landscaping --></label>
+        <name>CY_Landscaping__c</name>
+    </fields>
+    <fields>
+        <help><!-- count of 1 if close date of case falls between Current Year Contract Start &amp; End Date from related Contract --></help>
+        <label><!-- CY Module Washing --></label>
+        <name>CY_Module_Washing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Record Type Name --></label>
+        <name>CaseRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- CaseSafeId --></label>
+        <name>CaseSafeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- What caused the problem on site, to be filled out after someone has been to site or remotely figured out the problem --></help>
+        <label><!-- Case Cause --></label>
+        <name>Case_Cause__c</name>
+        <picklistValues>
+            <masterLabel>Auto-Resolved</masterLabel>
+            <translation><!-- Auto-Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Issue</masterLabel>
+            <translation><!-- Design Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical Component Failure</masterLabel>
+            <translation><!-- Electrical Component Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - Duplicate</masterLabel>
+            <translation><!-- False Alert - Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - No Action Required</masterLabel>
+            <translation><!-- False Alert - No Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - Non-managed Site</masterLabel>
+            <translation><!-- False Alert - Non-managed Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - Other</masterLabel>
+            <translation><!-- False Alert - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - Planned Site Activity</masterLabel>
+            <translation><!-- False Alert - Planned Site Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert - Shade</masterLabel>
+            <translation><!-- False Alert - Shade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation Error</masterLabel>
+            <translation><!-- Installation Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metrology Error</masterLabel>
+            <translation><!-- Metrology Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model Error</masterLabel>
+            <translation><!-- Model Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Error</masterLabel>
+            <translation><!-- Product Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soiling</masterLabel>
+            <translation><!-- Soiling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility Outage</masterLabel>
+            <translation><!-- Utility Outage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date the case closure report was sent out --></help>
+        <label><!-- Case Closure Date Sent --></label>
+        <name>Case_Closure_Date_Sent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The party who the case closure report was sent to --></help>
+        <label><!-- Case Closure Sent To --></label>
+        <name>Case_Closure_Sent_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Eligible --></label>
+        <name>Case_Eligible__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manual field the manager enters to reflect the case resolution date --></help>
+        <label><!-- Case Resolution Date --></label>
+        <name>Case_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The manual field the manager enters to reflect the case start date --></help>
+        <label><!-- Case Start Date --></label>
+        <name>Case_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- identifies request in terms of type of work --></help>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>COO</masterLabel>
+            <translation><!-- COO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cause of Incident --></label>
+        <name>Cause_of_Incident__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Request Submitted --></label>
+        <name>Check_Request_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claim Sub-type --></label>
+        <name>Claim_Sub_type__c</name>
+        <picklistValues>
+            <masterLabel>Cable(s)</masterLabel>
+            <translation><!-- Cable(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combiners</masterLabel>
+            <translation><!-- Combiners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAS/SCADA/Comms Equipment</masterLabel>
+            <translation><!-- DAS/SCADA/Comms Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure/Roads/Access</masterLabel>
+            <translation><!-- Infrastructure/Roads/Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter</masterLabel>
+            <translation><!-- Inverter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCS Skid</masterLabel>
+            <translation><!-- PCS Skid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roofing</masterLabel>
+            <translation><!-- Roofing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Structural</masterLabel>
+            <translation><!-- Structural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switchgear</masterLabel>
+            <translation><!-- Switchgear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker</masterLabel>
+            <translation><!-- Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformer (Med/High Voltage)</masterLabel>
+            <translation><!-- Transformer (Med/High Voltage) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Claim Type --></label>
+        <name>Claim_Type__c</name>
+        <picklistValues>
+            <masterLabel>Civil</masterLabel>
+            <translation><!-- Civil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical/Structural</masterLabel>
+            <translation><!-- Mechanical/Structural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Effected component on site. If the whole electrical system is effected, the component is the point of connection (example: switch gear) --></help>
+        <label><!-- Component --></label>
+        <name>Component__c</name>
+        <picklistValues>
+            <masterLabel>DAS</masterLabel>
+            <translation><!-- DAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inverter</masterLabel>
+            <translation><!-- Inverter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module</masterLabel>
+            <translation><!-- Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Racking</masterLabel>
+            <translation><!-- Racking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof</masterLabel>
+            <translation><!-- Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switch Gear</masterLabel>
+            <translation><!-- Switch Gear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker</masterLabel>
+            <translation><!-- Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transformer</masterLabel>
+            <translation><!-- Transformer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is the name of the person that created the case via the customer portal.  Not used by O&amp;M --></help>
+        <label><!-- Actual Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contacts --></label>
+        <name>Contacts__c</name>
+        <relationshipLabel><!-- Cases (ccfContacts) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Warranty</masterLabel>
+            <translation><!-- Borrego Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M</masterLabel>
+            <translation><!-- O&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M T&amp;M</masterLabel>
+            <translation><!-- O&amp;M T&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M and Warranty</masterLabel>
+            <translation><!-- O&amp;M and Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;M and Warranty</masterLabel>
+            <translation><!-- T&amp;M and Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost of Down System --></label>
+        <name>Cost_of_Down_System__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of records that Billable in the con req type on the service visit --></help>
+        <label><!-- Count Billable Con Reqs --></label>
+        <name>Count_Billable_Con_Reqs__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of completed work order lines --></help>
+        <label><!-- Count Ready for Closure --></label>
+        <name>Count_Ready_for_Closure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;Escalated to Director&quot; --></label>
+        <name>Cumulative_Days_Escalated_to_Director__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;On Hold - Customer&quot; --></label>
+        <name>Cumulative_Days_On_Hold_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;On Hold - Follow Up&quot; --></label>
+        <name>Cumulative_Days_On_Hold_Follow_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;On Hold - Parts&quot; --></label>
+        <name>Cumulative_Days_On_Hold_Parts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;On Hold - RMA&quot; --></label>
+        <name>Cumulative_Days_On_Hold_RMA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days &quot;On Hold - Weather&quot; --></label>
+        <name>Cumulative_Days_On_Hold_Weather__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on Deployment Review --></label>
+        <name>Cumulative_Days_on_Deployment_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on &quot;Escalated to RM&quot; --></label>
+        <name>Cumulative_Days_on_Escalated_to_RM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on &quot;Escalated to SPG&quot; --></label>
+        <name>Cumulative_Days_on_Escalated_to_SPG__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows a cumulative # of days the case has been on hold, will include current days but also days from a previous hold if there were any --></help>
+        <label><!-- Cumulative Days on Hold --></label>
+        <name>Cumulative_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on Inventory Fulfillment --></label>
+        <name>Cumulative_Days_on_Inventory_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on New Case Status --></label>
+        <name>Cumulative_Days_on_New_Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on Ops Review --></label>
+        <name>Cumulative_Days_on_Ops_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on Pending Quote --></label>
+        <name>Cumulative_Days_on_Pending_Quote__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on &quot;Ready to Schedule&quot; --></label>
+        <name>Cumulative_Days_on_Ready_to_Schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on Scheduled --></label>
+        <name>Cumulative_Days_on_Scheduled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cumulative Days on &quot;Subcontracted&quot; --></label>
+        <name>Cumulative_Days_on_Subcontracted__c</name>
+    </fields>
+    <fields>
+        <help><!-- if the case is currently on hold (indicated by a status of on hold ) this field calculates the # of days between today and start date of most recent hold. If there is no current hold this field value should be 0. --></help>
+        <label><!-- Current Days on Hold --></label>
+        <name>Current_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project System Size --></label>
+        <name>Current_Project_System_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Project Name --></label>
+        <name>Customer_Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- DAS Device ID --></label>
+        <name>DASDeviceID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when DAS Admin restores Alert configuration. --></help>
+        <label><!-- DAS Alerts Restored --></label>
+        <name>DAS_Alerts_Restored__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by DAS Administrator to track changes in alert configuration. --></help>
+        <label><!-- DAS Alerts Suspended --></label>
+        <name>DAS_Alerts_Suspended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- caculates date that is 1 business day from Date Opened --></help>
+        <label><!-- Date:  1 Business Day From Open Date --></label>
+        <name>Date_1_Business_Day_From_Open_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date the 1st time a Case uses the status of ON HOLD - Waiting for Parts --></help>
+        <label><!-- Date 1st Parts Hold --></label>
+        <name>Date_1st_Parts_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date a case first uses the status of ON HOLD - RMA --></help>
+        <label><!-- Date 1st RMA Hold --></label>
+        <name>Date_1st_RMA_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date the 1st time a Case uses the status of ON HOLD - Weather Advisory --></help>
+        <label><!-- Date 1st Weather Hold --></label>
+        <name>Date_1st_Weather_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date the 2nd time a Case uses the status of ON HOLD - Waiting for Parts --></help>
+        <label><!-- Date 2nd Parts Hold --></label>
+        <name>Date_2nd_Parts_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date the 2nd time a Case uses the status of ON HOLD - RMA --></help>
+        <label><!-- Date 2nd RMA Hold --></label>
+        <name>Date_2nd_RMA_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date the 2nd time a Case uses the status of ON HOLD - Weather Advisory --></help>
+        <label><!-- Date 2nd Weather Hold --></label>
+        <name>Date_2nd_Weather_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates date that is 3 business days from Date Opened --></help>
+        <label><!-- Date:  3 Business Days From Open Date --></label>
+        <name>Date_3_Business_Days_From_Open_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates 5 business days from date opened - needed for workflow time alert --></help>
+        <label><!-- Date: 5 Business Days From Open Date --></label>
+        <name>Date_5_Business_Days_From_Open_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates date 7 business days from date opened - used in workflow time trigger --></help>
+        <label><!-- Date: 7 Business Days From Open Date --></label>
+        <name>Date_7_Business_Days_From_Open_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Case Completed --></label>
+        <name>Date_Case_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps when case goes on hold for spgeng review a 2nd time --></help>
+        <label><!-- Date ENG SPG Review 2nd Hold --></label>
+        <name>Date_ENG_SPG_Review_2nd_Hold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Low Priority --></label>
+        <name>Date_Low_Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto date stamps when Status of Completed is selected --></help>
+        <label><!-- Date Maintenance Completed --></label>
+        <name>Date_Maintenance_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays date priority field was set to Medium --></help>
+        <label><!-- Date Medium Priority --></label>
+        <name>Date_Medium_Priority__c</name>
+    </fields>
+    <fields>
+        <help><!-- pull the date of the most recently sent email to track sending of maintenance cases --></help>
+        <label><!-- Date Most Recent Email --></label>
+        <name>Date_Most_Recent_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- date you need to have the request completed by --></help>
+        <label><!-- Date Needed By --></label>
+        <name>Date_Needed_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- stamps date/time of when work was started - rolls up from related Work Orders --></help>
+        <label><!-- Date/Time First Work Order --></label>
+        <name>Date_Time_First_Work_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date and time that the vendor was contacted. --></help>
+        <label><!-- Date/Time vendor contacted --></label>
+        <name>Date_Time_vendor_contacted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date and time that the vendor arrived onsite. --></help>
+        <label><!-- Date/Time vendor onsite --></label>
+        <name>Date_Time_vendor_onsite__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total days the affected asset is down --></help>
+        <label><!-- Days Component Down --></label>
+        <name>Days_Inverter_Down__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in calculation downtime (important if system is back up, but case is still open). --></help>
+        <label><!-- Days Tracker Down --></label>
+        <name>Days_Tracker_Down__c</name>
+    </fields>
+    <fields>
+        <label><!-- Elapsed Time --></label>
+        <name>Elapsed_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays date the priority was set to Emergency --></help>
+        <label><!-- Emergency Priority Date --></label>
+        <name>Emergency_Priority_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Code --></label>
+        <name>Error_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- add # of days expected to be hold to start date of most recent hold --></help>
+        <label><!-- Expected Hold Release Date --></label>
+        <name>Expected_Hold_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculate anticipated days case will be on hold --></help>
+        <label><!-- Expected # of Days on Hold --></label>
+        <name>Expected_of_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of Incident- Used in Availability Reporting --></help>
+        <label><!-- Availability Incident Type --></label>
+        <name>Externally_Caused_Event__c</name>
+        <picklistValues>
+            <masterLabel>Customer Caused Downtime</masterLabel>
+            <translation><!-- Customer Caused Downtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delay (Equipment Out of Warranty)</masterLabel>
+            <translation><!-- Delay (Equipment Out of Warranty) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delay (Manufacturer Caused)</masterLabel>
+            <translation><!-- Delay (Manufacturer Caused) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Force Majeure</masterLabel>
+            <translation><!-- Force Majeure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preventative Maintenance</masterLabel>
+            <translation><!-- Preventative Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Maintenance</masterLabel>
+            <translation><!-- Reactive Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow or Ice</masterLabel>
+            <translation><!-- Snow or Ice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts Not In Stock</masterLabel>
+            <translation><!-- Spare Parts Not In Stock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility Outage</masterLabel>
+            <translation><!-- Utility Outage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- used to identify why a false alert would have occurred, once selected it will close the case and update cause. --></help>
+        <label><!-- False Alert Type --></label>
+        <name>False_Alert_Type__c</name>
+        <picklistValues>
+            <masterLabel>Duplicate Alert</masterLabel>
+            <translation><!-- Duplicate Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>False Alert</masterLabel>
+            <translation><!-- False Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Action Required</masterLabel>
+            <translation><!-- No Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-managed Site</masterLabel>
+            <translation><!-- Non-managed Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Site Activity Alert</masterLabel>
+            <translation><!-- Planned Site Activity Alert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shade Issue</masterLabel>
+            <translation><!-- Shade Issue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- File Image URL --></label>
+        <name>File_Image_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- quoted fixed costs for customer - if values exist on related contract those will be brought over upon creation of the case, but they can be edited if necessary. --></help>
+        <label><!-- Fixed Costs - Quoted --></label>
+        <name>FixedCostsQuoted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically filled in and determines if the case should be shared with GLC. --></help>
+        <label><!-- GLC Project --></label>
+        <name>GLC_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays the date the priority was set to HIGH --></help>
+        <label><!-- High Priority Date --></label>
+        <name>High_Priority_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours At Site --></label>
+        <name>Hours_At_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter # of hours component was down, if more than a full day use Days Component Down field --></help>
+        <label><!-- Hours Component Down --></label>
+        <name>Hours_Component_Down__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Travel --></label>
+        <name>Hours_Travel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Visit Summary Report --></label>
+        <name>Include_in_Visit_Summary_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula used to determine if Case should be included in the Conga Performance Reports (Account button) --></help>
+        <label><!-- Include in Performance Report --></label>
+        <name>IncludeinPerformanceReport__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inverter Swaped Out --></label>
+        <name>Inverter_Swaped_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- The reason the site went offline. --></help>
+        <label><!-- Issue Note --></label>
+        <name>Issue_Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically filled in to show if the project is residential or commercial based on associated account. --></help>
+        <label><!-- Job Type --></label>
+        <name>Job_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- quote cost for labor - sent to the customer, if values exist already on related contact those will be brought over upon creation of the case, but can be edited if necessary. --></help>
+        <label><!-- Labor Costs - Quoted --></label>
+        <name>LaborCostsQuoted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Labor Billing --></label>
+        <name>Labor_Billing__c</name>
+        <picklistValues>
+            <masterLabel>Bill EPC</masterLabel>
+            <translation><!-- Bill EPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bill EPC Commissioning</masterLabel>
+            <translation><!-- Bill EPC Commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billable - Fixed Price</masterLabel>
+            <translation><!-- Billable - Fixed Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPC Warranty</masterLabel>
+            <translation><!-- EPC Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Billable</masterLabel>
+            <translation><!-- Not Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O&amp;M Warranty</masterLabel>
+            <translation><!-- O&amp;M Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- shows date of most recently completed service visit --></help>
+        <label><!-- Last Service Visit --></label>
+        <name>LastServiceVisit__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows date of most recently completed work order --></help>
+        <label><!-- Last Completed Work Order --></label>
+        <name>Last_Completed_Work_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows most recent date of most recently made visit comment --></help>
+        <label><!-- Latest Visit Comment Date --></label>
+        <name>LatestVisitCommentDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Case Comment Date --></label>
+        <name>Latest_Case_Comment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Light Reading (w/m2) --></label>
+        <name>Light_Reading_w_m2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Contract Documents --></label>
+        <name>Link_to_Contract_Documents__c</name>
+    </fields>
+    <fields>
+        <label><!-- MailID --></label>
+        <name>MailID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maintenance Type --></label>
+        <name>Maintenance_Type__c</name>
+        <picklistValues>
+            <masterLabel>Primary PM</masterLabel>
+            <translation><!-- Primary PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary PM</masterLabel>
+            <translation><!-- Secondary PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- comments should be for customers - used on case closure forms. --></help>
+        <label><!-- Case Summary --></label>
+        <name>Manager_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model # --></label>
+        <name>Manufacturer_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Rebate Filed --></label>
+        <name>Manufacturer_Rebate_Files__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be entered whenever a manufacturer provides an RMA or service.  This field is required if either of the following fields is set to yes: 
+Supplier/Manufacturer Service Required
+Supplier/Manufacturer Parts Required --></help>
+        <label><!-- Manufacturer RMA/Ticket # --></label>
+        <name>Manufacturer_Ticket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>Manufacturer__c</name>
+    </fields>
+    <fields>
+        <help><!-- quoted cost for the customer, if values are populated on the contract already they are brought over upon creation of the case, but can be edited if necessary. --></help>
+        <label><!-- Material Cost - Quoted --></label>
+        <name>MaterialCostQuoted__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailSentTo --></label>
+        <name>NVMContactWorld__EmailSentTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- NVMAccountOverride --></label>
+        <name>NVMContactWorld__NVMAccountOverride__c</name>
+    </fields>
+    <fields>
+        <help><!-- The content of this field is presented on the contact pad when a case is assigned to an agent. For example: Email --></help>
+        <label><!-- NVM Case Origin --></label>
+        <name>NVMContactWorld__NVMCaseOrigin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to override the NewVoiceMedia node a case routing request is sent to --></help>
+        <label><!-- NVMNodeOverride --></label>
+        <name>NVMContactWorld__NVMNodeOverride__c</name>
+    </fields>
+    <fields>
+        <help><!-- Override: how long to try to route replies to the case owner, when they are logged in --></help>
+        <label><!-- NVMOverrideCaseOwnerTimeoutLoggedIn --></label>
+        <name>NVMContactWorld__NVMOverrideCaseOwnerTimeoutLoggedIn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Override: how long to try to route replies to the case owner, when they are logged out --></help>
+        <label><!-- NVMOverrideCaseOwnerTimeoutLoggedOut --></label>
+        <name>NVMContactWorld__NVMOverrideCaseOwnerTimeoutLoggedOut__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to determine whether a case should be routed to an agent via NVM --></help>
+        <label><!-- NVMRoutable --></label>
+        <name>NVMContactWorld__NVMRoutable__c</name>
+    </fields>
+    <fields>
+        <label><!-- RoutePlanIdentifier --></label>
+        <name>NVMContactWorld__RoutePlanIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skills --></label>
+        <name>NVMContactWorld__Skills__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by workflow rule whenever a new public comment is created on a portal visible case. --></help>
+        <label><!-- NewPublicPortalCaseComment --></label>
+        <name>NewPublicPortalCaseComment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Steps --></label>
+        <name>NextSteps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer portal based email notifications will be sent to this Contact.  Field is set automatically when a case is created by a customer portal user.  not used by O&amp;M --></help>
+        <label><!-- Notifications Contact --></label>
+        <name>Notifications_Contact__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number of Attachments --></label>
+        <name>Number_of_Attachments__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts how many SV&apos;s have been completed. --></help>
+        <label><!-- Number of Completed Service Visits --></label>
+        <name>Number_of_Completed_Service_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Service Visits --></label>
+        <name>Number_of_Service_Visits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Number of Work Orders - Rollup --></help>
+        <label><!-- Number of Work Orders --></label>
+        <name>Number_of_Work_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of WOLIs with Comment --></label>
+        <name>NumberofWOLIswithComment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reactive: Site failure must respond immediately, Issue Tracking:  O&amp;M team is watchin, isn’t a site failure &amp; doesn’t require immediate response, Project: Long term repair agreed upon by case owner &amp; site owner to be outside the realm of reactive service --></help>
+        <label><!-- Case Type --></label>
+        <name>O_M_Issue_Tracking__c</name>
+        <picklistValues>
+            <masterLabel>Carport Investigation</masterLabel>
+            <translation><!-- Carport Investigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction Closeout</masterLabel>
+            <translation><!-- Construction Closeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue Tracking</masterLabel>
+            <translation><!-- Issue Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Investigation</masterLabel>
+            <translation><!-- Performance Investigation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive</masterLabel>
+            <translation><!-- Reactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety</masterLabel>
+            <translation><!-- Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satcon</masterLabel>
+            <translation><!-- Satcon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Old Id --></label>
+        <name>Old_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Project Size Watts (STC) --></label>
+        <name>Overall_Project_Size_Watts_STC__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Header Field --></label>
+        <name>PM_Header_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- capitalizes Account Name for reporting purposes, no need to be on layout --></help>
+        <label><!-- PM Report Account Name --></label>
+        <name>PM_Report_Account_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls in parent account name from related Account. --></help>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Maintenance Conclusion --></label>
+        <name>Performance_Maintenance_Conclusion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performance Maintenance Introduction --></label>
+        <name>Performance_Maintenance_Introduction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 1 --></label>
+        <name>Photo_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 2 --></label>
+        <name>Photo_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 3 --></label>
+        <name>Photo_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 4 --></label>
+        <name>Photo_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo 5 --></label>
+        <name>Photo_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Portal driven, not used  by O&amp;M --></help>
+        <label><!-- Portal Inquiry Type --></label>
+        <name>Portal_Inquiry_Type__c</name>
+        <picklistValues>
+            <masterLabel>General Inquiries/Feedback</masterLabel>
+            <translation><!-- General Inquiries/Feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>My System Is Not Working</masterLabel>
+            <translation><!-- My System Is Not Working --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To be selected yes if production on site is in anyway effected by a component --></help>
+        <label><!-- Production Affected --></label>
+        <name>Production_Effected__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- used to help filter Case Related List to show only Closed Cases, updated via LH, no need to be on layouts --></help>
+        <label><!-- Project Lookup Label Closed --></label>
+        <name>ProjectLookupLabelClosed__c</name>
+        <relationshipLabel><!-- Closed Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- used to help filter Case Related List to show only Active Cases, updated via LH, no need to be on layouts --></help>
+        <label><!-- Project Lookup Label Open --></label>
+        <name>ProjectLookupLabel__c</name>
+        <relationshipLabel><!-- Active Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- brings over site city from related project --></help>
+        <label><!-- Project City --></label>
+        <name>Project_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Location --></label>
+        <name>Project_Location__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California - Northern</masterLabel>
+            <translation><!-- California - Northern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California - Southern</masterLabel>
+            <translation><!-- California - Southern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation><!-- Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls over project state from related project --></help>
+        <label><!-- Project State --></label>
+        <name>Project_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Project associated with Account --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- used to filter related list to view only cases closed --></help>
+        <label><!-- Project if Closed --></label>
+        <name>ProjectifClosed__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to filter related list to view only active cases, includes all Status except Closed, Completed --></help>
+        <label><!-- Projects if Open --></label>
+        <name>ProjectsifOpen__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is field is updated via trigger if there is primary quote and quote status is not equal to accepted and used in validation rule --></help>
+        <label><!-- Quote Accepted --></label>
+        <name>Quote_Accepted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Attached --></label>
+        <name>Quote_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quoted Amount --></label>
+        <name>QuotedAmount__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from field of same name from related Contract --></help>
+        <label><!-- Quoted Fixed Price --></label>
+        <name>Quoted_Fixed_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula calculates $ amount as “Fixed/Estimated Price” minus the sum of “Quoted Material Cost” and “Quoted Labor Cost” --></help>
+        <label><!-- Quoted Gross Profit --></label>
+        <name>Quoted_Gross_Profit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula calculates % amount as “Fixed/Estimated Price” minus the sum of “Quoted Material Cost” and “Quoted Labor Cost” divided by “Fixed/Estimated Price” --></help>
+        <label><!-- Quoted Gross Profit % --></label>
+        <name>Quoted_Gross_Profit_x__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from field of same name from related Service Contract --></help>
+        <label><!-- Quoted Labor Costs --></label>
+        <name>Quoted_Labor_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls in value from field of same name on related Service Contract --></help>
+        <label><!-- Quoted Material Cost --></label>
+        <name>Quoted_Material_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMA Number --></label>
+        <name>RMA_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- for reactive type cases this field is required to close a case and will help determine value in Labor Billing Field on related Service Visits. --></help>
+        <label><!-- Reactive Service Type --></label>
+        <name>Reactive_Service_Type__c</name>
+        <picklistValues>
+            <masterLabel>Investigation - No Reactive Required</masterLabel>
+            <translation><!-- Investigation - No Reactive Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service</masterLabel>
+            <translation><!-- Reactive Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Borrego EPC Warranty</masterLabel>
+            <translation><!-- Reactive Service - Borrego EPC Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Borrego O&amp;M Warranty</masterLabel>
+            <translation><!-- Reactive Service - Borrego O&amp;M Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive Service - Manufacturer Warranty</masterLabel>
+            <translation><!-- Reactive Service - Manufacturer Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- looks at related SV&apos;s and if any of them are marked YES in the Case Resolved Field it flags the entire Case as YES ready for closing --></help>
+        <label><!-- Ready for Closing? --></label>
+        <name>Ready_for_Closing__c</name>
+    </fields>
+    <fields>
+        <help><!-- identifies who the requestor is in the case its being created manually by O&amp;M administrator. --></help>
+        <label><!-- Requested By --></label>
+        <name>Requested_By__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- how will this get accomplished --></help>
+        <label><!-- Roll Out Plan --></label>
+        <name>Roll_Out_Plan__c</name>
+    </fields>
+    <fields>
+        <help><!-- date case was transferred from SPG to O&amp;M Manager for follow up --></help>
+        <label><!-- SPG Transfer to O&amp;M Mgr --></label>
+        <name>SPG_Transfer_to_O_M_Mgr__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula field to capture the sales order id to pre-populate on CRG when create con req button is clicked in lightning. --></help>
+        <label><!-- Sales order Id --></label>
+        <name>Sales_order_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial # --></label>
+        <name>Serial__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays text value only of related Contract field TYPE, used in VR on Case to make sure it matches the field Contract Type --></help>
+        <label><!-- Service Contract Type TEXT Value --></label>
+        <name>ServiceContractTypeTEXTValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- The related service contract # for account which this case was opened. --></help>
+        <label><!-- Service Contract --></label>
+        <name>ServiceContract_Case__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- shows SF Contract ID , used mostly for reporting. --></help>
+        <label><!-- Service Contract SF ID --></label>
+        <name>Service_Contract_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Date --></label>
+        <name>Service_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site ID --></label>
+        <name>Site_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The site associated with the project in saleforce --></help>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Must be checked in order for 1st level of escalation to be satisfied. --></help>
+        <label><!-- Solution in Progress --></label>
+        <name>Solution_in_Progress__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto checks off if spare parts inventory asset type is used on related service visits --></help>
+        <label><!-- Spare Parts Used? --></label>
+        <name>Spare_Parts_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- auto populates with the date a case first uses the status of ON HOLD  - ENG/SPG Review --></help>
+        <label><!-- Date 1st ENGSPG HOLD --></label>
+        <name>Start_Date_1st_ENGSPG_HOLD__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays date that the most recent hold has started. if the hold box is unchecked the date displayed represents a previous hold. - updated via workflow --></help>
+        <label><!-- Start Date Most Recent Hold --></label>
+        <name>Start_Date_of_Most_Recent_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the date in which the most recent status change has taken place, update via workflow --></help>
+        <label><!-- Start Date of Most Recent Status Change --></label>
+        <name>Start_Date_of_Most_Recent_Status_Change2__c</name>
+    </fields>
+    <fields>
+        <help><!-- To be checked if the manufacturer or supplier needs  to send parts to site to service equipment --></help>
+        <label><!-- Supplier/Manufacturer Parts Required --></label>
+        <name>Supplier_Manufacturer_Parts_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes - covered under warranty</masterLabel>
+            <translation><!-- Yes - covered under warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To be checked if the manufacturer or supplier needs to come to site to service equipment --></help>
+        <label><!-- Supplier/Manufacturer Service Required --></label>
+        <name>Supplier_Manufacturer_Service_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes - covered under warranty</masterLabel>
+            <translation><!-- Yes - covered under warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tasks --></label>
+        <name>Tasks__c</name>
+        <picklistValues>
+            <masterLabel>Client Reporting</masterLabel>
+            <translation><!-- Client Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Setup</masterLabel>
+            <translation><!-- Contract Setup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote Creation</masterLabel>
+            <translation><!-- Quote Creation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF Report Request</masterLabel>
+            <translation><!-- SF Report Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SF Update Request</masterLabel>
+            <translation><!-- SF Update Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOL/PO Request</masterLabel>
+            <translation><!-- SOL/PO Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOP updates</masterLabel>
+            <translation><!-- SOP updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Setup</masterLabel>
+            <translation><!-- Vendor Setup --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Personnel who worked on the problem on site. If no one goes to site --></help>
+        <label><!-- Technician --></label>
+        <name>Technician__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of Hours between Date/Time Opened on the Case and from related Work Orders the earliest Work Order Start Time --></help>
+        <label><!-- Time to Site --></label>
+        <name>Time_to_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Travel Hours from WOs --></label>
+        <name>TotalLaborHours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Labor Hours from WOs --></label>
+        <name>TotalLaborHoursfromWOs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Travel Hours from WOs --></label>
+        <name>TotalTravelHoursfromWOs__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;On Hold - Waiting for Parts&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days &quot;On Hold - Parts&quot; --></label>
+        <name>Total_Days_On_Hold_Parts__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Deployment Review&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Deployment Review&quot; --></label>
+        <name>Total_Days_on_Deployment_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Escalated to Director&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Escalated to Director&quot; --></label>
+        <name>Total_Days_on_Escalated_to_Director__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Escalated to RM&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Escalated to RM&quot; --></label>
+        <name>Total_Days_on_Escalated_to_RM__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Escalated to SPG&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Escalated to SPG&quot; --></label>
+        <name>Total_Days_on_Escalated_to_SPG__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with a workflow that cumulatively adds days on hold --></help>
+        <label><!-- Total Days on Hold --></label>
+        <name>Total_Days_on_Hold__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Inventory Fulfillment&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on Inventory Fulfillment --></label>
+        <name>Total_Days_on_Inventory_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;New Case&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on New Case Status --></label>
+        <name>Total_Days_on_New_Case_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;On Hold - Follow Up&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;On Hold- Follow Up&quot; --></label>
+        <name>Total_Days_on_On_Hold_Follow_Up__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;On Hold - RMA&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;On Hold -RMA&quot; --></label>
+        <name>Total_Days_on_On_Hold_RMA__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;On Hold - Weather&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;On Hold Weather&quot; --></label>
+        <name>Total_Days_on_On_Hold_Weather__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;On Hold - Waiting Customer Response&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;On hold- customer&quot; --></label>
+        <name>Total_Days_on_On_hold_customer__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Ops Review&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on Ops Review --></label>
+        <name>Total_Days_on_Ops_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Pending Quote&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Pending Quote&quot; --></label>
+        <name>Total_Days_on_Pending_Quote__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Ready to Schedule&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Ready to Schedule&quot; --></label>
+        <name>Total_Days_on_Ready_to_Schedule__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Scheduled&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Scheduled&quot; --></label>
+        <name>Total_Days_on_Scheduled__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the total number of days a case has been on &quot;Subcontracted&quot; PRIOR to the current New Case status cycle. It updates with the new status days once the status is changed --></help>
+        <label><!-- Total Days on &quot;Subcontracted&quot; --></label>
+        <name>Total_Days_on_Subcontracted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Travel Hours from WO round --></label>
+        <name>Total_Travel_Hours_from_WO_round__c</name>
+    </fields>
+    <fields>
+        <help><!-- Case Start Date - Case Close Date - Any Cumulative Dates on hold, displayed in calendar days --></help>
+        <label><!-- Days to Close --></label>
+        <name>Turn_Around_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- (Case Start date - Case Resolution Date) * Does not subtract any cumulative days on hold --></help>
+        <label><!-- Days to Close w/o Holds --></label>
+        <name>Turn_Around_Time_w_o_Holds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically filled in based on relatd account if &quot;VIP&quot; then the value will be &quot;Yes&quot;. --></help>
+        <label><!-- VIP Customer --></label>
+        <name>VIP_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vac --></label>
+        <name>Vac__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voc (after) --></label>
+        <name>Voc_after__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voc (before) --></label>
+        <name>Voc_before__c</name>
+    </fields>
+    <fields>
+        <help><!-- True is there is at least one Work Order with a Work Order Line Item that has a comment. Used in Conga Performance Report. --></help>
+        <label><!-- WOLI with Comment --></label>
+        <name>WOLI_with_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Registration Number --></label>
+        <name>Warranty_Registration_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Registration --></label>
+        <name>Warranty_Registration__c</name>
+        <relationshipLabel><!-- Claims --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- clarifies if there is was a safety issue on site --></help>
+        <label><!-- Was there a safety issue? --></label>
+        <name>Was_there_a_safety_issue__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- did anything happen on site that caused harm to the environment --></help>
+        <label><!-- Was there an environmental issue? --></label>
+        <name>Was_there_an_environmental_issue__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- WorkType --></label>
+        <name>WorkType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Type --></label>
+        <name>Work_Type__c</name>
+        <picklistValues>
+            <masterLabel>Construction Closeout</masterLabel>
+            <translation><!-- Construction Closeout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landscaping</masterLabel>
+            <translation><!-- Landscaping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maintenance</masterLabel>
+            <translation><!-- Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Washing</masterLabel>
+            <translation><!-- Module Washing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational Commissioning</masterLabel>
+            <translation><!-- Operational Commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reactive</masterLabel>
+            <translation><!-- Reactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Project</masterLabel>
+            <translation><!-- Special Project --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Work --></label>
+        <name>agf__ADM_Work__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- attachmentIdSelected --></label>
+        <name>attachmentIdSelected__c</name>
+    </fields>
+    <fields>
+        <label><!-- cost/kWh --></label>
+        <name>cost_kWh__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indicator Lights --></label>
+        <name>indicator_lights__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this field to make this case visible in the customer portal.  Not used by O&amp;M --></help>
+        <label><!-- isPortalCase --></label>
+        <name>isPortalCase__c</name>
+    </fields>
+    <fields>
+        <label><!-- otherEmailSelected --></label>
+        <name>otherEmailSelected__c</name>
+    </fields>
+    <fields>
+        <label><!-- userIdEmailSelected --></label>
+        <name>userIdEmailSelected__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- to be used when design modification is being done --></description>
+        <label><!-- Additional Services --></label>
+        <name>Additional_Services</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- need definition --></description>
+        <label><!-- Construction Closeout --></label>
+        <name>Construction_Closeout</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- to be used when design modification is being done --></description>
+        <label><!-- Design Modification --></label>
+        <name>Design_Modification</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- EPC Warranty Claim --></label>
+        <name>EPC_Warranty_Claim</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used by O&amp;M team to scheudule landscaping --></description>
+        <label><!-- Landscaping --></label>
+        <name>Landscaping</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used to log all maintenance casework --></description>
+        <label><!-- Maintenance Case --></label>
+        <name>Maintenance_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used by O&amp;M team to scheudule module washings --></description>
+        <label><!-- Module Washing --></label>
+        <name>Module_Washing</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used by O&amp;M team to request administrative type tasks from O&amp;M Support Team --></description>
+        <label><!-- O&amp;M Admin Support --></label>
+        <name>O_M_Admin_Support</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used by O&amp;M to log operational commissioning cases --></description>
+        <label><!-- Operational Commissioning --></label>
+        <name>Operational_Commissioning</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For Calls that do not link to and existing user or customer --></description>
+        <label><!-- Ops Center - Call Case --></label>
+        <name>Ops_Center_Call_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- cases related to peformance of asset, managed by SPG group --></description>
+        <label><!-- Performance Investigation --></label>
+        <name>Performance_Investigation</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used by O&amp;M to log pre-operational commissioning cases --></description>
+        <label><!-- Preoperational Commissioning --></label>
+        <name>Preoperational_Commissioning</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- One-off projects such as due diligence visits, retrofits/rebuilds, DAS replacements --></description>
+        <label><!-- Project --></label>
+        <name>Project</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- used to log all reactive service cases and is default case type for email to case settings --></description>
+        <label><!-- Reactive --></label>
+        <name>Service</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Special Projects --></label>
+        <name>Special_Projects</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- for all cases that are under Borrego Warranty --></description>
+        <label><!-- Warranty --></label>
+        <name>Warranty</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- A quote must be accepted before closing a case. --></errorMessage>
+        <name>Accepted_Quotes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Labor Billing is required to close the case. --></errorMessage>
+        <name>Additional_Services_Labor_Billing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- There are Service Visits that have not yet been completed.  Please make sure all visits are complete before closing the case. --></errorMessage>
+        <name>Cannot_Close_Case_if_SV_are_still_open</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the Operations Center Manager or O&amp;M Director can reopen a case --></errorMessage>
+        <name>Cannot_Reopen_Cases</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This case has already been in this HOLD status twice so it cannot be placed back into that  same Status. --></errorMessage>
+        <name>Case_On_Hold_Limits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Case Resolution Date must be greater than the Case Start date plus the Cumulative Days on Hold. You also cannot enter a Case Resolution Date if the Case is still in the On Hold Status. --></errorMessage>
+        <name>Case_Resolution_Date_Accuracy</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Before closing a billable project case you must attach the Quote in the Notes &amp; Attachments section of the Case. --></errorMessage>
+        <name>Close_Project_Case_Needs_Attachment</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Labor Billing must have a value to close the case. --></errorMessage>
+        <name>Close_Project_Case_Needs_Labor_Billing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Service Contract is required once a project is assigned to the Case. --></errorMessage>
+        <name>Contract_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract Type cannot be changed, it needs to match the value of TYPE on the related Contract. --></errorMessage>
+        <name>Contract_Type_match_Contract_Associated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- RMA Number is required --></errorMessage>
+        <name>RMA_Number_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Comment --></label>
+        <name>Add_Comment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- All_Comments_Private --></label>
+        <name>All_Comments_Private</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- All_Comments_Public --></label>
+        <name>All_Comments_Public</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_with_Items --></label>
+        <name>Clone_with_Items</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Case --></label>
+        <name>Close_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_BSSI --></label>
+        <name>Conga_Composer_BSSI</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_New_Landscaping_Report --></label>
+        <name>Conga_Composer_New_Landscaping_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_New_PM_Report --></label>
+        <name>Conga_Composer_New_PM_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_New_Reactive_Report --></label>
+        <name>Conga_Composer_New_Reactive_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_PM_Field_Service_Report --></label>
+        <name>Conga_Composer_PM_Field_Service_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_PM_Field_Service_Report_OLD --></label>
+        <name>Conga_Composer_PM_Field_Service_Report_OLD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_PM_Report --></label>
+        <name>Conga_Composer_PM_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Composer_Test --></label>
+        <name>Conga_Composer_Test</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Case_from_Contract --></label>
+        <name>Create_Case_from_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Closure_Form --></label>
+        <name>Create_Closure_Form</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Con_Req_Group --></label>
+        <name>Create_Con_Req_Group</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Maintenance_Report --></label>
+        <name>Create_Maintenance_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Work_Order --></label>
+        <name>Create_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_a_Work_Order --></label>
+        <name>Create_a_Work_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_case --></label>
+        <name>Create_case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Field_Service_Report --></label>
+        <name>Field_Service_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Maintenance_Report --></label>
+        <name>Maintenance_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Attach_Files --></label>
+        <name>Mass_Attach_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Edit --></label>
+        <name>Mass_Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NEW_Field_Service_Report --></label>
+        <name>NEW_Field_Service_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Account_Case --></label>
+        <name>New_Account_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Asset_Case --></label>
+        <name>New_Asset_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Contract_Case --></label>
+        <name>New_Contract_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_ListView_Case --></label>
+        <name>New_ListView_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_PM_Report --></label>
+        <name>Print_PM_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Request_Admin_Support --></label>
+        <name>Request_Admin_Support</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- S_Docs_Generate_Large_Report --></label>
+        <name>S_Docs_Generate_Large_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Select_Project_Asset --></label>
+        <name>Select_Project_Asset</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Landscaping_Report --></label>
+        <name>Send_Landscaping_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_PM_Report --></label>
+        <name>Send_PM_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Reactive_Report --></label>
+        <name>Send_Reactive_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- TEST_S_Docs_Generate_Large_Report_NEW --></label>
+        <name>TEST_S_Docs_Generate_Large_Report_NEW</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Survey_Case --></label>
+        <name>TIMBASURVEYS__Send_Survey_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Survey_To_Selected --></label>
+        <name>TIMBASURVEYS__Send_Survey_To_Selected</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Attach_Files --></label>
+        <name>dropzone__Attach_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>dropzone__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_with_DocuSign --></label>
+        <name>dsfs__Send_with_DocuSign</name>
+    </webLinks>
+</CustomObjectTranslation>

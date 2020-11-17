@@ -1,0 +1,44 @@
+<apex:page standardController="SV__c" extensions="ScheduleServiceVisitsController" recordSetVar="ServiceVisitRecord">
+ 
+     <apex:form >
+         <apex:pageBlock title="Schedule Your Service Visits">
+         <apex:pageMessages ></apex:pageMessages>
+         <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Schedule Service Visits" action="{!ScheduleServiceVisits}"/>
+                 <apex:commandButton value="Cancel" action="{!Cancel}"/>                 
+         </apex:pageBlockButtons>
+         
+         <apex:pageBlockSection columns="1" collapsible="False">
+             <apex:inputField required="true" value="{!ServiceVisitObject.Contract__c}"/>
+             <apex:inputField required="true" value="{!ServiceVisitObject.Account__c}"/>
+             <!--<apex:inputField required="true" value="{!ServiceVisitObject.Case__c}"/>-->
+                <apex:inputField required="true" value="{!ServiceVisitObject.Visit_Reason__c}"/>
+                <apex:inputField required="true" label="Start Date" value="{!ServiceVisitObject.Visit_Date__c}"/>
+             <!-- <apex:inputText required="true" label="End After # of Visits" value="{!VisitDuration}"/> --> 
+                <apex:pageBlockSectionItem >
+                   Frequency (Every)
+                   <apex:outputPanel >
+                       <apex:inputText required="true" label="" value="{!Frequency}"/> 
+                       <apex:selectList required="true" size="1"  value="{!FrequencyType}">
+                            <apex:selectOptions value="{!FrequencyTypeItems}"/>
+                           <!-- tesT --> &nbsp;&nbsp;
+                        </apex:selectList><br/><br/>
+                       
+                    </apex:outputPanel>
+                   
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                 End After # of Visits &nbsp;&nbsp; <apex:inputText required="true" label="" value="{!VisitDuration}"/>
+                </apex:pageBlockSectionItem>
+                
+                                               
+                <apex:inputField required="true"  label="Notes" style="width:250px; height:100px" value="{!ServiceVisitObject.Notes__c}"/>                  
+                <apex:inputField required="true" value="{!ServiceVisitObject.Owner__c}"/>
+         </apex:pageBlockSection>
+         
+         </apex:pageBlock>
+     </apex:form>
+    
+                         
+ 
+</apex:page>

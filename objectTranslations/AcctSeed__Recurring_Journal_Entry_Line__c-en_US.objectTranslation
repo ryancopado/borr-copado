@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Recurring Journal Entry --></label>
+        <name>AcctSeed__Recurring_Journal_Entry</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Related Customer or Vendor --></help>
+        <label><!-- Account --></label>
+        <name>AcctSeed__Account__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize records in Cash Flow Statement. --></help>
+        <label><!-- Cash Flow Category --></label>
+        <name>AcctSeed__Cash_Flow_Category__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines (Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Salesforce Contact --></help>
+        <label><!-- Contact --></label>
+        <name>AcctSeed__Contact__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The right side of a double entry accounting transaction. Represented as a negative amount in the transactions table. --></help>
+        <label><!-- Credit --></label>
+        <name>AcctSeed__Credit__c</name>
+    </fields>
+    <fields>
+        <help><!-- The left side of a double entry accounting transaction. Represented as a positive amount in the transactions table. --></help>
+        <label><!-- Debit --></label>
+        <name>AcctSeed__Debit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Salesforce User. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- General Ledger segment used for reporting of a business unit such as division or department. --></help>
+        <label><!-- GL Variable 1 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot; and must have a status of Active. One or more of these conditions have not been met. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- General Ledger segment used for reporting of a business unit such as division or department. --></help>
+        <label><!-- GL Variable 2 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot; and must have a status of Active. One or more of these conditions --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines (GL Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- General Ledger segment used for reporting of a business unit such as division or department. --></help>
+        <label><!-- GL Variable 3 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot; and must have a status of Active. One or more of these conditions --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines (GL Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- General Ledger segment used for reporting of a business unit such as division or department. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot; and must have a status of Active. One or more of these conditions have not been met. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines (GL Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The credit GL Account used to record the transaction in the general ledger. --></help>
+        <label><!-- GL Account --></label>
+        <name>AcctSeed__GL_Account__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related product. --></help>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to track a detailed component of Project. --></help>
+        <label><!-- Project Task --></label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Typically used to track customer engagements or events. --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity for Product Pricing, Hours for Service pricing or costing. --></help>
+        <label><!-- Quantity --></label>
+        <name>AcctSeed__Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Parent record for this line. --></help>
+        <label><!-- Recurring Journal Entry --></label>
+        <name>AcctSeed__Recurring_Journal_Entry__c</name>
+        <relationshipLabel><!-- Recurring Journal Entry Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to capture any external source document identifier or description. --></help>
+        <label><!-- Reference --></label>
+        <name>AcctSeed__Reference__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+</CustomObjectTranslation>

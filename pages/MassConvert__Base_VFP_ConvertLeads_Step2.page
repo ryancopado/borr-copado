@@ -1,0 +1,189 @@
+<apex:page controller="MassConvert.MassLeadConvert" id="pg" tabStyle="Lead" sidebar="false" title="Mass Convert Leads - Select Contacts">
+    <style>
+        .slds-card {
+        	background: #f7f9fb !important;
+            border: none !important;
+            border-right: 1px solid #d8dde6 !important;
+            border-bottom: 1px solid #d8dde6 !important;
+            border-left: 1px solid #d8dde6 !important;
+        }
+        .slds-select{
+        	width: auto !important;
+        }
+    </style>
+    <script>
+	function backToList()
+    {
+        location.href = '/00Q';
+        return false;
+    }
+    
+    function disableElements() {
+        var x=document.getElementsByTagName('select');
+        var z = new Array();
+        var o = new Array();
+        if (x != null) {
+            console.log('---'+ x.length);
+            for(var j = 0; j< x.length; j++){
+                var selectedText = x[j].options[x[j].selectedIndex].text.replace('Create New Contact: ','').replace('Attach To Existing: ','');
+                z.push(selectedText);
+                o.push(x[j].parentNode);
+                console.log('---'+selectedText);
+            }
+            for(var k = 0; k< o.length; k++){
+                o[k].innerHTML = z[k];
+                console.log('---'+z[k]);
+            }
+        }
+    }
+    </script>
+    <apex:slds rendered="true"/>
+    <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon_container--circle slds-icon-action-description">
+                                <svg class="slds-icon slds-icon--small" aria-hidden="true">
+                                    <use href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#lead_convert')}"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-title--caps slds-line-height--reset">Contact Selection</p>
+                            <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match the Record Title">Mass Convert Leads</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="slds-grid" style="padding-top: 10px;">
+                <div class="slds-col slds-align-bottom">
+                    <p class="slds-text-body--small">
+                        • If you really want us to convert a lead, please specify a user for the owner field.<br/>
+                        • If you would like us to create a follow-up task, you must specify the task subject.<br/>
+                        • We can only convert 50 leads at a time but we dont expect you to keep a count. 
+                        Just go ahead and give us 200 leads and we will convert the first 50.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    <apex:form id="frm">
+        
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__body">
+                        <h2>
+                            <span class="slds-text-heading--small">Step 2. Create a new contact or update the existing contact.</span>&nbsp;
+                            <span>(Step 2 of 2)</span>
+                        </h2>
+                    </div>
+                </header>
+                <div class="slds-no-flex">
+                    <apex:actionStatus startText="Please wait..."  id="theStatus1">
+                        <apex:facet name="stop">
+                            <apex:commandButton value="Convert" action="{!massConvertRecords}" oncomplete="javascript:disableElements();" 
+                                                styleClass="slds-button slds-button--neutral" status="theStatus1" 
+                                                reRender="frm,theStatus1" rendered="{!IF(getLstResult.Size > 0,false,true)}"/>
+                        </apex:facet>
+                        <apex:facet name="start">
+                            <apex:commandButton status="theStatus" value="Converting..." disabled="true" styleClass="slds-button slds-button--neutral" />
+                        </apex:facet>
+                    </apex:actionStatus>&nbsp;
+                    <apex:commandButton value="Previous" action="{!step1}" styleClass="slds-button slds-button--neutral" rendered="{!IF(getLstResult.Size > 0,false,true)}"/>
+                    <apex:commandButton value="Back To Leads List"   onClick="return backToList();" styleClass="slds-button slds-button--neutral"/>
+                </div>
+            </div>
+            <!-- Main Block -->
+            <apex:outputPanel rendered="{!IF(getLstResult.Size > 0,false,true)}">
+                
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered slds-table--resizable-cols" role="grid">
+                        <thead>
+                            <tr class="slds-line-height--reset">
+                                <th class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col" style="padding-left: 22px;">
+                                    <span class="slds-truncate" title="Account Name">Account Name</span>
+                                </th>
+                                <th class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                    <span class="slds-truncate" title="ContactName">Contact Name</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!listConvertParameters}" id="pbt" var="item">
+                                <tr class="slds-hint-parent">
+                                    <td role="gridcell" style="padding-left: 22px;">
+                                        <div class="slds-truncate" title="{!item.accountName}">
+                                            <apex:outputLabel value="{!item.accountName}" /> 
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="">
+                                            <apex:outputLabel value="{!item.contactName}" rendered="{!IF(item.listContact.Size > 1,false,true)}"/>
+                                            <apex:selectList styleClass="slds-select" value="{!item.selectedContactId}" size="1" multiselect="false" rendered="{!IF(item.listContact.Size > 1,true,false)}">
+                                                <apex:selectOptions value="{!item.listContact}" />
+                                            </apex:selectList>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer" style="border-bottom: 1px solid #d8edff;"></div>
+            </apex:outputPanel>
+            
+            <!-- Result Block-->
+            <apex:outputPanel rendered="{!IF(getLstResult.Size > 0,true,false)}">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__body">
+                            <h2>
+                                <apex:outputPanel rendered="{!IF(getLstResult.Size > 0,true,false)}">
+                                    <apex:outputLabel value="{!successRecordCounter} record(s) converted successfully" styleClass="slds-text-heading--small"
+                                                      rendered="{!IF(successRecordCounter = 0,false,true)}"></apex:outputLabel>
+                                    <apex:outputLabel value="{!failureRecordCounter} record(s) could not be converted." styleClass="slds-text-heading--small"
+                                                      rendered="{!IF(failureRecordCounter = 0,false,true)}"></apex:outputLabel>
+                                </apex:outputPanel>
+                            </h2>
+                        </div>
+                    </header>
+                    <div class="slds-no-flex"></div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered slds-table--resizable-cols" role="grid">
+                        <thead>
+                            <tr class="slds-line-height--reset">
+                                <th class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col" style="padding-left: 22px;">
+                                    <span class="slds-truncate" title="Lead(Name-Company)">Lead(Name-Company)</span>
+                                </th>
+                                <th class="slds-is-sortable slds-is-resizable slds-text-title--caps" scope="col">
+                                    <span class="slds-truncate" title="Results">Results</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!getLstResult}" id="pbt2" var="item" >
+                                <tr class="slds-hint-parent">
+                                    <td role="gridcell" style="padding-left: 22px;">
+                                        <div class="slds-truncate" title="{!item.leadInfo}">
+                                            <apex:outputLabel value="{!item.leadInfo}" /> 
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title="">
+                                            <apex:outputLabel value="{!item.resultMessage}" /> 
+                                        </div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer"></div>
+            </apex:outputPanel>
+        </article>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Pending_Work_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Pending_Work_Lightning_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Pending_Work_Lightning_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Asset__c</fields>
+        <fields>Status__c</fields>
+        <fields>Associated_Case_to_Close__c</fields>
+        <fields>Case__c</fields>
+        <label>Pending Work Lightning Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_ID__c</fullName>
+        <description>SF ID of Account associated with related Project, used mostly for reporting, no need to be on layout</description>
+        <externalId>false</externalId>
+        <formula>Project__r.AccountID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>SF ID of Account associated with related Project</inlineHelpText>
+        <label>Account ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Asset_Manufacturer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Asset__r.Product2.Manufacturer_Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Asset Manufacturer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Asset_Model__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Visit__r.AssetModel__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Asset Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Asset_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Asset__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Asset Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Asset_Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Asset__r.SerialNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Asset Serial Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Asset_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Asset__r.Component_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Asset Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Asset__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Asset</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria. The Project on the Asset must match the Project on the Pending Work.</errorMessage>
+            <filterItems>
+                <field>$Source.Project__c</field>
+                <operation>equals</operation>
+                <valueField>Asset.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Asset</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Case_to_Close__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Case in which the pending work item was addressed</inlineHelpText>
+        <label>Associated Case to Close</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Pending Work (Associated Case to Close)</relationshipLabel>
+        <relationshipName>Pending_Work1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Service_Visit_to_Close__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Service Visit in which the Pending work item was addressed</inlineHelpText>
+        <label>Associated Service Visit to Close</label>
+        <referenceTo>SV__c</referenceTo>
+        <relationshipLabel>Pending Work (Associated Service Visit to Close)</relationshipLabel>
+        <relationshipName>Pending_Work1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Date_Time_Opened__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Date/Time Opened</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.CaseNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Resolution_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Case_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulled from the &quot;Case Resolution Date&quot; from the related Case.</inlineHelpText>
+        <label>Case Resolution Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Case_Started_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Case_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulled from the &quot;Case Start Date&quot; on the related Case</inlineHelpText>
+        <label>Case Started Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Checklist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Checklist</label>
+        <referenceTo>Checklist__c</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Contract must be associated with the same Project as the Pending Work</errorMessage>
+            <filterItems>
+                <field>Contract.ASProject__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Closed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Opened__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Opened</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description_of_Pending_Work__c</fullName>
+        <externalId>false</externalId>
+        <label>Description of Pending Work</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>O_M_Package__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Contract__r.O_M_Package__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulled from the &quot;O&amp;M Contract&quot; field on the related Contract</inlineHelpText>
+        <label>O&amp;M Package</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Items__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Items</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Parts__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Parts</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RMA__c</fullName>
+        <externalId>false</externalId>
+        <label>RMA</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Visit_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Visit__r.Visit_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulled from the &quot;Visit End Date&quot; on the related Service Visit.</inlineHelpText>
+        <label>Service Visit End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Visit_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Service_Visit__r.Visit_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulled from the &quot;Visit Start Date&quot; on the related Service Visit.</inlineHelpText>
+        <label>Service Visit Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Visit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Visit</label>
+        <referenceTo>SV__c</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Display the Status of the Pending Work</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Assigned</fullName>
+                    <default>false</default>
+                    <label>Assigned</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>show how/where the pending work was created, used mostly in PB and VR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>show how/where the pending work was created</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto Created</fullName>
+                    <default>false</default>
+                    <label>Auto Created</label>
+                </value>
+                <value>
+                    <fullName>Manual Creation SV</fullName>
+                    <default>false</default>
+                    <label>Manual Creation SV</label>
+                </value>
+                <value>
+                    <fullName>Manual Creation Project</fullName>
+                    <default>false</default>
+                    <label>Manual Creation Project</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>WOLI_to_Close__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>WOLI to Close</label>
+        <referenceTo>WorkOrderLineItem</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Line_Item_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Work_Order_Line_Item__r.LineItemNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Work Order Line Item Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Line_Item_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Work_Order_Line_Item__r.Start_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Work Order Line Item Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order Line Item</label>
+        <referenceTo>WorkOrderLineItem</referenceTo>
+        <relationshipLabel>Pending Work (Work Order Line Item)</relationshipLabel>
+        <relationshipName>Pending_Work1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order_To_Close__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order To Close</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Pending Work (Work Order To Close)</relationshipLabel>
+        <relationshipName>Pending_Work1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Work_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Pending Work</relationshipLabel>
+        <relationshipName>Pending_Work</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Pending Work</label>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Pending Work Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pending Work</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Pending_Work_Manually_Created</fullName>
+        <active>true</active>
+        <description>If pending work was created from a project it should not be associated with a Service Visit or a Case.</description>
+        <errorConditionFormula>AND(
+ ISPICKVAL(Type__c, &quot;Manual Creation Project&quot;),
+ OR(NOT(ISBLANK(Service_Visit__c )),
+ NOT(ISBLANK(Case__c )))
+)</errorConditionFormula>
+        <errorMessage>If pending work was created from a project it should not be associated with a Service Visit or a Case.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Create_Pending_Work_Project</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Pending Work</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/aBh/e?CF00N34000005hFEY={!AcctSeed__Project__c.Name}&amp;CF00N34000005hFEY_lkid={!AcctSeed__Project__c.Id}&amp;CF00N34000005hFEI={!AcctSeed__Project__c.AcctSeed__Account__c}&amp;CF00N34000005hFEI_lkid={!AcctSeed__Project__c.AccountID__c}&amp;00N34000005hHv6=Manual Creation Project&amp;retURL=/{!AcctSeed__Project__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Pending_Work_SV</fullName>
+        <availability>online</availability>
+        <description>auto fills filled with values from related SV</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create Pending Work SV</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/aBh/e?e?CF00N34000005hFGD={!SV__c.Name}&amp;CF00N34000005hFGD_lkid={!SV__c.Id}&amp;CF00N34000005hFEI={!SV__c.Account__c}&amp;CF00N34000005hFEI_lkid={!SV__c.AccountId__c}&amp;00N34000005hHv6=Manual Creation SV
+&amp;CF00N34000005hFEY={!SV__c.Project__c}&amp;CF00N34000005hFEY_lkid={!SV__c.ProjectId__c}
+&amp;CF00N34000005hFER={!SV__c.Contract__c}&amp;CF00N34000005hFER_lkid={!SV__c.ContractId__c}
+&amp;CF00N34000005hFEN={!SV__c.Asset__c}&amp;CF00N34000005hFEN_lkid={!SV__c.AssetId__c}
+&amp;retURL=/{!SV__c.Id}</url>
+    </webLinks>
+</CustomObject>

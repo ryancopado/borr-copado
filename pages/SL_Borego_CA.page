@@ -1,0 +1,71 @@
+<apex:page sidebar="false">
+    <div style="min-height:300px;position:relative" id="ca_body">
+    <span class="simple_button">Nonexempt Timecard</span>
+    <SLCA2:calendar func="{ready:fReady}" createable="a2k34000000z95xAAA"></SLCA2:calendar>
+    </div>
+    <script>
+/* Required to make the CA UI adjust to window size */
+var fReady = function(oAPI){
+   var oJQ = jQuery.noConflict();
+   oJQ(window).on('resize.CA', function(){
+       var nH = (oJQ(window).height() 
+                 - oJQ('#calendar').offset().top 
+                 - (oJQ('.bPageFooter').size() > 0 ? oJQ('.bPageFooter')[0].offsetHeight : 0)
+                 //                    - (jQuery('#bodyTable')[0].offsetHeight) 
+                );
+       oJQ('#calendar').parent().parent().css({
+           "min-height" : nH + 'px'
+       });
+       oJQ('#bodyTable').css('height', nH + 'px'); 
+       
+   });
+       
+    oJQ(window).trigger('resize.CA');
+    oJQ('#ca_body > .simple_button').click(function(){
+    
+//        document.location.href = '/apex/NonExemptTimecard';
+        window.open('/apex/NonExemptTimecard');
+    });
+    
+    oAPI.setFunc('eventEditCalendarSelect', function(params, evt){
+        params.predefine = params.predefine || [];
+        params.predefine.push({"name" : "technician__c", "value" : "{!$User.Contact_Record_ID__c}", "oper" : "equal", "text" : "{!JSENCODE($User.Contact_Record_Name__c)}"});
+        params.predefine.push({"name" : "project__c", "value" : "{!$User.ASV_Project_Id__c}", "oper" : "equal", "text" : "{!JSENCODE($User.ASV_Project_Name__c)}"});
+        params.predefine.push({"name" : "contract__c", "value" : "{!$User.ASV_Contract_Id__c}", "oper" : "equal", "text" : "{!JSENCODE($User.ASV_Contract_Number__c)}"});
+        return true;
+        
+    });
+}
+</script>
+<style>
+.noSidebarCell{
+  padding:0px !important;
+  
+}
+body .bodyDiv #bodyTable {
+  padding-bottom:0 !important;
+}
+    
+#ca_body > .simple_button {
+    position:absolute;
+    top:5px;
+    /*right:430px;    */
+    left: 50%;
+    margin-left:-250px;
+    z-index:99;
+    background: #eeeeee;
+    background: -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#dddddd 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#dddddd 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#dddddd 100%);
+    background: linear-gradient(top, #ffffff 0%,#dddddd 100%);
+    line-height: 30px;
+    padding: 0px 10px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+</style>
+</apex:page>

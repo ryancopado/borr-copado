@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The bank account which will be reconciled. Only source records associated with this bank account will be associated with this bank reconciliation. --></help>
+        <label><!-- Bank Account --></label>
+        <name>AcctSeed__Bank_Account__c</name>
+        <relationshipLabel><!-- Bank Reconciliations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The beginning balance of the bank reconciliation. This is usually retrieved from the bank statement. --></help>
+        <label><!-- Beginning Balance --></label>
+        <name>AcctSeed__Beginning_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the beginning balance plus the cleared deposits minus the cleared disbursements. --></help>
+        <label><!-- Calculated Ending Balance --></label>
+        <name>AcctSeed__Calculated_Ending_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- The aggregate amount of cleared deposits associated with this bank reconciliation. This includes all cleared cash receipts, bank deposits, and journal lines with a debit balance. --></help>
+        <label><!-- Cleared Deposits --></label>
+        <name>AcctSeed__Cleared_Deposits__c</name>
+    </fields>
+    <fields>
+        <help><!-- The aggregate amount of cleared disbursements for the bank reconciliation. This includes all cleared cash disbursements and journal entry lines with a credit balance. --></help>
+        <label><!-- Cleared Disbursements --></label>
+        <name>AcctSeed__Cleared_Disbursements__c</name>
+    </fields>
+    <fields>
+        <help><!-- The end date for the bank reconciliation. --></help>
+        <label><!-- End Date --></label>
+        <name>AcctSeed__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ending balance of the bank reconciliation. This is usually retrieved from the bank statement. --></help>
+        <label><!-- Ending Balance --></label>
+        <name>AcctSeed__Ending_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 1 --></label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Bank Reconciliations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 2 --></label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Bank Reconciliations (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 3 --></label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Bank Reconciliations (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Bank Reconciliations (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Bank Reconciliations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The start date for the bank reconciliation. --></help>
+        <label><!-- Start Date --></label>
+        <name>AcctSeed__Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The difference between the calculated ending balance and the ending balance. --></help>
+        <label><!-- Ending Balance Difference --></label>
+        <name>AcctSeed__Uncleared_Amount__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Clear_Unclear_Transactions --></label>
+        <name>AcctSeed__Clear_Unclear_Transactions</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Reconciliation_Reports --></label>
+        <name>AcctSeed__Create_Reconciliation_Reports</name>
+    </webLinks>
+</CustomObjectTranslation>

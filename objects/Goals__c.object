@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Goals_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>place for employees to store quarterly goals as part of Employee Developer Tracker</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AnnualGoal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Annual Goal that this Quarterly Milestone supports</inlineHelpText>
+        <label>Annual Goal</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Date__c</fullName>
+        <description>captures the date that the ED tracker was approved, auto updated via approval process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>captures the date that the ED tracker was approved, auto updated via approval process</inlineHelpText>
+        <label>Approval Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BorregoStrategicObjectives__c</fullName>
+        <description>select strategic priority that best aligns with your strategic goals</description>
+        <externalId>false</externalId>
+        <inlineHelpText>select strategic priority that best aligns with your strategic goals</inlineHelpText>
+        <label>Annual Strategic Initiatives</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Goal_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Borrego Positioning System (BPS)</fullName>
+                    <default>false</default>
+                    <label>Borrego Positioning System (BPS)</label>
+                </value>
+                <value>
+                    <fullName>Project Triad</fullName>
+                    <default>false</default>
+                    <label>Project Triad</label>
+                </value>
+                <value>
+                    <fullName>Borrego Academy</fullName>
+                    <default>false</default>
+                    <label>Borrego Academy</label>
+                </value>
+                <value>
+                    <fullName>Regional Kaizen</fullName>
+                    <default>false</default>
+                    <label>Regional Kaizen</label>
+                </value>
+                <value>
+                    <fullName>Other initiative</fullName>
+                    <default>false</default>
+                    <label>Other initiative</label>
+                </value>
+                <value>
+                    <fullName>Be the Industry Leader for Lead Time</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Be the Industry Leader for Lead Time</label>
+                </value>
+                <value>
+                    <fullName>Create a trusted scheduling system</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Create a trusted scheduling system</label>
+                </value>
+                <value>
+                    <fullName>Empower Our People</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Empower Our People</label>
+                </value>
+                <value>
+                    <fullName>Empower employees to grow and develop</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Empower employees to grow and develop</label>
+                </value>
+                <value>
+                    <fullName>Grow energy storage business</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Grow energy storage business</label>
+                </value>
+                <value>
+                    <fullName>Grow to $1B and 1GW</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Grow to $1B and 1GW</label>
+                </value>
+                <value>
+                    <fullName>Implement working cost reduction system</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Implement working cost reduction system</label>
+                </value>
+                <value>
+                    <fullName>Real Time Customer Transparency</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Real Time Customer Transparency</label>
+                </value>
+                <value>
+                    <fullName>Successfully expand to Illinois</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Successfully expand to Illinois</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DescriptionofGoal__c</fullName>
+        <description>recommend goals to be SMART goals (Specific, Measurable, Agreed-Upon, Realistic, Time-Based)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>recommend goals to be SMART goals (Specific, Measurable, Agreed-Upon, Realistic, Time-Based)
+describe the milestone you will accomplish this quarter</inlineHelpText>
+        <label>Description of Milestone</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EGT_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>filled in by WF upon Goal creation</inlineHelpText>
+        <label>EGT Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmployeeComments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter general comments on the goal if needed</inlineHelpText>
+        <label>Employee Comments</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EmployeeDevelopmentTracker__c</fullName>
+        <description>relationship for employee to log goals quarterly, annually</description>
+        <externalId>false</externalId>
+        <inlineHelpText>relationship for employee to log goals quarterly, annually</inlineHelpText>
+        <label>Employee Goal Tracker</label>
+        <referenceTo>Employee_Development_Tracker__c</referenceTo>
+        <relationshipLabel>Goals</relationshipLabel>
+        <relationshipName>Goals</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>GoalCompleted__c</fullName>
+        <description>for manager to check off that this specific goal was completed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>for manager to check off that this specific goal was completed</inlineHelpText>
+        <label>Goal Completed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Goal_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Updated when the EGT is submitted for Approval and/or Approved.</inlineHelpText>
+        <label>Goal Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Goal_Type__c</fullName>
+        <description>defines what type of goal it is for the employee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>defines what type of goal it is for the employee</inlineHelpText>
+        <label>Goal Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Developmental</fullName>
+                    <default>false</default>
+                    <label>Developmental</label>
+                </value>
+                <value>
+                    <fullName>Strategic</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Strategic</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GoalsApproved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>field used to indicate that goals were approved - auto updated by approval process field update</description>
+        <externalId>false</externalId>
+        <inlineHelpText>field used to indicate that goals were approved - auto updated by approval process field update</inlineHelpText>
+        <label>Goals Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>How_to_Measure_Success__c</fullName>
+        <description>What is the KPI or Metric you will use to know if you have completed this goal?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the KPI or Metric you will use to know if you have completed this goal?</inlineHelpText>
+        <label>How to Measure Success</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Manager_Comments__c</fullName>
+        <description>allows for the manager to comment on this goal</description>
+        <externalId>false</externalId>
+        <inlineHelpText>allows for the manager to comment on this goal</inlineHelpText>
+        <label>Manager Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OtherInitiatives__c</fullName>
+        <description>If other Initiatives is selected from Annual Strategic Initiatives please select from these additional options</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If other Initiatives is selected from Annual Strategic Initiatives please select from these additional options</inlineHelpText>
+        <label>Other Initiatives</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Grow to $500M in 5-years and $1B in 10-years</fullName>
+                    <default>false</default>
+                    <label>Grow to $500M in 5-years and $1B in 10-years</label>
+                </value>
+                <value>
+                    <fullName>Become the industry leader in lead time</fullName>
+                    <default>false</default>
+                    <label>Become the industry leader in lead time</label>
+                </value>
+                <value>
+                    <fullName>Empower our people to be the most capable team</fullName>
+                    <default>false</default>
+                    <label>Empower our people to be the most capable team</label>
+                </value>
+                <value>
+                    <fullName>Give customers total transparency and clarity</fullName>
+                    <default>false</default>
+                    <label>Give customers total transparency and clarity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quarter__c</fullName>
+        <description>defines which quarter you will be focused on accomplishing this goal</description>
+        <externalId>false</externalId>
+        <inlineHelpText>defines which quarter you will be focused on accomplishing this goal</inlineHelpText>
+        <label>Quarter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Q1</fullName>
+                    <default>false</default>
+                    <label>Q1</label>
+                </value>
+                <value>
+                    <fullName>Q2</fullName>
+                    <default>false</default>
+                    <label>Q2</label>
+                </value>
+                <value>
+                    <fullName>Q3</fullName>
+                    <default>false</default>
+                    <label>Q3</label>
+                </value>
+                <value>
+                    <fullName>Q4</fullName>
+                    <default>false</default>
+                    <label>Q4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TargetCompletionDate__c</fullName>
+        <description>Target date of completion for Goal</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target date of completion for Goal</inlineHelpText>
+        <label>Target Completion Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Goals</label>
+    <nameField>
+        <label>Milestone Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Goals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Locks_Down_Manager_Comments</fullName>
+        <active>false</active>
+        <description>no one can edit Manager Comments accept Manager listed on EDT</description>
+        <errorConditionFormula>AND(
+ISCHANGED (Manager_Comments__c),
+  $User.Id  &lt;&gt;  EmployeeDevelopmentTracker__r.Manager__r.Id 
+)</errorConditionFormula>
+        <errorDisplayField>Manager_Comments__c</errorDisplayField>
+        <errorMessage>Only the manager listed on the Employee Development Tracker can edit this field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Editing_Goals_once_approved</fullName>
+        <active>true</active>
+        <description>if Goals Approved is checked off - Goal Name, Goal Description and How to Measure cannot be edited.</description>
+        <errorConditionFormula>AND(
+ GoalsApproved__c  = TRUE,
+OR(
+ISCHANGED( DescriptionofGoal__c),
+ISCHANGED( How_to_Measure_Success__c ),
+ISCHANGED( Name )
+)
+)</errorConditionFormula>
+        <errorMessage>Once Goals are approved you cannot edit Goal Name, Goal Description or How Goals are Measured.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Initiative_Required</fullName>
+        <active>true</active>
+        <description>a value must be placed in the Other Initiative field if Other Initiative is selected in the Annual Strategic Initiatives field.</description>
+        <errorConditionFormula>AND(
+INCLUDES( BorregoStrategicObjectives__c ,  &apos;Other initiative&apos;),
+ISBLANK( TEXT(OtherInitiatives__c))
+)</errorConditionFormula>
+        <errorDisplayField>OtherInitiatives__c</errorDisplayField>
+        <errorMessage>If the Annual Strategic Initiative includes the value of Other Initiatives, please provide additional information by selecting a value from the Other Initiatives picklist.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Strategic_Goals_Requires_Borrego_Strat</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISBLANK(BorregoStrategicObjectives__c ),
+ISPICKVAL( Goal_Type__c , &quot;Strategic&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>BorregoStrategicObjectives__c</errorDisplayField>
+        <errorMessage>If you are creating a Strategic Goal you must align the goal with a Borrego Strategic Goal</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Back_to_EGT</fullName>
+        <availability>online</availability>
+        <description>Takes users back to their Employee Goal Tracker</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Back to EGT</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Goals__c.EmployeeDevelopmentTrackerId__c}</url>
+    </webLinks>
+</CustomObject>

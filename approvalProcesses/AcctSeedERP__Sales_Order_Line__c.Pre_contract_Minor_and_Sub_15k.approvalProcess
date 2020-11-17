@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Civil_Engineer</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>PMAssistant</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>ProjectDeveloper</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>ProjectDeveloperBoston</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Regional_Project_Manager_East</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Regional_Project_Manager_NorCal</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>AcctSeedERP__Project__c</field>
+        <field>Cost_Code__c</field>
+        <field>AcctSeedERP__Project_Task__c</field>
+        <field>Vendor__c</field>
+        <field>AcctSeedERP__Product__c</field>
+        <field>AcctSeedERP__Quantity_Ordered__c</field>
+        <field>AcctSeedERP__Unit_Price__c</field>
+        <field>SOLine_Total__c</field>
+        <field>Additional_Notes__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ndewitt1@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Sales Manager</label>
+        <name>Sales_Manager</name>
+    </approvalStep>
+    <emailTemplate>Procurement/Request_for_Approval_Con_Req</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>ISPICKVAL( AcctSeedERP__Project__r.Overall_Project_Status__c , &apos;Pre-Contract&apos;) 
+&amp;&amp; 
+(   Cost_Code__r.Name &lt;&gt;&quot;Engineering&quot;
+&amp;&amp;
+Cost_Code__r.Number__c &lt;&gt;&apos;02-1475&apos;
+ &amp;&amp;
+ Cost_Code__r.Number__c &lt;&gt;&apos;02-1425&apos;
+) 
+&amp;&amp; 
+SOLine_Total__c &lt;= 15000
+&amp;&amp;
+ AcctSeedERP__Project__r.Name  &lt;&gt; &quot;AE DAS migration 2013 - GLC&quot; 
+&amp;&amp;
+ AcctSeedERP__Project__r.Name &lt;&gt; &quot;AE DAS migration 2013 - Borrego&quot;</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Status_update</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Sales_Order_Line_APPROVED</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Purchase_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Sales_Order_Line_REJECTED</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Pre-contract Minor and Sub &lt;$15k</label>
+    <processOrder>11</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

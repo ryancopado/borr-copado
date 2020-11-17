@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Permits</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Permits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ASProject__c</name>
+        <relationshipLabel><!-- Permits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the permit is approved. Updates automatically when the status = &quot;Approved&quot; but can also be manually entered --></help>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the permit is submitted.  Updates automatically when the status = &quot;Submitted&quot; but can also be manually entered --></help>
+        <label><!-- Date Submitted --></label>
+        <name>Date_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsBilled --></label>
+        <name>IsBilled__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsRejected --></label>
+        <name>IsRejected__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional information on the permit --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDCProject --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Permits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What Govt Office/Department was the permit submitted to? (Should be an Account in Salesforce) --></help>
+        <label><!-- Reviewing Office --></label>
+        <name>Reviewing_Office__c</name>
+        <relationshipLabel><!-- Permits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What is the status of the permit? --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Turn around time for the permit- based on the date it was submitted and the date approved --></help>
+        <label><!-- Turn Around Time (days) --></label>
+        <name>Turn_Around_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Electrical</masterLabel>
+            <translation><!-- Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Structural</masterLabel>
+            <translation><!-- Structural --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <description><!-- For entering Permit information --></description>
+        <label><!-- Permit --></label>
+        <name>Permit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

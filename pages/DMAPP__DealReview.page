@@ -1,0 +1,232 @@
+<apex:page standardController="Opportunity"
+            showHeader="true"
+            sidebar="false"
+            docType="html-5.0"
+            extensions="DMAPP.DealReviewPageController"
+            standardStylesheets="false"
+            >
+
+    <apex:stylesheet value="{!URLFOR($Resource.DMAPP__SLDS100_TAS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}"/>  
+
+    <c:jQuery cookies="true"
+        jQueryUI="true"
+        underscore="true"
+        tooltip="true"
+        paging="true"
+        chosen="true"
+        />
+        
+    <c:MobileRedirect smartOM="true" applyLightning="true" />
+    
+    <script type="text/javascript" src="{!$Resource.l10njs}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.ttgomjs, 'ttg/lib/ttgservice.js')}"></script>
+    
+    <apex:include pageName="DMAPP__Debug" />
+    
+    <script type="text/javascript" src="{!URLFOR($Resource.ftk, 'forcetk.js')}"></script>
+    <apex:includeScript value="{!URLFOR($Resource.DMAPP__ttgomjs, 'ttg/lib/modernizr.js')}"/>  
+    <apex:includeScript value="{!URLFOR($Resource.DMAPP__ttgomjs, 'ttg/lib/ttgutils.js')}"/>       
+    <script type="text/javascript" src="{!URLFOR($Resource.dvls, 'js/flowplayer-3.2.6.js')}"></script>
+    <apex:include pageName="DMAPP__Quicklinks" />
+    
+           
+    <apex:include pageName="DMAPP__JSRemoting" />
+
+    <div id="TAS">
+        <apex:include pageName="DMAPP__SummaryTab2" />
+        
+        <div id="buttonDiv">
+            <div id="createDealReview">Schedule</div>
+        </div>
+        <c:AddDealReview opportunityId="{!JSENCODE(shadowOpportunity.id)}"/>
+
+
+        <div class='slds'>
+
+            <apex:form id="DealReviewPageTable" rendered="true" styleClass="DealReviewPageTable">
+
+
+                <apex:actionFunction name="reloadDealReviews" 
+                    action="{!reloadDealReviews}" 
+                    rerender="DealReviewPageTable"
+                    oncomplete="reloadComplete()"
+                    />         
+
+                <apex:dataTable value="{!dealReviews}" 
+                    var="dealReview"
+                    id="dealReviewsList"
+                    styleClass="slds-table slds-table--bordered"
+                    headerClass="slds-text-heading--label"
+                    rowClasses="slds-hint-parent"
+                    >
+                    <apex:column styleClass="slds-cell-shrink" rendered="{!isEditable}">
+                        <apex:facet name="header"></apex:facet>
+                        <apex:outputText rendered="{!dealReview.status != 'Completed'}">
+                            <a 
+                                href="#" 
+                                class="edit_link" 
+                                onclick="javascript: ttg_dealreview.editDealReview('{! dealReview.Id}');"
+                                />
+                            </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="slds-cell-shrink">
+                        <apex:facet name="header">Date</apex:facet>
+                        <apex:outputText value="{!dealReview.effectiveDateFormatted}" />
+                    </apex:column>
+                    <apex:column styleClass="slds-cell-shrink">
+                        <apex:facet name="header">Location</apex:facet>
+                        <apex:outputText escape="true" value="{!IF(LEN(dealReview.location) > 80, RPAD(LEFT(dealReview.location, 80), 83, '...'), dealReview.location)}" />
+                    </apex:column>
+                    <apex:column styleClass="slds-cell-wrap">
+                        <apex:facet name="header">Notes</apex:facet>
+                        <apex:outputText escape="true" value="{!IF(LEN(dealReview.notes) > 297, RPAD(LEFT(dealReview.notes, 297), 300, '...'), dealReview.notes)}" />
+                    </apex:column>
+                    <apex:column styleClass="slds-cell-wrap">
+                        <apex:facet name="header">Status</apex:facet>
+                        <apex:outputText value="{!dealReview.status}" />
+                    </apex:column>
+                    
+                    <apex:column styleClass="slds-cell-shrink">
+                        <apex:facet name="header">Duration</apex:facet>
+                        <apex:outputText value="{!dealReview.durationFormatted}"/>
+                    </apex:column>
+                   
+                    <apex:column styleClass="slds-cell-wrap">
+                        <apex:facet name="header">Summary</apex:facet>
+                        <apex:outputText rendered="{!dealReview.questionCount != null}">
+                            {!dealReview.questionCount} Questions,  
+                            <span class="slds-assistive-text">Questions</span>
+
+                        </apex:outputText>
+                         <apex:outputText rendered="{!dealReview.vulnerabilityCount != null}">
+                            {!dealReview.vulnerabilityCount} Vulnerabilities,
+                            <span class="slds-assistive-text">Vulnerabilities</span>                        
+                            
+                         </apex:outputText>
+                         <apex:outputText rendered="{!dealReview.actionCount != null}">
+                            {!dealReview.actionCount} Recommendations
+                            <span class="slds-assistive-text">Recommendations</span>
+                         
+                         </apex:outputText>
+                    </apex:column>
+                    
+                   
+                    <apex:column >
+                        <apex:outputLink value="{! $Page.tas_tandi_app }?id={! shadowOpportunity.opportunity__c }&tandiid={! dealReview.id }" id="theLink">Launch</apex:outputLink>
+                    </apex:column>
+                </apex:dataTable>
+
+
+
+            </apex:form>
+
+        </div>
+
+    </div>
+    
+    <style>
+        @import url("{!URLFOR($Resource.SmartOM,         'css/summarytab.css')}");
+        @import url("{!URLFOR($Resource.SmartOM,         'css/chatterpost.css')}");
+                
+        /* start of additions for Chatter */
+    
+        @import url("{!URLFOR($Resource.ttgomjs,         'ttg/chatter/css/chatter_side_panel.css')}");
+        @import url("{!URLFOR($Resource.ttgomjs,         'ttg/chatter/css/chatter_post.css')}");
+        @import url("{!URLFOR($Resource.ttgomjs,         'ttg/graph/css/glyphs/style.css')}");
+        @import url("{!URLFOR($Resource.ttgomjs,         'ttg/chatter/css/chatter_summary.css')}");
+        
+        /* end of additions for Chatter */
+        
+        /* Restores AJAX spinner size to normal (AMOF-813) */
+        .spinner {
+            height: auto;
+            width: auto;
+        }
+        
+        #messageDiv{
+            float: left;
+        }
+        
+        #buttonDiv{
+            border: 1px solid darkblue;
+            float: right;
+            padding: 8px 11px 8px 45px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            background: #4a6688 url('{! URLFOR($Resource.Common, 'images/schedule@2x.png')}') no-repeat 15px center;
+            background-size: 16%;
+        }
+        
+        #buttonDiv a{
+            color: #fff;
+        }
+        
+                
+    </style> 
+ 
+     <script>
+        var spec = {};
+     
+        var ttg = ttg || {};
+        
+        
+     
+        var ttg_dealreview = (function(_spec){
+            
+            var that = {};
+            var myAjaxSpinnerCnt = 0;
+            var mySpinner;
+            var dlg = null;
+            
+            function editDealReview(dealReviewId){
+                dlg = ttg.dealReviewMgr.newDealReviewDialog(dealReviewId, true, successFunc, failFunc);
+            }
+            
+            function successFunc(_data){
+                showAjaxSpinner(true);
+                noMoreEditsFlag = true;
+                reloadDealReviews();
+            }
+            
+            function failFunc(_data){
+                showAjaxSpinner(false);
+            }
+
+            function showAjaxSpinner(show) {
+                dlg.showAjaxSpinner(show);            
+            }        
+
+            
+            function createDealReviewDialog(){
+                dlg = ttg.dealReviewMgr.newDealReviewDialog(null, null, successFunc, failFunc);
+            }
+            
+            that.createDealReviewDialog = createDealReviewDialog;
+            that.showAjaxSpinner = showAjaxSpinner;
+            that.editDealReview = editDealReview;
+            return that;
+        
+        })(spec);
+     
+        function reloadComplete() {
+            ttg_dealreview.showAjaxSpinner(false);
+        }
+
+
+        jQuery(document).ready(function(){
+            
+            var isEditable = '{!isEditable}';
+            if(!('true' == isEditable)){
+                jQuery('#buttonDiv').hide();
+            }
+            
+            jQuery("#buttonDiv").click(function(){
+                
+                ttg_dealreview.createDealReviewDialog();
+            });
+        });
+     </script>
+</apex:page>

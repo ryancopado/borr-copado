@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to edit existing Accounting Variable records--users with Accounting Manager standard perm set have this permission, but not Accounting Manager Cloned</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AcctSeed__Accounting_Variable__c.AcctSeed__Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Accounting Variable Edit Records</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>AcctSeed__Accounting_Variable__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>AcctSeed__Accounting_Variable__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

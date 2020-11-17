@@ -1,0 +1,1778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AcctSeed__Payable_Line_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AcctSeed__Payable_Line_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AcctSeed__Expense_GL_Account__c</fields>
+        <fields>AcctSeed__Quantity__c</fields>
+        <fields>AcctSeed__Amount__c</fields>
+        <fields>AcctSeed__Project__c</fields>
+        <fields>AcctSeed__Project_Task__c</fields>
+        <fields>AcctSeed__Product__c</fields>
+        <label>Payable Line Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Line item expense associated with an payable. The aggregation of multiple payable lines constitute a payable record.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>AcctSeed__MassAddEditRows</fullName>
+        <availableFields>
+            <field>AcctSeed__Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__GL_Account_Variable_4__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__Internal_Comment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__Invoice_Comment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__Product__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>AcctSeed__Recurring_Account_Payable_Line__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Used for the Mass Add Edit Rows functionality.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Project__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Project_Task__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Expense_GL_Account__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__GL_Account_Variable_1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__GL_Account_Variable_2__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__GL_Account_Variable_3__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeedERP__Purchase_Order_Line__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Change_Order__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Unit_Cost__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Sub_Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Tax_Rate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Tax_Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AcctSeed__Tax_Group__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>MassAddEditRows</label>
+    </fieldSets>
+    <fields>
+        <fullName>AP_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Accounting_Period_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( Accounting_Period__c, &quot;-01&quot;), &quot;January&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-02&quot;), &quot;February&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-03&quot;), &quot;March&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-04&quot;), &quot;April&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-05&quot;), &quot;May&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-06&quot;), &quot;June&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-07&quot;), &quot;July&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-08&quot;), &quot;August&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-09&quot;), &quot;September&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-10&quot;), &quot;Octiber&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-11&quot;), &quot;November&quot;,
+IF(CONTAINS( Accounting_Period__c, &quot;-12&quot;), &quot;December&quot;, 
+&quot;null&quot;)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accounting Period Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Accounting_Period__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable__r.AcctSeed__Accounting_Period__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accounting Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Purchase_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related PO Line for allocation of cost.</inlineHelpText>
+        <label>Purchase Order Line</label>
+        <referenceTo>AcctSeedERP__Purchase_Order_Line__c</referenceTo>
+        <relationshipLabel>Account Payable Lines</relationshipLabel>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Account_Payable__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to Accounts Payable the line is associated with</inlineHelpText>
+        <label>Payable</label>
+        <referenceTo>AcctSeed__Account_Payable__c</referenceTo>
+        <relationshipName>Project_Account_Payable_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Account__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Project__r.AcctSeed__Account__r.Name</formula>
+        <inlineHelpText>The account for which the project is related to. Pulls through from the Project listed.</inlineHelpText>
+        <label>Project Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Currency field to record amount of line.</inlineHelpText>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in the Time &amp; Material Billings process to help filter transactions in or out of the process.</inlineHelpText>
+        <label>Billable</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Credit_Card_Payee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to denote the vendor charged on the line item of a credit card statement.</inlineHelpText>
+        <label>Credit Card Payee</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional Date used to override the date on the Accounts Payable parent object when posting to the transaction object. Most useful in the Time &amp; Material Billing process to provide date information for the related billing line.</inlineHelpText>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Expense_GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Upon posting a debit entry will be made to this account and a corresponding credit entry will be made to the AP Control account set in the Accounting Settings Tab or the AP Control Override indicated in the Account Payable Parent.</inlineHelpText>
+        <label>Expense GL Account</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>AcctSeed__GL_Account__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Expense</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Payable Lines</relationshipLabel>
+        <relationshipName>Project_Payable_Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 1</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Payable Lines (GL Variable 1)</relationshipLabel>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Sales Segment- defaults based on what is on the Project</inlineHelpText>
+        <label>GL Variable 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 2</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Payable Lines (GL Variable 2)</relationshipLabel>
+        <relationshipName>Account_Payable_Lines1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Ops Division- defaults based on what is listed on the Project</inlineHelpText>
+        <label>GL Variable 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 3</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Payable Lines (GL Variable 3)</relationshipLabel>
+        <relationshipName>Account_Payable_Lines2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 4</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Payable Lines (GL Variable 4)</relationshipLabel>
+        <relationshipName>Account_Payable_Lines3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Internal_Comment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to record comments for internal communication within your organization. These comments are not seen by customers.</inlineHelpText>
+        <label>Internal Comment</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Invoice_Comment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to record comments for display on billings. These comments are seen by customers.</inlineHelpText>
+        <label>Invoice Comment</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Is_VAT_Related__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated via code. Checked if the related Tax Group is an Avalara VAT Reporting tax group.</inlineHelpText>
+        <label>Is VAT Related</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Parent_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(AcctSeed__Account_Payable__r.AcctSeed__Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Product_Tax_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT( AcctSeed__Product__r.AcctSeed__Accounting_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Tax Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Product for allocation of cost.</inlineHelpText>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Work break down structure for projects, such as: Phases, Deliverables or Roles.</inlineHelpText>
+        <label>Project Task</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Project_Task__c.AcctSeed__Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.AcctSeed__Project__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Project_Task__c</referenceTo>
+        <relationshipLabel>Payable Lines</relationshipLabel>
+        <relationshipName>Project_Payable_Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Project or Job for allocation of cost.</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Payable Lines</relationshipLabel>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity from the Purchase Order Line</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Recurring_Account_Payable_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recurring Payable Line</label>
+        <referenceTo>AcctSeed__Recurring_Account_Payable_Line__c</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Reverse_Charge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Reverse-Charge</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Sub_Total__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Amount__c - AcctSeed__Tax_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Quantity x Unit Cost for the Payable Line</inlineHelpText>
+        <label>Sub-Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Tax_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculated based on Sub-Total x Tax Group&apos;s Combined Tax Rate on Payable Line.</inlineHelpText>
+        <label>Tax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Tax_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If using native tax functionality, this determines the Combined Tax Rate percentage and the tax GL mappings and is used to calculate the Tax Amount.</inlineHelpText>
+        <label>Tax Group</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <filterItems>
+                <field>AcctSeed__Tax_Group__c.AcctSeed__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>AcctSeed__Tax_Group__c.AcctSeed__Tax_Type__c</field>
+                <operation>equals</operation>
+                <value>Purchase</value>
+            </filterItems>
+            <filterItems>
+                <field>AcctSeed__Tax_Group__c.AcctSeed__Tax_Type__c</field>
+                <operation>equals</operation>
+                <value>Sales and Purchase</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Tax_Group__c</referenceTo>
+        <relationshipLabel>Payable Lines</relationshipLabel>
+        <relationshipName>Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Tax_Line__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tax Line</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Tax_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(AcctSeed__Sub_Total__c = 0, 0 ,AcctSeed__Tax_Amount__c / AcctSeed__Sub_Total__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Tax rate percentage used to calculate tax amount.</inlineHelpText>
+        <label>Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Unit_Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Product or Service Rate. Up to 6 decimal places.  However, if the Total field is directly entered, then Unit Cost is calculated as Total / Quantity. Unit Cost required if Tax Group populated.</inlineHelpText>
+        <label>Unit Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Tax__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual Tax on the Invoice</inlineHelpText>
+        <label>Actual Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Branch__c</fullName>
+        <externalId>false</externalId>
+        <label>Branch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Mid Atlantic</fullName>
+                    <default>false</default>
+                    <label>Mid Atlantic</label>
+                </value>
+                <value>
+                    <fullName>New England</fullName>
+                    <default>false</default>
+                    <label>New England</label>
+                </value>
+                <value>
+                    <fullName>Nor Cal</fullName>
+                    <default>false</default>
+                    <label>Nor Cal</label>
+                </value>
+                <value>
+                    <fullName>So Cal</fullName>
+                    <default>false</default>
+                    <label>So Cal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Calculation_Group_A__c</fullName>
+        <externalId>false</externalId>
+        <formula>Tax_Group_A__r.Tax_Group_Percent__c* Tax_Base_A__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Calculation Group A</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Calculation_Group_B__c</fullName>
+        <externalId>false</externalId>
+        <formula>Tax_Group__r.Tax_Group_Percent__c * Tax_Base_B__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Calculation Group B</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Case_ID__c</fullName>
+        <description>to be used with RH</description>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Purchase_Order_Line__r.Construction_Req__r.Service_Visit__r.Case_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>to be used with RH</inlineHelpText>
+        <label>Case ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Change_Order_Line_Item__c</fullName>
+        <externalId>false</externalId>
+        <formula>Change_Order__r.Budget_Line_Item2__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Change Order Line Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Change_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Change Order for allocation of cost.</inlineHelpText>
+        <label>Change Order</label>
+        <referenceTo>Con_Req__c</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_Record__c</fullName>
+        <description>allows for counting/roll ups no need to be visible or on layouts</description>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>allows for counting/roll ups no need to be visible or on layouts</inlineHelpText>
+        <label>Count of Record</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentMonth__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(MONTH(TODAY())=1, &quot;January&quot;, 
+IF(MONTH(TODAY())= 2, &quot;February&quot;,
+IF(MONTH(TODAY())= 3, &quot;March&quot;,
+IF(MONTH(TODAY())= 4, &quot;April&quot;,
+IF(MONTH(TODAY())= 5, &quot;May&quot;,
+IF(MONTH(TODAY())= 6, &quot;June&quot;,
+IF(MONTH(TODAY())= 7, &quot;July&quot;,
+IF(MONTH(TODAY())= 8, &quot;August&quot;,
+IF(MONTH(TODAY())= 9, &quot;September&quot;,
+IF(MONTH(TODAY())= 10, &quot;October&quot;,
+IF(MONTH(TODAY())= 11, &quot;November&quot;,
+IF(MONTH(TODAY())= 12, &quot;December&quot;, &quot;null&quot;)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Month_Invoices__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Accounting_Period_Month__c = CurrentMonth__c ,  AcctSeed__Amount__c , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Month Invoices</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dataload__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, it means that this record is being inserted via a bulk data load operation. When checked this will disable certain data integrity operations performed on insert by Account Payable Line object triggers.  This field is typically hidden from the user and is only used for data load operations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to disable certain data integrity operations performed on insert by Account Payable Line object triggers.</inlineHelpText>
+        <label>Dataload</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of the line or more details about the invoice</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Tax__c</fullName>
+        <externalId>false</externalId>
+        <formula>Job_Tax_Group__r.Tax_Group_Percent__c * Taxable_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Tax Group Percent * Taxable Amount</inlineHelpText>
+        <label>Estimated Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable__r.AcctSeed__Payee_Reference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Invoice Number entered on the AP Invoice</inlineHelpText>
+        <label>Invoice Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( AcctSeed__Account_Payable__r.AcctSeed__Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Status of the AP Invoice</inlineHelpText>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Tax_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to the Tax Group for the project</inlineHelpText>
+        <label>Job Tax Group</label>
+        <referenceTo>Tax_Group__c</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Merchant__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>used for Expense Reports and CC reconciliation</inlineHelpText>
+        <label>Merchant</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_PO_Cost__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Non-PO Cost</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Non_Taxable_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Taxable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Non_Taxable_Amountformula__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Amount__c - Taxable_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Amount- Taxable Amount</inlineHelpText>
+        <label>Non-Taxable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>O_M_Tax_Category__c</fullName>
+        <description>Replicates the same tax categories as Billings and SOL - Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Replicates the same tax categories as Billings and SOL - Service</inlineHelpText>
+        <label>O&amp;M Tax Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Admin Hours</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Admin Hours</label>
+                </value>
+                <value>
+                    <fullName>Approval Fees</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Approval Fees</label>
+                </value>
+                <value>
+                    <fullName>Cell Modem Data Plan</fullName>
+                    <default>false</default>
+                    <label>Cell Modem Data Plan</label>
+                </value>
+                <value>
+                    <fullName>Cell Modem Plan</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cell Modem Plan</label>
+                </value>
+                <value>
+                    <fullName>Data Storage</fullName>
+                    <default>false</default>
+                    <label>Data Storage</label>
+                </value>
+                <value>
+                    <fullName>Delivery Charge</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Delivery Charge Equip Rental/Lease</label>
+                </value>
+                <value>
+                    <fullName>Drive Time/Travel</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Drive Time/Travel</label>
+                </value>
+                <value>
+                    <fullName>Drive Time/Travel - Internal</fullName>
+                    <default>false</default>
+                    <label>Drive Time/Travel - Internal</label>
+                </value>
+                <value>
+                    <fullName>Drive Time/Travel - Sub-C</fullName>
+                    <default>false</default>
+                    <label>Drive Time/Travel - Sub-C</label>
+                </value>
+                <value>
+                    <fullName>Electronic Output</fullName>
+                    <default>false</default>
+                    <label>Electronic Output</label>
+                </value>
+                <value>
+                    <fullName>Engineering Services</fullName>
+                    <default>false</default>
+                    <label>Engineering Services</label>
+                </value>
+                <value>
+                    <fullName>Environmental Charge</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Environmental Fee Equip Rental/Lease</label>
+                </value>
+                <value>
+                    <fullName>Equipment Rental/Leases</fullName>
+                    <default>false</default>
+                    <label>Equipment Rental/Leases</label>
+                </value>
+                <value>
+                    <fullName>Equipment Rental/Lease Category</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Equipment Rental/Leases1</label>
+                </value>
+                <value>
+                    <fullName>Property Tax</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Fees, Property Taxes, Permits</label>
+                </value>
+                <value>
+                    <fullName>Freight</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Freight</label>
+                </value>
+                <value>
+                    <fullName>Fuel Charge</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Fuel Charge</label>
+                </value>
+                <value>
+                    <fullName>Handling</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Handling</label>
+                </value>
+                <value>
+                    <fullName>Hotels</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Hotels</label>
+                </value>
+                <value>
+                    <fullName>Insulation Testing</fullName>
+                    <default>false</default>
+                    <label>Insulation Testing</label>
+                </value>
+                <value>
+                    <fullName>Labor</fullName>
+                    <default>false</default>
+                    <label>Labor</label>
+                </value>
+                <value>
+                    <fullName>Labor - Internal</fullName>
+                    <default>false</default>
+                    <label>Labor - Internal</label>
+                </value>
+                <value>
+                    <fullName>Labor - Sub-C</fullName>
+                    <default>false</default>
+                    <label>Labor - Sub-C</label>
+                </value>
+                <value>
+                    <fullName>Meals</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Meals</label>
+                </value>
+                <value>
+                    <fullName>Mileage</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mileage</label>
+                </value>
+                <value>
+                    <fullName>Module Washing</fullName>
+                    <default>false</default>
+                    <label>Module Washing</label>
+                </value>
+                <value>
+                    <fullName>Optional Extended Warranties</fullName>
+                    <default>false</default>
+                    <label>Optional Extended Warranties</label>
+                </value>
+                <value>
+                    <fullName>Parts/Material</fullName>
+                    <default>false</default>
+                    <label>Parts/Material</label>
+                </value>
+                <value>
+                    <fullName>PeGu</fullName>
+                    <default>false</default>
+                    <label>PeGu</label>
+                </value>
+                <value>
+                    <fullName>Permits</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Permits</label>
+                </value>
+                <value>
+                    <fullName>Pickup Charge</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pickup Charge</label>
+                </value>
+                <value>
+                    <fullName>Reimbursable Expenses</fullName>
+                    <default>false</default>
+                    <label>Reimbursable Expenses</label>
+                </value>
+                <value>
+                    <fullName>S&amp;H</fullName>
+                    <default>false</default>
+                    <label>S&amp;H</label>
+                </value>
+                <value>
+                    <fullName>Sales Tax</fullName>
+                    <default>false</default>
+                    <label>Sales Tax</label>
+                </value>
+                <value>
+                    <fullName>Service Contract</fullName>
+                    <default>false</default>
+                    <label>Service Contract</label>
+                </value>
+                <value>
+                    <fullName>Snow Removal</fullName>
+                    <default>false</default>
+                    <label>Snow Removal</label>
+                </value>
+                <value>
+                    <fullName>Storage</fullName>
+                    <default>false</default>
+                    <label>Storage</label>
+                </value>
+                <value>
+                    <fullName>Vegetation Management</fullName>
+                    <default>false</default>
+                    <label>Vegetation Management</label>
+                </value>
+                <value>
+                    <fullName>Warranty Parts</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Warranty Parts</label>
+                </value>
+                <value>
+                    <fullName>Warranty Service</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Warranty Service</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PO_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND(ISBLANK( Change_Order__c ),ISBLANK(AcctSeedERP__Purchase_Order_Line__c)), 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PO Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_and_CO_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( AcctSeedERP__Purchase_Order_Line__c )),  AcctSeedERP__Purchase_Order_Line__r.POLine_Total__c ,  Change_Order__r.Amount_Requested__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PO and CO Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AcctSeed__Account_Payable__r.AcctSeed__Payment_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Status of the AP Invoice Payment</inlineHelpText>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Line_Item__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Purchase_Order_Line__r.AcctSeedERP__Project_Task__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Purchase Order Line Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate__c</fullName>
+        <description>subcontractor rates for O&amp;M</description>
+        <externalId>false</externalId>
+        <inlineHelpText>subcontractor rates for O&amp;M</inlineHelpText>
+        <label>Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Retention_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount of retention on the line item</inlineHelpText>
+        <label>Retention Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Retention__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to the associated retention. If the AP Line is affiliated with a retention, link it here.</inlineHelpText>
+        <label>Retention</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.AcctSeed__Project__c</field>
+                <operation>equals</operation>
+                <valueField>Retention__c.Project__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Retention__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>AP Retention</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Retention__c</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipName>Account_Payable_Lines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Adjustment_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes describing tax adjustment, or additional information related to the tax adjustment</inlineHelpText>
+        <label>Tax Adjustment Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Estimated_Tax__c - Actual_Tax__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Amount from the Tax Adjustment section below</inlineHelpText>
+        <label>Tax Adjustment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Base_A__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Base (A)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Base_B__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Base (B)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Group_A__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tax Group (A)</label>
+        <referenceTo>Tax_Group__c</referenceTo>
+        <relationshipName>Account_Payable_Lines2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tax Group (B)</label>
+        <referenceTo>Tax_Group__c</referenceTo>
+        <relationshipName>Account_Payable_Lines1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes about the tax, estimated or actual</inlineHelpText>
+        <label>Tax Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Taxable_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount of the invoice that is taxable</inlineHelpText>
+        <label>Taxable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_SV_Hours_on_Site__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Purchase_Order_Line__r.Total_SV_Hours_on_Site__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>pulls hours on site from related PO lines/SOL/Service Visit</inlineHelpText>
+        <label>Total SV Hours on Site</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_SV_Travel_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeedERP__Purchase_Order_Line__r.Total_SV_Travel_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>pulls total travel time hours from SV</inlineHelpText>
+        <label>Total SV Travel Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Use_Old_CC__c</fullName>
+        <description>HIdden field - &quot;Use Old CC&quot; field from the related Project record.  Used in the roll up triggers.</description>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Project__r.Use_Old_CC__c</formula>
+        <label>Use Old CC</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable__r.AcctSeed__Vendor__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Vendor listed on the AP Invoice</inlineHelpText>
+        <label>Vendor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Payable Line</label>
+    <nameField>
+        <displayFormat>APL-{00000}</displayFormat>
+        <label>Payable Line Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Payable Lines</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>AcctSeed__Account_Payable__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Amount__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Account_Payable__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Amount__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AcctSeed__Account_Payable__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Date__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Amount__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>AcctSeed__Project_Task_Required_With_Project</fullName>
+        <active>true</active>
+        <description>Rule ensures a Project Task is Required if the Project field is used.</description>
+        <errorConditionFormula>NOT(ISBLANK(AcctSeed__Project__c)) &amp;&amp; ISBLANK(AcctSeed__Project_Task__c)</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Project_Task__c</errorDisplayField>
+        <errorMessage>A Project Task is required if a Project is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AcctSeed__Value_for_Amount</fullName>
+        <active>true</active>
+        <description>Verifies amount field is not blank</description>
+        <errorConditionFormula>ISBLANK( AcctSeed__Amount__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Amount__c</errorDisplayField>
+        <errorMessage>An account payable line must contain a value for the amount field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AcctSeed__Value_for_Expense_GL_Account</fullName>
+        <active>true</active>
+        <description>Verifies expense GL account is not blank</description>
+        <errorConditionFormula>ISBLANK( AcctSeed__Expense_GL_Account__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Expense_GL_Account__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Branch_required</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(BEGINS(&quot;3&quot;,AcctSeed__Expense_GL_Account__r.Name),
+BEGINS(&quot;4&quot;,AcctSeed__Expense_GL_Account__r.Name),
+BEGINS(&quot;5&quot;,AcctSeed__Expense_GL_Account__r.Name),
+BEGINS(&quot;6&quot;,AcctSeed__Expense_GL_Account__r.Name),
+BEGINS(&quot;7&quot;,AcctSeed__Expense_GL_Account__r.Name),
+BEGINS(&quot;9&quot;,AcctSeed__Expense_GL_Account__r.Name))</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_1__c</errorDisplayField>
+        <errorMessage>Please Enter a Branch</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_POLineOrChangeOrder</fullName>
+        <active>true</active>
+        <description>An Account Payable Line can have a reference to either a Purchase Order Line or a Change Order but not both. Validate that.</description>
+        <errorConditionFormula>( NOT( ISBLANK( Change_Order__c ) ) ) &amp;&amp; ( NOT( ISBLANK( AcctSeedERP__Purchase_Order_Line__c ) ) ) &amp;&amp;
+
+DATEVALUE(CreatedDate) &gt; DATE(2014,5,1)</errorConditionFormula>
+        <errorMessage>Account Payable Line can reference a Change Order or a Purchase Order Line but not both.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Line_Item_Match</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( NOT(ISBLANK( Change_Order__c )),  Change_Order__r.Budget_Line_Item2__r.Id &lt;&gt; AcctSeed__Project_Task__r.Id )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Project_Task__c</errorDisplayField>
+        <errorMessage>The Line Item does not match the Change Order Line Item.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Line_Item_Match2</fullName>
+        <active>false</active>
+        <description>PO LIne Item Match</description>
+        <errorConditionFormula>AND( NOT(ISBLANK( AcctSeedERP__Purchase_Order_Line__c )),   AcctSeedERP__Purchase_Order_Line__r.AcctSeedERP__Project_Task__r.Id  &lt;&gt; AcctSeed__Project_Task__r.Id )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Project_Task__c</errorDisplayField>
+        <errorMessage>The Line Item does not match the Change Order Line Item.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OPS_Division_not_required</fullName>
+        <active>false</active>
+        <description>Ops division should not contain a value of GL account is Sales/Marketing or Corporate G&amp;A.</description>
+        <errorConditionFormula>(ISNEW() &amp;&amp; BEGINS( AcctSeed__Expense_GL_Account__r.Name, &quot;5&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_3__c ))) || (ISNEW() &amp;&amp; BEGINS(AcctSeed__Expense_GL_Account__r.Name, &quot;6&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_3__c )))</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_3__c</errorDisplayField>
+        <errorMessage>Ops Division is not needed when the GL Group is Sales/Marketing or Corporate G&amp;A. Please clear the value of the Ops Division field and then save.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ops_Division_Required</fullName>
+        <active>false</active>
+        <description>Ops division should contain a value if certain GL accounts are used.</description>
+        <errorConditionFormula>(ISNEW()&amp;&amp; BEGINS(  AcctSeed__Expense_GL_Account__r.Name, &quot;4&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_3__c )) || (ISNEW()&amp;&amp; BEGINS(AcctSeed__Expense_GL_Account__r.Name, &quot;3&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_3__c ))</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_3__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Ops Division to be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Retainage_Retention_Payable</fullName>
+        <active>false</active>
+        <description>When AP Line Line Item contains &quot;Retainage&quot;,  GL Account must equal &quot;2002-Retention Payable&quot;</description>
+        <errorConditionFormula>OR(AND(Contains(&quot;Retainage&quot;, AcctSeed__Project_Task__r.Name),  AcctSeed__Expense_GL_Account__r.Name &lt;&gt; &quot;2002-Retentions  payable&quot;), AND(AcctSeed__Expense_GL_Account__r.Name = &quot;2002-Retentions  payable&quot;, NOT(Contains(&quot;Retainage&quot;, AcctSeed__Project_Task__r.Name))))</errorConditionFormula>
+        <errorMessage>The GL Account must be &quot;2002- Retentions payable&quot; if the Line Item is &quot;Retainage&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Retention_GL_Account</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+NOT(ISBLANK(Retention__c)), 
+AcctSeed__Project_Task__r.Name = &quot;Retainage-Sub&quot;, 
+AcctSeed__Expense_GL_Account__r.Name &lt;&gt; &quot;2002-Retentions payable&quot;)</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Expense_GL_Account__c</errorDisplayField>
+        <errorMessage>The expense GL Account should be &quot;2002-Retentions Payable&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Required</fullName>
+        <active>false</active>
+        <description>Sales Segment should contain a value if certain GL accounts are used.</description>
+        <errorConditionFormula>(ISNEW() &amp;&amp; BEGINS( AcctSeed__Expense_GL_Account__r.Name , &quot;5&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_2__c ))|| (ISNEW() &amp;&amp; BEGINS( AcctSeed__Expense_GL_Account__r.Name, &quot;3&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_2__c ))</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_2__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Sales Segment to be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Should_be_Blank</fullName>
+        <active>false</active>
+        <description>Sales Segment should not contain a value if certain GL accounts are used.</description>
+        <errorConditionFormula>(ISNEW() &amp;&amp; BEGINS( AcctSeed__Expense_GL_Account__r.Name , &quot;4&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_2__c ))) || (ISNEW() &amp;&amp; BEGINS( AcctSeed__Expense_GL_Account__r.Name, &quot;6&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_2__c )))</errorConditionFormula>
+        <errorMessage>Sales Segment should not contain a value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Test_Rule</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+NOT( ISBLANK( AcctSeed__Project__c ) ),
+ISBLANK( AcctSeed__Project_Task__c ) )</errorConditionFormula>
+        <errorMessage>Test</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>AcctSeed__Mass_Add_Edit_Rows</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Add/Edit Rows</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__MassAddEditAccountPayableLine</page>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+    </webLinks>
+</CustomObject>

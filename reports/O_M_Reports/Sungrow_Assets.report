@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Asset.DAS_Device_ID__c</field>
+    </columns>
+    <columns>
+        <field>SERIAL_NUMBER</field>
+    </columns>
+    <columns>
+        <field>ASSET.NAME</field>
+    </columns>
+    <columns>
+        <field>PRODUCT.NAME</field>
+    </columns>
+    <columns>
+        <field>Asset.Contract__c</field>
+    </columns>
+    <columns>
+        <field>ASSET_ID</field>
+    </columns>
+    <description>Assets with Sungrow in the name.</description>
+    <filter>
+        <criteriaItems>
+            <column>PRODUCT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sungrow</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Sungrow Assets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountAsset@Asset.Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SERIAL_NUMBER</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

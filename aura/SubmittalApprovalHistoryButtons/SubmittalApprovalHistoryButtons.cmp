@@ -1,0 +1,19 @@
+<aura:component  implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" access="global" controller="SubmittalApphistorybuttons">
+    <aura:attribute name="updaterecord" type="Submittal_1__c"/>
+    <aura:handler name="init" value="{!this}" action="{!c.pageloadbuttton}"  />
+    <aura:attribute name="buttondisplay"  type="String"/>
+   
+     <div align="Right"  >
+         
+          <aura:if isTrue="{!v.buttondisplay=='sub'}">
+     <lightning:button label="Revise and Resubmit" title="Revise and Resubmit"  onclick="{!c.doInit}" />
+     <lightning:button label="Approved as Corrected" title="Approved as Corrected" onclick="{!c.Appascorrected}" />
+         </aura:if>
+         <aura:if isTrue="{!v.buttondisplay=='Issue'}">
+      <lightning:button label="Resolved" title="Resolved" onclick="{!c.ITresolved}"  />
+         </aura:if>
+    </div>
+	
+     
+	
+</aura:component>

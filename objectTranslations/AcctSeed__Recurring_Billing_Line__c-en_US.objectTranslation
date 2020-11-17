@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- RecurringBillingFromOpportunity --></label>
+        <name>AcctSeed__RecurringBillingFromOpportunity</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Comment for display on Recurring Billing Line. --></help>
+        <label><!-- Comment --></label>
+        <name>AcctSeed__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- List Price - Unit Price --></help>
+        <label><!-- Discount Amount --></label>
+        <name>AcctSeed__Discount_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Discount Amount/List Price --></help>
+        <label><!-- Discount % --></label>
+        <name>AcctSeed__Discount_Percent__c</name>
+    </fields>
+    <fields>
+        <label>Branch</label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sales Segment</label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ops Division</label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Suggested price before discount. --></help>
+        <label><!-- List Price --></label>
+        <name>AcctSeed__List_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Id of the opportunity product this recurring billing line was sourced. --></help>
+        <label><!-- Opportunity Product Id --></label>
+        <name>AcctSeed__Opportunity_Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>AcctSeed__Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>AcctSeed__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Billing --></label>
+        <name>AcctSeed__Recurring_Billing__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revenue GL Account --></label>
+        <name>AcctSeed__Revenue_GL_Account__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity x Unit Price for the Recurring Billing Line --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated based on Sub-Total x Tax Group&apos;s Combined Tax Rate on Recurring Billing Line, unless using AvaTax. --></help>
+        <label><!-- Tax Amount --></label>
+        <name>AcctSeed__Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- If using native tax functionality, this determines the Combined Tax Rate percentage and the tax GL mappings and is used to calculate the Tax Amount --></help>
+        <label><!-- Tax Group --></label>
+        <name>AcctSeed__Tax_Group__c</name>
+        <relationshipLabel><!-- Recurring Billing Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Tax rate percentage used to calculate tax amount. --></help>
+        <label><!-- Tax Rate --></label>
+        <name>AcctSeed__Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Category --></label>
+        <name>Tax_Category__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The project you have selected is not associated with the customer listed in the billing header. The account (customer) field on this project must be the same as the customer on the billing header. --></errorMessage>
+        <name>AcctSeed__Project_Must_Be_Associated_With_Customer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+</CustomObjectTranslation>

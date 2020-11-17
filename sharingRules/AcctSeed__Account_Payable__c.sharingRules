@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AP_Invoice_Public</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>These users can see all AP Invoices marked as not private.</description>
+        <label>AP Invoice Public</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CEO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Legal__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AP_Invoice_Share_with_CTO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>AP Invoice Share with CTO</label>
+        <sharedTo>
+            <role>CTO</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Legal__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AP_Invoice_Share_with_Engineering</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AP Invoice Share with Engineering</label>
+        <sharedTo>
+            <role>Director_of_Applications_Engineering</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Legal__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AP_Sharing_Resources_Group</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>AP Sharing Resources Group</label>
+        <sharedTo>
+            <role>DirectorofTechnology</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Legal__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Legal_Invoice</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Legal Invoice</label>
+        <sharedTo>
+            <group>Legal_AP_Invoice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Legal__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Private_AP_Invoices</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>These users can see AP Invoices that are marked &quot;Private&quot;</description>
+        <label>Private AP Invoices</label>
+        <sharedTo>
+            <group>AP_Invoice_Private</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

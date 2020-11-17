@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Development_SDE__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Development_DE1_Drafter__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Type__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Entitlement_Approval_Actual__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$X50_Forecast_Release_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test,Tezt</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,Mid Atlantic,Southeast,Midwest</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>SDE @017 Data</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Sites_and_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Sites__r$Entitlement_Approval_Actual__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

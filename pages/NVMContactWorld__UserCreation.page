@@ -1,0 +1,75 @@
+<apex:page tabStyle="User_Creation__tab" controller="NVMContactWorld.UserCreationController" action="{!Init}">
+
+    <apex:form >
+        
+
+        <apex:sectionHeader title="{!$Label.nvmcontactworld__createuser_pagetitle}"/>
+
+        <apex:pageMessages />
+
+        <apex:pageBlock title="Details" rendered="{!!ShowResultsPage}" id="detailsPanel">
+            <apex:pageBlockSection title="{!$Label.nvmcontactworld__createuser_step1title}" columns="1" collapsible="false">
+                <apex:outputText >{!$Label.nvmcontactworld__createuser_step1text}</apex:outputText>
+                <apex:inputText value="{!SourceUsername}" label="{!$Label.site.username}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="{!$Label.nvmcontactworld__createuser_step2title}" columns="1" collapsible="false">
+                <apex:outputText >{!$Label.nvmcontactworld__createuser_step2text}</apex:outputText>
+                <apex:selectList value="{!SelectedListId}" size="1" label="View">
+                    <apex:actionSupport event="onchange" action="{!ListViewSelected}" reRender="detailsPanel" />
+                    <apex:selectOptions value="{!ListViews}"/>
+                </apex:selectList>
+                <apex:pageBlockTable value="{!ListUsers}" var="u" id="previewList">
+                    <apex:column >
+                        <apex:facet name="header">{!$ObjectType.User.Fields.Name.label}</apex:facet>
+                        <apex:outputText value="{!u.Name}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$ObjectType.User.Fields.Username.label}</apex:facet>
+                        <apex:outputText value="{!u.Username}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$ObjectType.User.Fields.Phone.label}</apex:facet>
+                        <apex:outputText value="{!u.Phone}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$ObjectType.User.Fields.Email.label}</apex:facet>
+                        <apex:outputText value="{!u.Email}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$ObjectType.User.Fields.NVMContactWorld__NVM_Agent_Id__c.label}</apex:facet>
+                        <apex:outputText value="{!u.NVMContactWorld__NVM_Agent_Id__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!ShowAgentIdGeneration}" columns="1">
+                <apex:pageMessage summary="{!MissingAgentIdWarning}" severity="warning" />
+                <apex:outputText value="{!$Label.nvmcontactworld__createuser_missingagentidhelptext}" />
+                <apex:inputText label="{!$Label.nvmcontactworld__createuser_missingagentidstartingidlabel}" value="{!StartingAgentId}" />
+                <apex:commandButton action="{!AutoGenerateAgentIds}" value="{!$Label.nvmcontactworld__createuser_missingagentidgeneratebutton}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!CreateUsers}" value="{!$Label.nvmcontactworld__createuser_buttontext}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Results" rendered="{!ShowResultsPage}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputText >{!ResultMessage}</apex:outputText>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Errors" columns="1" collapsible="true">
+                <apex:pageBlockTable value="{!ResultErrors}" var="err">
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.site.username}</apex:facet>
+                        <apex:outputText value="{!err}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">{!$Label.site.error2}</apex:facet>
+                        <apex:outputText value="{!ResultErrors[err]}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

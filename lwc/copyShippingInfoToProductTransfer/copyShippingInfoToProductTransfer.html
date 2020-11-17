@@ -1,0 +1,53 @@
+<template>
+  <lightning-layout>
+    <lightning-layout-item padding="around-small" size="3">
+      <lightning-input
+        label="Shipping Company"
+        name="Shipping_Company__c"
+        onchange={updateShippingInfo}
+      ></lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item padding="around-small" size="3">
+      <lightning-input
+        label="Tracking #"
+        name="Tracking_Number__c"
+        onchange={updateShippingInfo}
+      ></lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item padding="around-small" size="3">
+      <lightning-input
+        label="Tracking URL"
+        name="Tracking_URL__c"
+        onchange={updateShippingInfo}
+      ></lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item padding="around-small" size="3">
+      <lightning-input
+        type="date"
+        label="Expected Pickup Date"
+        name="ExpectedPickupDate"
+        onchange={updateShippingInfo}
+      ></lightning-input>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <lightning-card title="Apply to Following">
+    <table>
+      <template
+        for:each={productTransferLineItems}
+        for:item="productTransferLineItem"
+      >
+        <tr key={productTransferLineItem.Id}>
+          <td>
+            <lightning-input
+              name={productTransferLineItem.Id}
+              type="checkbox"
+              label={productTransferLineItem.Product2.Name}
+              onchange={onSelectChange}
+            ></lightning-input>
+          </td>
+        </tr>
+      </template>
+    </table>
+  </lightning-card>
+</template>

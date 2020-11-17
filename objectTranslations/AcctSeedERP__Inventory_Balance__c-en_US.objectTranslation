@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Available Quantity --></label>
+        <name>AcctSeedERP__Available_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Accounting Quantity --></label>
+        <name>AcctSeedERP__Inbound_Accounting_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Quantity --></label>
+        <name>AcctSeedERP__Inbound_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ledger --></label>
+        <name>AcctSeedERP__Ledger__c</name>
+        <relationshipLabel><!-- Inventory Quantity Available --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>AcctSeedERP__Location__c</name>
+        <relationshipLabel><!-- Inventory Quantity Available --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manufacturing Quantity --></label>
+        <name>AcctSeedERP__Manufacturing_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Accounting Quantity --></label>
+        <name>AcctSeedERP__Outbound_Accounting_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Quantity --></label>
+        <name>AcctSeedERP__Outbound_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeedERP__Product__c</name>
+        <relationshipLabel><!-- Inventory Quantity Available --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchasing Quantity --></label>
+        <name>AcctSeedERP__Purchasing_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Quantity --></label>
+        <name>AcctSeedERP__Sales_Order_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warehouse --></label>
+        <name>AcctSeedERP__Warehouse__c</name>
+        <relationshipLabel><!-- Inventory Quantity Available --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inbound Total Value --></label>
+        <name>Inbound_Total_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Total Value --></label>
+        <name>Outbound_Total_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- rolls up totals from Total Burdened Value of all inbound movements --></help>
+        <label><!-- Total Inbound Value --></label>
+        <name>Total_Inbound_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- rolls up Total Burdened Value from all related Outbound Inventory Movements. --></help>
+        <label><!-- Total Outbound Value --></label>
+        <name>Total_Outbound_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Value --></label>
+        <name>Total_Value__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Location_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The aggregate outbound quantity on the inventory balance cannot be more than the aggregate inbound quantity --></errorMessage>
+        <name>AcctSeedERP__Outbound_Less_Than_Equal_Inbound</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the location if there are associated inventory movements. You must delete all inventory movements in order to change the location. --></errorMessage>
+        <name>AcctSeedERP__Prevent_Update_Location_if_Movements</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the product if there are associated inventory movements. You must delete all inventory movements in order to change the product. --></errorMessage>
+        <name>AcctSeedERP__Prevent_Update_Product_if_Movements</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the warehouse if there are associated inventory movements. You must delete all inventory movements in order to change the warehouse. --></errorMessage>
+        <name>AcctSeedERP__Prevent_Update_Warehouse_if_Movements</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only a product where the inventory product field is true can be associated with an inventory balance --></errorMessage>
+        <name>AcctSeedERP__Product_Is_Inventory_Product</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Product_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Warehouse_Is_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Inventory_History --></label>
+        <name>AcctSeedERP__Create_Inventory_History</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Transfer --></label>
+        <name>AcctSeedERP__Transfer</name>
+    </webLinks>
+</CustomObjectTranslation>

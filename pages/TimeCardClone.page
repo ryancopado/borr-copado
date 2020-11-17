@@ -1,0 +1,41 @@
+<apex:page standardController="AcctSeed__Time_Card__c" extensions="TimeCardControllerCustom" tabStyle="AcctSeed__Time_Card__c">
+  <apex:form >
+    <apex:pageBlock title="Time Card Edit" mode="edit">
+      <apex:pageBlockButtons >
+<!--
+        <apex:commandButton action="{!saveTimeCard}" value="Save"/>
+-->
+        <apex:commandButton action="{!saveCloneLineItems}" value="Save and Clone Line Items"/>
+        <apex:commandButton action="{!cancel}" value="Cancel"/>
+      </apex:pageBlockButtons>
+      <apex:pageMessages />
+
+      <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Time Card Period"/>
+   					<apex:outputPanel styleClass="requiredInput" layout="block">  
+      					<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+		                <apex:selectList value="{!timecard.AcctSeed__Time_Card_Period__c}" size="1">
+		                	<apex:selectOptions value="{!timeCardPeriods}"/>
+		                </apex:selectList>
+	                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isPeriodError}">
+	       					<strong>Error:</strong> You must enter a value
+	    				</apex:outputPanel>
+    				</apex:outputPanel>             
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >	
+                    <apex:outputLabel value="Employee"/>
+   					<apex:outputPanel styleClass="requiredInput" layout="block">  
+      					<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                		<apex:inputField value="{!timecard.AcctSeed__Employee__c}"/>
+	                    <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isEmployeeError}">
+	       					<strong>Error:</strong> You must enter a value
+	    				</apex:outputPanel>
+    				</apex:outputPanel>
+    			</apex:pageBlockSectionItem>	              
+            </apex:pageBlockSection>    
+      
+      
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

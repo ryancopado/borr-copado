@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Daily Site Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Daily Site Reports</value>
+    </caseValues>
+    <fields>
+        <help><!-- If Daily Site Report Name is blank, upon change this will automatically combine with Project Name to create Daily Site Report Name. --></help>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incidents, Including Near Misses --></label>
+        <name>Incidents_Including_Near_Misses__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Inspections and Meetings --></label>
+        <name>Inspections_and_Meetings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issues and Comments --></label>
+        <name>Issues_and_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes 1 --></label>
+        <name>Notes_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes 2 --></label>
+        <name>Notes_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Progress --></label>
+        <name>Overall_Progress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the related Project --></help>
+        <label><!-- Overall Project Status --></label>
+        <name>Overall_Project_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the related Project --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Daily Site Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Displays site address of related Site --></help>
+        <label><!-- Site Address --></label>
+        <name>Site_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the site city of the related Site --></help>
+        <label><!-- Site City --></label>
+        <name>Site_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the site state of the related Site --></help>
+        <label><!-- Site Date --></label>
+        <name>Site_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Values brought in from the related Site --></help>
+        <label><!-- Site Install Type --></label>
+        <name>Site_Install_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the site state of the related Site --></help>
+        <label><!-- Site State --></label>
+        <name>Site_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from the related Site --></help>
+        <label><!-- Site Superintendent --></label>
+        <name>Site_Supervisor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the site zip code for the related Site --></help>
+        <label><!-- Site Zip --></label>
+        <name>Site_Zip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the related Site --></help>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Daily Site Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the temperature at the time of the site visit --></help>
+        <label><!-- Today&apos;s Temperature (F) --></label>
+        <name>Today_s_Temperature__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verify all Workers Have Been Oriented --></label>
+        <name>Verify_all_Workers_Have_Been_Oriented__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the overall weather condition for the day --></help>
+        <label><!-- Weather Conditions Today --></label>
+        <name>Weather_Conditions_Today__c</name>
+        <picklistValues>
+            <masterLabel>Cloudy</masterLabel>
+            <translation><!-- Cloudy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mix</masterLabel>
+            <translation><!-- Mix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partly Sunny</masterLabel>
+            <translation><!-- Partly Sunny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rainy</masterLabel>
+            <translation><!-- Rainy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snowy</masterLabel>
+            <translation><!-- Snowy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunny</masterLabel>
+            <translation><!-- Sunny --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 48 Hour Forecast --></label>
+        <name>X48_Hour_Forecast__c</name>
+    </fields>
+    <fields>
+        <label><!-- 48 Hour Temp --></label>
+        <name>X48_Hour_Temp__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This project is being managed in Procore. --></errorMessage>
+        <name>Procore_projects</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit_Custom --></label>
+        <name>Edit_Custom</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Daily_Site_Report --></label>
+        <name>New_Daily_Site_Report</name>
+    </webLinks>
+</CustomObjectTranslation>

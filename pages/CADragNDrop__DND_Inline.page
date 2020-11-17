@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false">
+    
+    <apex:includeLightning />
+    <div id="lightning3"></div> 
+    <script> 
+    var recordId = "{!$CurrentPage.parameters.id}";
+    $Lightning.use("CADragNDrop:DragNDropApp", function() {
+        $Lightning.createComponent("CADragNDrop:DragNDropMain",
+                                   {"recordId" : recordId },
+                                   "lightning3",
+                                   function(cmp) {
+                                       // do some stuff
+                                   });
+    });
+    </script>
+</apex:page>

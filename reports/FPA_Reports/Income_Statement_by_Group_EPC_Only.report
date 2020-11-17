@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>-AcctSeed__Transaction__c.AcctSeed__Amount__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Sum of Amount</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_43495285</developerName>
+        <masterLabel>Grouping</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FK_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>3000-Revenue - installation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3001-Revenue - Installatn - Intr Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3010-Revenue - % of Completion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3011-Revenue - % Completn - Intr Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3100-Revenue - Service Contract</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3101-Revenue - Service Inter-Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3102-Revenue - Billable</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3200-Revenue - Direct Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3201-Revenue - Direct Sales % of Completion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3210-Revenue - Direct Sales Inter-co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3300-Revenue - Design Only</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3301-Revenue - Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3302-Miscellaneous Income</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3400-Revenue - Inter Co. Dev Fees</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3401-Dev/Management Fees</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3500-Sales concessions and discnts</sourceValue>
+            </sourceValues>
+            <value>1. Revenue</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>3600-Cost of revenue - installation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3601-Cost Reven - Instlltn - Intr C</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3602-Cost Revenue-Externl Cst-IntrC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3603-External Labor Allocatn- IntrC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3604-Unassigned COGS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3610-Accrued Cost of Revenue</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3611-Accrued Cost Revenue - Intr Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3700-COGS - Service Contract</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3701-COGS - Service Contract Inter-Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3702-COGS - Billable</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3800-COGS - Direct Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3810-COGS - Direct Sales Inter-Co</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3900-COGS - Design</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3901-COGS - Other Revenue</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3902-COGS - Vendor Discounts</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3903-COGS - Miscellaneous Costs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3904-Physical Inventory Adjustment</sourceValue>
+            </sourceValues>
+            <value>2. Costs</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>3950-Sales Commission Estimates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3951-Sales Commission Paid</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3952-Sales Affiliate Fee Paid</sourceValue>
+            </sourceValues>
+            <value>3. Commissions</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_63854633</developerName>
+        <masterLabel>Quarters</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Transaction__c.AcctSeed__Accounting_Period__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>2020-01</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-02</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-03</sourceValue>
+            </sourceValues>
+            <value>Q1</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2020-04</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-05</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-06</sourceValue>
+            </sourceValues>
+            <value>Q2</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2020-07</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-08</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-09</sourceValue>
+            </sourceValues>
+            <value>Q3</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2020-10</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-11</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>2020-12</sourceValue>
+            </sourceValues>
+            <value>Q4</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Transaction__c.AcctSeed__Amount__c</field>
+    </columns>
+    <description>Provides transaction details per GLs with postings, all the way to Net Income</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$AcctSeed__GL_Account__c.AcctSeed__Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Revenue,Expense</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>3,4,5,6,7,8,9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__Accounting_Year__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Transaction__c.AcctSeed__GL_Account_Variable_2__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Development,O&amp;M,EPC,Shared Services</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Transaction__c.AcctSeed__Accounting_Period__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$AcctSeed__GL_Account__c.IncStmt_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Income Statement by Group, EPC Only</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Transaction__c@AcctSeed__Transaction__c.AcctSeed__GL_Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Transaction__c.Case_Closed_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

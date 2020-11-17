@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Site__c$Design_Stage__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Production_Modeling__r$Production_Modeling_Stage__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Production_Modeling__r$Name</field>
+    </columns>
+    <columns>
+        <field>Site__c.Production_Modeling__r$Person_Responsible__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Production_Modeling__r$Days_Open__c</field>
+    </columns>
+    <description>Models run for sites that mobilized in previous month or quarter.</description>
+    <filter>
+        <criteriaItems>
+            <column>Site__c$Design_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Site Use Permit Set,50% Set,CD IFR,CD IFC,As Built,Completed,On Hold</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Site__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Models for Mobilized Sites</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Sites_with_or_without_Production_Models__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Site__c$Mobilization_Date__c</dateColumn>
+        <interval>INTERVAL_PREVQ</interval>
+    </timeFrameFilter>
+</Report>

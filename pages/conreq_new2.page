@@ -1,0 +1,334 @@
+<apex:page standardController="Con_Req__c" extensions="con_req" action="{!setProj}" LightningStylesheets="true">
+    <apex:sectionHeader title="Change Order Edit" subtitle="New Change Order" rendered="{!Con_Req__c.Name == null}"/>
+    <apex:sectionHeader title="Change Order Edit" subtitle="{!Con_Req__c.Name}" rendered="{!Con_Req__c.Name != null}"/>
+    <apex:pagemessages />
+        <apex:pageMessage severity="error" title="Error:" summary="You cannot create a Change Order for a Service Contract." 
+                          strength="3" rendered="{!if(recordType == 'change' && Con_Req__c.Service_Visit__c != null, 'true', 'false')}"/> 
+    
+    <apex:form rendered="{!if((recordType != 'major' && recordType != 'minor' && recordType != 'sub' && recordType != 'subchange'  && recordType != 'material'  ) && Con_Req__c.Service_Visit__c == null, 'true', 'false')}">   
+        <apex:pageBlock title="Change Order Edit" mode="edit" id="block" >   
+            <apex:pageBlockButtons >     
+                <apex:commandButton value="Save"  action="{!saves}"/>
+                <apex:commandButton value="Cancel"  action="{!cancel}"/>
+            </apex:pageBlockButtons> 
+            
+            <apex:pageBlockSection columns="2" title="Information" collapsible="false">
+                <!--  <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit}" required="true"/>
+                <apex:outputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit == false}"/> -->
+                <apex:inputField value="{!Con_Req__c.CO__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!Con_Req__c.ASProject__c}" required="true"/>
+                <apex:inputField value="{!Con_Req__c.Status__c}" />
+                <apex:inputField value="{!Con_Req__c.Site__c}" required="true" />
+                <apex:inputField value="{!Con_Req__c.Subject__c}" required="true" />
+                <apex:inputField value="{!Con_Req__c.Calendar_Days_Delayed__c}" required="true" />
+            </apex:pageBlockSection>
+            
+            <apex:inputHidden id="lineitem" value="{!productLinesForOriginal}" />
+            
+            <apex:pageBlockSection id="section" columns="2">
+                <apex:inputField required="true" value="{!Con_Req__c.Change_Order_Type__c}" />
+                <apex:inputField value="{!Con_Req__c.Project_PM__c}" rendered="{!recordType != 'internal'}"/>
+                <apex:inputField value="{!Con_Req__c.Customer_Contact__c}" required="true" rendered="{!recordType != 'internal'}"/>
+                
+               <!-- <apex:pageBlockSectionItem id="pbItemOriginal" rendered="{!NOT(service) && (NOT(showOriginalProduct))}">  
+                    <apex:outputLabel value="Original Product (Quantity)"/>
+                    <apex:selectList value="{!productLinesForOriginal}" multiselect="false" size="6" style="border-size:1px; border-color:#C00;border-style:solid;" id="product">
+                        <apex:selectOptions value="{!products}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>-->
+                
+               <!-- <apex:pageBlockSectionItem id="pbItemOriginal2" rendered="{!NOT(service) && (showOriginalProduct)}">  
+                    <apex:outputLabel value="Original Product (Quantity)"/>
+                    <apex:selectList value="{!productLinesForOriginal}" multiselect="false" size="6" style="border-size:1px; border-color:#C00;border-style:solid;" id="product2" disabled="true">
+                        <apex:selectOptions value="{!products}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>-->
+                
+                <!--<apex:pageBlockSectionItem rendered="{!showOriginalProduct}"/>
+                <!--<apex:pageBlockSectionItem rendered="{!showOriginalProduct}">
+                    <apex:outputLabel value="Original Product (Changed)"/>
+                    <apex:outputField value="{!Con_Req__c.Original_Product__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />  
+                <apex:inputField value="{!Con_Req__c.New_Quantity__c}" />
+                <apex:pageBlockSectionItem /> 
+                <apex:inputField value="{!Con_Req__c.New_Product__c}" />-->
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection columns="2" title="Reason/Justification for Change Order" collapsible="false">
+                    <apex:inputField value="{!Con_Req__c.Reason_for_Change_Order__c}" required="true" />                                                            
+                    <apex:inputField value="{!Con_Req__c.Reason_Category__c}" required="true" /> 
+                    <apex:inputField value="{!Con_Req__c.Other_reason_explanation__c}" style="width:200px; height:14px" />                               
+                    <apex:inputField value="{!Con_Req__c.Reason_Sub_Category__c}" />                   
+                    
+                </apex:pageBlockSection>  
+            
+            <apex:pageBlockSection title="Cost Breakdown Edit" columns="1">
+                <apex:pageBlockTable value="{!cbs}" var="a" id="rows"> 
+                    <apex:column >
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:inputField value="{!a.Quantity__c}" required="true" style="width:50px;"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Description</apex:facet>
+                        <apex:inputField value="{!a.Description__c}" required="true" style="width:250px;"/>
+                    </apex:column> 
+                    <apex:column >
+                        <apex:facet name="header">Unit Cost</apex:facet>
+                        <apex:inputField value="{!a.Unit_Cost__c}" required="true" />
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+                <apex:actionFunction name="Add" action="{!add}" rerender="rows" status="outStatus"/>
+                <apex:actionFunction name="Reset" action="{!reset}" rerender="rows" status="outStatus" immediate="true"/>
+                
+                <apex:pageBlockSection columns="2">
+                    <apex:image value="{!$Resource.plus}" onclick="Add()"/>
+                    <apex:image value="{!$Resource.minus}" onclick="Reset()" rendered="false"/>
+                    <apex:actionStatus startText="(.................working.................)" stopText="" id="outStatus" onstop="Reset"/> 
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            
+
+            
+            <apex:pageBlockSection title="Notes" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Notes"/>
+                    <apex:inputTextArea value="{!Con_Req__c.Additional_Notes__c}" cols="120" rows="4"/>
+                </apex:pageBlockSectionItem>   
+            </apex:pageBlockSection> 
+        </apex:pageblock>
+    </apex:form>
+    
+        <apex:form rendered="{!if(recordType != 'change' && recordType != 'internal' && recordType != 'subchange'   && recordType != 'material' , 'true', 'false')}"> 
+        <apex:pageBlock title="Change Order Edit" mode="edit">   
+        <apex:pageBlockButtons >     
+            <apex:commandButton action="{!saves}" value="Save"/><apex:commandButton action="{!cancel}" value="Cancel"/>  
+        </apex:pageBlockButtons>  
+            <apex:pageBlockSection columns="2" title="Information" collapsible="false">       
+                <apex:inputField value="{!Con_Req__c.CO__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!NOT(service)}"/>
+                <apex:outputField value="{!Con_Req__c.Service_Visit__c}" rendered="{!service}"/> 
+                <apex:outputField value="{!Con_Req__c.Status__c}"/> 
+                <apex:inputField value="{!Con_Req__c.Date_Needed__c}" required="true" />
+                <apex:inputField value="{!Con_Req__c.Calendar_Days_Delayed__c}" required="true" />
+                <apex:inputField value="{!Con_Req__c.Purchase_Order2__c}" rendered="{!if(recordType != 'change'  , 'true', 'false')}"/>                          
+                <apex:inputField value="{!Con_Req__c.Ship_To__c}" required="true" rendered="{!if((recordType != 'sub' ), 'true', 'false')}"/><br/>
+                <apex:inputField value="{!Con_Req__c.Type__c}" required="true" rendered="{!if(recordType == 'major' && service == false, 'true', 'false')}"/>                
+            </apex:pageBlockSection>   
+            <apex:pageBlockSection columns="1" title="Vendor Information" collapsible="false" rendered="{!if(recordType == 'major', 'true', 'false')}">
+             <apex:inputField value="{!Con_Req__c.Vendor_Account__c}" required="true"/>
+             <apex:inputField value="{!Con_Req__c.Vendor_Contact__c}" required="true"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection columns="2" title="Product Information" collapsible="false" rendered="{!if(recordType == 'major', 'true', 'false')}">
+            <apex:pageBlockSectionItem rendered="{!NOT(service)}">  
+                <apex:outputLabel value="Product"/>
+                <apex:selectList value="{!productLines}" multiselect="false" size="4" style="border-size:1px; border-color:#C00;border-style:solid;">
+                    <apex:selectOptions value="{!products}"/>
+                </apex:selectList>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem id="lines" rendered="{!NOT(service)}">  
+                <apex:outputLabel value="Cost Code" />
+                <apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="false"/>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem rendered="{!service}">    
+                 <apex:outputLabel value="Product"/><apex:inputField value="{!Con_Req__c.Product__c}" required="true"/>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem rendered="{!service}">    
+                 <apex:outputLabel value="Cost Code"/><apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="false"/>
+             </apex:pageBlockSectionItem>
+             <apex:inputField value="{!Con_Req__c.Quantity__c}" required="true"/>
+             <apex:pageBlockSection rendered="{!NOT(service)}"/>                        
+                <apex:inputField value="{!Con_Req__c.Tax_Rate__c}" required="true"/>                    
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Product Information" collapsible="false" rendered="{!if(recordType == 'minor', 'true', 'false')}">
+                <apex:inputField value="{!Con_Req__c.Vendor_Account__c}" required="true"/>
+                <apex:inputField value="{!Con_Req__c.Unit_Price__c}" required="true"/>
+                <apex:inputField value="{!Con_Req__c.Vendor_Contact__c}" required="true"/>
+                <apex:inputField value="{!Con_Req__c.Quantity__c}" required="true"/>
+                 <apex:inputField value="{!Con_Req__c.Product__c}" required="false"/>
+                <apex:inputField value="{!Con_Req__c.Part_Number__c}"/>
+                <apex:inputField value="{!Con_Req__c.Tax_Rate__c}" required="true"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!Con_Req__c.Shipping__c}" required="true"/>   
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" rendered="{!if(recordType == 'minor' || recordType == 'other', 'true', 'false')}">
+                <apex:pageBlockSectionItem rendered="{!NOT(service)}">  
+                        <apex:outputLabel value="Cost Code"/>
+                        <apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="false"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Description"/><apex:inputTextArea value="{!Con_Req__c.Product_Description__c}" cols="150" rows="3"/> 
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!service}">    
+                    <apex:outputLabel value="Cost Code"/><apex:inputField value="{!Con_Req__c.Cost_Code__c}" required="false"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Subcontractor Information" collapsible="false" rendered="{!if(recordType == 'sub', 'true', 'false')}">
+                <apex:pageBlockSectionItem >  
+                        <apex:outputLabel value="Subcontractor Account"/>
+                        <apex:inputField value="{!Con_Req__c.Vendor_Account__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >    
+                    <apex:outputLabel value="Subcontractor Cost"/><apex:inputField value="{!Con_Req__c.Unit_Price__c}" required="true"/>
+                </apex:pageBlockSectionItem>             
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Subcontractor Contact"/>
+                     <apex:inputField value="{!Con_Req__c.Vendor_Contact__c}" required="true"/>
+                </apex:pageBlockSectionItem>             
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Retention Held"/>
+                     <apex:inputField value="{!Con_Req__c.Retention_Held__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+<!--            
+                <apex:pageBlockSectionItem />
+-->                                
+                <apex:pageBlockSectionItem rendered="{!service}">    
+                    <apex:outputLabel value="Cost Code"/><apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="false"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!service}"/>
+                 <apex:pageBlockSectionItem rendered="{!NOT(service)}">  
+                        <apex:outputLabel value="Cost Code"/>
+                        <apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="false"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Retention Percent"/>
+                     <apex:inputField value="{!Con_Req__c.Retention_Percent__c}" required="false"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Notes" columns="1" collapsible="false">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Notes"/>
+                <apex:inputTextArea value="{!Con_Req__c.Additional_Notes__c}" cols="150" rows="6"/>
+            </apex:pageBlockSectionItem>                      
+            </apex:pageBlockSection>  
+        </apex:pageBlock>  
+            
+        </apex:form>
+        
+        <apex:form rendered="{!if(recordType == 'subchange' , 'true', 'false')}">
+            <apex:pageBlock title="Change Order Edit" mode="edit">   
+                <apex:pageBlockButtons >     
+                    <apex:commandButton action="{!saves}" value="Save"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>  
+                </apex:pageBlockButtons>  
+                
+                <apex:pageBlockSection columns="2" title="Information" collapsible="false"> 
+                    <!-- <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit}" required="true"/>
+                    <apex:outputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit == false}"/> -->
+                    <apex:inputField value="{!Con_Req__c.CO__c}" />
+                    <apex:pageBlockSectionItem />
+                    <apex:inputField value="{!Con_Req__c.ASProject__c}" required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Project_PM__c}" />
+                    <apex:inputField value="{!Con_Req__c.Subject__c}"  required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Vendor_Account__c}" required="true"/>
+                    <apex:pageBlockSectionItem >    
+                        <apex:outputLabel value="Additional Amount Requested"/>
+                        <apex:inputField value="{!Con_Req__c.Amount_Requested__c}" required="true"/>
+                    </apex:pageBlockSectionItem> 
+                    <apex:inputField value="{!Con_Req__c.Purchase_Order2__c}"  required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Calendar_Days_Delayed__c}" />
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Subcontractor Contact"/>
+                        <apex:inputField value="{!Con_Req__c.Vendor_Contact__c}" required="true"/>
+                    </apex:pageBlockSectionItem> 
+                    <apex:inputField value="{!Con_Req__c.Backcharge__c}" /> 
+                    <apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}" required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Development_Line_Item__c}" />    
+                    <apex:inputField value="{!Con_Req__c.Backcharge_To__c}" />
+                    <apex:inputField value="{!Con_Req__c.Description__c}" required="true" style="width:270px; height:50px"/>
+                    <apex:inputField value="{!Con_Req__c.Site__c}" />
+                </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="2" title="Reason/Justification for Change Order" collapsible="false">
+                    <apex:inputField value="{!Con_Req__c.Reason_for_Change_Order__c}" required="true" />                                                            
+                    <apex:inputField value="{!Con_Req__c.Reason_Category__c}" required="true" /> 
+                    <apex:inputField value="{!Con_Req__c.Other_reason_explanation__c}" style="width:200px; height:14px" />                               
+                    <apex:inputField value="{!Con_Req__c.Reason_Sub_Category__c}" />                   
+                    
+                </apex:pageBlockSection>  
+            
+                <apex:pageBlockSection title="Notes" columns="1" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Notes"/>
+                        <apex:inputTextArea value="{!Con_Req__c.Additional_Notes__c}" cols="120" rows="4"/>
+                    </apex:pageBlockSectionItem>                      
+                </apex:pageBlockSection>  
+            </apex:pageBlock>
+            
+            <!-- SFDC work arround, in order for the dependent lookups to work this fields need to be inputfield and not output field as in the page block. -->
+            <div style="display:none;">
+                <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit == false}"/>
+            </div>    
+        </apex:form>
+
+        <apex:form rendered="{!if(recordType == 'material', 'true', 'false')}"> 
+            <apex:pageBlock title="Change Order Edit" mode="edit">   
+                <apex:pageBlockButtons >     
+                    <apex:commandButton action="{!saves}" value="Save"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>  
+                </apex:pageBlockButtons>  
+               
+        <apex:pageBlockSection columns="2" title="Change Order Detail" collapsible="false">                 
+                    <!-- <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit}" required="true"/>
+                    <apex:outputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit == false}"/> -->
+                    <apex:inputField value="{!Con_Req__c.ASProject__c}" required="true"/> 
+                    <apex:inputField value="{!Con_Req__c.Change_Order_Status__c}" />                                            
+                    <apex:inputField value="{!Con_Req__c.Site__c}" />
+                    <apex:inputField value="{!Con_Req__c.Project_PM__c}" />                                         
+                    <apex:inputField value="{!Con_Req__c.Budget_Line_Item2__c}"  required="true" /> 
+                    <apex:inputField value="{!Con_Req__c.Not_To_Exceed__c}" />                                       
+                    <apex:inputField value="{!Con_Req__c.Date_Requested__c}" required="true" /> 
+                    <apex:inputField value="{!Con_Req__c.Backcharge__c}" />                    
+                    <apex:inputField value="{!Con_Req__c.Confirmed_Ship_Date__c}" /> 
+                    <apex:inputField value="{!Con_Req__c.Backcharge_To__c}" /> 
+                    <apex:inputField value="{!Con_Req__c.Calendar_Days_Delayed__c}" required="true" />
+                    <apex:pageBlockSectionItem />                                                                                                            
+                    <apex:inputField value="{!Con_Req__c.Subject__c}" style="width:270px; height:15px" required="true" />
+                    <apex:pageBlockSectionItem />                                                                                                                                                                                                                                                                                                  
+                    <apex:inputField value="{!Con_Req__c.Description__c}" required="true" style="width:270px; height:25px"/>                                                             
+                </apex:pageBlockSection>
+               
+        <apex:pageBlockSection columns="2" title="Vendor and Product Information" collapsible="false"> 
+                    <apex:inputField value="{!Con_Req__c.Vendor_Account__c}" required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Purchase_Order2__c}"  required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Vendor_Contact__c}" required="true"/>
+                    <apex:inputField value="{!Con_Req__c.Product__c}" required="true" />                                           
+                </apex:pageBlockSection>    
+                
+        <apex:pageBlockSection columns="2" title="Purchase Order Changes" collapsible="false"> 
+                    <apex:inputField value="{!Con_Req__c.Unit_Price2__c}" required="true" />           
+                    <apex:inputField value="{!Con_Req__c.Tax_Rate__c}" rendered="{!taxExempt == false}"/>                    
+                    <apex:inputField value="{!Con_Req__c.New_Quantity__c}" required="true" /> 
+                    <apex:inputField value="{!Con_Req__c.Max_Freight_Allowance__c}" />
+               
+                      
+                </apex:pageBlockSection>
+                
+        <apex:pageBlockSection columns="2" title="Reason/Justification for Change Order" collapsible="false">
+                    <apex:inputField value="{!Con_Req__c.Reason_for_Change_Order__c}" required="true" />
+                    <apex:inputField value="{!Con_Req__c.Other_reason_explanation__c}" style="width:200px; height:14px" />                                                             
+                    <apex:inputField value="{!Con_Req__c.Reason_Category__c}" required="true" /> 
+                    <apex:pageBlockSectionItem />                                                  
+                    <apex:inputField value="{!Con_Req__c.Reason_Sub_Category__c}" />                                    
+                </apex:pageBlockSection>   
+                
+        <apex:pageBlockSection title="Notes" columns="1" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Additional Notes"/>
+                        <apex:inputTextArea value="{!Con_Req__c.Additional_Notes__c}" cols="120" rows="2"/>
+                    </apex:pageBlockSectionItem>    
+    
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            
+            <!-- SFDC work around, in order for the dependent lookups to work this field needs to be an input field and not output field as in the page block. -->
+            <div style="display:none;">
+                <apex:inputField value="{!Con_Req__c.ASProject__c}" rendered="{!projectEdit == false}"/>
+            </div>    
+        </apex:form>
+        
+        
+</apex:page>

@@ -1,0 +1,122 @@
+<apex:page standardController="Con_Req__c" extensions="con_req" id="can_submit_page" showHeader="false" sidebar="false" >
+
+   <style>
+      .notOk {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: 400;
+			font-style: normal;
+			color: #DD0000;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+      .ok { 
+          	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: 400;
+			font-style: normal;
+			color: #329555;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      }
+      
+      .customTable {
+      		top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      }
+      
+      .customRow {
+      		top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+      }
+      
+      
+            
+      
+      .customLabelCol {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 10.9167px;
+			font-weight: bold;
+			font-style: normal;
+			color: #333333;
+			line-height: 13.35px;
+      		text-align: right;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 10px 2px 2px;
+			border: 0px 0px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+      
+      .customDataCol {
+           	font-family:'Arial','Helvetica',sans-serif;
+          	font-size: 12px;
+			font-weight: 400;
+			font-style: normal;
+			color: #000000;
+			line-height: 14.4px;
+      		text-align: left;
+      		vertical-align: top;
+      		background-color: transparent;
+			padding:2px 2px 2px 10px;
+			border: 0px 20px 1px 0px;
+			top: auto;
+      		right: auto;
+      		bottom: auto;
+      		left: auto;
+
+      }
+
+   </style>
+	
+
+
+		<table cellspacing="0" cellpadding="0" border="0" class="customTable" width="100%" onclick="test()">
+			<tr class="customRow" width="100%">
+				<td class="customLabelCol" width="35%">Ok to Submit</td>
+				<td class="customDataCol" width="65%"  class="{!if(Con_Req__c.Ok_to_Submit_Change_Order__c == 'Yes', 'ok', 'notOk' ) }">
+				{!if ( (Con_Req__c.Purchase_Order__r.Name == '' || Con_Req__c.Cost_Code__c == ''), 'You cannot submit this Requisition because:', 'Yes')}
+				</td>
+			</tr>
+			<tr class="customRow" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="{!if(Con_Req__c.Ok_to_Submit_Change_Order__c == 'Yes', 'ok', 'notOk' ) }">
+					{!if ( (Con_Req__c.Purchase_Order__r.Name == '' || Con_Req__c.Purchase_Order__r.Name == null)  ,'• You must select a PO Number', '')}
+				</td>
+			</tr>
+			<tr class="customRow" width="100%">
+				<td class="customLabelCol" width="35%">&nbsp</td>
+				<td id="outputText" class="customDataCol" width="65%"  class="{!if(Con_Req__c.Ok_to_Submit_Change_Order__c == 'Yes', 'ok', 'notOk' ) }">
+					{!if ((Con_Req__c.Cost_Code__c == '' || Con_Req__c.Cost_Code__c == null ) ,'• You must select a Cost Code', '')}
+				</td>
+			</tr>
+	</table>
+
+
+
+</apex:page>

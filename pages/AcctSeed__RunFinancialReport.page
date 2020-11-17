@@ -1,0 +1,676 @@
+<apex:page id="thePage" title="Financial Reports | Accounting Seed" tabStyle="Run_Financial_Report__tab" controller="AcctSeed.RunFinancialReportController" extensions="AcctSeed.EnvironmentUtils" sidebar="false">
+
+    <apex:stylesheet value="/sCSS/21.0/sprites/1297816277000/Theme3/default/gc/versioning.css" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/common.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/css/jquery.dataTables.min.css')}" />
+
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.dataTables.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-common.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-currency.js')}" loadOnReady="true"/>
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/run-financial-report.js')}" loadOnReady="true"/>
+    <script type="text/javascript">
+        AcctSeed.ASModule.defaultLocale = "{!JSENCODE(DefaultLocale)}";
+        AcctSeed.ASModule.defaultCurrency = "{!JSENCODE(DefaultCurrency)}";
+        AcctSeed.ASModule.isMultiCurrencyEnabled = "{!JSENCODE(IF(isMultiCurrencyEnabled, "true", "false"))}";
+        AcctSeed.ASModule.getTransactionsByLedgerInquiryRequest = "{!$RemoteAction.RunFinancialReportController.queryTransactionsByLedgerInquiryRequest}";
+        AcctSeed.ASModule.objectMetadata = {
+            Transaction__c: {
+                fields: {
+                    Date__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Date__c.label}"
+                    },
+                    Accounting_Period__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Accounting_Period__c.label}"
+                    },
+                    GL_Account__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__GL_Account__c.label}"
+                    },
+                    Account__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Account__c.label}"
+                    },
+                    Project__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Project__c.label}"
+                    },
+                    Project_Task__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Project_Task__c.label}"
+                    },
+                    Product__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Product__c.label}"
+                    },
+                    GL_Account_Variable_1__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__GL_Account_Variable_1__c.label}"
+                    },
+                    GL_Account_Variable_2__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__GL_Account_Variable_2__c.label}"
+                    },
+                    GL_Account_Variable_3__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__GL_Account_Variable_3__c.label}"
+                    },
+                    GL_Account_Variable_4__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__GL_Account_Variable_4__c.label}"
+                    },
+                    Amount__c: {
+                        label: "{!$ObjectType.AcctSeed__Transaction__c.fields.AcctSeed__Amount__c.label}"
+                    }
+                }
+            }
+        };
+    </script>
+
+
+    <apex:sectionHeader title="Financial Reports" subtitle="Run Financial Report" />
+
+    <apex:tabPanel id="tabPanel" switchType="client" selectedTab="tab1" styleClass="theTabPanel" tabClass="theTabPanel" contentClass="tabContent" activeTabClass="activeTab" inactiveTabClass="inactiveTab">
+        <!-- =============================== Profit & Loss Report TAB =================================== -->
+        <apex:tab name="tab1" id="tab1" label="Profit & Loss" ontabenter="setTab('profitAndLoss')">
+            <apex:form id="theForm1">
+                <apex:pageBlock mode="edit" title="Profit & Loss">
+                    <apex:pageMessages id="pageMessages1" escape="false"/>
+                    <apex:pageBlockButtons id="plButtons">
+                        <apex:actionStatus id="saveStatus1" onstart="AcctSeed.ASModule.disableButtons('tab1','Processing...')"
+                                           onstop="AcctSeed.ASModule.enableButtons('tab1','Run')"/>
+                        <apex:commandButton value="Run" status="saveStatus1" action="{!runProfitAndLossReport}" rerender="theForm1" />
+                    </apex:pageBlockButtons>
+                    <div id="lightning"></div>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Start Accounting Period" for="startPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="start_profit_and_loss">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}" />
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_1__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="End Accounting Period" for="endPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="end_profit_and_loss">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!endPeriodObj.AcctSeed__End_Accounting_Period__c}" />
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isPeriodRangeError}">
+                                    <strong>Error:</strong> End accounting period cannot be more than 12 periods past start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodAfterEndPeriodError}">
+                                    <strong>Error:</strong> End accounting period cannot be before start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldEmpty}">
+                                    <strong>Error:</strong> End accounting period is required.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_2__c}" />
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Ledger" for="ledger" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_profitLoss"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}" />
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_3__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Group By Sub Type 1" />
+                            <apex:inputCheckbox id="subType1_pl" value="{!isGroupBySubtype1}" onchange="AcctSeed.ASModule.setSubType1Checkbox('subType1_pl', 'subType2_pl');" />
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_4__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Group By Sub Type 2" />
+                            <apex:inputCheckbox id="subType2_pl" value="{!isGroupBySubtype2}" onchange="AcctSeed.ASModule.setSubType2Checkbox('subType1_pl', 'subType2_pl');"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                   <apex:outputPanel id="profitAndLoss">
+                        <apex:outputPanel >
+                            <c:BatchStatusComponent reportType="profitAndLoss" numberOfJobs="20" />
+                        </apex:outputPanel>
+
+                </apex:outputPanel>
+                <apex:actionFunction name="refreshComponents" reRender="profitAndLoss, profitAndLossVsBudget, balanceSheet, trialBalance, cashFlowStatement, customReport"/>
+                <apex:actionFunction name="setTab"
+                                     action="{!setDefaultStartAndEndPeriods}"
+                                                rerender="profitAndLoss, profitAndLossVsBudget, balanceSheet, trialBalance, cashFlowStatement, customReport, actionPoller1, start_profit_and_loss, end_profit_and_loss, start_profit_and_loss_vs_budget, end_profit_and_loss_vs_budget, start_balance_sheet, end_balance_sheet, trial_balance_period, cash_flow_statement_period, start_ledgerInquiry, end_ledgerInquiry, custom_report_period, pageMessages1, pageMessages2, pageMessages3, pageMessages4, pageMessages5, pageMessages6, pageMessages7">
+                    <apex:param name="selectedTab" assignTo="{!selectedTab}" value=""/>
+                </apex:actionFunction>
+
+            </apex:form>
+        </apex:tab>
+        <!-- ============================= Profit & Loss Versus Budget Report TAB =================================== -->
+        <apex:tab name="tab2" id="tab2" label="Profit & Loss Versus Budget" ontabenter="setTab('profitAndLossVsBudget')">
+            <apex:form id="theForm2">
+                <apex:pageBlock mode="edit" title="Profit & Loss Versus Budget">
+                    <apex:pageMessages id="pageMessages2"/>
+                    <apex:pageBlockButtons id="plButtons">
+                        <apex:actionStatus id="saveStatus2"
+                                           onstart="AcctSeed.ASModule.disableButtons('tab2','Processing...')"
+                                           onstop="AcctSeed.ASModule.enableButtons('tab2','Run')" />
+                        <apex:commandButton value="Run" status="saveStatus2" action="{!runProfitAndLossVsBudgetReport}" rerender="theForm2" />
+                    </apex:pageBlockButtons>
+                    <div id="lightning"></div>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Start Accounting Period" for="startPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="start_profit_and_loss_vs_budget">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}" />
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_1__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="End Accounting Period" for="endPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="end_profit_and_loss_vs_budget">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!endPeriodObj.AcctSeed__End_Accounting_Period__c}" />
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isPeriodRangeError}">
+                                    <strong>Error:</strong> End accounting period cannot be more than 12 periods past start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodAfterEndPeriodError}">
+                                    <strong>Error:</strong> End accounting period cannot be before start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldEmpty}">
+                                    <strong>Error:</strong> End accounting period is required.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_2__c}" />
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Actual Ledger" for="ledger" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList required="true"
+                                                 value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_profitVersus"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}" />
+                                    <apex:actionSupport event="onchange"
+                                                        status="saveStatus2"
+                                                        reRender="budgetLedgerList"/>
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_3__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Budget Ledger" for="budget_ledger" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList id="budgetLedgerList"
+                                                 value="{!budgetLedger.AcctSeed__Ledger__c}"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allBudgetLedgers}" />
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isBudgetLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Budget Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isBudgetLedgerTypeError}">
+                                    <strong>Error:</strong> Type of selected Ledger must be "Budget".
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_4__c}" />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Group By Sub Type 1" />
+                            <apex:inputCheckbox id="subType1_plvb" value="{!isGroupBySubtype1}" onchange="AcctSeed.ASModule.setSubType1Checkbox('subType1_plvb', 'subType2_plvb')" />
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Group By Sub Type 2" />
+                            <apex:inputCheckbox id="subType2_plvb" value="{!isGroupBySubtype2}" onchange="AcctSeed.ASModule.setSubType2Checkbox('subType1_plvb', 'subType2_plvb')"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText />
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Show All Periods?" />
+                            <apex:inputCheckbox value="{!showAllPeriods}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                   <apex:outputPanel id="profitAndLossVsBudget">
+                        <apex:outputPanel >
+                            <c:BatchStatusComponent reportType="profitAndLossVsBudget" numberOfJobs="20" />
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+            </apex:form>
+        </apex:tab>
+        <!-- =============================== Balance Sheet Report TAB ===================================== -->
+        <apex:tab name="tab3" id="tab3" label="Balance Sheet" ontabenter="setTab('balanceSheet')">
+            <apex:form id="theForm3">
+                <apex:pageBlock mode="edit" title="Balance Sheet">
+                    <apex:pageMessages id="pageMessages3"/>
+                    <apex:pageBlockButtons >
+                        <apex:actionStatus id="saveStatus3" onstart="AcctSeed.ASModule.disableButtons('tab3','Processing...')" />
+                        <apex:commandButton value="Run" status="saveStatus3" action="{!runBalanceSheetReport}" rerender="theForm3"  />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Start Accounting Period" for="startPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="start_balance_sheet">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> Start accounting period must be either the first open accounting period or a closed or archived accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_1__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="End Accounting Period" for="endPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="end_balance_sheet">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!endPeriodObj.AcctSeed__End_Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isPeriodRangeError}">
+                                    <strong>Error:</strong> End accounting period cannot be more than 12 periods past start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodAfterEndPeriodError}">
+                                    <strong>Error:</strong> End accounting period cannot be before start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldEmpty}">
+                                    <strong>Error:</strong> End accounting period is required
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> End accounting period must be either the first open accounting period or a closed or archived accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_2__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Ledger" for="ledger" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList required="true"
+                                                 value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_balance"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}" />
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_3__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Group By Sub Type" />
+                            <apex:inputCheckbox value="{!isGroupBySubtype1}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_4__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputPanel id="balanceSheet">
+                    <c:BatchStatusComponent reportType="balanceSheet" numberOfJobs="20" />
+                </apex:outputPanel>
+            </apex:form>
+        </apex:tab>
+        <!-- ================================= Trial Balance Report TAB ====================================== -->
+        <apex:tab name="tab4" id="tab4" label="Trial Balance" ontabenter="setTab('trialBalance');">
+            <apex:form id="theForm4">
+                <apex:pageBlock mode="edit" title="Trial Balance">
+                    <apex:pageMessages id="pageMessages4"/>
+                    <apex:pageBlockButtons >
+                        <apex:actionStatus id="saveStatus4" onstart="AcctSeed.ASModule.disableButtons('tab4','Processing...')" />
+                        <apex:commandButton value="Run" status="saveStatus4" action="{!runTrialBalanceReport}" rerender="theForm4" />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Accounting Period" for="startPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="trial_balance_period">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> The accounting period must be the first open accounting period which is preceded by a closed accounting period. Or a closed or archived accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_1__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Ledger" for="ledger" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList required="true"
+                                                 value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_trialBalance"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}" />
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_2__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_3__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:outputText />
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_4__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:outputText />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputPanel id="trialBalance">
+                    <apex:outputPanel >
+                        <c:BatchStatusComponent reportType="trialBalance" numberOfJobs="20" />
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:tab>
+        <!-- ================================= Cash Flow Statement Report TAB ====================================== -->
+        <apex:tab name="tab5" id="tab5" label="Cash Flow Statement" ontabenter="setTab('cashFlowStatement');">
+            <apex:form id="theForm5">
+                <apex:pageBlock mode="edit" title="Cash Flow Statement">
+                    <apex:pageMessage severity="info" rendered="{!NOT(isCashFlowStatementReportAvailable)}" strength="3" escape="false" summary="The Cash Flow Statement has not been enabled. To do this:<br/>
+                        <ol type='1'><li>On Accounting Settings, go to the Cash Flow Statement Settings section and check the Enable Cash Flow Statement checkbox.</li>
+                        <li>Select other Cash Flow categories or leave the defaults.</li>
+                        <li>Populate the Cash Flow Category field for all Cash Receipts, Cash Disbursements and Journal Entry lines associated with a Bank Account. Records may need to be unposted, categorized, and re-posted.</li></ol>"/>
+                    <apex:pageMessages id="pageMessages5"/>
+                    <apex:pageBlockButtons rendered="{!isCashFlowStatementReportAvailable}">
+                        <apex:actionStatus id="saveStatus5" onstart="AcctSeed.ASModule.disableButtons('tab5','Processing...')" />
+                        <apex:commandButton value="Run"
+                                            status="saveStatus5"
+                                            action="{!runCashFlowStatementReport}" rerender="theForm5" />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="2" rendered="{!isCashFlowStatementReportAvailable}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Accounting Period" for="startPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="cash_flow_statement_period">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> The accounting period must be the first open accounting period which is preceded by a closed accounting period. Or a closed or archived accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_1__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Ledger" for="ledger" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList required="true"
+                                                 value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_cashFlow"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}" />
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_2__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_3__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Show All Periods?" />
+                            <apex:inputCheckbox value="{!showAllPeriods}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportResult.AcctSeed__GL_Account_Variable_4__c}" rendered="{!NOT(isHeaderLevelPost)}"/>
+                        <apex:outputText value="" rendered="{!isHeaderLevelPost}"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputPanel id="cashFlowStatement">
+                    <apex:outputPanel rendered="{!isCashFlowStatementReportAvailable}">
+                        <c:BatchStatusComponent reportType="cashFlowStatement" numberOfJobs="20" />
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:tab>
+        <!-- ================================= Ledger Inquiry Report TAB =============================== -->
+        <apex:tab name="tab6" id="tab6" label="Ledger Inquiry" ontabenter="AcctSeed.ASModule.pageLoad(); setTab('ledgerInquiry');">
+            <apex:form id="theForm6">
+                <apex:actionFunction name="ledgerInquiryRefreshAction" immediate="true"
+                                     reRender="ledgerInquiryRunButtonTop,ledgerInquiryRunButtonBottom,criteria-section"/>
+                <apex:pageBlock id="ledgerInquiryReportBlock" mode="edit" title="Ledger Inquiry">
+                    <apex:pageMessage severity="info"
+                                      strength="3"
+                                      summary="The Project, Project Task, Account, and Product report filters, can only be used for Revenue and Expense GL Accounts. These filters will be disregarded when reporting on Balance Sheet GL Accounts."/>
+                    <apex:outputPanel id="ledgerInquiryMessages">
+                        <apex:pageMessages id="pageMessages6" escape="false"/>
+                    </apex:outputPanel>
+                    <apex:pageBlockButtons location="top">
+                        <apex:actionStatus id="saveStatus6" onstart="AcctSeed.ASModule.disableButtons('tab6','Processing...', true)" />
+                        <apex:commandButton id="ledgerInquiryRunButtonTop"
+                                            value="Run"
+                                            status="saveStatus6"
+                                            action="{!runLedgerInquiryReport}"
+                                            onClick="AcctSeed.ASModule.destroyOldReport();"
+                                            onComplete="AcctSeed.ASModule.runLedgerInquiryReport('{!serializedLedgerInquiryRequestInstance}');"
+                                            reRender="ledgerInquiryMessages, statistics"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection id="criteria-section" title="Enter Criteria" collapsible="false" columns="3">
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Start Accounting Period" for="startPeriod" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="start_ledgerInquiry">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> The accounting period must be closed or the first sequential open accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportTransaction.AcctSeed__GL_Account_Variable_1__c}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Project" styleClass="nowrap" />
+                            <apex:inputField value="{!ledgerInquiryProxyRecord.AcctSeed__Project__c}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="End Accounting Period" for="endPeriod" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="end_ledgerInquiry">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!endPeriodObj.AcctSeed__End_Accounting_Period__c}" />
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isPeriodRangeError}">
+                                    <strong>Error:</strong> End accounting period cannot be more than 12 periods past start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodAfterEndPeriodError}">
+                                    <strong>Error:</strong> End accounting period cannot be before start accounting period.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldEmpty}">
+                                    <strong>Error:</strong> End accounting period is required
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isEndPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> End accounting period must be either the first open accounting period or a closed or archived accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportTransaction.AcctSeed__GL_Account_Variable_2__c}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Project Task" styleClass="nowrap" />
+                            <apex:inputField value="{!ledgerInquiryProxyRecord.AcctSeed__Project_Task__c}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Ledger" for="ledger_ledgerInquiry" styleClass="nowrap"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                                <apex:selectList required="true"
+                                                 value="{!transactionalLedger.AcctSeed__Ledger__c}"
+                                                 id="ledger_ledgerInquiry"
+                                                 multiselect="false"
+                                                 size="1">
+                                    <apex:selectOptions value="{!allTransactionalLedgers}"/>
+                                    <apex:actionSupport event="onchange" rerender="ledgerCurrency"/>
+                                </apex:selectList>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isLedgerFieldEmpty}">
+                                    <strong>Error:</strong> Ledger is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportTransaction.AcctSeed__GL_Account_Variable_3__c}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Product" styleClass="nowrap" />
+                            <apex:inputField value="{!ledgerInquiryProxyRecord.AcctSeed__Product__c}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="GL Account" styleClass="nowrap"/>
+                            <apex:outputPanel layout="block">
+                                <apex:inputField value="{!ledgerInquiryGlAccountProxyRecord.AcctSeed__GL_Account__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!incompatibleGLAccountSelected}">
+                                    <strong>Error:</strong> Cash Flow GL Account is not allowed here.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!reportTransaction.AcctSeed__GL_Account_Variable_4__c}"/>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                            <apex:outputLabel value="Account" styleClass="nowrap" />
+                            <apex:inputField value="{!ledgerInquiryProxyRecord.AcctSeed__Account__c}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <!-- ================================== REPORT STATISTICS =======================================-->
+                    <apex:pageBlockSection id="statistics" title="Report Statistics" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                           <apex:outputLabel value="Inquiry Result Count" styleClass="nowrap"/>
+                           <apex:outputText id="recordCount" value=""/>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth" rendered="{!!isInquiryProjectAccountProductCriteria}">
+                            <apex:outputLabel value="Opening Balance" styleClass="nowrap"/>
+                            <apex:outputText id="openingBalance" value=""/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText rendered="{!!isMultiCurrencyEnabled}"/>
+                        <apex:outputText rendered="{!isInquiryProjectAccountProductCriteria}"/>
+                        <apex:outputText id="ledgerCurrency" label="Currency" value="{!ledgerIsoCode}" rendered="{!isMultiCurrencyEnabled}"/>
+                       <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth">
+                           <apex:outputLabel value="Inquiry Amount" styleClass="nowrap"/>
+                           <apex:outputText id="reportAmount" value=""/>
+                       </apex:pageBlockSectionItem>
+                        <apex:outputText />
+                        <apex:pageBlockSectionItem labelStyleClass="customLabelWidth" dataStyleClass="customDataWidth" rendered="{!!isInquiryProjectAccountProductCriteria}">
+                            <apex:outputLabel value="Year to Date Balance" styleClass="nowrap"/>
+                            <apex:outputText id="currentBalance" value=""/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText rendered="{!isInquiryProjectAccountProductCriteria}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:actionStatus id="saveStatus6" onstart="AcctSeed.ASModule.disableButtons('tab6','Processing...', true)" />
+                        <apex:commandButton id="ledgerInquiryRunButtonBottom"
+                                            value="Run"
+                                            status="saveStatus6"
+                                            action="{!runLedgerInquiryReport}"
+                                            onClick="AcctSeed.ASModule.destroyOldReport();"
+                                            onComplete="AcctSeed.ASModule.runLedgerInquiryReport('{!serializedLedgerInquiryRequestInstance}');"
+                                            reRender="ledgerInquiryMessages, statistics"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+                <!-- ============================== REPORT RESULTS================================================== -->
+                <apex:pageBlock id="ledgerInquiryReportBlock2" title="Report Results">
+                    <apex:outputPanel id="errorPanel" style="display:none">
+                        <apex:pageMessage summary="" severity="info" strength="3" />
+                    </apex:outputPanel>
+                    <div id="spinner" style="font-weight:bold;left:60px;top:370px;width:84%;height:25px; display: none;">
+                        <img src="/img/loading.gif" style="text-align:center" width="16" height="16" alt="loading gif" />&nbsp;&nbsp;Loading...
+                    </div>
+                    <table id="transactionTable" class="display"></table>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+        <!-- ================================== Custom Report TAB ====================================== -->
+        <apex:tab name="tab7" id="tab7" label="Custom Reports" ontabenter="setTab('customReport');">
+            <apex:form id="theForm7">
+                <apex:pageBlock mode="edit" title="Custom Reports">
+                    <apex:pageMessages id="pageMessages7"/>
+                    <apex:pageBlockButtons >
+                        <apex:actionStatus id="saveStatus7" onstart="AcctSeed.ASModule.disableButtons('tab7','Processing...')" />
+                        <apex:commandButton value="Run" status="saveStatus7" action="{!runCustomReport}" rerender="theForm7" />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Enter Criteria" collapsible="false" columns="1" id="view-financials-criteria">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Select Report" for="selectReport" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList required="true" value="{!selectedReportId}" multiselect="false" size="1" id="selectReport">
+                                    <apex:selectOptions value="{!customReports}" />
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Accounting Period" for="enterPeriod" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block" id="custom_report_period">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:inputField value="{!startPeriodObj.AcctSeed__Accounting_Period__c}"/>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldEmpty}">
+                                    <strong>Error:</strong> Start accounting period is required.
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="block" styleClass="errorMsg" rendered="{!isStartPeriodFieldNonValidStatus}">
+                                    <strong>Error:</strong> The accounting period must be closed or the first sequential open accounting period.
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Suppress Zero Amount Rows?" />
+                            <apex:inputCheckbox value="{!suppressZeroAmountRows}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:outputPanel id="customReport">
+                    <apex:outputPanel >
+                        <c:BatchStatusComponent reportType="customReport" numberOfJobs="20" />
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:tab>
+    </apex:tabPanel>
+
+</apex:page>

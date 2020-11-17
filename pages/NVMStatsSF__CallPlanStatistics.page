@@ -1,0 +1,106 @@
+<apex:page docType="html-5.0" showChat="false" showHeader="false" readonly="true" standardController="NVMStatsSF__NVM_Call_Summary__c" extensions="NVMStatsSF.CallPlanStats">
+<apex:form >
+	<apex:pagemessages />
+    <apex:outputPanel rendered="{!launchSummaryId == NULL}">
+        <apex:selectList value="{!selectedService}" size="1"><apex:SelectOptions value="{!services }"/></apex:selectList>
+    </apex:outputPanel>
+        
+        Compare Calls From <apex:inputField value="{!proxy.NVMStatsSF__CallTime__c}"/>&nbsp;
+        To <apex:inputField value="{!proxy.NVMStatsSF__CallEndTime__c}"/>
+        <apex:commandButton value="Submit" action="{!getStats}"/><br/>
+    <apex:outputPanel rendered="{!jsonData != NULL}">
+    Calls: {!calls}&nbsp;Abandoned: {!abandoned}<br/>
+    <canvas id="schematic" width="0" height="0"/>    
+
+    <script>
+        var hSpacing = 150.5;
+        var hMargin = 90;
+        var vMargin = 12;
+        var vSpacing = 60;
+        var context = schematic.getContext('2d');
+        
+        context.canvas.width = {!cols} * hSpacing + 2 * hMargin;
+        context.canvas.height = {!rows} * vSpacing + 2 * vMargin;
+        context.globalAlpha = 0.6;        
+        var model = JSON.parse('{!jsonData}');
+        var node = 0;
+        
+        
+        try {
+                
+        for (node = 0; node < model.length; node++) {
+            //Loop over linked nodes and draw lines to them:
+            for (var link = 0; link < model[node].links.length; link++) {
+                context.beginPath();
+                context.moveTo(hMargin + (model[node].column) * hSpacing, vMargin + (model[node].row) * vSpacing);
+                //find col/row of destination
+                var connection = model[node].links[link];
+                var widthFactor = connection.score/{!calls};
+                if (widthFactor > 1) widthFactor = 1 + widthFactor/10;
+                context.lineWidth = 3 + 17 * widthFactor;
+
+                var highlightcol = 'black';
+                if (model[node].isSelectedCall && connection.isSelectedCall) highlightcol = 'red';
+
+				
+				var grad= context.createLinearGradient(hMargin + (model[node].column) * hSpacing, vMargin + (model[node].row) * vSpacing, hMargin + (connection.column) * hSpacing, vMargin + (connection.row) * vSpacing);
+				
+				grad.addColorStop(0, highlightcol);
+				grad.addColorStop(0.9, "white");
+				grad.addColorStop(1, "white");
+
+
+                
+                context.strokeStyle = grad;
+
+                context.lineTo(hMargin + (connection.column) * hSpacing, vMargin + (connection.row) * vSpacing);
+                context.stroke();
+
+				//Reverse Gradient
+				grad= context.createLinearGradient(hMargin + (model[node].column) * hSpacing, vMargin + (model[node].row) * vSpacing, hMargin + (connection.column) * hSpacing, vMargin + (connection.row) * vSpacing); 
+				//context.createLinearGradient(hMargin + (connection.column) * hSpacing, vMargin + (connection.row) * vSpacing, hMargin + (model[node].column) * hSpacing, vMargin + (model[node].row) * vSpacing);
+				
+				grad.addColorStop(0, "white");
+				grad.addColorStop(0.9, highlightcol);
+				grad.addColorStop(1, highlightcol);
+				context.lineWidth -=2;
+
+                context.strokeStyle = grad;
+                context.lineTo(hMargin + (model[node].column) * hSpacing, vMargin + (model[node].row) * vSpacing);
+                context.stroke();
+
+            }
+
+        }
+        context.lineWidth = 24;
+        context.globalAlpha = 0.9;
+        for (node = 0; node < model.length; node++) {
+        	var avgT = (model[node].totDuration/model[node].score).toFixed(1);
+            var typeLabel = model[node].type + ' x' + model[node].score + ' @' + avgT + 's';
+            var w = context.measureText(typeLabel).width/2;
+            var w2 = context.measureText(model[node].label).width/2;
+            var spanW = w; 
+            if (w < w2) spanW = w2;
+            context.fillStyle = model[node].colour;
+            context.strokeStyle = 'white';
+            if (model[node].isSelectedCall) context.strokeStyle = '#FFFFAA';
+            var xpos =  hMargin + (model[node].column) * hSpacing;
+            var ypos = vMargin + (model[node].row) * vSpacing;
+            context.beginPath();
+            context.moveTo(xpos  - spanW, ypos);
+            context.lineTo(xpos  + spanW, ypos);
+            context.stroke();
+            context.fillText(typeLabel, xpos - w, ypos);
+            context.fillText(model[node].label, xpos - w2, ypos + 10);
+
+        }        
+        
+        //alert('OK');
+        
+        }
+        catch (err) {alert('Node: ' + node + ' : ' + err);}
+    </script>
+    
+    </apex:outputPanel>
+</apex:form>
+</apex:page>

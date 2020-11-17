@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Payable Frequency --></label>
+        <name>AcctSeed__Account_Payable_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-annual</masterLabel>
+            <translation><!-- Semi-annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Calculated annual amount. --></help>
+        <label><!-- Annual Amount --></label>
+        <name>AcctSeed__Annual_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- A Recurring Payable can have either the Account (Vendor), Contact or User (Employee) as the Payee. One object must be chosen. --></help>
+        <label><!-- Contact --></label>
+        <name>AcctSeed__Contact__c</name>
+        <relationshipLabel><!-- Recurring Payables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- A Recurring Payable can have either the Account (Vendor), Contact or User (Employee) as the Payee. One object must be chosen. --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Recurring Payables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Leave this checkbox unchecked so Payables are created from this Recurring Payable when you have automation set up. Check it to exclude Payables from being automatically created. --></help>
+        <label><!-- Exclude From Automation --></label>
+        <name>AcctSeed__Exclude_From_Automation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Payable Date --></label>
+        <name>AcctSeed__Last_Account_Payable_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Recurring Payables --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated monthly amount. --></help>
+        <label><!-- Monthly Amount --></label>
+        <name>AcctSeed__Monthly_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Payable Date --></label>
+        <name>AcctSeed__Next_Account_Payable_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time frame to create next payable. --></help>
+        <label><!-- Next Payable Create --></label>
+        <name>AcctSeed__Next_Payable_Create__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary of the Recurring Payable Lines&apos; Tax Amount fields --></help>
+        <label><!-- Purchase Tax --></label>
+        <name>AcctSeed__Purchase_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Summary of all the Recurring Payable Lines&apos; Sub-Total fields --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>AcctSeed__Vendor__c</name>
+        <relationshipLabel><!-- Recurring Payables --></relationshipLabel>
+    </fields>
+    <webLinks>
+        <label><!-- Create_Account_Payable --></label>
+        <name>AcctSeed__Create_Account_Payable</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Accounts_Payable --></label>
+        <name>AcctSeed__Create_Accounts_Payable</name>
+    </webLinks>
+</CustomObjectTranslation>

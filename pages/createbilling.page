@@ -1,0 +1,44 @@
+<apex:page standardController="AcctSeed__Recurring_Billing__c" recordSetVar="selectedRecurringBilling" extensions="recurringbillinglistview_createbilling"  >
+
+
+     <apex:form id="theForm">
+    
+        <apex:pageBlock >
+        <apex:sectionHeader title="Select RecurringBilling"/>
+        
+
+            <apex:pageblockTable value="{!recurringBillingList}"  var="eachRecord1">
+            <apex:column >
+         <apex:commandLink action="{!processSelected}" target="_blank" >
+         <apex:commandbutton value="Create Billing"/>
+         <apex:param name="RBName"
+               value="{!eachRecord1['bill.AcctSeed__Customer__c']}"
+                assignTo="{!RBName}"/>
+                <apex:param name="RBId"
+               value="{!eachRecord1['bill.Id']}"
+                assignTo="{!RBId}"/>
+                <apex:param name="RBSC"
+               value="{!eachRecord1['bill.Service_Contract__c']}"
+                assignTo="{!RBSC}"/>
+                
+                </apex:commandLink>
+         <!--<apex:param assignTo="{!eachRecord1id}"  value="a3234000003Q7pM"/>-->
+         </apex:column>
+         
+                    <!--<apex:column ><apex:inputCheckbox value="{!eachRecord1.selected}" /></apex:column>-->
+                    <apex:column value="{!eachRecord1['bill.Name']}"/>
+                    <apex:column value="{!eachRecord1['bill.AcctSeed__Customer__c']}"/>
+                    <apex:column value="{!eachRecord1['bill.AcctSeed__Next_Billing_Date__c']}"/>
+                    <apex:column value="{!eachRecord1['billLine.AcctSeed__Rate__c']}"/>
+                    <apex:column value="{!eachRecord1['billLine.AcctSeed__Quantity__c']}"/>
+                    <apex:column value="{!eachRecord1['billLine.AcctSeed__Total__c']}"/>
+                    
+            </apex:pageblockTable>
+           
+            
+            </apex:pageBlock>
+           
+             
+        </apex:form>
+        
+</apex:page>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>CONTRACT_ID</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_CUSTENT_ID</field>
+    </columns>
+    <columns>
+        <field>Contract.IV_Curve__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contract.Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>AEP OnSite Partners,Benicia Unified School District,BLT Enterprises / Quattro Development,ConEdison Solutions,Falck Renewables,GCL Solar Energy,Genentech,Inc.,Greenwood Energy,Integrys,Lincoln Clean Energy,Longroad,Mathworks,Mt. San Jacinto College,National Grid,Onyx Renewable Partners,Panasonic O&amp;M,SOL Systems,Soltage,Syncarpha Capital,TransAlta,VAM Realty Trust</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>O&amp;M,O&amp;M T&amp;M</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Contract_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending,Active</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Report for IV Curve</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContractList@Contract.ASProject__c</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>START_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

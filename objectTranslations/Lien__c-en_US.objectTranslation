@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lien</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Liens</value>
+    </caseValues>
+    <fields>
+        <help><!-- AP Invoice the Lien is related to- Required on all Liens --></help>
+        <label><!-- AP Invoice --></label>
+        <name>AP_Invoice__c</name>
+        <relationshipLabel><!-- Liens --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Billing Period the Lien falls into --></help>
+        <label><!-- Billing Period --></label>
+        <name>Billing_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Lien is Received --></help>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Lien was Sent --></help>
+        <label><!-- Date Sent --></label>
+        <name>Date_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>Invoice_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Job Number- pulls from the Project listed on the Lien --></help>
+        <label><!-- Job Number --></label>
+        <name>Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Invoice --></label>
+        <name>PO_Invoice__c</name>
+        <relationshipLabel><!-- Liens --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project the Lien is related to- Required on all Liens --></help>
+        <label><!-- Project --></label>
+        <name>Project2__c</name>
+        <relationshipLabel><!-- Liens --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Liens --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Vendor listed on the AP Invoice --></help>
+        <label><!-- Vendor Account --></label>
+        <name>Vendor_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- autofills based on related AP Invoice upon creation or change to AP Invoice.  Uses Contact associated with Vendor on AP that is labeled as Waiver Contact type. --></help>
+        <label><!-- Waiver Email Contact --></label>
+        <name>Waiver_Email_Contact__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Conditional Final --></label>
+        <name>Conditional_Final</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Conditional Progress --></label>
+        <name>Conditional_Progress</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Unconditional Final --></label>
+        <name>Unconditional_Final</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Unconditional Progress --></label>
+        <name>Unconditional_Progress</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Email_Selected_Docs --></label>
+        <name>Email_Selected_Docs</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Lien_Release --></label>
+        <name>Print_Lien_Release</name>
+    </webLinks>
+</CustomObjectTranslation>

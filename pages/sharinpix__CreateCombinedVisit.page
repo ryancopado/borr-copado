@@ -1,0 +1,30 @@
+<apex:page standardController="sharinpix__Visit__c" recordSetVar="visits" extensions="sharinpix.CreateCombinedVisitController">
+
+    <apex:includeLightning />
+
+    <div id="container" />
+
+    <script>
+        var visits = {!visitIds}
+        var parentFieldname = "{!parentFieldname}"
+        var recordId = "{!$CurrentPage.parameters.id}"
+        $Lightning.use("sharinpix:CreateCombinedVisitApp", function() {
+            $Lightning.createComponent("sharinpix:combinedVisit",
+              { visits: visits, recordId: recordId, parentFieldname: parentFieldname },
+              "container",
+              function(cmp) {
+                console.log("button was created");
+              }
+          );
+        });
+
+        document.addEventListener("recordcreated", function(event){
+            setTimeout( () => {
+                window.parent.location.href = '/'+event.detail.recordId;
+            }, 3000)
+        });
+        document.addEventListener("goback", function(event){
+            window.history.back()
+        });
+    </script>
+</apex:page>

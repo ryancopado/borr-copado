@@ -1,0 +1,29 @@
+<apex:page >
+</apex:page>
+<!-- 
+<apex:page standardController="Contract" recordSetVar="svCons" extensions="ServiceCostsThisYearRollUp" sidebar="false">
+
+	<apex:form id="theForm">
+		
+		<apex:sectionHeader title="Service Contracts" subtitle="Roll Up Service Costs (this year)"/>
+		<apex:pageBlock title="Selected Service Contracts">
+			<apex:pageMessages />
+			<apex:pageBlockButtons >
+				<apex:commandButton id="rollupButtonTop" value="Roll Up Service Costs (this year)" action="{!rollupServiceCosts}" reRender="theForm" rendered="{!!isProcessed && !isError}"/>     
+			    <apex:commandButton id="backButtonTop" value="Back" action="/{!$ObjectType.Contract.KeyPrefix}?fcf={!filterId}" immediate="true"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockTable id="pageBlockTableLines" value="{!selectedSVCons}" var="svc" style="width:100%;margin-left:10px">
+                	<apex:column value="{!svc.ContractNumber}"/>
+                	<apex:column value="{!svc.Service_Costs_this_year__c}"/>
+                	<apex:column value="{!svc.Project__c}"/>
+                	<apex:column value="{!svc.Acct_Branch__c}"/>
+                	<apex:column value="{!svc.Contract_Number__c}"/>
+                	<apex:column value="{!svc.Type__c}"/>
+                	<apex:column value="{!svc.Contract_Status__c}"/>
+				</apex:pageBlockTable>
+		</apex:pageBlock>  
+		
+	</apex:form>
+
+</apex:page>
+-->

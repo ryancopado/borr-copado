@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>SBQQ__Account__c</field>
+        <field>SBQQ__NetAmount__c</field>
+        <field>Case__c</field>
+        <field>SBQQ__StartDate__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jthorpe@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>For Type of Work Corrective Repairs with net amount over $5K</description>
+        <entryCriteria>
+            <formula>AND(
+ ISPICKVAL( Type_of_Work__c , &quot;Corrective Repairs&quot; ),
+ SBQQ__NetAmount__c  &gt;= 5000
+ )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Corrective Repairs Over $5K</label>
+        <name>Corrective_Repairs_Over_5k</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bvillanueva@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>For Type of Work Special Project</description>
+        <entryCriteria>
+            <formula>ISPICKVAL( Type_of_Work__c , &quot;Special Project&quot; )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Special Project</label>
+        <name>Special_Project</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jthorpe@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>For Type of Work Special Project with Net Amount over $5K</description>
+        <entryCriteria>
+            <formula>AND(
+ ISPICKVAL( Type_of_Work__c , &quot;Special Project&quot; ),
+ SBQQ__NetAmount__c  &gt;= 5000
+ )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Special Project &gt;$5K</label>
+        <name>Special_Project_5K</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>For Type of Work Other and Customer Requested</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.LastName</field>
+                <operation>notEqual</operation>
+                <value>Reas,Sullivan,Thorpe,Stephenson</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>SBQQ__Quote__c.Type_of_Work__c</field>
+                <operation>notEqual</operation>
+                <value>Initial Visit,Corrective Repairs,Special Project</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Manager Approval</label>
+        <name>Manager_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jthorpe@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>For Type of Work Other and Customer Requested</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.LastName</field>
+                <operation>notEqual</operation>
+                <value>Thorpe,Stephenson</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>SBQQ__Quote__c.Type_of_Work__c</field>
+                <operation>notEqual</operation>
+                <value>Initial Visit,Corrective Repairs,Special Project</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Director OM</label>
+        <name>Director_OM</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>pstephenson@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>SBQQ__Quote__c.SBQQ__NetAmount__c</field>
+                <operation>greaterThan</operation>
+                <value>20000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Over $20K</label>
+        <name>Over_20K</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>andrewhall@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>SBQQ__Quote__c.SBQQ__NetAmount__c</field>
+                <operation>greaterThan</operation>
+                <value>300000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Over $300K</label>
+        <name>Over_300K</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Quote_Email_Templates/Quote_Approval_Request_Notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+ OR(
+  ISPICKVAL( SBQQ__Status__c , &quot;Draft&quot; ),
+  ISPICKVAL( SBQQ__Status__c , &quot;In Review&quot; )
+  ),
+ NOT( ISBLANK( Site_Address__c ) ),
+ NOT( ISBLANK( Site_City__c ) ),
+ NOT( ISBLANK( Site_State__c ) ),
+ NOT( ISBLANK( Site_Zip__c ) ),
+ NOT( ISPICKVAL( Type_of_Work__c , &quot;Initial Visit&quot; ) ),
+ NOT( ISPICKVAL( Type_of_Work__c , &quot;Corrective Repairs&quot; ) ),
+ NOT( ISBLANK( TEXT( Type_of_Work__c ) ) )
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Quote_Approved_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_RT_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Quote_Rejected_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Denied</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Update_Status_to_In_Review</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Quote Approval Process</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recallActions>
+        <action>
+            <name>Update_Status_to_Draft</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,30 @@
+<apex:page showHeader="true" sidebar="false"  > 
+	<apex:includeScript value="{!URLFOR($Page.QGMB__QG_BtnHelper)}"  /> 
+
+    <script type="text/JavaScript">  
+		<!-- apex:include pageName="QGMB__QG_BtnHelper" /-->
+    	function test1(){
+
+			var	prms = {
+				  qryName : 'jqGrid_LV_QG_Qry',
+				  gridCaption: 'Account: List View: All Accounts', // Grid header
+
+				  object: 'Account',
+				  listView: 'All Accounts',
+
+				  limit: 1000,         // maximum number of records (1-50000), default: 1,000
+
+				  rowNum: 20,        // Number of rows in each page
+
+				  newWindow: true,   // results in new window? : true/false (default false)
+				  enableCache: 'yes' 
+				};
+
+				tmpltPrms = {};  // Indicate no parametr replacement
+				invokeQG(prms, "{!$Api.Enterprise_Server_URL_300}", tmpltPrms);
+    		}
+    </script>
+	 <h1>Congratulations</h1>
+	  This is your new Page<br/>
+	  <input type="button" value="Test1()" onclick="test1();" />
+</apex:page>

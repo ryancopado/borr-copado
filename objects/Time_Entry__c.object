@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Amount_On_Invoice__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount of this cost that is on an invoice.</description>
+        <externalId>false</externalId>
+        <label>Amount On Invoice</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Change_Internal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cost Change Internal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Change_Project__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cost Change Project</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Cost Code</label>
+        <referenceTo>Cost_Code__c</referenceTo>
+        <relationshipName>R00N300000024gh2EAA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extra__c</fullName>
+        <externalId>false</externalId>
+        <label>Extra</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Force_Recalc__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to force a recalculation of the rate and total cost fields.  This is set and unset via apex code.</description>
+        <externalId>false</externalId>
+        <label>Force Recalc</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Invoice__r.Status__c )</formula>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Invoice</label>
+        <referenceTo>Invoices__c</referenceTo>
+        <relationshipLabel>Time Entries</relationshipLabel>
+        <relationshipName>Time_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Time Entries</relationshipLabel>
+        <relationshipName>R00N80000002MPXVEA4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Grouping__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR( Date__c &lt;=  Project__r.Hand_off_Date__c  , ISBLANK(Project__r.Hand_off_Date__c)), &quot;0: Development&quot;, 
+IF(AND(Date__c  &lt;=   Project__r.X50_Set_Completed__c    ,Date__c&gt;Project__r.Hand_off_Date__c ),&quot;1: 50 Set Development&quot;, 
+IF( 
+AND(Date__c  &lt;=  Project__r.Permit_Set_Completed__c  , 
+Date__c  &gt; Project__r.X50_Set_Completed__c  ),&quot;2: Permit Set Development&quot;, 
+IF( 
+AND(Date__c  &lt;=  Project__r.Const_Set_Completed__c , 
+Date__c  &gt; Project__r.Permit_Set_Completed__c  ),&quot;3: CD Set Development&quot;, 
+IF( 
+AND(Date__c  &lt;= Project__r.SFDC_Project_Start_Date__c , 
+Date__c &gt; Project__r.Const_Set_Completed__c),&quot;4: Post CD Set&quot;, 
+IF(Date__c &gt; Project__r.SFDC_Project_Start_Date__c, &quot; 5: CD Admin&quot;, null))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Grouping</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>SFDC_Project__c</referenceTo>
+        <relationshipLabel>Time Entries</relationshipLabel>
+        <relationshipName>Times</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Internal_Calc__c</fullName>
+        <description>Calculated internal rate.</description>
+        <externalId>false</externalId>
+        <label>Rate (Internal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Internal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Team_Member__r.Rate_Internal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rate (Internal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Project_Calc__c</fullName>
+        <description>Calculated project Rate.</description>
+        <externalId>false</externalId>
+        <label>Rate (Project)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>Team_Member__r.Rate_Project__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rate (Project)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Task__c</fullName>
+        <externalId>false</externalId>
+        <label>Task</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Construction Pricing</fullName>
+                    <default>false</default>
+                    <label>Construction Pricing</label>
+                </value>
+                <value>
+                    <fullName>Correspondence</fullName>
+                    <default>false</default>
+                    <label>Correspondence</label>
+                </value>
+                <value>
+                    <fullName>Document Preparation</fullName>
+                    <default>false</default>
+                    <label>Document Preparation</label>
+                </value>
+                <value>
+                    <fullName>Drafting</fullName>
+                    <default>false</default>
+                    <label>Drafting</label>
+                </value>
+                <value>
+                    <fullName>External Meeting</fullName>
+                    <default>false</default>
+                    <label>External Meeting</label>
+                </value>
+                <value>
+                    <fullName>Financial Analysis</fullName>
+                    <default>false</default>
+                    <label>Financial Analysis</label>
+                </value>
+                <value>
+                    <fullName>Interconnection</fullName>
+                    <default>false</default>
+                    <label>Interconnection</label>
+                </value>
+                <value>
+                    <fullName>Internal Meeting</fullName>
+                    <default>false</default>
+                    <label>Internal Meeting</label>
+                </value>
+                <value>
+                    <fullName>Market Analysis</fullName>
+                    <default>false</default>
+                    <label>Market Analysis</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PPA Pricing</fullName>
+                    <default>false</default>
+                    <label>PPA Pricing</label>
+                </value>
+                <value>
+                    <fullName>Procurement</fullName>
+                    <default>false</default>
+                    <label>Procurement</label>
+                </value>
+                <value>
+                    <fullName>Rebate Analysis</fullName>
+                    <default>false</default>
+                    <label>Rebate Analysis</label>
+                </value>
+                <value>
+                    <fullName>Site Assessment</fullName>
+                    <default>false</default>
+                    <label>Site Assessment</label>
+                </value>
+                <value>
+                    <fullName>Technology Assessment</fullName>
+                    <default>false</default>
+                    <label>Technology Assessment</label>
+                </value>
+                <value>
+                    <fullName>Utility Analysis</fullName>
+                    <default>false</default>
+                    <label>Utility Analysis</label>
+                </value>
+                <value>
+                    <fullName>Construction Administration</fullName>
+                    <default>false</default>
+                    <label>Construction Administration</label>
+                </value>
+                <value>
+                    <fullName>Electrical Engineering</fullName>
+                    <default>false</default>
+                    <label>Electrical Engineering</label>
+                </value>
+                <value>
+                    <fullName>Structural Engineering</fullName>
+                    <default>false</default>
+                    <label>Structural Engineering</label>
+                </value>
+                <value>
+                    <fullName>Internal Engineering</fullName>
+                    <default>false</default>
+                    <label>Internal Engineering</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>ONLY FOR CONSULTING SERVICES</inlineHelpText>
+        <label>Team Member</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Team_Member__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Team_Member__c</referenceTo>
+        <relationshipLabel>Time Entries</relationshipLabel>
+        <relationshipName>Time_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Time_Entry_Grouping__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Date__c  &lt;= Project__r.Hand_off_Date__c , &quot;0: Development&quot;, 
+IF(AND(Date__c &lt;=  Project__r.X50_Set_Completed__c ,Date__c &gt; Project__r.Hand_off_Date__c ),&quot;1: 50 Set Development&quot;, 
+IF( AND(Date__c &lt;= Project__r.Permit_Set_Completed__c  , 
+Date__c &gt;Project__r.X50_Set_Completed__c ),&quot;2: Permit Set Development&quot;, 
+IF( 
+AND(Date__c&lt;= Project__r.Const_Set_Completed__c , 
+Date__c &gt; Project__r.Permit_Set_Completed__c ),&quot;3: CD Set Development&quot;, 
+IF( 
+AND(Date__c &lt;= Project__r.SFDC_Project_Start_Date__c , 
+Date__c &gt; Project__r.Const_Set_Completed__c),&quot;4: Post CD Set&quot;, 
+IF(Date__c &gt; Project__r.SFDC_Project_Start_Date__c, &quot; 5: CD Admin&quot;, null))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Entry Grouping</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Internal2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hours__c * rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Cost Internal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Internal_Calc__c</fullName>
+        <description>Calculated total cost using the internal rate.</description>
+        <externalId>false</externalId>
+        <label>Total Cost (Internal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Internal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Rate_Internal__c * Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Cost (Internal)(formula)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Project_Calc__c</fullName>
+        <description>Calculated (pvTotals.setRatesTE) Total Cost (Project).</description>
+        <externalId>false</externalId>
+        <label>Total Cost (Project)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_Project__c</fullName>
+        <externalId>false</externalId>
+        <formula>Team_Member__r.Rate_Project__c  *  Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Cost (Project)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>rate__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Time Entry</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Team_Member__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>{000}</displayFormat>
+        <label>Time Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Time Entries</pluralLabel>
+    <recordTypes>
+        <fullName>EPC_Project</fullName>
+        <active>false</active>
+        <label>EPC Project</label>
+        <picklistValues>
+            <picklist>Task__c</picklist>
+            <values>
+                <fullName>Construction Administration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Correspondence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Preparation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drafting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrical Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interconnection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PPA Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rebate Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Analysis</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cost_Code__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cost_Code__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Project__c</lookupFilterFields>
+        <lookupFilterFields>Date__c</lookupFilterFields>
+        <lookupFilterFields>CREATEDBY_USER</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cost_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hours__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Headers</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(CONTAINS( Cost_Code__r.Number__c , &apos;0000&apos; ), Cost_Code__r.Number__c &lt;&gt; &apos;9-999-0000&apos;)</errorConditionFormula>
+        <errorMessage>Please select a different Cost Code as headers cannot be used.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Migrate</fullName>
+        <availability>online</availability>
+        <description>Migrate all existing Time Entry records.  Initialize new fields with the current values of the old fields they replace.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Migrate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/16.0/apex.js&quot;)}
+
+var idArray = {!GETRECORDIDS($ObjectType.Time_Entry__c)};
+
+if (idArray[0] != null)  {
+    var result = sforce.apex.execute(&quot;migrate&quot;, &quot;calcTimeEntries&quot;, { expId: idArray });
+    alert(&quot;Time Entry Record(s) Migrated.&quot;);
+    window.location.reload();
+} else {
+    alert(&quot;Please select at least one record.&quot;);
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Request__c.Date_Submitted_by_PD__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Request__c.Date_AE_Completed__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Request__c.Approver__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>((1) AND 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Interconnection_Request__c.Request_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Final Approval,Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Opportunity_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>No Decision,Closed Lost,Disqualified - Sales,Disqualified - Technical,Prospecting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Interconnection_Request__c.Approver__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Ben Foss-Michaelis,Jun Zha,Patrick Canning,Justin Roy,Rogan Guild,Tarn Yates</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Interconnection_Request__c.Request_Status__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>interconnection requests for AE (rev)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Project__c$Interconnection_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Interconnection_Request__c.Date_Submitted_by_PD__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Interconnection_Request__c.Date_Submitted_by_PD__c</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,178 @@
+<apex:page controller="migrationCtrl">
+
+
+
+
+
+    <apex:form id="dummy" >
+    
+        <apex:messages />
+    
+    
+        <apex:outputText rendered="{!theRestCount == 0}">
+            All SFDC projects were migrated.
+            
+            migrate related objects:
+            <br/>
+            
+            migrate foreman:        <input type="button" value="migrateforeman" onclick="migrateforeman();"/>   
+            
+            <apex:outputText rendered="{!migrateGLSAssetCount == 0}">
+                All GLS Asset were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateGLSAssetCount != 0}">
+                there are {!migrateGLSAssetCount} GLS Asset to migrate
+                <input type="button" value="migrate" onclick="migrateGLSAsset();"/> 
+            </apex:outputText>
+            <br/>
+            
+            <apex:outputText rendered="{!migrateContReqCount == 0}">
+                All Construction Requisition  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateContReqCount != 0}">
+                there are {!migrateContReqCount} Construction Requisition to migrate
+                <input type="button" value="migrate" onclick="migrateContReq();"/>  
+            </apex:outputText>
+            <br/>
+            <!-- 
+            <apex:outputText rendered="{!migratePartnerProjectCount == 0}">
+                All Partner project  were migrated  
+            </apex:outputText>
+            <apex:outputText rendered="{!migratePartnerProjectCount != 0}">
+                there are {!migratePartnerProjectCount} Partner project to migrate
+                <input type="button" value="migrate" onclick="migratePartnerProject();"/>   
+            </apex:outputText>
+            <br/>
+            -->
+            
+            <apex:outputText rendered="{!migrateContractCount == 0}">
+                All Contract  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateContractCount != 0}">
+                there are {!migrateContractCount} Contract to migrate
+                <input type="button" value="migrate" onclick="migrateContract();"/> 
+            </apex:outputText>
+            
+            <br/>
+            <apex:outputText rendered="{!migrateSpecSubCount == 0}">
+                All Spec Sub  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateSpecSubCount != 0}">
+                there are {!migrateSpecSubCount} Spec Sub to migrate
+                <input type="button" value="migrate" onclick="migrateSpecSub();"/>  
+            </apex:outputText>
+            <br/>
+            
+            <apex:outputText rendered="{!migrateRFICount == 0}">
+                All RFI  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateRFICount != 0}">
+                there are {!migrateRFICount} RFI to migrate
+                <input type="button" value="migrate" onclick="migrateRFI();"/>  
+            </apex:outputText>
+            
+            <br/>
+            
+            <apex:outputText rendered="{!migrateInterconnectionCount == 0}">
+                All Interconnection  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateInterconnectionCount != 0}">
+                there are {!migrateInterconnectionCount} Interconnection to migrate
+                <input type="button" value="migrate" onclick="migrateInterconnection();"/>  
+            </apex:outputText>
+            <br/>
+            
+            <apex:outputText rendered="{!migratePermitCount == 0}">
+                All permit  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migratePermitCount != 0}">
+                there are {!migratePermitCount} permit to migrate
+                <input type="button" value="migrate" onclick="migratePermit();"/>   
+            </apex:outputText>
+            <br/>
+            
+            <apex:outputText rendered="{!migrateRebateCount == 0}">
+                All Rebate  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateRebateCount != 0}">
+                there are {!migrateRebateCount} Rebate to migrate
+                <input type="button" value="migrate" onclick="migrateRebate();"/>   
+            </apex:outputText>
+            <br/>
+            
+            
+            <apex:outputText rendered="{!migrateCustSatisCount == 0}">
+                All Customer satisfaction  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateCustSatisCount != 0}">
+                there are {!migrateCustSatisCount}  Customer satisfaction to migrate
+                <input type="button" value="migrate" onclick="migrateCustSatis();"/>    
+            </apex:outputText>
+            <br/>
+            
+            
+            
+            <apex:outputText rendered="{!migrateNotesCount == 0}">
+                All Notes  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateNotesCount != 0}">
+                there are {!migrateNotesCount}  Notes to migrate
+                <input type="button" value="migrate" onclick="migrateNotes();"/>    
+            </apex:outputText>
+            <br/>
+            
+            <apex:outputText rendered="{!migrateAttachmentsCount == 0}">
+                All Attachments  were migrated
+            </apex:outputText>
+            <apex:outputText rendered="{!migrateAttachmentsCount != 0}">
+                there are {!migrateAttachmentsCount}  Attachments to migrate
+                <input type="button" value="migrate" onclick="migrateAttachments();"/>  
+            </apex:outputText>
+            <br/>
+            
+        </apex:outputtext>
+    
+        <apex:outputText rendered="{!theRestCount != 0}">
+            There are {!theRestCount} projects to be migrated
+            <input type="button" value="migrate 300 projects" onclick="migrateProject();"/>
+        </apex:outputtext>
+        
+        <apex:actionFunction name="migrateProject" action="{!migrateProject}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateGLSAsset" action="{!migrateGLSAsset}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateCustSatis" action="{!migrateCustSatis}" rerender="dummy" />
+            
+        <apex:actionFunction name="migrateSpecSub" action="{!migrateSpecSub}" rerender="dummy" />
+                    
+        <apex:actionFunction name="migrateContract" action="{!migrateContract}" rerender="dummy" />
+            
+        <!--
+        <apex:actionFunction name="migratePartnerProject" action="{!migratePartnerProject}" rerender="dummy" />
+        -->
+            
+        <apex:actionFunction name="migrateContReq" action="{!migrateContReq}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateRFI" action="{!migrateRFI}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateInterconnection" action="{!migrateInterconnection}" rerender="dummy" />
+        
+        <apex:actionFunction name="migratePermit" action="{!migratePermit}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateRebate" action="{!migrateRebate}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateforeman" action="{!migrateforeman}" rerender="dummy" />
+    
+        <apex:actionFunction name="migrateNotes" action="{!migrateNotes}" rerender="dummy" />
+        
+        <apex:actionFunction name="migrateAttachments" action="{!migrateAttachments}" rerender="dummy" />
+    
+    
+    
+    </apex:form>
+
+
+
+
+
+</apex:page>

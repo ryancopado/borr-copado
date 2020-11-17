@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Budget Snapshot</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Budget Snapshots</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Budget --></label>
+        <name>Active_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Cost - TL --></label>
+        <name>Actual_Cost_TL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget Line Item --></label>
+        <name>Budget_Line_Item__c</name>
+        <relationshipLabel><!-- Budget Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <relationshipLabel><!-- Budget Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PO Total --></label>
+        <name>PO_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Budget Snapshots --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

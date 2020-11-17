@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Site_Superintendent__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Hand_off_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.SFDC_Project_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.PTO_Date__c</field>
+    </columns>
+    <description>List of jobs for baseline audit</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.SFDC_Project_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cust. Accept. Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Job_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>startsWith</operator>
+            <value>90</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c.Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>On Hold,Dead</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Project__c.SFDC_Project_Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Project__c.Branch__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Baseline Audit Active Jobs</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AcctSeed__Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Hand_off_Date__c</dateColumn>
+        <endDate>2013-08-22</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2011-01-01</startDate>
+    </timeFrameFilter>
+</Report>

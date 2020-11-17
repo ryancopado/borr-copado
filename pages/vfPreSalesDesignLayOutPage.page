@@ -1,0 +1,105 @@
+<apex:page standardController="PSD__c" extensions="clsPreSalesDesignController">
+    
+   
+            
+              
+              
+         <apex:pageMessages id="MsgSection" />
+
+
+        <apex:detail relatedList="false"/>
+        <apex:relatedList list="PSD_Revisions__r"/>    
+        <apex:relatedList list="OpenActivities" subject="{!PSD}" />
+<!--        <apex:relatedList list="NotesAndAttachments" subject="{!PSD}" />        -->
+
+    <apex:form >
+    
+      
+    
+    </apex:form>
+
+
+          
+  <apex:form >  
+         
+                
+        <apex:actionFunction name="DeleteAttachment" action="{!DeleteAttachment}"   reRender="Attachments">    
+             <apex:param name="AttachmentID" assignTo="{!AttachmentID}" value="" />
+        </apex:actionFunction>            
+                
+ 
+     <apex:pageblock title="Notes & Attachments">
+         
+           <apex:pageBlockButtons location="Top" >
+          
+              <apex:commandButton action="{!AttachNewFile}" value="Attach File"  />
+          
+          </apex:pageBlockButtons>
+
+          <apex:pageblockSection columns="1"> 
+          
+                   
+              <apex:pageBlockTable value="{!Attachments}" id="Attachments"  Var="Att">
+              
+                  <apex:column headerValue="Action">
+                  
+                  <apex:outputLink target="_Top" value="/apex/vfEditAttachMent">                      
+                      Edit
+                      <apex:param name="Id" value="{!Att.Attachment.id}"/>
+                  </apex:outputLink>&nbsp;|&nbsp;
+                  <apex:outputLink target="_Top" value="/{!Att.Attachment.id}">
+                      View
+                  </apex:outputLink> &nbsp;|&nbsp;
+                  <apex:commandLink action="{!DeleteAttachment}" value="Del">
+                      <apex:param name="AttchID" value="{!Att.Attachment.id}"/>  
+                  </apex:commandLink>
+               <!--   <a  onclick="if (confirm('Are You sure?')){ DeleteAttachment('{!Att.Attachment.id}'); }">
+                      Del
+                  </a>-->
+                  
+                  </apex:column>
+              
+                  <apex:column headerValue="File Name">
+                      <apex:outputLink target="_Top" value="/{!Att.Attachment.id}">
+                          {!Att.Attachment.Name}
+                      </apex:outputLink>
+                  </apex:column>
+        <!--          <apex:column value="{!Att.Attachment.Type}" headerValue="Type"/>-->
+                  <apex:column value="{!Att.Attachment.BodyLength}" headerValue="Size"/>
+                  <apex:column headerValue="Working Design">
+                      <apex:outputField value="{!Att.FileAttachment.WorkDesign__c }"/>  
+                  </apex:column>
+                  <apex:column value="{!Att.Attachment.LastModifiedDate}" headerValue="Last Modified"/>  
+                  <apex:column value="{!Att.Attachment.CreatedById}" headerValue="Created By"/> 
+              </apex:pageBlockTable>
+          
+          </apex:pageblockSection>
+      </apex:pageblock>
+      
+        <apex:actionFunction name="DeleteAttachment" action="{!DeleteAttachment}" reRender="MsgSection">    
+                     <apex:param name="AttachmentID" assignTo="{!AttachmentID}" value="" />
+                </apex:actionFunction>
+
+            <apex:pageblock id="CustomList" title="Opportunity Attachments"  >
+              <apex:pageBlockTable value="{!OpportunityAttachments}" var="Attachment" rendered="{!NOT(ISNULL(OpportunityAttachments))}">
+                    <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!Attachment.Id}">{!Attachment.Name}</apex:outputLink></apex:column>
+                    <apex:column value="{!Attachment.OwnerId}"/>
+                    <apex:column value="{!Attachment.CreatedDate}"/>
+               </apex:pageBlockTable>
+               <apex:outputLabel value="No records to display" rendered="{!(ISNULL(OpportunityAttachments))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+               
+             </apex:pageblock>
+             
+                 
+            <apex:pageBlock title="Pre-Sales Design History">
+                <apex:pageBlockTable value="{!Histories}" var="h">
+                        <apex:column headerValue="Date"  value="{!h.thedate}"/>
+                        <apex:column headerValue="User" ><apex:outputText escape="false" value="{!h.who.Name}"/> </apex:column>
+                        <apex:column headerValue="Action"><apex:outputText escape="false" value="{!h.action}"/></apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>    
+           
+      
+    </apex:form>
+
+</apex:page>

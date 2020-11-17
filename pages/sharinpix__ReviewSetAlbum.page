@@ -1,0 +1,46 @@
+<apex:page standardController="sharinpix__ReviewSet__c" extensions="sharinpix.ReviewSetAlbumCtrl" sidebar="false" showHeader="false">
+    <body style="margin: 0; padding: 0; height: 100%; overflow: hidden;">
+    	<div style="position:absolute; left: 0; right: 0; bottom: 0; top: 0px;">
+            <iframe id="iframe" src="{!HTMLENCODE(domain + '/post_message')}" height="100%" width="100%" style="border:0"/>
+     	</div>
+        <apex:form >
+            <apex:actionFunction action="{!updatePredictionPayload}" name="updatePrediction" rerender="none">
+                <apex:param value="" name="imageId"/>
+                <apex:param value="" name="payload"/>
+            </apex:actionFunction>
+        </apex:form>
+
+        <script type="text/javascript" src="{! URLFOR($Resource.PrefixedBootstrap, 'jquery-3.1.1.slim.min.js') }"/>
+        <script>
+            var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            var eventer = window[eventMethod];
+            var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+            var imageId;
+            eventer(messageEvent,function(e) {
+                if (e.origin !== "{!JSENCODE(domain)}")
+                  return;
+                if(e.data.name == "einstein-boxes-updated"){
+                	var prediction = e.data.payload.prediction;
+                    var imageId = e.data.payload.image_id;
+                    if( prediction == undefined || imageId == undefined ) return;
+                    updatePrediction(imageId, prediction);
+                }
+            }, false);
+
+            $(document).ready(function(){
+                var iframe = document.getElementById('iframe')
+                if (iframe != null) {
+                    iframe.onload = function() {
+                        if ({!isFullscreen}){
+                            var paramImage = new URL("{!JSENCODE($CurrentPage.parameters.params)}").searchParams.get('image')
+                            this.contentWindow.postMessage({ token: "{!JSENCODE($CurrentPage.parameters.q)}", image: paramImage, fullscreen: false }, '{!JSENCODE(domain)}');
+                        }
+                        else {
+                            this.contentWindow.postMessage({ token: "{!JSENCODE(mainSharinPixToken)}" }, '{!JSENCODE(domain)}');
+                        }
+                    }
+                }
+            });
+		</script>
+    </body>
+</apex:page>

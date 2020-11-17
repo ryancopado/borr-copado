@@ -1,0 +1,131 @@
+<apex:page Controller="PortfolioDashboardController">
+<script src="jquery.min.js"></script>
+
+<script src="tableHeadFixer.js"></script>
+
+
+<apex:includeScript value="//code.jquery.com/jquery-2.1.1.min.js"/>
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/js/jquery.tablesorter.js"/>
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/js/jquery.tablesorter.widgets.js"/>
+<apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/css/theme.jui.css"/>
+
+<script>
+$(document).ready(function(){
+$("table").tablesorter({
+theme : 'jui',
+headerTemplate : '{content} {icon}',
+widgets : ['uitheme', 'zebra'],
+widgetOptions : {
+zebra   : ["even", "odd"],
+ }
+ 
+});
+ });
+ 
+ 
+ 
+ </script>
+ 
+ 
+
+
+
+    
+    <apex:sectionHeader title="Active Project Portfolio Dashboard"/>
+        <apex:form >
+        <style>
+            .riskClass {
+                font-weight: bold;
+                text-decoration: underline;
+                color:red !important;
+            }
+            .highlightClass {
+                text-color: black;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+            .normalClass {
+                text-color: black;
+                
+            }
+            a{
+            text-decoration: none;
+            }
+        </style>
+        <apex:selectList id="branchPickvalue" size="1" value="{!branchPickvalue}">
+             
+             <apex:actionSupport event="onchange" action="{!getprojects}"  />
+             <apex:selectOption itemLabel="All" itemValue="All" ></apex:selectOption> 
+             <apex:selectOption itemLabel="West Coast" itemValue="West Coast" ></apex:selectOption>
+             <apex:selectOption itemLabel="East Coast" itemValue="East Coast" ></apex:selectOption>
+             <apex:selectOption itemLabel="Midwest" itemValue="Midwest" ></apex:selectOption>
+             <apex:selectOption itemLabel="Onsite" itemValue="Onsite" ></apex:selectOption>
+             <apex:selectOption itemLabel="Development" itemValue="Development" ></apex:selectOption>
+            <apex:selectOption itemLabel="Mid Atlantic" itemValue="Mid Atlantic" ></apex:selectOption>
+            <apex:selectOption itemLabel="New England" itemValue="New England" ></apex:selectOption> 
+             <apex:selectOption itemLabel="In construction" itemValue="In construction" ></apex:selectOption>
+             <apex:selectOption itemLabel="In Design" itemValue="In Design" ></apex:selectOption>
+             </apex:selectList>
+        <apex:pageBlock > 
+            <apex:pageBlockSection >
+           
+                <apex:pageBlockTable value="{!projectList}" var="temp" columnsWidth="10%,20%,50%,20%" onclick="{!projectList}" >
+                    <apex:column headerValue="Site Name" >
+                    <apex:commandLink value="{!temp.Site_Project_Name__c}" Action="{!method1}" style="overflow:hidden;white-space:nowrap" target="_blank">
+                    <apex:param name="id" value="{!temp.id}" assignTo="{!aid}" />
+                    </apex:commandLink>
+                    </apex:column>
+                    
+                            <apex:column value="{!temp.SiteContractValue__c }"  />
+                            <apex:column value="{!temp.Project_Size_Watts_STC__c }" />
+                            <apex:column value="{!temp.Direct_Margin__c }" />                            
+                            <apex:column headervalue="FNTP Date"  styleClass="{!IF(temp.At_RiskFNTP__c == 'Y', 'riskClass',if(temp.Associated_FNTP__c == 'Y', 'highlightClass','normalClass'))}">
+                           <a id="{!temp.FNTPDeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.FNTPDeadlineid__c}', '/{!temp.FNTPDeadlineid__c}/m?retURL={!temp.FNTPDeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.FNTPDeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.FNTPDeadlineid__c}').hide();" href="/{!temp.FNTPDeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_RiskFNTP__c == 'Y', 'riskClass',if(temp.Associated_FNTP__c == 'Y', 'highlightClass','normalClass'))}">
+                                <apex:param value="{!temp.FNTP_Date__c}" />
+                                </apex:outputText>                                
+                                </a>                                           
+                            </apex:column>
+                            <apex:column headerValue="Mobilization Date" styleClass="{!IF(temp.At_RiskMD__c == 'Y', 'riskClass',if(temp.Associated_mobilization_date__c == 'Y', 'highlightClass','normalClass'))}">              
+                            
+                               <a id="{!temp.MDDeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.MDDeadlineid__c}', '/{!temp.MDDeadlineid__c}/m?retURL={!temp.MDDeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.MDDeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.MDDeadlineid__c}').hide();" href="/{!temp.MDDeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_RiskMD__c  == 'Y', 'riskClass',if(temp.Associated_mobilization_date__c == 'Y', 'highlightClass','normalClass'))}">
+                                <apex:param value="{!temp.Mobilization_Date__c}"/>
+                                </apex:outputText>                                
+                                </a>                                           
+                            </apex:column>
+                            <apex:column headervalue="Mechanical Completion Date"  styleClass="{!IF(temp.At_RiskMCD__c == 'Y', 'riskClass',if(temp.Associated_Mechanical_completion_date__c == 'Y', 'highlightClass','normalClass'))}">
+                               <a id="{!temp.MCDeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.MCDeadlineid__c}', '/{!temp.MCDeadlineid__c}/m?retURL={!temp.MCDeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.MCDeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.MCDeadlineid__c}').hide();" href="/{!temp.MCDeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_RiskMCD__c == 'Y', 'riskClass',if(temp.Associated_Mechanical_completion_date__c == 'Y', 'highlightClass','normalClass'))}">
+                                <apex:param value="{!temp.Substantial_Completion_Date__c}" />
+                                </apex:outputText>                                
+                                </a>                                           
+                            </apex:column>
+                            <apex:column headervalue="Substantial Completion" styleClass="{!IF(temp.At_Risk__c == 'Y', 'riskClass',if(temp.Associated__c == 'Y', 'highlightClass','normalClass'))}">
+                            <a id="{!temp.SCDeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.SCDeadlineid__c}', '/{!temp.SCDeadlineid__c}/m?retURL={!temp.SCDeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.SCDeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.SCDeadlineid__c}').hide();" href="/{!temp.SCDeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_Risk__c == 'Y', 'riskClass',if(temp.Associated__c == 'Y', 'highlightClass','normalClass'))}">
+                                <apex:param value="{!temp.Substantial_Completion_NEW__c}" />
+                                </apex:outputText>                                
+                                </a>                                           
+                            </apex:column>
+                            <apex:column headervalue="PTO Date"   styleClass="{!IF(temp.At_RiskPTO__c == 'Y', 'riskClass',if(temp.Associated_PTO_date__c == 'Y', 'highlightClass','normalClass'))}">                             
+                               <a id="{!temp.PTODeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.PTODeadlineid__c}', '/{!temp.PTODeadlineid__c}/m?retURL={!temp.PTODeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.PTODeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.PTODeadlineid__c}').hide();" href="/{!temp.PTODeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_RiskPTO__c == 'Y', 'riskClass',if(temp.Associated_PTO_date__c == 'Y', 'highlightClass','normalClass'))}">
+                                <apex:param value="{!temp.PTO_Date__c}" />
+                                </apex:outputText>                                
+                                </a>                                           
+                            </apex:column>
+                            <apex:column headervalue="Final Completion Date" styleClass="{!IF(temp.At_RiskFC__c == 'Y', 'riskClass',if(temp.Associated_Final_Completion__c == 'Y', 'highlightClass','normalClass'))}">
+                               <a id="{!temp.FCDeadlineid__c}" onmouseover="LookupHoverDetail.getHover('{!temp.FCDeadlineid__c}', '/{!temp.FCDeadlineid__c}/m?retURL={!temp.FCDeadlineid__c}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!temp.FCDeadlineid__c}').hide();" onblur="LookupHoverDetail.getHover('{!temp.FCDeadlineid__c}').hide();" href="/{!temp.FCDeadlineid__c}">
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}" styleClass="{!IF(temp.At_RiskFC__c == 'Y', 'riskClass',if(temp.Associated_Final_Completion__c == 'Y', 'highlightClass','normalClass'))}">                                
+                                <apex:param value="{!temp.Final_Completion__c}" />                                 
+                                </apex:outputText>       
+                                </a>   
+                            </apex:column>
+                            <apex:column value="{!temp.ProductDeliveryDateUpdated__c}" />
+                             
+                </apex:pageBlockTable>                    
+               </apex:pageBlockSection>
+          </apex:pageBlock>
+    </apex:form>
+</apex:page>

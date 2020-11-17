@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Regional_Project_Manager_East</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Vendor_Account__c</field>
+        <field>Total_Cost__c</field>
+        <field>Additional_Notes__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Total_Cost_Tax__c &lt; 200000, (OR( Project_Status__c &lt;&gt; &apos;Pre-Contract&apos; , Service_Visit__c &lt;&gt; null)), ISPICKVAL( $User.Region__c , &apos;New England&apos;),  $User.LastName  &lt;&gt; &apos;Busch&apos; )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Under $200K- NE DirOps</label>
+        <name>Under_200K_NE_DirOps</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>msugihara@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Total_Cost_Tax__c &lt; 200000, (OR( Project_Status__c &lt;&gt; &apos;Pre-Contract&apos; , Service_Visit__c &lt;&gt; null)), ISPICKVAL( $User.Region__c , &apos;Southern CA&apos;), $User.LastName &lt;&gt; &apos;Sugihara&apos;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Under $200K- SoCal DirOps</label>
+        <name>Under_200K_SoCal_DirOps</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bneagle@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Total_Cost_Tax__c &lt; 200000, (OR( Project_Status__c &lt;&gt; &apos;Pre-Contract&apos; , Service_Visit__c &lt;&gt; null)), ISPICKVAL( $User.Region__c , &apos;Northern CA&apos;), $User.LastName &lt;&gt; &apos;Neagle&apos; )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Under $200K- NorCal DirOps</label>
+        <name>Under_200K_NorCal_DirOps</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>LastModifiedBy</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Total_Cost_Tax__c &lt; 200000, (OR( Project_Status__c &lt;&gt; &apos;Pre-Contract&apos; , Service_Visit__c &lt;&gt; null)), (OR($User.LastName = &apos;Neagle&apos;, $User.LastName = &apos;Sugihara&apos;, $User.LastName = &apos;Busch&apos;)))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Dir Ops Approval</label>
+        <name>Dir_Ops_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bneagle@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Total_Cost_Tax__c &gt;= 200000, OR( Project_Status__c &lt;&gt; &apos;Pre-Contract&apos; , Service_Visit__c &lt;&gt; null))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Over $200K</label>
+        <name>Over200K</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ndewitt1@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Con_Req__c.Project_Status__c</field>
+                <operation>equals</operation>
+                <value>Pre-Contract</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Pre-Contract</label>
+        <name>PreContract</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Construction_Requisition/Request_for_Approval</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(   Project_PM__c   = $User.Id , 
+             RecordTypeId = &apos;012800000006dS0&apos;, 
+             Total_Cost_Tax__c &gt; 5000,
+              Ok_to_Submit__c = &quot;Yes&quot;
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>ApprovedMinor</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Subcontractor - PM w/Pre-Contract3</label>
+    <processOrder>8</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

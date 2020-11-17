@@ -1,0 +1,241 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="true" controller="QGMB.vfQueryGuruGrid"   extensions="QGMB.remoteUtils">
+
+    <script type="text/JavaScript">  
+
+        /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Note!!!!
+        This page is inside a re-renderd area and thus the vraibales are re-initialized
+        Most vraibales are transfered via url parameters to the controller and from there initialized here.
+        */
+
+        // Trick to disable console.log() in production. See: http://www.elijahmanor.com/grunt-away-those-pesky-console-log-statements/
+        // Alternative Wrapper: http://benalman.com/projects/javascript-debug-console-log/
+        var DEBUG = false; // Set to false to turn off all console.log();
+        DEBUG && console.log("Debug console.log() is enabled");
+        var db = false; // for debugger statmenets.
+        var isSysAdmin =  "{!isSysAdmin}"; // determinded based on PermissionsModifyAllData
+        var currentUserId = "{!currentUserId}";
+
+        var qgPackages = "{!JSENCODE(qgPackages)}";  
+        var qgPackagesGlob = JSON.parse(qgPackages); // Array of Objects, expecting one Array element
+
+        DEBUG && console.log(" ******* variableController with many variableshas been initialized.");
+        // Stores variables set by the Controller, based on request initaied by a Custom Button/Link
+        var gridDefStrClass = function(){
+            this.allBtnPrmsStr = "{!JSENCODE(allBtnPrmsStr)}"; // defined in the a vraible in the calling button JS script
+            this.db_qryStr = "{!JSENCODE(db_qryStr)}";  // Defined in a table "QueryGuru Definitions"
+            this.webLinkStr = "{!JSENCODE(webLinkStr)}";  // 
+            this.cmpQryStr = "{!JSENCODE(cmpQryStr)}";  // 
+            this.useCache = {!useCache};  // true if we need to use cache, false, we should update cache 
+            this.referer = "{!JSENCODE(referer)}"; // the url of the page that invoked dispQueryGuruGrid.page
+            this.advancedQuery = {!advancedQuery};
+            this.QG_SettingsProtStr = "{!JSENCODE(QG_SettingsProtStr)}";
+            this.QG_SettingsAdminStr = "{!JSENCODE(QG_SettingsAdminStr)}";
+            this.licenseStr = "{!JSENCODE(licenseStr)}";
+            this.user_locale = "{!JSENCODE(user_locale)}";  // to be used as input for getTimeZoneValue()
+
+            //allBtnPrmsStr = allBtnPrmsStr.replace(/\|/g,"'");
+            this.allBtnPrmsStr = this.allBtnPrmsStr.replace(/`/g,"'");    // Strings in the button prms: (Email LIKE `%ZZZZ%`)
+            this.db_qryStr = this.db_qryStr.replace(/`/g,"'");    // Strings in the button prms: (Email LIKE `%ZZZZ%`)
+        } // gridDefStrClass()
+
+        gridDefStrClass.prototype.console_log = function(){
+            DEBUG && console.log('variablesController, allBtnPrmsStr: ', this.allBtnPrmsStr); 
+            DEBUG && console.log('variablesController, db_qryStr: ', this.db_qryStr); 
+        }
+
+        var gridDefJsonClass = function(grid){
+            this.allBtnPrmsJSON = JSON.parse(grid.allBtnPrmsStr); // JSON Object version
+            this.db_qryJSON = JSON.parse(grid.db_qryStr); // JSON Object version
+            this.webLinkJSON = JSON.parse(grid.webLinkStr); // JSON Object version 
+            this.cmpQryJSON = JSON.parse(grid.cmpQryStr); // JSON Object version 
+            this.license = JSON.parse(grid.licenseStr); // JSON Object version of the license: gridDef.license.signatureStatus = "NO SIGNATURE" or "BAD SIGNATURE" or "OK SIGNATURE"
+            this.useCache = grid.useCache;
+            this.user_locale = grid.user_locale;
+            this.referer = JSON.parse(grid.referer); // Empty and yields an error
+
+            this.advancedQuery = grid.advancedQuery;
+            this.QG_SettingsProt = JSON.parse(grid.QG_SettingsProtStr); // Custom Setting object protected Managed Pacake('DefaultSetting')
+            this.QG_SettingsAdmin = JSON.parse(grid.QG_SettingsAdminStr); // Custom Setting object editable by Admin ('DefaultSetting')
+            this.modSelect = false; 
+        } // gridDefJsonClass()
+
+        gridDefJsonClass.prototype.console_log = function(){
+            // DEBUG && console.log('variablesController, allBtnPrmsJSON: ', vkbeautify.json( this.allBtnPrmsJSON));
+            // DEBUG && console.log('variablesController, db_qryJSON: ', this.db_qryJSON);
+            for (var prop in this){
+                if (this.hasOwnProperty(prop)) {
+                    if (prop != 'cmpQryJSON') { // Skip the compiled Query (too long)
+                        if (typeof(this[prop]) === 'object'){
+                            DEBUG && console.log('variablesController, ', prop, ': ', vkbeautify.json(this[prop]));
+                        }
+                        else {
+                            DEBUG && console.log('variablesController, ', prop, ': ', this[prop]);                           
+                        }
+                    }
+                }
+            } 
+        }
+
+        var gridDefStr = new gridDefStrClass();  // Global var
+
+        gridDefStr.console_log();
+    
+        // var gridData; //made global for debugging
+        var obj;           
+        var describeLayoutRes;
+
+        var srvrUrl = "{!$Api.Enterprise_Server_URL_300}".split('services')[0];  //like "https://qgmb.na17.visual.force.com/"
+        
+        var gridDef = new gridDefJsonClass(gridDefStr); // Global. Initialized here knowing the parameters have been provided by APEX controller
+
+        if (gridDef.QG_SettingsProt != null && gridDef.QG_SettingsProt.QGMB__JS_Debug_Mode__c){
+            DEBUG = true;
+            console.log('DEBUG set by Custom Setting Protectedto: ', DEBUG);
+        }
+
+        if (gridDef.QG_SettingsAdmin != null && gridDef.QG_SettingsAdmin.QGMB__JS_Debug_Mode__c){
+            DEBUG = true;
+            console.log('DEBUG set by Custom Setting Admin to: ', DEBUG);
+        }
+
+        gridDef.console_log();
+        // DEBUG && console.log('variablesController, allBtnPrmsJSON: ', allBtnPrmsJSON);
+        // DEBUG && console.log('variablesController, db_qryJSON: ', db_qryJSON);
+
+        var globEvent;  // last error event as global var for debugging
+        var objRecordsGlob; // respone for debugging
+        
+        // var __sfdcSessionId = '{} GETSESSIONID(){}}';  // to be used by sforce.connection() AJAX toolkit
+        // var sid2 = '{} $Api.Session_ID{}}'; // Same as above
+        // var srvurl2 = '{!$Api.Partner_Server_URL_300}'; // e,g., "https://qgmb.na17.visual.force.com/services/Soap/u/30.0/00Do0000000aTGx"
+        // var __sfdcSessionId2 = '{} SessionId {}}';  // to be used by sforce.connection() AJAX toolkit
+        //DEBUG && console.log('{} $Api.Session_Id{}}'); // is it the same as above? YES!!!
+
+        // sforce.connection.sessionId = __sfdcSessionId ; // set it globally 
+        // sforce.connection.init(__sfdcSessionIdxxx, srvurl2);
+        // var __sfdcSessionId2 = sforce.apex.execute("QGMB.KeyPrefix", "getSessionId", {})
+        // console.log('__sfdcSessionId2xxx: ', __sfdcSessionId2xxx);
+
+        // {!SessionId}
+
+        function getSsns1(){
+            /* 
+            There are different levels of SessionId. Only one that can see Custom Objects that can be only genarted in a button/link $Api.Session_ID
+            The other can only see standard objects
+            The cokkie is useless - FYI
+
+            @output: ssns.__sfdcSessionId - the cokkie to use, Super is selcted if exists, otherwise regular {!$Api.Session_ID} 
+            Doc: http://salesforce.stackexchange.com/questions/23277/different-session-ids-in-different-contexts/
+                 http://salesforce.stackexchange.com/questions/42403/get-a-first-class-sessionid-for-api-calls-looking-for-a-clean-way-or-alternativ/42579#42579
+            */
+            url_Obj = urlObject();  // Parse the current url location of the browser
+            // console.log('vfSessionId-variableController: ', vfSessionId); does not work
+
+            // Note the use of "null" because this is how empty parameters are received  
+            ssns = {
+                apiSessionId : "{!$Api.Session_ID}",
+                apexSessionId : "{!JSENCODE(SessionId)}", // From a class, same as above
+                getSessionId : '{!GETSESSIONID()}',
+                cookieSessioId : getCookie('sid'),
+                vfSessionId: typeof (vfSessionId) == "undefined" ? null : vfSessionId,
+                sidParam:  typeof gridDef.allBtnPrmsJSON.sid =="undefined" ? null : gridDef.allBtnPrmsJSON.sid, //from url params, invoking button
+                superSessionId : url_Obj.parameters.sid === undefined ? "null" : url_Obj.parameters.sid 
+            }
+
+            ssns.__sfdcSessionId =   ssns.superSessionId == "null" ? "{!$Api.Session_ID}" : ssns.superSessionId
+            // console.log('Sessions: ', ssns);
+            return ssns;
+        }  //getSsns1 ()
+
+
+
+        function urlObject(options) {
+            "use strict";
+            /*global window, document*/
+            //http://www.thecodeship.com/web-development/javascript-url-object/
+
+            var url_search_arr,
+                option_key,
+                i,
+                urlObj,
+                get_param,
+                key,
+                val,
+                url_query,
+                url_get_params = {},
+                a = document.createElement('a'),
+                default_options = {
+                    'url': window.location.href,
+                    'unescape': true,
+                    'convert_num': true
+                };
+
+            if (typeof options !== "object") {
+                options = default_options;
+            } else {
+                for (option_key in default_options) {
+                    if (default_options.hasOwnProperty(option_key)) {
+                        if (options[option_key] === undefined) {
+                            options[option_key] = default_options[option_key];
+                        }
+                    }
+                }
+            }
+
+            a.href = options.url;
+            url_query = a.search.substring(1);
+            url_search_arr = url_query.split('&');
+
+            if (url_search_arr[0].length > 1) {
+                for (i = 0; i < url_search_arr.length; i += 1) {
+                    get_param = url_search_arr[i].split("=");
+
+                    if (options.unescape) {
+                        key = decodeURI(get_param[0]);
+                        val = decodeURI(get_param[1]);
+                    } else {
+                        key = get_param[0];
+                        val = get_param[1];
+                    }
+
+                    if (options.convert_num) {
+                        if (val.match(/^\d+$/)) {
+                            val = parseInt(val, 10);
+                        } else if (val.match(/^\d+\.\d+$/)) {
+                            val = parseFloat(val);
+                        }
+                    }
+
+                    if (url_get_params[key] === undefined) {
+                        url_get_params[key] = val;
+                    } else if (typeof url_get_params[key] === "string") {
+                        url_get_params[key] = [url_get_params[key], val];
+                    } else if (typeof url_get_params[key] === "number") { //RE added 2 lines
+                        url_get_params[key] = [url_get_params[key], val];
+                    } else {
+                        url_get_params[key].push(val);  // Expecting bugs here, as it didn;t start as an Awwary
+                    }
+
+                    get_param = [];
+                }
+            }
+
+            urlObj = {
+                protocol: a.protocol,
+                hostname: a.hostname,
+                host: a.host,
+                port: a.port,
+                hash: a.hash.substr(1),
+                pathname: a.pathname,
+                search: a.search,
+                parameters: url_get_params
+            };
+
+            return urlObj;
+        } //urlObject
+
+
+    </script>   
+    
+</apex:page>

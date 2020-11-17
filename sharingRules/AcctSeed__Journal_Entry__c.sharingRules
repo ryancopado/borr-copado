@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Private_Payroll_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Private/Payroll Access</label>
+        <sharedTo>
+            <group>Payroll_Journal_Entry_Access</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private_Payroll__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Standard_Journal_Entry_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Standard Journal Entry Access</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CEO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Private_Payroll__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Amount2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense GL Account --></label>
+        <name>AcctSeed__Expense_GL_Account__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 1 --></label>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines (GL Variable 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 2 --></label>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines (GL Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 3 --></label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines (GL Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines (GL Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>AcctSeed__Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Payable --></label>
+        <name>AcctSeed__Recurring_Account_Payable__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity x Unit Cost for the Recurring Payable Line --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculated based on Sub-Total x Tax Group&apos;s Combined Tax Rate on Recurring Payable Line. --></help>
+        <label><!-- Tax Amount --></label>
+        <name>AcctSeed__Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- If using native tax functionality, this determines the Combined Tax Rate percentage and the tax GL mappings and is used to calculate the Tax Amount. --></help>
+        <label><!-- Tax Group --></label>
+        <name>AcctSeed__Tax_Group__c</name>
+        <relationshipLabel><!-- Recurring Payable Lines --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Tax rate percentage used to calculate tax amount. --></help>
+        <label><!-- Tax Rate --></label>
+        <name>AcctSeed__Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product or Service Rate. Up to 6 decimal places.  However if the Total field is directly entered, then Unit Cost is calculated as Total / Quantity. Unit Cost required if Tax Group populated. --></help>
+        <label><!-- Unit Cost --></label>
+        <name>AcctSeed__Unit_Cost__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- A Project Task is required if a Project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+</CustomObjectTranslation>

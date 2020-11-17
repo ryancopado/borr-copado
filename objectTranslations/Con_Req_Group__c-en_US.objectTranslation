@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Con Req Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Con Req Groups</value>
+    </caseValues>
+    <fields>
+        <help><!-- Brief description of the document to be signed (ie: Contract for XX Project or Agreement for XX) --></help>
+        <label><!-- Brief Description of Document --></label>
+        <name>Brief_Description_of_Document__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days per the interconnection tariff that Borrego has to make this payment --></help>
+        <label><!-- Business Days Allowed --></label>
+        <name>Business_Days_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRG Approved --></label>
+        <name>CRG_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the check or why its needed --></help>
+        <label><!-- Check Request Description --></label>
+        <name>CheckRequestDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- special instructions if a check is needed - this is required if Check Request is YES. If there are no special instructions just enter NA. If amount of check is less than CRG total, please specify here. --></help>
+        <label><!-- Check Instructions --></label>
+        <name>Check_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicates if there is a Check needed for this CRG --></help>
+        <label><!-- Check Request --></label>
+        <name>Check_Request__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Con Req Record Types --></label>
+        <name>Con_Req_Record_Types__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the person tasked with coordinating the approval of this step --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Con Req Groups (Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Code Number --></label>
+        <name>Cost_Code_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that payment must be made by to avoid negative consequences --></help>
+        <label><!-- Date of Final Approval --></label>
+        <name>Date_of_Final_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of final approval plus the business days allowed --></help>
+        <label><!-- Deadline Date --></label>
+        <name>Deadline_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- how will check be distributed, this will be required if Check Request field is Yes --></help>
+        <label><!-- Distribution Method --></label>
+        <name>Distribution_Method__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Docusign needed? --></help>
+        <label><!-- Docusign Needed? --></label>
+        <name>Docusign_Needed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the recipient&apos;s name(s) and email and order of signature. --></help>
+        <label><!-- External Recipients and Order --></label>
+        <name>External_Recipients_and_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Negative consequences resulting from failure to make this payment --></help>
+        <label><!-- Failure to make payment consequences --></label>
+        <name>Failure_to_make_payment_consequences__c</name>
+        <picklistValues>
+            <masterLabel>Cure notice with new deadline</masterLabel>
+            <translation><!-- Cure notice with new deadline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawal of Application</masterLabel>
+            <translation><!-- Withdrawal of Application --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the Borrego signatories’ names in order of signature. --></help>
+        <label><!-- Internal Signatories and order --></label>
+        <name>Internal_Signatories_and_order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hidden field set automatically by trigger (Attachment_SalesOrderLine). If True, means there is at least one attachment associated with the Con Req Group record. --></help>
+        <label><!-- IsAttachment --></label>
+        <name>IsAttachment__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsLocked --></label>
+        <name>IsLocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material CRG --></label>
+        <name>Material_CRG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module/Inverter CR Total --></label>
+        <name>Module_Inverter_CR_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from Project --></help>
+        <label><!-- Non Customer CO&apos;s --></label>
+        <name>Non_Customer_CO_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Non Eng Sub CRGs --></label>
+        <name>Non_Eng_Sub_CRGs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Attachments --></label>
+        <name>Number_of_Attachments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Negative Remaining Budgets --></label>
+        <name>Number_of_Negative_Remaining_Budgets__c</name>
+    </fields>
+    <fields>
+        <label><!-- OK to Submit --></label>
+        <name>OK_to_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Manager --></label>
+        <name>O_M_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays opportunity stage from the related project/opportunity --></help>
+        <label><!-- Opportunity Stage --></label>
+        <name>OpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other is selected from above picklist please fill in --></help>
+        <label><!-- Other --></label>
+        <name>Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify which pages a signature or initials are required. --></help>
+        <label><!-- Pages Where Signature is Required --></label>
+        <name>Pages_Where_Signature_is_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- city address for mailing check --></help>
+        <label><!-- Payee Address City --></label>
+        <name>Payee_Address_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- payee&apos;s state as part of address to mail check to --></help>
+        <label><!-- Payee Address State --></label>
+        <name>Payee_Address_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- street address for Payee, used to mail check --></help>
+        <label><!-- Payee Address Street --></label>
+        <name>Payee_Address_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- zip or postal code of payee&apos;s address to send check to --></help>
+        <label><!-- Payee Postal Code --></label>
+        <name>Payee_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Kickoff Date --></label>
+        <name>ProjectKickoffDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Detail --></label>
+        <name>Project_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_PM__c</name>
+        <relationshipLabel><!-- Con Req Groups (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ROD User ID --></label>
+        <name>RODUserID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ROD --></label>
+        <name>ROD__c</name>
+        <relationshipLabel><!-- Con Req Groups (ROD) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sum of the Remaining Available Budget field on all associated Construction Requisition records. --></help>
+        <label><!-- Remaining Available Budget Roll Up --></label>
+        <name>Remaining_Available_Budget_Roll_Up__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Delivery Date --></label>
+        <name>Requested_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requisition Total Roll Up --></label>
+        <name>Requisition_Total_Roll_Up__c</name>
+    </fields>
+    <fields>
+        <help><!-- count of the number of related SOL&apos;s --></help>
+        <label><!-- # SOLs --></label>
+        <name>SOLs__c</name>
+    </fields>
+    <fields>
+        <help><!-- The regional sales manager based on the Project Branch. Used in reporting. --></help>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Order --></label>
+        <name>Sales_Order__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Tax Rate --></label>
+        <name>Sales_Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Visit --></label>
+        <name>ServiceVisit__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Contract --></label>
+        <name>Service_Contract__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- For Service Reqs Reporting- notes what type of cost the req should be categorized under --></help>
+        <label><!-- Service Type --></label>
+        <name>Service_Type__c</name>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charge Back</masterLabel>
+            <translation><!-- Charge Back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid</masterLabel>
+            <translation><!-- Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty</masterLabel>
+            <translation><!-- Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty - Resi</masterLabel>
+            <translation><!-- Warranty - Resi --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ship To City --></label>
+        <name>Ship_To_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Contact Phone --></label>
+        <name>Ship_To_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Contact --></label>
+        <name>Ship_To_Contact__c</name>
+        <relationshipLabel><!-- Con Req Groups (Ship To Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ship To Site --></label>
+        <name>Ship_To_Site__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ship To State --></label>
+        <name>Ship_To_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Street --></label>
+        <name>Ship_To_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Zip --></label>
+        <name>Ship_To_Zip__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use Customer, Subcontractor, or Branch Account to indicate where you would like this order shipped to. --></help>
+        <label><!-- Ship to Account --></label>
+        <name>Ship_to_Account__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Tax Group Percent --></label>
+        <name>Tax_Group_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- pulls Total Requisition Costs to Date from related project which is a sum of all the requisition costs to date for all budget line items --></help>
+        <label><!-- Total Requisition Costs to Date --></label>
+        <name>TotalRequisitionCoststoDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Time 03 --></label>
+        <name>Trigger_Time_03__c</name>
+    </fields>
+    <fields>
+        <help><!-- by checking this box it will auto fill the Ship To Address with the same information from the related project, if not you need to fill in the Ship To. --></help>
+        <label><!-- Use Project Ship To --></label>
+        <name>Use_Project_Ship_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Contact --></label>
+        <name>Vendor_Contact__c</name>
+        <relationshipLabel><!-- Con Req Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- Con Req Groups (Vendor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Order --></label>
+        <name>WorkOrder__c</name>
+        <relationshipLabel><!-- Con Req Group --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Brings over the 7C Submittal Datel date from site --></help>
+        <label><!-- 7C Submittal Date --></label>
+        <name>X7C_Submittal_Date__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Service Visit --></label>
+        <name>Service_Visit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If this is for a Check Request the folllowing fields must be filled out:  Check Instructions, Distribution Method, Payee Address, City, State and Zip. --></errorMessage>
+        <name>Check_Request_Required_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If this is for a Docusign Request the following needs to be filled out:  External Recipients, Brief Description of Document, Pages where signature is required. --></errorMessage>
+        <name>Docusign_Required_fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot add or remove attachments once the CRG has been approved --></errorMessage>
+        <name>Modify_attachments_after_approval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you are not using the same Ship to address from the Project you need to manually add in a Ship to Contact, Street, City, State &amp; Zip.  If you would like to use the Project Address, you need to check off the box Use Project Ship To. --></errorMessage>
+        <name>Service_REQ_Ship_to_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Con_Req_Group_Case --></label>
+        <name>New_Con_Req_Group_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Con_Req_Group_Service_Visit --></label>
+        <name>New_Con_Req_Group_Service_Visit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Con_Req_Group_WO --></label>
+        <name>New_Con_Req_Group_WO</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Svc_Con_Req_Group --></label>
+        <name>New_Svc_Con_Req_Group</name>
+    </webLinks>
+</CustomObjectTranslation>

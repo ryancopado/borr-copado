@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AcctSeed__Transaction_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AcctSeed__Transaction_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AcctSeed__Account__c</fields>
+        <fields>AcctSeed__Date__c</fields>
+        <fields>AcctSeed__Accounting_Period__c</fields>
+        <fields>AcctSeed__Amount__c</fields>
+        <fields>AcctSeed__GL_Account__c</fields>
+        <fields>AcctSeed__Note__c</fields>
+        <label>Transaction Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Used to document a specific entry to a ledger. Transaction records are created when a source record is posted i.e. payable, billing, cash disbursement, cash receipt, journal entry, scheduled revenue expense, and time card.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AP_Invoice__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable_Line__r.AcctSeed__Account_Payable__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AP Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Inbound_Inventory_Movement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inbound Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Inbound_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Manufacturing_Inventory_Movement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Manufacturing Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Manufacturing_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Outbound_Inventory_Movement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Outbound Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Outbound_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Purchase_Order_Inventory_Movement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Purchase Order Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Purchase_Order_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeedERP__Sales_Order_Inventory_Movement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sales Order Inventory Movement</label>
+        <referenceTo>AcctSeedERP__Sales_Order_Inventory_Movement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__AP_Disbursement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related source record for the origin of the entry.</inlineHelpText>
+        <label>AP Disbursement</label>
+        <referenceTo>AcctSeed__AP_Disbursement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Account_Payable_Line__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Payable Line</label>
+        <referenceTo>AcctSeed__Account_Payable_Line__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Account_Payable__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related source record for the origin of the entry.</inlineHelpText>
+        <label>Payable</label>
+        <referenceTo>AcctSeed__Account_Payable__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated based on the transaction source record. The mapping is Journal Entry Line Account field, Billing Customer, Accounts Payable Payee field, Cash Receipt Account field, or Cash Disbursement Payee field.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Accounting_Period__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to specify accounting period for financial reporting.</inlineHelpText>
+        <label>Accounting Period</label>
+        <referenceTo>AcctSeed__Accounting_Period__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Accounting_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LEFT( AcctSeed__Accounting_Period__r.Name ,4)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accounting Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Debits are represented as positive amounts and credits are represented as negative amounts.</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Bank_Reconciliation_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated in version 1.16.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Deprecated in version 1.16.</inlineHelpText>
+        <label>zDep-Bank Reconciliation Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Deprecated</fullName>
+                    <default>false</default>
+                    <label>Deprecated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field has been deprecated and is no longer used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in the Time &amp; Material Billings process to help filter transactions in or out of the process.</inlineHelpText>
+        <label>zDep-Billable</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Cash_Receipt__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Cash Receipt</label>
+        <referenceTo>AcctSeed__Billing_Cash_Receipt__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Line__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Billing Line</label>
+        <referenceTo>AcctSeed__Billing_Line__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Processed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used on expense lines in the Time and Material Billing process. Indicates the expense has been processed in the Time and Material Billing Process.</inlineHelpText>
+        <label>zDep-Billing Processed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related source record for the origin of the entry.</inlineHelpText>
+        <label>Billing</label>
+        <referenceTo>AcctSeed__Billing__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Disbursement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Cash Disbursement</label>
+        <referenceTo>AcctSeed__Cash_Disbursement__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Flow_Category__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Cash Flow Category</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Transactions (Cash Flow Category)</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Cash_Receipt__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Cash Receipt</label>
+        <referenceTo>AcctSeed__Cash_Receipt__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Check_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated based on the transaction source record. The mapping is from the Cash Disbursement record.</inlineHelpText>
+        <label>Check Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated based on the transaction source record. The mapping is Journal Entry Line Contact, Payable Contact or Cash Disbursement Contact field.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Currency_Conversion_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The currency conversion rate for the currency.</inlineHelpText>
+        <label>Currency Conversion Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Transaction Date. Primarily used in billing records and for reporting purposes.</inlineHelpText>
+        <label>Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is populated based on the transaction source record. The mapping is from Description field on related Cash Receipt, Cash Disbursement or Journal Entry Line record.</description>
+        <externalId>false</externalId>
+        <formula>IF(!ISBLANK(AcctSeed__Cash_Receipt__c), AcctSeed__Cash_Receipt__r.AcctSeed__Description__c,
+IF(!ISBLANK(AcctSeed__Cash_Disbursement__c), AcctSeed__Cash_Disbursement__r.AcctSeed__Description__c,
+IF(!ISBLANK(AcctSeed__Journal_Entry_Line__c), AcctSeed__Journal_Entry_Line__r.AcctSeed__Description__c,
+IF(!ISBLANK(AcctSeed__Billing__c), IF(!ISBLANK(AcctSeed__Billing__r.AcctSeed__Proprietary_Billing_Number__c), AcctSeed__Billing__r.AcctSeed__Proprietary_Billing_Number__c, AcctSeed__Billing__r.Name),
+IF(!ISBLANK(AcctSeed__Account_Payable__c), AcctSeed__Account_Payable__r.AcctSeed__Payee_Reference__c,&apos;&apos;
+)	
+)	
+)	
+)	
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is populated based on the transaction source record. The mapping is from Description field on related Cash Receipt, Cash Disbursement or Journal Entry Line record.</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Employee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Look up to Salesforce User</inlineHelpText>
+        <label>Employee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Foreign_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The foreign amount associated with the source document if applicable.</inlineHelpText>
+        <label>Foreign Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Foreign_Currency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The source document foreign currency if applicable.</inlineHelpText>
+        <label>Foreign Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Text(AcctSeed__GL_Account__r.AcctSeed__Type__c)</formula>
+        <inlineHelpText>Formula Field used to facilitate reporting by GL Account Type on the Transactions object.</inlineHelpText>
+        <label>GL Account Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 1</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (GL Variable 1)</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 2</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (GL Variable 2)</relationshipLabel>
+        <relationshipName>Transactions1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 3</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (GL Variable 3)</relationshipLabel>
+        <relationshipName>Transactions2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account_Variable_4__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units.</inlineHelpText>
+        <label>GL Variable 4</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>GL Account Variable 4</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (GL Variable 4)</relationshipLabel>
+        <relationshipName>Transactions3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Major classification for financial reporting.</inlineHelpText>
+        <label>GL Account</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>Transactions (GL Account)</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Has_Cleared_Bank_Reconciliation_Line__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Has Cleared Bank Reconciliation Line</label>
+        <summaryFilterItems>
+            <field>AcctSeed__Bank_Reconciliation_Line2__c.AcctSeed__Bank_Reconciliation_Status__c</field>
+            <operation>equals</operation>
+            <value>Cleared</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AcctSeed__Bank_Reconciliation_Line2__c.AcctSeed__Transaction__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Journal_Entry_Line__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Journal Entry Line</label>
+        <referenceTo>AcctSeed__Journal_Entry_Line__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Key__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Accounting_Period__r.Name &amp; &quot;:&quot; &amp;
+IF(NOT(ISBLANK(AcctSeed__Billing_Cash_Receipt__c)) ,&quot;Billing Cash Receipt:&quot; &amp; AcctSeed__Billing_Cash_Receipt__c,
+IF(NOT(ISBLANK(AcctSeed__Billing_Line__c)) ,&quot;Billing:&quot; &amp; AcctSeed__Billing_Line__r.AcctSeed__Billing__c,
+IF(NOT(ISBLANK(AcctSeed__Account_Payable_Line__c)) ,&quot;Account Payable:&quot; &amp; AcctSeed__Account_Payable_Line__r.AcctSeed__Account_Payable__c,
+IF(NOT(ISBLANK(AcctSeed__Cash_Disbursement__c)) ,&quot;Cash Disbursement:&quot; &amp; AcctSeed__Cash_Disbursement__c,
+IF(NOT(ISBLANK(AcctSeed__Cash_Receipt__c)) ,&quot;Cash Receipt&quot; &amp; AcctSeed__Cash_Receipt__c,
+IF(NOT(ISBLANK(AcctSeed__Scheduled_Revenue_Expense__c)) ,&quot;SchedRevExp:&quot; &amp; AcctSeed__Scheduled_Revenue_Expense__c,
+IF(NOT(ISBLANK(AcctSeed__Time_Card_Day__c)) ,&quot;Time Card:&quot; &amp; AcctSeed__Time_Card_Day__r.AcctSeed__Time_Card_Line__r.AcctSeed__Time_Card__c,
+IF(NOT(ISBLANK(AcctSeed__Journal_Entry_Line__c)) , &quot;JE:&quot; &amp; AcctSeed__Journal_Entry_Line__r.AcctSeed__Journal_Entry__c,
+&quot;&quot;))))))))</formula>
+        <inlineHelpText>This field groups individual transaction lines by their source transaction. It matches Debit and Credit entries coming from the same source transaction.</inlineHelpText>
+        <label>Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Ledger__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes the associated ledger.</inlineHelpText>
+        <label>Ledger</label>
+        <referenceTo>AcctSeed__Ledger__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated based on the transaction source record. The mapping is Account Payable Payee Reference, Cash Disbursement Check or Transaction Number, Billing Number, or Cash Receipt Customer Payment Reference.</inlineHelpText>
+        <label>Note</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Work break down structure for projects, such as: Phases, Deliverables or Roles.</inlineHelpText>
+        <label>Project Task</label>
+        <referenceTo>AcctSeed__Project_Task__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Project or Job for allocation of cost or revenue.</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Project_Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Report_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( OR(AcctSeed__GL_Account_Type__c =&apos;Revenue&apos;,AcctSeed__GL_Account_Type__c =&apos;Expense&apos;) , AcctSeed__Amount__c *-1,AcctSeed__Amount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Report Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Revenue_Recognition_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>text(AcctSeed__Project__r.AcctSeed__Revenue_Recognition_Method__c )</formula>
+        <label>Revenue Recognition Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Scheduled_Revenue_Expense__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to source transaction.</inlineHelpText>
+        <label>Amortization Entry</label>
+        <referenceTo>AcctSeed__Scheduled_Revenue_Expense__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Time_Card_Day__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the Day used in a Time Card Transaction.</inlineHelpText>
+        <label>Time Card Day</label>
+        <referenceTo>AcctSeed__Time_Card_Day__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Time_Card_Variable_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project.</inlineHelpText>
+        <label>Time Card Variable 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Accounting Variable must have a Type of &quot;Time Card Variable 1&quot;.</errorMessage>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Time Card Variable 1</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (Time Card Variable 1)</relationshipLabel>
+        <relationshipName>Transactions4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Time_Card_Variable_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project.</inlineHelpText>
+        <label>Time Card Variable 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>AcctSeed__Accounting_Variable__c.AcctSeed__Type__c</field>
+                <operation>equals</operation>
+                <value>Time Card Variable 2</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>AcctSeed__Accounting_Variable__c</referenceTo>
+        <relationshipLabel>Transactions (Time Card Variable 2)</relationshipLabel>
+        <relationshipName>Transactions5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Units__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity for Product Pricing, Hours for Service pricing or costing.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Closed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Closed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Case_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DescriptionSummary__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable_Line__r.Description__c &amp; &quot; &quot; &amp; AcctSeed__Billing_Line__r.Description__c 
+&amp; &quot; &quot;  &amp; AcctSeed__Journal_Entry_Line__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description Summary</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND($Profile.Id &lt;&gt; &quot;00e30000000iBpb&quot;,$Profile.Id &lt;&gt; &quot;00e80000001OE5q&quot;,$Profile.Id &lt;&gt; &quot;00e80000001OFZc&quot;,$Profile.Id &lt;&gt; &quot;00e800000018oPe&quot;,AcctSeed__Journal_Entry_Line__r.Private_Payroll__c = True),&quot;&quot;,IF( ISBLANK(AcctSeed__Account_Payable_Line__c ), AcctSeed__Journal_Entry_Line__r.Description__c , AcctSeed__Account_Payable_Line__r.Description__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ERP_Key__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Accounting_Period__r.Name &amp; &quot;:&quot; &amp;
+IF(NOT(ISBLANK(AcctSeed__Billing_Cash_Receipt__c)) ,&quot;Billing Cash Receipt:&quot; &amp; AcctSeed__Billing_Cash_Receipt__c,
+IF(NOT(ISBLANK(AcctSeed__Billing_Line__c)) ,&quot;Billing:&quot; &amp; AcctSeed__Billing_Line__r.AcctSeed__Billing__c,
+IF(NOT(ISBLANK(AcctSeed__Account_Payable_Line__c)) ,&quot;Account Payable:&quot; &amp; AcctSeed__Account_Payable_Line__r.AcctSeed__Account_Payable__c,
+IF(NOT(ISBLANK(AcctSeed__Cash_Disbursement__c)) ,&quot;Cash Disbursement:&quot; &amp; AcctSeed__Cash_Disbursement__c,
+IF(NOT(ISBLANK(AcctSeed__Cash_Receipt__c)) ,&quot;Cash Receipt&quot; &amp; AcctSeed__Cash_Receipt__c,
+IF(NOT(ISBLANK(AcctSeed__Scheduled_Revenue_Expense__c)) ,&quot;SchedRevExp:&quot; &amp; AcctSeed__Scheduled_Revenue_Expense__c,
+IF(NOT(ISBLANK(AcctSeed__Time_Card_Day__c)) ,&quot;Time Card:&quot; &amp; AcctSeed__Time_Card_Day__r.AcctSeed__Time_Card_Line__r.AcctSeed__Time_Card__c,
+IF(NOT(ISBLANK(AcctSeed__Journal_Entry_Line__c)) , &quot;JE:&quot; &amp; AcctSeed__Journal_Entry_Line__r.AcctSeed__Journal_Entry__c,
+IF(NOT(ISBLANK(AcctSeedERP__Inbound_Inventory_Movement__c )) , &quot;Inbound_Inventory_Movement:&quot; &amp; AcctSeedERP__Inbound_Inventory_Movement__c, 
+IF(NOT(ISBLANK(AcctSeedERP__Outbound_Inventory_Movement__c )) ,&quot;Outbound_Inventory_Movement:&quot; &amp; AcctSeedERP__Outbound_Inventory_Movement__c ,
+IF(NOT(ISBLANK(AcctSeedERP__Manufacturing_Inventory_Movement__c )) ,&quot;Manufacturing_Inventory_Movement__c :&quot; &amp; AcctSeedERP__Manufacturing_Inventory_Movement__c,
+IF(NOT(ISBLANK(AcctSeedERP__Purchase_Order_Inventory_Movement__c)) , &quot;Purchase_Order_Inventory_Movement:&quot; &amp; AcctSeedERP__Purchase_Order_Inventory_Movement__c,
+&quot;&quot;))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ERP Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable_Line__r.AcctSeed__Account_Payable__r.AcctSeed__Payee_Reference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AcctSeed__Account_Payable_Line__r.AcctSeed__Account_Payable__r.AcctSeed__Payment_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Project__r.Job_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Job Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>O_M_Mgr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>O&amp;M Mgr</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>On_WIP__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Project__r.On_WIP__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>On WIP</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>POL__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>POL#</label>
+        <referenceTo>AcctSeedERP__Purchase_Order_Line__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Transactions (Parent Account)</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Project__r.AcctSeed__Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( AcctSeed__Key__c ,&quot;Payable&quot;),  AcctSeed__Account_Payable_Line__r.Name ,
+IF(CONTAINS(AcctSeed__Key__c, &quot;JE&quot;),  AcctSeed__Journal_Entry_Line__r.Name , 
+IF(NOT(ISBLANK(AcctSeed__Cash_Receipt__r.Name)), AcctSeed__Cash_Receipt__r.Name, 
+IF(NOT(ISBLANK(AcctSeed__Cash_Disbursement__r.Name)),  AcctSeed__Cash_Disbursement__r.Name,
+IF(NOT(ISBLANK(AcctSeed__Billing_Line__r.Name)), AcctSeed__Billing_Line__r.Name,
+IF(NOT(ISBLANK( AcctSeed__Billing_Cash_Receipt__r.Name )),  AcctSeed__Billing_Cash_Receipt__r.Name ,
+   &quot;0&quot;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reference Record</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOL__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SOL#</label>
+        <referenceTo>AcctSeedERP__Sales_Order_Line__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SV__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SV#</label>
+        <referenceTo>SV__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sort_Order__c</fullName>
+        <description>Used for reporting integration--do not add to layout</description>
+        <displayFormat>{0000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Sort Order</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <formula>AcctSeed__Account_Payable_Line__r.Vendor__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vendor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WIP_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AcctSeed__Project__r.WIP_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WIP Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WorkOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Transaction</label>
+    <listViews>
+        <fullName>AcctSeed__All1</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Date__c</columns>
+        <columns>AcctSeed__Accounting_Period__c</columns>
+        <columns>AcctSeed__Project__c</columns>
+        <columns>AcctSeed__Amount__c</columns>
+        <columns>AcctSeed__Billing_Processed__c</columns>
+        <columns>AcctSeed__Project_Task__c</columns>
+        <columns>AcctSeed__GL_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Service_Billings_Billed</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Date__c</columns>
+        <columns>AcctSeed__Employee__c</columns>
+        <columns>AcctSeed__Units__c</columns>
+        <columns>AcctSeed__Amount__c</columns>
+        <columns>AcctSeed__Project__c</columns>
+        <columns>AcctSeed__Project_Task__c</columns>
+        <columns>AcctSeed__GL_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Billing_Processed__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__GL_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Expense</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Revenue_Recognition_Method__c</field>
+            <operation>equals</operation>
+            <value>Time &amp; Materials in Period Invoiced</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Time_Card_Day__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Service Billings-Billed</label>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Service_Billings_Unbilled</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Date__c</columns>
+        <columns>AcctSeed__Employee__c</columns>
+        <columns>AcctSeed__Units__c</columns>
+        <columns>AcctSeed__Amount__c</columns>
+        <columns>AcctSeed__Project__c</columns>
+        <columns>AcctSeed__Project_Task__c</columns>
+        <columns>AcctSeed__GL_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Billing_Processed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Amount__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Revenue_Recognition_Method__c</field>
+            <operation>equals</operation>
+            <value>Time &amp; Materials in Period Invoiced</value>
+        </filters>
+        <filters>
+            <field>AcctSeed__Time_Card_Day__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Service Billings-Unbilled</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TRN-{00000}</displayFormat>
+        <label>Transaction Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Transactions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>AcctSeed__Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Accounting_Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Project_Task__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__GL_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__GL_Account_Variable_1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__GL_Account_Variable_2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__GL_Account_Variable_3__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>AcctSeed__Create_TM_Billings</listViewButtons>
+        <listViewButtons>AcctSeed__Mark_Processed</listViewButtons>
+        <listViewButtons>AcctSeed__Mark_Unprocessed</listViewButtons>
+        <lookupDialogsAdditionalFields>AcctSeed__Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Accounting_Period__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__GL_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Project_Task__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__GL_Account_Variable_1__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__GL_Account_Variable_2__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__GL_Account_Variable_3__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AcctSeed__Accounting_Period__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Amount__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Date__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__GL_Account__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Project__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Project_Task__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__GL_Account_Variable_1__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__GL_Account_Variable_2__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__GL_Account_Variable_3__c</searchFilterFields>
+        <searchResultsAdditionalFields>AcctSeed__Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Accounting_Period__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__GL_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Project_Task__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__GL_Account_Variable_1__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__GL_Account_Variable_2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__GL_Account_Variable_3__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Ops_Division_Cannot_Contain_a_Value</fullName>
+        <active>false</active>
+        <description>Ops Division should not be populated</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(AcctSeed__GL_Account_Variable_3__c)), 
+BEGINS( AcctSeed__GL_Account__c,&quot;5&quot; ) || 
+BEGINS( AcctSeed__GL_Account__c,&quot;6&quot; ) || 
+BEGINS( AcctSeed__GL_Account__c,&quot;7&quot; ) || 
+BEGINS( AcctSeed__GL_Account__c,&quot;8&quot; )|| 
+BEGINS( AcctSeed__GL_Account__c,&quot;9&quot; ))</errorConditionFormula>
+        <errorMessage>Ops Division should not contain a value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ops_Division_Required</fullName>
+        <active>false</active>
+        <description>Ops_Division_Required if Indirects are selected as Variable Name</description>
+        <errorConditionFormula>BEGINS(AcctSeed__GL_Account__r.Name, &quot;4&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_3__c ) || BEGINS(AcctSeed__GL_Account__r.Name, &quot;3&quot;) &amp;&amp; ISBLANK( AcctSeed__GL_Account_Variable_3__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_3__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Ops Division to be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Required</fullName>
+        <active>false</active>
+        <description>Sales_Segment_Required if  Sales &amp; Marketing are selected as Variable Name</description>
+        <errorConditionFormula>BEGINS(AcctSeed__GL_Account__r.Name, &quot;5&quot;) &amp;&amp; ISBLANK(  AcctSeed__GL_Account_Variable_2__c  ) || BEGINS(AcctSeed__GL_Account__r.Name, &quot;3&quot;) &amp;&amp; ISBLANK(  AcctSeed__GL_Account_Variable_2__c  )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__GL_Account_Variable_2__c</errorDisplayField>
+        <errorMessage>You are using a GL account that requires the Sales Segment  to be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Segment_Should_Not_Contain_a_Value</fullName>
+        <active>false</active>
+        <description>Sales Segment should not be populated</description>
+        <errorConditionFormula>BEGINS(AcctSeed__GL_Account__r.Name, &quot;3&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_2__c )) || BEGINS(AcctSeed__GL_Account__r.Name, &quot;4&quot;) &amp;&amp; NOT(ISBLANK( AcctSeed__GL_Account_Variable_2__c ))</errorConditionFormula>
+        <errorMessage>Sales Segment should not contain a value.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>AcctSeed__Create_TM_Billings</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>zDep-Create T&amp;M Billings</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__TimeMaterialBilling</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>AcctSeed__Mark_Processed</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>zDep-Mark Processed</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__TimeMaterialBilling</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>AcctSeed__Mark_Unprocessed</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>zDep-Mark Unprocessed</masterLabel>
+        <openType>sidebar</openType>
+        <page>AcctSeed__TimeMaterialBilling</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,37 @@
+<template>
+  <lightning-card >
+    <div class="slds-m-around_medium slds-is-relative">
+      <div class="tableGrid ">
+        <c-grid-head></c-grid-head>
+        <template if:true={rowDetails}>
+          <template for:each={rowDetails} for:item='rowDetail' >
+            <c-grid-row data-key={rowDetail.id} options={options} onstatusset={handlefolderStatus} ondeletedetail={handleDeleteEvent} onupdatedetails={handleDetailUpdate} onuploadfile={handleUpload} onnewfolder={handleNewFolder} onnewfile={handleNewFile} key={rowDetail.name} row-details={rowDetail}></c-grid-row>
+          </template>
+        </template>
+        <template if:true={showLoadingSpinner}>
+          <div class="loading">
+            <div class="slds-spinner_container">
+              <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <template if:true={updateFile}>
+        <c-file-load file-id={selectRow.id} file-name={selectRow.name} onfileloaded={handleFileUpdate} onclosemodal={handleCloseUpload}></c-file-load>
+      </template>
+      <template if:true={createFile}>
+        <c-file-load parent-id={selectRow.id} onfilecreated={handleFileCreate} onclosemodal={handleCloseUpload}></c-file-load>
+      </template>
+      <template if:true={createFolder}>
+        <c-folder-load parent-id={selectRow.id} onfoldercreated={handleFolderCreate} onclosemodal={handleCloseUpload}></c-folder-load>
+      </template>
+      <template if:true={deleteDetail}>
+        <c-box-delete detail={selectRow} ondelete={handleBoxDelete} onclosemodal={handleCloseUpload}></c-box-delete>
+      </template>
+    </div>
+  </lightning-card>
+</template>

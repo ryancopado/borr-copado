@@ -1,0 +1,114 @@
+<apex:page standardController="PSD__c" renderAs="pdf">
+  <apex:stylesheet value="{!URLFOR($Resource.psd)}"/>
+  <table width="100%">
+      <tr>
+          <td style="color:#DCDCDC; font-size:18px;" width="50%">PROPOSAL INFORMATION</td>
+          <td align="right"><apex:image value="{!URLFOR($Resource.borrego)}" width="25%" height="25%"/></td>
+      </tr>
+  </table>
+  <br/><br/>
+  <table width="100%">
+      <tr>
+          <td width="135px"><b>Project Name:</b></td>
+          <td><apex:outputField value="{!PSD__c.Opportunity__c}"/></td>     
+          <td width="135px"><b>Proposal Level:</b></td>
+          <td><apex:outputField value="{!PSD__c.Proposal_Level_Needed__c}"/></td>
+      </tr>
+      <tr>
+          <td width="135px"><b>Customer Name:</b></td>
+          <td><apex:outputField value="{!PSD__c.Customer_Name__c}"/></td>
+           <td width="135px"><b>Job Type:</b></td>
+          <td><apex:outputField value="{!PSD__c.Job_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td width="135px"><b>Building Owner:</b></td>
+          <td><apex:outputField value="{!PSD__c.Building_Owner__c}"/></td>
+          <td width="135px"><b>Date Requested:</b></td>
+          <td><apex:outputField value="{!PSD__c.Today__c}"/></td>
+      </tr>
+      <tr>
+          <td width="135px"><b>Site Address:</b></td>
+          <td><apex:outputField value="{!PSD__c.Site_Address2__c}"/></td>
+          <td width="135px" style="font-weight:bold; text-decoration:underline; font-size:14px">Date Due:</td>
+          <td style="font-weight:bold; text-decoration:underline; font-size:14px"><apex:outputField value="{!PSD__c.Due_Date__c}"/></td>  
+      </tr>
+  </table> 
+  <br/><br/>
+  <table width="100%" id="box">
+      <tr>
+          <td class="title">Building Type</td>
+          <td><apex:outputField value="{!PSD__c.Building_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Drawings Exist</td>
+          <td><apex:outputField value="{!PSD__c.Drawings_Already_Exist__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Racking System</td>
+          <td><apex:outputField value="{!PSD__c.Racking_System__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Module Location Description</td>
+          <td><apex:outputField value="{!PSD__c.Module_Location_Description__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Preferred Modules</td>
+          <td><apex:outputField value="{!PSD__c.Modules__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Preferred Inverter</td>
+          <td><apex:outputField value="{!PSD__c.Inverters__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Proposed Tilt Angle</td>
+          <td><apex:outputField value="{!PSD__c.Proposed_System_Tilt_Angle__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">System Sizing Strategy</td>
+          <td><apex:outputField value="{!PSD__c.System_Sizing_Strategy__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Existing Electrical Info and Location</td>
+          <td><apex:outputField value="{!PSD__c.Electrical_Sizing_Strategy__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Roof Type</td>
+          <td><apex:outputField value="{!PSD__c.Roof_Type__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Roof Space Off Limits</td>
+          <td><apex:outputField value="{!PSD__c.Roof_Space_Off_Limits__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Shading Notes</td>
+          <td><apex:outputField value="{!PSD__c.Shading_Notes__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Additional Notes</td>
+          <td><apex:outputField value="{!PSD__c.Additional_Notes__c}"/></td>
+      </tr>
+      <tr>
+          <td class="title">Status</td>
+          <td><apex:outputField value="{!PSD__c.Status__c}"/></td>
+      </tr>
+  </table>
+  <br/><br/>
+    <b>Attachments:</b>
+    <ul> 
+    <li>Aerial image </li>
+    <li>KMZ file or PDF with rough layout and location information</li>
+    <li>Drawing template if applicable</li>
+    </ul>
+  <br/>  
+  <div style="font-size:14px; font-weight:bold;" align="center">
+  </div>    
+  <br/><br/>
+    <table width="100%" style="font-style:italic; text-align:center">
+        <tr>
+            <td width="33%">5005 Texas Street, Suite 400 <br/>San Diego CA 92108</td>
+            <td width="34%">360 22nd Street, Suite 600 <br/>Oakland, CA 94612</td>
+            <td width="33%">205 Industrial Ave East <br/>Lowell, MA 01852</td>
+        </tr>
+    </table>  
+
+</apex:page>

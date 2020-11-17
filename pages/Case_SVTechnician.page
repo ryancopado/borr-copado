@@ -1,0 +1,19 @@
+<apex:page standardController="SV__c" recordSetVar="selectedServiceVisits" extensions="Case_SVTechnicianCtlExt" tabStyle="SV__c" >
+	  
+	<apex:form >
+		<apex:sectionHeader title="Service Visit Set Edit" subtitle="Edit Technician"/>
+		<apex:pageMessages />
+		
+		<apex:pageBlock mode="edit">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Save" action="{!saveServiceVisits}" disabled="{!isError}"/>
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection title="Enter the new Technician" columns="1" rendered="{!!isError}">
+				<apex:inputField value="{!svList[0].Technician__c}" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

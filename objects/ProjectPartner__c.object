@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ASProject__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Project that the partner worked on (Lookup to Project)</inlineHelpText>
+        <label>Project</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipName>Project_Partners</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Partner Account (lookup to Account)</inlineHelpText>
+        <label>Vendor Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Subcontractor Compliance</relationshipLabel>
+        <relationshipName>Partners</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Agreement_Exceptions__c</fullName>
+        <description>list any agreement exceptions that need to be tracked throughout the project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>list any agreement exceptions that need to be tracked throughout the project</inlineHelpText>
+        <label>Agreement Exceptions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approved_Pre_Qualification_Package__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Has the Sub filled out the Pre-qual packet? Is it on file?</inlineHelpText>
+        <label>Approved Pre-Qualification Package</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Borrego_COI_Issued_to_Client__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( ASProject__r.Borrego_COI_Issued_to_Client__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Borrego COI Issued to Client?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commitment_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For CPG subcontractors - the commitment number assigned by Accounting</inlineHelpText>
+        <label>Commitment Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipName>Project_Partners</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DIRExpDate__c</fullName>
+        <description>date the DIR # expires, must be filled out at Vendor level</description>
+        <externalId>false</externalId>
+        <formula>AccountId__r.DIRExpirationDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>date the DIR # expires, must be filled out at Vendor level</inlineHelpText>
+        <label>DIR# Exp Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DIR_Number__c</fullName>
+        <description>Subcontractors DIR#</description>
+        <externalId>false</externalId>
+        <formula>AccountId__r.DIR_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DIR Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Edit_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;https://cs1.salesforce.com/&apos; +  Id + &apos;/e?retURL=&apos; +  ASProject__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Edit Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IIPP__c</fullName>
+        <description>Injury and Illness Prevention Program</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Injury and Illness Prevention Program</inlineHelpText>
+        <label>IIPP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Link_to_Project_COI__c</fullName>
+        <description>field used to store url where project coi can be found</description>
+        <externalId>false</externalId>
+        <inlineHelpText>field used to store url where project coi can be found</inlineHelpText>
+        <label>Link to Project COI</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>MSA_Exceptions__c</fullName>
+        <externalId>false</externalId>
+        <formula>AccountId__r.MSA_Exceptions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MSA Exceptions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSA_Executed_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>AccountId__r.MSA_Executed_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MSA Executed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MSA_Obtained__c</fullName>
+        <externalId>false</externalId>
+        <formula>AccountId__r.MSA_Obtained__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MSA Obtained?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MSA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MSA?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MSA_or_Insurance_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>MSA or Insurance Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NDA_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NDA Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NDA_Obtained__c</fullName>
+        <externalId>false</externalId>
+        <formula>AccountId__r.NDA_Obtained__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NDA Obtained?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OK_to_Issue_Con_Req__c</fullName>
+        <description>From the Account: Umbrella Expiration Date, Worker&apos;s Comp Expiration Date, Auto Expiration Date, GL Expiration Date, Signed MSA = Yes and Signed MNDA on Project Partner</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AccountId__r.Umbrella_Expiration_Date__c &gt;= TODAY(), 
+ &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If ALL required Compliance items are obtained, this is the trigger for the ROD to counter-sign the SAR</inlineHelpText>
+        <label>OK to Issue Con Req</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Personnel_on_the_Project__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>List other personnel besides the primary contact you would like to include in the rating. If no other personnel exist, enter &quot;N/A&quot;</inlineHelpText>
+        <label>Other Personnel on the Project</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PB3__c</fullName>
+        <description>completed P3 document that was sent to Smart Safety</description>
+        <externalId>false</externalId>
+        <inlineHelpText>completed P3 document that was sent to Smart Safety</inlineHelpText>
+        <label>PB3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PO_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Purchase_Order__r.PO_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Subcontractors SAR total, including CO’s</inlineHelpText>
+        <label>PO Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Bond_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Bond Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Performance_Bond_Received__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Performance Bond</inlineHelpText>
+        <label>Performance Bond Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No_NA</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Project_Partners</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProjectId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SFDCProject</label>
+        <referenceTo>SFDC_Project__c</referenceTo>
+        <relationshipName>Partners</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_COI_Expiration_Date_Auto__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto - Expiration date of project specific COI auto coverage</inlineHelpText>
+        <label>Project COI Expiration Date - Auto</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_COI_Expiration_Date_GL__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>GL - Expiration date of project specific COI general liability coverage</inlineHelpText>
+        <label>Project COI Expiration Date - GL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_COI_Expiration_Date_PLI__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>PLI - Expiration date of project specific COI professional liability coverage (if applicable)</inlineHelpText>
+        <label>Project COI Expiration Date - PLI</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_COI_Expiration_Date_Umbrella__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Umbrella - Expiration date of project specific COI umbrella coverage (if applicable)</inlineHelpText>
+        <label>Project COI Expiration Date - Umbrella</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_COI_Expiration_Date_WC__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>WC - Expiration date of project specific COI workers comp coverage (if applicable)</inlineHelpText>
+        <label>Project COI Expiration Date - WC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_By__c</fullName>
+        <description>The name of the user who made the Project Manager Rating</description>
+        <externalId>false</externalId>
+        <label>PM Rating By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>PM Rating Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Management_Skill__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>PM Rating Management Skill</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Negative_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any negative notes or feedback about your experience with the Partner working on the project</inlineHelpText>
+        <label>PM Rating Negative Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Numeric__c</fullName>
+        <externalId>false</externalId>
+        <label>PM Rating Numeric</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Positive_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any positive notes or feedback about your experience with the Partner working on the project</inlineHelpText>
+        <label>PM Rating Positive Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Professionalism__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>PM Rating Professionalism</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Quality__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>PM Rating Quality</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating_Timliness__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>PM Rating Timeliness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager_Rating__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Manager- Enter your overall rating of the Partner
+5 is highest, 1 is lowest</inlineHelpText>
+        <label>PM Rating Overall</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>ASProject__r.Owner:User.FirstName +&quot; &quot;+ ASProject__r.Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Name of the Project Manager on the Project</inlineHelpText>
+        <label>Project Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Specific_COI_Approved_by_AJG__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Specific COI, has it been approved by Brendan Quinlan?</inlineHelpText>
+        <label>Project Specific COI Approved by AJG</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Specific_COI_Expiration_Date__c</fullName>
+        <description>Date Project Specific COI expires</description>
+        <externalId>false</externalId>
+        <label>Project Specific COI Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Specific_Insurance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Project Specific Insurance?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>PO for the Vendor</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subcontractors PO for this project</inlineHelpText>
+        <label>Purchase Order</label>
+        <referenceTo>AcctSeedERP__Purchase_Order__c</referenceTo>
+        <relationshipName>Project_Partners1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What role did the partner play in the project?</inlineHelpText>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Line Side Tap</fullName>
+                    <default>false</default>
+                    <label>Line Side Tap</label>
+                </value>
+                <value>
+                    <fullName>Racking Installer</fullName>
+                    <default>false</default>
+                    <label>Racking Installer</label>
+                </value>
+                <value>
+                    <fullName>Roofer</fullName>
+                    <default>false</default>
+                    <label>Roofer</label>
+                </value>
+                <value>
+                    <fullName>Temp Services/Fencing (temp)</fullName>
+                    <default>false</default>
+                    <label>Temp Services/Fencing (temp)</label>
+                </value>
+                <value>
+                    <fullName>Mechanical</fullName>
+                    <default>false</default>
+                    <label>Mechanical</label>
+                </value>
+                <value>
+                    <fullName>Landscaping</fullName>
+                    <default>false</default>
+                    <label>Landscaping</label>
+                </value>
+                <value>
+                    <fullName>Civil</fullName>
+                    <default>false</default>
+                    <label>Civil</label>
+                </value>
+                <value>
+                    <fullName>Foundations</fullName>
+                    <default>false</default>
+                    <label>Foundations</label>
+                </value>
+                <value>
+                    <fullName>Ground Mount</fullName>
+                    <default>false</default>
+                    <label>Ground Mount</label>
+                </value>
+                <value>
+                    <fullName>SWPPP</fullName>
+                    <default>false</default>
+                    <label>SWPPP</label>
+                </value>
+                <value>
+                    <fullName>CEQA</fullName>
+                    <default>false</default>
+                    <label>CEQA</label>
+                </value>
+                <value>
+                    <fullName>Carport Construction</fullName>
+                    <default>false</default>
+                    <label>Carport Construction</label>
+                </value>
+                <value>
+                    <fullName>Irrigation</fullName>
+                    <default>false</default>
+                    <label>Irrigation</label>
+                </value>
+                <value>
+                    <fullName>Fencing (permanent)</fullName>
+                    <default>false</default>
+                    <label>Fencing (permanent)</label>
+                </value>
+                <value>
+                    <fullName>Cameras</fullName>
+                    <default>false</default>
+                    <label>Cameras</label>
+                </value>
+                <value>
+                    <fullName>EV Chargers</fullName>
+                    <default>false</default>
+                    <label>EV Chargers</label>
+                </value>
+                <value>
+                    <fullName>Electrical</fullName>
+                    <default>false</default>
+                    <label>Electrical</label>
+                </value>
+                <value>
+                    <fullName>Temp Labor</fullName>
+                    <default>false</default>
+                    <label>Temp Labor</label>
+                </value>
+                <value>
+                    <fullName>Street Sweeper</fullName>
+                    <default>false</default>
+                    <label>Street Sweeper</label>
+                </value>
+                <value>
+                    <fullName>Welder</fullName>
+                    <default>false</default>
+                    <label>Welder</label>
+                </value>
+                <value>
+                    <fullName>Add&apos;l Engineer</fullName>
+                    <default>false</default>
+                    <label>Add&apos;l Engineer</label>
+                </value>
+                <value>
+                    <fullName>Survey</fullName>
+                    <default>false</default>
+                    <label>Survey</label>
+                </value>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Consultant</label>
+                </value>
+                <value>
+                    <fullName>Module Installer</fullName>
+                    <default>false</default>
+                    <label>Module Installer</label>
+                </value>
+                <value>
+                    <fullName>Painter</fullName>
+                    <default>false</default>
+                    <label>Painter</label>
+                </value>
+                <value>
+                    <fullName>Design sub (tap work etc)</fullName>
+                    <default>false</default>
+                    <label>Design sub (tap work etc)</label>
+                </value>
+                <value>
+                    <fullName>Equipment Vendor</fullName>
+                    <default>false</default>
+                    <label>Equipment Vendor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_By__c</fullName>
+        <externalId>false</externalId>
+        <label>SS Rating By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>SS Rating Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Management_Skill__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>SS Rating Management Skill</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Negative_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any negative notes or feedback about your experience with the Partner working on the project</inlineHelpText>
+        <label>SS Rating Negative Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Numeric__c</fullName>
+        <externalId>false</externalId>
+        <label>SS Rating Numeric</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Positive_Notes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any positive notes or feedback about your experience with the Partner working on the project</inlineHelpText>
+        <label>SS Rating Positive Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Professionalism__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>SS Rating Professionalism</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Quality__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>SS Rating Quality</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating_Timliness__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>5 is highest, 1 is lowest</inlineHelpText>
+        <label>SS Rating Timeliness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor_Rating__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Site Super- Enter your overall rating of the Partner
+5 is highest, 1 is lowest</inlineHelpText>
+        <label>SS Rating Overall</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Site_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <formula>ASProject__r.Foreman__r.FirstName +&quot; &quot;+  ASProject__r.Foreman__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Site Supervisor on the Project- Pulls from the Site Super field on the related Project</inlineHelpText>
+        <label>Site Supervisor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Subcontractor Compliance</label>
+    <listViews>
+        <fullName>Active_Partners_MSA_Insurance_Check</fullName>
+        <columns>ProjectId__c</columns>
+        <columns>AccountId__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Specific_Insurance__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2012 12:00 AM</value>
+        </filters>
+        <label>Active Partners- MSA Insurance Check</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0}</displayFormat>
+        <label>Partner Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Subcontractor Compliance</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>AccountId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASProject__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Role__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>AccountId__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASProject__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AccountId__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Role__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASProject__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AccountId__c</searchFilterFields>
+        <searchFilterFields>ASProject__c</searchFilterFields>
+        <searchFilterFields>Role__c</searchFilterFields>
+        <searchResultsAdditionalFields>AccountId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASProject__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Rate_This_Partner</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Rate This Partner</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>url = parent.window.location.toString();
+recordID =url.split(&quot;.com/&quot;); 
+projectID=recordID[1]; 
+
+idArray = {!GETRECORDIDS($ObjectType.ProjectPartner__c )};
+
+if (idArray[0] == null) 
+{ 
+alert(&quot;Please select the Project Parter you wish to rate.&quot;);
+} 
+else if (idArray[1] != null)
+{ 
+alert(&quot;You may only rate one Project Partner at a time via this button.&quot;);
+} 
+else 
+{ 
+
+var idString = &quot;&quot;;
+
+for (var i = 0; i &lt; idArray.length; i++) { 
+var idString = idArray[i];
+if(i&lt;idArray.length-1){
+var idString = idString;
+}
+}
+
+parent.window.location.replace(&apos;http://na6.salesforce.com/&apos; + idString + &apos;/e?&amp;retURL=%2F&apos; + idString);
+}</url>
+    </webLinks>
+</CustomObject>

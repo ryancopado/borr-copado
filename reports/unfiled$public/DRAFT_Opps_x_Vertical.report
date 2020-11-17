@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_82473143</developerName>
+        <masterLabel>Industry Group</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>INDUSTRY</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Airport</sourceValue>
+            </sourceValues>
+            <value>Airport</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Agriculture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Biotechnology</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cold Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Convention Center</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Food &amp; Bev Production</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>High Tech</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manufacturing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hotel/Inn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Office/Business Service</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Recreation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Warehousing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Winery</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Healthcare</sourceValue>
+            </sourceValues>
+            <value>C&amp;I</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Government: County</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: Municipal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: State</sourceValue>
+            </sourceValues>
+            <value>Govt</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>University: Private</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>University: Public</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Community College</sourceValue>
+            </sourceValues>
+            <value>Higher Ed</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>K-12 School: Private</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>K-12 School: Public</sourceValue>
+            </sourceValues>
+            <value>K-12</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Hospital/Clinic</sourceValue>
+            </sourceValues>
+            <value>Hospitals</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Electric Utilities</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Water District</sourceValue>
+            </sourceValues>
+            <value>Utilities</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Land</sourceValue>
+            </sourceValues>
+            <value>Land</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>FULL_NAME</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>INDUSTRY</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>FISCAL_QUARTER</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>ROLLUP_DESCRIPTION</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Audrey Copeland,Cameron Thorne,Chris Otness,Fnan Araia,Jackie Pitera,Terry Favish</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>INDUSTRY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Affordable Housing,Agriculture,Airport,Biotechnology,Cold Storage,Community College,Convention Center,Electric Utilities,Food &amp; Bev Production,Government: County,Government: Federal,Government: Municipal,Government: State,Healthcare,High Tech,Hospital/Clinic,Hotel/Inn,K-12 School: Private,K-12 School: Public,Land,Landfill,Manufacturing,Multi-Residential Housing,Not For Profit,Office/Business Service,Other,Project Developer/Financier,Property Developer,Real Estate Broker,Recreation,Retail,University: Private,University: Public,Warehousing,Water District,Winery</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_DIVISION</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>West</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Prospecting,Disqualified - Sales,Disqualified - Technical</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_82473143</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DRAFT - West - Opps x Vertical</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

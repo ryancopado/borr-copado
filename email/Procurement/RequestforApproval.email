@@ -1,0 +1,13 @@
+{!SFDC_Purchase_Requisition__c.OwnerFullName} has requested the following:
+
+{!SFDC_Purchase_Requisition__c.Quantity__c} {!SFDC_Purchase_Requisition__c.Item_Requested__c}
+
+Cost: {!SFDC_Purchase_Requisition__c.Cost__c}
+
+Previous Comments, if any:
+
+{!ApprovalRequest.Comments}
+{!ApprovalRequest.Process_Approver}
+
+Please approve or deny this request:
+{!ApprovalRequest.Internal_URL}

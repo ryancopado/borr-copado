@@ -1,0 +1,17 @@
+{!SFDC_Purchase_Requisition__c.OwnerFullName} has submitted a Change Order for approval for {!Con_Req__c.Project__c}.
+
+Description: {!Con_Req__c.Description__c}
+
+Original Contract Price: {!Con_Req__c.Original_Contract_Price__c}
+Current Change Order Amount: {!Con_Req__c.Final_Change_Order_Amount__c}
+Prior Change Order Amount: {!Con_Req__c.Prior_Change_Orders__c}
+Adjusted Contract Price: {!Con_Req__c.Adjusted_Contract_Price__c} 
+
+Products:
+Original Product:{!Con_Req__c.New_ProductCOConReq__c}
+Original Qty: {!Con_Req__c.Quantity__c}
+New Product: {!Con_Req__c.Product__c}
+New Qty:  {!Con_Req__c.New_QuantityCOConReq__c}
+
+Please approve or deny this request:
+{!ApprovalRequest.Internal_URL}

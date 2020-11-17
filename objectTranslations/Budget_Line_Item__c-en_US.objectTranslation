@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Budget Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Budget Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Budget --></label>
+        <name>Active_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Amt- Sales $/Watt constant --></label>
+        <name>Actual_Amt_Sales_Watt_constant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Cost - TL --></label>
+        <name>Actual_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Change Order Amount --></label>
+        <name>Approved_Change_Order_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Sub Change Order Amount --></label>
+        <name>Approved_Sub_Change_Order_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budget --></label>
+        <name>Budget__c</name>
+        <relationshipLabel><!-- Budget Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Code Number --></label>
+        <name>CC_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Code --></label>
+        <name>Category_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Name --></label>
+        <name>Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Code Name --></label>
+        <name>Cost_Code_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Code --></label>
+        <name>Cost_Code__c</name>
+        <relationshipLabel><!-- Budget Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost Remaining --></label>
+        <name>Cost_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost to Commit --></label>
+        <name>Cost_to_Commit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense Total --></label>
+        <name>Expense_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Total --></label>
+        <name>Line_Item_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM/Active Variance --></label>
+        <name>PM_Active_Discrepancy__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM Budget --></label>
+        <name>PM_Initial_Projection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved PO Total --></label>
+        <name>PO_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- POs plus Cost To Commit --></label>
+        <name>PO_plus_Cost_To_Commit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Budget Locked --></label>
+        <name>Parent_Budget_Locked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending PO Total --></label>
+        <name>Pending_PO_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending Request Amount --></label>
+        <name>Pending_Request_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Job Number --></label>
+        <name>Project_Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Budget --></label>
+        <name>Sales_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales/PM Budget Variance --></label>
+        <name>Sales_PM_Budget_Disceprancy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Exemption Status --></label>
+        <name>Tax_Exemption_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Total --></label>
+        <name>Total_PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>Units__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot add/edit an Initial Projection value once the PM budget is locked. --></errorMessage>
+        <name>Budget_Locked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot add/edit the Active Budget or Actual Budget value before the budget is locked. --></errorMessage>
+        <name>Budget_Unlocked</name>
+    </validationRules>
+</CustomObjectTranslation>

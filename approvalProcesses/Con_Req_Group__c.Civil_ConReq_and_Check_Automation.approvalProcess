@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Project__c</field>
+        <field>Requisition_Total_Roll_Up__c</field>
+        <field>TotalRequisitionCoststoDate__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>saslam@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>swillett@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Auto Approves if CRG under 7500</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Con_Req_Group__c.TotalRequisitionCoststoDate__c</field>
+                <operation>greaterThan</operation>
+                <value>125000</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Civil and Check Automation</label>
+        <name>Civil_and_Check_Automation</name>
+    </approvalStep>
+    <description>Auto Approve if Civil CRG is less than 7500</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+
+(TODAY()-Project__r.AcctSeed__Opportunity__r.DatePB3CompleteFormula__c &lt; 90),
+
+(OR(
+CONTAINS( Cost_Code_Number__c ,&apos;08-1608&apos;),
+CONTAINS(Cost_Code_Number__c,&apos;03-1618&apos;))),
+
+(Requisition_Total_Roll_Up__c &lt; 7500),
+
+(TotalRequisitionCoststoDate__c &lt; 125000),
+
+( CONTAINS(Project__r.Ops_Division__r.Name, &apos;Dev&apos;) )
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Con_Req_Group_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Con_Req_Group_Civil_ConReq_and_Check_Automation</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>CRG_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Date_of_Final_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Con_Req_Group_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Rejected_Con_Req_Group</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Con_Req_Group_Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Civil ConReq and Check Automation</label>
+    <processOrder>5</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

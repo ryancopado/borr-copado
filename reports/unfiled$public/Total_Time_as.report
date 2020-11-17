@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>SV__c.Total_Work_Hours__c:SUM/PARENTGROUPVAL(SV__c.Total_Work_Hours__c:SUM, SV__c.Technician__c, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>shows % of active visits vs non-active visits</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>BucketField_33325566</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Total Time</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_33325566</developerName>
+        <masterLabel>Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>SV__c.NonActiveCategories__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Active Site Visit</sourceValue>
+            </sourceValues>
+            <value>Active Site Visit</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Travel</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Meetings</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Holiday</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Training</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vacation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Travel Operations</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Management Time</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Warranty Management</sourceValue>
+            </sourceValues>
+            <value>ASV Total</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>SV__c.WorkStarted__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Work_Ended__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c.Total_Work_Hours__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.NonActiveCategories__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.PrevailingWageIncluded__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Billing_Field__c</field>
+    </columns>
+    <description>for Joe T time Card</description>
+    <filter>
+        <criteriaItems>
+            <column>SV__c.Technician__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Patty Ryder,Matt Hanagan,Contractor,Generic,Equipment,Prasanna</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c.SiteArrivalTime__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c.Technician__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_33325566</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total Time as %</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SV__c.Work_Ended__c</dateColumn>
+        <endDate>2017-12-16</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-12-10</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Service_Visits__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.Service_Visits__r$Visit_Date__c</field>
+    </columns>
+    <columns>
+        <field>Case.Service_Visits__r.Construction_Requisitions1__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.Service_Visits__r.Construction_Requisitions1__r$SOLine_Total__c</field>
+    </columns>
+    <columns>
+        <field>Case.Service_Visits__r.Construction_Requisitions1__r$AcctSeedERP__Project__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Cases Closed w/o Labor Billing Info-old</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_wwo_Service_Visits_and_Construction_Reqs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Case$CaseNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case$ClosedDate</dateColumn>
+        <endDate>2018-01-11</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-11</startDate>
+    </timeFrameFilter>
+</Report>

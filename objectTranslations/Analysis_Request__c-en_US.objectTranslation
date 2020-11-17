@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Analysis Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Analysis Request</value>
+    </caseValues>
+    <fields>
+        <help><!-- Notes regarding the request entered by Sales Analyst working on the request --></help>
+        <label><!-- Analyst Notes --></label>
+        <name>Analyst_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual kWh usage --></label>
+        <name>Annual_kWh_usage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date stamps when the request status was moved to completed --></help>
+        <label><!-- Date Completed --></label>
+        <name>Date_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Stamps the date Status was changed to Submit --></help>
+        <label><!-- Date Submitted --></label>
+        <name>Date_Submitted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Should include the specifics of what you are requesting analyst to do --></help>
+        <label><!-- Detailed Description --></label>
+        <name>Detailed_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- should contain the link to where the analysis information is located --></help>
+        <label><!-- Link to Completed Analysis --></label>
+        <name>Link_to_Completed_Analysis__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer interval data is required in order to process an energy storage analyst request. --></help>
+        <label><!-- Link to Customer Data --></label>
+        <name>Link_to_Customer_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- opportunity associated with the request --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Analysis Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PSD Link --></label>
+        <name>PSD_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Peak demand --></label>
+        <name>Peak_demand__c</name>
+    </fields>
+    <fields>
+        <help><!-- indicate whether you have this item available at the time request was created. If not applicable select No. --></help>
+        <label><!-- Production Model --></label>
+        <name>Production_Model__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Must move status to Submit in order for analyst to receive the request. --></help>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need More Information</masterLabel>
+            <translation><!-- Need More Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date request is needed by.  Allow at least 2 business days to complete the request.
+Allow at least 3 business days if Type = Meter Aggregation Model. --></help>
+        <label><!-- Requested Due Date --></label>
+        <name>Requested_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Simple payback on a cash system --></label>
+        <name>Simple_payback_on_a_cash_system__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Type --></label>
+        <name>System_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ground</masterLabel>
+            <translation><!-- Ground --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof</masterLabel>
+            <translation><!-- Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSS</masterLabel>
+            <translation><!-- SSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker</masterLabel>
+            <translation><!-- Tracker --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- select option that best describes your request, put detailed notes in the Notes section as needed. --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Avoided cost analysis</masterLabel>
+            <translation><!-- Avoided cost analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy Storage</masterLabel>
+            <translation><!-- Energy Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interval Analysis</masterLabel>
+            <translation><!-- Interval Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meter aggregation model</masterLabel>
+            <translation><!-- Meter aggregation model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal tool</masterLabel>
+            <translation><!-- Proposal tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RES-BCT analysis</masterLabel>
+            <translation><!-- RES-BCT analysis --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- indicate whether you have this item available at the time request was created.  If not applicable select No. --></help>
+        <label><!-- Utility Bills --></label>
+        <name>Utility_Bills__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- auto calculates # days between date it was submitted and date is was completed --></help>
+        <label><!-- # of days to complete request --></label>
+        <name>of_days_to_complete_request__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please allow at least 2 days to process your request --></errorMessage>
+        <name>Analysis_Request_RequiredDueDate_restric</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Link to Customer Data is required when Energy Storage is selected as type --></errorMessage>
+        <name>Energy_Storage_Type</name>
+    </validationRules>
+</CustomObjectTranslation>

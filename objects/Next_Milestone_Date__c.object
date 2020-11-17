@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Application_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Date_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>Base Date Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offset_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Offset Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Next Milestone Date</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Base_Date_Field__c</columns>
+        <columns>Offset_Days__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+        <language>en_US</language>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

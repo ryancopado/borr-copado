@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c$Overall_Project_Status__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Mobilization_Date__c</field>
+    </columns>
+    <description>Projects that started in Q2 and are mobilizing soon</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,Mid Atlantic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Complete,On Hold,Dead</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Project__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Q2 Projects Mobilizing soon</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Site_and_Inspection_Checklist_info__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Sites__r$Mobilization_Date__c</dateColumn>
+        <endDate>2016-09-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-04-01</startDate>
+    </timeFrameFilter>
+</Report>

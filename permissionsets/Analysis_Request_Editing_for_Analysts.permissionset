@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>allows editing by only a few individuals to the fields in the analysis information section</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Analysis_Request__c.Analyst_Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Analysis_Request__c.Link_to_Completed_Analysis__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Analysis Request Editing for Analysts</label>
+    <license>Salesforce</license>
+</PermissionSet>

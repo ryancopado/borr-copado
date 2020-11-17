@@ -1,0 +1,220 @@
+<apex:page standardController="AvaAcctSeed__CBAvaTaxSetting__c" extensions="AvaAcctSeed.AvaCreateCompany" action="{!TestConnection}" showheader="true" standardStylesheets="false">
+
+    <apex:includeLightning />
+    <apex:stylesheet value="{!$Resource.AvaAcctSeed__LightningCSS}" />
+
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader .hideListButton {
+            /* background-position: 1px -36px; */
+            
+            background: orange;
+        }
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader .showListButton {
+            /* background-position: 1px -36px; */
+            
+            background: orange;
+        }
+        label {
+            color: #54698d;
+        }
+        body .bPageBlock,
+        body .bPageBlock .pbBody,
+        body .bPageBlock .pbBottomButtons {
+            background-color: white;
+            background-image: none;
+            margin: 0;
+        }
+        body .bPageBlock,
+        body #bodyCell .bResource .secondaryPalette,
+        body .secondaryPalette.bPageBlock,
+        body .individualPalette .secondaryPalette.bPageBlock {
+            background-color: white;
+            background-image: none;
+            border: none;
+            margin: 0;
+        }
+        .slds-page-header {
+            padding: 1rem 0.75rem;
+            border-bottom: 1px solid #d8dde6;
+            background: white;
+        }
+        body .bPageBlock .pbBody .pbSubheader {
+            background-color: transparent;
+            border-color: transparent;
+        }
+        .Custom99Tab .secondaryPalette,
+        .individualPalette .Custom99Block .secondaryPalette {
+            background-color: transparent;
+            border-color: transparent;
+            border: none;
+        }
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+            border-top: 0;
+            color: black;
+        }
+    </style>
+
+
+
+    <div class="slds-page-header s1FixedFullWidth s1FixedTop forceHighlightsStencilDesktop" data-aura-rendered-by="135:957;a" data-aura-class="forceHighlightsStencilDesktop" style="height: 70px;">
+        <div class="slds-grid primaryFieldRow" data-aura-rendered-by="136:957;a">
+            <div class="slds-grid slds-col slds-has-flexi-truncate slds-media--center" data-aura-rendered-by="137:957;a">
+                <div class="profilePicWrapper slds-media slds-no-space" data-aura-rendered-by="138:957;a">
+                    <div class="slds-media__figure slds-icon forceEntityIcon" data-aura-rendered-by="140:957;a">
+                        <div class="logoContainer slds-clearfix forceSocialPhotoWrapper" data-aura-rendered-by="9:957;a" data-aura-class="forceSocialPhotoWrapper"><span class="photoContainer forceSocialPhoto" data-aura-rendered-by="12:957;a" data-aura-class="forceSocialPhoto"><div class="small roundedSquare forceEntityIcon" style="background-color: #7F8DE1" data-aura-rendered-by="15:957;a" data-aura-class="forceEntityIcon"><span data-aura-rendered-by="18:957;a" class="uiImage" data-aura-class="uiImage"><img data-aura-rendered-by="16:957;a" src="https://na88.salesforce.com/img/icon/t4v35/standard/account_120.png" class="icon " alt="" title=""/></span>
+                        </div>
+                        </span>
+                        <!--render facet: 19:957;a-->
+                    </div>
+                </div>
+            </div>
+            <div class="slds-media__body" data-aura-rendered-by="142:957;a">
+                <p class="slds-text-heading--label slds-line-height--reset" data-aura-rendered-by="143:957;a" style="opacity: 1;">AvaTax</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle" data-aura-rendered-by="145:957;a" title="Create Company"><span data-aura-rendered-by="6:957;a" class="uiOutputText" data-aura-class="uiOutputText">Create Company</span></h1>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <apex:form styleclass="width:70%; background-color:rgb(253, 253, 253)">
+        <br/>
+
+        <apex:pageBlock >
+            <div style="width:100%">
+                <p style="float:left;color:#54698d;font-size:14px">Lets make sure we have the right info to get you quickly setup !</p>
+
+
+
+                <apex:variable value="{!CONTAINS($CurrentPage.URL, 'lightning.force.com')}" var="isLightningMode" />
+                <!-- $CurrentPage.URL = {!$CurrentPage.URL} <br/> isLightningMode = {!isLightningMode} <br/> -->
+                <apex:outputpanel layout="none" rendered="{!isLightningMode = false}">
+                    <!-- Classic UI - Code to display ui in Classic UI mode -->
+                    <!-- this is classic ui -->
+
+                    <div>
+                        <!--      <apex:commandButton action="{!UpdateAddress}" value="Replace With Validated Address" />-->
+                        <apex:commandButton style="float:right" reRender="showresult,showmsg" value="Setup Company Profile" action="{!processCompany}" status="loading" />
+
+                    </div>
+                </apex:outputpanel>
+
+                <apex:outputpanel layout="none" rendered="{!isLightningMode = true}">
+                    <!-- Lightning mode  - Code to display ui in Lightning mode -->
+                    <!-- this is lighting mode -->
+
+                    <div>
+                        <apex:commandButton style="float:right" reRender="showresult,showmsg" value="Setup Company Profile" action="{!processCompany}" status="loading" styleClass="slds-button slds-button--neutral uiButton--brand uiButton" />
+
+                        <!--  <apex:commandButton action="{!UpdateAddress}" value="Replace With Validated Address" styleClass="slds-button slds-button--neutral uiButton--brand uiButton" /> -->
+                    </div>
+
+                </apex:outputpanel>
+
+
+            </div>
+        </apex:pageBlock>
+        <apex:pageBlock >
+
+            <apex:outputPanel id="showresult">
+                <br/>
+                <apex:outputText value="{!result}" escape="false" />
+            </apex:outputPanel>
+
+            <apex:pageBlockSection columns="2" showHeader="true" title="Company Contact Details">
+
+                <apex:outputLabel value="First Name" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!firstname}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Last Name " />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!lastname}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Phone Number" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!phonenumber}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Company Code" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!CompanyCode}" />
+                </apex:outputPanel>
+
+                <apex:outputLabel value="Email" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!email}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Company Name " />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!companyname}" />
+                </apex:outputPanel>
+
+
+                <apex:outputLabel value="Business Tax Identification Number" />
+                <apex:inputText value="{!tin}" />
+
+            </apex:pageBlockSection>
+            <HR WIDTH="100%" Style="background:orange;" />
+
+            <!-- Fields -->
+            <apex:pageBlockSection columns="2" showHeader="true" title="Corporate Address">
+                <apex:outputLabel value="Address Line 1" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!Line1}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Address Line 2" />
+
+                <apex:inputText value="{!Line2}" />
+
+                <apex:outputLabel value="Address Line 3" />
+
+                <apex:inputText value="{!Line3}" />
+
+                <apex:outputLabel value="Address City" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!City}" />
+                </apex:outputPanel>
+
+                <apex:outputLabel value="Address State" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!state}" />
+                </apex:outputPanel>
+                <apex:outputLabel value="Postal Code " />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!PostalCode}" />
+                </apex:outputPanel>
+
+
+                <apex:outputLabel value="Address Country" />
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:inputText value="{!country}" />
+                </apex:outputPanel>
+
+
+
+
+            </apex:pageBlockSection>
+            <!--  <apex:commandButton value="Validate Address" action="{!validateAddress}" reRender="showresult" />-->
+            <apex:actionstatus id="loading">
+                <apex:facet name="start">
+                    <div class="waitingHolder">
+                        <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                        <span class="waitingDescription">Loading...</span>
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>
+        </apex:pageBlock>
+
+
+    </apex:form>
+</apex:page>

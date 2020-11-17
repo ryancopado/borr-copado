@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bmorrison@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>based on branch of associated account routes to enginnering mgr</description>
+        <entryCriteria>
+            <formula>ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;Boston&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;New England&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Mid Atlantic&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>New England/MidAtlantic Engineering Mgr approval</label>
+        <name>New_England_MidAtlantic_Engineering_Mgr_approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bwalter@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>based on branch of associated account routes to enginnering mgr</description>
+        <entryCriteria>
+            <formula>ISPICKVAL(Opportunity__r.Account.Branch__c ,&apos;Nor Cal&apos;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Berkeley&quot;)|| 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Oakland&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Nor Cal Engineering Mgr Approval</label>
+        <name>Nor_Cal_Engineering_Mgr_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bbarker@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>bwalter@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>based on branch of account on associated opportunity routes to appropriate regional engineering manager and ROD</description>
+        <entryCriteria>
+            <formula>ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;So Cal&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;San Diego&quot;)</formula>
+        </entryCriteria>
+        <label>So Cal Engineering Mgr Approval</label>
+        <name>So_Cal_Engineering_Mgr_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>project kickoff for captive onsite deals</description>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New,Rejected,Recalled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Project Kickoff Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.OK_to_Submit_Kickoff__c</field>
+            <operation>equals</operation>
+            <value>YES</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.Opportunity_Record_Type__c</field>
+            <operation>equals</operation>
+            <value>CaptiveOnSite</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>autoupdate_meeting_accepted_date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Contract_Committe_Project_Kickoff_Submittal_Approval_notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Contract_Committee_Submittal_record_approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Meeting_Accepted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Contract_Committee_Submittal_record_rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Autoupdate_Date_Kickoff_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Development_Budget_at_Submittal</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>CaptiveOnSite Project Kickoff</label>
+    <processOrder>5</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

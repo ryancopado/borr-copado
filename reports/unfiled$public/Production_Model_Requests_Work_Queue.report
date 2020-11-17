@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_33717540</developerName>
+        <masterLabel>Production Model Request</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Production_Modeling__c.Person_Responsible__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>John Innes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ben Foss-Michaelis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nawaf Hassan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Gebo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shaun O&apos;Leary</sourceValue>
+            </sourceValues>
+            <value>Production Model Request</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Production_Modeling__c.Person_Responsible__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Production_Modeling__c.Request_Status__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_33717540</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Production_Modeling__c.Person_Responsible__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ben foss-michaelis,john innes,jun zha,kevin gebo,shaun o&apos;leary</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Production_Modeling__c.Request_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Completed,Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Production Model Requests Work Queue</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityCustomEntity$Production_Modeling__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

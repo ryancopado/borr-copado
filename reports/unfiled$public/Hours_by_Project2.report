@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_27693192</developerName>
+        <masterLabel>Employee Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c$AcctSeed__Employee__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>David Albrecht</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dean Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Steve Long</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Martin Zanghi</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer</value>
+        </values>
+        <values>
+            <value>Junior Civil Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>John Lagasse</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Katlyn Lawver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tim Lee</sourceValue>
+            </sourceValues>
+            <value>Senior Design Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Kevin Gebo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lucas Danker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rohit Patil</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shanthini Sivaharan</sourceValue>
+            </sourceValues>
+            <value>Design Engineer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Carli Shroyer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Frantz Renard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Louisa Deering</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Weston Standish</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer I</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Brandon Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Melissa Samaroo</sourceValue>
+            </sourceValues>
+            <value>Civil Engineer II</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_69893228</developerName>
+        <masterLabel>Pre and Post Handoff Groupings</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$Project_Grouping__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>0: Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>1: 50 Set Development</sourceValue>
+            </sourceValues>
+            <value>1. Pre-Handoff</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>2: CD IFR Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>3: CD IFC Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>4: Post CD Set</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>5: CD Admin</sourceValue>
+            </sourceValues>
+            <value>2. Post Handoff</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>BucketField_69893228</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c$AcctSeed__Employee__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_27693192</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$Project_Grouping__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c$AcctSeed__Week_Ending_Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$AcctSeed__Total_Hours__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c$Employee_Title__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$Site__c.Site_State__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c$Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>development engineer,civil engineer,civil engineer - drafter,principal civil engineer,junior civil engineer,civil engineer I,civil engineer II</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Time_Card__c$AcctSeed__Employee__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,david albrecht,steve long,dean smith,brandon smith,melissa samaroo,louisa deering,carli shroyer,weston standish,kip smith,gregory gibbons,colin cusick,frantz renard,martin zanghi,rejean devaux,davide cazzulo,william peregoy</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Time_Card__c.AcctSeed__Time_Card_Line_Details__r$AcctSeed__Project__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Hours by Project</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Borrego_Time_Card_w_Time_Card_Lines__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>BucketField_27693192</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Time_Card__c$AcctSeed__Week_Ending_Date__c</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

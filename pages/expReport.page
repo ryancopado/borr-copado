@@ -1,0 +1,50 @@
+<apex:page standardController="ER__c" renderAs="pdf">
+<apex:stylesheet value="{!URLFOR($Resource.po_style)}"/>
+<apex:form >
+<table width="100%">
+    <tr>
+        <td style="vertical-align:middle; text-align:center; font-size:18px">
+            <b>EXPENSE REPORT - &nbsp;<apex:outputField value="{!ER__c.User__c}"/> : &nbsp;<apex:outputField value="{!ER__c.Month_Ending__c}"/></b>
+        </td>
+    </tr>  
+</table> 
+<br/><br/>     
+<table id="box-table-a" width="100%" >
+    <tr>
+        <td class="title" width="10%">
+            Date
+        </td>
+        <td width="30%" class="title">
+            Code
+        </td>
+        <td width="10%" class="title">
+            Vendor
+        </td>
+        <td width="10%" class="title">
+            Approved
+        </td>
+        <td width="10%" class="title">
+            Approved Amount
+        </td>
+    </tr>
+        <apex:repeat value="{!ER__c.ExpRep__r}" var="c">
+            <tr>
+                <td class="co" style="text-align:center"><apex:outputField value="{!c.Date__c}"/></td>
+                <td class="co" style="text-align:center">{!c.Code__c}</td>
+                <td class="co" style="text-align:center">{!c.Vendor__c}</td>
+                <td class="co" style="text-align:center; text-transform: uppercase; font-size:10px; vertical-align:middle">{!c.Manager_Approval__c}</td>
+                <td class="co" style="text-align:right"><apex:outputField value="{!c.Approved_Amount__c}"/></td>
+            </tr>         
+        </apex:repeat>
+    <tr>
+        <td class="co_total_text" colspan="4">Requested Amount:</td>
+        <td class="co_total_value"><apex:outputField value="{!ER__c.Requested_Total__c}"/></td>    
+    </tr>        
+    <tr>
+        <td class="co_total_text" colspan="4">APPROVED AMOUNT:</td>
+        <td class="co_total_value"><apex:outputField value="{!ER__c.Total__c}"/></td>    
+    </tr>
+
+</table>
+</apex:form>   
+</apex:page>

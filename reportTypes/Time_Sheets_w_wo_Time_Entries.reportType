@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>TimeSheet</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Time Sheets w/wo Time Entries</description>
+    <join>
+        <outerJoin>true</outerJoin>
+        <relationship>TimeSheetEntries</relationship>
+    </join>
+    <label>Time Sheets w/wo Time Entries</label>
+    <sections>
+        <masterLabel>Time Sheets</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Time Sheet Entries</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Service Resource User</masterLabel>
+    </sections>
+</ReportType>

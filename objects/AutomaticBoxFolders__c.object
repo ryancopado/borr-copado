@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>A list of the box folders to create automatically upon insert of a new record of the type indicated in the Name field of this custom setting. The Name field must be the object label followed by a space followed by a unique number for that object.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Folder__c</fullName>
+        <description>The name of the box folder to automatically create. Set this field to &quot;record_name&quot; to indicate the top level box folder for the record.</description>
+        <externalId>false</externalId>
+        <label>Folder</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsActive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Object_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Object API Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Folder_Key__c</fullName>
+        <description>The unique key (Name field) of the custom setting record that represents the parent folder for this folder.</description>
+        <externalId>false</externalId>
+        <label>Parent Folder Key</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Folder__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Folder</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Label__c</fullName>
+        <description>The record type label (Name) of the object listed in the &quot;Object API Name&quot; field. Use the string &quot;**all**&quot; to indicate that all record types for the object have the same box folder template.</description>
+        <externalId>false</externalId>
+        <label>Record Type Label</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>AutomaticBoxFolders</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>SETUP_TYPE</columns>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>Folder__c</columns>
+        <columns>IsActive__c</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Parent_Folder__c</columns>
+        <columns>Parent_Folder_Key__c</columns>
+        <columns>Record_Type_Label__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Development_Folders</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>SETUP_TYPE</columns>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>Folder__c</columns>
+        <columns>IsActive__c</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Parent_Folder__c</columns>
+        <columns>Parent_Folder_Key__c</columns>
+        <columns>Record_Type_Label__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Parent_Folder__c</field>
+            <operation>equals</operation>
+            <value>Pricing</value>
+        </filters>
+        <filters>
+            <field>Record_Type_Label__c</field>
+            <operation>equals</operation>
+            <value>Development</value>
+        </filters>
+        <label>Development Folders</label>
+        <language>en_US</language>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

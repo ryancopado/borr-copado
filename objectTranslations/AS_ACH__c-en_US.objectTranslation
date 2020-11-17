@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AS_ACH</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AS_ACHs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- AS_ACHs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ON HOLD</masterLabel>
+            <translation><!-- ON HOLD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BankAccountNumber --></label>
+        <name>BankAccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- BankRoutingNumber --></label>
+        <name>BankRoutingNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Account Type --></label>
+        <name>Bank_Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Checking</masterLabel>
+            <translation><!-- Checking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Savings</masterLabel>
+            <translation><!-- Savings --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- AS_ACHs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TransactionCode --></label>
+        <name>TransactionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- AS_ACHs --></relationshipLabel>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can only select one of the following as a payee: Vendor, Employee, Contact --></errorMessage>
+        <name>OnlyOneOfVendorEmployeeContact</name>
+    </validationRules>
+</CustomObjectTranslation>

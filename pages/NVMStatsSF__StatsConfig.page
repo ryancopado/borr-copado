@@ -1,0 +1,105 @@
+<apex:page tabStyle="NVMStatsSF__NVM_Call_Summary__c" sidebar="false" controller="NVMStatsSF.StatsConfigController">
+
+   <apex:form id="confform">
+      <apex:pageMessages />
+      <apex:pageBlock >
+         <apex:pageBlockButtons >
+            <apex:CommandButton rendered="{!canEdit}" action="{!save}" value="Save All"/>
+            <apex:CommandButton rendered="{!canEdit}" action="{!addChannel}" value="Add Channel" />
+            <apex:CommandButton rendered="{!canEdit}" action="{!delChannels}" value="Delete Channel(s)" />
+            
+         </apex:pageBlockButtons>
+         <apex:pageBlockSection id="chans" columns="{!IF(canSeeQM,12,10)}" Title="Channels">
+
+              <apex:pageBlockSectionItem >&nbsp;</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Name</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Description</apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!canSeeQM== TRUE}">Fetch<br/>Analytics</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canSeeQM== TRUE}">Fetch<br/>Transcript</apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem >API<br/>e.g. 3</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Channel URL<br/>- for apac, emea or nam e.g.<br/>https://nam.api.newvoicemedia.com</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Client ID</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Client Secret</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Timeout (ms)</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Offset (mins)</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >Q'd?</apex:pageBlockSectionItem>
+
+
+            <apex:repeat var="row" value="{!channels}">
+            
+              <apex:pageBlockSectionItem ><apex:inputCheckbox disabled="{!canEdit == FALSE}" value="{!row.isDeleted}"/> </apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:150px" value="{!row.Name}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:150px" value="{!row.Name}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:160px" value="{!row.NVMStatsSF__Channel_Description__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:160px" value="{!row.NVMStatsSF__Channel_Description__c}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canSeeQM== TRUE}"><apex:inputCheckbox disabled="{!canEdit == FALSE}" value="{!row.NVMStatsSF__SA__c}"/> </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canSeeQM== TRUE}"><apex:inputCheckbox disabled="{!canEdit == FALSE}" value="{!row.NVMStatsSF__TX__c}"/> </apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:20px" value="{!row.NVMStatsSF__API_Version__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:20px" value="{!row.NVMStatsSF__API_Version__c}"/></apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:200px" value="{!row.NVMStatsSF__Channel_URL__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:200px" value="{!row.NVMStatsSF__Channel_URL__c}"/></apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:80px" value="{!row.NVMStatsSF__Client_ID__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:80px" value="{!row.NVMStatsSF__Client_ID__c}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE && canReadSecrets == TRUE}"><apex:inputField style="width:160px"  value="{!row.NVMStatsSF__Client_Secret__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE && canReadSecrets == TRUE}"><apex:outputField style="width:160px"  value="{!row.NVMStatsSF__Client_Secret__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canReadSecrets == FALSE}">*****</apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:40px" value="{!row.NVMStatsSF__Timeout__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:40px" value="{!row.NVMStatsSF__Timeout__c}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:50px" value="{!row.NVMStatsSF__Offset__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:50px" value="{!row.NVMStatsSF__Offset__c}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem ><apex:inputCheckbox disabled="{!canEdit == FALSE}" value="{!row.NVMStatsSF__Running__c}"/> </apex:pageBlockSectionItem>
+
+           </apex:repeat>            
+            </apex:pageBlockSection>
+
+         <apex:repeat var="map" value="{!mappings}">
+
+           <apex:pageBlockSection id="maps" columns="4" Title="Global Settings and Mappings">
+
+              <apex:pageBlockSectionItem >Statistics Retention:<br/><i>(Days)</i></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:40px" value="{!map.NVMStatsSF__Delete_After_Days__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:40px" value="{!map.NVMStatsSF__Delete_After_Days__c}"/></apex:pageBlockSectionItem>
+
+              <apex:pageBlockSectionItem >Flags:</apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == TRUE}"><apex:inputField style="width:850px" value="{!map.NVMStatsSF__Flags__c}"/></apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem rendered="{!canEdit == FALSE}"><apex:outputField style="width:850px" value="{!map.NVMStatsSF__Flags__c}"/></apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+         </apex:repeat>            
+
+         
+      </apex:pageBlock>
+      <apex:pageBlock >
+      
+      <apex:pageBlockSection id="Links" columns="1" Title="Report Templates">
+            <apex:commandLink action="/packaging/installPackage.apexp?p0=04t1t0000030wTX" target="_Blank" title="Install Report Templates">Install Report Templates Package v1.2</apex:commandLink>
+      </apex:pageBlockSection>
+
+         <apex:pageBlockSection id="duplicates" columns="1" Title="Data Quality" rendered="{!IF(CONTAINS(mappings[0].Flags__c,'DQ'),TRUE,FALSE)}">
+            <apex:actionPoller rerender="duplicates" action="{!purgeDuplicateCalls}" interval="5"/>
+            <apex:outputText label="Record" value="{!seed}"/>
+            <apex:outputText label="Rows Checked" value="{!rowschecked}"/>            
+            <apex:outputText label="Duplicates" value="{!dupesfound}"/>            
+            <apex:outputText label="Cleared" value="{!dupescleared}"/>
+         </apex:pageBlockSection>
+
+         <apex:pageBlockSection id="tests" columns="3" Title="Testing">
+            <apex:commandLink action="{!gotoLogs}" target="_Blank" title="Transaction Logs">Open Transaction Logs</apex:commandLink>
+         </apex:pageBlockSection>
+      </apex:pageBlock>
+   
+   </apex:form>
+</apex:page>

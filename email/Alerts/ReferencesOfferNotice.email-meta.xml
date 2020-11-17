@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>References/Offer Notice</name>
+    <style>none</style>
+    <subject>{!Lead.FirstName} {!Lead.LastName} has reached {!Lead.Status}</subject>
+    <textOnly>The references are being checked and an offer is in the works for {!Lead.FirstName} {!Lead.LastName}. Please make sure you have sent a New Hire Account Creation form&lt;/a&gt; (located in the General Forms and Templates/Reimbursement, Request, Requisition Forms folder on the intranet) to the IT department.
+
+For more information on the lead, please click below:
+{!Lead.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

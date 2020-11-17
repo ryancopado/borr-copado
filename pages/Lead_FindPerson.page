@@ -1,0 +1,15 @@
+<apex:page standardController="Lead" recordSetVar="selectedLeads" extensions="Lead_WhitePagesProCtlExt" tabStyle="Lead" action="{!findPerson}" LightningStylesheets="true">
+    
+    <apex:form >
+        <apex:sectionHeader title="Lead Edit" subtitle="Phone Number Lookup" />
+        <apex:pageMessages />
+        
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

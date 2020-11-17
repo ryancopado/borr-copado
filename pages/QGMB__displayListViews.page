@@ -1,0 +1,792 @@
+<apex:page showHeader="true" sidebar="false" controller="QGMB.vfQueryGuruGrid" extensions="QGMB.remoteUtils">
+    <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
+    <script src="../../soap/ajax/32.0/apex.js" type="text/javascript"></script>
+    <!-- Note: we are using an older library due to bugs (jiterring in filter menu diplay) in latest V1.11.1 -->
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_ui_1_10_4_custom, '/css/redmond/jquery-ui-1.10.4.custom.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_jqGrid_4_6_0, '/css/ui.jqgrid.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_jqGrid_4_6_0, '/plugins/ui.multiselect.css')}" />
+    <!-- <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.select2_css)}" /> -->
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.select2_3_5_1_zip, '/select2-3.5.1/select2.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jstree, '/themes/default/style.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jNotify, '/jquery/jNotify.jquery.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Font_Awesome_master, '/Font-Awesome-master/css/font-awesome.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Sweetalert_master, '/sweetalert-master/lib/sweet-alert.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.tipped_4_2_1_light, '/tipped-4.2.1-light/css/tipped/tipped.css')}" />
+    <c:cCommonStyles />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_1_11_1_min)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_ui_1_10_4_custom, '/js/jquery-ui-1.10.4.custom.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/plugins/ui.multiselect.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/js/i18n/grid.locale-en.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/js/jquery.jqGrid.src.js')}" />
+    <!-- <apex:includeScript value="{!URLFOR($Resource.sugar_1_4_1_custom_min_js)}"  />  -->
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__Lo_Dash_2_4_1)}" />
+    <!-- <apex:includeScript value="{!URLFOR($Resource.select2_min_js)}"  />  -->
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__select2_3_5_1_zip, '/select2-3.5.1/select2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__vkbeautify)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jNotify, '/jquery/jNotify.jquery.min.js')}" />
+    <apex:outputPanel id="globalVars">
+        <apex:include pageName="QGMB__variablesController" />
+    </apex:outputPanel>
+    <script type="text/javascript">
+    var activePage = 'dispListView';
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jsonfn)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__spin_min)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__gridQG)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__describeLayout)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__describeObj)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__gridScripts)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__listViewScripts)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__exportExcel)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jsTree, '/jstree.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__sweetalert_master, '/sweetalert-master/lib/sweet-alert.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__tipped_4_2_1_light, '/tipped-4.2.1-light/js/tipped/tipped.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__advancedQuery)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__qryMgmt)}" />
+    <c:cCommonQG />
+    <apex:outputPanel id="panelMsg" layout="block">
+        <apex:pageMessages id="pageMessages" showDetail="true" />
+    </apex:outputPanel>
+    <apex:form >
+        <div class="modal">
+            <i class="fa fa-spinner fa-spin fa-lg"></i> <span id="progresstext">Testing text... </span>
+            <div class="meter animate">
+                <span id="progressbar" style="width:0"><span></span></span>
+            </div>
+            <br/>
+            <br/>
+            <i class="fa fa-exclamation-triangle fa-lg"></i> This may take a few minutes. Please be patient.
+            <br/>
+            <br/>
+            <i class="fa fa-info-circle fa-lg"></i> You may see a warning dialog when opening the file in Excel. Unfortunately, this is due to system limitations. Simply click Okay to view the report.
+        </div>
+        <apex:actionFunction name="fnReadCache" action="{!fnReadCache}" rerender="globalVars" oncomplete="doPrepUserSL();">
+            <apex:param name="qryName" value=""></apex:param>
+            <apex:param name="qrySource" value=""></apex:param>
+            <apex:param name="enableCache" value=""></apex:param>
+            <apex:param name="advancedQuery" value=""></apex:param>
+        </apex:actionFunction>
+        <!-- <apex:pageBlock title="Object Selection" mode="edit" id="thePageBlock"> -->
+        <apex:pageBlock id="thePageBlock">
+            <!-- <apex:pageBlockSection columns="1"> -->
+            <!-- <apex:pageblockSectionItem > -->
+            <!-- <apex:outputLabel value="Select Object:" for="ObjNames"/> -->
+            <!-- <apex:selectList value="{!objName}" size="1" id="ObjNames" styleClass="ListBox"> -->
+            <!-- <apex:selectOptions value="{!ObjNames}"/> -->
+            <div id="objView" style="width:100%; ">
+                <div>
+                    Object:
+                    <!-- Object Name: -->
+                    <input type="hidden" id="lstObjs" style="width:150px" />
+                </div>
+                <div>
+                    List View:
+                    <!-- List View: -->
+                    <input type="hidden" id="lstViews" style="width:150px" />
+                </div>
+                <div>
+                    <!-- Limit nnn -->
+                    Max Records:
+                    <select id="qryLimit" style="width:80px; text-align:right; ">
+                        <option value="500"> 500</option>
+                        <option value="1000"> 1000</option>
+                        <option value="2500"> 2500</option>
+                        <option value="5000"> 5000</option>
+                        <option value="10000">10000</option>
+                        <option value="20000">20000</option>
+                        <option value="30000">30000</option>
+                        <option value="40000">40000</option>
+                        <option value="50000">50000</option>
+                    </select>
+                </div>
+                <div class="controlsDiv">
+                    <input type="submit" value="Show Results" id="doListViewGrid" style="display: none; " />
+                    <input type="submit" value="Edit Query" id="advancedQuery" style="display: none;" />
+                    <input type="submit" value="Reset" id="resetQuery" style="display: none;" />
+                    <input type="submit" value="Clear Cache" id="clearCache" style="display: none;" />
+                    <!--apex:outputText rendered="{ ! isQryMgmtBeta}"-->
+                    <input type="submit" value="Manage Custom Queries" id="manageq" />
+                    <!--/apex:outputText-->
+                    <i id="question1" class="fa fa-question-circle fa-2x"></i><i id="question2" class="fa fa-question-circle fa-2x"></i>
+                    <i id="eye1" class="fa fa-filter fa-2x"></i>
+                </div>
+            </div>
+            <div id="saveQueryDialog" title="Save Custom Query" style="display:none">
+                <div class="error"></div>
+                <b>Name:</b>
+                <br/>
+                <input required="required" id="queryName" type="text" maxlength="255" />
+                <br/>
+                <br/>
+                <b>Description:</b>
+                <br/>
+                <textarea maxlength="32000" name="qdescr" id="queryDescription" cols="30" rows="10"></textarea>
+                <br/>
+                <br/>
+                <b>Public: </b>
+                <input type="checkbox" id="queryIsPublic" />
+            </div>
+            <div id="manageQueryDialog" title="Load and Manage Queries" style="display:none">
+                <!-- <div id="userQueryTree"></div> -->
+                <div class="queryContainer toolbar" style="position:fixed; width:750px">
+                    <i class="fa fa-search fa-lg"></i>
+                    <input type="search" placeholder="Enter search text..." />
+                    <select id="baseObjSel">
+                    </select>
+                    <button id="clearBOS">Clear</button>
+                </div>
+                <div id="queryList"></div>
+            </div>
+            <div class="advancedq" style="display:none; outline: 0;" tabindex="-1">
+                <div class="toolbar">
+                    <form action="">
+                        <button id="runq" style="color:#E17009">Run</button>
+                        <button id="closeq">Return to Grid</button>
+                        <button id="clearq">Clear</button>
+                        <!--apex:outputText rendered="{ ! isQryMgmtBeta}"-->
+                        <button id="saveq">Save</button>
+                        <button id="saveasq">Save As</button>
+                        <button id="expertq">Expert Mode</button>
+                        <apex:outputText rendered="{!isBetaAdvancedQuery}">
+                            <div id="queryMode">
+                                <button id="stdQuery">Standard</button>
+                                <button id="grpQuery" class="notSelected">Grouped</button>
+                            </div>
+                        </apex:outputText>
+                        <i id="toolbartip" class="fa fa-question-circle fa-lg"></i>
+                        <br/>
+                        <!--/apex:outputText-->
+                        <!-- <button id="manageq">Load and Manage</button> -->
+                    </form>
+                    <div id="queryNameDiv">
+                        <br/>
+                        <b>Custom Query Name: </b><span></span>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <ul>
+                        <li class="notgroupby"><a href="#fieldsToView">Selected Fields <i class="fa fa-info-circle fa-lg ctrl3Help"></i></a></li>
+                        <li class="expert groupby"><a href="#addAggFunc">Selected Fields <i class="fa fa-info-circle fa-lg ctrl6Help"></i></a></li>
+                        <li><a href="#filterByConditions">Filter Conditions <i class="fa fa-info-circle fa-lg ctrl1Help"></i></a></li>
+                        <li class="expert groupby"><a href="#grpByFlds">Result Grouping <i class="fa fa-info-circle fa-lg ctrl4Help"></i></a></li>
+                        <!-- having -->
+                        <li class="notgroupby"><a href="#resultSortOrder">Result Sorting <i class="fa fa-info-circle fa-lg ctrl2Help"></i></a></li>
+                        <li class="expert groupby"><a href="#grpResultSortOrder">Result Sorting <i class="fa fa-info-circle fa-lg ctrl2Help"></i></a></li>
+                        <li class="expert"><a href="#advancedConf">Advanced Configuration <i class="fa fa-info-circle fa-lg ctrl5Help"></i></a></li>
+                        <li class="expert genquery"><a href="#viewGenQuery">View Generated Query <i class="fa fa-info-circle fa-lg ctrl6Help"></i></a></li>
+                    </ul>
+                    <div id="filterByConditions">
+                        <div id="aggregateFilter" style="display:none">
+                            <div class="columnContainerAgg">
+                                <div class="columnAgg" id="treecolumnAgg">
+                                    <h2>Select a field from </h2><span id="treePathAgg"></span>
+                                    <br/>
+                                    <!-- <div id="modeToggle"></div> -->
+                                    <br/><i class="fa fa-search fa-lg"></i>
+                                    <input type="search" placeholder="Search fields" id="jsTreeRow_qAgg" /><span id="fieldCtrlHelpAgg" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <br/>
+                                    <br/>
+                                    <div id="treesContainerAgg">
+                                        <div id="aggjsTreeRow"></div>
+                                    </div>
+                                    <span id="noResultsFoundAgg">No results found!<br/></span>
+                                    <br/>
+                                    <button id="goBackTreeAgg">Go back</button>
+                                    <button id="clearFieldAgg">Clear</button><br/>
+                                    <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                                    <span id="fieldBtnHelpAgg" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <div style="clear:both"></div>
+                                    <div style="width:100%; text-align:center">
+                                        <div class="filterMode" style="display:none">
+                                            <button class="stdFilter">Non-Aggregate</button>
+                                            <button class="grpFilter notSelected">Aggregate</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnAgg disabled" id="condcolumn6Agg">
+                                    <form>
+                                        <!-- order by asc/desc -->
+                                        <!-- nulls first/last -->
+                                        <h2>Select an aggregate function</h2>
+                                        <br/>
+                                        <br/>
+                                        <div id="aggregateTreeAgg"></div>
+                                        <div id="noAggFuncsAgg" style="display:none">No applicable functions.
+                                            <br/>Please select a different field.</div>
+                                    </form>
+                                </div>
+                                <div class="columnAgg disabled" id="condcolumnAgg">
+                                    <h2>Choose an operator</h2>
+                                    <br/>
+                                    <br/>
+                                    <div id="conditionTreeAgg"></div>
+                                </div>
+                                <div class="columnAgg disabled" id="valcolumnAgg">
+                                    <h2>Enter a value</h2>
+                                    <br/>
+                                    <br/>
+                                    <input class="filterValueAgg" type="text" />
+                                    <input class="filterValueAgg" type="checkbox" style="display:none" />
+                                    <input class="filterValueAgg" id="spinnerAgg" style="display:none" />
+                                    <input class="filterValueAgg" id="datepickerAgg" style="display:none" />
+                                    <div id="datepickerDivAgg" style="display:none">
+                                        <br/> Or select a special date:
+                                        <br/>
+                                        <br/>
+                                        <select class="specialDateAgg">
+                                            <option></option>
+                                            <option value="YESTERDAY">Yesterday</option>
+                                            <option value="TODAY">Today</option>
+                                            <option value="LAST_WEEK">Last Week</option>
+                                            <option value="THIS_WEEK">This Week</option>
+                                            <option value="NEXT_WEEK">Next Week</option>
+                                            <option value="LAST_MONTH">Last Month</option>
+                                            <option value="THIS_MONTH">This Month</option>
+                                            <option value="NEXT_MONTH">Next Month</option>
+                                            <option value="LAST_90_DAYS">Last 90 Days</option>
+                                            <option value="NEXT_90_DAYS">Next 90 Days</option>
+                                            <option value="LAST_N_DAYS">Last N Days</option>
+                                            <option value="NEXT_N_DAYS">Next N Days</option>
+                                            <option value="LAST_QUARTER">Last Quarter</option>
+                                            <option value="THIS_QUARTER">This Quarter</option>
+                                            <option value="NEXT_QUARTER">Next Quarter</option>
+                                            <option value="LAST_N_QUARTERS">Last N Quarters</option>
+                                            <option value="NEXT_N_QUARTERS">Next N Quarters</option>
+                                            <option value="LAST_YEAR">Last Year</option>
+                                            <option value="THIS_YEAR">This Year</option>
+                                            <option value="NEXT_YEAR">Next Year</option>
+                                            <option value="LAST_N_YEARS">Last N Years</option>
+                                            <option value="NEXT_N_YEARS">Next N Years</option>
+                                            <option value="LAST_FISCAL_QUARTER">Last Fiscal Quarter</option>
+                                            <option value="THIS_FISCAL_QUARTER">This Fiscal Quarter</option>
+                                            <option value="NEXT_FISCAL_QUARTER">Next Fiscal Quarter</option>
+                                            <option value="LAST_N_FISCAL_QUARTERS">Last N Fiscal Quarters</option>
+                                            <option value="NEXT_N_FISCAL_QUARTERS">Next N Fiscal Quarters</option>
+                                            <option value="LAST_FISCAL_YEAR">Last Fiscal Year</option>
+                                            <option value="THIS_FISCAL_YEAR">This Fiscal Year</option>
+                                            <option value="NEXT_FISCAL_YEAR">Next Fiscal Year</option>
+                                            <option value="LAST_N_FISCAL_YEARS">Last N Fiscal Years</option>
+                                            <option value="NEXT_N_FISCAL_YEARS">Next N Fiscal Years</option>
+                                        </select>
+                                        <br/>
+                                        <br/>
+                                        <div id="N_inputAgg" style="display:none">
+                                            Enter a number:
+                                            <br/>
+                                            <input type="number" style="width:100px" />
+                                        </div>
+                                    </div>
+                                    <div class="filterValueAgg picklist">
+                                        <input type="hidden" id="picklistAgg" />
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <span id="filterNoteAgg"><i class="fa fa-lg fa-bullhorn"></i>
+                                <span id="filterTypeAgg"></span></span>
+                                </div>
+                                <input type="button" id="addConditionAgg" value="Add Condition" style="float:right;margin-bottom:10px" />
+                                <br/>
+                                <br/>
+                            </div>
+                            <div style="clear:both"></div>
+                            <!-- <div style="clear:both"></div><br/> -->
+                            <div style="height:1px;border-top:1px solid #D9DFE2;"></div>
+                            <br/>
+                            <h2>Your aggregate conditions</h2><i id="condHelpAgg" class="fa fa-question-circle fa-lg"></i>
+                            <br/>
+                            <br/>
+                            <div class="conditionsAgg">
+                                <div class="table">
+                                    <div class="item">
+                                        <div class="num">#</div>
+                                        <div class="fieldname">Field Name</div>
+                                        <div class="operator">Operator</div>
+                                        <div class="value">Value</div>
+                                        <div class="actions">Actions</div>
+                                    </div>
+                                </div>
+                                <div style="display:none" class="noconds">No added conditions yet. Create one above!</div>
+                            </div>
+                            <br/>
+                            <div class="condFilterSpanAgg"><span class="condText">Condition Filtering Pattern</span><i id="filterHelpAgg" class="fa fa-question-circle fa-lg"></i>
+                                <input type="text" id="conditionFormatAgg" disabled="disabled" />
+                                <button id="editSaveCondPtrnAgg">Edit</button>
+                                <button id="cancelPtrnEditAgg" style="display:none">Cancel</button>
+                            </div>
+                        </div>
+                        <div id="nonAggregateFilter">
+                            <div class="columnContainer">
+                                <div class="column" id="treecolumn">
+                                    <h2>Select a field from </h2><span id="treePath"></span>
+                                    <br/>
+                                    <!-- <div id="modeToggle"></div> -->
+                                    <br/><i class="fa fa-search fa-lg"></i>
+                                    <input type="search" placeholder="Search fields" id="jsTreeRow_q" /><span id="fieldCtrlHelp" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <br/>
+                                    <br/>
+                                    <div id="treesContainer">
+                                        <div id="jsTreeRow"></div>
+                                    </div>
+                                    <span id="noResultsFound">No results found!<br/></span>
+                                    <br/>
+                                    <button id="goBackTree">Go back</button>
+                                    <button id="clearField">Clear</button><br/>
+                                    <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                                    <span id="fieldBtnHelp" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <div style="clear:both"></div>
+                                    <div style="width:100%; text-align:center">
+                                        <div class="filterMode" style="display:none">
+                                            <button class="stdFilter">Non-Aggregate</button>
+                                            <button class="grpFilter notSelected">Aggregate</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column disabled" id="condcolumn">
+                                    <h2>Choose an operator</h2>
+                                    <br/>
+                                    <br/>
+                                    <div id="conditionTree"></div>
+                                </div>
+                                <div class="column disabled" id="valcolumn">
+                                    <h2>Enter a value</h2>
+                                    <br/>
+                                    <br/>
+                                    <input class="filterValue" type="text" />
+                                    <input class="filterValue" type="checkbox" style="display:none" />
+                                    <input class="filterValue" id="spinner" style="display:none" />
+                                    <input class="filterValue" id="datepicker" style="display:none" />
+                                    <div id="datepickerDiv" style="display:none">
+                                        <br/> Or select a special date:
+                                        <br/>
+                                        <br/>
+                                        <select class="specialDate">
+                                            <option></option>
+                                            <option value="YESTERDAY">Yesterday</option>
+                                            <option value="TODAY">Today</option>
+                                            <option value="LAST_WEEK">Last Week</option>
+                                            <option value="THIS_WEEK">This Week</option>
+                                            <option value="NEXT_WEEK">Next Week</option>
+                                            <option value="LAST_MONTH">Last Month</option>
+                                            <option value="THIS_MONTH">This Month</option>
+                                            <option value="NEXT_MONTH">Next Month</option>
+                                            <option value="LAST_90_DAYS">Last 90 Days</option>
+                                            <option value="NEXT_90_DAYS">Next 90 Days</option>
+                                            <option value="LAST_N_DAYS">Last N Days</option>
+                                            <option value="NEXT_N_DAYS">Next N Days</option>
+                                            <option value="LAST_QUARTER">Last Quarter</option>
+                                            <option value="THIS_QUARTER">This Quarter</option>
+                                            <option value="NEXT_QUARTER">Next Quarter</option>
+                                            <option value="LAST_N_QUARTERS">Last N Quarters</option>
+                                            <option value="NEXT_N_QUARTERS">Next N Quarters</option>
+                                            <option value="LAST_YEAR">Last Year</option>
+                                            <option value="THIS_YEAR">This Year</option>
+                                            <option value="NEXT_YEAR">Next Year</option>
+                                            <option value="LAST_N_YEARS">Last N Years</option>
+                                            <option value="NEXT_N_YEARS">Next N Years</option>
+                                            <option value="LAST_FISCAL_QUARTER">Last Fiscal Quarter</option>
+                                            <option value="THIS_FISCAL_QUARTER">This Fiscal Quarter</option>
+                                            <option value="NEXT_FISCAL_QUARTER">Next Fiscal Quarter</option>
+                                            <option value="LAST_N_FISCAL_QUARTERS">Last N Fiscal Quarters</option>
+                                            <option value="NEXT_N_FISCAL_QUARTERS">Next N Fiscal Quarters</option>
+                                            <option value="LAST_FISCAL_YEAR">Last Fiscal Year</option>
+                                            <option value="THIS_FISCAL_YEAR">This Fiscal Year</option>
+                                            <option value="NEXT_FISCAL_YEAR">Next Fiscal Year</option>
+                                            <option value="LAST_N_FISCAL_YEARS">Last N Fiscal Years</option>
+                                            <option value="NEXT_N_FISCAL_YEARS">Next N Fiscal Years</option>
+                                        </select>
+                                        <br/>
+                                        <br/>
+                                        <div id="N_input" style="display:none">
+                                            Enter a number:
+                                            <br/>
+                                            <input type="number" style="width:100px" />
+                                        </div>
+                                    </div>
+                                    <div class="filterValue picklist">
+                                        <input type="hidden" id="picklist" />
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <span id="filterNote"><i class="fa fa-lg fa-bullhorn"></i>
+                                                        <span id="filterType"></span></span>
+                                </div>
+                                <input type="button" id="addCondition" value="Add Condition" style="float:right;margin-bottom:10px" />
+                                <br/>
+                                <br/>
+                            </div>
+                            <div style="clear:both"></div>
+                            <!-- <div style="clear:both"></div><br/> -->
+                            <div style="height:1px;border-top:1px solid #D9DFE2;"></div>
+                            <br/>
+                            <h2>Your conditions</h2><i id="condHelp" class="fa fa-question-circle fa-lg"></i>
+                            <br/>
+                            <br/>
+                            <div class="conditions">
+                                <div class="table">
+                                    <div class="item">
+                                        <div class="num">#</div>
+                                        <div class="fieldname">Field Name</div>
+                                        <div class="operator">Operator</div>
+                                        <div class="value">Value</div>
+                                        <div class="actions">Actions</div>
+                                    </div>
+                                </div>
+                                <div style="display:none" class="noconds">No added conditions yet. Create one above!</div>
+                            </div>
+                            <br/>
+                            <div class="condFilterSpan"><span class="condText">Condition Filtering Pattern</span><i id="filterHelp" class="fa fa-question-circle fa-lg"></i>
+                                <input type="text" id="conditionFormat" disabled="disabled" />
+                                <button id="editSaveCondPtrn">Edit</button>
+                                <button id="cancelPtrnEdit" style="display:none">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="grpResultSortOrder">
+                        <div id="ordAggFuncs">
+                            <div class="columnContainer6">
+                                <div class="column6" id="treecolumn6">
+                                    <h2>Select a field from </h2><span id="treePath6"></span>
+                                    <br/>
+                                    <br/>
+                                    <i class="fa fa-search fa-lg"></i>
+                                    <input type="search" placeholder="Search fields" id="jsTreeRow_q6" /> <span id="fieldCtrlHelp6" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <br/>
+                                    <br/>
+                                    <div id="treesContainer6">
+                                        <div id="6jsTreeRow"></div>
+                                    </div>
+                                    <span id="noResultsFound6">No results found!<br/></span>
+                                    <br/>
+                                    <button id="goBackTree6">Go back</button>
+                                    <button id="clearField6">Clear</button><br/>
+                                    <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                                    <!-- <span id="fieldBtnHelp2" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span> -->
+                                </div>
+                                <div class="column6 disabled" id="condcolumn6">
+                                    <form>
+                                        <!-- order by asc/desc -->
+                                        <!-- nulls first/last -->
+                                        <h2>Select an aggregate function</h2>
+                                        <br/>
+                                        <br/>
+                                        <div id="aggregateTree6"></div>
+                                        <div id="noAggFuncs6" style="display:none">No applicable functions.
+                                            <br/>Please select a different field.</div>
+                                    </form>
+                                </div>
+                                <div class="column6 disabled" id="condcolumn66">
+                                    <form>
+                                        <!-- order by asc/desc -->
+                                        <!-- nulls first/last -->
+                                        <h2>Configure</h2>
+                                        <br/>
+                                        <br/>
+                                        <h3>Sort Order</h3>
+                                        <br/>
+                                        <input type="radio" required="required" name="sortorder" id="asc6" value="asc" />
+                                        <label for="asc6">Ascending</label>
+                                        <br/>
+                                        <input type="radio" required="required" name="sortorder" id="desc6" value="desc" />
+                                        <label for="desc6">Descending</label>
+                                        <br/>
+                                        <br/>
+                                        <h3>Empty Field Location</h3>
+                                        <br/>
+                                        <input type="radio" name="null_loc" id="first6" value="first" />
+                                        <label for="first6">Beginning</label>
+                                        <br/>
+                                        <input type="radio" name="null_loc" id="last6" value="last" />
+                                        <label for="last6">End</label>
+                                        <br/>
+                                        <br/>
+                                        <input type="submit" id="addCondition6" value="Add Order" />
+                                    </form>
+                                </div>
+                                <div class="column6" id="valcolumn6">
+                                    <h2>Your selected fields</h2><i id="aggHelp" class="fa fa-question-circle fa-lg"></i>
+                                    <button id="aggFldClr">Clear</button>
+                                    <br/>
+                                    <br/>
+                                    <div class="droppable6 ui-state-default">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </div>
+                                    <ul id="sortable6">
+                                        <li class="ui-state-default" id="defaultsortable6">No fields added!</li>
+                                    </ul>
+                                    <div class="droppable6 ui-state-default">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </div>
+                                    <!--    <div id="droppable" class="ui-widget-header">
+                                                     <p>Drop here</p>
+                                                     </div> -->
+                                </div>
+                            </div>
+                            <div id="groupedFlds" style="display:none"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="resultSortOrder">
+                        <div class="columnContainer2">
+                            <div class="column2" id="treecolumn2">
+                                <h2>Select a field from </h2><span id="treePath2"></span>
+                                <br/>
+                                <br/>
+                                <i class="fa fa-search fa-lg"></i>
+                                <input type="search" placeholder="Search fields" id="jsTreeRow_q2" /> <span id="fieldCtrlHelp2" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                <br/>
+                                <br/>
+                                <div id="treesContainer2">
+                                    <div id="2jsTreeRow"></div>
+                                </div>
+                                <span id="noResultsFound2">No results found!<br/></span>
+                                <br/>
+                                <button id="goBackTree2">Go back</button>
+                                <button id="clearField2">Clear</button><br/>
+                                <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                                <!-- <span id="fieldBtnHelp2" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span> -->
+                            </div>
+                            <div class="column2 disabled" id="condcolumn2">
+                                <form>
+                                    <!-- order by asc/desc -->
+                                    <!-- nulls first/last -->
+                                    <h2>Configure</h2>
+                                    <br/>
+                                    <br/>
+                                    <h3>Sort Order</h3>
+                                    <br/>
+                                    <input type="radio" required="required" name="sortorder" id="asc" value="asc" />
+                                    <label for="asc">Ascending</label>
+                                    <br/>
+                                    <input type="radio" required="required" name="sortorder" id="desc" value="desc" />
+                                    <label for="desc">Descending</label>
+                                    <br/>
+                                    <br/>
+                                    <h3>Empty Field Location</h3>
+                                    <br/>
+                                    <input type="radio" name="null_loc" id="first" value="first" />
+                                    <label for="first">Beginning</label>
+                                    <br/>
+                                    <input type="radio" name="null_loc" id="last" value="last" />
+                                    <label for="last">End</label>
+                                    <br/>
+                                    <br/>
+                                    <input type="submit" id="addCondition2" value="Add Order" />
+                                </form>
+                            </div>
+                            <div class="column2 disabled" id="valcolumn2">
+                                <h2>Your sort order</h2><i id="sortHelp" class="fa fa-question-circle fa-lg"></i>
+                                <button id="sortOrderClear">Clear</button>
+                                <br/>
+                                <br/>
+                                <div class="droppable ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                                <ul id="sortable">
+                                    <li class="ui-state-default" id="defaultsortable">No fields added!</li>
+                                </ul>
+                                <div class="droppable ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                                <!--    <div id="droppable" class="ui-widget-header">
+                         <p>Drop here</p>
+                         </div> -->
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="fieldsToView">
+                        <div class="columnContainer3">
+                            <div class="column3" id="treecolumn3">
+                                <h2>Select a field from </h2><span id="treePath3"></span>
+                                <br/>
+                                <br/>
+                                <i class="fa fa-search fa-lg"></i>
+                                <input type="search" placeholder="Search fields" id="jsTreeRow_q3" /> <span id="fieldCtrlHelp3" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                <br/>
+                                <br/>
+                                <div id="treesContainer3">
+                                    <div id="3jsTreeRow"></div>
+                                </div>
+                                <span id="noResultsFound3">No results found!<br/></span>
+                                <br/>
+                                <button id="goBackTree3">Go back</button>
+                                <button id="clearField3">Clear</button><br/>
+                                <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                            </div>
+                            <div class="column3 disabled" id="valcolumn3">
+                                <h2>Your selected fields</h2><i id="sortHelp3" class="fa fa-question-circle fa-lg"></i>
+                                <button id="selFldsClear">Clear</button>
+                                <br/>
+                                <br/>
+                                <div class="droppable3 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                                <ul id="sortable3">
+                                    <li class="ui-state-default" id="defaultsortable3">No fields added!</li>
+                                </ul>
+                                <div class="droppable3 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="grpByFlds" class="expert groupby">
+                        <div class="columnContainer4">
+                            <div class="column4" id="treecolumn4">
+                                <h2>Select a field from </h2><span id="treePath4"></span>
+                                <br/>
+                                <br/>
+                                <i class="fa fa-search fa-lg"></i>
+                                <input type="search" placeholder="Search fields" id="jsTreeRow_q4" /> <span id="fieldCtrlHelp4" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                <br/>
+                                <br/>
+                                <div id="treesContainer4">
+                                    <div id="4jsTreeRow"></div>
+                                </div>
+                                <span id="noResultsFound4">No results found!<br/></span>
+                                <br/>
+                                <button id="goBackTree4">Go back</button>
+                                <button id="clearField4">Clear</button><br/>
+                                <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                            </div>
+                            <div class="column4 disabled" id="valcolumn4">
+                                <h2>Your selected fields</h2><i id="sortHelp4" class="fa fa-question-circle fa-lg"></i>
+                                <button id="grpFldsClr">Clear</button>
+                                <br/>
+                                <br/>
+                                <div class="droppable4 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                                <ul id="sortable4">
+                                    <li class="ui-state-default" id="defaultsortable4">No fields added!</li>
+                                </ul>
+                                <div class="droppable4 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <input type="radio" name="grouping" id="regularGroup" checked="checked" selected="selected" />
+                        <label for="regularGroup">Don't Show Subtotals</label>
+                        <br/>
+                        <input type="radio" name="grouping" id="rollup" />
+                        <label for="rollup">Show Hierarchial Subtotals</label>
+                        <br/>
+                        <input type="radio" name="grouping" id="cube" />
+                        <label for="cube">Show Combinatorical Subtotals</label>
+                        <br/>
+                        <span id="grpOptHelp" class="help" style="top:4px; float:none"><i class="fa fa-info-circle fa-lg" style="margin-right:5px"></i>About these options</span>
+                    </div>
+                    <div id="addAggFunc" class="expert">
+                        <div id="aggFuncs">
+                            <div class="columnContainer5">
+                                <div class="column5" id="treecolumn5">
+                                    <h2>Select a field from </h2><span id="treePath5"></span>
+                                    <br/>
+                                    <br/>
+                                    <i class="fa fa-search fa-lg"></i>
+                                    <input type="search" placeholder="Search fields" id="jsTreeRow_q5" /> <span id="fieldCtrlHelp5" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                    <br/>
+                                    <br/>
+                                    <div id="treesContainer5">
+                                        <div id="5jsTreeRow"></div>
+                                    </div>
+                                    <span id="noResultsFound5">No results found!<br/></span>
+                                    <br/>
+                                    <button id="goBackTree5">Go back</button>
+                                    <button id="clearField5">Clear</button><br/>
+                                    <div class='polyexplwrap'>Polymorphic field selected.<span class='polyexpl'>(What's this?)</span><br/>Common fields of all possible objects are displayed.</div>
+                                    <!-- <span id="fieldBtnHelp2" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span> -->
+                                </div>
+                                <div class="column5 disabled" id="condcolumn5">
+                                    <form>
+                                        <!-- order by asc/desc -->
+                                        <!-- nulls first/last -->
+                                        <h2>Select an aggregate function</h2>
+                                        <br/>
+                                        <br/>
+                                        <div id="aggregateTree"></div>
+                                        <div id="noAggFuncs" style="display:none">No applicable functions.
+                                            <br/>Please select a different field.</div>
+                                    </form>
+                                </div>
+                                <div class="column5 disabled" id="valcolumn5">
+                                    <h2>Your selected fields</h2><i id="aggHelp" class="fa fa-question-circle fa-lg"></i>
+                                    <button id="aggFldClr">Clear</button>
+                                    <br/>
+                                    <br/>
+                                    <div class="droppable5 ui-state-default">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </div>
+                                    <ul id="sortable5">
+                                        <li class="ui-state-default" id="defaultsortable5">No fields added!</li>
+                                    </ul>
+                                    <div class="droppable5 ui-state-default">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </div>
+                                    <!--    <div id="droppable" class="ui-widget-header">
+                             <p>Drop here</p>
+                             </div> -->
+                                </div>
+                            </div>
+                            <div id="groupedFlds" style="display:none"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="advancedConf" class="expert">
+                        Query Scope:
+                        <select name="queryScope" id="queryScope">
+                            <option value="" selected="">Default</option>
+                            <option value="Everything">Everything</option>
+                            <option value="Mine">Mine</option>
+                            <option value="Queue">Queue</option>
+                            <option value="Delegated">Delegated</option>
+                            <option value="MyTerritory">My Territory</option>
+                            <option value="MyTeamTerritory">My Team Territory</option>
+                            <option value="Team">Team</option>
+                        </select> <i id="scopeTooltip" class="fa fa-question"></i>
+                        <br/>
+                        <label for="queryAllRows">Query All Rows:</label>
+                        <input type="checkbox" id="queryAllRows" /> <i id='queryAllTooltip' class="fa fa-question"></i>
+                        <br/>
+                        <span class="queryAllOptions">
+                            <span style="color:gray; font-size:10px"><i class="fa fa-warning"></i> Filtering by deleted or archived records is not always available and may be automatically disabled.</span>
+                        <br/>
+                        <label for="viewDelRecs">Display Deleted Records:</label>
+                        <input checked="checked" type="checkbox" id="viewDelRecs" /> <i id="delTooltip" class="fa fa-question"></i>
+                        <br/>
+                        <label for="viewArcRecs">Display Archived Records:</label>
+                        <input checked="checked" type="checkbox" id="viewArcRecs" /> <i id="arcTooltip" class="fa fa-question"></i>
+                        <br/>
+                        <label for="viewRegRecs">Display Standard Records:</label>
+                        <input checked="checked" type="checkbox" id="viewRegRecs" /> <i id="stdTooltip" class="fa fa-question"></i>
+                        </span>
+                    </div>
+                    <div id="viewGenQuery" class="expert">
+                        <textarea id="generatedQuery" readonly="readonly"></textarea>
+                        <button id="selectQuery">Select All</button>
+                        <span style="color:gray"><i class="fa fa-info-circle"></i> In newer browsers, clicking the button will also copy the text to your clipboard.</span>
+                    </div>
+                </div>
+            </div>
+            <span class="tooltip"></span>
+            <!-- <apex:outputLabel value="List View:" for="lstViews"/> -->
+            <!-- <apex:actionSupport event="onchange" rerender="lstViews"/> -->
+            <!-- </apex:selectList> -->
+            <!-- </apex:pageblockSectionItem> -->
+            <!-- <apex:pageblockSectionItem > -->
+            <!-- <apex:selectList value="{!lstView}" size="1" id="lstViews" disabled="{!ISNULL(objName)}"  styleClass="ListBox"> -->
+            <!-- <apex:selectOptions value="{!ListViews}"/> -->
+            <!-- </apex:selectList> -->
+            <!-- </apex:pageblockSectionItem> -->
+            <!-- </apex:pageBlockSection> -->
+            <div id="gridContainer">
+                <table id="pdata"></table>
+                <div id="gridPager"></div>
+            </div>
+            <c:cGridFooter />
+            <!-- c:cGridFooter isBetaExcel="{ ! isBetaExcel}" /-->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

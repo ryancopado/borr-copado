@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Submittal_1__c.Project_Name__c</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>CHILD_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Date_Received__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Requested_Response_Date__c</field>
+    </columns>
+    <columns>
+        <field>Submittal_1__c.Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Submittal_1__c.Project_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Victus Solar - Warren Site C</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Warren C Submittal Log</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Request_for_Information_RFI__c$Submittal_1__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Request_for_Information_RFI__c.Clarification_Requested_Response_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

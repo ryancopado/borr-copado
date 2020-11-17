@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>Collect_Starting_Task_ID</name>
+        <label>Collect Starting Task ID</label>
+        <locationX>175</locationX>
+        <locationY>318</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentRecord</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StartingTaskID</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Current_Task</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>The Customer Number field is only set by the CTI System.</description>
+        <name>Is_Customer_Number_NULL</name>
+        <label>Is Customer Number NULL?</label>
+        <locationX>450</locationX>
+        <locationY>534</locationY>
+        <defaultConnector>
+            <targetReference>Get_Service_Resource_w_Customer_Number</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not NULL</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Number_is_NULL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Current_Task.NVMContactWorld__Customer_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>NULL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks to see if SR Match has been found</description>
+        <name>Match_found</name>
+        <label>Match found?</label>
+        <locationX>856</locationX>
+        <locationY>531</locationY>
+        <defaultConnector>
+            <targetReference>Get_Secondary_Number</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Primary Number Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Match_Found1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Service_Resource_w_Customer_Number</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Starting_Task</targetReference>
+            </connector>
+            <label>Match Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks the secondary phone on the Service Resource</description>
+        <name>Secondary_Match_Found</name>
+        <label>Secondary Match Found?</label>
+        <locationX>1086</locationX>
+        <locationY>846</locationY>
+        <defaultConnector>
+            <targetReference>No_match_set_as_Call</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Secondary Number Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Secondary_Match_Found1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Secondary_Number</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_with_Secondary_Match</targetReference>
+            </connector>
+            <label>Secondary Match Found</label>
+        </rules>
+    </decisions>
+    <description>Uses a PB to start, the looks up the Service Resource and populates it on the CTI created phone call task.</description>
+    <interviewLabel>CTI - Populate Service Resource - from PB {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CTI - Populate Service Resource - from PB</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Current_Task</name>
+        <label>Get Current Task</label>
+        <locationX>176</locationX>
+        <locationY>532</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Customer_Number_NULL</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>StartingTaskID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Secondary_Number</name>
+        <label>Get Secondary Number SR</label>
+        <locationX>867</locationX>
+        <locationY>705</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Secondary_Match_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Secondary_Phone__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Task.NVMContactWorld__Customer_Number__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>This gets the Service Resource with a Primary Number that matches the Service Resource</description>
+        <name>Get_Service_Resource_w_Customer_Number</name>
+        <label>Get  Primary Number SR</label>
+        <locationX>695</locationX>
+        <locationY>529</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Match_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Primary_Phone__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Task.NVMContactWorld__Customer_Number__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceResource</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>No_match_set_as_Call</name>
+        <label>No match, set as Call</label>
+        <locationX>873</locationX>
+        <locationY>1005</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>StartingTaskID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Call</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Records_with_Secondary_Match</name>
+        <label>Update Records with Secondary Match</label>
+        <locationX>1245</locationX>
+        <locationY>538</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>StartingTaskID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Service_Resource__c</field>
+            <value>
+                <elementReference>Get_Secondary_Number.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Call</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Starting_Task</name>
+        <label>Update Starting Task with Primary Match</label>
+        <locationX>1092</locationX>
+        <locationY>529</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>StartingTaskID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Service_Resource__c</field>
+            <value>
+                <elementReference>Get_Service_Resource_w_Customer_Number.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Call</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Collect_Starting_Task_ID</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The inbound caller&apos;s phone number, what is used to lookup the Service Resource.</description>
+        <name>CustomerNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>The Task that started the flow and will be updated is a matching Service Resource is found.</description>
+        <name>StartingTaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Inventory Management</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Inventory_Management</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>ProductRequest</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>ReturnOrder</sobjectType>
+    </queueSobject>
+</Queue>

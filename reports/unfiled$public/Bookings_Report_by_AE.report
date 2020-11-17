@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Site__c.Site_State__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Kickoff_Date_editable__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Opportunity.Booked_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_OPP_AMOUNT</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Opportunity.Assigned_Apps_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>kevin gebo,ben foss-michaelis,john innes,nawaf hassan,shaun o&apos;leary</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>site 2,site 3,site 4,site b,site c,site abandoned,Map 131 Lot 1-3 (South),esd,Map 251 Lot 7 (South)</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Opportunity.Assigned_Apps_Engineer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Bookings Report by AE</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site__c@Site__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Site__c.Project_Kickoff_Date_editable__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

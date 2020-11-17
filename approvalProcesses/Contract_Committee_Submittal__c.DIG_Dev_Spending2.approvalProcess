@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Internal</submitter>
+        <type>group</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>areed@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>dmcdonell@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>smgoldberg@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>OR(
+AND(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;Yes&quot;) ,
+Total_Costs_to_Date__c +  Requested_amount_to_spend__c  &gt; 180000,
+Total_Costs_to_Date__c + Requested_amount_to_spend__c &lt; 400000
+),
+AND
+(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;No&quot;),
+Total_Costs_to_Date__c + Requested_amount_to_spend__c &gt; 125000,
+Total_Costs_to_Date__c + Requested_amount_to_spend__c &lt; 300000
+ )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Spending Requests &gt; $125k Total Per Project ($180K for stacked sites) and &lt;= $300k Total Per Project ($400k for stacked sites)</label>
+        <name>Spending_Requests_125k_Total_Per_Project_180K_for_stacked_sites_and_300k_Total_P</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>dmcdonell@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>smgoldberg@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>OR(
+AND(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;Yes&quot;) ,
+Total_Costs_to_Date__c + Requested_amount_to_spend__c  &gt; 400000
+),
+AND
+(
+ISPICKVAL(Opportunity__r.Stacked_Site__c, &quot;No&quot;),
+Total_Costs_to_Date__c + Requested_amount_to_spend__c  &gt; 300000
+)
+)</formula>
+        </entryCriteria>
+        <label>Approved Market/Vertical Spending Requests &gt; $300k (or 400k for stacked sites) Total Per Project</label>
+        <name>Approved_Market_Vertical_Spending_Requests_300k_or_400k</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New,Rejected,Recalled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Committee_Submittal__c.RecordType</field>
+            <operation>equals</operation>
+            <value>DIG Development Spending</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Contract_Committee_Submittal_record_approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Contract_Committee_Submittal_record_rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Pending_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>DIG Dev Spending</label>
+    <processOrder>16</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

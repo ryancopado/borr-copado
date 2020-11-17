@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Employee Goal Tracker</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employee Goal Trackers</value>
+    </caseValues>
+    <fields>
+        <help><!-- a check indicates that the employee is an active SF user/Employee --></help>
+        <label><!-- Active Employee --></label>
+        <name>ActiveEmployee__c</name>
+    </fields>
+    <fields>
+        <help><!-- date stamps when manager approved the record --></help>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays employee name SF user ID --></help>
+        <label><!-- Employee Name User ID --></label>
+        <name>EmployeeNameUserID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in reporting --></help>
+        <label><!-- Employee Contact ID --></label>
+        <name>Employee_Contact_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- link to Employees Contact record within Borrego Solar Employee Account --></help>
+        <label><!-- Employee --></label>
+        <name>Employee_Contact__c</name>
+        <relationshipLabel><!-- Employee Goal Trackers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Employee Name --></label>
+        <name>Employee_Name__c</name>
+        <relationshipLabel><!-- Employee Goal Trackers (Employee Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Exclude from Scoreboard --></label>
+        <name>Exclude_from_Scoreboard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to support Employee Goal Tracker Scoreboard --></help>
+        <label><!-- Executive Leader --></label>
+        <name>Executive_Leader__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check off for new employees. Only Admins can see this field. Initiates time based WFs for flipping the status to New every quarter and send email reminder out to update your goals. --></help>
+        <label><!-- Initiate Time Based WF --></label>
+        <name>Initiate_Time_Based_WF__c</name>
+    </fields>
+    <fields>
+        <help><!-- current manager of the employee, auto updated from employee contact record --></help>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- Employee Goal Trackers (Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- counts # of Developmental Goals employee entered for Q1 --></help>
+        <label><!-- Q1 Developmental Goal Count --></label>
+        <name>Q1DevelopmentalGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of strategic Goals employee entered for Q1 --></help>
+        <label><!-- Q1 Strategic Goal Count --></label>
+        <name>Q1StrategicGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts the number of approved goals for that quarter --></help>
+        <label><!-- Q1 Approved Goals --></label>
+        <name>Q1_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter --></help>
+        <label><!-- Q1 Approved? --></label>
+        <name>Q1_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts total approved goals for that quarter --></help>
+        <label><!-- Q1 Total Approved Goals --></label>
+        <name>Q1_Total_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the date for Q1 --></help>
+        <label><!-- Q1 --></label>
+        <name>Q1__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of Developmental Goals employee entered for Q2 --></help>
+        <label><!-- Q2 Developmental Goal Count --></label>
+        <name>Q2DevelopmentalGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of strategic Goals employee entered for Q2 --></help>
+        <label><!-- Q2 Strategic Goal Count --></label>
+        <name>Q2StrategicGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts the number of approved goals for that quarter --></help>
+        <label><!-- Q2 Approved Goals --></label>
+        <name>Q2_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter --></help>
+        <label><!-- Q2 Approved? --></label>
+        <name>Q2_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts total approved goals for that quarter --></help>
+        <label><!-- Q2 Total Approved Goals --></label>
+        <name>Q2_Total_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays Q2 --></help>
+        <label><!-- Q2 --></label>
+        <name>Q2__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of Developmental Goals employee entered for Q3 --></help>
+        <label><!-- Q3 Developmental Goal Count --></label>
+        <name>Q3DevelopmentalGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of strategic Goals employee entered for Q3 --></help>
+        <label><!-- Q3 Strategic Goal Count --></label>
+        <name>Q3StrategicGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts the number of approved goals for that quarter --></help>
+        <label><!-- Q3 Approved Goals --></label>
+        <name>Q3_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter --></help>
+        <label><!-- Q3 Approved? --></label>
+        <name>Q3_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts total approved goals for that quarter --></help>
+        <label><!-- Q3 Total Approved Goals --></label>
+        <name>Q3_Total_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays Q3 --></help>
+        <label><!-- Q3 --></label>
+        <name>Q3__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of Developmental Goals employee entered for Q4 --></help>
+        <label><!-- Q4 Developmental Goal Count --></label>
+        <name>Q4DevelopmentalGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- counts # of strategic Goals employee entered for Q4 --></help>
+        <label><!-- Q4 Strategic Goal Count --></label>
+        <name>Q4StrategicGoalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts the number of approved goals for that quarter --></help>
+        <label><!-- Q4 Approved Goals --></label>
+        <name>Q4_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter --></help>
+        <label><!-- Q4 Approved? --></label>
+        <name>Q4_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Counts total approved goals for that quarter --></help>
+        <label><!-- Q4 Total Approved Goals --></label>
+        <name>Q4_Total_Approved_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays Q4 --></help>
+        <label><!-- Q4 --></label>
+        <name>Q4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for New Goals</masterLabel>
+            <translation><!-- Ready for New Goals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Shows year of goal Tracker. Used in Reporting --></help>
+        <label><!-- Year --></label>
+        <name>Year1__c</name>
+    </fields>
+    <nameFieldLabel>Employee Goal Tracker Name</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Name of Employee Development Tracker cannot be changed. Please contact an administrator with any exceptions. --></errorMessage>
+        <name>Prevent_Name_Change</name>
+    </validationRules>
+</CustomObjectTranslation>

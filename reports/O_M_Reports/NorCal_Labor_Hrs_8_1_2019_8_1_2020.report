@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Branch__c</field>
+    </columns>
+    <columns>
+        <field>Case$Project__c</field>
+    </columns>
+    <columns>
+        <field>Case$RecordType</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case$TotalLaborHoursfromWOs__c</field>
+    </columns>
+    <description>This is a report to show labor hours by case type in a given time period</description>
+    <filter>
+        <criteriaItems>
+            <column>Case$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nor Cal</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>NorCal Labor Hrs 8/1/2019 - 8/1/2020</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Case_with_Work_Order_and_Service_Appointment__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Case$Case_Start_Date__c</dateColumn>
+        <endDate>2020-08-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-08-01</startDate>
+    </timeFrameFilter>
+</Report>

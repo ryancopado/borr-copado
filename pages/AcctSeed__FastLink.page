@@ -1,0 +1,12 @@
+<apex:page sidebar="false" showHeader="false" controller="AcctSeed.FastLinkHandler" lightningStyleSheets="true">
+    <script type='text/javascript' src='https://cdn.yodlee.com/fastlink/v3/initialize.js'></script>
+    <body>
+    <div id="container-fastlink">
+        <div style="text-align: center;"></div>
+    </div>
+    <script>        
+        window.fastlink.open({!fastLinkProperties}, 'container-fastlink');		
+	</script>
+</body>
+    
+</apex:page>

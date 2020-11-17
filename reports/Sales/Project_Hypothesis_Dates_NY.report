@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_Submitted_for_Approval__c</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_Project_Hypothesis_Approved__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Project Hypothesis Dates - NY</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Contract_Committee_Submittal__c@Contract_Committee_Submittal__c.Opportunity__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contract_Committee_Submittal__c.Date_Submitted_for_Approval__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

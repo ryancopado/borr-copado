@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Employee_Goal_Tracker_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to track Quarterly Check-in goals</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ActiveEmployee__c</fullName>
+        <description>a check indicates that the employee is an active SF user/Employee</description>
+        <externalId>false</externalId>
+        <formula>Employee_Contact__r.Active__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>a check indicates that the employee is an active SF user/Employee</inlineHelpText>
+        <label>Active Employee</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Date__c</fullName>
+        <description>date stamps when manager approved the record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>date stamps when manager approved the record</inlineHelpText>
+        <label>Approval Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EmployeeNameUserID__c</fullName>
+        <description>displays employee name SF user ID</description>
+        <externalId>false</externalId>
+        <formula>Employee_Name__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>displays employee name SF user ID</inlineHelpText>
+        <label>Employee Name User ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Contact_ID__c</fullName>
+        <description>Used in reporting for creating next years EGTs</description>
+        <externalId>false</externalId>
+        <formula>Employee_Contact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Used in reporting</inlineHelpText>
+        <label>Employee Contact ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>link to Employees Contact record within Borrego Solar Employee Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>link to Employees Contact record within Borrego Solar Employee Account</inlineHelpText>
+        <label>Employee</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Employee Goal Trackers</relationshipLabel>
+        <relationshipName>Employee_Goal_Trackers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employee Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Employee_Development_Trackers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_from_Scoreboard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exclude from Scoreboard</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Executive_Leader__c</fullName>
+        <description>Used to support Employee Goal Tracker Scoreboard</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to support Employee Goal Tracker Scoreboard</inlineHelpText>
+        <label>Executive Leader</label>
+        <length>48</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initiate_Time_Based_WF__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, will set off time based workflow triggers to flip the EGD statuses to New at the start of every quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check off for new employees. Only Admins can see this field. Initiates time based WFs for flipping the status to New every quarter and send email reminder out to update your goals.</inlineHelpText>
+        <label>Initiate Time Based WF</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>current manager of the employee, auto updated from employee contact record - updated via LH</description>
+        <externalId>false</externalId>
+        <inlineHelpText>current manager of the employee, auto updated from employee contact record</inlineHelpText>
+        <label>Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Employee_Development_Trackers1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Q1DevelopmentalGoalCount__c</fullName>
+        <description>counts # of Developmental Goals employee entered for Q1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of Developmental Goals employee entered for Q1</inlineHelpText>
+        <label>Q1 Developmental Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q1</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Developmental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q1StrategicGoalCount__c</fullName>
+        <description>counts # of strategic Goals employee entered for Q1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of strategic Goals employee entered for Q1</inlineHelpText>
+        <label>Q1 Strategic Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q1</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Strategic</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q1_Approved_Goals__c</fullName>
+        <description>Counts the number of approved goals for that quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts the number of approved goals for that quarter</inlineHelpText>
+        <label>Q1 Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q1_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(Q1DevelopmentalGoalCount__c &gt;= 1,  Q1StrategicGoalCount__c &gt;=1), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter</inlineHelpText>
+        <label>Q1 Approved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Q1_Total_Approved_Goals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts total approved goals for that quarter</inlineHelpText>
+        <label>Q1 Total Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q1__c</fullName>
+        <description>Used in a WF</description>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(TODAY()),1,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the date for Q1</inlineHelpText>
+        <label>Q1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q2DevelopmentalGoalCount__c</fullName>
+        <description>counts # of Developmental Goals employee entered for Q2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of Developmental Goals employee entered for Q2</inlineHelpText>
+        <label>Q2 Developmental Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q2</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Developmental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q2StrategicGoalCount__c</fullName>
+        <description>counts # of strategic Goals employee entered for Q2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of strategic Goals employee entered for Q2</inlineHelpText>
+        <label>Q2 Strategic Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q2</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Strategic</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q2_Approved_Goals__c</fullName>
+        <description>Counts the number of approved goals for that quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts the number of approved goals for that quarter</inlineHelpText>
+        <label>Q2 Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q2</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q2_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(Q2DevelopmentalGoalCount__c &gt;= 1, Q2StrategicGoalCount__c &gt;=1), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter</inlineHelpText>
+        <label>Q2 Approved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Q2_Total_Approved_Goals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts total approved goals for that quarter</inlineHelpText>
+        <label>Q2 Total Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q2</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q2__c</fullName>
+        <description>used in time based WF</description>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(TODAY()),4,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays Q2</inlineHelpText>
+        <label>Q2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q3DevelopmentalGoalCount__c</fullName>
+        <description>counts # of Developmental Goals employee entered for Q3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of Developmental Goals employee entered for Q3</inlineHelpText>
+        <label>Q3 Developmental Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q3</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Developmental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q3StrategicGoalCount__c</fullName>
+        <description>counts # of strategic Goals employee entered for Q3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of strategic Goals employee entered for Q3</inlineHelpText>
+        <label>Q3 Strategic Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q3</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Strategic</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q3_Approved_Goals__c</fullName>
+        <description>Counts the number of approved goals for that quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts the number of approved goals for that quarter</inlineHelpText>
+        <label>Q3 Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q3</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q3_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(Q3DevelopmentalGoalCount__c &gt;= 1, Q3StrategicGoalCount__c &gt;=1), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter</inlineHelpText>
+        <label>Q3 Approved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Q3_Total_Approved_Goals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts total approved goals for that quarter</inlineHelpText>
+        <label>Q3 Total Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q3</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q3__c</fullName>
+        <description>used in time based WF</description>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(TODAY()),7,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays Q3</inlineHelpText>
+        <label>Q3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q4DevelopmentalGoalCount__c</fullName>
+        <description>counts # of Developmental Goals employee entered for Q4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of Developmental Goals employee entered for Q4</inlineHelpText>
+        <label>Q4 Developmental Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q4</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Developmental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q4StrategicGoalCount__c</fullName>
+        <description>counts # of strategic Goals employee entered for Q4</description>
+        <externalId>false</externalId>
+        <inlineHelpText>counts # of strategic Goals employee entered for Q4</inlineHelpText>
+        <label>Q4 Strategic Goal Count</label>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q4</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Goal_Type__c</field>
+            <operation>equals</operation>
+            <value>Strategic</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q4_Approved_Goals__c</fullName>
+        <description>Counts the number of approved goals for that quarter</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts the number of approved goals for that quarter</inlineHelpText>
+        <label>Q4 Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q4</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q4_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(Q4DevelopmentalGoalCount__c &gt;= 1, Q4StrategicGoalCount__c &gt;=1), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Checked off only if there is at least one approved Strategic and one approved Development goal for that quarter</inlineHelpText>
+        <label>Q4 Approved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Q4_Total_Approved_Goals__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts total approved goals for that quarter</inlineHelpText>
+        <label>Q4 Total Approved Goals</label>
+        <summaryFilterItems>
+            <field>Goals__c.Approval_Date__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Goals__c.Quarter__c</field>
+            <operation>equals</operation>
+            <value>Q4</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Goals__c.EmployeeDevelopmentTracker__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Q4__c</fullName>
+        <description>Used in time based WF</description>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(TODAY()),10,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays Q4</inlineHelpText>
+        <label>Q4</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Ready for New Goals</fullName>
+                    <default>false</default>
+                    <label>Ready for New Goals</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Year1__c</fullName>
+        <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>
+        <description>Static Year field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows year of goal Tracker. Used in Reporting</inlineHelpText>
+        <label>Year</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Employee Goal Tracker</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Manager__c</columns>
+        <columns>Status__c</columns>
+        <columns>Q3_Approved__c</columns>
+        <columns>Q4_Approved__c</columns>
+        <columns>ActiveEmployee__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ActiveEmployee__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Katlyn_L</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Contact__c</columns>
+        <columns>Status__c</columns>
+        <columns>Q1_Approved__c</columns>
+        <columns>Q2_Approved__c</columns>
+        <columns>Q3_Approved__c</columns>
+        <columns>Q4_Approved__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Manager__c</field>
+            <operation>equals</operation>
+            <value>Katlyn Lawver</value>
+        </filters>
+        <label>Katlyn L</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Development_Engineering_Manager</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Update</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Contact__c</columns>
+        <columns>Employee_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Update</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>Salesforce_Administrator</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X2018</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Manager__c</columns>
+        <columns>Status__c</columns>
+        <columns>Q3_Approved__c</columns>
+        <columns>Q4_Approved__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>2018</value>
+        </filters>
+        <label>2018</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>X2019</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Manager__c</columns>
+        <columns>Status__c</columns>
+        <columns>Q1_Approved__c</columns>
+        <columns>Q2_Approved__c</columns>
+        <columns>Q3_Approved__c</columns>
+        <columns>Q4_Approved__c</columns>
+        <columns>ActiveEmployee__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>2019</value>
+        </filters>
+        <filters>
+            <field>ActiveEmployee__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>2019</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>X2020</fullName>
+        <columns>NAME</columns>
+        <columns>ActiveEmployee__c</columns>
+        <columns>Manager__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Year1__c</field>
+            <operation>equals</operation>
+            <value>2020</value>
+        </filters>
+        <label>2020</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Director_of_Applications_Development</roleAndSubordinatesInternal>
+            <roleAndSubordinatesInternal>VP_of_People_Culture</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Employee Development Tracker Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employee Goal Trackers</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Prevent_Name_Change</fullName>
+        <active>true</active>
+        <description>Admins create the EDTs for all employees at the beg of the year. After that the names should not be changed.</description>
+        <errorConditionFormula>AND(
+    $User.Id  &lt;&gt; &quot;00534000009mwV4&quot;,
+    ISCHANGED(Name)
+    )</errorConditionFormula>
+        <errorMessage>Name of Employee Development Tracker cannot be changed. Please contact an administrator with any exceptions.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

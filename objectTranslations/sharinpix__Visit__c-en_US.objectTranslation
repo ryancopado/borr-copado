@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Comment --></label>
+        <name>sharinpix__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Visit --></label>
+        <name>sharinpix__ParentVisit__c</name>
+        <relationshipLabel><!-- Visits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Visit Date --></label>
+        <name>sharinpix__VisitDate__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Use for group of single visits. --></description>
+        <label><!-- Combined --></label>
+        <name>sharinpix__Combined</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Use for a one-time visit. --></description>
+        <label><!-- Single --></label>
+        <name>sharinpix__Single</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- A Combined Visit cannot have a parent. --></errorMessage>
+        <name>sharinpix__CombinedVisitParentNul</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- CreateCombinedVisit --></label>
+        <name>sharinpix__CreateCombinedVisit</name>
+    </webLinks>
+</CustomObjectTranslation>

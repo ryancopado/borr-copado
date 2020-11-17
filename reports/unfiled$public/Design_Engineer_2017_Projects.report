@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AcctSeed__Project__c$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Name</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Development_SDE__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Development_DE1_Drafter__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Kickoff_Meeting_Held__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$Entitlement_Approval_Actual__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Project__c.Sites__r$X50_Forecast_Release_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test,Tezt</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,Mid Atlantic,Southeast,Midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Project__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,459 Blacksmith Shop Road - Falmouth,NRG-OYA MN - Montevideo,NRG-OYA MN - Sartell,160 lane road - barre,59 federal road - carver,74 Fordlea Road - Primary Project for records,30 Washburn Rd - Freetown,14R West St. - Carver,19C Ward Street - Carver</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Design Engineer Projects</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Projects_with_Sites_and_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Project__c.Sites__r$Kickoff_Meeting_Held__c</dateColumn>
+        <endDate>2018-05-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

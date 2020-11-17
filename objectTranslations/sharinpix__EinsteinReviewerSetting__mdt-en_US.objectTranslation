@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Attachment Id Field Name --></label>
+        <name>sharinpix__AttachmentIdFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this if you want a custom implementation for the creation of the Review Set --></help>
+        <label><!-- Custom Implementation --></label>
+        <name>sharinpix__CustomImplementation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image Filename Field Name --></label>
+        <name>sharinpix__ImageFilenameFieldName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image Url Field Name --></label>
+        <name>sharinpix__ImageUrlFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The maximum of Image per Review Set. Default to 10. Max is 30. --></help>
+        <label><!-- Limit --></label>
+        <name>sharinpix__Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Id --></label>
+        <name>sharinpix__ModelId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object API Name --></label>
+        <name>sharinpix__ObjectAPIName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prediction Payload Field Name --></label>
+        <name>sharinpix__PredictionPayloadFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field api name delimited by the sort order (asc, desc). If no sort order specified, default is asc.
+Default field is CreatedDate --></help>
+        <label><!-- Sort Options --></label>
+        <name>sharinpix__SortOptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field name to set status value. (Not started, In progress, Completed) --></help>
+        <label><!-- Status --></label>
+        <name>sharinpix__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated Payload Field Name --></label>
+        <name>sharinpix__UpdatedPayloadFieldName__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Image Url Field Name and Attachment Id Field Name cannot be filled at the same time. --></errorMessage>
+        <name>sharinpix__ImageUrlOrAttachmentId</name>
+    </validationRules>
+</CustomObjectTranslation>

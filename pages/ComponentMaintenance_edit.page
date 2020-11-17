@@ -1,0 +1,67 @@
+<apex:page standardController="Component__c" tabStyle="Component__c" extensions="ComponentMaintenanceCtrlExt" >
+	
+	<apex:form >
+		<apex:pageMessages />
+		
+		<apex:outputPanel rendered="{!isNew}" >
+			<apex:sectionHeader title="Component Edit" subtitle="New Component" />
+			
+			<apex:pageBlock title="Component Edit" mode="edit" >
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!saveComponent}" value="Save"/>
+					<apex:commandButton action="{!saveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!saveAll}" value="Save & Maintenance Edit"/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+				
+				<apex:pageBlockSection columns="2">
+					<apex:inputField value="{!component.Case__c}" required="true"/>
+					<apex:pageBlockSectionItem />
+					<apex:inputField value="{!component.Component_Type__c}" required="true"/>
+				</apex:pageBlockSection>
+				<apex:pageBlockSection title="Summary" columns="1">
+					<apex:inputTextarea value="{!component.Summary__c}" cols="60" rows="5"/>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:outputPanel>
+		
+		<apex:outputPanel rendered="{!!isNew}" >
+			<apex:sectionHeader title="Component/Maintenance Item Edit" subtitle="{!component.Name}" />
+			
+			<apex:pageBlock title="Component/Maintenance Item Edit" mode="edit" >
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!saveAll}" value="Save"/>
+					<apex:commandButton action="{!saveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+				
+				<apex:pageBlockSection columns="2">
+					<apex:outputField value="{!component.Name}" />
+					<apex:outputField value="{!component.Component_Type__c}" />
+					<apex:outputField value="{!component.Case__c}" />
+				</apex:pageBlockSection>
+				<apex:pageBlockSection title="Summary" columns="1">
+					<apex:inputTextarea value="{!component.Summary__c}" cols="60" rows="5"/>
+				</apex:pageBlockSection>
+			
+				<apex:pageBlockSection title="Maintenance Items" columns="1">
+					<apex:pageBlockTable value="{!miList}" var="mi" width="100%">
+						<apex:column headerValue="Maintenance Item" width="20%">
+							<apex:outputField value="{!mi.Item__c}" />
+						</apex:column>
+						<apex:column headerValue="Completed" width="10%">
+							<apex:inputField value="{!mi.Completed__c}" />
+						</apex:column>
+						<apex:column headerValue="Follow Up Required" width="20%">
+							<apex:inputField value="{!mi.Follow_Up_Required__c}"/>
+						</apex:column>
+						<apex:column headerValue="Notes" width="50%">
+							<apex:inputTextarea value="{!mi.Notes__c}" cols="50" rows="5"/>
+						</apex:column>
+					</apex:pageBlockTable>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:outputPanel>
+		
+	</apex:form>
+</apex:page>

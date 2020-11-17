@@ -1,0 +1,118 @@
+<apex:page standardController="SV__c" extensions="ServiceVisit_AssetCtlExt" tabStyle="SV__c" >
+
+	<apex:form id="theForm">
+		<apex:pageMessages />
+		
+		<apex:sectionHeader title="Service Visit Edit" subtitle="{!serviceVisit.Name}" rendered="{!serviceVisit.Id != null}"/>
+		<apex:sectionHeader title="Service Visit Edit" subtitle="New Service Visit" rendered="{!serviceVisit.Id == null}"/>
+		
+		<apex:pageBlock title="Service Visit Edit" mode="edit">
+			
+			<apex:pageBlockButtons location="top">
+				<apex:commandButton value="Save" action="{!saveAsset}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection title="Information" columns="2">
+				<apex:outputField value="{!serviceVisit.Name}"/>
+				
+				<apex:outputField value="{!serviceVisit.Account__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Account__c}" rendered="{!isAdmin}"/>
+				
+				<apex:inputField value="{!serviceVisit.Visit_Date__c}"/>
+				
+				<apex:outputField value="{!serviceVisit.Project__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Project__c}" rendered="{!isAdmin}"/>
+				
+				
+				<apex:inputField value="{!serviceVisit.Visit_Start_Time__c}"/>
+				<apex:outputField value="{!serviceVisit.Contract__c}"/>
+				<apex:inputField value="{!serviceVisit.Visit_End_Date__c}"/>
+				
+				<apex:outputField value="{!serviceVisit.Case__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Case__c}" rendered="{!isAdmin}"/>
+				
+				
+				<apex:inputField value="{!serviceVisit.Visit_End_Time__c}"/>
+				
+				<apex:outputField value="{!serviceVisit.Completed__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Completed__c}" rendered="{!isAdmin}"/>
+				
+				<apex:inputField value="{!serviceVisit.Technician__c}"/>
+				
+				<apex:outputField value="{!serviceVisit.RecordTypeId}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.RecordTypeId}" rendered="{!isAdmin}"/>
+				
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Asset Information" columns="2">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Asset" />
+					<apex:selectList value="{!selectedAsset}" title="Select an Asset" size="1" >
+						<apex:selectOptions value="{!assets}" />
+						<apex:actionSupport event="onchange" action="{!assetChanged}"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!serviceVisit.Was_Asset_Offline__c}" />
+				<apex:inputField value="{!serviceVisit.AssetType__c}" />
+				<apex:inputField value="{!serviceVisit.Asset_Offline__c}" >
+					<apex:actionSupport event="onchange" action="{!assetOfflineChanged}"/>
+				</apex:inputField>
+				<apex:inputField value="{!serviceVisit.AssetFault__c}" />
+				<apex:inputField value="{!serviceVisit.Asset_Online__c}" />
+				<apex:inputField value="{!serviceVisit.Case_Resolved__c}" />	
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Notes" columns="1">
+				<apex:inputField value="{!serviceVisit.Private_Notes__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Notes__c}" cols="75" rows="3"/>
+				<apex:inputTextArea value="{!serviceVisit.CaseDescription__c}" cols="75" rows="3"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Site Information" columns="1">
+				<apex:inputField value="{!serviceVisit.Weather_Conditions__c}"/>
+				<apex:inputField value="{!serviceVisit.Soiling__c}"/>
+				<apex:inputField value="{!serviceVisit.Vegetation__c}"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Time Entry" columns="1">
+				<apex:inputField value="{!serviceVisit.Dispatch_Time__c}"/>
+				<apex:inputField value="{!serviceVisit.WorkStarted__c}"/>
+				<apex:inputField value="{!serviceVisit.SiteArrivalTime__c}"/>
+				<apex:inputField value="{!serviceVisit.Work_Ended__c}"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="RMA Information" columns="1">
+				<apex:inputField value="{!serviceVisit.Supplier_Manufacturer_Parts_Required__c}"/>
+				<apex:inputField value="{!serviceVisit.Supplier_Manufacturer_Service_Required__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Manufacturer_RMA_Ticket__c}" cols="75" rows="6"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Inventory Used" columns="2">
+				<apex:inputTextArea value="{!serviceVisit.Inventory_Item_1_Used__c}" cols="40" rows="2"/>
+				<apex:inputField value="{!serviceVisit.Qty_Inventory_Used_1__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Inventory_Item_2_Used__c}" cols="40" rows="2"/>
+				<apex:inputField value="{!serviceVisit.Qty_Inventory_Used_2__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Inventory_Item_3_Used__c}" cols="40" rows="2"/>
+				<apex:inputField value="{!serviceVisit.Qty_Inventory_Item_3_Used__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Inventory_Item_4_Used__c}" cols="40" rows="2"/>
+				<apex:inputField value="{!serviceVisit.Qty_Inventory_Item_4_Used__c}"/>
+				<apex:inputTextArea value="{!serviceVisit.Inventory_Item_5_Used__c}" cols="40" rows="2"/>
+				<apex:inputField value="{!serviceVisit.Qty_Inventory_Item_5_Used__c}"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="System Information" columns="2">
+				<apex:outputField value="{!serviceVisit.Reactive_Service_Type__c}"/>
+				
+				<apex:outputField value="{!serviceVisit.Billing_Field__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Billing_Field__c}" rendered="{!isAdmin}"/>
+				
+				<apex:outputField value="{!serviceVisit.Contract_Type__c}" rendered="{!!isAdmin}"/>
+				<apex:inputField value="{!serviceVisit.Contract_Type__c}" rendered="{!isAdmin}"/>
+			</apex:pageBlockSection>
+			
+		</apex:pageBlock>
+		
+	</apex:form>
+	
+</apex:page>

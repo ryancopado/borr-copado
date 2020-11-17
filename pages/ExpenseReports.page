@@ -1,0 +1,8 @@
+<apex:page standardController="AcctSeed__Expense_Report__c" extensions="ExpenseReportsController" action="{!doLoad}" recordSetVar="ExpenseReports">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton action="{!goBack}" value="Back" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

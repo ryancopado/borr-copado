@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;br&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;$j = jQuery.noConflict();$j(document).ready(function(){        var url = window.location.href;        var tabUrl = &quot;https://na6.salesforce.com/a1t/o&quot;;    if(url.indexOf(tabUrl) !== -1){        $j(&apos;[name=&quot;new&quot;]&apos;).css({&quot;visibility&quot;:&quot;hidden&quot;});    }  });&lt;/script&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

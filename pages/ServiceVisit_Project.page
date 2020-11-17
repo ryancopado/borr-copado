@@ -1,0 +1,31 @@
+<apex:page standardController="SV__c" extensions="ServiceVisit_ProjectCtlExt" tabStyle="SV__c" >
+
+	<apex:form id="theForm">
+		
+		<apex:sectionHeader title="Service Visit Edit" subtitle="{!serviceVisit.Name}" />
+		
+		<apex:pageMessages />
+			
+		<apex:pageBlock title="Service Visit Select Project" mode="edit">
+			
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Save" action="{!saveServiceVisit}" disabled="{!fatalError}"/>
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection columns="1" >
+				<apex:inputField value="{!serviceVisit.Project__c}">
+					<apex:actionSupport event="onchange" action="{!projectChanged}"/>
+				</apex:inputField>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Contract" />
+					<apex:selectList value="{!selectedContract}" title="Select a Contract" size="1" >
+						<apex:selectOptions value="{!contracts}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

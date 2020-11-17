@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Accounting_Coordinator</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>AccountingAdministrator</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Accounts_Payable_Administrator</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>etam@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>AcctSeed__Vendor__c</field>
+        <field>Invoice_Amount__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <label>Invoice Approval</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Subcontractor</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>Subcontractor</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Subcontractor</label>
+        <name>Subcontractor</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Solar Modules</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>Solar Modules</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Solar Modules</label>
+        <name>Solar_Modules</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Material (non-module, major/minor)</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>&quot;Material (non-module, major/minor)&quot;</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Material</label>
+        <name>Material</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Development &amp; Engineering</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>Development &amp; Engineering</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Development &amp; Engineering</label>
+        <name>Development_Engineering</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Misc. Job Costs</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>Misc. Job Costs</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Misc. Job Costs</label>
+        <name>Misc_Job_Costs</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kknight@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = G&amp;A</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>G&amp;A</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>G&amp;A</label>
+        <name>G_A</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>djohnston@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>pking@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>treas@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = O&amp;M</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>O&amp;M</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>O&amp;M</label>
+        <name>O_M</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jhetzel@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoice Type = Other</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>AcctSeed__Account_Payable__c.Invoice_Type__c</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other</label>
+        <name>Other</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>hfaustino@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Lauren go to Hannah F. &amp; Rebekah</description>
+        <entryCriteria>
+            <formula>OwnerId = &quot;005800000074WOu&quot;</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Hannah/Rebekah Approval</label>
+        <name>Hannah_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tskraby@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Invoices owned by Hannah or Rebekah go to Tom</description>
+        <entryCriteria>
+            <formula>OR(
+OwnerId = &quot;00580000005LK1V&quot;,
+OwnerId = &quot;005340000098R3x&quot; )</formula>
+        </entryCriteria>
+        <label>Tom Approval</label>
+        <name>Tom_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Adding some conditions for approvals based on Invoice Type</description>
+    <emailTemplate>Alerts/Invoice_ready_to_approve</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+OR( ISPICKVAL( Approval_Status__c, &quot;New&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Recalled&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Rejected&quot; ),
+ISPICKVAL( Approval_Status__c, &quot;Approved&quot; )),
+Account_Active__c = &quot;Yes&quot;,
+Invoice_Amount_and_Total_Match__c = &quot;Yes&quot;,
+TEXT( Invoice_Type__c ) &lt;&gt; &quot;&quot;,
+NOT( ISBLANK( Remit_to__c ) ) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Invoice_has_been_approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>PO_Invoice_has_been_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Invoice Approval11</label>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Set_Status_to_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,3008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sites</value>
+    </caseValues>
+    <fields>
+        <help><!-- total hours logged by anne dunbar on this site/project --></help>
+        <label><!-- AD Hours --></label>
+        <name>AD_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that first planset comments are received from AHJ. --></help>
+        <label><!-- AHJ Comments Received --></label>
+        <name>AHJ_Comments_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that revised IFP drawings are completed and submitted to AHJ after 1st round of comments --></help>
+        <label><!-- AHJ Re-submission --></label>
+        <name>AHJ_Re_submission__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that CD IFP Drawings are physically submitted the AHJ for permit review. --></help>
+        <label><!-- AHJ Submission --></label>
+        <name>AHJ_Submission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>Account_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over Account Name from related project --></help>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- If applicable --></help>
+        <label><!-- Acreage --></label>
+        <name>Acreage__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls active budget from related project, used mostly for reporting/snapshots --></help>
+        <label><!-- Active Budget --></label>
+        <name>Active_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls the margin-active from the related project, used mostly with reporting/snapshots --></help>
+        <label><!-- Active Margin --></label>
+        <name>Active_Margin__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this box is checked, the project will show up on the Active Project Portfolio Dashboard if it has not yet reached 7C or kickoff --></help>
+        <label><!-- Active Project Portfolio View --></label>
+        <name>Active_Project_Portfolio_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Lease Payment --></label>
+        <name>Annual_Lease_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications Engineer --></label>
+        <name>Applications_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Applications Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Apr Estimated Performance --></label>
+        <name>Apr_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Apr Irradiance Data --></label>
+        <name>Apr_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- if keys are not needed, explain how to access the site.  if it’s a secured location provide details on how we access equipment --></help>
+        <label><!-- Array Access --></label>
+        <name>Array_Access__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Date of As-Built Released --></help>
+        <label><!-- As-Built Release Date --></label>
+        <name>As_Built_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- As Built PDF Link --></label>
+        <name>As_Built_PDF_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- As Built Reached --></label>
+        <name>As_Built_Reached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated FNTP Date --></label>
+        <name>Associated_FNTP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Final Completion --></label>
+        <name>Associated_Final_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Mechanical completion date --></label>
+        <name>Associated_Mechanical_completion_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Milestone --></label>
+        <name>Associated_Milestone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated PTO date --></label>
+        <name>Associated_PTO_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated Substantial completion --></label>
+        <name>Associated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated mobilization date --></label>
+        <name>Associated_mobilization_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- At_RiskFC --></label>
+        <name>At_RiskFC__c</name>
+    </fields>
+    <fields>
+        <label><!-- At_RiskFNTP --></label>
+        <name>At_RiskFNTP__c</name>
+    </fields>
+    <fields>
+        <label><!-- At_RiskMCD --></label>
+        <name>At_RiskMCD__c</name>
+    </fields>
+    <fields>
+        <label><!-- At_RiskMD --></label>
+        <name>At_RiskMD__c</name>
+    </fields>
+    <fields>
+        <label><!-- At_RiskPTO --></label>
+        <name>At_RiskPTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- At Risk --></label>
+        <name>At_Risk__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Aug Estimated Performance --></label>
+        <name>Aug_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Aug Irradiance Data --></label>
+        <name>Aug_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Available Area of the Site in Acres or Available sq. ft if a Rooftop Project --></help>
+        <label><!-- Available Area --></label>
+        <name>Available_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awarded PKO --></label>
+        <name>Awarded_PKO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awarded PTO Forecast --></label>
+        <name>Awarded_PTO_Forecast__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Building Permit Obtained --></help>
+        <label><!-- Building Permit Obtained Date --></label>
+        <name>BuildingPermitObtainedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CDIFR to MOB --></label>
+        <name>CDIFR_to_MOB__c</name>
+    </fields>
+    <fields>
+        <help><!-- Forecasted Date of Construction Set Release- ISSUED FOR REVIEW --></help>
+        <label><!-- CD IFR Date --></label>
+        <name>CD_Forecast_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Construction Set Release Date - ISSUED FOR CONSTRUCTION --></help>
+        <label><!-- CD IFC Date --></label>
+        <name>CD_IFC_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to CD Set- ISSUED FOR CONSTRUCTION --></help>
+        <label><!-- CD IFC Set PDF Link --></label>
+        <name>CD_IFC_Set_PDF_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Release date of CD Issued For Permit Set. --></help>
+        <label><!-- CD IFP Date --></label>
+        <name>CD_IFP_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CD IFR to Mob + Site --></label>
+        <name>CD_IFR_to_Mob_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to CD set pdf- ISSUED FOR REVIEW --></help>
+        <label><!-- CD IFR Set PDF Link --></label>
+        <name>CD_Set_PDF_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays Civil Lead Time goal based on project branch, used in reporting --></help>
+        <label><!-- CE LT Goal --></label>
+        <name>CE_LT_Goal__c</name>
+    </fields>
+    <fields>
+        <help><!-- # of days between Civil Start and Entitlement --></help>
+        <label><!-- CE Start to Entitlement --></label>
+        <name>CE_Start_to_Entitlement__c</name>
+    </fields>
+    <fields>
+        <label><!-- CS Date Stamp --></label>
+        <name>CS_Date_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Capacity test Complete &amp; Submitted --></help>
+        <label><!-- Capacity Test Complete Date --></label>
+        <name>Capacity_Test_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- SPG update to show test format. --></help>
+        <label><!-- Capacity Test Protocol --></label>
+        <name>Capacity_Test_Protocol__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide Salesforce/Box link to Test Report --></help>
+        <label><!-- Capacity Test Report Link --></label>
+        <name>Capacity_Test_Report_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Verify with PM contractual requirement. --></help>
+        <label><!-- Capacity Test Required --></label>
+        <name>Capacity_Test_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date SPG Began Test Process --></help>
+        <label><!-- Capacity Test Start Date --></label>
+        <name>Capacity_Test_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Updated by SPG --></help>
+        <label><!-- Capacity Test Status --></label>
+        <name>Capacity_Test_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete and Submitted to Client</masterLabel>
+            <translation><!-- Complete and Submitted to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Client Documentation</masterLabel>
+            <translation><!-- Pending Client Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Internal Documentation</masterLabel>
+            <translation><!-- Pending Internal Documentation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Most Recent Test Status --></help>
+        <label><!-- Capactiy Test Notes &amp; Result --></label>
+        <name>Capactiy_Test_Notes_Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell Carrier --></label>
+        <name>Cell_Carrier__c</name>
+        <picklistValues>
+            <masterLabel>AT&amp;T</masterLabel>
+            <translation><!-- AT&amp;T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metro PCS</masterLabel>
+            <translation><!-- Metro PCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sprint</masterLabel>
+            <translation><!-- Sprint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T Mobile</masterLabel>
+            <translation><!-- T Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cell Phone Modem # --></label>
+        <name>Cell_Phone_Modem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to show the status of the Project Control checklist. --></help>
+        <label><!-- Checklist Status --></label>
+        <name>Checklist_Status__c</name>
+        <picklistValues>
+            <masterLabel>Closeout Checklist Closed</masterLabel>
+            <translation><!-- Closeout Checklist Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closeout Checklist has open items</masterLabel>
+            <translation><!-- Closeout Checklist has open items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress Audit has occurred</masterLabel>
+            <translation><!-- In Progress Audit has occurred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premobilization Checklist has open items</masterLabel>
+            <translation><!-- Premobilization Checklist has open items --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Assigned Civil Principal Engineer --></help>
+        <label><!-- Internal Civil PE --></label>
+        <name>Civil_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Internal Civil PE) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Please enter the date  the Civil  Eng begins working on the project --></help>
+        <label><!-- Civil Engineering Start Date --></label>
+        <name>Civil_Engineering_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Template:
+Slope analysis 1 days
+Layout 1 days
+Delineation
+Survey 7 days
+Layout 3 days
+Send to civil sub 3 days
+Borrego review 4 weeks
+Submittal date 3 days --></help>
+        <label><!-- Civil Management Notes --></label>
+        <name>Civil_Management_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to Closeout Documentation- for Customer Portal --></help>
+        <label><!-- System Documentation --></label>
+        <name>Closeout_Document__c</name>
+    </fields>
+    <fields>
+        <label><!-- Combo Lock # --></label>
+        <name>Combo_Lock__c</name>
+    </fields>
+    <fields>
+        <help><!-- Historical comments on schedule --></help>
+        <label><!-- Comments on Schedule --></label>
+        <name>Comments_on_Schedule__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact who commissioned the system --></help>
+        <label><!-- Commissioning Agent --></label>
+        <name>Commissioning_Agent__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date of system Commissioning --></help>
+        <label><!-- Commissioning Date --></label>
+        <name>Commissioning_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commissioning Status Notes --></label>
+        <name>Commissioning_Status_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Operational Commissioning Status --></label>
+        <name>Commissioning_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corrective Action Required</masterLabel>
+            <translation><!-- Corrective Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Stage Approved</masterLabel>
+            <translation><!-- First Stage Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Completion</masterLabel>
+            <translation><!-- Pending Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to QA</masterLabel>
+            <translation><!-- Submitted to QA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date site discovery is completed- forecasted until actual --></help>
+        <label><!-- Complete Site Discovery Date --></label>
+        <name>Complete_Site_Discovery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- who updated this information from Borrego --></help>
+        <label><!-- Completed By - Borrego --></label>
+        <name>Completed_By_Borrego__c</name>
+        <relationshipLabel><!-- Sites (Completed By - Borrego) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- which customer provided the site information --></help>
+        <label><!-- Completed by - Customer --></label>
+        <name>Completed_by_Customer__c</name>
+        <relationshipLabel><!-- Sites (Completed by - Customer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- % Complete from Project --></label>
+        <name>CompletefromProject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cons Stage 90% Completed Used --></label>
+        <name>Cons_Stage_90_Completed_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Const Stage Date Stamp --></label>
+        <name>Const_Stage_Date_Stamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Construction Stage of the Project- Controlled by the PM --></help>
+        <label><!-- Construction Stage --></label>
+        <name>Construction_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Budget Locked</masterLabel>
+            <translation><!-- Budget Locked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cust. Accept. Complete</masterLabel>
+            <translation><!-- Cust. Accept. Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inspection Pending</masterLabel>
+            <translation><!-- Inspection Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inspections Complete</masterLabel>
+            <translation><!-- Inspections Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subcontractors Selected</masterLabel>
+            <translation><!-- Subcontractors Selected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work 90% Completed</masterLabel>
+            <translation><!-- Work 90% Completed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- used to be able to count # of sites on other related objects --></help>
+        <label><!-- Count of Record --></label>
+        <name>Count_of_Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mandatory at the stage &apos;Option Lease Executed.&apos; If the lease has commenced, this date will be ignored. --></help>
+        <label><!-- Current Option Period Expiration Date --></label>
+        <name>Current_Option_Period_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- DAS Connection to Internet --></label>
+        <name>DAS_Connection_to_Internet__c</name>
+        <picklistValues>
+            <masterLabel>Cell Modem</masterLabel>
+            <translation><!-- Cell Modem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAN</masterLabel>
+            <translation><!-- LAN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used by SPG group to QA DAS platform on new projects. --></help>
+        <label><!-- DAS Login Notes --></label>
+        <name>DAS_Login_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- DAS Provider --></label>
+        <name>DAS_Provider__c</name>
+        <relationshipLabel><!-- OM Provider --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- SDE Lead Time goal. Used in reporting --></help>
+        <label><!-- DE LT Goal --></label>
+        <name>DE_LT_Goal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula field that calculates difference between Dev Eng Start Date field and 50% Set field --></help>
+        <label><!-- DE Start to 50% --></label>
+        <name>DE_Start_to_50__c</name>
+    </fields>
+    <fields>
+        <help><!-- Explanation as to why the Mobilization Date, PTO Date, or Deadline Date was changed. Required when changing any of these dates. --></help>
+        <label><!-- Date Change Explanation --></label>
+        <name>Date_Change_Explanation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Captures the date when the status of the SPG DAS QA field changes to 100% Complete --></help>
+        <label><!-- Date SPG DAS Status 100% --></label>
+        <name>Date_SPG_DAS_Status_100__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are there any deadlines in the contract? Specify any deadline dates here. --></help>
+        <label><!-- Deadline Date --></label>
+        <name>Deadline_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the deadline date: What entity is the deadline for and what happens after that date?
+Required when there is a deadline date filled in. --></help>
+        <label><!-- Deadline Description --></label>
+        <name>Deadline_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Dec Estimated Performance --></label>
+        <name>Dec_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Dec Irradiance Data --></label>
+        <name>Dec_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes regarding the delivery of equipment. --></help>
+        <label><!-- Delivery Notes --></label>
+        <name>Delivery_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Historical design notes --></help>
+        <label><!-- Dev Eng Project Status Notes History --></label>
+        <name>Design_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current set the Engineering team is working on. Defaults to New upon creation of a Site. --></help>
+        <label><!-- Design Stage --></label>
+        <name>Design_Stage__c</name>
+        <picklistValues>
+            <masterLabel>50% Set</masterLabel>
+            <translation><!-- 50% Set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>As Built</masterLabel>
+            <translation><!-- As Built --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFC</masterLabel>
+            <translation><!-- CD IFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD IFR</masterLabel>
+            <translation><!-- CD IFR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site Use Permit Set</masterLabel>
+            <translation><!-- Site Use Permit Set --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- assigns value of 1 if the manager of the Dev SDE listed on site is logged in, used mostly for reporting and filtering of list views, should not be on layouts --></help>
+        <label><!-- Dev Manager Logged In --></label>
+        <name>Dev_Manager_Logged_In__c</name>
+    </fields>
+    <fields>
+        <help><!-- rolls us hours from time card lines where Dev SDE listed on site matches employee on associated time card --></help>
+        <label><!-- Dev SDE Total Hours --></label>
+        <name>Dev_SDE_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Populate, if applicable --></help>
+        <label><!-- Development DE --></label>
+        <name>Development_DE1_Drafter__c</name>
+        <relationshipLabel><!-- Sites (Development DE) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date Development Engineering starts working on the project --></help>
+        <label><!-- Bid Set Start Date --></label>
+        <name>Development_Engineering_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Development Engineering - Senior Design Engineer working on project --></help>
+        <label><!-- Development Lead SDE/DE --></label>
+        <name>Development_SDE__c</name>
+        <relationshipLabel><!-- Sites (Development Lead SDE/DE) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Direct Margin --></label>
+        <name>Direct_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- EE Total Hours --></label>
+        <name>EE_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC LOI Date --></label>
+        <name>EPC_LOI_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- EPC Signed Date --></label>
+        <name>EPC_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the Energy Storage Project Manager assigned to the Site. --></help>
+        <label><!-- ESD Project Manager --></label>
+        <name>ESD_Project_Manager__c</name>
+        <relationshipLabel><!-- Sites (ESD Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Internal Electrical Engineer --></label>
+        <name>Electrical_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Internal Electrical Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Estimated or Actual delivery date of the Energy Storage Unit --></help>
+        <label><!-- Energy Storage Unit Delivery Date --></label>
+        <name>Energy_Storage_Unit_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- used to help determine who is logged in at the time, used to run reports for that user --></help>
+        <label><!-- Engineer Logged In --></label>
+        <name>Engineer_Logged_In__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planning Approval Date --></label>
+        <name>Entitlement_Approval_Actual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to User Record. --></help>
+        <label><!-- Estimator --></label>
+        <name>Estimator__c</name>
+        <relationshipLabel><!-- Sites (Estimator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- brings over date of most recent active intx app --></help>
+        <label><!-- Executed ISA --></label>
+        <name>Executed_ISA__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over from related Interconnection App, pulls most recent date in the event of multiple applications --></help>
+        <label><!-- Expected ISA --></label>
+        <name>Expected_ISA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Rebate --></label>
+        <name>Expected_Rebate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the civil engineer of record contact --></help>
+        <label><!-- Civil Engineer of Record --></label>
+        <name>External_Civil_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the electrical engineer of record contact --></help>
+        <label><!-- Electrical Engineer of Record --></label>
+        <name>External_Electrical_Engineer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the structural engineer of record contact --></help>
+        <label><!-- Structural Engineer of Record --></label>
+        <name>External_Structural_Engineer__c</name>
+    </fields>
+    <fields>
+        <label><!-- FCDeadlineid --></label>
+        <name>FCDeadlineid__c</name>
+    </fields>
+    <fields>
+        <label><!-- FNTPDeadlineid --></label>
+        <name>FNTPDeadlineid__c</name>
+    </fields>
+    <fields>
+        <label><!-- FNTP Date --></label>
+        <name>FNTP_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Feb Estimated Performance --></label>
+        <name>Feb_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Feb Irradiance Data --></label>
+        <name>Feb_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Completion --></label>
+        <name>Final_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- First AHJ Meeting Date --></label>
+        <name>First_AHJ_Meeting_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed Ground Installation --></label>
+        <name>Fixed_Ground_Installation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast Definition --></label>
+        <name>ForecastDefinition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Address 1 --></label>
+        <name>Governor_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Address 2 --></label>
+        <name>Governor_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Address 3 --></label>
+        <name>Governor_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor City --></label>
+        <name>Governor_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor First Name --></label>
+        <name>Governor_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Last Name --></label>
+        <name>Governor_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Party --></label>
+        <name>Governor_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Phone --></label>
+        <name>Governor_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor Postal --></label>
+        <name>Governor_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor State --></label>
+        <name>Governor_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor URL --></label>
+        <name>Governor_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- HO to CD IFR + Site --></label>
+        <name>HO_to_CD_IFR_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- HO to Mob --></label>
+        <name>HO_to_Mob_Cal_Cond__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days from Handoff to Ops Enginering Start Date --></help>
+        <label><!-- Handoff to Ops Start --></label>
+        <name>HO_to_Ops_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- HO to PTO + Site --></label>
+        <name>HO_to_PTO_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Site was handed off to Operations --></help>
+        <label><!-- Handoff Date --></label>
+        <name>Handoff_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculate # of days between Handoff and Const Set Release (CD IFR) --></help>
+        <label><!-- Handoff to CD IFR --></label>
+        <name>Handoff_to_CD_IFR__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days between Kickoff and Moblization --></help>
+        <label><!-- Handoff to Mob --></label>
+        <name>Handoff_to_Mob__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handoff to PTO --></label>
+        <name>Handoff_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- ISA Date --></label>
+        <name>ISA_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- ISA Received Date --></label>
+        <name>ISA_Received_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Interconnection Study/Impact Study was received from Utility --></help>
+        <label><!-- Interconnection Study Received Date --></label>
+        <name>ImpactStudyReceivedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interconnection App Submitted Date --></label>
+        <name>Interconnection_App_Submitted_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- if there is an interconnection application it should match the status of that application, if not update as needed --></help>
+        <label><!-- Interconnection Status --></label>
+        <name>Interconnection_Status__c</name>
+        <picklistValues>
+            <masterLabel>Application Accepted</masterLabel>
+            <translation><!-- Application Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Requested</masterLabel>
+            <translation><!-- Application Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Submitted</masterLabel>
+            <translation><!-- Application Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction Timeline</masterLabel>
+            <translation><!-- Construction Timeline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executed ISA</masterLabel>
+            <translation><!-- Executed ISA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Permission to Operate</masterLabel>
+            <translation><!-- Permission to Operate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for ISA</masterLabel>
+            <translation><!-- Ready for ISA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for SIS/CESIR</masterLabel>
+            <translation><!-- Ready for SIS/CESIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIS/CESIR Underway</masterLabel>
+            <translation><!-- SIS/CESIR Underway --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Assigned Junior Civil Engineer or Civil Engineer I or II --></help>
+        <label><!-- Internal Civil Engineer --></label>
+        <name>Internal_Civil_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Internal Civil Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inverter Access --></label>
+        <name>Inverter_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inverter Delivery Date Updated --></label>
+        <name>Inverter_Delivery_Date_Updated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Inverter delivery --></help>
+        <label><!-- Inverter Delivery Date --></label>
+        <name>Inverter_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Procurement updates the following: Product Locked:when selection is confirmed between Eng/Prcmnt.PO Placed,when PO is submitted to the vendor.Product On Site,the order is delivered. Other teams use the remaining terms Defined, In progress or Complete. --></help>
+        <label><!-- Inverter Status --></label>
+        <name>Inverter_Status__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Received</masterLabel>
+            <translation><!-- Borrego Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install Complete</masterLabel>
+            <translation><!-- Install Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install In Progress</masterLabel>
+            <translation><!-- Install In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Further Review</masterLabel>
+            <translation><!-- Needs Further Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO Placed</masterLabel>
+            <translation><!-- PO Placed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Defined</masterLabel>
+            <translation><!-- Product Defined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Locked</masterLabel>
+            <translation><!-- Product Locked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product On Site</masterLabel>
+            <translation><!-- Product On Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subcon. Received</masterLabel>
+            <translation><!-- Subcon. Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Jan Estimated Performance --></label>
+        <name>Jan_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Jan Irradiance Data --></label>
+        <name>Jan_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Jul Estimated Performance --></label>
+        <name>Jul_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Jul Irradiance Data --></label>
+        <name>Jul_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Jun Estimated Performance --></label>
+        <name>Jun_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Jun Irradiance Data --></label>
+        <name>Jun_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days between Project Kickoff Date and Entitlement Approval Date --></help>
+        <label><!-- KO to Entitlement --></label>
+        <name>KO_to_Entitlement__c</name>
+    </fields>
+    <fields>
+        <label><!-- KO to HO --></label>
+        <name>KO_to_HO_Cal_Cond__c</name>
+    </fields>
+    <fields>
+        <help><!-- Days between Project Kickoff Date and Site Use Permit Set Date --></help>
+        <label><!-- KO to SUP --></label>
+        <name>KO_to_SUP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keys Location --></label>
+        <name>Keys_Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date of the initial Kickoff Meeting. --></help>
+        <label><!-- Kickoff Meeting Held --></label>
+        <name>Kickoff_Meeting_Held__c</name>
+    </fields>
+    <fields>
+        <help><!-- caculates # of days between project kickoff date and Const Set Release (CD IFR) --></help>
+        <label><!-- Kickoff to CD IFR --></label>
+        <name>Kickoff_to_CD_IFR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates Day between Project Kickoff Date and  Handoff Date --></help>
+        <label><!-- Kickoff to Handoff --></label>
+        <name>Kickoff_to_Handoff__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculate days between Kickoff and PTO --></help>
+        <label><!-- Kickoff to PTO --></label>
+        <name>Kickoff_to_PTO__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days between L1 and Handoff --></help>
+        <label><!-- L1 to Handoff --></label>
+        <name>L1_to_Handoff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates the # of days between Project Kickoff Date and the created date of 1st psd revision --></help>
+        <label><!-- L1 to Kickoff --></label>
+        <name>L1_to_Kickoff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates # of days between L1 and PTO --></help>
+        <label><!-- L1 to PTO --></label>
+        <name>L1_to_PTO__c</name>
+    </fields>
+    <fields>
+        <help><!-- if LAN was selected above provide details about location and wiring for host connection --></help>
+        <label><!-- LAN Description --></label>
+        <name>LAN_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- LIDAR GIS Date --></label>
+        <name>LIDAR_GIS_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- LIDAR GIS Released --></label>
+        <name>LIDAR_GIS_Released__c</name>
+    </fields>
+    <fields>
+        <help><!-- Only required for non-Cash or 3rd Party Financed projects --></help>
+        <label><!-- LNTP Date --></label>
+        <name>LNTP_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LT Goal --></label>
+        <name>LT_Goal_from_Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the related Opportunity --></help>
+        <label><!-- Land Lease LOI Date --></label>
+        <name>Land_Lease_LOI_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Release Level --></label>
+        <name>Latest_Release_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Y Coordinate --></help>
+        <label><!-- Latitude --></label>
+        <name>Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Commencement Date --></label>
+        <name>Lease_Commencement_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Expiration Date --></label>
+        <name>Lease_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lease Term (years) --></label>
+        <name>Lease_Term_years__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to released 50% set --></help>
+        <label><!-- 50% Set PDF Link --></label>
+        <name>Link_to_50_Set_PDF__c</name>
+    </fields>
+    <fields>
+        <help><!-- X Coordinate --></help>
+        <label><!-- Longitude --></label>
+        <name>Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- MCDeadlineid --></label>
+        <name>MCDeadlineid__c</name>
+    </fields>
+    <fields>
+        <label><!-- MDDeadlineid --></label>
+        <name>MDDeadlineid__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Mar Estimated Performance --></label>
+        <name>Mar_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Mar Irradiance Data --></label>
+        <name>Mar_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that 7C has been submitted, and project is ready to market to Owner --></help>
+        <label><!-- 7C Submittal Date --></label>
+        <name>MarkettoOwnerDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- May Estimated Performance --></label>
+        <name>May_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- May Irradiance Data --></label>
+        <name>May_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Minutes --></label>
+        <name>MeetingMinutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Milestone This Month --></label>
+        <name>MilestoneThisMonth__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates # of Days between Mobilization and PTO --></help>
+        <label><!-- Mob to PTO --></label>
+        <name>Mob_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mob to Mech --></label>
+        <name>Mob_to_Sub_Cal_Cond__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mob to Mech + Site --></label>
+        <name>Mob_to_Sub_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days between mobilization and substantial completion --></help>
+        <label><!-- Mob to Mech --></label>
+        <name>Mob_to_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobilization Baseline --></label>
+        <name>Mobilization_Baseline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobilization Date --></label>
+        <name>Mobilization_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module Delivery Date Updated --></label>
+        <name>Module_Delivery_Date_Updated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Module delivery. --></help>
+        <label><!-- Module Delivery Date --></label>
+        <name>Module_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modules Status --></label>
+        <name>Modules_Status__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Received</masterLabel>
+            <translation><!-- Borrego Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install Complete</masterLabel>
+            <translation><!-- Install Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install In Progress</masterLabel>
+            <translation><!-- Install In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Further Review</masterLabel>
+            <translation><!-- Needs Further Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO Placed</masterLabel>
+            <translation><!-- PO Placed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Defined</masterLabel>
+            <translation><!-- Product Defined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Locked</masterLabel>
+            <translation><!-- Product Locked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product On Site</masterLabel>
+            <translation><!-- Product On Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subcon. Received</masterLabel>
+            <translation><!-- Subcon. Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- National Lower Chamber --></label>
+        <name>National_Lower_Chamber__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower District ID --></label>
+        <name>National_Lower_District_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower First Name --></label>
+        <name>National_Lower_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Last Name --></label>
+        <name>National_Lower_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Party --></label>
+        <name>National_Lower_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Address 1 --></label>
+        <name>National_Lower_Primary_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Address 2 --></label>
+        <name>National_Lower_Primary_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Address 3 --></label>
+        <name>National_Lower_Primary_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower City --></label>
+        <name>National_Lower_Primary_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Phone --></label>
+        <name>National_Lower_Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Postal --></label>
+        <name>National_Lower_Primary_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower State --></label>
+        <name>National_Lower_Primary_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower Role --></label>
+        <name>National_Lower_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower URL --></label>
+        <name>National_Lower_URL_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Lower URL 2 --></label>
+        <name>National_Lower_URL_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Chamber --></label>
+        <name>National_Upper2_Chamber__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 First Name --></label>
+        <name>National_Upper2_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Address 1 --></label>
+        <name>National_Upper2_Primary_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Postal --></label>
+        <name>National_Upper2_Primary_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 State --></label>
+        <name>National_Upper2_Primary_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 District ID --></label>
+        <name>National_Upper_2_District_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Last Name --></label>
+        <name>National_Upper_2_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Party --></label>
+        <name>National_Upper_2_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Address 2 --></label>
+        <name>National_Upper_2_Primary_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Address 3 --></label>
+        <name>National_Upper_2_Primary_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 City --></label>
+        <name>National_Upper_2_Primary_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Phone --></label>
+        <name>National_Upper_2_Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 Role --></label>
+        <name>National_Upper_2_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 URL --></label>
+        <name>National_Upper_2_URL_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 2 URL 2 --></label>
+        <name>National_Upper_2_URL_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Chamber --></label>
+        <name>National_Upper_Chamber__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 District ID --></label>
+        <name>National_Upper_District_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 First Name --></label>
+        <name>National_Upper_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Last Name --></label>
+        <name>National_Upper_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Party --></label>
+        <name>National_Upper_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Address 1 --></label>
+        <name>National_Upper_Primary_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Address 2 --></label>
+        <name>National_Upper_Primary_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Address 3 --></label>
+        <name>National_Upper_Primary_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 City --></label>
+        <name>National_Upper_Primary_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Phone --></label>
+        <name>National_Upper_Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Postal --></label>
+        <name>National_Upper_Primary_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 State --></label>
+        <name>National_Upper_Primary_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 Role --></label>
+        <name>National_Upper_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 URL --></label>
+        <name>National_Upper_URL_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- National Upper 1 URL 2 --></label>
+        <name>National_Upper_URL_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Explanation as to why key milestone date has changed (Project Kickoff, Handoff, Mobilization, Mechanical Completion, PTO, Substantial Completion, 50% Set, CD IFR, CD IFC) . Required when changing any of these dates. --></help>
+        <label><!-- New Comments on Schedule --></label>
+        <name>New_Comments_on_Schedule__c</name>
+    </fields>
+    <fields>
+        <help><!-- Design notes filled out by the Engineering Team weekly to communicate design status schedule, delays, and other design information --></help>
+        <label><!-- New Design Note --></label>
+        <name>New_Design_Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Nov Estimated Performance --></label>
+        <name>Nov_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Nov Irradiance Data --></label>
+        <name>Nov_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date project handed off to O&amp;M. --></help>
+        <label><!-- O&amp;M Handoff Date --></label>
+        <name>O_M_Handoff_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of O&amp;M Handoff- defaults to &quot;not scheduled&quot; --></help>
+        <label><!-- O&amp;M Handoff Status --></label>
+        <name>O_M_Handoff_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed and Approved</masterLabel>
+            <translation><!-- Completed and Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Progress</masterLabel>
+            <translation><!-- In-Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Scheduled</masterLabel>
+            <translation><!-- Not Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Manager --></label>
+        <name>O_M_Manager__c</name>
+        <relationshipLabel><!-- Sites (O&amp;M Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Oct Estimated Performance --></label>
+        <name>Oct_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Oct Irradiance Data --></label>
+        <name>Oct_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Site Contact --></label>
+        <name>On_Site_Contact__c</name>
+        <relationshipLabel><!-- Sites (On Site O&amp;M Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- On Site --></label>
+        <name>On_Site__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Operational Commissioning Status --></label>
+        <name>Operational_Commissioning_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corrective Action REquired</masterLabel>
+            <translation><!-- Corrective Action REquired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Stage Approved</masterLabel>
+            <translation><!-- First Stage Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Completion</masterLabel>
+            <translation><!-- Pending Completion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to QA</masterLabel>
+            <translation><!-- Submitted to QA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- pulls over created date from the related opportunity --></help>
+        <label><!-- Opp Created Date --></label>
+        <name>Opp_Created_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls opportunity owner sf id onto record --></help>
+        <label><!-- Opportunity Owner SF ID --></label>
+        <name>Opportunity_Owner_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Qualified to PTO --></label>
+        <name>Opportunity_Qualified_to_PTO__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over the name of the related opportunity record type, used mostly for reporting not on layouts. --></help>
+        <label><!-- Opportunity Record Type --></label>
+        <name>Opportunity_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage Stamp --></label>
+        <name>Opportunity_Stage_Stamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Oppty Stage --></label>
+        <name>OpptyStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- used mostly for email alerts --></help>
+        <label><!-- Oppty Owner Mgr Email --></label>
+        <name>Oppty_Owner_Mgr_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oppty qualified Date --></label>
+        <name>Oppty_qualified_Date_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ops Engineer - Drafter working on projects --></help>
+        <label><!-- Ops DE1/Drafter --></label>
+        <name>Ops_DE1_Drafter__c</name>
+        <relationshipLabel><!-- Sites (Ops DE1/Drafter) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ops Div Text --></label>
+        <name>Ops_Div_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ops Division --></label>
+        <name>Ops_Division__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that operations engineering begins working on the project --></help>
+        <label><!-- Ops Engineering Start Date --></label>
+        <name>Ops_Engineering_Start_DAte__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates number of days from Ops Start Date to CDIFR --></help>
+        <label><!-- Ops Start to CDIFR --></label>
+        <name>Ops_Start_to_CDIFR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option Status --></label>
+        <name>Option_Status__c</name>
+        <picklistValues>
+            <masterLabel>Extension notice delivered</masterLabel>
+            <translation><!-- Extension notice delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In option period</masterLabel>
+            <translation><!-- In option period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease commenced (option n/a)</masterLabel>
+            <translation><!-- Lease commenced (option n/a) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Overall Project Status --></label>
+        <name>Overall_Project_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Autofilled from the corresponding PB3 --></help>
+        <label><!-- PB3 Date --></label>
+        <name>PB3_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Contracts Committee approved project at PB 9 --></help>
+        <label><!-- PB9 CC Approval Date --></label>
+        <name>PB9CCApprovalDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Description --></label>
+        <name>PBDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- PB Override --></label>
+        <name>PBOverride__c</name>
+        <picklistValues>
+            <masterLabel>10. Handoff</masterLabel>
+            <translation><!-- 10. Handoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12. CDIFC</masterLabel>
+            <translation><!-- 12. CDIFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14. Mobilization</masterLabel>
+            <translation><!-- 14. Mobilization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16. Mech Comp</masterLabel>
+            <translation><!-- 16. Mech Comp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18. PTO</masterLabel>
+            <translation><!-- 18. PTO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21. Sub Comp</masterLabel>
+            <translation><!-- 21. Sub Comp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24. Final Comp</masterLabel>
+            <translation><!-- 24. Final Comp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. PB3</masterLabel>
+            <translation><!-- 3. PB3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4. Create SUP</masterLabel>
+            <translation><!-- 4. Create SUP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5. 1st PB Mtg</masterLabel>
+            <translation><!-- 5. 1st PB Mtg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6. Dev Set/Board Approval</masterLabel>
+            <translation><!-- 6. Dev Set/Board Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7. ISA</masterLabel>
+            <translation><!-- 7. ISA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Public Meeting Date --></label>
+        <name>PB_Meeting_1_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- PKO to HO + Site --></label>
+        <name>PKO_to_HO_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- PKO to Mech + Site --></label>
+        <name>PKO_to_Sub_Site__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from field of same name on related project, used mostly for snapshots and reporting --></help>
+        <label><!-- PM Budget --></label>
+        <name>PM_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays a 1 if the PM listed on the Site is the one logged in, used mostly for filters/reports --></help>
+        <label><!-- PM Logged In --></label>
+        <name>PM_Logged_In__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls Margin-PM from related project, used mostly with reporting and snapshots --></help>
+        <label><!-- PM Margin --></label>
+        <name>PM_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTODeadlineid --></label>
+        <name>PTODeadlineid__c</name>
+    </fields>
+    <fields>
+        <label><!-- PTO Baseline --></label>
+        <name>PTO_Baseline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Permission to Operate, A letter from the Utility defines this date. usually means Placed in Service. --></help>
+        <label><!-- PTO Date --></label>
+        <name>PTO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- used in Reports, allows grouping by PTO and ability to display the date as well, add help &amp; Description notes --></help>
+        <label><!-- PTO Reporting --></label>
+        <name>PTO_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days between PTO and Final Completion. Used in reports --></help>
+        <label><!-- PTO to Final Completion --></label>
+        <name>PTO_to_Final_Completion__c</name>
+    </fields>
+    <fields>
+        <help><!-- shows # of days between PTO and Substantial Completion --></help>
+        <label><!-- PTO to SC --></label>
+        <name>PTO_to_SC__c</name>
+    </fields>
+    <fields>
+        <label><!-- PT Goal --></label>
+        <name>PT_Goal_from_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Paid Contract --></label>
+        <name>Paid_Contract__c</name>
+        <relationshipLabel><!-- Sites (Paid Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parcel ID --></label>
+        <name>Parcel_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to DAS Reporting Site- For Customer Portal --></help>
+        <label><!-- Performance Reporting --></label>
+        <name>Performance_Reporting__c</name>
+    </fields>
+    <fields>
+        <help><!-- site id provided by powertrack to identify their associated Site --></help>
+        <label><!-- Data Platform Site ID --></label>
+        <name>Powertrack_Site_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to User record. --></help>
+        <label><!-- Pre-Construction Manager --></label>
+        <name>Pre_Construction_Manager__c</name>
+        <relationshipLabel><!-- Sites (Pre-Construction Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Googledrive shared link for checklist editing/monitoring --></help>
+        <label><!-- Pre-mob/Closeout/O&amp;M Consolidated Projec --></label>
+        <name>Pre_mob_Closeout_O_M_Consolidated_Projec__c</name>
+    </fields>
+    <fields>
+        <help><!-- used in project status report --></help>
+        <label><!-- Previous Month PTO Date --></label>
+        <name>Previous_Month_PTO_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls primary O&amp;M contact from related account/contacts based on selection of Primary O&amp;M type in the Contact Type field --></help>
+        <label><!-- Primary O&amp;M Contact 2 --></label>
+        <name>Primary_O_M_Contact_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls over name of contact in related account this is marked Primary O&amp;M Contact in Contact Type field --></help>
+        <label><!-- Primary O&amp;M Contact --></label>
+        <name>Primary_O_M_Contact__c</name>
+        <relationshipLabel><!-- Sites (Primary O&amp;M Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prior 50% Set Date --></label>
+        <name>Prior_50_Set_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior CD IFC Date --></label>
+        <name>Prior_CD_IFC_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior CD IFR Date --></label>
+        <name>Prior_CD_IFR_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Deadline Date --></label>
+        <name>Prior_Deadline_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Design Stage --></label>
+        <name>Prior_Design_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Handoff Date --></label>
+        <name>Prior_Handoff_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Mechanical Completion Date --></label>
+        <name>Prior_Mechanical_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Mobilization Date --></label>
+        <name>Prior_Mobilization_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior PTO Date --></label>
+        <name>Prior_PTO_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Product Delivery Date --></label>
+        <name>Prior_Product_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Site Name --></label>
+        <name>Prior_Site_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Substantial Completion Date --></label>
+        <name>Prior_Substantial_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Block Description --></label>
+        <name>ProcessBlockDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Block --></label>
+        <name>ProcessBlock__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date any Milestone Date is Updated- If no update is needed, enter today&apos;s date so the Project Team knows you looked at the field. --></help>
+        <label><!-- Milestone Dates Updated --></label>
+        <name>ProductDeliveryDateUpdated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Modeling --></label>
+        <name>Production_Modeling__c</name>
+        <relationshipLabel><!-- Production Modelling --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Award Date --></label>
+        <name>ProjectAwardDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Awarded --></label>
+        <name>Project_Awarded__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls the text from the Branch field of the related project --></help>
+        <label><!-- Project Branch --></label>
+        <name>Project_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Contract --></label>
+        <name>Project_Contract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Project Coordinator or Assistant PM --></help>
+        <label><!-- Project Coordinator/ APM --></label>
+        <name>Project_Coordinator_APM__c</name>
+        <relationshipLabel><!-- Sites (Project Coordinator/ APM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- pulls Direct Margin % from related Project, used mostly in reporting --></help>
+        <label><!-- Project DM% --></label>
+        <name>Project_DM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to user record. --></help>
+        <label><!-- Project Finance Associate --></label>
+        <name>Project_Finance_Associate__c</name>
+        <relationshipLabel><!-- Sites (Project Finance Associate) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Finance Manager --></label>
+        <name>Project_Finance_Manager__c</name>
+        <relationshipLabel><!-- Sites (Project Finance Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>Project_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Kickoff Date Prior --></label>
+        <name>Project_Kickoff_Date_Prior__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Kickoff Date Text --></label>
+        <name>Project_Kickoff_Date_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the date kickoff was completed date or date it was accepted into Engineering. Pulls from Project --></help>
+        <label><!-- Project Kickoff Date1 --></label>
+        <name>Project_Kickoff_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pull the Kickoff date from the Project. May be edited by Engineer Managers --></help>
+        <label><!-- Project Kickoff Date --></label>
+        <name>Project_Kickoff_Date_editable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+        <relationshipLabel><!-- Sites (Project Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- displays PM budget value from related Project, used mostly for reporting. --></help>
+        <label><!-- Project PM Budget --></label>
+        <name>Project_PM_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roll up sum of Quantity * Watts (STC) of all related Project Product records. --></help>
+        <label><!-- Project Size Watts (STC) --></label>
+        <name>Project_Size_Watts_STC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Team --></label>
+        <name>Project_Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date Racking Delivery Date is Updated- If no update is needed, enter today&apos;s date so Procurement knows you looked at the field. --></help>
+        <label><!-- Racking Delivery Date Updated --></label>
+        <name>Racking_Delivery_Date_Updated__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Racking delivery. --></help>
+        <label><!-- Racking Delivery Date --></label>
+        <name>Racking_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Procurement updates the following: Product Locked:when selection is confirmed between Eng/Prcmnt.PO Placed,when PO is submitted to the vendor.Product On Site,the order is delivered. Other teams use the remaining terms Defined, In progress or Complete. --></help>
+        <label><!-- Racking Status --></label>
+        <name>Racking_Status__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Received</masterLabel>
+            <translation><!-- Borrego Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install Complete</masterLabel>
+            <translation><!-- Install Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Install In Progress</masterLabel>
+            <translation><!-- Install In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Further Review</masterLabel>
+            <translation><!-- Needs Further Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PO Placed</masterLabel>
+            <translation><!-- PO Placed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Defined</masterLabel>
+            <translation><!-- Product Defined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Locked</masterLabel>
+            <translation><!-- Product Locked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product On Site</masterLabel>
+            <translation><!-- Product On Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subcon. Received</masterLabel>
+            <translation><!-- Subcon. Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- brings over date of most recent active intx app --></help>
+        <label><!-- Ready for ISA --></label>
+        <name>Ready_for_ISA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Program --></label>
+        <name>RebateProgram__c</name>
+        <picklistValues>
+            <masterLabel>APU</masterLabel>
+            <translation><!-- APU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCEF</masterLabel>
+            <translation><!-- CCEF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFA Grant</masterLabel>
+            <translation><!-- CFA Grant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPAU</masterLabel>
+            <translation><!-- CPAU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPBB 2-Step</masterLabel>
+            <translation><!-- EPBB 2-Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EPBB 3-Step</masterLabel>
+            <translation><!-- EPBB 3-Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IID</masterLabel>
+            <translation><!-- IID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LADWP</masterLabel>
+            <translation><!-- LADWP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA Stimulus</masterLabel>
+            <translation><!-- MA Stimulus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTC CS1</masterLabel>
+            <translation><!-- MTC CS1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTC CS2</masterLabel>
+            <translation><!-- MTC CS2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTC SRI</masterLabel>
+            <translation><!-- MTC SRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NSHP</masterLabel>
+            <translation><!-- NSHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NStar</masterLabel>
+            <translation><!-- NStar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYSERDA</masterLabel>
+            <translation><!-- NYSERDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Grid</masterLabel>
+            <translation><!-- National Grid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBI 2-Step</masterLabel>
+            <translation><!-- PBI 2-Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBI 3-Step</masterLabel>
+            <translation><!-- PBI 3-Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMUD</masterLabel>
+            <translation><!-- SMUD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SREC 2</masterLabel>
+            <translation><!-- SREC 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SREC Only</masterLabel>
+            <translation><!-- SREC Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TID</masterLabel>
+            <translation><!-- TID --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Regional Engineer --></label>
+        <name>Regional_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Regional Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Civil Engineer --></label>
+        <name>Related_Civil_Engineer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Level (Current) --></label>
+        <name>Release_Level_Current__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Level (Prior) --></label>
+        <name>Release_Level_Prior__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource - Electrical Engineer --></label>
+        <name>Resource_Electrical_Engineer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource --></label>
+        <name>Resource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewer --></label>
+        <name>Reviewer__c</name>
+    </fields>
+    <fields>
+        <help><!-- checking this box will run Smartsheet Site Milestone sync WF&apos;s that include this checkbox in their criteria --></help>
+        <label><!-- Run Smartsheet Milestone WFs --></label>
+        <name>Run_Smartsheet_Milestone_WFs__c</name>
+    </fields>
+    <fields>
+        <label><!-- SCDeadlineid --></label>
+        <name>SCDeadlineid__c</name>
+    </fields>
+    <fields>
+        <label><!-- SE Total Hours --></label>
+        <name>SE_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by SPG group to QA DAS platform on new projects. --></help>
+        <label><!-- SPG DAS QA Status --></label>
+        <name>SPGDASQAStaus__c</name>
+        <picklistValues>
+            <masterLabel>100% Complete</masterLabel>
+            <translation><!-- 100% Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending EPC Ops Action</masterLabel>
+            <translation><!-- Pending EPC Ops Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending O&amp;M Ops Action</masterLabel>
+            <translation><!-- Pending O&amp;M Ops Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Owner Action</masterLabel>
+            <translation><!-- Pending Owner Action --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- no notes provided --></help>
+        <label><!-- SPG DAS QA Initital Review Complete --></label>
+        <name>SPG_DAS_QA_Initital_Review_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by SPG group to QA DAS platform on new projects. --></help>
+        <label><!-- SPG DAS QA Link --></label>
+        <name>SPG_DAS_QA_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by SPG group to QA DAS platform on new projects. --></help>
+        <label><!-- SPG DAS QA Notes --></label>
+        <name>SPG_DAS_QA_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- no notes provided --></help>
+        <label><!-- SPG DAS QA Start Date --></label>
+        <name>SPG_DAS_QA_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SS Resource Start Date --></label>
+        <name>SS_Resource_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ops Engineer - Senior Design Engineer responsible for the Engineering on the project. --></help>
+        <label><!-- Ops SDE --></label>
+        <name>Senior_Design_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Ops SDE) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Needed for customer portal in Diaspark for Borrego O&amp;M --></help>
+        <label><!-- Sep Estimated Performance --></label>
+        <name>Sep_Estimated_Performance__c</name>
+    </fields>
+    <fields>
+        <help><!-- for O&amp;M customer portal --></help>
+        <label><!-- Sep Irradiance Data --></label>
+        <name>Sep_Irradiance_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Contract Value --></label>
+        <name>SiteContractValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Address --></label>
+        <name>Site_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Presumed MW that can be supported by this site --></help>
+        <label><!-- Site Capacity --></label>
+        <name>Site_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site City --></label>
+        <name>Site_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site County --></label>
+        <name>Site_County__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used with Stacked Sites only
+To differentiate the contract values for stacked site projects with only 1 project, but multiple sites
+not required- used by Accounting and Project Finance --></help>
+        <label><!-- Site EPC Value --></label>
+        <name>Site_EPC_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Presumed MWh that can be generated at this site --></help>
+        <label><!-- Site Production Capacity --></label>
+        <name>Site_Production_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Project Name --></label>
+        <name>Site_Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site State --></label>
+        <name>Site_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District of Columbia</masterLabel>
+            <translation><!-- District of Columbia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Site Superintendent --></label>
+        <name>Site_Superintendent__c</name>
+        <relationshipLabel><!-- Sites (Site Superintendent) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site Use Permit Set PDF Link --></label>
+        <name>Site_Use_Permit_Set_PDF_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls from Site Use Permit Initial Release Date from Drawing Releases/Revisions --></help>
+        <label><!-- Site Use Permit Set Completed Date --></label>
+        <name>Site_Use_Permit_Set_Release__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Zip --></label>
+        <name>Site_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Switchboard --></label>
+        <name>SmartsheetBoard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet EPC LOI --></label>
+        <name>SmartsheetEPCLOI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet FNTP --></label>
+        <name>SmartsheetFNTP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Impact Study --></label>
+        <name>SmartsheetImpactStudy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Inverter Delivery Date --></label>
+        <name>SmartsheetInverterDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Market To Owner --></label>
+        <name>SmartsheetMarketToOwner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Module Delivery Date --></label>
+        <name>SmartsheetModuleDeliveryDAte__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Racking Delivery Date --></label>
+        <name>SmartsheetRackingDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Switchgear --></label>
+        <name>SmartsheetSwitchgear__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Transformer --></label>
+        <name>SmartsheetTransformer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Wetlands Approval --></label>
+        <name>SmartsheetWetlandsApproval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet 50 --></label>
+        <name>Smartsheet_502__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet AHJ Comments Received --></label>
+        <name>Smartsheet_AHJ_Comments_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet AHJ Resubmission --></label>
+        <name>Smartsheet_AHJ_Resubmission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet AHJ Submission --></label>
+        <name>Smartsheet_AHJ_Submission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Deadline Description --></label>
+        <name>Smartsheet_Deadline_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Deadline --></label>
+        <name>Smartsheet_Deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Design Notes --></label>
+        <name>Smartsheet_Design_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- rolls up milestone Development Engineering Start Date --></help>
+        <label><!-- Smartsheet Development Eng Start Date --></label>
+        <name>Smartsheet_Development_Eng_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Entitlement Approval Date --></label>
+        <name>Smartsheet_Entitlement_Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Execute ISA --></label>
+        <name>Smartsheet_Execute_ISA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Expected ISA --></label>
+        <name>Smartsheet_Expected_ISA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Final Completion --></label>
+        <name>Smartsheet_Final_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Handoff Date --></label>
+        <name>Smartsheet_Handoff_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet IFC --></label>
+        <name>Smartsheet_IFC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet IFP --></label>
+        <name>Smartsheet_IFP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet IFR --></label>
+        <name>Smartsheet_IFR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Kickoff Meeting Held --></label>
+        <name>Smartsheet_Kickoff_Meeting_Held__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Mech Completion --></label>
+        <name>Smartsheet_Mech_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Mob --></label>
+        <name>Smartsheet_Mob__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Ops Engineering Start Date --></label>
+        <name>Smartsheet_Ops_Engineering_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet PTO Date --></label>
+        <name>Smartsheet_PTO_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Project Kickoff Date --></label>
+        <name>Smartsheet_Project_Kickoff_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Ready for ISA --></label>
+        <name>Smartsheet_Ready_for_ISA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Release Drawings Date --></label>
+        <name>Smartsheet_Release_Drawings_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Schedule Comment --></label>
+        <name>Smartsheet_Schedule_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Site Discovery --></label>
+        <name>Smartsheet_Site_Discovery__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Site Use Permit --></label>
+        <name>Smartsheet_Site_Use_Permit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet Substantial Completion --></label>
+        <name>Smartsheet_Substantial_Completion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smartsheet System Design Start --></label>
+        <name>Smartsheet_System_Design_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Yield --></label>
+        <name>Specific_Yield__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Chamber --></label>
+        <name>State_Lower_Chamber__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower District ID --></label>
+        <name>State_Lower_District_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower First Name --></label>
+        <name>State_Lower_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Last Name --></label>
+        <name>State_Lower_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Party --></label>
+        <name>State_Lower_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Address 1 --></label>
+        <name>State_Lower_Primary_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Address 2 --></label>
+        <name>State_Lower_Primary_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Address 3 --></label>
+        <name>State_Lower_Primary_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower City --></label>
+        <name>State_Lower_Primary_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Phone --></label>
+        <name>State_Lower_Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Postal --></label>
+        <name>State_Lower_Primary_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower State --></label>
+        <name>State_Lower_Primary_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower Role --></label>
+        <name>State_Lower_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower URL --></label>
+        <name>State_Lower_URL_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Lower URL 2 --></label>
+        <name>State_Lower_URL_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Chamber --></label>
+        <name>State_Upper_Chamber__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper District ID --></label>
+        <name>State_Upper_District_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper First Name --></label>
+        <name>State_Upper_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Last Name --></label>
+        <name>State_Upper_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Party --></label>
+        <name>State_Upper_Party__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Address 1 --></label>
+        <name>State_Upper_Primary_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Address 2 --></label>
+        <name>State_Upper_Primary_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Address 3 --></label>
+        <name>State_Upper_Primary_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper City --></label>
+        <name>State_Upper_Primary_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Phone --></label>
+        <name>State_Upper_Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Postal --></label>
+        <name>State_Upper_Primary_Postal__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper State --></label>
+        <name>State_Upper_Primary_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper Role --></label>
+        <name>State_Upper_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper URL --></label>
+        <name>State_Upper_URL_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Upper URL 2 --></label>
+        <name>State_Upper_URL_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Structural Engineer --></label>
+        <name>Structural_Engineer__c</name>
+        <relationshipLabel><!-- Sites (Internal Structural Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mech to PTO --></label>
+        <name>Sub_to_PTO_Cal_Cond__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates # of days between substantial completion date and PTO --></help>
+        <label><!-- Mech to PTO --></label>
+        <name>Sub_to_PTO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subcontracted Civil --></label>
+        <name>Subcontracted_Civil__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submit to Quality Assurance --></label>
+        <name>Submit_to_Quality_AssurancePost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Commissioning Docs should be uploaded to the box.com folder for the Account --></help>
+        <label><!-- Pre-Op Submit to Quality Assurance --></label>
+        <name>Submit_to_Quality_Assurance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substantial Completion Baseline --></label>
+        <name>Substantial_Completion_Baseline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date where all components of the generation system are installed and connected. Electrical completion, or a COC from the AHJ, usually means &quot;ready for intended use&quot;. --></help>
+        <label><!-- Mechanical Completion Date --></label>
+        <name>Substantial_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contractually issued after the performance testing is successful. --></help>
+        <label><!-- Substantial Completion --></label>
+        <name>Substantial_Completion_NEW__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Switchboard delivery. --></help>
+        <label><!-- Switchboard Delivery Date --></label>
+        <name>Switchboard_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Switchgear delivery. --></help>
+        <label><!-- Switchgear Delivery Date --></label>
+        <name>Switchgear_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which template should be used to sync with Smartsheets? --></help>
+        <label><!-- Sync to Smartsheets --></label>
+        <name>Sync_to_Smartsheets__c</name>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date that Design Engineering begins. Typically triggered by delivery of initial site discovery package and notice to proceed to system designers. --></help>
+        <label><!-- System Design Start --></label>
+        <name>System_Design_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Group % --></label>
+        <name>Tax_Group_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- updated by accounting and used to indicate the tax jurisdiction that a project or site falls within - used for reporting --></help>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Estimated or actual date of Transformer delivery. --></help>
+        <label><!-- Transformer Delivery Date --></label>
+        <name>Transformer_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Dual Use/Ag Canopy</masterLabel>
+            <translation><!-- Dual Use/Ag Canopy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Tilt Ground</masterLabel>
+            <translation><!-- Fixed Tilt Ground --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Floating Solar</masterLabel>
+            <translation><!-- Floating Solar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landfill</masterLabel>
+            <translation><!-- Landfill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roof</masterLabel>
+            <translation><!-- Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSS</masterLabel>
+            <translation><!-- SSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Axis Tracker</masterLabel>
+            <translation><!-- Single Axis Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standalone Storage</masterLabel>
+            <translation><!-- Standalone Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wind</masterLabel>
+            <translation><!-- Wind --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Uninfluenced prediction of the utility PTO. --></help>
+        <label><!-- UCC +30 --></label>
+        <name>UCC_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated Wetland Layout Actual --></label>
+        <name>Updated_Wetland_Layout_Actual__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Utility Construction is Complete --></help>
+        <label><!-- Utility Construction Completion Date --></label>
+        <name>UtilityConstructionCompletionDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Utility Design will be complete --></help>
+        <label><!-- Utility Design Completion Date --></label>
+        <name>UtilityDesignCompletionDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically populated from the Opportunity Utility Company field. --></help>
+        <label><!-- Utility Company --></label>
+        <name>Utility_Company__c</name>
+    </fields>
+    <fields>
+        <help><!-- Utility, load zone, substation name, distance from site to substation; different markets use along utility lines and some use as crow flies --></help>
+        <label><!-- Utility Info --></label>
+        <name>Utility_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utility Zone --></label>
+        <name>Utility_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- WIP Status --></label>
+        <name>WIPStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Registration --></label>
+        <name>Warranty_Contract__c</name>
+        <relationshipLabel><!-- Sites (Warranty Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Warranty End Date --></label>
+        <name>Warranty_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Start Date --></label>
+        <name>Warranty_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wetlands Approval Date --></label>
+        <name>Wetlands_Delineated_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wetlands Delineated &amp; Survey Released --></label>
+        <name>Wetlands_Delineated_Released_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Where is parking for Service Crew? --></label>
+        <name>Where_is_parking_for_Service_Crew__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Tester --></label>
+        <name>Workflow_Tester__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date 25% payment was made to the utility --></help>
+        <label><!-- 25% Payment Date --></label>
+        <name>X25PaymentDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Forecasted Date of 50% Set Release until the actual date of release --></help>
+        <label><!-- Bid Set Completion Date --></label>
+        <name>X50_Forecast_Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Date of 50% Set Release. --></help>
+        <label><!-- 50% Set Completed --></label>
+        <name>X50_Set_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date 75% payment was made to the utility --></help>
+        <label><!-- 75% Payment Date --></label>
+        <name>X75PaymentDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 90% Checkbox --></label>
+        <name>X90_Checkbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- 90% or Later --></label>
+        <name>X90_or_Later__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityOwner --></label>
+        <name>opportunityowner__c</name>
+        <relationshipLabel><!-- Sites --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Design Stage = As Built, Please enter the Const Set Completed date (CD IFC) --></errorMessage>
+        <name>Design_Stage_is_As_Built</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Design Stage = CD IFC, Please enter the Const Set IFR date (CD IFR) and link to the published CD IFR Set --></errorMessage>
+        <name>Design_Stage_is_CDIFC</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Milestone Dates Updated field is filled in, all Milestone Dates must be filled in before saving. Energy Storage Unit Delivery Date is only required if Storage is included with the Project. --></errorMessage>
+        <name>Milestone_Dates_Updated_East</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Milestone Dates Updated field is filled in, all Milestone Dates must be filled in before saving. Energy Storage Unit Delivery Date is only required if Storage is included with the Project. --></errorMessage>
+        <name>Milestone_Dates_Updated_West</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only O&amp;M personnel can change the Pre- Operational Commissioning Status field to &quot;Approved&quot; or &quot;First Stage Approved&quot; --></errorMessage>
+        <name>PreOp_Commissioning_Approval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Site Name field cannot be equal to + or contain CLONE. --></errorMessage>
+        <name>SiteNameNotAllowed</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Edit_Dates --></label>
+        <name>Mass_Edit_Dates</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Site --></label>
+        <name>New_Site</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Milestone_Dates --></label>
+        <name>Update_Milestone_Dates</name>
+    </webLinks>
+</CustomObjectTranslation>

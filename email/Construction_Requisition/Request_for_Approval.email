@@ -1,0 +1,17 @@
+{!Con_Req__c.CreatedBy} has requested the following for {!Con_Req__c.Project__c}{!Con_Req__c.Project__c}: 
+
+{!Con_Req__c.Quantity__c} 
+{!Con_Req__c.Product__c}{!Con_Req__c.Product_Description__c} 
+Cost: {!Con_Req__c.Total_Cost__c} 
+
+Notes: 
+{!Con_Req__c.Additional_Notes__c} 
+
+
+Previous Comments, if any: 
+
+{!ApprovalRequest.Comments} 
+{!ApprovalRequest.Process_Approver} 
+
+Please approve or deny this request: 
+{!ApprovalRequest.Internal_URL}

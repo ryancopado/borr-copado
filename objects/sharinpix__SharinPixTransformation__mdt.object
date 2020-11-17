@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>sharinpix__Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__FieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Field name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Format__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Format</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>px</fullName>
+                    <default>false</default>
+                    <label>px</label>
+                </value>
+                <value>
+                    <fullName>%</fullName>
+                    <default>false</default>
+                    <label>%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Image Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Opacity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Opacity</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__SharinPixSyncSetting__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>SharinPix Sync Setting</label>
+        <referenceTo>sharinpix__SharinPixSyncSetting__mdt</referenceTo>
+        <relationshipLabel>SharinPix Transformations</relationshipLabel>
+        <relationshipName>SharinPix_Transformations</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Transformation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Transformation</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FillToSize</fullName>
+                    <default>true</default>
+                    <label>Fill to size</label>
+                </value>
+                <value>
+                    <fullName>FitToSize</fullName>
+                    <default>false</default>
+                    <label>Fit to size</label>
+                </value>
+                <value>
+                    <fullName>PadToSize</fullName>
+                    <default>false</default>
+                    <label>Pad to size</label>
+                </value>
+                <value>
+                    <fullName>ScaleToSize</fullName>
+                    <default>false</default>
+                    <label>Scale to size</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Value</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__WatermarkHeight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Watermark Height</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__WatermarkSize__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Watermark Size</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__WatermarkWidth__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Watermark Width</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>SharinPix Transformation</label>
+    <pluralLabel>SharinPix Transformations</pluralLabel>
+    <validationRules>
+        <fullName>sharinpix__VR_ImageId_Length_if_not_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISBLANK(sharinpix__ImageId__c), false, IF (LEN(sharinpix__ImageId__c) != 36, true, false))</errorConditionFormula>
+        <errorDisplayField>sharinpix__ImageId__c</errorDisplayField>
+        <errorMessage>Image Id must be a valid Id from SharinPix</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>sharinpix__VR_WatermarkSizeRequired</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(NOT(ISBLANK(sharinpix__ImageId__c)) &amp;&amp; (ISBLANK(sharinpix__WatermarkWidth__c) &amp;&amp; ISBLANK(sharinpix__WatermarkHeight__c)), true, false)</errorConditionFormula>
+        <errorMessage>Either Watermark Width or Watermark Height is required if Image Id is specified.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,93 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" controller="createcaselightning">
+ 
+
+   
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="contractlist" type="Contract[]"/>
+    <aura:attribute name="newc" type="Contract"/>
+   
+
+
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:html tag="style">
+        .slds-modal__container{
+        height : auto;
+        width: 70%;
+        max-width: 70rem;
+        }
+        .modal-body{
+        height :300px !important;
+        max-height: 300px !important;
+        }
+        
+        
+    </aura:html> 
+    
+      <table >
+          
+               <thead>
+                    <tr>
+                        <th>
+                        </th>
+                                    <th scope="col"> 
+                                    <div class="slds-align--absolute-center" title="Contract Number"> Contract Number  </div>                            
+                                    </th>
+                                    <th scope="col"> 
+                                    <div class="slds-align--absolute-center" title="Project"> Project  </div>                            
+                                    </th>
+                                    <th scope="col"> 
+                                    <div class="slds-align--absolute-center" title="Type"> Type  </div>                            
+                                    </th>
+                                     <th scope="col"> 
+                                    <div class="slds-align--absolute-center" title="Contract Status"> Contract Status  </div>                            
+                                    </th>
+                   
+                   </tr>
+                   <aura:iteration items="{!v.contractlist}" var="con">
+                   <tr>
+                       <th>
+                           <lightning:button  title="Create Case" label="Create Case" onclick="{!c.gotoURL}" class="{!con.Id}"/>
+                  
+                       </th>
+                        <th scope="col">  
+                            <div class="slds-align--absolute-center">
+                                <ui:outputURL value="{!'/'+con.Id}" label="{!con.ContractNumber}" aura:id="detailContURL" />
+                                </div>
+                            </th> 
+                         <th scope="col">                            
+                              <div class="slds-align--absolute-center" value="{!con.ASProject__r.Name}">{!con.ASProject__r.Name}</div>
+                            </th>   
+                   
+                   
+                         <th scope="col">                            
+                              <div class="slds-align--absolute-center" value="{!con.Type__c}">{!con.Type__c}</div>
+                            </th>   
+                  
+                    
+                   
+                         <th scope="col">                            
+                              <div class="slds-align--absolute-center" value="{!con.Contract_Status__c}">{!con.Contract_Status__c}</div>
+                            </th>   
+                   </tr>
+                       <tr>
+                           <br></br>
+                       </tr>
+                        </aura:iteration>
+              </thead>
+         
+    </table> 
+       
+      
+
+     
+              
+    
+       
+        
+    
+     
+    
+   
+      
+	
+</aura:component>

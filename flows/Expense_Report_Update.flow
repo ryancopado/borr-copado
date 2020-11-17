@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Branch</label>
+        </rules>
+    </decisions>
+    <description>Updates fields on Exp Report upon creation</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE(
+[AcctSeed__Expense_Report__c].AcctSeed__Employee__c.Ops_Division__c,
+&quot;Corporate&quot;,&quot;a1O2H00000D2iiT&quot;,
+&quot;Dev - Emerging&quot;,&quot;a1O2H00000D2iiY&quot;,
+&quot;Dev - New England&quot;,&quot;a1O2H00000D2iii&quot;,
+&quot;Dev - New York&quot;,&quot;a1O2H00000D2iid&quot;,
+&quot;Dev - Overhead&quot;,&quot;a1O2H00000D2iin&quot;,
+&quot;EPC - Mid Atlantic&quot;,&quot;a1O2H00000D2iis&quot;,
+&quot;EPC - Midwest&quot;,&quot;a1O2H00000D2iix&quot;,
+&quot;EPC - New England&quot;,&quot;a1O2H00000D2ij2&quot;,
+&quot;EPC - Overhead&quot;,&quot;a1O2H00000D2ij7&quot;,
+&quot;EPC - West&quot;,&quot;a1O2H00000D2ijC&quot;,
+&quot;O&amp;M - Mid Atlantic&quot;,&quot;a1O2H00000D2ijH&quot;,
+&quot;O&amp;M - Mid-Atlantic&quot;,&quot;a1O2H00000D2ijH&quot;,
+&quot;O&amp;M - Midwest&quot;,&quot;a1O2H00000D2ijR&quot;,
+&quot;O&amp;M - New England&quot;,&quot;a1O2H00000D2ijb&quot;,
+&quot;O&amp;M - Overhead&quot;,&quot;a1O2H00000D2ijW&quot;,
+&quot;O&amp;M - Southeast&quot;,&quot;a1O2H00000D2ijg&quot;,
+&quot;O&amp;M - Special Projects&quot;,&quot;a1O2H00000D2ijl&quot;,
+&quot;O&amp;M - West&quot;,&quot;a1O2H00000D2ijv&quot;,
+&quot;EPC - Mid-Atlantic&quot;, &quot;a1O2H00000D2iis&quot;,
+&quot;&quot;
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A3_2139625215</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+{!myVariable_current.AcctSeed__Employee__r.Ops_Division__c},
+&quot;Corporate&quot;,&quot;a1O2H00000D2iiT&quot;,
+&quot;Dev - Emerging&quot;,&quot;a1O2H00000D2iiY&quot;,
+&quot;Dev - New England&quot;,&quot;a1O2H00000D2iii&quot;,
+&quot;Dev - New York&quot;,&quot;a1O2H00000D2iid&quot;,
+&quot;Dev - Overhead&quot;,&quot;a1O2H00000D2iin&quot;,
+&quot;EPC - Mid Atlantic&quot;,&quot;a1O2H00000D2iis&quot;,
+&quot;EPC - Midwest&quot;,&quot;a1O2H00000D2iix&quot;,
+&quot;EPC - New England&quot;,&quot;a1O2H00000D2ij2&quot;,
+&quot;EPC - Overhead&quot;,&quot;a1O2H00000D2ij7&quot;,
+&quot;EPC - West&quot;,&quot;a1O2H00000D2ijC&quot;,
+&quot;O&amp;M - Mid Atlantic&quot;,&quot;a1O2H00000D2ijH&quot;,
+&quot;O&amp;M - Mid-Atlantic&quot;,&quot;a1O2H00000D2ijH&quot;,
+&quot;O&amp;M - Midwest&quot;,&quot;a1O2H00000D2ijR&quot;,
+&quot;O&amp;M - New England&quot;,&quot;a1O2H00000D2ijb&quot;,
+&quot;O&amp;M - Overhead&quot;,&quot;a1O2H00000D2ijW&quot;,
+&quot;O&amp;M - Southeast&quot;,&quot;a1O2H00000D2ijg&quot;,
+&quot;O&amp;M - Special Projects&quot;,&quot;a1O2H00000D2ijl&quot;,
+&quot;O&amp;M - West&quot;,&quot;a1O2H00000D2ijv&quot;,
+&quot;EPC - Mid-Atlantic&quot;, &quot;a1O2H00000D2iis&quot;,
+&quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE( [AcctSeed__Expense_Report__c].AcctSeed__Employee__c.Sales_Segment__c ,
+&quot;Shared Services&quot;,&quot;a1O2H00000D2iiJ&quot;,
+&quot;EPC&quot;,&quot;a1O2H00000D2iiE&quot;,
+&quot;Development&quot;,&quot;a1O2H00000D2ii9&quot;,
+&quot;ESD&quot;,&quot;a1O34000009wg2Q&quot;,
+&quot;O&amp;M&quot;,&quot;a1O80000008AeJE&quot;,
+&quot;&quot;
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A2_7357057684</name>
+        <dataType>String</dataType>
+        <expression>CASE( {!myVariable_current.AcctSeed__Employee__r.Sales_Segment__c} ,
+&quot;Shared Services&quot;,&quot;a1O2H00000D2iiJ&quot;,
+&quot;EPC&quot;,&quot;a1O2H00000D2iiE&quot;,
+&quot;Development&quot;,&quot;a1O2H00000D2ii9&quot;,
+&quot;ESD&quot;,&quot;a1O34000009wg2Q&quot;,
+&quot;O&amp;M&quot;,&quot;a1O80000008AeJE&quot;,
+&quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>true</expression>
+    </formulas>
+    <interviewLabel>Expense_Report_Update-7_InterviewLabel</interviewLabel>
+    <label>Expense Report Update</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>AcctSeed__Expense_Report__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onCreateOnly</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[AcctSeed__Expense_Report__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Branch</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_1_A2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Branch</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ReportBranch__c</field>
+            <value>
+                <elementReference>myVariable_current.Branch__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeed__Expense_Report__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[AcctSeed__Expense_Report__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A2</name>
+        <label>Update Business Unit (Sales Segment)</label>
+        <locationX>100</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myRule_1_A3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sales Segment</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>AcctSeed__Accounting_Variable__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sales_Segment__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A2_7357057684</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeed__Expense_Report__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[AcctSeed__Expense_Report__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A3</name>
+        <label>Update Team (Ops Division)</label>
+        <locationX>100</locationX>
+        <locationY>400</locationY>
+        <connector>
+            <targetReference>myRule_1_A4</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Ops Division</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>AcctSeed__Accounting_Variable__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Ops_Division__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A3_2139625215</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeed__Expense_Report__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[AcctSeed__Expense_Report__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A4</name>
+        <label>Update Manager</label>
+        <locationX>100</locationX>
+        <locationY>500</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Manager for Approval</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Manager_for_Approval__c</field>
+            <value>
+                <elementReference>myVariable_current.AcctSeed__Employee__r.ManagerId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeed__Expense_Report__c</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>AcctSeed__Expense_Report__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AcctSeed__Expense_Report__c</objectType>
+    </variables>
+</Flow>

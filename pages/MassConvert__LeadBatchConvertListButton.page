@@ -1,0 +1,11 @@
+<apex:page standardController="Lead" extensions="MassConvert.MassConvertExtension"  recordSetVar="Leads">
+    <script>
+   window.onload = function(e) {
+       var oldURL = window.location.href;
+       //alert(oldURL);
+       alert('Note : Please go to Administration Setup | Monitoring | Apex Jobs to monitor the status of this Apex jobs, and optionally abort jobs that are in progress.');
+       window.location.href='/apex/MassConvert__BatchConvert?retURL='+location.href; 
+      
+   };
+   </script>
+</apex:page>

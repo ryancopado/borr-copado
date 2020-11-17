@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>blank email with logo, photos</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoSolar</letterhead>
+    <name>email letterhead</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+ 
+
+Sincerely,
+
+{!User.Name}
+Borrego Solar Systems, Inc.
+727 Allston Way Suite B
+Berkeley, CA 94710
+{!User.Email}
+
+
+
+ 
+ 
+This e-mail message may contain privileged or confidential information. If you are not the intended recipient, you may not view, disclose, use, disseminate, distribute, copy, or rely upon this message or attachment in any way. If you received this e-mail message in error, please return by forwarding the message and its attachments to the sender and delete the message.
+
+
+Borrego Solar Systems, Inc. and its affiliates do not accept liability for any errors, omissions, corruption or virus in the contents of this message or any attachments that arise as a result of e-mail transmission.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

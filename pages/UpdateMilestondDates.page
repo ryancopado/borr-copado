@@ -1,0 +1,301 @@
+<apex:page StandardController="Site__c" recordSetVar="site" extensions="UpdateMilestoneDates1" tabStyle="Site__c">
+<html>
+        <head>
+            <style>
+              .table {
+   display: table;
+   height: 100px;
+   width: 100%;
+   table-layout: fixed;
+} 
+              
+            </style>
+        </head>
+        <body>
+        <apex:pageBlock title="Selected Sites">
+
+        <apex:form id="theform" >
+        <apex:pageMessages id="showmsg" />
+
+            
+                 
+                    <apex:pageblock >
+                  
+                    <apex:outputLabel value="Sites" />
+                    <apex:selectList size="1" value="{!selectedsiteid}" >
+                    <apex:selectOptions Value="{!siteList1}"/> 
+                        <apex:actionSupport event="onchange" action="{!getsiterecords}" reRender="theform">
+                            <apex:param value="{!selectedsiteid}" assignTo="{!selectedsite}" />
+                        </apex:actionSupport>
+                    </apex:selectList>
+                    
+                    <apex:commandButton id="saveBtn" value="Save" action="{!save}" reRender="showmsg"/>
+                    <apex:commandButton id="cancelBtn" value="Cancel" action="https://na29.salesforce.com/a69?fcf=00B34000008u6t9" />  
+                                        
+                    </apex:pageblock>
+                    
+                    
+                    <apex:pageBlock title="SiteRelatedDates" id="siteBlock" rendered="{!!showsite}" > 
+                                                     
+                    <table>
+                    <apex:repeat value="{!siteList}" var="u"  >
+                                <tr>
+                                    <th>7C Submittal Date</th>
+                                    <td><apex:inputField Value="{!u['site.MarkettoOwnerDate__c']}"/></td>
+                                     <th>Milestone Dates Updated</th>
+                                    <td><apex:inputField Value="{!u['site.ProductDeliveryDateUpdated__c']}"/></td>
+                                    
+                                </tr> 
+                                
+                                <tr>
+                                    <th>PB9 CC Approval Date</th>
+                                    <td><apex:inputField Value="{!u['site.PB9CCApprovalDate__c']}"/></td>
+                                    <th>Building Permit Obtained Date</th>
+                                    <td><apex:inputField Value="{!u['site.BuildingPermitObtainedDate__c']}"/></td>
+                                    
+                                    
+                               </tr>
+                               <tr>
+                                    <th>Handoff Date</th>
+                                    <td><apex:inputField Value="{!u['site.Handoff_Date__c']}"/></td>
+                                    <th>Mobilization Date</th>
+                                    <td><apex:inputField Value="{!u['site.Mobilization_Date__c']}"/></td>
+                                    
+                               </tr>
+                                   <tr>
+                                    <th>ISA Received Date</th>
+                                    <td><apex:inputField Value="{!u['site.ISA_Received_Date__c']}"/></td>
+                                    <th>Energy Storage Unit Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Energy_Storage_Unit_Delivery_Date__c']}"/></td>
+                                   
+                                    </tr>
+                                    <tr>
+                                     <th>25% Payment Date</th>
+                                     <td><apex:inputField Value="{!u['site.X25PaymentDate__c']}"/></td>
+                                     <th>Racking Delivery Date</th>
+                                     <td><apex:inputField Value="{!u['site.Racking_Delivery_Date__c']}"/></td>
+                                     </tr>
+                                    
+                               <tr>
+                                    <th>75% Payment Date</th>
+                                    <td><apex:inputField Value="{!u['site.X75PaymentDate__c']}"/></td>
+                                    <th>Module Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Module_Delivery_Date__c']}"/></td>
+                                    
+                               </tr>
+                               <tr>
+                                    <th>Utility Design Completion Date</th>
+                                    <td><apex:inputField Value="{!u['site.UtilityDesignCompletionDate__c']}"/></td>
+                                    <th>Transformer Delivery Date </th>
+                                    <td><apex:inputField Value="{!u['site.Transformer_Delivery_Date__c']}"/></td>
+                                    
+                               </tr>
+                               <tr>
+                                    <th>Utility Construction Completion Date</th>
+                                    <td><apex:inputField Value="{!u['site.UtilityConstructionCompletionDate__c']}"/></td>
+                                    <th>Inverter Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Inverter_Delivery_Date__c']}"/></td>
+                                </tr>
+                               
+                               <tr>
+                                    <th>CD IFR Date</th>
+                                    <td><apex:inputField Value="{!u['site.CD_Forecast_Release_Date__c']}"/></td>
+                                    <th>Switchboard Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Switchboard_Delivery_Date__c']}"/></td>
+                               </tr>
+                               <tr>
+                                    <th>CD IFC Date </th>
+                                    <td><apex:inputField Value="{!u['site.CD_IFC_Release_Date__c']}"/></td>
+                                    <th>Switchgear Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Switchgear_Delivery_Date__c']}"/></td>
+                                </tr>
+                               <tr>
+                                    <th>EPC Signed Date </th>
+                                    <td><apex:inputField Value="{!u['site.EPC_Signed_Date__c']}"/></td>
+                                    <th>Mechanical Completion Date</th>
+                                    <td><apex:inputField Value="{!u['site.Substantial_Completion_Date__c']}"/></td>
+                               </tr>
+                               <tr>
+                                    <th>FNTP Date</th>
+                                    <td><apex:inputField Value="{!u['site.FNTP_Date__c']}"/></td>
+                                    <th>PTO Date</th>
+                                    <td><apex:inputField Value="{!u['site.PTO_Date__c']}"/></td> 
+                               </tr>
+                               <tr>
+                                    <th>Substantial Completion</th>
+                                    <td><apex:inputField Value="{!u['site.Substantial_Completion_NEW__c']}"/></td>
+                                    <th>Final Completion</th>
+                                    <td><apex:inputField Value="{!u['site.Final_Completion__c']}"/></td>
+                               </tr>
+                               <tr>
+                                  <th></th>
+                                  <td></td>
+                                  <th>New Comments on Schedule</th>
+                                  <td><apex:inputField Value="{!u['site.New_Comments_on_Schedule__c']}"/></td>
+                              </tr>
+                               
+                                    
+                         </apex:repeat>
+            
+            </table>
+            
+            </apex:pageblock>
+            
+            <apex:pageBlock title="Captive/Onsite Related Dates"  id="OnsiteBlock" rendered="{!!showonsiterecordtype}"> <!--  value="{!siteList}" "{!showonsiterecordtype = 1}">   -->
+            <!-- <apex:outputpanel rendered="{(!siteList.Opportunity_Record_Type__c=='captive/onsite')}"> -->
+            
+                    <table>
+                    <apex:repeat value="{!siteList}" var="u" >
+                    <tr>
+                                    <th>Project Kickoff Date</th>
+                                    <td><apex:inputField Value="{!u['site.Project_Kickoff_Date_editable__c']}"/></td>
+                                     <th>Milestone Dates Updated</th>
+                                    <td><apex:inputField Value="{!u['site.ProductDeliveryDateUpdated__c']}"/></td>
+                                    
+                     </tr> 
+                      <tr>
+                                    <th>Interconnection App Submitted Date</th>
+                                    <td><apex:inputField Value="{!u['site.Interconnection_App_Submitted_Date__c']}"/></td>
+                                    <th>Energy Storage Unit Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Energy_Storage_Unit_Delivery_Date__c']}"/></td>
+                                    
+                     </tr> 
+                      <tr>
+                                    <th>LNTP Date </th>
+                                    <td><apex:inputField Value="{!u['site.LNTP_Date__c']}"/></td>
+                                    <th>Racking Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Racking_Delivery_Date__c']}"/></td>
+                                    
+                     </tr> 
+                      <tr>
+                                    <th>EPC Signed Date </th>
+                                    <td><apex:inputField Value="{!u['site.EPC_Signed_Date__c']}"/></td>
+                                    <th>Module Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Module_Delivery_Date__c']}"/></td>
+                                    
+                     </tr> 
+                     <tr>
+                                    <th>Development Plan Set Complete/50% Set Date</th>
+                                    <td><apex:inputField Value="{!u['site.X50_Forecast_Release_Date__c']}"/></td>
+                                    <th>Transformer Delivery Date </th>
+                                    <td><apex:inputField Value="{!u['site.Transformer_Delivery_Date__c']}"/></td>
+                                    
+                     </tr> 
+                      <tr>
+                                    <th>CD IFR Date</th>
+                                    <td><apex:inputField Value="{!u['site.CD_Forecast_Release_Date__c']}"/></td>
+                                    <th>Inverter Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Inverter_Delivery_Date__c']}"/></td>
+                                    
+                     </tr>
+                     <tr>
+                                    <th>CD IFP Date</th>
+                                    <td><apex:inputField Value="{!u['site.CD_IFP_Date__c']}"/></td>
+                                    <th>Switchboard Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Switchboard_Delivery_Date__c']}"/></td>
+                     </tr>
+                     <tr>
+                                    <th>CD IFC Date </th>
+                                    <td><apex:inputField Value="{!u['site.CD_IFC_Release_Date__c']}"/></td>
+                                    <th>Mobilization Date</th>
+                                    <td><apex:inputField Value="{!u['site.Mobilization_Date__c']}"/></td>
+                                    
+                     </tr>  
+                      <tr>
+                                    <th></th>
+                                    <td></td>
+                                    
+                                    <th>Mechanical Completion Date</th>
+                                    <td><apex:inputField Value="{!u['site.Substantial_Completion_Date__c']}"/></td>
+                       </tr>
+                       <tr>
+                                   <th></th>
+                                   <td></td>
+                                   
+                                    <th>PTO Date</th>
+                                    <td><apex:inputField Value="{!u['site.PTO_Date__c']}"/></td>
+                       </tr> 
+                       <tr>
+                                   <th></th>
+                                   <td></td>
+                       
+                                    <th>Final Completion</th>
+                                    <td><apex:inputField Value="{!u['site.Final_Completion__c']}"/></td>
+                       </tr> 
+                       <tr>
+                                   <th></th>
+                                   <td></td>
+                                   
+                       
+                                    <th>Switchgear Delivery Date</th>
+                                    <td><apex:inputField Value="{!u['site.Switchgear_Delivery_Date__c']}"/></td>
+                        </tr>
+                        <tr>
+                                   <th></th>
+                                   <td></td>
+                                    
+                                    
+                                    <th>Substantial Completion</th>
+                                    <td><apex:inputField Value="{!u['site.Substantial_Completion_NEW__c']}"/></td>
+                                    
+                      </tr>
+                      <tr>
+                                  <th></th>
+                                  <td></td>
+                                  <th>New Comments on Schedule</th>
+                                  <td><apex:inputField Value="{!u['site.New_Comments_on_Schedule__c']}"/></td>
+                      </tr>
+                                  
+                      
+                       </apex:repeat>
+                       
+             </table>
+             
+             </apex:pageblock>
+                      
+                    
+            <apex:pageBlock title="DeadlineRelatedDates" id="deadlineBlock">
+            <apex:outputPanel >
+                    <table>
+                    
+                    <apex:repeat value="{!projdeadList}" var="v">
+                    <tr align="center">
+                                        <th align="center">Associated Milestone</th><br>
+                                        <td align="center" ><apex:inputField Value="{!v['projdead.AssociatedMilestone__c']}" html-disabled="true"/></td></br>
+                                        <th>Associated Milestone Date</th><br>
+                                        <td align="center"><apex:inputfield value="{!v['projdead.RelatedMilestoneDate__c']}" html-disabled="true"/></td></br>
+                                        <th>Deadline Date</th>
+                                        <td><apex:inputField Value="{!v['projdead.DeadlineDate__c']}"/></td>
+                                       
+                                        
+                                     </tr>
+                                     
+
+                                         <tr>
+                                         <th>Deadline Description</th>
+                                        <td><apex:inputField Value="{!v['projdead.DeadlineDescription__c']}"/></td>
+                                        <th>Mitigation Plan</th>
+                                        <td><apex:inputField Value="{!v['projdead.Mitigation_Plan__c']}"/></td>   
+                                        
+                                     </tr>
+                                     <tr>
+
+                                         <th>&nbsp;</th>
+                                         <th>&nbsp;</th>
+                                      </tr>
+                                    
+                                       
+                                         
+                                         
+                                   
+                     </apex:repeat>
+             </table>
+             </apex:outputPanel>
+             
+            </apex:pageblock>
+             </apex:form>
+            </apex:pageblock>  
+            
+        </body>
+    </html>
+</apex:page>

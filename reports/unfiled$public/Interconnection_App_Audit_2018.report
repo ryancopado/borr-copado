@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.ASProject__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Application_Type__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Assigned_Apps_Engineer__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_Request_Submitted__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_AE_Completed__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_PE_Approved__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_Application_Submitted_to_Utility__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_Review_App_for_Completeness__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Request_Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Interconnection_Application__c.Request_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Request Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Interconnection_Application__c.Assigned_Apps_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>john innes,kevin gebo,jun zha,ben foss-michaelis</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Interconnection App Audit - 2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Interconnection_Application__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-01</startDate>
+    </timeFrameFilter>
+</Report>

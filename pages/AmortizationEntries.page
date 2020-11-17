@@ -1,0 +1,41 @@
+<apex:page standardController="AcctSeed__Billing__c"  extensions="AmortizationEntriesController">
+    <apex:form id="form">
+        <apex:pageMessages rendered="true" id="errMsg" showDetail="false"/>
+        <apex:pageBlock title="Create Amortization Entries">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Amortize Revenue" action="{!submit}" status="pageStatus" rerender="form"/>
+                <apex:commandButton value="Back" immediate="true" action="{!back}"/>
+                <apex:actionStatus id="pageStatus">
+                    <apex:facet name="start">
+                        <apex:outputPanel >
+                            <img src="/img/loading32.gif" width="25" height="25" style="margin-bottom:-9px;margin-left:10px;"/>
+                            <apex:outputLabel value="Saving Records..."/>
+                        </apex:outputPanel>            
+                    </apex:facet>
+                </apex:actionStatus>
+                
+            </apex:pageBlockButtons>
+                <apex:pageBlockSection title="{!entry.Name}" columns="2" collapsible="false">
+                    
+                    <!-- <apex:inputField value="{!entry.Name}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Accounting_Period__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Billing__c}"/> -->
+                    <apex:outputField value="{!billing.AcctSeed__Customer__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Product__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Ledger__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Project__c}"/>
+                    <apex:inputField value="{!period.AcctSeed__Start_Date__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Project_Task__c}"/>
+                    <apex:inputField value="{!period.AcctSeed__End_Date__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__GL_Account_Variable_1__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Amount__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__GL_Account_Variable_2__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Debit_GL_Account__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__GL_Account_Variable_3__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Credit_GL_Account__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__GL_Account_Variable_4__c}"/>
+                    <apex:inputField value="{!entry.AcctSeed__Description__c}"/>
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

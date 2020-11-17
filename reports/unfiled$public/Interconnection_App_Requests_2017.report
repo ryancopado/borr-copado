@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.ASProject__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Application_Type__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Assigned_Apps_Engineer__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_Request_Submitted__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_AE_Completed__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Date_PE_Approved__c</field>
+    </columns>
+    <columns>
+        <field>Interconnection_Application__c.Request_Status__c</field>
+    </columns>
+    <description>G-Connector Report</description>
+    <filter>
+        <criteriaItems>
+            <column>Interconnection_Application__c.Assigned_Apps_Engineer__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>john innes,kevin gebo,jun zha,ben foss-michaelis,nawaf hassan,shaun o&apos;leary</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Interconnection App Requests 2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Interconnection_Application__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Interconnection_Application__c.Request_Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-01</startDate>
+    </timeFrameFilter>
+</Report>

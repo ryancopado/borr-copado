@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contract.Contract_Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Site_Address__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Site_City__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Site_State__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>FK_$AcctSeed__Project__c.Overall_Project_Size_Watts_STC__c</field>
+    </columns>
+    <columns>
+        <field>START_DATE</field>
+    </columns>
+    <description>SC &quot;Active&quot; and &quot;Pending&quot; with location (project page)</description>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>inventory</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Contract_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending,Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>O&amp;M and Warranty,O&amp;M,O&amp;M T&amp;M</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Mapping - O&amp;M</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContractList@Contract.ASProject__c</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>START_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

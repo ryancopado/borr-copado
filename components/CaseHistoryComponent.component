@@ -1,0 +1,30 @@
+<apex:component >
+    <!--<apex:attribute name="CaseRecord" required="true" type="Case" description="Case Object" />-->
+    <apex:attribute name="caselist" type="Case[]" description="FAQ List" />
+   <apex:outputPanel style="margin-left:10%; margin-top:5%; width:100%">
+    <apex:pageBlock > 
+    
+                <apex:pageBlockSection title="Case History" collapsible="false">
+                        <apex:pageBlockTable value="{!caselist}" style="margin-left:5%; padding:10; width:700px; text-align:left;" var="item">
+                           <apex:column value="{!item.CaseNumber}" headerValue="Case Number"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <!-- <apex:column value="{!item.Type}" headerValue="Type"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                           <apex:column value="{!item.Subject}" headerValue="Subject"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:column value="{!item.Status}" headerValue="Status"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:column value="{!item.Component__c}" headerValue="Component"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:column value="{!item.Reason}" headerValue="Case Reason"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:column value="{!item.Case_End_Date__c}" headerValue="Case Resolution Date"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <apex:column value="{!item.CreatedDate}" headerValue="Date Submitted"/>  
+                                                    
+                          <!-- <apex:column value="{!item.Case_End_Date__c}" headerValue="Date of expected resolution"/>-->
+                           
+                           <apex:column value="{!item.owner.Name}" headerValue="Case Owner"/>
+                           
+                          
+                        </apex:pageBlockTable>
+                        
+                 </apex:pageBlockSection>
+                 
+           
+      </apex:pageBlock>
+       </apex:outputPanel>
+</apex:component>

@@ -1,0 +1,142 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" access="global" controller="PSDdetailslightning">
+    <aura:attribute name="OppId" type="Opportunity"/>
+    <aura:attribute name="PSDList" type="PSD_Revision__c[]"/>
+    <aura:attribute name="columns" type="List"/>  
+    <aura:attribute name="pre1" type="String"/>  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:card title="PSD Details">
+        
+<aura:set attribute="actions">
+               
+    <div align="Right"  >
+        <lightning:button label="New Pre Sales Design" title="New Pre Sales Design" onclick="{! c.handleClick }" />
+    </div> 
+        </aura:set>
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <lightning:accordion allowMultipleSectionsOpen="true" >
+            <aura:iteration items="{!v.PSDList}" var="pre">
+                <thead>
+                    <aura:if isTrue="{!pre.Lightning_Text__c!=null}">
+                        <lightning:accordionSection  label="{!pre.Lightning_Text__c}" name="{!pre.Lightning_Text__c}">
+                            <aura:set attribute="body"> 
+                                <tr>
+                                    <th scope="col"> 
+                                    <div class="slds-p-left--large" title="Pre Sale Design Name"> PSD Name  </div>                            
+                                    </th>
+                            <th scope="col">                            
+                                <ui:outputURL value="{!'/'+pre.Pre_Sales_Design__r.Id}" label="{!pre.Pre_Sales_Design__r.Name}" aura:id="detailContURL" />
+                            </th>   
+                                </tr>
+                                <tr>
+                                <th scope="col" >
+                                    <div class="slds-p-left--large">
+                                    <div class="slds-text-color_error" title="Pre Sale Design Revision Name">PSD Revision Name</div></div>
+                                </th>
+                                <th scope="col">
+                                    <ui:outputURL value="{!'/'+pre.Id}" label="{!pre.Name}" aura:id="detailContURL"/>
+                                </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-p-left--large" title="Revision Status">Revision Status</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" value="{!pre.Revision_Status__c}">{!pre.Revision_Status__c}</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-p-left--large" title="Revision Number">Revision Number</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" value="{!pre.Revision_Number__c}">{!pre.Revision_Number__c}</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-p-left--large" title="PSD Apps Engineer">PSD Apps Engineer</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" value="{!pre.PSD_Apps_Engineer__c}">{!pre.PSD_Apps_Engineer__c}</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-p-left--large" title="Completed Design Link">Completed Design Link</div>
+                                    </th>
+                                    <th scope="col">
+                                        <ui:outputURL value="{!pre.Completed_Design_Link__c}" label="{!pre.Completed_Design_Link__c}" aura:id="detailContURL"  target="_new"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-p-left--large" title="Created By">Created By</div>
+                                    </th>
+                                    <th scope="col">
+                                         <div class="slds-truncate" value="{!pre.CreatedBy.Name}">{!pre.CreatedBy.Name}</div> 
+                                    </th>
+                                </tr>
+                                <aura:iteration items="{!v.PSDList}" var="post">
+                                    <aura:if isTrue="{!post.Lightning_Text__c==null}">
+                                        <aura:if isTrue="{!pre.Pre_Sales_Design__r.Name==post.Pre_Sales_Design__r.Name}">
+                                            <tr>
+                                            <th scope="col" >
+                                                <div class="slds-p-left--large">
+                                                <div class="slds-text-color_error" title="Pre Sale Design Revision Name">PSD Revision Name</div></div>                                            </th>
+                                            
+                                            <th scope="col">
+                                                <ui:outputURL value="{!'/'+post.Id}" label="{!post.Name}" aura:id="detailContURL"/>
+                                            </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="slds-p-left--large" title="Revision Status">Revision Status</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" value="{!post.Revision_Status__c}">{!post.Revision_Status__c}</div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="slds-p-left--large" title="Revision Number">Revision Number</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" value="{!post.Revision_Number__c}">{!post.Revision_Number__c}</div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="slds-p-left--large" title="PSD Apps Engineer">PSD Apps Engineer</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" value="{!post.PSD_Apps_Engineer__c}">{!post.PSD_Apps_Engineer__c}</div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="slds-p-left--large" title="Completed Design Link">Completed Design Link</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <ui:outputURL value="{!post.Completed_Design_Link__c}" label="{!post.Completed_Design_Link__c}" aura:id="detailContURL"  target="_new"/>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="slds-p-left--large" title="Created By">Created By</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" value="{!pre.CreatedBy.Name}">{!pre.CreatedBy.Name}</div> 
+                                                </th>
+                                            </tr>
+                                        </aura:if>
+                                    </aura:if>
+                                </aura:iteration> 
+                            </aura:set>                 
+                        </lightning:accordionSection>
+                    </aura:if>
+                </thead>         
+            </aura:iteration>
+        </lightning:accordion>
+    </table>
+        </lightning:card>
+</aura:component>

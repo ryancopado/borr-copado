@@ -1,0 +1,40 @@
+<apex:page id="thePage" standardController="AcctSeedERP__Sales_Order_Line__c" recordSetVar="sos" extensions="CreatePurchaseOrderLines" sidebar="false">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        function disableButtons(label) {
+            $('.btn').each(function(elem) {
+                this.className = 'btnDisabled';
+                this.disabled = true;
+                this.value = label;
+            })
+        }
+    </script>    
+	<apex:form id="theForm">
+		<apex:sectionHeader title="Purchase Orders" subtitle="Create Purchase Orders"/>
+        <apex:pageBlock id="thePageBlockPO" title="Draft Purchase Orders">
+        	<apex:pageMessages escape="false"/>
+            <!-- apex:pageMessage severity="info" strength="3" summary="You must include a quantity greater than 0 and unit price for every purchase order line you want to include on the purchase order" rendered="{!soWrapperList.size>0}"/ -->        
+			<apex:pageBlockButtons id="pageBlockButtonvalueCreateTop">
+			    <apex:actionStatus id="saveStatus" onstart="disableButtons('Creating Purchase Orders...')" />
+			    <apex:commandButton id="createButtonTop" status="saveStatus" value="Create Purchase Orders" action="{!createPurchaseOrders}" reRender="theForm" rendered="{!!isProcessed && !isError}"/>     
+			    <apex:commandButton id="backButtonTop" status="saveStatus" value="Back" action="/{!$ObjectType.AcctSeedERP__Sales_Order_Line__c.KeyPrefix}?fcf={!filterId}" immediate="true"/>
+			</apex:pageBlockButtons>   
+			<apex:repeat id="theTablePO" value="{!soWrapperList}" var="sow">
+			    <span style="font-weight:bold">Vendor:</span>&nbsp;&nbsp;<apex:outputField label="" value="{!sow.vendor.Name}"/>
+			    <br/>
+			    <br/>
+                <apex:pageBlockTable id="pageBlockTableLines" value="{!sow.soLines}" var="so" style="width:100%;margin-left:10px">
+                	<apex:column value="{!so.Name}"/>
+					<apex:column value="{!so.AcctSeedERP__Product__c}"/>
+					<apex:column value="{!so.Unit_Cost__c}"/>
+					<apex:column value="{!so.AcctSeedERP__Quantity_Needed__c}"/>
+					<apex:column value="{!so.Freight__c}"/>
+					<apex:column value="{!so.SOLine_Total__c}">
+						<apex:facet name="footer">${!sow.total}</apex:facet>
+                    </apex:column>
+				</apex:pageBlockTable>
+				<br/><br/>			    
+			</apex:repeat>		                               
+        </apex:pageBlock>          
+	</apex:form>	
+</apex:page>

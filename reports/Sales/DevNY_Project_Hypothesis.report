@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_Project_Hypothesis_Approved__c</field>
+    </columns>
+    <columns>
+        <field>Contract_Committee_Submittal__c.Date_Submitted_for_Approval__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contract_Committee_Submittal__c.Project_Hypothesis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Opportunity.Team__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Dev - New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contract_Committee_Submittal__c.Date_Submitted_for_Approval__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Opportunity.Vertical__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DevNY - Project Hypothesis</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Contract_Committee_Submittal__c@Contract_Committee_Submittal__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>FK_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

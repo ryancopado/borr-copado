@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <label>Con Req Create</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Con_Req_Create</name>
+        <label>Con Req Create</label>
+        <locationX>241</locationX>
+        <locationY>216</locationY>
+        <inputAssignments>
+            <field>Ship_to_Account__c</field>
+            <value>
+                <elementReference>Vendor</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AcctSeedERP__Sales_Order_Line__c</object>
+    </recordCreates>
+    <screens>
+        <name>Enter_information</name>
+        <label>Enter information</label>
+        <locationX>238</locationX>
+        <locationY>105</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Con_Req_Create</targetReference>
+        </connector>
+        <fields>
+            <name>Vendor</name>
+            <dataType>String</dataType>
+            <fieldText>Vendor</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Amount</name>
+            <dataType>Currency</dataType>
+            <fieldText>Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>2</scale>
+        </fields>
+        <fields>
+            <name>Development_Cost</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Development Cost?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <status>InvalidDraft</status>
+    <steps>
+        <name>multiple_Con_Reqs_created</name>
+        <label>multiple Con Reqs created</label>
+        <locationX>373</locationX>
+        <locationY>103</locationY>
+    </steps>
+</Flow>

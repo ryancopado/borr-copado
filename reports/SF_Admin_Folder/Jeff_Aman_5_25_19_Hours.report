@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c.Total_Work_Hours__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Non_Exempt_Time_Card__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SV__c.TravelWorkHours__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SV__c.Technician__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>AMAN</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c.SiteArrivalTime__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>5/26/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c.SiteArrivalTime__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>6/1/2019 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c.Day_of_the_week__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Jeff Aman 5-25-19 Hours</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SV__c.Total_Work_Hours__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SV__c.Asset_Offline__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

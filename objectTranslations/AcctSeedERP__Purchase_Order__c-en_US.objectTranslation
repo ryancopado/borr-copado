@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeedERP__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Total Amount of AP Invoices associated with the PO
+Includes CO and PO Lines --></help>
+        <label><!-- AP Invoice Line Total --></label>
+        <name>AP_Invoice_Line_Total_CO_POL__c</name>
+    </fields>
+    <fields>
+        <label><!-- AP Invoice Line Total-OLD --></label>
+        <name>AP_Invoice_Line_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- AP Line CO Total --></label>
+        <name>AP_Line_CO_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- AP Line Total- Current Month --></label>
+        <name>AP_Line_Total_Current_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- AP less than PO --></label>
+        <name>AP_less_than_PO__c</name>
+    </fields>
+    <fields>
+        <label><!-- ARRA Compliant --></label>
+        <name>ARRA_Compliant__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- AP Terms listed on the Vendor Account --></help>
+        <label><!-- Account Payable Terms --></label>
+        <name>Account_Payable_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- PO accrual process --></help>
+        <label><!-- Accrual Type --></label>
+        <name>Accrual_Type__c</name>
+        <picklistValues>
+            <masterLabel>Development &amp; Engineering</masterLabel>
+            <translation><!-- Development &amp; Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material</masterLabel>
+            <translation><!-- Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misc. Job Costs</masterLabel>
+            <translation><!-- Misc. Job Costs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subcontractor</masterLabel>
+            <translation><!-- Subcontractor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>AcctSeedERP__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeedERP__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Receive Date --></label>
+        <name>AcctSeedERP__Initial_Receive_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ledger Amount --></label>
+        <name>AcctSeedERP__Ledger_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeedERP__Ledger__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The number of purchase order lines associated with the purchase order --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeedERP__Line_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date PO is submitted to Vendor
+Required when PO is created
+ON PO PRINTOUT --></help>
+        <label><!-- Order Date --></label>
+        <name>AcctSeedERP__Order_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order Format --></label>
+        <name>AcctSeedERP__Purchase_Order_Format__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- City where material should be shipped
+Pulls from the Ship To Company Account Address
+PRINTS ON PO --></help>
+        <label>Ship To City</label>
+        <name>AcctSeedERP__Shipping_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Company where material should be shipped
+Pulls from the Requisition &quot;Ship To Account&quot; field
+PRINTS ON THE PO --></help>
+        <label>Ship To Company</label>
+        <name>AcctSeedERP__Shipping_Company__c</name>
+        <relationshipLabel><!-- Purchase Orders (Ship To Company) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ship To Contact</label>
+        <name>AcctSeedERP__Shipping_Contact__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shipping Country --></label>
+        <name>AcctSeedERP__Shipping_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zip Code where material should be shipped 
+Pulls from the Ship To Company Account Address 
+PRINTS ON PO --></help>
+        <label>Ship to Zip</label>
+        <name>AcctSeedERP__Shipping_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- State where material should be shipped 
+Pulls from the Ship To Company Account Address 
+PRINTS ON PO --></help>
+        <label>Ship To State</label>
+        <name>AcctSeedERP__Shipping_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Street Address where material should be shipped 
+Pulls from the Ship To Company Account Address 
+PRINTS ON PO --></help>
+        <label>Ship To Street</label>
+        <name>AcctSeedERP__Shipping_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of PO
+Controlled by Procurement and Accounting --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeedERP__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aaron Approved</masterLabel>
+            <translation><!-- Aaron Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bill and Hold</masterLabel>
+            <translation><!-- Bill and Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice Processed</masterLabel>
+            <translation><!-- Invoice Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice Received</masterLabel>
+            <translation><!-- Invoice Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Deposit Paid</masterLabel>
+            <translation><!-- Material Deposit Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need More Information</masterLabel>
+            <translation><!-- Need More Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order on Hold</masterLabel>
+            <translation><!-- Order on Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM Approved</masterLabel>
+            <translation><!-- PM Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid out of Branch Account</masterLabel>
+            <translation><!-- Paid out of Branch Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received: Job Site</masterLabel>
+            <translation><!-- Partially Received: Job Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received: Warehouse</masterLabel>
+            <translation><!-- Partially Received: Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Commissioning</masterLabel>
+            <translation><!-- Pending Commissioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Next Milestone</masterLabel>
+            <translation><!-- Pending Next Milestone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Retention Billing</masterLabel>
+            <translation><!-- Pending Retention Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement Approved</masterLabel>
+            <translation><!-- Procurement Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received In-Full: Job Site</masterLabel>
+            <translation><!-- Received In-Full: Job Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received In-Full: Warehouse</masterLabel>
+            <translation><!-- Received In-Full: Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Vendor</masterLabel>
+            <translation><!-- Submitted to Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Received PO</masterLabel>
+            <translation><!-- Vendor Received PO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Shipped Material</masterLabel>
+            <translation><!-- Vendor Shipped Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>AcctSeedERP__Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes whether the PO is for Material or Non-Material
+Automatically updated depending on the requisitions and PO Lines --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeedERP__Type__c</name>
+        <picklistValues>
+            <masterLabel>Material</masterLabel>
+            <translation><!-- Material --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Material</masterLabel>
+            <translation><!-- Non-Material --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the city listed on the Vendor Account --></help>
+        <label><!-- Vendor City --></label>
+        <name>AcctSeedERP__Vendor_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup a vendor contact
+Must be a Contact in Salesforce --></help>
+        <label><!-- Vendor Contact --></label>
+        <name>AcctSeedERP__Vendor_Contact__c</name>
+        <relationshipLabel><!-- Purchase Orders (Vendor Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the country listed on the Vendor Account --></help>
+        <label><!-- Vendor Country --></label>
+        <name>AcctSeedERP__Vendor_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the zip code listed on the Vendor Account --></help>
+        <label><!-- Vendor Postal Code --></label>
+        <name>AcctSeedERP__Vendor_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the state listed on the Vendor Account --></help>
+        <label><!-- Vendor State --></label>
+        <name>AcctSeedERP__Vendor_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls from the street address listed on the Vendor Account --></help>
+        <label><!-- Vendor Street --></label>
+        <name>AcctSeedERP__Vendor_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Vendor of the material or the Subcontractor performing the work
+Must be an account in Salesforce --></help>
+        <label><!-- Vendor --></label>
+        <name>AcctSeedERP__Vendor__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- THIS FIELD DOES NOT PRINT OUT ON THE PO --></help>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance Remaining on PO --></label>
+        <name>Balance_Remaining_on_PO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subcontractor PO Billed Thru Date --></help>
+        <label><!-- Billed Through --></label>
+        <name>Billed_Through__c</name>
+    </fields>
+    <fields>
+        <label><!-- CRG Creator Dept --></label>
+        <name>CRG_Creator_Dept__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Total amount of the CO&apos;s related to the PO
+Automatically sums up via Salesforce Trigger --></help>
+        <label><!-- Change Order Total --></label>
+        <name>Change_Order_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- used with roll up helper to pull in ID of con req creator of service reqs --></help>
+        <label><!-- Con Req Creator ID --></label>
+        <name>Con_Req_Creator_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Con Req Group --></label>
+        <name>Con_Req_Group__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter any special delivery notes
+PRINTS OUT ON PO --></help>
+        <label><!-- Delivery Notes --></label>
+        <name>Delivery_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulled from quote delivery to field. --></help>
+        <label><!-- Delivery To --></label>
+        <name>Delivery_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Days Due --></label>
+        <name>Discount_Days_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- Standard discount percentage- from the Vendor Account --></help>
+        <label><!-- Discount % --></label>
+        <name>Discount__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls the division based on the CRG created by department and displays in print po page. --></help>
+        <label><!-- Division --></label>
+        <name>Division1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for vendors with an MSA (mostly module vendors)-  these terms define when we title/risk transfers hands
+Defaults to the Inco Terms on the Vendor Account
+ON PO PRINTOUT --></help>
+        <label><!-- Inco Terms --></label>
+        <name>Inco_Terms__c</name>
+    </fields>
+    <fields>
+        <help><!-- displays name of user that created Con Req - Service Reqs only --></help>
+        <label><!-- Serivce Req Creator --></label>
+        <name>LH_Con_Req_Creator__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Material PO Rollup --></label>
+        <name>Material_PO_Rollup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material POL --></label>
+        <name>Material__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not To Exceed --></label>
+        <name>Not_To_Exceed__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Open POLs --></label>
+        <name>Open_POLs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date BOL (Bill of Lading) received --></help>
+        <label><!-- Order Received (BOL) --></label>
+        <name>Order_Received_BOL__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO 18 Character ID --></label>
+        <name>PO_18_Character_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically to the date the Status field is set to &quot;Closed&quot;. --></help>
+        <label><!-- PO Closed Date --></label>
+        <name>PO_Closed_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sums the PO Line Total Field on the PO Lines associated with the Purchase Order --></help>
+        <label><!-- PO Line Total --></label>
+        <name>PO_Line_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Notification Time Trigger --></label>
+        <name>PO_Notification_Time_Trigger__c</name>
+    </fields>
+    <fields>
+        <help><!-- Records the date the status was changed --></help>
+        <label><!-- PO Status Change Date --></label>
+        <name>PO_Status_Change_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Amount of the Purchase Order
+Includes CO&apos;s, Freight, Sales Tax --></help>
+        <label><!-- PO Total --></label>
+        <name>PO_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Payment Terms
+LISTED ON THE PO PRINTOUT --></help>
+        <label><!-- Payment Terms --></label>
+        <name>Payment_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to Quote. --></help>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Amount of Retention held on the PO
+Used for Subcontractor POs only --></help>
+        <label><!-- Retention Percent --></label>
+        <name>Retention_Percent__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15%</masterLabel>
+            <translation><!-- 15% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5%</masterLabel>
+            <translation><!-- 5% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Revision Change Date --></label>
+        <name>Revision_Change_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Increment the Revision Number when making changes to the PO. --></help>
+        <label><!-- Revision Number --></label>
+        <name>Revision_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Sales Order Acknowledgement Returned --></help>
+        <label><!-- SOA Returned --></label>
+        <name>SOA_Returned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Send_Email_Checkbox__c</name>
+    </fields>
+    <fields>
+        <help><!-- Filled in via Workflow --></help>
+        <label><!-- Service Req Creator Email --></label>
+        <name>Serivce_Req_Creator_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Person who should receive the material
+Does not have to be a Contact in Salesforce
+PRINTS ON THE PO --></help>
+        <label><!-- Ship To Contact --></label>
+        <name>Ship_To_Contact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Telephone number for Ship To Contact
+PRINTS ON PO --></help>
+        <label><!-- Ship To Telephone --></label>
+        <name>Ship_To_Telephone__c</name>
+    </fields>
+    <fields>
+        <help><!-- How should the product be shipped? For Major and Minor components only
+PRINTS OUT ON THE PO --></help>
+        <label><!-- Shipping Method --></label>
+        <name>Shipping_Method__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any special notes for the PO here
+PRINTS OUT ON THE PO --></help>
+        <label><!-- Special Notes --></label>
+        <name>Special_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for Major Components Only
+Alerts Aaron to review the PO for approval --></help>
+        <label><!-- Submit To Aaron --></label>
+        <name>Submit_To_Aaron__c</name>
+    </fields>
+    <fields>
+        <help><!-- Subtotal of the PO, prior to CO&apos;s, Freight, and Sales Tax
+Total Cost of all related PO Lines, not including Freight or Sales Tax --></help>
+        <label><!-- Subtotal --></label>
+        <name>Subtotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subtotals --></label>
+        <name>Subtotals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms &amp; Conditions --></label>
+        <name>Terms_Conditions__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the summary of POLines.  Note that this includes use tax, which is not payable to the vendor. --></help>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Freight Allowed on the PO
+Rolls up the Freight charges on all related PO Lines --></help>
+        <label><!-- Total Freight Allowed --></label>
+        <name>Total_Freight_Allowed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Volume Purchased --></label>
+        <name>Total_Volume_Purchased__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Sales Tax on the PO
+Rolls up all the sales tax on the related PO Lines --></help>
+        <label><!-- Total Sales Tax --></label>
+        <name>Total_sales_tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pulls the vendor ref number from quote. --></help>
+        <label><!-- Vendor Reference # --></label>
+        <name>Vendor_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Volume Commitment --></label>
+        <name>Volume_Commitment__c</name>
+        <relationshipLabel><!-- Purchase Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- old PO --></label>
+        <name>old_PO__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Status_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeedERP__Type_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Certain fields cannot be edited. Please contact Accounting if you need to change the Status or the Vendor and Shipping Information. --></errorMessage>
+        <name>Lock_Fields_From_Being_Edited_by_a_PM</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Account_Payable --></label>
+        <name>AcctSeedERP__Create_Account_Payable</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_PDF --></label>
+        <name>AcctSeedERP__Create_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Receive --></label>
+        <name>AcctSeedERP__Receive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_AP_Invoice --></label>
+        <name>Create_AP_Invoice</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_PO --></label>
+        <name>Print_PO</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_PO_O_M_test --></label>
+        <name>Print_PO_O_M_test</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>Send_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

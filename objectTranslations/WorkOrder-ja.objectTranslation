@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Crew Managment Lightbox --></label>
+        <name>FSL__CrewManagment_Lightbox</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Deprecated --></label>
+        <name>FSL__Emergency_Current_WorkORder_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Gantt Lightbox --></label>
+        <name>FSL__Gantt_Lightbox</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Billable Cost by WO --></label>
+        <name>BillableCostbyWO__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls value from related contract of the Current Solar Electrician Rate (Billable Travel Hours + Billable Labor Hours) --></help>
+        <label><!-- Billable Rev by WO --></label>
+        <name>BillableRevbyWO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable Travel Hours Round --></label>
+        <name>BillableTravelHoursRound__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable Travel Hours --></label>
+        <name>BillableTravelHours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billable --></label>
+        <name>Billable__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Id --></label>
+        <name>Case_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Record Type --></label>
+        <name>Case_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Count Closed WOL --></label>
+        <name>CountClosedWOL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Input a date when there is a specific day that this work needs to be done. If the work can be done on any day, then leave this blank. --></help>
+        <label><!-- Due Date --></label>
+        <name>Due_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Fill In Candidate --></label>
+        <name>FSL__IsFillInCandidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevent Geocoding For Chatter Actions --></label>
+        <name>FSL__Prevent_Geocoding_For_Chatter_Actions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduling Priority --></label>
+        <name>FSL__Scheduling_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visiting Hours --></label>
+        <name>FSL__VisitingHours__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Looks to see if the Work End Date is between the related Account Reporting period and the Case is a Reactive type. --></help>
+        <label><!-- Included In Reporting Period (Summary) --></label>
+        <name>Included_In_Reporting_Period_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Included Reporting Period (Performance) --></label>
+        <name>Included_Reporting_Period_Performance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Labor Billable Hours Round --></label>
+        <name>LaborBillableHoursRound__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last WOLI End --></label>
+        <name>LastWOLIEnd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maintenance Type --></label>
+        <name>Maintenance_Type__c</name>
+        <picklistValues>
+            <masterLabel>Annual PM</masterLabel>
+            <translation><!-- Annual PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary PM</masterLabel>
+            <translation><!-- Primary PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary PM</masterLabel>
+            <translation><!-- Secondary PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Completed WOLIs --></label>
+        <name>Number_of_Completed_WOLIs__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Package --></label>
+        <name>O_M_Package__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Standard Rate --></label>
+        <name>OwnerStandardRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevailing Wage? --></label>
+        <name>PrevailingWage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prevailing Wage Included --></label>
+        <name>Prevailing_Wage_Included__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prevailing Wage * Total Labor + Travel from TSE
+1x PW for first 8 hours
+1.5x PW for next 4 hours
+2x PW for remaining hours --></help>
+        <label><!-- Prevailing Wage Total Hours --></label>
+        <name>Prevailing_Wage_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous WOLI End Date/Time --></label>
+        <name>Previous_WOLI_End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project ID --></label>
+        <name>ProjectID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project ultipro --></label>
+        <name>Project_ultipro__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Contract Type --></label>
+        <name>Service_Contract_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Soiling --></label>
+        <name>Soiling__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation><!-- Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heavy</masterLabel>
+            <translation><!-- Heavy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Light</masterLabel>
+            <translation><!-- Light --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Technician --></label>
+        <name>Technician__c</name>
+        <relationshipLabel><!-- Work Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Travel from TSE + Labor from TSE --></help>
+        <label><!-- Total Labor + Travel from TSE --></label>
+        <name>TotalLaborTravelfromTSE__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rolls up &quot;Travel Duration&quot; field from the related Time Sheet Entries --></help>
+        <label><!-- Total Travel Hours from TSE --></label>
+        <name>TotalTravelfromTSE__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rolls up &quot;Duration&quot; field from the related Time Sheet Entries --></help>
+        <label><!-- Total Labor Hours from TSE --></label>
+        <name>TotalWork__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel Billable Cap --></label>
+        <name>Travel_Billable_Cap__c</name>
+    </fields>
+    <fields>
+        <help><!-- converts travel billing cap picklist from related Service Contract to # to be used in formulas, no need to be on layouts --></help>
+        <label><!-- Travel Billable (Max) --></label>
+        <name>Travel_Billable_Max__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel Billable --></label>
+        <name>Travel_Billable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Travel Start Time --></label>
+        <name>Travel_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- sums up Total Travel Time + Total Work Hours from related WOL&apos;s --></help>
+        <label><!-- Travel + Work Hours --></label>
+        <name>Travel_Work_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vegetation --></label>
+        <name>Vegetation__c</name>
+        <picklistValues>
+            <masterLabel>12&quot;</masterLabel>
+            <translation><!-- 12&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18&quot;</masterLabel>
+            <translation><!-- 18&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24&quot;</masterLabel>
+            <translation><!-- 24&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30&quot;</masterLabel>
+            <translation><!-- 30&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36&quot;+</masterLabel>
+            <translation><!-- 36&quot;+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6&quot;</masterLabel>
+            <translation><!-- 6&quot; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Weather Conditions --></label>
+        <name>Weather_Conditions__c</name>
+        <picklistValues>
+            <masterLabel>Cloudy</masterLabel>
+            <translation><!-- Cloudy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partly Sunny</masterLabel>
+            <translation><!-- Partly Sunny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rainy</masterLabel>
+            <translation><!-- Rainy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snow</masterLabel>
+            <translation><!-- Snow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunny</masterLabel>
+            <translation><!-- Sunny --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Overall hours, start to finish: Work End Time - Work Start Time
+NOT TOTAL HOURS WORKED, JUST TOTAL TIME ON JOB SITE --></help>
+        <label><!-- Work Hours- Labor --></label>
+        <name>WorkHoursLabor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Hours- Travel --></label>
+        <name>WorkHoursTravel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order Start Date --></label>
+        <name>WorkOrderStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work End Time --></label>
+        <name>Work_End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Start Time --></label>
+        <name>Work_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Type Name --></label>
+        <name>Work_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total WOLs --></label>
+        <name>totalnumberofWOLs__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Due Date can only be specified when the related Case is in Deployment Review, Ops Review, or Escalated to Regional Manager --></errorMessage>
+        <name>Due_Date_Can_Only_be_set_on_some_Cases</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Once you manually set a Due Date you cannot change this back to NULL. You must specify a date for the work to be done. --></errorMessage>
+        <name>Due_Date_Cannot_be_set_back_to_null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Due Date must be set to a date in the future. --></errorMessage>
+        <name>Due_Date_cannot_be_in_the_past</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_a_Line_Item --></label>
+        <name>Add_a_Line_Item</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Follow_Up_WO --></label>
+        <name>Create_Follow_Up_WO</name>
+    </webLinks>
+</CustomObjectTranslation>

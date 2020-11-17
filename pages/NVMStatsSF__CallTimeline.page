@@ -1,0 +1,321 @@
+<apex:page doctype="html-5.0" showChat="false" showHeader="false" sidebar="false" readOnly="true" standardStylesheets="false" standardController="NVMStatsSF__NVM_Call_Summary__c" extensions="NVMStatsSF.CallTimelineController">
+<apex:stylesheet value="{!URLFOR($Resource.NVMStatsSF__Assets, '/css/styles.css')}"/>
+<div align="left">
+
+<apex:form >
+
+<script>
+//General for all browsers
+var canPlay = false;
+var isPlaying = false;
+var userSliderEvent = false;
+var tStamp = 0.0;
+var scale = 1;
+var sLength = {!recordingLength};
+var talkPos = {!talkStartedAtSecs};
+//Timer looping during play
+var playTime = null;
+var recordingPauses;
+</script>
+
+
+<apex:outputPanel rendered="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Call_Recording__c != NULL}">
+
+<audio id="audioElement" preload="auto" autobuffer="true" onloadeddata="setOK()">
+  <source src="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Call_Recording__c}" type="audio/wav"/>
+</audio>
+
+<script>
+
+canPlay = false;
+
+if (window.chrome) {
+  audioElement.load();
+}
+
+function setOK() {
+   canPlay = true;
+   //If we have the actual audo file length, use that as our range max
+   sLength = audioElement.duration;
+}
+
+function pause() {
+  isPlaying = false;
+  clearInterval(playTime);
+  audioElement.pause();
+}
+
+function sliderMoved() {
+  userSliderEvent = true;
+
+  clearInterval(playTime);
+  var wasPlaying = isPlaying;
+  tStamp = slider.value * 1.0;
+  audioElement.currentTime = slider.value;
+  if (wasPlaying) playTime = setInterval(tick,1000);
+  userSliderEvent = false;
+}
+
+</script></apex:outputPanel>
+
+
+
+<script>
+
+//Poss for tablets, etc. range... oninput="sliderMoved()" onchange
+
+
+
+//Toggles play/pause
+function playAudio() {
+  //pause if clicked while playing
+  if (isPlaying) {
+    pause();
+    return;
+  }
+  
+  if (!canPlay) return;
+  
+  isPlaying = true;
+    
+  audioElement.play();
+
+    
+  timeline.style.color="green";
+  seconds.style.color="green";
+  slider.visible=true;
+  slider.style.margin = "1px";
+  playTime = setInterval(tick,1000);
+}
+
+function tick() {
+  if (!isPlaying  || userSliderEvent) return;
+  console.log('tick');
+  if((tStamp < sLength)) {
+    tStamp += 1.0;
+    
+    if (recordingPauses != null && recordingPauses.length > 0) {
+        var offs = tStamp+talkPos;
+        for (var rp = 0; rp < recordingPauses.length; rp++) {
+            //compare seconds into recording plus talk-start with start of call recording pauses
+            if (offs >= recordingPauses[rp].start) offs += recordingPauses[rp].duration;
+        }
+        document.getElementById("pauseOffset").width = (offs-talkPos-tStamp) * scale;
+    }
+
+    seconds.innerText = tStamp + 's';
+    //Firefox:
+    seconds.textContent = tStamp + 's';
+    slider.value = tStamp * 1.0;
+  }
+  else {
+    clearInterval(playTime);
+    tStamp = 0;
+    timeline.style.color="white"; 
+    seconds.style.color="white";
+    isPlaying = false; 
+  }
+}
+
+//New
+function clearAndScaleForWidth(context, idealWidth, actualWidth, idealHeight, actualHeight) {
+//alert(idealWidth + ':' + actualWidth);
+    context.globalAlpha = 1;
+    context.canvas.width = actualWidth;
+    context.canvas.height = actualHeight;
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    context.scale(actualWidth/idealWidth, actualHeight/idealHeight);
+}
+
+
+
+</script>
+
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Key_Event_String__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Event_String__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallTime__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallEndTime__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_ID__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Phone_Number__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Total_Call_Duration__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CallGuid__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Automation_Segment__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__After_Call_Work_Time__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Post_Call_Automation__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Call_Recording__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CLID__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Consult_Time__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Talk_Time__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent2_Transfer_Time__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_Ring_Duration__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__NVM_AgentID__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Agent_List__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__AgentChkStr__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__CR_Start_Immediate__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.RecordType}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Version__c}"/>
+<apex:inputHidden value="{!NVMStatsSF__NVM_Call_Summary__c.NVMStatsSF__Interaction_JSON__c}"/>
+
+<span>
+<canvas id="gantt" width="800" height="64" onclick="playAudio();"/>
+</span>
+
+<div id="timeline" style="vertical-align:top;padding:0px;top:0px;color:white;font-size:9px;font-family:Calibri,Tahoma,sans-serif">
+ <img id="timelimeSpacer" height="1" width="66" src="{!URLFOR($Resource.Assets, 'images/white.png')}"/>
+ <img id="ibStart" height="1" width="{!talkStartedAtSecs * (730/(1+totalDuration))}" src="{!URLFOR($Resource.Assets, 'images/white.png')}"/>
+ <img id="pauseOffset" height="1" width="0" src="{!URLFOR($Resource.Assets, 'images/white.png')}"/>
+ <apex:outputPanel >
+  <input id="slider" value="0" step="1" style="height:10px;width:{!recordingLength * (730/(1+totalDuration))}px" type="range" min="0" max="{!recordingLength}" onmouseup="sliderMoved()"/>
+ </apex:outputPanel>
+ <span id="seconds" style="vertical-align:top;padding:0px;top:0px;color:white;font-size:11px;font-family:Calibri,Tahoma,sans-serif"/>
+</div>
+
+<script>
+var jd = '{!jsonData}';
+//alert(jd);
+var myData = JSON.parse(jd);
+recordingPauses = myData.recordingPauses;
+
+//We have enough room for 4 x 16 px wide swimlanes in a 64px high canvas; vertical align:
+var topPad = 32 - 8 * myData.swimlanes.length;
+
+
+//Scale, Draw labels and lines
+
+var context = gantt.getContext('2d');
+var idealHeight = 64;
+if (myData.swimlanes.length > 4) {
+    idealHeight = myData.swimlanes.length * 16;
+    topPad = 0;
+}
+clearAndScaleForWidth(context, 800, 800, idealHeight, 64);
+context.lineWidth = 0.5;
+context.fillStyle = '#000';
+context.strokeStyle = '#BBBBBB';
+
+
+//The longest party label width defines the margin
+context.font = '10pt Calibri,Tahoma,sans-serif';
+var margin = 70;
+for (var py = 0; py < myData.swimlanes.length; py++) {
+   var plen = Math.floor(context.measureText(myData.swimlanes[py].label).width);
+   if (plen > margin) margin = plen;
+}
+
+//keep margin in sync with timelimeSpacer width (about 4px more than that)
+document.getElementById("timelimeSpacer").width = margin-4;
+document.getElementById("slider").style.width = Math.floor({!recordingLength} *   ((800 - margin)/(1 + {!totalDuration}))) + "px";
+document.getElementById("ibStart").width =      Math.floor({!talkStartedAtSecs} * ((800 - margin)/(1 + {!totalDuration}))); 
+
+//Write gridlines - start at margin px
+var xpos = 0;
+var xFactor = (context.canvas.width-margin)/(1 + myData.totalTimeSecs);
+scale = xFactor;
+//Draw grid
+context.font = 'italic 8pt Calibri,Tahoma,sans-serif';
+context.fillStyle = '#BBBBBB';
+for (var i = 0; i < myData.gridLines.length; i++) {
+   context.beginPath();
+   //Always add 0.5 to the line position to prevent anti-aliasing!
+   xpos = margin + 0.5 + Math.floor(xFactor * myData.gridLines[i].tpos);
+   context.moveTo(xpos, 0);
+   context.lineTo(xpos, idealHeight);
+   context.stroke();
+   //write time
+   context.fillText(myData.gridLines[i].label, xpos + 1, 8);
+   context.fillText(myData.gridLines[i].label, xpos + 1, idealHeight);  
+}
+
+//Draw the bars... sep fn
+context.font = '8pt Calibri,Tahoma,sans-serif';
+context.fillStyle = '#000';
+
+//for measuring how text fits the bars
+var spareWidth = 0;
+
+ypos = 8 + topPad;
+
+//loop over swimlanes and then the milestones within each lane
+for (var lane = 0; lane < myData.swimlanes.length; lane++) {
+    xpos = margin;
+
+//draw the milestones in order so low-detail agent event milesones are overwritten by hi-res call events    
+    for (var m = 0; m < myData.swimlanes[lane].milestones.length; m ++) {
+        var milestone = myData.swimlanes[lane].milestones[m];
+        //alert('Lane '+ lane + ' M: '+milestone.startAtSecs + ','+milestone.label + ','+ milestone.durationSecs + ','+milestone.descr + ',' + milestone.longDescr+','+milestone.unknownColour);
+        context.beginPath();
+		//Gantt bars are thick - 16px wide stripes
+		context.lineWidth = 16;
+
+        if (milestone.durationSecs > 1 && (milestone.label == 'Held' || milestone.colour == milestone.unknownColour)) context.globalAlpha=0.5;
+        context.strokeStyle = milestone.colour;
+        //anti alias
+        xpos = Math.round(0.5 + margin + milestone.startAtSecs * xFactor) - 0.5;
+        
+        var len = Math.round(milestone.durationSecs * xFactor);
+        if (len < 0.5) len = 1;
+
+        if (milestone.label == 'CallRecording') {
+            context.lineWidth = 0.5;
+            context.setLineDash([7.5, 0.5]);
+            context.moveTo(xpos, ypos+0.5);//anti-alias fine line
+            context.lineTo(xpos + len, ypos+0.5);
+            context.stroke();
+            context.setLineDash([]);
+        }
+        else {
+	        context.moveTo(xpos, ypos);
+	        context.lineTo(xpos + len, ypos);
+	        context.stroke();
+        }
+        context.globalAlpha=1;
+        //draw text on bar if will fit...
+        if (milestone.showLabels != false) {
+            spareWidth = 4 + milestone.durationSecs * xFactor - context.measureText(milestone.label).width;
+            if(spareWidth >= 0) context.fillText(milestone.label, xpos + (spareWidth/2) - 1.5, ypos);
+    
+            spareWidth = 4 + milestone.durationSecs * xFactor - context.measureText(milestone.descr).width;
+            if(spareWidth >= 0) context.fillText(milestone.descr, xpos + (spareWidth/2) - 1.5, ypos+8);
+        }
+    }
+    ypos += 16;
+
+}
+
+canPlay = true;
+
+//Draw swimlane labels against a cleared background
+context.font = '10pt Calibri,Tahoma,sans-serif';
+context.fillStyle = '#000';
+context.clearRect(0, 0, margin, context.canvas.height);
+context.lineWidth = 0.5;
+context.strokeStyle = '#BBBBBB';
+for (var i = 0; i < myData.swimlanes.length; i++) {
+    context.fillText(myData.swimlanes[i].label, 0, 12 + topPad + 16 * i);
+    if (i > 0) {
+        context.beginPath();
+        context.moveTo(0, topPad + 16 * i);
+        context.lineTo(context.canvas.width, topPad + 16 * i);
+        context.stroke();
+    }
+}
+
+//Replace with image and add Alt
+var cImg = new Image();
+cImg.onload = function() {
+    if (sLength > 0) {
+        this.title = 'Click to play/pause the call recording\n\nYou may need to log into Vonage Contact Center in\nanother browser tab if not using Single Sign On';
+        this.onclick = gantt.onclick;
+    }
+    gantt.parentNode.replaceChild(this, gantt);
+    }
+cImg.src = gantt.toDataURL();
+
+</script>
+
+
+
+</apex:form>
+</div>
+<!-- apex:outputText value="{_!_logs_}" escape="false"-->
+</apex:page>

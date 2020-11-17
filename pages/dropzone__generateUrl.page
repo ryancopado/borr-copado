@@ -1,0 +1,215 @@
+<apex:page controller="dropzone.generateUrlController" id="pg" action="{!configurationInsert}">
+<apex:stylesheet value="{!URLFOR($Resource.dropzone__SLDS10, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<apex:includescript value="{!$Resource.dropzone__jquery}"/>
+<apex:slds />
+<script>
+    var attach='{!selectedVal}';
+    console.log('attach+++',attach);
+    
+    $(document).ready(function(){
+        if(attach=='Attachment'){
+            $('input#attachRadio').prop('checked', true);
+        }
+        else{
+            $('input#fileRadio').prop('checked', true);
+        }
+    });
+    function cancel(){
+        window.location.href='/home/home.jsp';
+    }
+    
+    function save(){
+        console.log('in save');
+        if(document.getElementById('attachRadio').checked){
+            attach=document.getElementById('attachRadio').value;
+        }
+        else{
+            attach=document.getElementById('fileRadio').value;
+        }
+        console.log('attach+++',attach);
+        saveAction(attach);
+    }
+    
+    function fetchUrl() {
+        var val = document.getElementById('pg:frm:objectList').value ;
+        if (val != '') {
+            jsfetchUrl(val);
+        }
+        else {
+            alert('Please select an object');
+        }
+    }
+       
+    function loading(val) {
+        if(val){
+            document.getElementById('contentLoading').style.display = 'inline-block';
+        }
+        else {
+            document.getElementById('contentLoading').style.display = 'none';
+        }        
+    }
+    
+    
+
+</script>
+<style>
+      #contentLoading{
+        width:100%;
+        height:100%;        
+        top: 0;
+        left: 0;
+        position: fixed;
+        display: block;
+        opacity: 0.7;
+        background-color: #fff;
+        z-index: 10001;
+        text-align: center;
+      }
+      
+      html body.sfdcBody{
+       padding:0px;
+      }
+      
+      .slds .slds-box {
+            border : 0px;
+            border-bottom: 1px solid #d8dde6;
+            border-top: 1px solid #d8dde6;
+            border-radius: 0px;
+      }      
+</style>
+
+
+    <apex:form id="frm">
+    <apex:actionRegion >
+    <apex:actionFunction name="saveAction" action="{!saveCustom}" reRender="err,errmsg">
+        <apex:param id="prm" name="val" value="" assignTo="{!selectedVal}"/>
+    </apex:actionFunction>
+    </apex:actionRegion>
+    <apex:actionRegion >
+    <apex:actionFunction name="jsfetchUrl" action="{!generateURL}" reRender="urlshow,error,err" status="mystatus">
+        <apex:param name="p1" value="" assignTo="{!selected}"/>
+    </apex:actionFunction>
+        <apex:actionStatus id="mystatus" onstart="loading(true)" onstop="loading(false)" /> 
+    </apex:actionRegion>
+    
+    <apex:outputPanel id="err">
+        <apex:outputPanel rendered="{!successMsg}">
+            <div class="demo-only"  id="errorToast">
+                <div class="slds-notify_container slds-is-relative">
+                    <div class="slds-notify slds-notify_toast slds-theme_success" style="min-width: auto;height: 50px;" role="alert">                    
+                        <div class="slds-notify__content">
+                            <h2 class="slds-text-heading_small " id="errorMsg">Saved Successfully.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+    </apex:outputPanel>
+    
+    <div class="slds-page-header slds-border_left slds-border_right slds-border_top" role="banner">
+        <div class="slds-grid">
+            <div class="slds-col slds-has-flexi-truncate">
+                <div class="slds-media slds-media--center slds-no-space slds-grow">
+                    <div class="slds-media__figure">
+              <!--          <svg class="slds-icon" aria-hidden="true">
+                            <use href="{!URLFOR($Resource.SLDS10, '/assets/icons/doctype-sprite/svg/symbols.svg#attachment')}" ></use>
+                        </svg> -->
+                    </div>
+                    
+                    <div class="slds-media__body">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle" title="File Configuration">File Configuration</h1>
+                    </div>                        
+                </div>                    
+            </div>   
+            
+            <button value="Preview" onclick="save(); return false;" class="slds-button slds-button--neutral">Save</button>  
+          <!--  <button value="Preview" onclick="cancel();return false;" class="slds-button slds-button--neutral">Cancel</button>  -->
+        </div>
+    </div> 
+         <div class="slds-border_left slds-border_right slds-border_bottom slds-scrollable--x slds-theme--default">            
+              <div class="slds-grid " style="margin-top:0px; margin-left:10px;margin-bottom:10px">                        
+                    <div class=" slds-col slds-size--1-of-2" id="p3_top" name="p3_top" >                         
+                         <fieldset class="slds-box slds-container--small">
+                         <legend id="newexpenseform" class="slds-text-heading--small slds-p-vertical--medium">Upload file as</legend>
+                    
+                              <div class="slds-form-element__control" style="padding-left: 15px;">
+                                <span class="slds-radio">
+                                  <input type="radio" id="attachRadio" name="options" value="Attachment"/>
+                                  <label class="slds-radio__label" for="attachRadio">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">Attachment</span>
+                                  </label>
+                                </span>
+                                <br/>
+                                <span class="slds-radio">
+                                  <input type="radio" id="fileRadio" name="options" value="Content"/>
+                                  <label class="slds-radio__label" for="fileRadio">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">File</span>
+                                  </label>
+                                </span>
+                              </div>
+                          </fieldset>
+                    </div>
+              </div>
+          </div>  
+          
+          
+         <div class="slds-spinner--small" id="contentLoading" style="display:none">
+            <img  style="width: 74px;margin-top: 20%;" src="{!URLFOR($Resource.SLDS10, '/assets/images/spinners/slds_spinner_brand.gif')}" alt="Loading..." />
+         </div>
+         <div class="slds" id="pb">
+            <apex:pageMessages id="error" />
+                <div class="myapp">
+                          <!--Attachment LIST CARDS-->
+                          <div class="slds-grid slds-m-top--large">
+                                <!-- MAIN CARD -->
+                                <div class="slds-col slds-col-rule--right ">
+                                      <div class="slds-card">
+                                              <header class="slds-card__header slds-grid">
+                                                     <div class="slds-col slds-media slds-media--center">
+                                                         <div class="slds-media__figure">
+                                                          </div>
+                                                          <div class="slds-media__body">
+                                                              <h1 class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle" title="File Configuration">Generate Button URL</h1>
+                                                              
+                                                          </div>
+                                                          <div class="slds-col slds-float--right">
+                                                          </div>
+                                                      </div>
+                                               </header>
+                                               <section class="slds-card__body">
+                                                 <div class="slds-box slds-theme--default">
+                                                    <label class="slds-form-element__label slds-text-body--regular" for="objectList">Select Object</label><br/>
+                                                    <apex:selectList value="{!selected}" size="1" style="max-width: 250px;" styleClass="slds-select" id="objectList">
+                                                        <apex:selectOptions value="{!objectSelectList}"> </apex:selectOptions>                        
+                                                    </apex:selectList>
+                                                    
+                                                    <a href="" class="slds-button slds-button--neutral" onclick="fetchUrl();return false;">Generate Button URL</a>
+                                                    <hr/>
+                                                    <div class="slds-text-body--regular" style=""> Generated URL:</div >
+                                                    
+                                                     
+                                                      <apex:outputPanel style="font-family: cursive;" id="urlshow">
+                                                         <div style="margin-left: 3%;">
+                                                            <span class="slds-text-body--regular"> <b>For Attach Files Page -</b></span><apex:outputText styleClass=" slds-text-body--regular" value="{!attachFileURL}" ></apex:outputText><br/>
+                                                            <span class="slds-text-body--regular"><b> For Send Email Page -</b></span><apex:outputText styleClass=" slds-text-body--regular" value="{!sendMailURL }"></apex:outputText>
+                                                         </div>  
+                                                         
+                                                           <apex:outputPanel id="urlMsg" rendered="{!attachFileURL!= ''}">
+                                                            <div class="slds-box slds-theme--success slds-theme--inverse-text" style="margin-top: 1%;">
+                                                          <p> Please copy the above url and paste in detail page button of selected object.</p>
+                                                        </div> 
+                                                        </apex:outputPanel>
+                                                   </apex:outputPanel>
+                                                   
+                                                </div>                
+                                               </section>
+                                          </div>
+                                 </div>  
+                            </div>
+               </div> 
+           </div> 
+                        
+</apex:form>  
+</apex:page>

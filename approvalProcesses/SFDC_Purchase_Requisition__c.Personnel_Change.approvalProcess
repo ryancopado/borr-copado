@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <submitter>EVP_Legal_HR_IT</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>HR_Coordinator</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>VP_of_People_Culture</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>crusso@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>hkiernan@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <description>goes to IT personnel to update systems</description>
+        <label>IT Update</label>
+        <name>IT_Update</name>
+    </approvalStep>
+    <description>used to submit changes for an existing employee&apos;s role (i.e. - promoted to manager, switch from sales to engineering, etc)</description>
+    <emailTemplate>unfiled$public/New_Personnel_Change_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Personnel Change</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SFDC_Purchase_Requisition__c.Status__c</field>
+            <operation>equals</operation>
+            <value>,New,On Hold,X - Rejected</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Personnel_Change_Request_Complete</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Personnel_Change_Request_Complete_Notification</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Notification_to_Accounting_that_personnel_change_request_is_in_process</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Personnel Change</label>
+    <processOrder>8</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

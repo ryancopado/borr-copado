@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AP Invoice --></label>
+        <name>AP_Invoice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Inventory Movement --></label>
+        <name>AcctSeedERP__Inbound_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manufacturing Inventory Movement --></label>
+        <name>AcctSeedERP__Manufacturing_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Outbound Inventory Movement --></label>
+        <name>AcctSeedERP__Outbound_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order Inventory Movement --></label>
+        <name>AcctSeedERP__Purchase_Order_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Order Inventory Movement --></label>
+        <name>AcctSeedERP__Sales_Order_Inventory_Movement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related source record for the origin of the entry. --></help>
+        <label><!-- AP Disbursement --></label>
+        <name>AcctSeed__AP_Disbursement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Payable Line --></label>
+        <name>AcctSeed__Account_Payable_Line__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related source record for the origin of the entry. --></help>
+        <label><!-- Payable --></label>
+        <name>AcctSeed__Account_Payable__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is populated based on the transaction source record. The mapping is Journal Entry Line Account field, Billing Customer, Accounts Payable Payee field, Cash Receipt Account field, or Cash Disbursement Payee field. --></help>
+        <label><!-- Account --></label>
+        <name>AcctSeed__Account__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. --></help>
+        <label><!-- Accounting Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Accounting Year --></label>
+        <name>AcctSeed__Accounting_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- Debits are represented as positive amounts and credits are represented as negative amounts. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deprecated in version 1.16. --></help>
+        <label><!-- zDep-Bank Reconciliation Status --></label>
+        <name>AcctSeed__Bank_Reconciliation_Status__c</name>
+        <picklistValues>
+            <masterLabel>Deprecated</masterLabel>
+            <translation><!-- Deprecated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used in the Time &amp; Material Billings process to help filter transactions in or out of the process. --></help>
+        <label><!-- zDep-Billable --></label>
+        <name>AcctSeed__Billable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Cash Receipt --></label>
+        <name>AcctSeed__Billing_Cash_Receipt__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Billing Line --></label>
+        <name>AcctSeed__Billing_Line__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used on expense lines in the Time and Material Billing process. Indicates the expense has been processed in the Time and Material Billing Process. --></help>
+        <label><!-- zDep-Billing Processed --></label>
+        <name>AcctSeed__Billing_Processed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related source record for the origin of the entry. --></help>
+        <label><!-- Billing --></label>
+        <name>AcctSeed__Billing__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Cash Disbursement --></label>
+        <name>AcctSeed__Cash_Disbursement__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow Category --></label>
+        <name>AcctSeed__Cash_Flow_Category__c</name>
+        <relationshipLabel><!-- Transactions (Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Cash Receipt --></label>
+        <name>AcctSeed__Cash_Receipt__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is populated based on the transaction source record. The mapping is from the Cash Disbursement record. --></help>
+        <label><!-- Check Number --></label>
+        <name>AcctSeed__Check_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is populated based on the transaction source record. The mapping is Journal Entry Line Contact, Payable Contact or Cash Disbursement Contact field. --></help>
+        <label><!-- Contact --></label>
+        <name>AcctSeed__Contact__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The currency conversion rate for the currency. --></help>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeed__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Transaction Date. Primarily used in billing records and for reporting purposes. --></help>
+        <label><!-- Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is populated based on the transaction source record. The mapping is from Description field on related Cash Receipt, Cash Disbursement or Journal Entry Line record. --></help>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Look up to Salesforce User --></help>
+        <label><!-- Employee --></label>
+        <name>AcctSeed__Employee__c</name>
+        <relationshipLabel><!-- Transactions (Employee) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The foreign amount associated with the source document if applicable. --></help>
+        <label><!-- Foreign Amount --></label>
+        <name>AcctSeed__Foreign_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The source document foreign currency if applicable. --></help>
+        <label><!-- Foreign Currency --></label>
+        <name>AcctSeed__Foreign_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula Field used to facilitate reporting by GL Account Type on the Transactions object. --></help>
+        <label><!-- GL Account Type --></label>
+        <name>AcctSeed__GL_Account_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Branch</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 1&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Transactions (GL Variable 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Business Unit</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 2&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Transactions (GL Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Team</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Transactions (GL Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Transactions (GL Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Major classification for financial reporting. --></help>
+        <label><!-- GL Account --></label>
+        <name>AcctSeed__GL_Account__c</name>
+        <relationshipLabel><!-- Transactions (GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Has Cleared Bank Reconciliation Line --></label>
+        <name>AcctSeed__Has_Cleared_Bank_Reconciliation_Line__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Journal Entry Line --></label>
+        <name>AcctSeed__Journal_Entry_Line__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field groups individual transaction lines by their source transaction. It matches Debit and Credit entries coming from the same source transaction. --></help>
+        <label><!-- Key --></label>
+        <name>AcctSeed__Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is populated based on the transaction source record. The mapping is Account Payable Payee Reference, Cash Disbursement Check or Transaction Number, Billing Number, or Cash Receipt Customer Payment Reference. --></help>
+        <label><!-- Note --></label>
+        <name>AcctSeed__Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Work break down structure for projects, such as: Phases, Deliverables or Roles. --></help>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related Project or Job for allocation of cost or revenue. --></help>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Report Amount --></label>
+        <name>AcctSeed__Report_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Recognition Method --></label>
+        <name>AcctSeed__Revenue_Recognition_Method__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to source transaction. --></help>
+        <label><!-- Amortization Entry --></label>
+        <name>AcctSeed__Scheduled_Revenue_Expense__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Day used in a Time Card Transaction. --></help>
+        <label><!-- Time Card Day --></label>
+        <name>AcctSeed__Time_Card_Day__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project. --></help>
+        <label><!-- Time Card Variable 1 --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of &quot;Time Card Variable 1&quot;. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__Time_Card_Variable_1__c</name>
+        <relationshipLabel><!-- Transactions (Time Card Variable 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to track additional information on Time Card Lines for services billings when more data is required than Project and Project Task. This is a global variable not specific to a single project. --></help>
+        <label><!-- Time Card Variable 2 --></label>
+        <name>AcctSeed__Time_Card_Variable_2__c</name>
+        <relationshipLabel><!-- Transactions (Time Card Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity for Product Pricing, Hours for Service pricing or costing. --></help>
+        <label><!-- Quantity --></label>
+        <name>AcctSeed__Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Closed Date --></label>
+        <name>Case_Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description Summary --></label>
+        <name>DescriptionSummary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- ERP Key --></label>
+        <name>ERP_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Number --></label>
+        <name>Invoice_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Status --></label>
+        <name>Invoice_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Number --></label>
+        <name>Job_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- O&amp;M Mgr --></label>
+        <name>O_M_Mgr__c</name>
+        <relationshipLabel><!-- Transactions (O&amp;M Mgr) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- On WIP --></label>
+        <name>On_WIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- POL# --></label>
+        <name>POL__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+        <relationshipLabel><!-- Transactions (Parent Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Account --></label>
+        <name>Project_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Record --></label>
+        <name>Reference_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOL# --></label>
+        <name>SOL__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SV# --></label>
+        <name>SV__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sort Order --></label>
+        <name>Sort_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+    </fields>
+    <fields>
+        <label><!-- WIP Status --></label>
+        <name>WIP_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Order --></label>
+        <name>WorkOrder__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Ops Division should not contain a value. --></errorMessage>
+        <name>Ops_Division_Cannot_Contain_a_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are using a GL account that requires the Ops Division to be populated. --></errorMessage>
+        <name>Ops_Division_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are using a GL account that requires the Sales Segment  to be populated. --></errorMessage>
+        <name>Sales_Segment_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sales Segment should not contain a value. --></errorMessage>
+        <name>Sales_Segment_Should_Not_Contain_a_Value</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_TM_Billings --></label>
+        <name>AcctSeed__Create_TM_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_Processed --></label>
+        <name>AcctSeed__Mark_Processed</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_Unprocessed --></label>
+        <name>AcctSeed__Mark_Unprocessed</name>
+    </webLinks>
+</CustomObjectTranslation>

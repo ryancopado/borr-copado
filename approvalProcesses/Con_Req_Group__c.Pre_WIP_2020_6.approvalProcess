@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>CEO</submitter>
+        <type>roleSubordinatesInternal</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+        <field>Project__c</field>
+        <field>Project_PM__c</field>
+        <field>Vendor__c</field>
+        <field>Requisition_Total_Roll_Up__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jconnell@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(Project__r.Hand_off_Date__c)) 
+&amp;&amp; 
+OR( 
+BEGINS( Project__r.Job_Number__c , &quot;105&quot; ),
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;Dev - New England&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval- Pre-Handoff -Dev - New England</label>
+        <name>Sales_Approval_Pre_Handoff_New_England</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>amcdonough@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(Project__r.Hand_off_Date__c)) 
+&amp;&amp; 
+OR(
+BEGINS( Project__r.Job_Number__c , &quot;108&quot; ),
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;Dev - New York&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval- Pre-Handoff - Dev - New York</label>
+        <name>Sales_Approval_Pre_Handoff_Mid_Atlantic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kkearney@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.Hand_off_Date__c&gt;TODAY() 
+|| 
+ISBLANK(Project__r.Hand_off_Date__c)) 
+&amp;&amp;
+OR(
+BEGINS( Project__r.Job_Number__c , &quot;201&quot; ),
+BEGINS( Project__r.Job_Number__c , &quot;207&quot; ),
+BEGINS( Project__r.Job_Number__c , &quot;205&quot; ),
+BEGINS( Project__r.Job_Number__c , &quot;208&quot; ),
+BEGINS( Project__r.Job_Number__c , &quot;200&quot; ),
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;EPC&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval- Pre-Handoff - EPC All</label>
+        <name>Sales_Approval_Pre_Handoff_West_Coast</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>aaron@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Project__r.Hand_off_Date__c&gt;TODAY()
+||
+ISBLANK(Project__r.Hand_off_Date__c))
+&amp;&amp;
+OR(
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;Corporate&quot; ),
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;Overhead&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval- Pre-Handoff - Corporate</label>
+        <name>Sales_Approval_Pre_Handoff_Corporate</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>eflanagan@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>OR(
+BEGINS( Project__r.Job_Number__c , &quot;111&quot; ),
+CONTAINS( Project__r.Ops_Division__r.Name , &quot;Dev - Emerging&quot; )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval- Pre-Handoff - Dev - Emerging</label>
+        <name>Sales_Approval_Pre_Handoff_Emerging</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ROD__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Project__r.Hand_off_Date__c &lt;= TODAY(),
+ NOT(CONTAINS( Project__r.Ops_Division__r.Name , &quot;Dev - Emerging&quot; ))  
+)</formula>
+        </entryCriteria>
+        <label>ROD- Post Handoff</label>
+        <name>ROD_Post_Handoff2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Removing hand off date requirements from Dev Emerging</description>
+    <emailTemplate>unfiled$public/Con_Req_Group_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( 
+ RecordTypeId  &lt;&gt; &quot; 01234000000BnNq&quot;,
+ SOLs__c  &gt; 0,
+IsAttachment__c = TRUE, 
+Vendor__r.AcctSeed__Accounting_Active__c =TRUE, 
+ISPICKVAL(Project__r.WIP_Status__c , &quot;Pre-WIP&quot;))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Con_Req_Group_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>CRG_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Date_of_Final_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Con_Req_Group_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Purchase_Rejected_Con_Req_Group</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Con_Req_Group_Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Lock_Con_Req_Group1</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Pre-WIP 2020</label>
+    <processOrder>12</processOrder>
+    <recallActions>
+        <action>
+            <name>Con_Req_Group_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Unlock_Con_Req_Group</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The account from which the transaction was made. This is the primary key of the account resource. --></help>
+        <label><!-- Account Id --></label>
+        <name>AcctSeed__Account_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of the transaction as it appears at the financial institution site. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- A unique identifier for the transaction. The combination of the id and account container are unique in the system. --></help>
+        <label><!-- Bank Transaction Id --></label>
+        <name>AcctSeed__Bank_Transaction_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- How the transaction appears on the FI site (debit v credit). Bank-Credit/Debit=Increase/Decrease. CreditCard - Credit/Debit=Decrease/Increase. --></help>
+        <label><!-- Base Type --></label>
+        <name>AcctSeed__Base_Type__c</name>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debit</masterLabel>
+            <translation><!-- Debit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The id of the category assigned to the transaction. --></help>
+        <label><!-- Category ID --></label>
+        <name>AcctSeed__Category_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The category type of the category assigned to the transaction. --></help>
+        <label><!-- Category Type --></label>
+        <name>AcctSeed__Category_Type2__c</name>
+    </fields>
+    <fields>
+        <help><!-- The category type of the category assigned to the transaction. --></help>
+        <label><!-- Category Type --></label>
+        <name>AcctSeed__Category_Type__c</name>
+        <picklistValues>
+            <masterLabel>expense</masterLabel>
+            <translation><!-- expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>income</masterLabel>
+            <translation><!-- income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>transfer</masterLabel>
+            <translation><!-- transfer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The name of the category assigned to the transaction. --></help>
+        <label><!-- Category --></label>
+        <name>AcctSeed__Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- The check number of the transaction as it appears on the financial institution site. --></help>
+        <label><!-- Check Number --></label>
+        <name>AcctSeed__Check_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a type of financial account. --></help>
+        <label><!-- Container --></label>
+        <name>AcctSeed__Container__c</name>
+    </fields>
+    <fields>
+        <help><!-- The post date or transaction date on the FI site. Post Date is higher priority than transaction date. --></help>
+        <label><!-- Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Original transaction description as it appears at the financial institution site. --></help>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the detail category that is assigned to the transaction. --></help>
+        <label><!-- Detail Category Id --></label>
+        <name>AcctSeed__Detail_Category_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the detail category that is assigned to the transaction. --></help>
+        <label><!-- Detail Category --></label>
+        <name>AcctSeed__Detail_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the GLAM record that is mapped to the Bank Transaction. --></help>
+        <label><!-- GL Account Mapping --></label>
+        <name>AcctSeed__GL_Account_Mapping__c</name>
+        <relationshipLabel><!-- Bank Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The id of the high level category assigned to the transaction. --></help>
+        <label><!-- High Level Category Id --></label>
+        <name>AcctSeed__High_Level_Category_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the high level category assigned to the transaction. --></help>
+        <label><!-- High Level Category --></label>
+        <name>AcctSeed__High_Level_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- The combination of the id and account container are unique in the system. --></help>
+        <label><!-- Key --></label>
+        <name>AcctSeed__Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional notes provided by the user for a particular transaction through application or API services. --></help>
+        <label><!-- Memo --></label>
+        <name>AcctSeed__Memo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional category information from the Yodlee reference data, if available. --></help>
+        <label><!-- Merchant Category --></label>
+        <name>AcctSeed__Merchant_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the merchant associated with the transaction. --></help>
+        <label><!-- Merchant Id --></label>
+        <name>AcctSeed__Merchant_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the merchant associated with the transaction. --></help>
+        <label><!-- Merchant Name --></label>
+        <name>AcctSeed__Merchant_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provides further information about a transaction, i.e., if the transaction is carried out on a biller or a subscriber. --></help>
+        <label><!-- Merchant Type --></label>
+        <name>AcctSeed__Merchant_Type2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provides further information about a transaction, i.e., if the transaction is carried out on a biller or a subscriber. --></help>
+        <label><!-- Merchant Type --></label>
+        <name>AcctSeed__Merchant_Type__c</name>
+        <picklistValues>
+            <masterLabel>Billers</masterLabel>
+            <translation><!-- Billers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription</masterLabel>
+            <translation><!-- Subscription --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The parentCategoryId of the category assigned to the transaction.
+Note: This field will be provided in the response if the transaction is assigned to a user-created category. --></help>
+        <label><!-- Parent Category Id --></label>
+        <name>AcctSeed__Parent_Category_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date on which the transaction is posted to the account. --></help>
+        <label><!-- Post Date --></label>
+        <name>AcctSeed__Post_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The running balance in an account indicates the balance of the account after every transaction. --></help>
+        <label><!-- Running Balance --></label>
+        <name>AcctSeed__Running_Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Simplified transaction description by Yodlee. --></help>
+        <label><!-- Simple Description --></label>
+        <name>AcctSeed__Simple_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines the source from which this transaction was imported.  Possible values: Yodlee, Financial File Import --></help>
+        <label><!-- Source --></label>
+        <name>AcctSeed__Source__c</name>
+        <picklistValues>
+            <masterLabel>Financial File Import</masterLabel>
+            <translation><!-- Financial File Import --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yodlee</masterLabel>
+            <translation><!-- Yodlee --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current status of this transaction in the system.  Possible values: Unmatched, Added, Matched, Deleted, Removed --></help>
+        <label><!-- Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Added</masterLabel>
+            <translation><!-- Added --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted</masterLabel>
+            <translation><!-- Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matched</masterLabel>
+            <translation><!-- Matched --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Removed</masterLabel>
+            <translation><!-- Removed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unmatched</masterLabel>
+            <translation><!-- Unmatched --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A more detailed classification that provides further information on the type of transaction; examples include purchases, payments, etc. --></help>
+        <label><!-- Sub Type --></label>
+        <name>AcctSeed__Sub_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date the transaction happens in the account. --></help>
+        <label><!-- Transaction Date --></label>
+        <name>AcctSeed__Transaction_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes the nature of the intent behind the transaction, some examples being payments, purchases, charges &amp; fees, etc. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+    </fields>
+</CustomObjectTranslation>

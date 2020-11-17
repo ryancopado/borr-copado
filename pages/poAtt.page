@@ -1,0 +1,17 @@
+<apex:page standardController="Con_PO__c" extensions="conPOatt">
+<style>
+.fewerMore {display: none;}
+</style>
+<apex:form >
+ <apex:pageMessages />
+ <apex:detail relatedList="true"></apex:detail>
+<apex:pageblock id="CustomList" title="Construction Requisition Attachments"  >
+   <apex:pageBlockTable value="{!atts}" var="o" rendered="{!NOT(ISNULL(atts))}">
+        <apex:column ><apex:facet name="header">Name</apex:facet><apex:outputLink value="/{!o.Id}">{!o.Name}</apex:outputLink></apex:column>
+        <apex:column value="{!o.OwnerId}"/>
+        <apex:column value="{!o.CreatedDate}"/>
+   </apex:pageBlockTable>
+   <apex:outputLabel value="No records to display" rendered="{!(ISNULL(atts))}" styleClass="noRowsHeader" style="font-size:95%"></apex:outputLabel>
+ </apex:pageblock>
+</apex:form>
+</apex:page>

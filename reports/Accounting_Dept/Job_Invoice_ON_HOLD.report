@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Date__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.Purchase_Order__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Vendor__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.Invoice_Amount__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.Accounting_Notes__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.AcctSeed__Payee_Reference__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable__c.Description__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Account_Payable__c.AcctSeed__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>ON HOLD</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Job Invoice ON HOLD</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Account_Payable__c$AcctSeed__Account_Payable_Line__c@AcctSeed__Account_Payable_Line__c.AcctSeed__Expense_GL_Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>AcctSeed__Account_Payable__c.AcctSeed__Vendor__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Account_Payable__c.AcctSeed__Due_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

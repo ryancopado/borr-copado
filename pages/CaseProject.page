@@ -1,0 +1,19 @@
+<apex:page standardController="Case" extensions="Case_ProjectCtlExt" tabStyle="Contract">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:sectionHeader title="Select Contract"/>
+            <apex:pageblockTable value="{!lstQuery}" var="eachRecord">
+                <apex:column >
+                    <apex:commandButton value="CreateCase" action="/apex/Case_Contract?contractId={!eachRecord.Id}&retURL=%2Fapex%2FCase_Tab"/>
+                    <!--apex:inputCheckBox value="{!eachRecord.Id}"/-->
+                    </Apex:column>
+                    <!--<apex:column value="{!eachRecord.Id}"/>-->
+                    <apex:column value="{!eachRecord.ContractNumber}"/>
+                    <apex:column value="{!eachRecord['ASProject__c']}"/>
+                    <apex:column value="{!eachRecord['Type__c']}"/>
+            </apex:pageblockTable>
+             <!--<apex:commandButton value="Next" action="{!movetocase}" />-->
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

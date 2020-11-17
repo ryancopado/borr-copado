@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>ApplicationsEngineer</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>jaskins@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>ChangeFlagForApprovalProcess</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>tyates@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>$User.LastName &lt;&gt; &apos;Larner&apos; &amp;&amp; $User.LastName &lt;&gt; &apos;Canning&apos; &amp;&amp; $User.LastName &lt;&gt; &apos;Yates&apos; &amp;&amp;
+(ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;So Cal&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;San Diego&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Berkeley&quot;)||
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Oakland&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Nor Cal&quot;))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>First Approval</label>
+        <name>Firsttttt_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>These approvals now go to Joe Busch</description>
+        <entryCriteria>
+            <formula>$User.LastName &lt;&gt; &apos;Larner&apos; &amp;&amp; $User.LastName &lt;&gt; &apos;Canning&apos; &amp;&amp; NOT(ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;So Cal&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;San Diego&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Berkeley&quot;)|| 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Oakland&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Nor Cal&quot;))</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Pat Canning Approval</label>
+        <name>Pat_Canning_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>ChangeFlagForApprovalProcess</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>msugihara@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;So Cal&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c , &quot;San Diego&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>SoCal DO Approval</label>
+        <name>SoCal_DO_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>tkeane@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>ISPICKVAL(Opportunity__r.Account.Branch__c ,&apos;Nor Cal&apos;) ||  
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Berkeley&quot;)|| 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Oakland&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>NorCal DO Approval</label>
+        <name>NorCal_DO_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jbusch@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>NOT(ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;So Cal&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;San Diego&quot;) || 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Berkeley&quot;)|| 
+ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Oakland&quot;) || ISPICKVAL( Opportunity__r.Account.Branch__c ,&quot;Nor Cal&quot;))</formula>
+        </entryCriteria>
+        <label>New England DO Approval</label>
+        <name>New_England_DO_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>Alerts/Pricing_Tool_Submitted</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Pricing_Tool_Approval__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New,Rejected,Recalled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Pricing_Tool_Approval__c.Pricing_Request_Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Pricing_Tool_Approval__c.Fields_Complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Pricing_Tool_Approval_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Pricing_Tool_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Pricing_Tool_Rejected</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Date_Submitted_for_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Pricing Tool Approval5</label>
+    <processOrder>2</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

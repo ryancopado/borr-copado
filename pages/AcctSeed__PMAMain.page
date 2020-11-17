@@ -1,0 +1,704 @@
+<apex:page id="thePage" title="Accounting Settings | Accounting Seed" standardController="AcctSeed__Accounting_Settings__c" tabStyle="Accounting_Settings__tab"
+    extensions="AcctSeed.PMAMainControllerExt,AcctSeed.LedgerControllerExt,AcctSeed.PurgeDataControllerExt,AcctSeed.AutomationSchedulerControllerExt">
+
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/accounting-common.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, '/javascript/pmamain.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'javascript/vex.combined.min.js')}" />
+
+    <apex:stylesheet value="/sCSS/21.0/sprites/1297816277000/Theme3/default/gc/versioning.css" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/vex.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.AcctSeed__accounting_resources, 'css/vex-theme-default.css')}" />
+    <script type="text/javascript">
+        function setFocusOnLoad() { }
+    </script>
+
+    <apex:tabPanel switchType="server" id="theTabPanel" value="{!selectedTab}" styleClass="theTabPanel" tabClass="theTabPanel"
+        contentClass="tabContent" activeTabClass="activeTab" inactiveTabClass="inactiveTab">
+
+        <apex:sectionHeader title="Accounting Settings" subtitle="{!subTitle}" />
+
+        <!-- ==================================== Configuration Settings Tab ========================================== -->
+
+        <apex:tab name="tab1" id="tabOne" label="Configuration Settings">
+            <apex:form id="theForm">
+                <apex:pageblock id="thePageBlock" title="Configuration Settings">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages escape="false" />
+                    <apex:pageBlockButtons id="buttonsTop">
+                        <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Saving...')" />
+                        <apex:commandButton value="Edit" action="{!editMode}" rendered="{!NOT(isEditMode) && isUpdateable && isAdminAccess}" />
+                        <apex:commandButton id="saveButtonTop" value="Save" status="saveStatus" action="{!saveForm}" rendered="{!isEditMode}" reRender="theForm"
+                        />
+                        <apex:commandButton id="cancelButtonTop" value="Cancel" action="{!cancelMode}" rendered="{!isEditMode}" immediate="true"
+                        />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Multi Currency Settings" columns="2" collapsible="false" rendered="{!isMultiCurrencyEnabled}">
+                        <apex:outputField value="{!main.AcctSeed__Enable_Multi_Currency__c}" />
+                        <apex:inputField value="{!main.AcctSeed__Currency_Gain_Loss_GL_Account__c}" rendered="{!AND(isEditMode, isMultiCurrencyEnabled, main.AcctSeed__Enable_Multi_Currency__c)}"
+                            required="{!main.AcctSeed__Enable_Multi_Currency__c}" />
+                        <apex:outputField value="{!main.AcctSeed__Currency_Gain_Loss_GL_Account__c}" rendered="{!AND(NOT(isEditMode), isMultiCurrencyEnabled, main.AcctSeed__Enable_Multi_Currency__c)}"
+                        />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="General Ledger Settings" columns="2" collapsible="false">
+                        <apex:selectList required="true" value="{!main.AcctSeed__Default_Ledger__c}" multiselect="false" size="1" rendered="{!isEditMode}">
+                            <apex:selectOptions value="{!allLedgers}" />
+                        </apex:selectList>
+                        <apex:inputField value="{!main.AcctSeed__Current_Year_Earnings_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:outputText value="" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Retained_Earnings_GL_Account__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Default_Ledger__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Current_Year_Earnings_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputText value="" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Retained_Earnings_GL_Account__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Billing Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Enable_Billing_Period_Sensitive_Aging__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Revenue_GL_Account__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Enable_Billing_Period_Sensitive_Aging__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Revenue_GL_Account__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Accounts Receivable and Cash Receipts Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__AR_Control_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Unapplied_Cash_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Customer_Payment_Adjustment_GL_Account__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__AR_Control_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Unapplied_Cash_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Customer_Payment_Adjustment_GL_Account__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Payable and Cash Disbursement Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Enable_AP_Period_Sensitive_Aging__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__AP_Control_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:outputText rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Payment_Discount_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:outputText rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Prepaid_Expense_GL_Account__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Enable_AP_Period_Sensitive_Aging__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__AP_Control_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputText rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Payment_Discount_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputText rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Prepaid_Expense_GL_Account__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Project Accounting Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Labor_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Default_Project_Task_Labor_GL_Account__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Labor_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Default_Project_Task_Labor_GL_Account__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <!-- Product Cost Section Start =================================================================-->
+                    <apex:pageBlockSection id="productCostSection" title="Product Costing Settings" columns="2" collapsible="false">
+                        <apex:outputField value="{!main.AcctSeed__Enable_Product_Costing__c}" rendered="{!isStandardCostProductCostingEnabled}" />
+                        <apex:outputField value="{!main.AcctSeed__Inventory_Valuation_Method__c}" rendered="{!NOT(isStandardCostProductCostingEnabled)}" />
+
+                        <apex:inputField value="{!main.AcctSeed__Vouchers_Payable_GL_Account__c}"
+                                         rendered="{!isEditMode}"
+                                         required="{!isProductCostingEnabled}"/>
+
+                        <apex:outputText value="" rendered="{!isEditMode}"/>
+                        <apex:inputField value="{!main.AcctSeed__Work_in_Process_GL_Account__c}" rendered="{!isEditMode}"/>
+                        <apex:outputText value="" rendered="{!isEditMode}"/>
+                        <apex:inputField value="{!main.AcctSeed__Inventory_Variance_GL_Account__c}"
+                                         rendered="{!isEditMode}"
+                                         required="{!isStandardCostProductCostingEnabled}"/>
+
+                        <apex:outputField value="{!main.AcctSeed__Vouchers_Payable_GL_Account__c}" rendered="{!NOT(isEditMode)}"/>
+                        <apex:outputText value="" rendered="{!NOT(isEditMode)}"/>
+                        <apex:outputField value="{!main.AcctSeed__Work_in_Process_GL_Account__c}" rendered="{!NOT(isEditMode)}"/>
+                        <apex:outputText value="" rendered="{!NOT(isEditMode)}"/>
+                        <apex:outputField value="{!main.AcctSeed__Inventory_Variance_GL_Account__c}" rendered="{!NOT(isEditMode)}"/>
+                    </apex:pageBlockSection>
+                    <!-- Product Cost Section End ===================================================================-->
+                    <apex:pageBlockSection title="Time Card Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Display_Billable_Flag_in_Time_Card_Entry__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Label_for_Time_Card_Variable_1__c}" rendered="{!isEditMode}" />
+                        <apex:outputText value="" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Label_for_Time_Card_Variable_2__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Display_Billable_Flag_in_Time_Card_Entry__c}" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputField value="{!main.AcctSeed__Label_for_Time_Card_Variable_1__c}" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputText value="" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputField value="{!main.AcctSeed__Label_for_Time_Card_Variable_2__c}" rendered="{!NOT(isEditMode)}" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Cash Flow Statement Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Enable_Cash_Flow_Statement__c}" onChange="AcctSeed.ASModule.enableCashFlowStatementConfirm(this);"
+                            rendered="{!AND(isEditMode, NOT(main.AcctSeed__Enable_Cash_Flow_Statement__c))}" />
+                        <apex:outputField value="{!main.AcctSeed__Enable_Cash_Flow_Statement__c}" rendered="{!OR(NOT(isEditMode), main.AcctSeed__Enable_Cash_Flow_Statement__c)}"
+                        />
+                        <apex:inputField value="{!main.AcctSeed__Default_Cash_Disbursement_Category__c}" rendered="{!isEditMode}" />
+                        <apex:outputText value="" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Default_Cash_Receipt_Category__c}" rendered="{!isEditMode}" />
+                        <apex:outputText value="" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Default_Journal_Entry_Line_Category__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Default_Cash_Disbursement_Category__c}" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputText value="" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputField value="{!main.AcctSeed__Default_Cash_Receipt_Category__c}" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputText value="" rendered="{!NOT(isEditMode)}" />
+                        <apex:outputField value="{!main.AcctSeed__Default_Journal_Entry_Line_Category__c}" rendered="{!NOT(isEditMode)}" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Bank Direct Connect Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Default_Vendor__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Default_Vendor__c}" rendered="{!NOT(isEditMode)}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Cash Disbursement PDF Offset Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Date_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Date_Right_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Amount_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Amount_Right_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Amount_Words_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Amount_Words_Left_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Payee_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Payee_Left_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Payee_Address_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Payee_Address_Left_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Memo_Top_Offset__c}" rendered="{!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Memo_Left_Offset__c}" rendered="{!isEditMode}" />
+
+                        <apex:outputField value="{!main.AcctSeed__Date_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Date_Right_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Amount_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Amount_Right_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Amount_Words_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Amount_Words_Left_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Payee_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Payee_Left_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Payee_Address_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Payee_Address_Left_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Memo_Top_Offset__c}" rendered="{!!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Memo_Left_Offset__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                </apex:pageblock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Ledger Settings Tab ========================================== -->
+
+        <apex:tab label="Ledger Settings" name="tab2" id="tabTwo" rendered="{!isUpdateable}">
+            <apex:form id="theFormTwo">
+                <apex:pageBlock title="Ledger Settings">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages />
+                    <apex:pageBlockButtons id="buttonsTop">
+                        <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Saving...')" />
+                        <apex:commandButton value="Edit" action="{!ledgerEditMode}" rendered="{!NOT(isLedgerEditMode) && isAdminAccess}" />
+                        <apex:commandButton id="saveButtonTop2" value="Save" status="saveStatus" action="{!saveLedgers}" rendered="{!isLedgerEditMode}"
+                            reRender="theFormTwo" />
+                        <apex:commandButton id="cancelButtonTop" value="Cancel" action="{!ledgerCancelMode}" rendered="{!isLedgerEditMode}" immediate="true"
+                        />
+                    </apex:pageBlockButtons>
+                    <br/>
+                    <apex:pageBlockTable value="{!ledgers}" var="ledger">
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.Name.label}" styleClass="mid-width">
+                            <apex:outputLink target="_blank" value="/{!ledger.Id}">{!ledger.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Bank_Account__c.label}" styleClass="mid-width">
+                            <apex:outputField value="{!ledger.AcctSeed__Default_Bank_Account__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Default_Bank_Account__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Billing_Format__c.label}" styleClass="mid-width">
+                            <apex:outputField value="{!ledger.AcctSeed__Default_Billing_Format__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Default_Billing_Format__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Billing_Activity_Statement_Format__c.label}" styleClass="mid-width">
+                            <apex:outputField value="{!ledger.AcctSeed__Billing_Activity_Statement_Format__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Billing_Activity_Statement_Format__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Billing_Outstanding_Statement_Format__c.label}" styleClass="mid-width">
+                            <apex:outputField value="{!ledger.AcctSeed__Billing_Outstanding_Statement_Format__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Billing_Outstanding_Statement_Format__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Purchase_Order_Format__c.label}" styleClass="mid-width"
+                            rendered="{!isERPEnabled}">
+                            <apex:outputField value="{!ledger.AcctSeed__Default_Purchase_Order_Format__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Default_Purchase_Order_Format__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Packing_Slip_Format__c.label}" styleClass="mid-width" rendered="{!isERPEnabled}">
+                            <apex:outputField value="{!ledger.AcctSeed__Default_Packing_Slip_Format__c}" rendered="{!!isLedgerEditMode}" />
+                            <apex:inputField value="{!ledger.AcctSeed__Default_Packing_Slip_Format__c}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>
+                        <!-- ======================= Avalara VAT Reporting Fields =============================== -->
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields[AvaVATReportingNamespaceQualifier + 'Company_Code__c'].label}" rendered="{!avalaraVATReportingEnabled}"
+                            styleClass="mid-width">
+                            <apex:outputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'Company_Code__c']}" rendered="{!!isLedgerEditMode}"
+                            />
+                            <apex:inputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'Company_Code__c']}" rendered="{!isLedgerEditMode}"
+                            />
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields[AvaVATReportingNamespaceQualifier + 'VAT_Country__c'].label}" rendered="{!avalaraVATReportingEnabled}"
+                            styleClass="mid-width">
+                            <apex:outputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'VAT_Country__c']}" rendered="{!!isLedgerEditMode}"
+                            />
+                            <apex:inputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'VAT_Country__c']}" rendered="{!isLedgerEditMode}" />
+                        </apex:column>                        
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Purge Data Tab ========================================== -->
+        <apex:tab label="Purge Data" name="tab3" id="tabThree" rendered="{!isUpdateable}">
+            <apex:form id="theFormThree">
+                <apex:pageBlock id="thePurgeBlock" title="Purge Data">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:outputPanel id="apexErrorMessages">
+                        <apex:pageMessages rendered="{!visiblePageMessages}" />
+                    </apex:outputPanel>
+                    <apex:actionStatus id="processedStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                    <!-- Fix for autofocus on datepicker -->
+                    <input type="text" id="hiddenText" style="width:0px;height:0px;border: none;background-color: #fff;background: transparent;"
+                    />
+                    <apex:actionRegion >
+                        <apex:pageBlockSection title="Purge AP Aging History" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem labelStyle="width:5%" dataStyle="width:1%">
+                                <apex:outputLabel value="Accounting Period" />
+                                <apex:inputField value="{!apAgingHistoryProxyRecord.AcctSeed__Accounting_Period__c}" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel styleClass="pbButton" rendered="{!isAdminAccess}">
+                                    <apex:commandButton id="purgeApAgingHistoryButton" value="Purge" status="processedStatus" action="{!executePurgingAPAgingHistory}"
+                                        reRender="thePurgeBlock">
+                                        <apex:actionSupport event="oncomplete" action="{!hidePageMessages}" reRender="purgeApAgingHistoryButton" />
+                                    </apex:commandButton>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                    <apex:actionRegion >
+                        <apex:pageBlockSection title="Purge Billing Aging History" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem labelStyle="width:5%" dataStyle="width:1%">
+                                <apex:outputLabel value="Accounting Period" />
+                                <apex:inputField value="{!billingAgingHistoryProxyRecord.AcctSeed__Accounting_Period__c}" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel styleClass="pbButton" rendered="{!isAdminAccess}">
+                                    <apex:commandButton id="purgeBillingAgingHistoryButton" value="Purge" status="processedStatus" action="{!executePurgingBillingAgingHistory}"
+                                        reRender="thePurgeBlock">
+                                        <apex:actionSupport event="oncomplete" action="{!hidePageMessages}" reRender="purgeBillingAgingHistoryButton" />
+                                    </apex:commandButton>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                    <apex:actionRegion >
+                        <apex:pageBlockSection title="Purge Financial Report Results" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem labelStyle="width:5%" dataStyle="width:6%">
+                                <apex:outputLabel value="Accounting Period" />
+                                <apex:outputLabel value="All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                                    escape="false" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel styleClass="pbButton" rendered="{!isAdminAccess}">
+                                    <apex:commandButton id="purgeFinancialReportEntriesButton" value="Purge" status="processedStatus" action="{!executePurgingFinancialReportResult}"
+                                        reRender="thePurgeBlock">
+                                        <apex:actionSupport event="oncomplete" action="{!hidePageMessages}" reRender="purgeFinancialReportEntriesButton" />
+                                    </apex:commandButton>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                    <apex:actionRegion >
+                        <apex:pageBlockSection title="Purge Zero Balance Financial Cubes" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem labelStyle="width:5%" dataStyle="width:6%">
+                                <apex:outputLabel value="Accounting Period" />
+                                <apex:outputLabel value="All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                                    escape="false" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel styleClass="pbButton" rendered="{!isAdminAccess}">
+                                    <apex:commandButton id="purgeZeroBalanceFinancialCubesButton" value="Purge" status="processedStatus" action="{!executePurgingZeroBalanceFinancialCubes}"
+                                        reRender="thePurgeBlock">
+                                        <apex:actionSupport event="oncomplete" action="{!hidePageMessages}" reRender="purgeZeroBalanceFinancialCubesButton" />
+                                    </apex:commandButton>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                    <apex:actionRegion rendered="{!isERPEnabled}">
+                        <apex:pageBlockSection title="Purge Inventory Balance History" collapsible="false" columns="2">
+                            <apex:pageBlockSectionItem labelStyle="width:5%" dataStyle="width:1%">
+                                <apex:outputLabel value="Start Date" />
+                                <apex:inputField value="{!instanceForDate.AcctSeed__Start_Date__c}" id="purgeDateInventoryBalanceHistory" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputPanel styleClass="pbButton" rendered="{!isAdminAccess}">
+                                    <apex:commandButton id="purgeInventoryBalanceHistoryButton" value="Purge" status="processedStatus" action="{!executePurgingInventoryBalanceHistory}"
+                                        reRender="thePurgeBlock">
+                                        <apex:actionSupport event="oncomplete" action="{!hidePageMessages}" reRender="purgeInventoryBalanceHistoryButton" />
+                                    </apex:commandButton>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Stripe Settings Tab ========================================== -->
+
+        <apex:tab label="Stripe Settings" name="tab4" id="tabFour" rendered="{!isUpdateable}">
+            <apex:form id="theFormFour">
+                <apex:pageBlock id="thePageBlock" title="Stripe Settings">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages />
+                    <apex:actionStatus id="processedStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                    <apex:pageBlockButtons id="buttonsTop">
+                    </apex:pageBlockButtons>
+                    <br/>
+                    <apex:pageBlockSection title="Connected Accounts" collapsible="false" columns="1">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Connected Stripe Account Id" />
+                            <apex:outputField value="{!main.AcctSeed__Stripe_Connected_Account_Id__c}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="" />
+                            <apex:outputPanel styleClass="pbButton" rendered="{!NOT(isValidStripeAccountId) && isAdminAccess}">
+                                <apex:outputLink value="{!stripeConnectLink}" styleClass="btn stripe-connect" style="text-decoration: blink;" target="_self">
+                                    <span>Connect with Stripe</span>
+                                </apex:outputLink>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Payment Link Configuration" collapsible="false" columns="1" rendered="{!isValidStripeAccountId}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="" />
+                            <apex:outputPanel styleClass="pbButton">
+                                <apex:outputLink value="{!paymentLinkConnectLink}" styleClass="btn stripe-connect" style="text-decoration: blink;" target="_self"
+                                    rendered="{!isPaymentLinkPermSetAssigned && isAdminAccess}">
+                                    <apex:outputPanel layout="none" rendered="{!!isPaymentLinkEnabled}">
+                                        <span>Configure Payment Link</span>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!isPaymentLinkEnabled}">
+                                        <span>Re-Configure Payment Link</span>
+                                    </apex:outputPanel>
+                                </apex:outputLink>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:pageMessage severity="info" strength="3" summary="You must have either the AS Full Admin or Accounting Manager permission set assigned to use this feature"
+                                rendered="{!!isPaymentLinkPermSetAssigned && !isPaymentLinkEnabled}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!isPaymentLinkEnabled}">
+                            <apex:outputLabel value="Payment Link Username" />
+                            <apex:outputField value="{!main.AcctSeed__Payment_Link_Username__c}" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Tax Settings Tab ======================================== -->
+
+        <apex:tab label="Tax Settings" name="tab5" id="tabFive" rendered="{!IsUpdateable}">
+            <apex:form id="theFormFive">
+                <apex:pageBlock title=" Tax Calculation Options">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageBlockButtons location="top">
+                        <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                        <apex:commandButton value="Edit" action="{!editMode}" rendered="{!NOT(isEditMode) && isUpdateable && isAdminAccess}" />
+                        <apex:commandButton id="saveButtonTop" value="Save" status="saveStatus" action="{!saveForm}" rendered="{!isEditMode}" reRender="theFormFive"
+                        />
+                        <apex:commandButton id="cancelButtonTop" status="saveStatus" value="Cancel" action="{!cancelMode}" rendered="{!isEditMode}"
+                            onClick="AcctSeed.ASModule.clearErrorInputs();" reRender="theFormFive" />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Available Tax Calculation Options" columns="1" collapsible="false">
+                        <apex:selectRadio layout="pageDirection" label="" required="true" disabled="{!NOT(isEditMode)}" value="{!selectedTaxMethod}">
+                            <apex:selectOptions value="{!taxCalculationOptions}" />
+                            <apex:actionStatus id="changeStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                            <apex:actionSupport status="changeStatus" event="onchange" reRender="theFormFive" />
+                        </apex:selectRadio>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:pageBlock title="Sales Tax Settings" rendered="{!main.AcctSeed__Enable_Avalara_Tax_Calculation__c}">
+                    <apex:pageMessages escape="false" />
+                    <apex:pageBlockButtons location="top">
+                        <apex:commandButton value="Test Connection" status="saveStatus" action="{!testAvaTaxConnection}" rendered="{!NOT(isEditMode) && isUpdateable && isAdminAccess}"
+                        />
+                        <apex:commandButton value="Validate Address" action="{!openValidateAddressComponent}" rendered="{!NOT(isEditMode) && isUpdateable && isAdminAccess}"
+                        />
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection title="Sales Tax Calculation Settings" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Tax_Calculation_Mode__c}" required="true" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Tax_Calculation_Mode__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara Credentials" columns="2" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Avalara_Account_Id__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Avalara_Account_Id__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Company_Code__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Company_Code__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Avalara_License_Key__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Avalara_License_Key__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara Endpoint" collapsible="false" columns="2">
+                        <apex:pageBlockSectionItem labelStyle="">
+                            <apex:outputLabel value="Active Avalara Endpoint" for="endpointRadio" />
+                            <apex:selectRadio id="endpointRadio" layout="lineDirection" label="" required="true" disabled="{!NOT(isEditMode)}" value="{!main.AcctSeed__Avalara_Production_Endpoint__c}">
+                                <apex:selectOptions value="{!avalaraEndpointOptions}" />
+                            </apex:selectRadio>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara Configuration" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Avalara_Sales_Tax_GL_Account__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Avalara_Sales_Tax_GL_Account__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Avalara_Tax_Product__c}" rendered="{!AND(isEditMode, NOT(isHlpMode))}" />
+                        <apex:outputField value="{!main.AcctSeed__Avalara_Tax_Product__c}" rendered="{!AND(NOT(isEditMode), NOT(isHlpMode))}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara Origin Address" columns="1" collapsible="false">
+                        <apex:inputField value="{!main.AcctSeed__Street__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Street__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__City__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__City__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Region__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Region__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Postal_Code__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Postal_Code__c}" rendered="{!!isEditMode}" />
+                        <apex:inputField value="{!main.AcctSeed__Country_Code__c}" rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Country_Code__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara Helpful Links" columns="3" collapsible="false">
+                        <apex:outputLink target="_blank" value="https://admin-avatax.avalara.net">Admin Console Production Link</apex:outputLink>
+                        <apex:outputLink target="_blank" value="https://help.avalara.com">Avalara Help Center</apex:outputLink>
+                        <apex:outputLink target="_blank" value="https://community.avalara.com/avalara">Avalara Community</apex:outputLink>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+
+                <!-- ============================ Avalara VAT Reporting ====================================== -->
+                <apex:pageBlock title="VAT Reporting Settings" rendered="{!avalaraVATReportingEnabled}">
+                    <apex:pageMessages escape="false" />
+                    <apex:pageBlockSection title="Avalara VAT Credentials" collapsible="false">
+                        <apex:inputField id="avaVatAcctIdField" value="{!main[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_Account_Id__c']}"
+                            rendered="{!isEditMode}" />
+                        <apex:outputField id="avaVatAcctIdText" value="{!main[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_Account_Id__c']}"
+                            rendered="{!!isEditMode}" />
+                        <apex:inputField Id="avaVatLicenseKeyField" value="{!main[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_License_Key__c']}"
+                            rendered="{!isEditMode}" />
+                        <apex:outputField Id="avaVatLicenseKeyText" value="{!main[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_License_Key__c']}"
+                            rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara VAT Endpoint" collapsible="false">
+                        <apex:pageBlockSectionItem helpText="{!$ObjectType.AcctSeed__Accounting_Settings__c.fields[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_Endpoint__c'].inlineHelpText}"
+                            labelTitle="{!$ObjectType.AcctSeed__Accounting_Settings__c.fields[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_Endpoint__c'].inlineHelpText}">
+                            <apex:outputLabel value="Active Avalara VAT Reporting Endpoint" for="endpointRadio" />
+                            <apex:selectRadio id="endpointRadio" layout="lineDirection" label="" required="true" disabled="{!NOT(isEditMode)}" value="{!main[AvaVATReportingNamespaceQualifier + 'Avalara_VAT_Reporting_Endpoint__c']}">
+                                <apex:selectOptions value="{!avalaraVATReportingEndpointOptions}" />
+                            </apex:selectRadio>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara VAT Ledger Configuration" collapsible="false" columns="1">
+                        <apex:pageBlock >
+                            <apex:pageBlockButtons location="top" id="buttonsTop">
+                                <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Saving...')" />
+                                <apex:commandButton value="Edit" action="{!ledgerEditMode}" rendered="{!NOT(isLedgerEditMode) && isAdminAccess}" />
+                                <apex:commandButton id="saveButtonTop2" value="Save" status="saveStatus" action="{!saveLedgers}" rendered="{!isLedgerEditMode}"
+                                    reRender="theFormFive" />
+                                <apex:commandButton id="cancelButtonTop" value="Cancel" action="{!ledgerCancelMode}" rendered="{!isLedgerEditMode}" immediate="true"
+                                />
+                            </apex:pageBlockButtons>
+                            <br/>
+                            <apex:pageBlockTable value="{!ledgers}" var="ledger">
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.Name.label}" styleClass="mid-width">
+                                    <apex:outputLink target="_blank" value="/{!ledger.Id}">{!ledger.Name}</apex:outputLink>
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Bank_Account__c.label}" styleClass="mid-width">
+                                    <apex:outputField value="{!ledger.AcctSeed__Default_Bank_Account__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Default_Bank_Account__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Billing_Format__c.label}" styleClass="mid-width">
+                                    <apex:outputField value="{!ledger.AcctSeed__Default_Billing_Format__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Default_Billing_Format__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Billing_Activity_Statement_Format__c.label}" styleClass="mid-width">
+                                    <apex:outputField value="{!ledger.AcctSeed__Billing_Activity_Statement_Format__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Billing_Activity_Statement_Format__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Billing_Outstanding_Statement_Format__c.label}" styleClass="mid-width">
+                                    <apex:outputField value="{!ledger.AcctSeed__Billing_Outstanding_Statement_Format__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Billing_Outstanding_Statement_Format__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Purchase_Order_Format__c.label}" styleClass="mid-width"
+                                    rendered="{!isERPEnabled}">
+                                    <apex:outputField value="{!ledger.AcctSeed__Default_Purchase_Order_Format__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Default_Purchase_Order_Format__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields.AcctSeed__Default_Packing_Slip_Format__c.label}" styleClass="mid-width" rendered="{!isERPEnabled}">
+                                    <apex:outputField value="{!ledger.AcctSeed__Default_Packing_Slip_Format__c}" rendered="{!!isLedgerEditMode}" />
+                                    <apex:inputField value="{!ledger.AcctSeed__Default_Packing_Slip_Format__c}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields[AvaVATReportingNamespaceQualifier + 'Company_Code__c'].label}" rendered="{!avalaraVATReportingEnabled}"
+                                    styleClass="mid-width">
+                                    <apex:outputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'Company_Code__c']}" rendered="{!!isLedgerEditMode}"
+                                    />
+                                    <apex:inputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'Company_Code__c']}" rendered="{!isLedgerEditMode}"
+                                    />
+                                </apex:column>
+                                <apex:column headerValue="{!$ObjectType.AcctSeed__Ledger__c.fields[AvaVATReportingNamespaceQualifier + 'VAT_Country__c'].label}" rendered="{!avalaraVATReportingEnabled}"
+                                    styleClass="mid-width">
+                                    <apex:outputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'VAT_Country__c']}" rendered="{!!isLedgerEditMode}"
+                                    />
+                                    <apex:inputField value="{!ledger[AvaVATReportingNamespaceQualifier + 'VAT_Country__c']}" rendered="{!isLedgerEditMode}" />
+                                </apex:column>                                
+                            </apex:pageBlockTable>
+                        </apex:pageBlock>
+
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Avalara VAT Reporting Helpful Links" columns="3" collapsible="false">
+                        <apex:outputLink target="_blank" value="https://help.avalara.com/008_VAT_Learning_Center/VAT_Submit_A_Case">Avalara VAT Reporting Support</apex:outputLink>
+                        <apex:outputLink target="_blank" value="https://help.avalara.com/008_VAT_Learning_Center">Avalara VAT Reporting Help Center</apex:outputLink>
+                        <apex:outputLink target="_blank" value="https://help.avalara.com/008_VAT_Learning_Center/VAT_Reporting_Installation_Guides">Avalara VAT Reporting Installation Guide</apex:outputLink>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Trial Data Tab ============================================== -->
+
+        <apex:tab label="Trial Data" name="tab6" id="tabSix" rendered="{!isUpdateable}">
+            <apex:form id="theFormSix">
+                <apex:actionFunction name="createTrialData" action="{!createTrialData}" />
+                <apex:pageBlock id="thePageBlock" title="Trial Data">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages escape="false" />
+                    <apex:actionStatus id="processedStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                    <apex:pageBlockButtons id="buttonsTop">
+                    </apex:pageBlockButtons>
+                    <br/>
+                    <apex:pageBlockSection title="Create Trial Data" collapsible="false" columns="2" rendered="{!!main.AcctSeed__Disable_Trial_Data__c && isAdminAccess}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="" />
+                            <apex:commandButton value="Create Trial Data" status="processedStatus" onClick="AcctSeed.ASModule.createTrialDataConfirm()"
+                                onComplete="return null;" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Disable Trial Data" collapsible="false" columns="2" rendered="{!isAdminAccess}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Disable Trial Data" />
+                            <apex:outputField value="{!main.AcctSeed__Disable_Trial_Data__c}" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!!main.AcctSeed__Disable_Trial_Data__c}">
+                            <apex:outputLabel value="" />
+                            <apex:commandButton value="Disable Trial Data" status="processedStatus" action="{!disableTrialData}" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Automation Tab ============================================== -->
+        <apex:tab label="Automation" name="tab7" id="tabSeven" rendered="{!isUpdateable}">
+            <apex:form id="theFormSeven">
+                <apex:pageBlock id="thePageBlock" title="Automation">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages id="automatedTabMessages" escape="false" />
+                    <apex:actionStatus id="processedStatus" onstart="AcctSeed.ASModule.disableButtons('Processing...')" />
+                    <apex:pageBlockButtons id="buttonsTop">
+                        <apex:commandButton value="Start" action="{!startJob}" reRender="theFormSeven" status="processedStatus" rendered="{!isAdminAccess}"
+                        />
+                    </apex:pageBlockButtons>
+                    <br/>
+                    <apex:pageBlockSection title="Setup" collapsible="false" columns="2">
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Select Job Type" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" />
+                                <apex:selectList value="{!selectedJobType}" size="1">
+                                    <apex:selectOptions value="{!JobTypes}" />
+                                    <apex:actionSupport event="onchange" action="{!changeJobType}" rerender="jobBtn, automatedTabMessages" />
+                                </apex:selectList>
+
+                                <apex:outputPanel id="jobBtn" layout="inline">
+                                    <div id="spinner" style="font-weight:bold; margin-left: 10px; display:none;">
+                                        <img src="/img/loading.gif" style="text-align:center" width="16" height="16" alt="loading gif" />
+                                    </div>
+                                    <apex:commandButton action="{!executeScheduledJobAsBatch}" value="{!jobButtonLabel}" styleClass="toSpinnerOnProcess" rendered="{!showJobButton}"
+                                        onClick="AcctSeed.ASModule.buttonToSpinner();" style="margin-left: 10px;" />
+                                </apex:outputPanel>
+                                <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!isSelectedJobTypeError}">
+                                    <strong>Error:</strong> You must enter a value
+                                </apex:outputPanel>
+
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Preferred Start Time" />
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <apex:outputPanel styleClass="requiredBlock" />
+                                <apex:selectList value="{!selectedTime}" size="1">
+                                    <apex:selectOptions value="{!frequencyTime}" />
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Scheduled Jobs" id="scheduledJobs" collapsible="false" columns="1">
+                        <apex:pageBlockTable value="{!scheduledJobs}" var="job">
+                            <apex:column headerValue="Action" styleClass="mid-width">
+
+                                <apex:commandLink value="Delete" onclick="if(!confirm('Are you sure you want to delete this job?')){return false};" action="{!deleteSelectedRow}"
+                                    onComplete="return null;" reRender="scheduledJobs">
+                                    <apex:param name="selectedId" assignTo="{!selectedId}" value="{!job.cronJob.Id}" />
+                                </apex:commandLink>
+                            </apex:column>
+
+                            <apex:column headerValue="Type" styleClass="mid-width">
+                                <apex:outputText value="{!job.jobType}" />
+                            </apex:column>
+                            <apex:column headerValue="Start Date" styleClass="mid-width">
+                                <apex:outputText value="{!job.startDate}" />
+                            </apex:column>
+                            <apex:column headerValue="Next Run Date" styleClass="mid-width">
+                                <apex:outputText value="{!job.nextRunDate}" />
+                            </apex:column>
+                            <apex:column headerValue="Preferred Start Time" styleClass="mid-width">
+                                <apex:outputText value="{!job.preferredStartTime}" />
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+
+        <!-- ==================================== Post Settings Tab =============================================== -->
+        <apex:tab label="Post Settings" name="tab8" id="tabEight" rendered="{!isUpdateable}">
+            <apex:form id="theFormEight">
+                <apex:pageBlock id="thePageBlock" title="Post Settings">
+                    <apex:pageMessage severity="warning" strength="3" summary="{!PermissionWarningMessage}" rendered="{!NOT(isAdminAccess)}"
+                    />
+                    <apex:pageMessages escape="false" />
+
+                    <apex:pageBlockButtons id="buttonsTop">
+                        <apex:actionStatus id="saveStatus" onstart="AcctSeed.ASModule.disableButtons('Saving...')" />
+                        <apex:commandButton value="Edit" action="{!editMode}" rendered="{!NOT(isEditMode) && isUpdateable && isAdminAccess}" />
+                        <apex:commandButton value="Save" status="saveStatus" action="{!saveForm}" rendered="{!isEditMode}" reRender="theFormEight"
+                        />
+                        <apex:commandButton value="Cancel" action="{!cancelMode}" rendered="{!isEditMode}" immediate="true" />
+                    </apex:pageBlockButtons>
+
+                    <apex:pageBlockSection title="Auto-Post Settings" collapsible="false" columns="2">
+                        <apex:inputField value="{!main.AcctSeed__Auto_Post_Source_Documents__c}" onChange="AcctSeed.ASModule.enableAutoPostSourceDocuments(this, {!isERPEnabled});"
+                            rendered="{!isEditMode}" />
+                        <apex:outputField value="{!main.AcctSeed__Auto_Post_Source_Documents__c}" rendered="{!!isEditMode}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Billing/Payable Post Settings" collapsible="false" columns="2">
+                        <apex:outputField value="{!main.AcctSeed__Post_Settings__c}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

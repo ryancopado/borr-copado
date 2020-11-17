@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object containing information about a SharinPix Image.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Checklist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Checklist</label>
+        <referenceTo>Checklist__c</referenceTo>
+        <relationshipLabel>SharinPix Images</relationshipLabel>
+        <relationshipName>SharinPix_Images</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Image_Transformation_CL__c</fullName>
+        <externalId>false</externalId>
+        <label>Image Transformation CL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Parent Account object reference.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>SharinPix Images</relationshipLabel>
+        <relationshipName>SharinPix_Images</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__AlbumID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ID of the album which contains the image.</description>
+        <externalId>false</externalId>
+        <label>Album ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Bytes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Size of image in bytes.</description>
+        <externalId>false</externalId>
+        <label>Bytes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__DateTaken__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date at which the image was taken.</description>
+        <externalId>false</externalId>
+        <label>Date Taken</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__DateUploaded__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date at which the image was uploaded.</description>
+        <externalId>false</externalId>
+        <label>Date Uploaded</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of image.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Exifs__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains Exchangeable Image File Format data.</description>
+        <externalId>false</externalId>
+        <label>Exifs</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__FileName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image file name.</description>
+        <externalId>false</externalId>
+        <label>File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Format__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image file format extension.</description>
+        <externalId>false</externalId>
+        <label>Format</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__GeolocationMap__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image geolocation on a map.</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(&apos;https://maps.googleapis.com/maps/api/staticmap?zoom=13&amp;size=200x200&amp;markers=color:green|label:S|&apos;+ TEXT(sharinpix__Geolocation__Latitude__s) + &apos;,&apos; + TEXT(sharinpix__Geolocation__Longitude__s), &apos;Photo location&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Geolocation Map</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Geolocation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Latitude and longitude of where image was taken.</description>
+        <displayLocationInDecimal>true</displayLocationInDecimal>
+        <externalId>false</externalId>
+        <label>Geolocation</label>
+        <required>false</required>
+        <scale>15</scale>
+        <trackTrending>false</trackTrending>
+        <type>Location</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__GroupId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Group ID if image is part of PDF file.</description>
+        <externalId>false</externalId>
+        <label>Group Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Height__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Height of image in pixels.</description>
+        <externalId>false</externalId>
+        <label>Height</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageFull__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Full image preview.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(sharinpix__ImageURLFull__c),  $Label.sharinpix__imagenotfound , IMAGE(sharinpix__ImageURLFull__c &amp; &quot;?timestamp=&quot; &amp; TEXT((sharinpix__UpdatedAt__c - DATETIMEVALUE( &quot;1970-01-01 00:00:00&quot; )) * 86400), &apos;image&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image Full</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image ID</description>
+        <externalId>true</externalId>
+        <label>Image ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageMini__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mini Image preview.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(sharinpix__ImageURLMini__c), $Label.sharinpix__imagenotfound , IMAGE(sharinpix__ImageURLMini__c &amp; &quot;?timestamp=&quot; &amp; TEXT((sharinpix__UpdatedAt__c - DATETIMEVALUE( &quot;1970-01-01 00:00:00&quot; ))  * 86400),  &apos;&apos;, 100, 100) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image Mini</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageOriginal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Original image preview.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(sharinpix__ImageURLOriginal__c), $Label.sharinpix__imagenotfound , IMAGE(sharinpix__ImageURLOriginal__c &amp; &quot;?timestamp=&quot; &amp; TEXT((sharinpix__UpdatedAt__c - DATETIMEVALUE( &quot;1970-01-01 00:00:00&quot; )) * 86400), &apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image Original</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImagePublicId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Public ID of image.</description>
+        <externalId>true</externalId>
+        <label>Image Public Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageThumbnail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Thumbnail image preview.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(sharinpix__ImageURLThumbnail__c),  $Label.sharinpix__imagenotfound , IMAGE(sharinpix__ImageURLThumbnail__c &amp; &quot;?timestamp=&quot; &amp; TEXT((sharinpix__UpdatedAt__c - DATETIMEVALUE( &quot;1970-01-01 00:00:00&quot; )) * 86400), &apos;&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image Thumbnail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageURLFull__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Full Image URL</description>
+        <externalId>false</externalId>
+        <label>Image URL Full</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageURLMini__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mini Image URL</description>
+        <externalId>false</externalId>
+        <label>Image URL Mini</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageURLOriginal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Original Image URL</description>
+        <externalId>false</externalId>
+        <label>Image URL Original</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ImageURLThumbnail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Thumbnail Image URL</description>
+        <externalId>false</externalId>
+        <label>Image URL Thumbnail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Metadatas__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains image metadatas.</description>
+        <externalId>false</externalId>
+        <label>Metadatas</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Page__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Page number if part of a PDF file.</description>
+        <externalId>false</externalId>
+        <label>Page</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__PredictionPayloadUpdated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Updated Einstein prediction payload.</description>
+        <externalId>false</externalId>
+        <label>Prediction Payload Updated</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__PredictionRawPayload__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Einstein prediction payload.</description>
+        <externalId>false</externalId>
+        <label>PredictionRawPayload</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Processed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Image processed by SharinPix.</description>
+        <externalId>false</externalId>
+        <label>Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ProcessingError__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of error which occurred while processing image.</description>
+        <externalId>false</externalId>
+        <label>Processing Error</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>sharinpix__ReviewSet__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ReviewSet object Reference.</description>
+        <externalId>false</externalId>
+        <label>Review Set</label>
+        <referenceTo>sharinpix__ReviewSet__c</referenceTo>
+        <relationshipLabel>SharinPix Images</relationshipLabel>
+        <relationshipName>SharinPix_Images</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Size__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Size of Image in Bytes, Kb or Mb.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( sharinpix__Bytes__c ) ,
+  null,
+  IF (sharinpix__Bytes__c &lt; 1023 ,
+    TEXT( sharinpix__Bytes__c ) &amp; &apos; Bytes&apos; ,
+    IF (sharinpix__Bytes__c &lt; (1024*1024)-1 ,
+      TEXT( ROUND( sharinpix__Bytes__c/(1024),3 ) ) &amp; &apos; Kb&apos;,
+      TEXT( ROUND( sharinpix__Bytes__c/(1024*1024),3 ) ) &amp; &apos; Mb&apos;
+    )
+  )
+)</formula>
+        <label>Size (Bytes/Kb/Mb)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__SortPosition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Position of image in album when sorted.</description>
+        <externalId>false</externalId>
+        <label>Sort Position</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__StorageKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Storage Key represents the path where the image is stored on the storage</description>
+        <externalId>false</externalId>
+        <label>Storage Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__StorageName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the sharinpix storage</description>
+        <externalId>false</externalId>
+        <label>Storage Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Tags__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of tags applied on image.</description>
+        <externalId>false</externalId>
+        <label>Tags</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title of image.</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sharinpix__UpdatedAt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date/time of last update.</description>
+        <externalId>false</externalId>
+        <label>Updated At</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Last User to update image.</description>
+        <externalId>false</externalId>
+        <label>Uploaded By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SharinPix_Images</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sharinpix__Width__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Width of image in pixels.</description>
+        <externalId>false</externalId>
+        <label>Width</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>SharinPix Image</label>
+    <nameField>
+        <displayFormat>SI-{0000}</displayFormat>
+        <label>SharinPix Image Reference</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SharinPix Images</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

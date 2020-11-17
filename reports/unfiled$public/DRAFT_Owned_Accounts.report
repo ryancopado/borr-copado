@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_10078604</developerName>
+        <masterLabel>Division</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>USERS.NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Fnan Araia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jackie Pitera</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chris Otness</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chris Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Audrey Copeland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cameron Thorne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Terry Favish</sourceValue>
+            </sourceValues>
+            <value>West</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Amy McDonough</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aaron Silverman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rob Garrity</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrew Reed</sourceValue>
+            </sourceValues>
+            <value>New York</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Jared Connell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Zak Farkes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jon Sarno</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Swansburg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TJ Murphy</sourceValue>
+            </sourceValues>
+            <value>New England</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_44995097</developerName>
+        <masterLabel>Industry Group</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>INDUSTRY</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Airport</sourceValue>
+            </sourceValues>
+            <value>Airport</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Agriculture</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Biotechnology</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cold Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Convention Center</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Food &amp; Bev Production</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>High Tech</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Manufacturing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hotel/Inn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Office/Business Service</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Recreation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Retail</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Warehousing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Winery</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Healthcare</sourceValue>
+            </sourceValues>
+            <value>C&amp;I</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Government: County</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: Municipal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Government: State</sourceValue>
+            </sourceValues>
+            <value>GOVT</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>University: Private</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>University: Public</sourceValue>
+            </sourceValues>
+            <value>Higher Ed</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>K-12 School: Private</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>K-12 School: Public</sourceValue>
+            </sourceValues>
+            <value>K-12</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Hospital/Clinic</sourceValue>
+            </sourceValues>
+            <value>Hospitals</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Electric Utilities</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Water District</sourceValue>
+            </sourceValues>
+            <value>Utilities</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Land</sourceValue>
+            </sourceValues>
+            <value>Land</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumnGrouped</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>USERS.NAME</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_44995097</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Account.Branch__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Qualification_Status__c</field>
+    </columns>
+    <columns>
+        <field>Account.Disqualification_category__c</field>
+    </columns>
+    <columns>
+        <field>Account.Disqualification_specific__c</field>
+    </columns>
+    <columns>
+        <field>Account.Procurement_Phase__c</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>INDUSTRY</field>
+    </columns>
+    <columns>
+        <field>SALES</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STREET</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_ZIP</field>
+    </columns>
+    <columns>
+        <field>PARENT.NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Berkeley,Nor Cal,Boston,New England,Mid Atlantic,San Diego,So Cal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Job_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Residential,Residential - Multi-Unit</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Jackie Pitera,Fnan Araia,Chris Otness,Chris Williams,Audrey Copeland,Cameron Thorne,Terry Favish,Amy McDonough,Aaron Silverman,Jared Connell,Doug Johnstone,Jon Sarno,Zak Farkes,Matt Swansburg,TJ Murphy,Andrew Reed,Rob Garrity</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_10078604</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_44995097</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>USERS.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DRAFT - Owned Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

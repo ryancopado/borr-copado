@@ -1,0 +1,124 @@
+<apex:page controller="bli_detail" tabStyle="Budget__c" action="{!setBudget}" >
+<apex:stylesheet value="{!URLFOR($Resource.budget)}"/>
+<script type="text/javascript" src="{!$Resource.simpletreemenu}"/>
+<apex:form >                 
+<apex:sectionHeader title="Budget" subtitle="{!Budget.Name}" />
+<apex:outputPanel id="details">
+<apex:pageBlock title="Budget Detail">
+    <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Budget"/><apex:outputLink value="/{!Budget.Id}" target="_blank">{!Budget.Name}</apex:outputLink>
+        </apex:pageBlockSectionItem>
+        <apex:outputField value="{!Budget.OwnerId}"/>
+        <apex:outputField value="{!Budget.Project__c}"/>
+        <apex:outputField value="{!Budget.PM_Lock__c}"/>
+        <apex:outputField value="{!Budget.Total_Contract_Value__c}"/>
+        <apex:pageBlockSectionItem /> 
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Total Active/Actual Variance"/>
+            <apex:outputText value="$ {!Budget.Active_Actual_Variance__c}" styleClass="orange"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Actual Margin"/>
+            <apex:outputText value="{!Budget.Margin_Actual__c}%" styleClass="orange"/>
+        </apex:pageBlockSectionItem>     
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:outputPanel>
+<apex:pageBlock title="Budget Line Items">
+<div align="center"><apex:commandButton value="Save" action="{!PMSave}" reRender="details, details1, details2" oncomplete="alert('Actuals Saved.')" / >
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+<br/>         
+<a href="javascript:ddtreemenu.flatten('treemenu1', 'expand')">Expand All</a> | <a href="javascript:ddtreemenu.flatten('treemenu1', 'contact')">Contract All</a></div>          
+<br/>
+<table id="rounded-corner" width="950px" style="" align="center">
+        <tr>
+            <th width="70px" class="alt">Name</th>
+            <th width="110px" class="alt">Cost Code</th>
+            <th width="110px" class="alt">Category</th>
+            <th width="125px" class="alt">PM Projection</th>
+            <th width="155px" class="alt">Active Budget</th>
+            <th width="175px" class="alt">Actuals -TL</th>
+            <th class="alt">Notes</th>
+        </tr>
+</table>
+<apex:outputPanel id="details1">
+<table id="rounded-corner" width="950px" style="" align="center">
+        <tr>
+            <th width="115px">Totals</th>
+            <th width="100px"/>
+            <th width="110px"/>
+            <th width="135px"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+            <th width="165px"><apex:outputField value="{!Budget.Active_Budget__c}"/></th>
+            <th width="200px" style="color:#CC4400"><apex:outputField value="{!Budget.Actual_Budget__c}"/></th>
+            <th width="135px"/>
+        </tr>
+</table>
+</apex:outputPanel>
+<div align="center" id="datatable">
+<ul id="treemenu1" class="treeview">
+<apex:repeat value="{!bli}" var="lineItem">
+    <li>
+    <table id="rounded-corner" width="950px">
+        <tr>
+            <td width="75px" style="">
+            <apex:outputLink value="/{!lineItem.Id}" target="_blank">{!lineItem.Name}</apex:outputLink>
+            </td>
+            <td width="125px" style="">
+            <apex:outputText value="{!lineItem.Cost_Code_Name__c}"/>
+            </td>
+            <td width="100px" style="">
+            <apex:outputText value="{!lineItem.Category_Code__c}"/>
+            </td>
+            <td width="125px" style="">
+             <apex:outputField value="{!lineItem.PM_Initial_Projection__c}" id="pm" />
+            </td>
+            <td width="150px" style="">
+             <apex:outputField value="{!lineItem.Active_Budget__c}"/>
+            </td>
+            <td width="150px" style="">
+             <apex:inputText value="{!lineItem.Actual_Budget__c}" size="10"/>
+            </td>
+            <td width="150px" align="center">
+             <apex:inputText value="{!lineItem.Notes__c}" id="notes"/>
+            </td>
+        </tr>
+    </table>
+        <ul>
+            <li>        
+                <apex:DataTable value="{!lineItem.ConReq__r}" var="req" width="910px" style="background-color:white">
+                <apex:column width="15%"><apex:outputField value="{!req.Product__c}"/><apex:outputField value="{!req.Part_Number__c}"/></apex:column>
+                <apex:column value="{!req.Vendor_Account__c}" width="15%"/>
+                <apex:column value="{!req.Status__c}" width="10%"/>
+                <apex:column value="{!req.Total_Cost__c}" width="15%"/>
+                <apex:column value="{!req.Purchase_Order__c}" width="10%"/>
+                </apex:DataTable>
+            </li>
+        </ul>   
+    </li>
+</apex:repeat>
+</ul>
+</div>
+<apex:outputPanel id="details2">
+<table id="rounded-corner" width="950px" style="" align="center">
+        <tr>
+            <th width="115px">Totals</th>
+            <th width="100px"/>
+            <th width="100px"/>
+            <th width="135px"><apex:outputField value="{!Budget.PM_Initial_Projection__c}"/></th>
+            <th width="165px"><apex:outputField value="{!Budget.Active_Budget__c}"/></th>
+            <th width="200px" style="color:#CC4400"><apex:outputField value="{!Budget.Actual_Budget__c}"/></th>
+            <th width="135px"/>
+        </tr>
+</table>
+</apex:outputPanel><br/>
+<div align="center"><apex:commandButton value="Save" action="{!PMSave}" reRender="details, details1, details2" oncomplete="alert('Actuals Saved.')"/ >
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</div> 
+</apex:pageBlock> 
+<script type="text/javascript">
+//ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
+ddtreemenu.createTree("treemenu1", true, 2)
+</script>   
+</apex:form>
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page standardController="sharinpix__SharinPixAlbum__c">
+    <c:SharinPix parameters="{'abilities':{'{!CASESAFEID($CurrentPage.Parameters.Id)}':{'Access':{'image_upload':true,'image_list':true,'see':true,'image_delete':true}}},'Id':'{!CASESAFEID($CurrentPage.Parameters.Id)}'}" height="500px"/>
+</apex:page>

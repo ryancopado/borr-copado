@@ -1,0 +1,102 @@
+<apex:page showHeader="false" standardController="Account" extensions="CustomerPortalController">
+
+  
+<!-- <apex:pageBlock > -->
+  <apex:pageBlockSection title="Project Personnel" collapsible="false" columns="1">
+       <!-- <apex:pageBlockTable value="{!UserList}" style="margin-left:5%; width:700px; text-align:left;" var="item">
+            <apex:column value="{!item.Name}" headerValue="Name"/>
+            <apex:column value="{!item.Email}" headerValue="Email"/>
+            <apex:column value="{!item.Phone}" headerValue="Phone"/>
+        </apex:pageBlockTable>-->
+        <br/>
+
+<!--
+        <table style="width:700px" >
+          
+             <tr>
+                <td Colspan="3">
+                      <h1>Customer Experience Manager</h1>
+                </td>
+             </tr>
+            <tr>
+                <td width="25%">Tommy Sunderland</td>
+                <td width="35%">tsunderland@borregosolar.com</td>
+                <td width="40%">510-496-8710</td>
+            </tr>
+             <tr>
+                <td Colspan="3">
+                    <br/>
+                </td>
+           </tr>
+            <tr>
+                <td Colspan="3">
+                    <h1>Service</h1>
+                </td>
+             </tr>
+                   
+             <apex:outputPanel rendered="{!SelectedProject.Branch__c=='San Diego'}">
+                <tr>
+                    <td>David Marks</td>
+                    <td>dmarks@borregosolar.com</td>
+                    <td>619-961-4512</td>
+                </tr>
+             </apex:outputPanel>         
+             <apex:outputPanel rendered="{!SelectedProject.Branch__c=='Oakland' || SelectedProject.Branch__c=='Berkeley' || SelectedProject.Branch__c=='NorCal'}">
+                <tr>
+                    <td>Luke Pollinger</td>
+                    <td>lpollinger@borregosolar.com</td>
+                    <td>510-496-8739</td>
+                </tr>
+             </apex:outputPanel>  
+             <apex:outputPanel rendered="{!SelectedProject.Branch__c=='Boston' || SelectedProject.Branch__c=='Mid Atlantic'}">
+                <tr>
+                    <td>Kevin Crowley</td>
+                    <td>kcrowley@borregosolar.com</td>
+                    <td>978-610-2863</td>
+                </tr>
+             </apex:outputPanel>           
+		</table>
+-->
+		<apex:panelGrid columns="3" width="700px" >
+			<h1>Customer Experience Manager</h1>
+			<apex:outputText value=" " />
+			<apex:outputText value=" " />
+			
+			<apex:outputText value="Tommy Sunderland" />
+			<apex:outputText value="tsunderland@borregosolar.com" />
+			<apex:outputText value="510-496-8710" />
+			
+			<p/>
+			
+			<h1>Service</h1>
+			<apex:outputText value=" " />
+			<apex:outputText value=" " />
+			
+			<apex:outputText value="David Marks" rendered="{!SelectedProject.Branch__c=='San Diego'}"/>
+			<apex:outputText value="dmarks@borregosolar.com" rendered="{!SelectedProject.Branch__c=='San Diego'}"/>
+			<apex:outputText value="619-961-4512" rendered="{!SelectedProject.Branch__c=='San Diego'}"/>
+			
+			<apex:outputText value="Luke Pollinger" rendered="{!SelectedProject.Branch__c=='Oakland' || SelectedProject.Branch__c=='Berkeley' || SelectedProject.Branch__c=='NorCal' || SelectedProject.Branch__c=='WDG- West'}"/>
+			<apex:outputText value="lpollinger@borregosolar.com" rendered="{!SelectedProject.Branch__c=='Oakland' || SelectedProject.Branch__c=='Berkeley' || SelectedProject.Branch__c=='NorCal' || SelectedProject.Branch__c=='WDG- West'}"/>
+			<apex:outputText value="510-496-8739" rendered="{!SelectedProject.Branch__c=='Oakland' || SelectedProject.Branch__c=='Berkeley' || SelectedProject.Branch__c=='NorCal' || SelectedProject.Branch__c=='WDG- West'}"/>
+			
+			<apex:outputText value="Kevin Crowley" rendered="{!SelectedProject.Branch__c=='Boston' || SelectedProject.Branch__c=='Mid Atlantic' || SelectedProject.Branch__c=='WDG- East'}"/>
+			<apex:outputText value="kcrowley@borregosolar.com" rendered="{!SelectedProject.Branch__c=='Boston' || SelectedProject.Branch__c=='Mid Atlantic' || SelectedProject.Branch__c=='WDG- East'}"/>
+			<apex:outputText value="978-610-2863" rendered="{!SelectedProject.Branch__c=='Boston' || SelectedProject.Branch__c=='Mid Atlantic' || SelectedProject.Branch__c=='WDG- East'}"/>
+		</apex:panelGrid>
+
+		<br/>
+      
+		<h1>Local Borrego Solar Office:</h1>
+		<p>{!Branch.Street_Address__c}</p>
+		<p>{!Branch.City__c}, {!Branch.State__c} {!Branch.Zip_Code__c}</p>
+		<p><b>Emergencies Only: Please call <font color="blue">978-221-3130</font></b></p>
+              
+       
+  </apex:pageBlockSection>
+  
+ 
+    
+<!-- </apex:pageBlock> -->
+
+</apex:page>

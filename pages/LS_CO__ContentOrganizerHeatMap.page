@@ -1,0 +1,772 @@
+<apex:page id="thePage" sidebar="false" standardStylesheets="true" controller="LS_CO.ContentOrganizerHeatMap" tabStyle="Content_Organizer__tab">
+    <apex:form id="theForm" style="height:inherit;">    
+     
+    <script src="/soap/ajax/22.0/connection.js"  type="text/javascript"></script>
+    <script src="/soap/ajax/22.0/apex.js"  type="text/javascript"></script>
+    <script type="text/javascript">
+        function coLogs(Ids, typeStr){
+              var sfdcSessionId = '{!GETSESSIONID()}';
+              sforce.connection.sessionId = '{!$Api.Session_ID}';
+              sforce.apex.execute("{!$Label.COPackagePrefix}.COLogs","createLog",{cvIdsList:Ids, type:typeStr});
+        }
+        var __sfdcSessionId = '{!GETSESSIONID()}';
+    </script>
+    <script src="../../soap/ajax/19.0/connection.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="{!URLFOR($Resource.CO_SearchResult, 'files/general.css')}" type="text/css" media="screen" />
+    <style>
+        #left-container a:hover{
+            text-decoration: underline !important;
+        }
+        
+        .content {
+            border: none;
+        }
+        .gridToggel{
+        height:30px;
+        width:100px;
+        
+        color:#000;
+        border-radius:5px 0px 0px 5px;
+        padding:5px;
+        background-color:#E8E8E8;
+        
+        margin-top:10px;
+        border-top:1px solid #C8C8C8;
+        border-bottom:1px solid #C8C8C8;
+        border-left:1px solid #C8C8C8;
+        border-right:0px solid #C8C8C8;
+        text-decoration: none;
+        }
+        
+        .listToggel{
+        height:30px;
+        width:100px  ;
+        margin-top:10px;
+        color:#000;
+        padding:5px;
+        background-color:#E8E8E8;
+        border-left:1px solid #C8C8C8;
+        border-radius:0px 5px 5px 0px;
+        margin-left:-4px;
+        margin-bottom:10px;
+        border-top:1px solid #C8C8C8;
+        border-bottom:1px solid #C8C8C8;
+        border-left:1px solid #C8C8C8;
+        border-right:1px solid #C8C8C8;
+        
+        text-decoration: none;
+        }
+        
+        .ToggleMid{
+        margin-top:10px;
+        height:30px;
+        
+        padding:5px;
+        background-color:#E8E8E8;
+        border-top:1px solid #C8C8C8;
+        border-bottom:1px solid #C8C8C8;
+        border-left:1px solid #C8C8C8;
+        border-right:1px solid #C8C8C8;
+        
+        color:#000;
+       /* margin-left:-2px;*/
+        margin-bottom:10px;
+        text-decoration: none;
+        }
+       /*
+        html, body {
+            margin:0;
+            padding:0;
+            font-family: "Lucida Grande", Verdana;
+            font-size: 0.9em;
+            text-align: center;
+            background-color:#F2F2F2;
+        }
+        
+        input, select {
+            font-size:0.9em;
+        }*/
+        
+        #container table {
+            margin-top:-10px;
+            /*margin-left:7px;*/
+        }
+        
+        h4 {            
+            text-decoration:none;
+            font-weight:normal;            
+        }
+        
+        a.hover {
+            color:#015ba7 !important;
+        }
+        
+        #container a {
+            color:#FFF !important;
+            text-decoration: none;
+        }
+        
+        #container {
+            /*width: 1100px;*/
+            height: 600px;
+            margin:0 auto;
+            position:relative;
+            font-family: Arial,Helvetica,sans-serif;            
+        }
+        
+        #left-container {
+            height:598px;
+            position:absolute;            
+            text-align: center;
+        } 
+        
+        #right-container, 
+        #center-container {
+            height:600px;
+            position:absolute;            
+            text-align: center;
+            word-break: break-word;
+        }
+        #left-container a{
+            color: black !important;
+        }
+        
+        #left-container, #right-container {
+            width:30%;
+            color:#686c70;
+            text-align: left;
+            overflow: auto;
+            background-color:#fff;
+            background-repeat:no-repeat;
+            border-bottom:1px solid #ddd;
+        }
+        
+        #left-container {
+            left:0;
+            background-image:url('col2.png');
+            background-position:center right;
+            border-left:1px solid #ddd;
+            border-top:1px solid #ddd;
+        }
+        
+        #right-container {
+            right:0;
+            background-image:url('col1.png');
+            background-position:center left;
+            border-right:1px solid #ddd;
+        }
+        
+        #right-container h4{
+            text-indent:8px;
+        }
+        
+        #center-container {
+            width:70%;
+            left:30%;
+            background-color:#1a1a1a;
+            color:#ccc;
+        }
+        
+        .text {
+            margin: 7px;
+        }
+        
+        #inner-details {
+            font-size:0.8em;
+            list-style:none;
+            margin:7px;
+        }
+        
+        #log {
+            position:absolute;
+            top:10px;            
+            font-weight:bold;
+            color:#23A4FF;
+        }
+        
+        
+        #infovis {
+            position:relative;
+            width:100%;
+            height:600px;
+            margin:auto;
+            overflow:hidden;
+        }
+        
+        /*TOOLTIPS*/
+        
+        #right-container {
+          display: none;
+        }
+                
+        
+        
+        .node {
+          color:#fff;          
+          overflow:hidden;
+          cursor:pointer;
+        /*  
+          text-shadow:2px 2px 5px #000;
+          -o-text-shadow:2px 2px 5px #000;
+          -webkit-text-shadow:2px 2px 5px #000;
+          -moz-text-shadow:2px 2px 5px #000;
+        */
+        }
+        
+        /*TOOLTIPS*/
+        .tip {
+            color: #fff;
+            width: 220px;
+            background-color: black;            
+            border:1px solid #ccc;
+            -moz-box-shadow:#555 2px 2px 8px;
+            -webkit-box-shadow:#555 2px 2px 8px;
+            -o-box-shadow:#555 2px 2px 8px;
+            box-shadow:#555 2px 2px 8px;
+            opacity:0.9;
+            filter:alpha(opacity=90);
+            padding:7px;
+        }
+        
+        .tip-text{
+            text-decoration:none;
+            color:#FFF;
+            word-wrap: break-word;
+            font-family: Arial,Helvetica,sans-serif; 
+        }
+                
+        .album {            
+            margin:3px;
+        }
+        
+        #id-list {
+            background-color:#EEEEEE;
+            border:1px solid #CCCCCC;
+            margin:10px 20px 0 20px;
+            padding:5px;
+            text-align:left;
+            text-indent:2px;
+        }
+        
+        #id-list table {
+          margin-top:2px;
+        }
+        
+        #back {
+          margin:10px 40px;
+        }
+        
+        .button {
+          display: inline-block;
+          outline: none;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;          
+          padding: 0.5em 1em 0.55em;
+          text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+          -webkit-border-radius: 0.5em;
+          -moz-border-radius: 0.5em;
+          border-radius: 0.5em;
+          -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button:hover {
+          text-decoration: none;
+        }
+        
+        .button:active {
+          position: relative;
+          top: 1px;
+        }
+        
+        /* white */
+        .white {
+          color: #606060;
+          border: solid 1px #b7b7b7;
+          background: #fff;
+          background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+          background: -moz-linear-gradient(top,  #fff,  #ededed);
+          filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+        }
+        
+        .white:hover {
+          background: #ededed;
+          background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+          background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+          filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+        }
+        
+        .white:active {
+          color: #999;
+          background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+          background: -moz-linear-gradient(top,  #ededed,  #fff);
+          filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+        }
+    </style>
+    
+    <!-- JIT Library File -->
+    <script language="javascript" type="text/javascript" src="{!URLFOR($Resource.CO_HeatMap, 'jit-yc.js')}"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0" ><tr><td>
+    <div style="text-align:right; padding-right:10px;padding-bottom:5px;padding-top: 5px;float: left;position: absolute;z-index:66;">
+         <table align="left"  border="0" cellspacing="0" cellpadding="0" class="top_menu">
+            <tr>
+            <td align="left" width="255px" valign="middle">
+                  <div >
+                   <a href="/apex/Content_Organizer?view=preview" title="Preview" style="background-color:white;text-decoration: none;"  class="gridToggel" id="gridview" >
+                    <apex:image url="{!URLFOR($Resource.LS_CO__IconsView,'icons/view-01.png')}" width="16px" height="13px" style="vertical-align:bottom;" />
+                   </a>                   
+                   <a href="/apex/Content_Organizer?view=list" title="List View" style="background-color:white;text-decoration: none;"  class="ToggleMid" id="listview">
+                  <img src="{!URLFOR($Resource.IconsView,'icons/listview.png')}" width="16px" height="13px" style="vertical-align:bottom;" />
+                   </a> 
+                   <a href="/apex/ContentOrganizerTree?lib=null&src=Tags" title="Tree View" style="background-color:white;border-left:none;text-decoration: none;" class="ToggleMid" id="listview">
+                   <img src="{!URLFOR($Resource.IconsView,'icons/preview-02.png')}" width="16px" height="13px" style="vertical-align:bottom;"/>
+                   </a>                          
+                   <a href="/apex/ContentOrganizerHeatMap" title="Map View" style="background-color:#2D99C3;text-decoration: none;" class="listToggel">
+                    <img src="{!URLFOR($Resource.IconsView,'icons/map.png')}" width="16px" height="13px" style="vertical-align:bottom;"/>
+                   </a>
+                  </div>
+            </td>
+            </tr>
+        </table> 
+    </div>
+    <div style="text-align:right;padding-bottom:5px;padding-top:5px;float: right;z-index:66;">
+        <table align="right"  border="0" cellspacing="0" cellpadding="0" class="top_menu">
+          <tr>
+            <td align="left" valign="middle" width="16px"><img alt="" src="{!URLFOR($Resource.CO_TreeResult, 'images/settings_icon.jpg')}" border="0"  /></td>
+            <td align="left" valign="middle" width="45px"><a id="button" style="color: #222 !important; font-size: 11px;  text-decoration: none;" href="/apex/ContentOrganizerSetting">Settings</a></td>       
+           </tr>
+        </table>    
+    </div>
+    <br/>
+    <apex:sectionHeader title="Content Heat Map View"/>
+    
+    <div id="container">    
+        <apex:pageMessages ></apex:pageMessages>
+        <div id="left-container">
+            <div class="text">
+                <!-- h4>
+                    Heat Map Sample   
+                </h4 -->
+                <br/>
+                <br/>
+                <br/>
+                 <table  id="theTable" style="margin-left:10%" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td colspan="2" align="center" style="font-size: 20px;">
+                            <b>Heat Map View Options</b>
+                        </td>                        
+                     </tr>
+                     <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <td align="right" >
+                            Last Activity Date:&nbsp;
+                        </td>
+                        <td>
+                             <apex:selectList id="lmd" value="{!lastModify}" onChange="return ClearDate();" multiselect="false" size="1" style="width:120px" >
+                                 <apex:selectOption itemValue="" itemLabel="--select--"/>
+                                 <apex:selectOption itemValue="0" itemLabel="Today"/>
+                                 <apex:selectOption itemValue="1" itemLabel="Yesterday"/>
+                                 <apex:selectOption itemValue="7" itemLabel="Last 7 Days"/>
+                                 <apex:selectOption itemValue="14" itemLabel="Last 14 Days"/>
+                                 <apex:selectOption itemValue="30" itemLabel="Last 30 Days"/>
+                                 <apex:selectOption itemValue="60" itemLabel="Last 60 Days"/>
+                                 <apex:selectOption itemValue="90" itemLabel="Last 90 Days"/>
+                                 <apex:selectOption itemValue="120" itemLabel="Last 120 Days"/>
+                                 <!--  apex:actionsupport event="onchange" action="{!findCo_Log}"/ -->
+                             </apex:selectList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <td align="right">
+                            Activity Type:&nbsp;
+                        </td>
+                        <td>
+                             <apex:selectList value="{!type}"  multiselect="false" size="1" style="width:120px">
+                                 <apex:selectOption itemValue="" itemLabel="--select--"/>
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Content_Details}" itemLabel="{!$Label.LS_CO__Content_Details}"/>            
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Downloads}" itemLabel="{!$Label.LS_CO__Downloads}"/>                                 
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Previews}" itemLabel="{!$Label.LS_CO__Previews}"/>
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Emailed}" itemLabel="{!$Label.LS_CO__Emailed}"/>
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Video_Plays}" itemLabel="{!$Label.LS_CO__Video_Plays}"/>
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Audio_Plays}" itemLabel="{!$Label.LS_CO__Audio_Plays}"/>  
+                                 <apex:selectOption itemValue="{!$Label.LS_CO__Follows_Subscriptions}" itemLabel="{!$Label.LS_CO__Follows_Subscriptions}"/>                                                    
+                                 <!--  apex:actionsupport event="onchange" action="{!findCo_Log}"/ -->
+                             </apex:selectList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Start Date:&nbsp;
+                        </td>
+                        <td>
+                            <apex:inputfield id="sdId" onChange="return check();" value="{!obj.LS_CO__Start_Date__c}"></apex:inputfield>
+                            <a href="#" onclick=" clearSD();" >Clear</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            End Date:&nbsp;
+                        </td>
+                        <td>
+                            <apex:inputfield id="edId" onChange="return check();" value="{!obj.LS_CO__End_Date__c} " ></apex:inputfield>
+                            <a href="#" onclick="clearED();">Clear</a>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <apex:commandButton value="Update Map" onclick="return validateDateField();" action="{!findCo_Log}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="125px">
+                            &nbsp;
+                        </td>
+                        <td>
+                             &nbsp;
+                        </td>
+                    </tr>
+                     <tr>
+                        <td colspan="2">
+                        <table>
+                        <tr>
+                        <td BGCOLOR="{!$label.Most_Popular}"  align="center" width="700px" Height="35px" style="font-size: 15px; color:#FFFFFF">Most Popular</td></tr>
+                        <tr><td BGCOLOR="{!$label.More_Popular}"  align="center" width="700px" Height="35px" style="font-size: 15px; color:#FFFFFF">More Popular</td></tr>
+                        <tr><td BGCOLOR="{!$label.Popular}"  align="center" width="700px" Height="35px" style="font-size: 15px; color:#FFFFFF">Popular</td></tr>
+                        </table>
+                        </td>
+                    </tr>
+                    
+                </table >
+                
+                <script>
+                    function check(){
+                        var a = document.getElementById('thePage:theForm:lmd').value = '';
+                        return false;
+                    }
+                    
+                    function clearSD(){ 
+                        document.getElementById('thePage:theForm:sdId').value = '';
+                        return false; 
+                    }
+                    
+                    function clearED(){
+                        document.getElementById('thePage:theForm:edId').value = '';
+                        return false; 
+                    }
+                    
+                    function ClearDate(){
+                        var e = document.getElementById('thePage:theForm:lmd').value;
+                        if(e !=''){
+                            document.getElementById('thePage:theForm:sdId').value = '';
+                            document.getElementById('thePage:theForm:edId').value = '';                        
+                        }
+                        return false;                        
+                    }
+                  
+                    function validateDateField(){
+                        var sd = document.getElementById('thePage:theForm:sdId').value;
+                        var ed = document.getElementById('thePage:theForm:edId').value;                        
+                        if((sd != '' && ed == '') || (sd == '' && ed != '')){
+                            alert('If start date is selected then end date is required, vice versa');
+                            return false;
+                        }
+                        else return true;
+                    }
+                </script>
+            </div>    
+            <div id="id-list" style="visibility: hidden;">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="r-sq">Squarified </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="r-sq" name="layout" checked="checked" value="left" />
+                        </td>
+                    </tr>
+                    <!-- tr>
+                         <td>
+                            <label for="r-st">Strip </label>
+                         </td>
+                         <td>
+                            <input type="radio" id="r-st" name="layout" value="top" />
+                         </td>
+                    </tr>
+                    <tr>
+                         <td>
+                            <label for="r-sd">SliceAndDice </label>
+                          </td>
+                          <td>
+                            <input type="radio" id="r-sd" name="layout" value="bottom" />
+                          </td>
+                    </tr -->
+                </table>
+            </div>    
+        </div>
+    
+        <div id="center-container">
+            <div id="infovis"></div>    
+        </div>
+    
+        <div id="right-container">    
+            <div id="inner-details"></div>    
+        </div>
+    
+        <div id="log"></div>
+        
+        
+    </div>
+    </td></tr><tr><td>
+    <div class="footer0" style="">
+        <table  border="0" cellspacing="0" cellpadding = "0" width="100%" ><tr>
+        <td width="50%" align="left" style="vertical-align: top;">
+            <div style="color:#666666;">Content Organizer is provided in partnership with  
+            <br/>Let’s Strategize, LLC and Consummate Technologies, LLC 
+            <br/>Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script>  All rights reserved</div>
+        </td>
+        <td align="right">
+            <table border="0" cellspacing="0" cellpadding = "0"><tr>
+            <td  style="vertical-align: top;text-align:center;">
+                  <div><img src="{!URLFOR($Resource.CO_SearchResult, 'images/lets_strategize_logo_small.png')}"/></div>  
+                  <div>www.letsstrategize.com</div>
+            </td> 
+            <td  style="vertical-align: top;text-align:center;">
+                  <div><img src="{!URLFOR($Resource.CO_SearchResult, 'images/ctlogo.png')}" height="30px" width="100px"/></div>  
+                  <div>www.consummatetechnologies.com</div>
+            </td>
+            </tr></table>
+        </td>
+        </tr></table>
+    </div>
+    </td></tr></table>
+                       
+    <script language="javascript" type="text/javascript">
+        function convertDate(dateValue){
+            var nativedate = new Date(dateValue); //Convert CreatedDate to a JavaScript date oject
+            return DateUtil.getDateTimeStringFromUserLocale(nativedate);
+        }
+        
+        function openContent(ContentDocumentId){           
+            var url = 'https://{!host}/sfc/#version?selectedDocumentId='+ ContentDocumentId;
+            window.open(url, '_blank');
+            window.focus();
+        }
+        
+        var labelType, useGradients, nativeTextSupport, animate;
+        (function() {
+          var ua = navigator.userAgent,
+              iStuff = ua.match(/iPhone/i) || ua.match(/iPad/i),
+              typeOfCanvas = typeof HTMLCanvasElement,
+              nativeCanvasSupport = (typeOfCanvas == 'object' || typeOfCanvas == 'function'),
+              textSupport = nativeCanvasSupport 
+                && (typeof document.createElement('canvas').getContext('2d').fillText == 'function');
+          //Im setting this based on the fact that ExCanvas provides text support for IE
+          //and that as of today iPhone/iPad current text support is lame
+          labelType = (!nativeCanvasSupport || (textSupport && !iStuff))? 'Native' : 'HTML';
+          nativeTextSupport = labelType == 'Native';
+          useGradients = nativeCanvasSupport;
+          animate = !(iStuff || !nativeCanvasSupport);
+        })();
+    
+    var Log = {
+      elem: false,
+      write: function(text){
+        if (!this.elem) 
+          this.elem = document.getElementById('log');
+        this.elem.innerHTML = text;
+        this.elem.style.left = (500 - this.elem.offsetWidth / 2) + 'px';
+      }
+    };
+       
+    function init(){
+      
+      //init data
+      var json = {
+        "children": [
+           {
+             "children": [     
+        <apex:repeat value="{!cvLogList}" var="cv">          
+           {
+             "children": [], 
+             "data": {
+               "Content Title": "{!cv.title}", 
+               "LastModified": convertDate("{!cv.LastModifiedDate}"),  
+               "PreviewCount": "{!countMap[cv.Id]}",                           
+               "$color": "{!colorMap[countMap[cv.Id]]}", 
+               "image": "https://{!host}/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId={!cv.Id}&operationContext=CHATTER", 
+               "$area": {!sizeMap[countMap[cv.Id]]}
+             }, 
+             "id": "{!cv.ContentDocumentId}-{!cv.Id}",                
+             "name": "<a href='https://{!host}/sfc/#version?selectedDocumentId={!cv.ContentDocumentId}' target='_blank'>{!cv.title}</a>"
+           }           
+           , 
+        </apex:repeat>
+             ], 
+             "data": {
+               "playcount": 547, 
+               "$area": 547
+             }, 
+             "id": "No result found", 
+             "name": "No result found"
+           }
+         ], 
+         "data": {}, 
+         "id": "root", 
+         "name": "No result found"
+       };
+      //end
+      //init TreeMap
+      var tm = new $jit.TM.Squarified({
+        //where to inject the visualization
+        injectInto: 'infovis',
+        //no parent frames
+        titleHeight: 0,
+        //enable animations
+        animate: animate,
+        //no box offsets
+        offset: 0,
+        //add cushion gradients
+        cushion: useGradients,
+        //duration of the animation
+        duration: 1500,
+        //Enable tips
+        Tips: {
+          enable: true,
+          //add positioning offsets
+          offsetX: 20,
+          offsetY: 20,
+          //implement the onShow method to
+          //add content to the tooltip when a node
+          //is hovered
+          onShow: function(tip, node, isLeaf, domElement) {
+            var html = "<style>#hover a{color: #fff !important;text-decoration: none;} </style>"
+              + "<div id=\"hover\" class=\"tip-text\"><b>" + node.name 
+              + "</b></div><br/><div class=\"tip-text\">";
+            var data = node.data;
+            if(data.LastModified) {
+              html += "Last Modified Date: " + data.LastModified + "<br />";
+            }
+            if(data.PreviewCount) {
+              html += "Popularity: " + data.PreviewCount;
+            }
+            if(data.image) {
+              html += "<img style=\"margin-left:20px;\" width=\"180\" height=\"150\" src=\""+ data.image +"\" class=\"album\" />";
+            }
+            tip.innerHTML =  html; 
+          }  
+        },
+        //Add the name of the node in the correponding label
+        //This method is called once, on label creation.
+        onCreateLabel: function(domElement, node){
+            domElement.innerHTML = node.name;
+            var style = domElement.style;
+            style.display = '';
+            style.cursor = 'default';
+            style.border = '1px solid transparent';
+            domElement.onmouseover = function() {
+              style.border = '1px solid #9FD4FF';
+            };
+            domElement.onmouseout = function() {
+              style.border = '1px solid transparent';
+            };
+        }
+      });
+    
+      tm.loadJSON(json);
+      tm.refresh();
+      //end
+            
+      /*
+          //add events to radio buttons
+          var sq = $jit.id('r-sq'),
+              st = $jit.id('r-st'),
+              sd = $jit.id('r-sd');
+          var util = $jit.util;
+          util.addEvent(sq, 'change', function() {
+            if(!sq.checked) return;
+            util.extend(tm, new $jit.Layouts.TM.Squarified);
+            tm.refresh();
+          });
+          util.addEvent(st, 'change', function() {
+            if(!st.checked) return;
+            util.extend(tm, new $jit.Layouts.TM.Strip);
+            tm.layout.orientation = "v";
+            tm.refresh();
+          });
+          util.addEvent(sd, 'change', function() {
+            if(!sd.checked) return;
+            util.extend(tm, new $jit.Layouts.TM.SliceAndDice);
+            tm.layout.orientation = "v";
+            tm.refresh();
+          });
+          //add event to the back button
+          var back = $jit.id('back');
+          $jit.util.addEvent(back, 'click', function() {
+            tm.out();
+          });
+      */
+      var delay=3000;//3 seconds
+      setTimeout(function(){
+         $('#infovis-label').find('div').each(function() {
+              var id = $(this).attr("id");
+              var res = id.substring(0, 3);
+              //if id startwith '069'
+              if(res == '069'){
+                  var arr = id.split('-');
+                  document.getElementById(id).setAttribute('onclick','openContent("'+ arr[0] +'");coLogs("'+ arr[1] +'","{!$Label.LS_CO__Content_Details}")');
+              }
+         });
+      },delay);      
+    }
+    
+    window.onload = init;    
+    
+    </script>
+   
+    </apex:form> 
+</apex:page>

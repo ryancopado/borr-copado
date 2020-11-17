@@ -1,0 +1,172 @@
+<template>
+  <template if:true={rowDetails}>  
+    <div class={getRowClass}>
+      <div class="slds-col slds-grid slds-size_4-of-12">
+        <div class="slds-col slds-size_2-of-12">
+          <template if:true={isFolder}>
+            <div class="slds-m-top_x-small">
+              <lightning-button-icon icon-name="utility:open_folder" variant="bare" onclick={handleNewFolder} alternative-text="New Folder"></lightning-button-icon>
+              <lightning-button-icon icon-name="utility:share_file" variant="bare" onclick={handleNewFile} alternative-text="New File" class="slds-m-left_small"></lightning-button-icon>
+            </div>
+          </template>
+          <template if:true={isFile}>
+            <div class="slds-m-top_x-small">
+              <lightning-button-icon icon-name="utility:upload" variant="bare" onclick={handleUpload} alternative-text="Upload File" ></lightning-button-icon>
+            </div>
+          </template>
+        </div>
+        <div class={getStyle}>
+          <div class="slds-col slds-size_2-of-12">  
+            <template if:true={getHasChildren}>
+              <button class="slds-button slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled" onclick={handleExpand} aria-hidden="true" tabindex="-1" title="Expand Acme Corporation">
+                <template if:true={isExpanded}>
+                  <svg class="slds-button__icon slds-button__icon_hint slds-button__icon_small" aria-hidden="true">
+                    <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Collapse {rowDetails.name}</span>
+                </template>
+                <template if:false={isExpanded}>
+                  <svg class="slds-button__icon slds-button__icon_hint slds-button__icon_small" aria-hidden="true">
+                    <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Expand {rowDetails.name}</span>
+                </template>    
+              </button>
+            </template>
+          </div>
+          <div class="slds-col slds-size_10-of-12">
+            <div class="slds-truncate" style="padding:15px;" title={rowDetails.name}>
+              <template if:true={isFolder}>
+                <a target="_blank" href={getLink} tabindex="-1"><b>{rowDetails.name}</b></a>
+              </template>
+              <template if:false={isFolder}>
+                <a target="_blank" href={getLink} tabindex="-1">{rowDetails.name}</a>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-12">
+        <template if:true={isFolder}>
+          <div >
+          </div>
+        </template>
+        <template if:true={isFile}>
+          <div >
+            <lightning-combobox
+              name="status"
+              label=""
+              value={rowDetails.status}
+              placeholder="status ..."
+              options={options}
+              variant="label-hidden"
+              onchange={handleStatusChange} >
+            </lightning-combobox>
+          </div>
+        </template>
+      </div>
+      <div class="slds-col slds-size_1-of-12">
+        <template if:true={isFolder}>
+          {getPrecentComplete}% Complete
+          <lightning-progress-bar value={getPrecentComplete} size="large"></lightning-progress-bar>
+        </template>  
+      </div>
+      <div class="slds-col slds-size_1-of-12">
+        <lightning-input type="date" name="input2" label="schedule" value={rowDetails.schedule} variant="label-hidden" onchange={handleScheduleChange}></lightning-input>
+      </div>
+      <div class="slds-col slds-grid slds-size_2-of-12 slds-gutters">
+        <div class="slds-col slds-size_7-of-12">
+          <template if:true={isFolder}>
+            <div></div>
+          </template>
+          <template if:true={isFile}>  
+            <div class="slds-truncate" title="owner">
+              <lightning-input data-name="owner" type="text" value={rowDetails.owner} label="owner" variant="label-hidden" onfocusout={handleOwnerChange}></lightning-input>
+            </div>
+          </template>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <template if:true={isFolder}>
+            <div></div>
+          </template>
+          <template if:true={isFile}>  
+            <div class="slds-truncate" title="Internal">
+              
+              <template if:true={rowDetails.internalReview}>
+                <lightning-icon icon-name="utility:success" alternative-text="Success!" variant="success"
+                  title="success variant small" size="small"></lightning-icon>
+              </template>
+            </div>
+          </template>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <template if:true={isFolder}>
+            <div></div>
+          </template>
+          <template if:true={isFile}>  
+            <div class="slds-truncate" title="External">
+              <template if:true={rowDetails.externalReview}>
+                <lightning-icon icon-name="utility:success" alternative-text="Success!" variant="success"
+                  title="success variant small" size="small"></lightning-icon>
+              </template>
+            </div>
+          </template>
+        </div>
+        <!--
+        <div class="slds-col slds-size_5-of-12 drtoggle">
+          <lightning-input type="toggle"
+            label=""
+            checked={rowDetails.drpush}
+            message-toggle-active="Yes"
+            message-toggle-inactive="No"
+            variant="label-hidden"
+            onchange={handleDRChange}>
+          </lightning-input>
+        </div>
+        -->
+      </div>
+      <div class="slds-col slds-size_1-of-12">
+        <template if:true={showArea}>
+          <lightning-textarea onfocusout={handleTextArea} name="textInput" value={rowDetails.notes} label="Notes" placeholder="add notes..." variant="label-hidden"></lightning-textarea>
+        </template>
+        <template if:false={showArea}>
+          <lightning-input onfocus={handleToggleText} type="text" value={rowDetails.notes} label="notes" placeholder="add notes..." variant="label-hidden"></lightning-input>
+        </template>
+      </div>
+      <div class="slds-col">
+        <template if:false={level}>
+          <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" disabled aria-haspopup="true" tabindex="-1" title="More actions">
+            <svg class="slds-button__icon slds-button__icon_hint slds-button__icon_small" aria-hidden="true">
+              <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">More actions</span>
+          </button>
+        </template>
+        <template if:true={level}>
+          <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" onclick={handleToggleAction} aria-haspopup="true" tabindex="-1" title="More actions">
+            <svg class="slds-button__icon slds-button__icon_hint slds-button__icon_small" aria-hidden="true">
+              <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">More actions</span>
+          </button>
+          <template if:true={showAction}>
+            <div class="slds-dropdown slds-dropdown_right slds-dropdown_xx-small actions">
+              <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                <li class="slds-dropdown__item" role="presentation">
+                  <a role="menuitem" tabindex="0" onclick={handleDeleteAction} onfocusout={handleToggleAction}>
+                    <span class="slds-truncate" title="Menu Item One">Delete</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </template>
+        </template>
+      </div>
+    </div>
+    <template if:true={isExpanded}>
+      <template for:each={rowDetails.children} for:item='childdetails' >
+        <c-grid-row options={options} ondeletedetail={handleChildDelete} onupdatedetails={handleChildUpdate} onuploadfile={handleChildUpload} onnewfolder={handleChildNewFolder} onnewfile={handleChildNewFile} key={childdetails.name} row-details={childdetails} level={childLevel}></c-grid-row>
+      </template>
+    </template>
+  </template>
+</template>

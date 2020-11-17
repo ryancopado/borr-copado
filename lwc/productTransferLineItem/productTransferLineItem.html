@@ -1,0 +1,82 @@
+<template>
+  <template if:true={loaded}>
+    <div class="slds-card_boundary slds-m-around_small">
+      <lightning-card>
+        <div slot="title">
+          <lightning-input
+            type="checkbox"
+            label={productTransferLineItem.Product2.Name}
+            onchange={onSelectChange}
+          ></lightning-input>
+        </div>
+
+        <lightning-layout multiple-rows="true">
+          <lightning-layout-item padding="around-small" size="4">
+            <lightning-input
+              type="number"
+              label="Quantity Sent"
+              value={productTransferLineItem.QuantityRequested}
+              onchange={updateQuantitySent}
+            ></lightning-input>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="4">
+            <c-lookup
+              data-id="productitem"
+              selection={sourceProductSelection}
+              onselectionchange={handleSelectionChange}
+              onsearch={handleProductItemSearch}
+              label="Source Product Item"
+              placeholder="Search Product Items"
+              is-multi-entry={isMultiEntry}
+              disabled={sourceProductItemReadOnly}
+            >
+            </c-lookup>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="4">
+            <c-lookup
+              data-id="vendorpolineitem"
+              selection={vendorPOLineItemSelection}
+              onselectionchange={handleSelectionChange}
+              onsearch={handlePOLineItemSearch}
+              label="Vendor PO Line Item"
+              placeholder="Search Vendor PO Line Items"
+              is-multi-entry={isMultiEntry}
+              disabled={vendorProductItemReadOnly}
+            >
+            </c-lookup>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="3">
+            <lightning-input
+              label="Shipping Company"
+              value={productTransferLineItem.Shipping_Company__c}
+            ></lightning-input>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="3">
+            <lightning-input
+              label="Tracking #"
+              value={productTransferLineItem.Tracking_Number__c}
+            ></lightning-input>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="3">
+            <lightning-input
+              label="Tracking URL"
+              value={productTransferLineItem.Tracking_URL__c}
+            ></lightning-input>
+          </lightning-layout-item>
+          <lightning-layout-item padding="around-small" size="3">
+            <lightning-input
+              type="date"
+              label="Expected Pickup Date"
+              value={productTransferLineItem.ExpectedPickupDate}
+            ></lightning-input>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-card>
+    </div>
+  </template>
+  <template if:false={loaded}>
+    <lightning-spinner
+      alternative-text="loading product transfer line item"
+    ></lightning-spinner>
+  </template>
+</template>

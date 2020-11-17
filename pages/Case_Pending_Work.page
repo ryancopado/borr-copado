@@ -1,0 +1,71 @@
+<apex:page standardController="Case" extensions="CasePendingWork" >
+    <apex:form >    
+        <apex:pageBlock rendered="{!if(lstPendingWork.size>0,true,false)}">
+            <apex:pageMessages id="errorMessage"/> <br/>
+            <div align="center" draggable="false" >
+                <apex:commandButton action="{!CreateReactiveService}" value="Create Service Visit"  id="btnCreateRS" rerender="redirectPanel,errorMessage"/>
+            </div>
+            <apex:pageBlockTable value="{!lstPendingWork}" var="pw" id="tblPendingWork" columnswidth="50px,50px" cellpadding="4" border="1" >
+                
+                <apex:column >
+                    <apex:inputCheckbox value="{!pw.selected}" >        
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Pending Work</apex:facet>          
+                    <!--
+                    <span id="customLink">
+                        <a href="#" id="pWorkId" onclick="openLink( '{!pw.pwrk.Id}' );">{!pw.pwrk.Name}</a>
+                    </span>
+					
+                    <apex:outputLink value="/{!pw.pwrk.Id}"> 
+                        <apex:outputField value="{!pw.pwrk.Name}">
+                        </apex:outputField> 
+                    </apex:outputLink>
+					-->
+                    <a href="/{!pw.pwrk.Id}" id="{!pw.pwrk.Id}" onblur="LookupHoverDetail.getHover('{!pw.pwrk.Id}').hide();" onfocus="LookupHoverDetail.getHover('{!pw.pwrk.Id}', '/{!pw.pwrk.Id}/m?retURL=%2F{!pw.pwrk.Id}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('{!pw.pwrk.Id}').hide();" onmouseover="LookupHoverDetail.getHover('{!pw.pwrk.Id}', '/{!pw.pwrk.Id}/m?retURL=%2F{!pw.pwrk.Id}&isAjaxRequest=1').show();">{!pw.pwrk.Name}</a>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Asset</apex:facet>
+                    <apex:outputField value="{!pw.pwrk.Asset__c}"/>
+                </apex:column>       
+                
+                <apex:column >
+                    <apex:facet name="header">Project</apex:facet>         
+                    <apex:outputField value="{!pw.pwrk.Project__c}"/> 
+                </apex:column>
+                <!--
+                <apex:column >
+                    <apex:facet name="header">Case</apex:facet>
+                    <apex:outputField value="{!pw.pwrk.Case__c}"/>
+                </apex:column>
+                -->
+                <apex:column >
+                    <apex:facet name="header">Description of Pending Work</apex:facet>
+                    <apex:outputField value="{!pw.pwrk.Description_of_Pending_Work__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Contract</apex:facet>     
+                    <apex:outputField value="{!pw.pwrk.Contract__c}"/>
+                </apex:column>
+                
+            </apex:pageBlockTable>                
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!if(lstPendingWork.size=0,true,false)}">
+            <apex:pageMessage summary="No Pending Work records found." severity="info" strength="3" />
+        </apex:pageBlock>
+    </apex:form>
+    <apex:outputPanel id="redirectPanel" >
+        <apex:outputText rendered="{!shouldRedirect}">
+            <script type="text/javascript">
+            window.top.location.href = '{!redirectUrl}';
+            </script>
+        </apex:outputText>
+    </apex:outputPanel>
+    <script type="text/javascript">
+    	function openLink( pWId ){
+            window.top.location.href = '/'+pWId ; //'{!redirectUrl}';    	
+        }	
+    </script>
+</apex:page>

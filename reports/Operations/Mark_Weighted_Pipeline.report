@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_21851886</developerName>
+        <masterLabel>Branch</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Branch__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Berkeley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Oakland</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Orange County</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>San Diego</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Silicon Valley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sonoma County</sourceValue>
+            </sourceValues>
+            <value>West Coast</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mid Atlantic</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Boston</sourceValue>
+            </sourceValues>
+            <value>East Coast</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Midwest</sourceValue>
+            </sourceValues>
+            <value>Mid West</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Commercial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Corporate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Puerto Rico</sourceValue>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>BucketField_21851886</field>
+    </columns>
+    <columns>
+        <field>Account.Branch__c</field>
+    </columns>
+    <columns>
+        <field>OWNER_FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>AMOUNT</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>LAST_STAGE_CHANGE_DATE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Approximate_Install_Date__c</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Financing__c</field>
+    </columns>
+    <columns>
+        <field>FORECAST_CATEGORY</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Proposal_Submitted_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Project_Likelihood__c</field>
+    </columns>
+    <description>Weighted pipeline analysis for revenue planning.</description>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Project Booked,EPC Signed,No Decision,Closed Lost,Disqualified - Sales,Disqualified - Technical,Contract Signed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FORECAST_CATEGORY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Omitted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Opportunity.O_M_Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Prospecting,Qualified,No Decision,Closed Lost,Disqualified - Sales,Disqualified - Technical</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Mark - Weighted Pipeline</name>
+    <params>
+        <name>include</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityContact</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-01-10</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Record count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_57245968</developerName>
+        <masterLabel>Level Of Contact</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Campaign.ContactCampaignMembers.Activities$Activity_Type_NEW__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Call</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Call - conversation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Call - with message</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Standardized Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Meeting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Person Meeting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initial on-site meeting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initial conversation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initial meeting</sourceValue>
+            </sourceValues>
+            <value>Contact Made</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Call - without VM</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Weekly Customer Update</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Feedback</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Testimonial</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Email (Send Default Email)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Development RFI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Drawing Revision</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Document Execution</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Other</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Service Visit</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mailer</sourceValue>
+            </sourceValues>
+            <value>No Contact</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Account</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Title</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$Activity_Type_NEW__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Campaign$LastActivityDate</field>
+    </columns>
+    <columns>
+        <field>Campaign$Status</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers.Activities$Subject</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>pardot</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_57245968</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Account Campaign Activity</name>
+    <params>
+        <name>scopeid</name>
+        <value>70134000000Vh92</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_with_Contacts_w_wo_Activities__c</reportType>
+    <scope>one</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

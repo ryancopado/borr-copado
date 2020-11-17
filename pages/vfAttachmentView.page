@@ -1,0 +1,21 @@
+<apex:page controller="clsPSDAttachmentView">
+  <apex:pageblock >
+  
+      <apex:pageBlockSection >
+      
+                      <apex:outputField value="{!Attch.OwnerId}"/>
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+                      <apex:outputField value="{!Attch.ParentId}"/>
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+                      <apex:outputField value="{!Attch.IsPrivate}"/>
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+                      <apex:outputField value="{!Attch.Name}"/>
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+                      <apex:outputField value="{!Attch.BodyLength}"/>                   
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>                               
+                      <apex:outputField value="{!Attch.CreatedByID}"/>          
+                     <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>          
+      </apex:pageBlockSection>
+  
+  </apex:pageblock>
+</apex:page>

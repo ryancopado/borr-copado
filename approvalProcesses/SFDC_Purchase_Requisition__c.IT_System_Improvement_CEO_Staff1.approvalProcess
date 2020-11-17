@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>mmersereau@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>rdaniels@borregosolar.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Error_Message__c</field>
+        <field>Description__c</field>
+        <field>Link_to_Page__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>etam@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>(Owner:User.ManagerId &lt;&gt; &quot;00530000000j6Dk&quot; &amp;&amp; Owners_Managers_Manager__c &lt;&gt; &quot;00530000000j6Dk&quot; &amp;&amp;
+Owner:User.ManagerId &lt;&gt; &quot;00530000000j6DkAAI&quot; &amp;&amp;
+Owners_Managers_Manager__c &lt;&gt; &quot;00530000000j6DkAAI&quot; &amp;&amp;
+Manager__c &lt;&gt; &quot;00530000000j6Dk&quot; &amp;&amp;
+Owner:User.Alias &lt;&gt; &quot;MHall&quot;
+)
+&amp;&amp;
+OR(
+RecordTypeId = &quot;012800000007g5m&quot;,
+RecordTypeId = &quot;01234000000GGj3&quot;
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Product Owner</label>
+        <name>IT_Director</name>
+    </approvalStep>
+    <description>For user whose manager is the CEO and whose manager&apos;s manager is the CEO.</description>
+    <emailTemplate>Alerts/Salesforce_Update_Submitted</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>(Owner:User.ManagerId = &quot;00530000000j6Dk&quot; ||
+Owners_Managers_Manager__c = &quot;00530000000j6Dk&quot; ||
+Owner:User.ManagerId = &quot;00530000000j6DkAAI&quot; ||
+Owners_Managers_Manager__c = &quot;00530000000j6DkAAI&quot; ||
+Manager__c = &quot;00530000000j6Dk&quot; ||
+Owner:User.Alias = &quot;MHall&quot;
+)
+&amp;&amp;
+OR(
+RecordTypeId = &quot;012800000007g5m&quot;,
+RecordTypeId = &quot;01234000000GGj3&quot;
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Admin_Review</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Approval_Date_Update</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Salesforce_Request_Approved</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Salesforce_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Req_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>IT System Improvement  - CEO Staff</label>
+    <processOrder>11</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

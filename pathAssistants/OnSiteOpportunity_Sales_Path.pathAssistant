@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>OnSiteOpportunity Sales Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Category__c</fieldNames>
+        <fieldNames>Won_Loss_Explanation__c</fieldNames>
+        <fieldNames>Opp_Notes__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please fill out the Loss Category and the Won/Lost Explanation fields.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Approximate_Install_Date__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>Amount</fieldNames>
+        <fieldNames>Original_Contract_System_Size__c</fieldNames>
+        <fieldNames>System_Owner_Account__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Please make sure all fields are up to date.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Contract Signed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Category__c</fieldNames>
+        <fieldNames>Won_Loss_Explanation__c</fieldNames>
+        <fieldNames>Opp_Notes__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please fill out the Loss Category and the Won/Lost Explanation fields.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Disqualified - Sales</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Category__c</fieldNames>
+        <fieldNames>Won_Loss_Explanation__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>Opp_Notes__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please fill out the Loss Category and the Won/Lost Explanation fields.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Disqualified - Technical</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Category__c</fieldNames>
+        <fieldNames>Won_Loss_Explanation__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please fill out the Loss Category and the Won/Lost Explanation fields.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>No Decision</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Won_Loss_Explanation__c</fieldNames>
+        <fieldNames>Loss_Category__c</fieldNames>
+        <fieldNames>System_Owner_Account__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please make sure these fields are filled out before moving to the next stage.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Project Awarded</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>Amount</fieldNames>
+        <fieldNames>Original_Contract_System_Size__c</fieldNames>
+        <fieldNames>Proposal_Submitted_Date__c</fieldNames>
+        <fieldNames>Financing_Options_Provided__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please make sure these fields are up to date before moving to the next stage.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Proposal Submitted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Expected_Bid_Date__c</fieldNames>
+        <fieldNames>Primary_Contact__c</fieldNames>
+        <fieldNames>Utility_Company__c</fieldNames>
+        <fieldNames>Original_Contract_System_Size__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-family: Arial; font-size: 13px;&quot;&gt;Please make sure these fields are filled out before moving to the next stage. &lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Prospecting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Proposal_Submitted_Date__c</fieldNames>
+        <fieldNames>Amount</fieldNames>
+        <fieldNames>Financing_Options_Provided__c</fieldNames>
+        <fieldNames>Union__c</fieldNames>
+        <fieldNames>RFP__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 10pt; font-family: Arial;&quot;&gt;Please make sure these fields are filled out before moving to the next stage. &lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Financing__c</fieldNames>
+        <fieldNames>Approximate_Install_Date__c</fieldNames>
+        <fieldNames>Prevailing_Wage__c</fieldNames>
+        <fieldNames>Service_Contract_Included__c</fieldNames>
+        <fieldNames>Performance_Guarantee_Included__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-family: Arial; font-size: 10pt;&quot;&gt;Please make sure these fields are up to date before moving to the next stage.&lt;/b&gt;&lt;/p&gt;</info>
+        <picklistValueName>Shortlisted/Interviews</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>CaptiveOnSite</recordTypeName>
+</PathAssistant>

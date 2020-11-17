@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Quotes</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Quotes</value>
+    </caseValues>
+    <fields>
+        <help><!-- fills in with the name of the Approver from the related Issue Tracker, used in conjunction with approval processes --></help>
+        <label><!-- Assigned to: --></label>
+        <name>Assigned_to__c</name>
+        <relationshipLabel><!-- Product Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the date the product quote was received from the field, defaults to today --></help>
+        <label><!-- Date Received --></label>
+        <name>Date_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawing Reference --></label>
+        <name>Drawing_Reference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Issue Tracker number associated with this product quote --></help>
+        <label><!-- Issue Tracker --></label>
+        <name>Issue_Tracker__c</name>
+        <relationshipLabel><!-- Product Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this section to add detailed notes regarding the product quote --></help>
+        <label><!-- Notes and Additional Information --></label>
+        <name>Notes_and_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Quote must have a Project Product before it can be submitted for approval. --></help>
+        <label><!-- OK to Submit for Approval --></label>
+        <name>OK_to_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the Product from the related Project Product. --></help>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Search &quot;PP-&quot; to bring up all Project Products associated with that Project. --></help>
+        <label><!-- Project Product --></label>
+        <name>Project_Product__c</name>
+        <relationshipLabel><!-- Product Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- link filled in by trigger? --></help>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Product Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The target date that you are asking the approver to respond by --></help>
+        <label><!-- Requested Response Date --></label>
+        <name>Requested_Response_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The response details to the quote submitted from the approver. Must be filled out before Submittal can be complete. --></help>
+        <label><!-- Response --></label>
+        <name>Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected Users --></label>
+        <name>Selected_Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- This changes based on the status of the product quote --></help>
+        <label><!-- Status Highlight --></label>
+        <name>Status_Highlight__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to track and manage the status of the product quote --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Pending</masterLabel>
+            <translation><!-- Approval Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved as Corrected</masterLabel>
+            <translation><!-- Approved as Corrected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Approved</masterLabel>
+            <translation><!-- Not Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revise and Resubmit</masterLabel>
+            <translation><!-- Revise and Resubmit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Free text entry --></help>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

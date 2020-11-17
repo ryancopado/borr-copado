@@ -1,0 +1,20 @@
+<apex:page standardController="Specification_1__c" extensions="SpecificationSelectedUserCtrl">
+ <apex:form >
+       <apex:pageBlock >
+       
+           <apex:pageBlockButtons location="bottom">
+               <apex:commandButton value="Save" action="{!Save}"/>
+           </apex:pageBlockButtons>
+           <c:MultiselectPicklist leftLabel="Available Users" 
+                leftOpts="{!allUsers}"
+                rightLabel="Selected Users"
+                rightOpts="{!selectedUsers}"
+                size="14"
+                width="150px"></c:MultiselectPicklist>
+                
+       </apex:pageBlock>
+       
+         
+        
+  </apex:form>
+</apex:page>

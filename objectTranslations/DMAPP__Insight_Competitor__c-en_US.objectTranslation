@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Dealmaker ID --></label>
+        <name>DMAPP__DealmakerID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a brief description of the competitor. --></help>
+        <label><!-- Description --></label>
+        <name>DMAPP__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insight Namespace --></label>
+        <name>DMAPP__Namespace__c</name>
+        <relationshipLabel><!-- Competitors --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunities --></label>
+        <name>DMAPP__Opportunities__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a summary of the competitor&apos;s strengths. --></help>
+        <label><!-- Strengths --></label>
+        <name>DMAPP__Strengths__c</name>
+    </fields>
+    <fields>
+        <label><!-- Threats --></label>
+        <name>DMAPP__Threats__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a summary of the competitor&apos;s weaknesses. --></help>
+        <label><!-- Weaknesses --></label>
+        <name>DMAPP__Weaknesses__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a link to the competitor&apos;s website. --></help>
+        <label><!-- Website --></label>
+        <name>DMAPP__Website__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Dealmaker ID field cannot be updated after creation --></errorMessage>
+        <name>DMAPP__Prevent_Field_Update</name>
+    </validationRules>
+</CustomObjectTranslation>

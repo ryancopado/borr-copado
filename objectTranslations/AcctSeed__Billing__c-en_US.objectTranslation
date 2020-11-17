@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- CashReceiptApply --></label>
+        <name>AcctSeed__CashReceiptApply</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- CreditMemoApply --></label>
+        <name>AcctSeed__CreditMemoApply</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- MassAddEditRows --></label>
+        <name>AcctSeed__MassAddEditRows</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Sales Order --></label>
+        <name>AcctSeedERP__Sales_Order__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. Accounting period must have a value of &quot;Open&quot; in order to be selected. --></help>
+        <label><!-- Accounting  Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Accounting Year --></label>
+        <name>AcctSeed__Accounting_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- Age of the Billing, based on the due date
+Used in Aging Reports --></help>
+        <label><!-- Age --></label>
+        <name>AcctSeed__Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total of Billing minus amount Received. --></help>
+        <label><!-- Balance --></label>
+        <name>AcctSeed__Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Cash Receipt Count --></label>
+        <name>AcctSeed__Billing_Cash_Receipt_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>AcctSeed__Billing_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comment which is included on the pdf invoice generated for the customer. --></help>
+        <label><!-- Billing Comment --></label>
+        <name>AcctSeed__Billing_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Contact --></label>
+        <name>AcctSeed__Billing_Contact__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Country --></label>
+        <name>AcctSeed__Billing_Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used Primarily in Time &amp; Material Billings. Used to show range in which products or services were sold. --></help>
+        <label><!-- Billing Cycle End Date --></label>
+        <name>AcctSeed__Billing_Cycle_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used Primarily in Time &amp; Material Billings. Used to show range in which products or services were sold. --></help>
+        <label><!-- Billing Cycle Start Date --></label>
+        <name>AcctSeed__Billing_Cycle_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to configure formatting and display of fields in Billing PDF. --></help>
+        <label><!-- Billing Format --></label>
+        <name>AcctSeed__Billing_Format__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing Postal Code --></label>
+        <name>AcctSeed__Billing_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State --></label>
+        <name>AcctSeed__Billing_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street --></label>
+        <name>AcctSeed__Billing_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the billing terms as you would like them to appear on the invoice. --></help>
+        <label><!-- Billing Terms Name --></label>
+        <name>AcctSeed__Billing_Terms_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount adjusted for payment discount or small balance write off in the process of cash receipt and application. --></help>
+        <label><!-- Cash Application Adjustment Amount --></label>
+        <name>AcctSeed__Cash_Application_Adjustment_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The accounting period in which the billing reached a zero balance. Used in generating billing aging history records. This field should never be manually updated. --></help>
+        <label><!-- Closed Accounting  Period --></label>
+        <name>AcctSeed__Closed_Accounting_Period__c</name>
+        <relationshipLabel><!-- Billings (Closed Accounting  Period) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is a deprecated PO Number. Please use the &quot;PO Number Field&quot; --></help>
+        <label><!-- zDep-Contract/PO Number --></label>
+        <name>AcctSeed__Contract_PO_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount applied to this billing from credit memos. --></help>
+        <label><!-- Credit Memo Applied Amount --></label>
+        <name>AcctSeed__Credit_Memo_Applied_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The currency conversion rate for the currency. --></help>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeed__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The organization you would like to pay you for your product or service. This is a filtered lookup to the Account where Accounting Status equals &quot;Customer&quot; or &quot;Customer &amp; Vendor&quot;. --></help>
+        <label><!-- Customer --></label>
+        <name>AcctSeed__Customer__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date the Billing is issued to the customer. --></help>
+        <label><!-- Billing Date --></label>
+        <name>AcctSeed__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in the calculation of payment discounts. The discount amount represents the amount of money you will forgive in the cash receipt process if the invoice is paid within the discount days due. --></help>
+        <label><!-- Discount Amount --></label>
+        <name>AcctSeed__Discount_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in the calculation of payment terms. The number of days due from the issue date if the customer is to receive a payment discount. --></help>
+        <label><!-- Discount Due Date --></label>
+        <name>AcctSeed__Discount_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percent discount rewarded to a customer off the total of the invoice for payment within the discount days due. --></help>
+        <label><!-- Discount % --></label>
+        <name>AcctSeed__Discount_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Due Date equals the Billing Date plus the Billing Days Due on the associated Account (Customer) record. Otherwise the Due Date defaults to the Billing Date. --></help>
+        <label><!-- Due Date --></label>
+        <name>AcctSeed__Due_Date2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Payment Terms for billings are set in the Billing Format Object. The payment terms equal the Billing Date plus the Billing Days offset in the Billing Format. --></help>
+        <label><!-- Due Date --></label>
+        <name>AcctSeed__Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total normalized to the base currency. This is Total divided by the Currency Conversion Rate. --></help>
+        <label><!-- Ledger Amount --></label>
+        <name>AcctSeed__Ledger_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of billing lines associated with this record. --></help>
+        <label><!-- Line Count --></label>
+        <name>AcctSeed__Line_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>AcctSeed__Opportunity__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PDF Email Status --></label>
+        <name>AcctSeed__PDF_Email_Status__c</name>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsent</masterLabel>
+            <translation><!-- Unsent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Purchase Order Number. --></help>
+        <label><!-- PO Number --></label>
+        <name>AcctSeed__PO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Link --></label>
+        <name>AcctSeed__Payment_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- For use when you feel salesforce&apos;s auto number will not be adequate for your organization&apos;s needs. Can be used for legacy Billings for loading history as well. --></help>
+        <label><!-- Proprietary Billing Number --></label>
+        <name>AcctSeed__Proprietary_Billing_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the amount applied on this particular billing. --></help>
+        <label><!-- Received Amount --></label>
+        <name>AcctSeed__Received_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Billing --></label>
+        <name>AcctSeed__Recurring_Billing__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Total Sales Tax amount --></help>
+        <label><!-- Sales Tax --></label>
+        <name>AcctSeed__Sales_Tax2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary of the Billing Lines&apos; Tax Amount fields --></help>
+        <label><!-- Sales Tax --></label>
+        <name>AcctSeed__Sales_Tax3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping City --></label>
+        <name>AcctSeed__Shipping_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact --></label>
+        <name>AcctSeed__Shipping_Contact__c</name>
+        <relationshipLabel><!-- Billings (Shipping Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shipping Country --></label>
+        <name>AcctSeed__Shipping_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Postal Code --></label>
+        <name>AcctSeed__Shipping_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping State --></label>
+        <name>AcctSeed__Shipping_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Street --></label>
+        <name>AcctSeed__Shipping_Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used in approvals of billing records and therefore related detail lines. A value of &quot;Posted&quot; indicates the record is final and a debit and credit line have been entered into the transaction object for each billing line. --></help>
+        <label>Billing Status</label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New- No AP</masterLabel>
+            <translation><!-- New- No AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Approval</masterLabel>
+            <translation><!-- Waiting for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Summary of all the Billing Lines&apos; Sub-Total fields --></help>
+        <label><!-- Sub-Total --></label>
+        <name>AcctSeed__Sub_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deprecated in version 1.17 --></help>
+        <label><!-- zDep-Tax --></label>
+        <name>AcctSeed__Tax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Grand Total for Billing. --></help>
+        <label><!-- Total --></label>
+        <name>AcctSeed__Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of Billing- either Invoice or Credit Memo
+If Total &gt;0 = Invoice
+If Total &lt;0 = Credit Memo --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of billing lines that are marked as Is VAT Related = true --></help>
+        <label><!-- VAT Line Count --></label>
+        <name>AcctSeed__VAT_Line_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Date --></label>
+        <name>Application_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer Invoice number --></help>
+        <label><!-- Application Number --></label>
+        <name>Application_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not Current = Billing Not Saved to Avalara Dashboard
+Modified = Billing Saved but not in sync with Avalara Dashboard 
+Current = Billing Saved to Avalara Dashboard --></help>
+        <label><!-- Avalara Status --></label>
+        <name>AvaAcctSeed__Avalara_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Latitude details for Avalara Tax Calculation. --></help>
+        <label><!-- Billing Address Latitude --></label>
+        <name>AvaAcctSeed__Bi_Billing_Address_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- Longitude details for Tax Calculation --></help>
+        <label><!-- Billing Address Longitude --></label>
+        <name>AvaAcctSeed__Bi_Billing_Address_Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- Latitude details for Avalara Tax Calculation. --></help>
+        <label><!-- Shipping Address Latitude --></label>
+        <name>AvaAcctSeed__Bi_Shipping_Address_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- Longitude details for Avalara Tax Calculation. --></help>
+        <label><!-- Shipping Address Longitude --></label>
+        <name>AvaAcctSeed__Bi_Shipping_Address_Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Messaging --></label>
+        <name>AvaAcctSeed__Invoice_Messaging__c</name>
+    </fields>
+    <fields>
+        <help><!-- Avalara Sales Tax Amount --></help>
+        <label><!-- Sales Tax --></label>
+        <name>AvaAcctSeed__Sales_Tax_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>BS_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Looks to see if the Payment Due field and the Total fields match. A Yes is required to submit for approval. --></help>
+        <label><!-- Billing Amount and Total Match? --></label>
+        <name>Billing_Amount_and_Total_Match__c</name>
+    </fields>
+    <fields>
+        <label><!-- Con Req Group --></label>
+        <name>ConReqGroup__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost/Day --></label>
+        <name>CostDay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Invoicing Information --></label>
+        <name>Customer_Invoicing_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional Customer Reference or Customer PO number to assist customers in locating POs or Payment Authorizations for Borrego Invoices --></help>
+        <label><!-- Customer Reference Number --></label>
+        <name>Customer_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- need help bubble notes? --></help>
+        <label><!-- Executive Comment --></label>
+        <name>Executive_Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to label Billings that are created in advance and need to be filtered out in Monthly Statements Conga query. --></help>
+        <label><!-- Future Accounting Period? --></label>
+        <name>Future_Accounting_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include In Monthly Statement --></label>
+        <name>IncludeInMonthlyStatement__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to type in information regarding past due billings by accounting team. --></help>
+        <label><!-- Internal Billing Comments --></label>
+        <name>Internal_Billing_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mass Submit for Approval --></label>
+        <name>Mass_Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material Presently Stored --></label>
+        <name>Material_presently_stored__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount Due on the Billing --></help>
+        <label><!-- Payment Due --></label>
+        <name>PAyment_Due__c</name>
+    </fields>
+    <fields>
+        <help><!-- End of the Billing Cycle --></help>
+        <label><!-- Period To --></label>
+        <name>Period_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Type --></label>
+        <name>QuoteType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Recurring Billing Format ID --></label>
+        <name>Recurring_Billing_Format_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Tax Dollars --></label>
+        <name>SalesTaxDollars__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Tax Percent --></label>
+        <name>SalesTaxPercent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to Service Contract --></help>
+        <label><!-- Service Contract --></label>
+        <name>Service_Contract__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Solar Fund --></label>
+        <name>SolarFund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Total --></label>
+        <name>SubTotal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Tax Group --></help>
+        <label><!-- Tax Group --></label>
+        <name>Tax_Group__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Tax rate determined by the Tax Group chosen --></help>
+        <label><!-- Tax Rate --></label>
+        <name>Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Look up to work order object --></help>
+        <label><!-- Work Order --></label>
+        <name>WorkOrder__c</name>
+        <relationshipLabel><!-- Billings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Retainage --></label>
+        <name>retainage__c</name>
+    </fields>
+    <fields>
+        <label><!-- testfield --></label>
+        <name>testfield__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Accounting_Period_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The accounting period must be open to create a record --></errorMessage>
+        <name>AcctSeed__Accounting_Period_Open_New_Record</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Billing_Format_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Due_Date_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The opportunity must be Closed/Won to create a billing. --></errorMessage>
+        <name>AcctSeed__Prevent_Create_Opportunity_Closed_Won</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Account on the Service Contract must match the Account from the Customer field. --></errorMessage>
+        <name>Customer_Account_Matches_Svc_Contract</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Once a record has a Billing Status of Approved or Posted, you cannot edit any fields but Internal Billing Comments. --></errorMessage>
+        <name>Locks_fields_after_approval</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Apply_Credit_Memo --></label>
+        <name>AcctSeed__Apply_Credit_Memo</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Apply_Unapply_Credit_Memo --></label>
+        <name>AcctSeed__Apply_Unapply_Credit_Memo</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Calc_Tax --></label>
+        <name>AcctSeed__Calc_Tax</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Billing --></label>
+        <name>AcctSeed__Clone_Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_With_Lines --></label>
+        <name>AcctSeed__Clone_With_Lines</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Billing_PDFs --></label>
+        <name>AcctSeed__Create_Billing_PDFs</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_PDF --></label>
+        <name>AcctSeed__Create_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deep_Clone --></label>
+        <name>AcctSeed__Deep_Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Merge_Billings --></label>
+        <name>AcctSeed__Merge_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post --></label>
+        <name>AcctSeed__Post</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Billings --></label>
+        <name>AcctSeed__Post_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Receive_Payment --></label>
+        <name>AcctSeed__Receive_Payment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Receive_Payment_Batch --></label>
+        <name>AcctSeed__Receive_Payment_Batch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Recognize_Revenue --></label>
+        <name>AcctSeed__Recognize_Revenue</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost --></label>
+        <name>AcctSeed__Unpost</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost_Batch_Test --></label>
+        <name>AcctSeed__Unpost_Batch_Test</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost_Billings --></label>
+        <name>AcctSeed__Unpost_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Validate_Address --></label>
+        <name>AcctSeed__Validate_Address</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- AmortizationEntries --></label>
+        <name>AmortizationEntries</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Calculate_Sales_Tax --></label>
+        <name>AvaAcctSeed__Calculate_Sales_Tax</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Commit --></label>
+        <name>AvaAcctSeed__Post_Commit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Commit_Billings --></label>
+        <name>AvaAcctSeed__Post_Commit_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- UnPost_UnCommit --></label>
+        <name>AvaAcctSeed__UnPost_UnCommit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- UnPost_UnCommit_Billings --></label>
+        <name>AvaAcctSeed__UnPost_UnCommit_Billings</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Validate_Billing_Address --></label>
+        <name>AvaAcctSeed__Validate_Billing_Address</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Validate_Shipping_Address --></label>
+        <name>AvaAcctSeed__Validate_Shipping_Address</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Calc_Tax --></label>
+        <name>Calc_Tax</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Calculate_Billingline_Rate --></label>
+        <name>Calculate_Billingline_Rate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Submit --></label>
+        <name>Mass_Submit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Submit_VF --></label>
+        <name>Mass_Submit_VF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Invoice --></label>
+        <name>Print_Invoice</name>
+    </webLinks>
+</CustomObjectTranslation>

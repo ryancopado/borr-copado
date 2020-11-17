@@ -1,0 +1,28 @@
+<apex:page standardController="AcctSeed__Account_Payable__c">
+ 
+     <apex:detail subject="{!AcctSeed__Account_Payable__c.Id}" relatedList="true"  showChatter="true" inlineEdit="true"/>
+ 
+ <script>
+ 
+     var controlArray=document.getElementsByTagName("a");
+     
+     var index=0;
+     
+     for(index=0;index<controlArray.length;index++){
+         
+           
+         
+         if(controlArray[index].innerHTML =="Approve / Reject"){
+            
+            var url= controlArray[index].href;
+            
+           controlArray[index].href="AccountPayable_Approval?id=" + url.split('id=')[1] + "&apId={!AcctSeed__Account_Payable__c.Id}";
+      
+         }
+      
+     }
+     
+ 
+ </script>
+  
+</apex:page>

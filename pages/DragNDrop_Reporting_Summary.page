@@ -1,0 +1,15 @@
+<apex:page id="DragNDrop_Reporting_Summary" showHeader="false" sideBar="false" tabStyle="Reporting_Summary__c" standardController="Reporting_Summary__c">
+	<apex:includeLightning />
+	<div id='DragNDrop_Div'></div>
+	<script>
+		var recordId1 = '{!$CurrentPage.parameters.id}';
+		$Lightning.use('CADragNDrop:DragNDropApp', function () {
+			$Lightning.createComponent('CADragNDrop:DragNDropMain',
+				{'recordId': recordId1},
+				'DragNDrop_Div',
+				function (cmp) {
+				}
+			);
+		});
+	</script>
+</apex:page>

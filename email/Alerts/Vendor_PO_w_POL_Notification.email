@@ -1,0 +1,12 @@
+<messaging:emailTemplate subject="Your Purchase Order ({!relatedTo.Name}) from Borrego Solar Systems, Inc." 
+recipientType="Contact" 
+relatedToType="AcctSeedERP__Purchase_Order__c"
+replyTo="{!relatedTo.Serivce_Req_Creator_Email__c}">
+
+    <messaging:htmlEmailBody >
+        
+        <c:Vendor_PO_w_POL_Notification purchaseOrderId="{!relatedTo.Id}" />
+                                          
+        
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

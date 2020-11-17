@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>with web link to the Propduct that was updated</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Prod Update Notification2</name>
+    <style>none</style>
+    <subject>Product Updated Notification: {!Product2.Name}</subject>
+    <textOnly>Product record  {!Product2.Name}  has been updated by:
+{!Product2.LastModifiedBy}
+
+To view the product, click here:
+{!Product2.Name}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

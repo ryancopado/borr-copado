@@ -1,0 +1,239 @@
+<apex:page standardController="Con_Req__c" extensions="co_sub_imbed" renderAs="pdf">
+    <apex:stylesheet value="{!URLFOR($Resource.po_style)}"/>
+    
+    <apex:form >
+        <table width="100%">
+            <tr>
+                <td width="35%">
+                    <apex:image url="{!$Resource.borrego}" width="50%" height="50%"/>
+                </td>
+                <td style="vertical-align:middle; text-align:center; font-size:18px" width="30%">
+                    <b>SUBCONTRACTOR CHANGE ORDER</b>
+                </td>
+                <td width="35%">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Con_Req__c}" var="vendor">
+                        <apex:column width="55px" style="vertical-align:top;">
+                            <b>To:</b>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputField value="{!vendor.Vendor_Contact__c}"/><br/>
+                            <apex:outputField value="{!vendor.Vendor_Account__c}"/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>   
+                               <td style="vertical-align:top; font-size:11px">
+                    <apex:dataTable value="{!Con_Req__c}" var="order">
+                        <apex:column width="145px">
+                            <b>Change Order #:<br/>
+                            Change Order Date:<br/>
+                            Borrego CO #:<br/>
+                            PO #:</b><br/>
+                        </apex:column>
+                        <apex:column style="text-align:right" width="80px">
+                            <apex:outputField value="{!order.CO__c}"/><br/>
+                            {!coDate}<br/>
+                            <apex:outputField value="{!order.Name}"/><br/>
+                            <apex:outputField value="{!order.Purchase_Order2__c}"/><br/>
+                        </apex:column>
+                    </apex:dataTable>
+                    <br/>
+                </td>
+            </tr>    
+            <tr>
+                <td style="vertical-align:top;">
+                    <apex:dataTable value="{!Con_Req__c}" var="bs">
+                        <apex:column width="55px" style="vertical-align:top; font-size:11px">
+                            <b>From:</b>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputField value="{!bs.Project_PM__c}"/><br/>
+                            Borrego Solar Systems, Inc.<br/>
+                            5005 Texas Street, Suite 400<br/>
+                            San Diego CA 92108<br/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>
+                <td/>
+                <td style="vertical-align:top; font-size:11px">
+                    <apex:dataTable value="{!Con_Req__c}" var="totals">
+                        <apex:column width="145px" >
+                            <b>Original Price:<br/>
+                            Prior Change Orders:<br/>
+                            Current Change Order:<br/>
+                            Adjusted Price:<br/></b>
+                        </apex:column>
+                        <apex:column style="text-align:right" width="80px">
+                            <apex:outputField value="{!totals.Original_Unit_Price2__c}"/><br/>
+                            <apex:outputField value="{!totals.Prior_Change_Orders_SUB_MAT__c}"/><br/> 
+                            <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                                <apex:param value="{!Con_Req__c.Amount_Requested__c }" />
+                            </apex:outputText><br/>
+                            <b><i><apex:outputField value="{!totals.Adjusted_Contract_Price__c}"/></i></b>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Con_Req__c}" var="r">
+                        <apex:column width="120px" style="vertical-align:top;">
+                            <b>Project Name:</b>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputField value="{!r.ASProject__c}"/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>   
+                <td/>
+            </tr>
+            <tr>
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Con_Req__c}" var="r">
+                        <apex:column width="120px" style="vertical-align:top;">
+                            <b>Subject:</b>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputField value="{!r.Subject__c}"/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>   
+                <td/>
+            </tr>
+            <tr>
+                <td colspan="2" style="vertical-align:top">
+                    <apex:dataTable value="{!Con_Req__c}" var="r">
+                        <apex:column width="120px" style="vertical-align:top;">
+                            <b>Additional Notes:</b>
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputField value="{!r.Additional_Notes__c}"/>
+                        </apex:column>
+                    </apex:dataTable>
+                </td>   
+                <td/>
+            </tr>
+        </table>
+        
+        <br/>
+           
+        <table id="box-table-a" width="100%" >
+            <tr>
+                <td class="title" width="20%">
+                    Quantity
+                </td>
+                <td width="90%" class="title">
+                    Description
+                </td>
+                <td width="30%" class="title">
+                    Current Change Order
+                </td> 
+            </tr>
+            <tr>
+                <td class="co" style="text-align:center">
+                    1
+                </td>
+                <td class="co">
+                    {!Con_Req__c.Description__c}
+                </td>
+                <td class="co" style="text-align:right">
+                    <apex:outputText value="{0, number, $###,###,###,##0.00}">
+                        <apex:param value="{!Con_Req__c.Amount_Requested__c + Con_Req__c.Sales_Tax__c}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="co_total_text" colspan="2" border-style="hidden">
+                    NEW CONTRACT AMOUNT:
+                </td>
+                <td class="co_total_value">
+                    <apex:outputField value="{!Con_Req__c.Adjusted_Contract_Price__c}"/>
+                </td>    
+            </tr>
+            <tr>
+                <td class="co_total_white"/>
+                <td class="co_total_white"/>    
+            </tr>
+        </table>
+        
+        <br/><br/>
+        <br/><br/>
+        
+        <table width="100%">
+            <tr>
+                <td width="50%" style="text-align:right; vertical-align:top">
+                    <b>Approved and Accepted By:</b>
+                </td>
+                <td>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    SIGNATURE
+                </td>
+                <td width="10%">
+                    <font style="background-color: #FFFFCC">________________</font><br/>
+                    DATE
+                </td>
+            </tr>
+            <tr>
+                <td/>    
+                <td>
+                    <br/>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    NAME (PRINTED)
+                </td>
+                <td/> 
+            </tr>
+            <tr>
+                <td/>
+                <td>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    TITLE
+                </td>
+                <td/> 
+            </tr>   
+        </table>
+        
+        <br/><br/>
+        
+        <table width="100%">
+            <tr>
+                <td width="50%" style="text-align:right; vertical-align:top">
+                    <b>Submitted By:</b>
+                </td>
+                <td>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    BORREGO SIGNATURE
+                </td>
+                <td width="10%">
+                    <font style="background-color: #FFFFCC">________________</font><br/>
+                    DATE
+                </td>
+            </tr>
+            <tr>
+                <td/>    
+                <td>
+                    <br/>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    NAME (PRINTED)
+                </td>
+                <td/> 
+            </tr>
+            <tr>
+                <td/>
+                <td>
+                    <font style="background-color: #FFFFCC">_______________________________________</font><br/>
+                    TITLE
+                </td>
+                <td/> 
+            </tr>   
+        </table>
+    </apex:form>
+    
+</apex:page>

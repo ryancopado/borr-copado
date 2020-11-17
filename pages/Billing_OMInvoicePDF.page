@@ -1,0 +1,276 @@
+<apex:page standardController="AcctSeed__Billing__c" extensions="Billing_InvoiceCtlExt" applyBodyTag="false" renderAs="pdf">
+    
+    <style>
+        .tblHdrClass {
+            font-size: 12px; 
+            font-family: 'minion-pro', sans-serif; 
+            line-height: 12px;
+            font-weight: bold;
+        }
+    </style>
+    
+    <html>
+        <head>
+            
+        </head>
+        
+        <body>
+            <table style="width:100%;font-size:12px;font-family:'minion-pro',sans-serif;line-height:18px" align="center" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                            <td colspan="4" style="text-align: center; font-size: 18px;">
+                                SERVICE INVOICE
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2" style="text-align: left; padding: 15px 0 20px 0;">
+                            <span style="font-weight: bold;">Borrego Solar Systems</span>
+                            <br/>
+                            5005 Texas Street, Suite 400
+                            <br/>
+                            San Diego, CA 92108
+                            <br/>
+                            tel: 888.898.6273&nbsp;&nbsp;fax: 888.843.6778
+                        </td>
+                        <td colspan="2" style="text-align: right;">
+                            <apex:image url="{!$Resource.BorregoLogo}" /> 
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 5px 0; width: 20%;">
+                            <span style="font-weight: bold;">CUSTOMER:</span>
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 5px 0; width: 50%;">
+                            <span style="font-weight: bold;">{!billing.AcctSeed__Customer__r.Name}</span>
+                            <br/>
+                            {!billing.AcctSeed__Customer__r.BillingStreet}
+                            <br/>
+                            {!billing.AcctSeed__Customer__r.BillingCity}, {!billing.AcctSeed__Customer__r.BillingState} {!billing.AcctSeed__Customer__r.BillingPostalCode}
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 5px 0; width: 18%;">
+                            <span style="font-weight: bold;">Invoice:</span>
+                            <br/>
+                            <span style="font-weight: bold;">Invoice Date:</span>
+                            <br/>
+                            <span style="font-weight: bold;">Due Date:</span>
+                            <br/>
+                            <span style="font-weight: bold;">Terms:</span>
+                            <br/>
+                            <span style="font-weight: bold;">Contract:</span>
+                            <br/>
+                            <span style="font-weight: bold;">Customer Reference:</span>
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 5px 0; width: 12%;">
+                            {!billing.Application_Number__c}
+                            <br/>
+                            {!invoiceDate}
+                            <br/>
+                            {!dueDateOM}
+                            <br/>
+                            NET ({!billing.Service_Contract__r.Payment_due_days__c})
+                            <br/>
+                            {!billing.Service_Contract__r.ContractNumber}
+                            <br/>
+                            {!billing.Customer_Reference_Number__c}
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="vertical-align: top; text-align: left; padding: 5px 0 20px 0; width: 20%;">
+                            <span style="font-weight: bold;">ATTN:</span>
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 5px 0 20px 0; width: 50%;">
+                            {!attentionNamesOM}
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 5px 0 20px 0; width: 15%;">
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 5px 0 20px 0; width: 15%;">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 20px 0; width: 20%;">
+                            <span style="font-weight: bold;">SITE:</span>
+                            <br/>
+                            <span style="font-weight: bold;">SITE ADDRESS:</span>
+                            <br/>
+                            <br/>
+                
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 15px 0 20px 0; width: 50%;">
+                            <span style="font-weight: bold;">{!svConProject.Name}</span>
+                            <br/>
+                            {!svConProject.Site_Address__c}
+                            <br/>
+                            {!svConProject.Site_City__c}, {!svConProject.Site_State__c} {!svConProject.Site_Zip__c}
+                            <br/>
+                            </td>
+                        <!-- 
+                        <td colspan="2" style="vertical-align: top; text-align: left; padding: 15px 0 20px 0;">
+                            <span style="border-style: solid none solid none; border-top-width: 1px; border-bottom: medium double;"><b>TOTAL</b>:&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!billing.AcctSeed__Total__c}"/></span>
+                            <span style="border-style: solid none solid none; border-top-width: 1px; border-bottom: medium double;"><b>TOTAL</b>:&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!omBillLineTotal}"/></span>
+                        </td>
+                        -->
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width: 100%; font-size: 12px; font-family: 'minion-pro', sans-serif; line-height: 12px; border-collapse: collapse;" align="center;" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            BORREGO
+                            <br/>
+                            CASE #
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            SERVICE VISIT #
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            CATEGORY
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            DESCRIPTION
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            QTY
+                        </th>
+                        <!-- 
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            U/M
+                        </th>
+                        -->
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            UNIT COST
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            TOTAL
+                        </th>
+                        <th style="vertical-align: bottom; text-align: center; font-weight: bold; padding: 5px; border: 1px solid black;">
+                            % Value
+                        </th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <apex:repeat value="{!omBillLines}" var="ombl" id="theRepeat">
+                    <tr>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputField value="{!ombl.billingLine.Case__r.CaseNumber}"/>  
+                        </td>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputField value="{!ombl.billingLine.Service_Visit__c}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 5px; border: 1px solid black;">
+                            <apex:outputField value="{!ombl.billingLine.Category__c}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: left; padding: 5px; border: 1px solid black;">
+                            <apex:outputPanel rendered="{!ombl.billingLine.Description__c=='Sales Tax Total'}">
+                                <b>
+                                    <apex:outputField value="{!ombl.billingLine.Description__c}"/>
+                                </b>
+                            </apex:outputPanel>
+                            <apex:outputField rendered="{!ombl.billingLine.Description__c!='Sales Tax Total'}" value="{!ombl.billingLine.Description__c}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputText value="{!ombl.quantity}"/>
+                        </td>
+                        <!-- 
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputText value="{!ombl.unitMeasure}"/>
+                        </td>
+                        -->
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            <apex:outputText value="{!ombl.unitCost}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            <apex:outputField value="{!ombl.billingLine.AcctSeed__Total__c}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputField rendered="{!ombl.billingLine.Taxable__c==true}" value="{!ombl.billingLine.AvaAcctSeed__Rate__c}"/>
+                        </td>
+                    </tr>
+                    </apex:repeat>
+                    
+                    <tr>
+                        <td colspan="5" style="vertical-align: top; text-align: right; padding: 5px;">
+                        </td>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputText value="SUB-TOTAL" style="font-weight: bold;"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            <!--<apex:outputText value="{!omBillLineTotal}"/>-->
+                            <apex:outputText value="${!subTotal}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            
+                        </td>
+                    </tr>
+                    
+                                  
+                    <tr>
+                        <td colspan="5" style="vertical-align: top; text-align: right; padding: 5px;">
+                        </td>
+                        <td style="vertical-align: top; text-align: center; padding: 5px; border: 1px solid black;">
+                            <apex:outputText value="TOTAL" style="font-weight: bold;"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            <!-- <apex:outputText value="{!omBillLineTotal}"/> -->
+                            <apex:outputField value="{!billing.AcctSeed__Total__c}"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: right; padding: 5px; border: 1px solid black;">
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="8" style="vertical-align: top; text-align: right; padding: 5px;">
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="4" style="vertical-align: top; text-align: left; padding: 5px;">
+                            <p style="font-size: 10px; font-family: 'minion-pro', sans-serif; line-height: 12px;">
+                                <b>Please remit to:</b>
+                                <br/>
+                                Borrego Solar Systems, Inc. Attn: Accounting
+                                <br/>
+                                5005 Texas Street, Suite 400
+                                <br/>
+                                San Diego, CA 92108
+                                <br/>
+                                <b>If you have any questions, please contact</b>
+                                <br/>
+                                <b>Tanya Reas at (619) 961-4522</b>
+                            </p>
+                        </td>
+                        <td colspan="4" style="vertical-align: top; text-align: left; padding: 5px;">
+                            <p style="font-size: 10px; font-family: 'minion-pro', sans-serif; line-height: 12px;">
+                                <b>Banking ACH or Wire Instructions:</b>
+                                <br/>
+                                Beneficiary Bank: Bank of the West
+                                <br/>
+                                300 S. Grand Ave. Los Angeles, CA 90071
+                                <br/>
+                                ABA Routing number: 121100782
+                                <br/>
+                                SWIFT Code: BWSTUS66
+                                <br/>
+                                Beneficiary: Borrego Solar Systems Inc.
+                                <br/>
+                                Account Number: 045909850
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+        </body>
+    </html>
+    
+</apex:page>

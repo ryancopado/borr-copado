@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Borregoemail</letterhead>
+    <name>No Thank You - Questionaire</name>
+    <style>formalLetter</style>
+    <subject>{!Lead.Job_Applying_For__c}</subject>
+    <textOnly>Dear {!Lead.Name}:
+ 
+ 
+We appreciate your valuable time and interest in Borrego Solar and enjoyed meeting with you regarding the {!Lead.Job_Applying_For__c} position.   While we were impressed with your qualifications, and with you, a candidate was selected whose work experience and educational background was more in alignment with the specific position duties and responsibilities required at Borrego Solar at this time.
+ 
+We will keep your resume on file for any positions as they become available over the next six months.
+ 
+We wish you all the best in your professional endeavors and again, thank you for your interest in employment opportunities with Borrego Solar.
+ 
+ 
+ 
+Sincerely,
+ 
+ 
+Borrego Solar Systems, Inc.
+Human Resource Department</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>You may be creating a duplicate record. We recommend you use an existing record instead.</alertText>
+    <description xsi:nil="true"/>
+    <duplicateRuleFilter>
+        <booleanFilter xsi:nil="true"/>
+        <duplicateRuleFilterItems>
+            <field>RecordType</field>
+            <operation>equals</operation>
+            <value>Standard</value>
+            <sortOrder>1</sortOrder>
+            <table>Lead</table>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Lead</matchRuleSObjectType>
+        <matchingRule>First_Last_Company_Phone_Street_Fuzzy_Match</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>false</isActive>
+    <masterLabel>Warn on Fuzzy Match First Last Company Phone Street Title</masterLabel>
+    <operationsOnInsert>Alert</operationsOnInsert>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <securityOption>BypassSharingRules</securityOption>
+    <sortOrder>3</sortOrder>
+</DuplicateRule>

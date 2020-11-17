@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- List the key benefits linked to this message --></help>
+        <label><!-- Benefits --></label>
+        <name>DMAPP__Benefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confidential --></label>
+        <name>DMAPP__Confidential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dealmaker ID --></label>
+        <name>DMAPP__DealmakerID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the Smart Element that you are associating with this message. --></help>
+        <label><!-- Smart Element --></label>
+        <name>DMAPP__Insight_Smart_Node__c</name>
+        <relationshipLabel><!-- Key Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the text of the message --></help>
+        <label><!-- Message --></label>
+        <name>DMAPP__Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the order in which the message will be displayed within the Smart Element. --></help>
+        <label><!-- Sort Order --></label>
+        <name>DMAPP__SortOrder__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Dealmaker ID field cannot be updated after creation --></errorMessage>
+        <name>DMAPP__Prevent_Field_Update</name>
+    </validationRules>
+</CustomObjectTranslation>

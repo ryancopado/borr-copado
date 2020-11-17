@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>EVP_Legal_HR_IT</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>HR_Coordinator</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>VP_of_People_Culture</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>owner_manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Manager Approval</label>
+        <name>Manager_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>vmalaga@borregosolar.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>P&amp;C Approval</label>
+        <name>P_C_Approval</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>when a member of the CEO staff  submits for approval</description>
+    <emailTemplate>unfiled$public/New_Personnel_Change_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(RecordTypeId = &quot;01234000000GGgT&quot;,
+     owner_manager__c = &quot;00530000000j6Dk&quot;,
+
+OR(ISPICKVAL(Status__c, &quot;New&quot;) ,
+   ISPICKVAL(Status__c, &quot;On Hold&quot;),
+   ISPICKVAL(Status__c ,&quot;X - Rejected&quot;)))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Personnel_Change_Approved_Employee_Manager_Alert</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Personnel_Change_Complete_HR_Payroll</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Personnel_Change_Request_Complete</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Personnel_Change_Request_Complete_IT</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Personnel Change - CEO Staff</label>
+    <processOrder>10</processOrder>
+    <recallActions>
+        <action>
+            <name>Recalled_Request</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

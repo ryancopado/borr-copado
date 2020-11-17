@@ -1,0 +1,11 @@
+<apex:page standardController="Development_Spending__c" recordSetVar="devspendings" extensions="DevelopmentSpendingCtlExt" tabStyle="Development_Spending__c" action="{!approveDevSpending}">
+ 	<apex:pageBlock title="Approve Development Spending">
+        <apex:form >
+        	<apex:pageMessages />
+			<br/>
+			Click
+			<apex:outputLink value="{!retURL}" id="theLink"> here </apex:outputLink>
+			to return to the previous page.
+		</apex:form>
+	</apex:pageBlock>
+</apex:page>

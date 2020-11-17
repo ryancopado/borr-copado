@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Branch__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Site__c.Project_Kickoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>Site__c.Handoff_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Site__c.Kickoff_to_Handoff__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Site__c.Kickoff_to_Handoff__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>AS Test Act,Newark Airport PPA (ConEd-BLDG 157),Newark Airport PPA (ConEd-BLDG 121),Newark Airport PPA (ConEd-BLDG 79)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$AcctSeed__Project__c.Overall_Project_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Pre-Contract,New,Dead,On Hold</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>COO Dash - KICKOFFHANDOFFSITEAVG</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Site__c@Site__c.Project__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FK_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Site__c.Handoff_Date__c</dateColumn>
+        <endDate>2017-09-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-10-01</startDate>
+    </timeFrameFilter>
+</Report>

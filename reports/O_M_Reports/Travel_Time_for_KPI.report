@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>SV__c.Total_Travel_Time__c:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Travel Hours</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SV__c.Technician__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Total_Travel_Time__c</field>
+    </columns>
+    <columns>
+        <field>SV__c.Travel_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SV__c.Technician__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Cameron Wilson,Chip Greene,Gus Cota,James Powell,Joshua Wells,Jovanni Martinez,Scott Robbins,Kevin Crowley,Will DeAngelis,Jon Mullins,David Marks,Jorge Portillo,Brad Ebrom,Joseph Distefano,Kristopher Makrakis,Ralph Royle,Drew Dodge,Keith Mitchell,Mike Dillon,Todd Miller,Zach Flowers,Corey Brown,Vincenzo Raia,Adam Lamirande</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SV__c.Total_Travel_Time__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SV__c.Branch__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Travel Time for KPI</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SV__c.Visit_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

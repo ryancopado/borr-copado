@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>allows editing only for SPG group on certain fields in Case, DAS alerts</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.DAS_Alerts_Restored__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.DAS_Alerts_Suspended__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SPG Fields on Case Editing Rights</label>
+    <license>Salesforce</license>
+</PermissionSet>

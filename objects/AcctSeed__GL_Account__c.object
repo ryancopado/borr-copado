@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AcctSeed__GL_Account_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AcctSeed__GL_Account_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AcctSeed__Type__c</fields>
+        <fields>AcctSeed__Sub_Type_1__c</fields>
+        <fields>AcctSeed__Sub_Type_2__c</fields>
+        <fields>AcctSeed__Bank__c</fields>
+        <label>GL Account Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Used to document the general ledger accounts used by the financial suite accounting application. This is a traditional general ledger account.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AcctSeed__Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes if the GL Account is active. Most filtered lookups to the GL Account object look for an active status.</inlineHelpText>
+        <label>Active</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Bank__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if the GL Account is a Bank account and can be selected to record Cash Receipts, Cash Disbursements and use the Bank Reconciliation.</inlineHelpText>
+        <label>Bank</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Billing_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is an alternate name for the GL Account when used in Billings to display a more customer Friendly description of the GL Account. This feature only is applicable to Revenue GL Accounts.</inlineHelpText>
+        <label>Billing Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Expense_Report_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in expense report entry screen to provide a more user friendly name for a GL Account.</inlineHelpText>
+        <label>Expense Report Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__GL_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The GL Category type classifies GL accounts according to where they are are found on your financial statements. In this way they are similar to Type and Sub Type 1 fields which are reporting driven. This field tells the system what function it serves.</inlineHelpText>
+        <label>GL Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Input VAT</fullName>
+                    <default>false</default>
+                    <label>Input VAT</label>
+                </value>
+                <value>
+                    <fullName>Output VAT</fullName>
+                    <default>false</default>
+                    <label>Output VAT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Mileage_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if the account is to be used to track Mileage in Expenses Reports.</inlineHelpText>
+        <label>Mileage Account</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Mileage_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for mileage rate for expenses.</inlineHelpText>
+        <label>Mileage Rate</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Sub_Type_1__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in conjunction with the Type field to further classify GL Accounts in reports. This pick list is dependent on Type.</inlineHelpText>
+        <label>Sub Type 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assets</fullName>
+                    <default>false</default>
+                    <label>Assets</label>
+                </value>
+                <value>
+                    <fullName>Cost of Goods Sold</fullName>
+                    <default>false</default>
+                    <label>Cost of Goods Sold</label>
+                </value>
+                <value>
+                    <fullName>Facilities</fullName>
+                    <default>false</default>
+                    <label>Facilities</label>
+                </value>
+                <value>
+                    <fullName>Labor</fullName>
+                    <default>false</default>
+                    <label>Labor</label>
+                </value>
+                <value>
+                    <fullName>Liabilities</fullName>
+                    <default>false</default>
+                    <label>Liabilities</label>
+                </value>
+                <value>
+                    <fullName>Owners Equity</fullName>
+                    <default>false</default>
+                    <label>Owners Equity</label>
+                </value>
+                <value>
+                    <fullName>Product Revenue</fullName>
+                    <default>false</default>
+                    <label>Product Revenue</label>
+                </value>
+                <value>
+                    <fullName>Sales &amp; Marketing</fullName>
+                    <default>false</default>
+                    <label>Sales &amp; Marketing</label>
+                </value>
+                <value>
+                    <fullName>Service Revenue</fullName>
+                    <default>false</default>
+                    <label>Service Revenue</label>
+                </value>
+                <value>
+                    <fullName>General &amp; Administrative</fullName>
+                    <default>false</default>
+                    <label>General &amp; Administrative</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Sub_Type_2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in conjunction with the Type and Subtype 1 fields to further classify GL Accounts in reports. This pick list is dependent on Subtype 1.</inlineHelpText>
+        <label>Sub Type 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cash</fullName>
+                    <default>false</default>
+                    <label>Cash</label>
+                </value>
+                <value>
+                    <fullName>Current Assets</fullName>
+                    <default>false</default>
+                    <label>Current Assets</label>
+                </value>
+                <value>
+                    <fullName>Fixed Assets</fullName>
+                    <default>false</default>
+                    <label>Fixed Assets</label>
+                </value>
+                <value>
+                    <fullName>Long Term Assets</fullName>
+                    <default>false</default>
+                    <label>Long Term Assets</label>
+                </value>
+                <value>
+                    <fullName>Current Liabilities</fullName>
+                    <default>false</default>
+                    <label>Current Liabilities</label>
+                </value>
+                <value>
+                    <fullName>Long Term Liabilities</fullName>
+                    <default>false</default>
+                    <label>Long Term Liabilities</label>
+                </value>
+                <value>
+                    <fullName>Product Family 1</fullName>
+                    <default>false</default>
+                    <label>Product Family 1</label>
+                </value>
+                <value>
+                    <fullName>Product Family 2</fullName>
+                    <default>false</default>
+                    <label>Product Family 2</label>
+                </value>
+                <value>
+                    <fullName>Product Family 3</fullName>
+                    <default>false</default>
+                    <label>Product Family 3</label>
+                </value>
+                <value>
+                    <fullName>Service Family 1</fullName>
+                    <default>false</default>
+                    <label>Service Family 1</label>
+                </value>
+                <value>
+                    <fullName>Service Family 2</fullName>
+                    <default>false</default>
+                    <label>Service Family 2</label>
+                </value>
+                <value>
+                    <fullName>Service Family 3</fullName>
+                    <default>false</default>
+                    <label>Service Family 3</label>
+                </value>
+                <value>
+                    <fullName>Labor</fullName>
+                    <default>false</default>
+                    <label>Labor</label>
+                </value>
+                <value>
+                    <fullName>Materials</fullName>
+                    <default>false</default>
+                    <label>Materials</label>
+                </value>
+                <value>
+                    <fullName>Overhead</fullName>
+                    <default>false</default>
+                    <label>Overhead</label>
+                </value>
+                <value>
+                    <fullName>Equity</fullName>
+                    <default>false</default>
+                    <label>Equity</label>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                    <label>Rent</label>
+                </value>
+                <value>
+                    <fullName>Utilities</fullName>
+                    <default>false</default>
+                    <label>Utilities</label>
+                </value>
+                <value>
+                    <fullName>Benefits</fullName>
+                    <default>false</default>
+                    <label>Benefits</label>
+                </value>
+                <value>
+                    <fullName>Payroll Taxes</fullName>
+                    <default>false</default>
+                    <label>Payroll Taxes</label>
+                </value>
+                <value>
+                    <fullName>Salary &amp; Wages</fullName>
+                    <default>false</default>
+                    <label>Salary &amp; Wages</label>
+                </value>
+                <value>
+                    <fullName>Advertising</fullName>
+                    <default>false</default>
+                    <label>Advertising</label>
+                </value>
+                <value>
+                    <fullName>Marketing Events</fullName>
+                    <default>false</default>
+                    <label>Marketing Events</label>
+                </value>
+                <value>
+                    <fullName>Sales Travel</fullName>
+                    <default>false</default>
+                    <label>Sales Travel</label>
+                </value>
+                <value>
+                    <fullName>Accounting</fullName>
+                    <default>false</default>
+                    <label>Accounting</label>
+                </value>
+                <value>
+                    <fullName>Executive Benefits</fullName>
+                    <default>false</default>
+                    <label>Executive Benefits</label>
+                </value>
+                <value>
+                    <fullName>Human Resources</fullName>
+                    <default>false</default>
+                    <label>Human Resources</label>
+                </value>
+                <value>
+                    <fullName>Legal and professional</fullName>
+                    <default>false</default>
+                    <label>Legal and professional</label>
+                </value>
+                <value>
+                    <fullName>Software</fullName>
+                    <default>false</default>
+                    <label>Software</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__TM_Revenue_Conversion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is relevant for expense transactions used in Time and Material Billings. This GL Account assignment maps the expense to the proper Revenue Account when processing expense transactions for Time and Material Billings.</inlineHelpText>
+        <label>Time and Expense Revenue Conversion</label>
+        <referenceTo>AcctSeed__GL_Account__c</referenceTo>
+        <relationshipLabel>GL Accounts</relationshipLabel>
+        <relationshipName>Project_GL_Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes the major grouping for financial reporting.</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Revenue</fullName>
+                    <default>false</default>
+                    <label>Revenue</label>
+                </value>
+                <value>
+                    <fullName>Expense</fullName>
+                    <default>true</default>
+                    <label>Expense</label>
+                </value>
+                <value>
+                    <fullName>Balance Sheet</fullName>
+                    <default>false</default>
+                    <label>Balance Sheet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AcctSeed__Used_in_Expense_Reports__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The filtered look up on the Expense object uses a value of True to be available for selection in submitting an expense.</inlineHelpText>
+        <label>Used in Expense Reports</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BalSheet_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Assign each GL Account to a BalSheet Type (including all Revenue and Expense GL Accounts are assigned to &quot;Income Statement&quot;</inlineHelpText>
+        <label>BalSheet Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01Cash</fullName>
+                    <default>false</default>
+                    <label>01Cash</label>
+                </value>
+                <value>
+                    <fullName>02Accounts Receivable</fullName>
+                    <default>false</default>
+                    <label>02Accounts Receivable</label>
+                </value>
+                <value>
+                    <fullName>03Accounts Receivable - Inter Company EPC</fullName>
+                    <default>false</default>
+                    <label>03Accounts Receivable - Inter Company EPC</label>
+                </value>
+                <value>
+                    <fullName>04Accounts Receivable - Development Company</fullName>
+                    <default>false</default>
+                    <label>04Accounts Receivable - Development Company</label>
+                </value>
+                <value>
+                    <fullName>05Inventory</fullName>
+                    <default>false</default>
+                    <label>05Inventory</label>
+                </value>
+                <value>
+                    <fullName>06Cost/Est Earning in Exc of Billing</fullName>
+                    <default>false</default>
+                    <label>06Cost/Est Earning in Exc of Billing</label>
+                </value>
+                <value>
+                    <fullName>07Deferred Costs -ST</fullName>
+                    <default>false</default>
+                    <label>07Deferred Costs -ST</label>
+                </value>
+                <value>
+                    <fullName>08Other Receivable</fullName>
+                    <default>false</default>
+                    <label>08Other Receivable</label>
+                </value>
+                <value>
+                    <fullName>09Prepaid Expense &amp; Deposits</fullName>
+                    <default>false</default>
+                    <label>09Prepaid Expense &amp; Deposits</label>
+                </value>
+                <value>
+                    <fullName>10PROPERTY AND EQUIPMENT</fullName>
+                    <default>false</default>
+                    <label>10PROPERTY AND EQUIPMENT</label>
+                </value>
+                <value>
+                    <fullName>11Deposits - Facilities</fullName>
+                    <default>false</default>
+                    <label>11Deposits - Facilities</label>
+                </value>
+                <value>
+                    <fullName>12Other Receivables</fullName>
+                    <default>false</default>
+                    <label>12Other Receivables</label>
+                </value>
+                <value>
+                    <fullName>13Deferred Costs -LT</fullName>
+                    <default>false</default>
+                    <label>13Deferred Costs -LT</label>
+                </value>
+                <value>
+                    <fullName>14Accounts Payable</fullName>
+                    <default>false</default>
+                    <label>14Accounts Payable</label>
+                </value>
+                <value>
+                    <fullName>15Accrued Contract Costs</fullName>
+                    <default>false</default>
+                    <label>15Accrued Contract Costs</label>
+                </value>
+                <value>
+                    <fullName>16Other Accrued Expenses</fullName>
+                    <default>false</default>
+                    <label>16Other Accrued Expenses</label>
+                </value>
+                <value>
+                    <fullName>17Advances from Cus</fullName>
+                    <default>false</default>
+                    <label>17Advances from Cus</label>
+                </value>
+                <value>
+                    <fullName>18Deferred Revenue -ST</fullName>
+                    <default>false</default>
+                    <label>18Deferred Revenue -ST</label>
+                </value>
+                <value>
+                    <fullName>19Billing in Exc of Cost/Est Earning</fullName>
+                    <default>false</default>
+                    <label>19Billing in Exc of Cost/Est Earning</label>
+                </value>
+                <value>
+                    <fullName>20Line of Credit</fullName>
+                    <default>false</default>
+                    <label>20Line of Credit</label>
+                </value>
+                <value>
+                    <fullName>21Notes Payable - Other</fullName>
+                    <default>false</default>
+                    <label>21Notes Payable - Other</label>
+                </value>
+                <value>
+                    <fullName>22Deferred Tax</fullName>
+                    <default>false</default>
+                    <label>22Deferred Tax</label>
+                </value>
+                <value>
+                    <fullName>23Notes Payable -Other</fullName>
+                    <default>false</default>
+                    <label>23Notes Payable -Other</label>
+                </value>
+                <value>
+                    <fullName>24Deferred Revenue-LT</fullName>
+                    <default>false</default>
+                    <label>24Deferred Revenue-LT</label>
+                </value>
+                <value>
+                    <fullName>25Accrued Service Costs-LT</fullName>
+                    <default>false</default>
+                    <label>25Accrued Service Costs-LT</label>
+                </value>
+                <value>
+                    <fullName>26COMMON STOCK</fullName>
+                    <default>false</default>
+                    <label>26COMMON STOCK</label>
+                </value>
+                <value>
+                    <fullName>27RETAINED EARNINGS</fullName>
+                    <default>false</default>
+                    <label>27RETAINED EARNINGS</label>
+                </value>
+                <value>
+                    <fullName>28Income Statement</fullName>
+                    <default>false</default>
+                    <label>28Income Statement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IS_Grouping__c</fullName>
+        <externalId>false</externalId>
+        <label>IS Grouping</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A. EPC Revenue</fullName>
+                    <default>false</default>
+                    <label>A. EPC Revenue</label>
+                </value>
+                <value>
+                    <fullName>B. O&amp;M Revenue</fullName>
+                    <default>false</default>
+                    <label>B. O&amp;M Revenue</label>
+                </value>
+                <value>
+                    <fullName>C. Other Revenue</fullName>
+                    <default>false</default>
+                    <label>C. Other Revenue</label>
+                </value>
+                <value>
+                    <fullName>D. EPC COGs</fullName>
+                    <default>false</default>
+                    <label>D. EPC COGs</label>
+                </value>
+                <value>
+                    <fullName>E. O&amp;M COGs</fullName>
+                    <default>false</default>
+                    <label>E. O&amp;M COGs</label>
+                </value>
+                <value>
+                    <fullName>F. Other COGs</fullName>
+                    <default>false</default>
+                    <label>F. Other COGs</label>
+                </value>
+                <value>
+                    <fullName>G. Commissions</fullName>
+                    <default>false</default>
+                    <label>G. Commissions</label>
+                </value>
+                <value>
+                    <fullName>H. Salaries</fullName>
+                    <default>false</default>
+                    <label>H. Salaries</label>
+                </value>
+                <value>
+                    <fullName>I. Bonus</fullName>
+                    <default>false</default>
+                    <label>I. Bonus</label>
+                </value>
+                <value>
+                    <fullName>J. Payroll Burden</fullName>
+                    <default>false</default>
+                    <label>J. Payroll Burden</label>
+                </value>
+                <value>
+                    <fullName>K. Expense Reports</fullName>
+                    <default>false</default>
+                    <label>K. Expense Reports</label>
+                </value>
+                <value>
+                    <fullName>L. Other</fullName>
+                    <default>false</default>
+                    <label>L. Other</label>
+                </value>
+                <value>
+                    <fullName>M. Warranty</fullName>
+                    <default>false</default>
+                    <label>M. Warranty</label>
+                </value>
+                <value>
+                    <fullName>N. Insurance/Depreciation</fullName>
+                    <default>false</default>
+                    <label>N. Insurance/Depreciation</label>
+                </value>
+                <value>
+                    <fullName>O. Eng/O&amp;M Allocation</fullName>
+                    <default>false</default>
+                    <label>O. Eng/O&amp;M Allocation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IncStmt_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Apply each Rev and Expense GL Account to one of these categories</inlineHelpText>
+        <label>IncStmt Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01Revenue, Net</fullName>
+                    <default>false</default>
+                    <label>01Revenue, Net</label>
+                </value>
+                <value>
+                    <fullName>02Cost of Revenue - Directs</fullName>
+                    <default>false</default>
+                    <label>02Cost of Revenue - Directs</label>
+                </value>
+                <value>
+                    <fullName>03Cost of Revenue - Indirects</fullName>
+                    <default>false</default>
+                    <label>03Cost of Revenue - Indirects</label>
+                </value>
+                <value>
+                    <fullName>04Cost of Revenue-Comm &amp; Affil Fees</fullName>
+                    <default>false</default>
+                    <label>04Cost of Revenue-Comm &amp; Affil Fees</label>
+                </value>
+                <value>
+                    <fullName>05Marketing &amp; Sales Expenses</fullName>
+                    <default>false</default>
+                    <label>05Marketing &amp; Sales Expenses</label>
+                </value>
+                <value>
+                    <fullName>06Corporate Salaries &amp; Benefits</fullName>
+                    <default>false</default>
+                    <label>06Corporate Salaries &amp; Benefits</label>
+                </value>
+                <value>
+                    <fullName>07G&amp;A Branch expenses</fullName>
+                    <default>false</default>
+                    <label>07G&amp;A Branch expenses</label>
+                </value>
+                <value>
+                    <fullName>08Interest Income</fullName>
+                    <default>false</default>
+                    <label>08Interest Income</label>
+                </value>
+                <value>
+                    <fullName>09Other Income</fullName>
+                    <default>false</default>
+                    <label>09Other Income</label>
+                </value>
+                <value>
+                    <fullName>10(Gain) Loss</fullName>
+                    <default>false</default>
+                    <label>10(Gain) Loss</label>
+                </value>
+                <value>
+                    <fullName>11Interest Expense</fullName>
+                    <default>false</default>
+                    <label>11Interest Expense</label>
+                </value>
+                <value>
+                    <fullName>12Financing Expense Other</fullName>
+                    <default>false</default>
+                    <label>12Financing Expense Other</label>
+                </value>
+                <value>
+                    <fullName>13Other Expense</fullName>
+                    <default>false</default>
+                    <label>13Other Expense</label>
+                </value>
+                <value>
+                    <fullName>14Income Tax Expense</fullName>
+                    <default>false</default>
+                    <label>14Income Tax Expense</label>
+                </value>
+                <value>
+                    <fullName>05Marketing &amp; Sales  Expenses</fullName>
+                    <default>false</default>
+                    <label>05Marketing &amp; Sales  Expenses</label>
+                </value>
+                <value>
+                    <fullName>20BalanceSheet</fullName>
+                    <default>false</default>
+                    <label>20BalanceSheet</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subtotal__c</fullName>
+        <description>For use in Brendan&apos;s BtoA Reports</description>
+        <externalId>false</externalId>
+        <label>Subtotal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1. Direct Margin Total</fullName>
+                    <default>false</default>
+                    <label>1. Direct Margin Total</label>
+                </value>
+                <value>
+                    <fullName>2. Commissions</fullName>
+                    <default>false</default>
+                    <label>2. Commissions</label>
+                </value>
+                <value>
+                    <fullName>3. ICOGS Total</fullName>
+                    <default>false</default>
+                    <label>3. ICOGS Total</label>
+                </value>
+                <value>
+                    <fullName>1. O&amp;M Direct Margin Total</fullName>
+                    <default>false</default>
+                    <label>1. O&amp;M Direct Margin Total</label>
+                </value>
+                <value>
+                    <fullName>3. O&amp;M ICOGS Total</fullName>
+                    <default>false</default>
+                    <label>3. O&amp;M ICOGS Total</label>
+                </value>
+                <value>
+                    <fullName>1. Revenue</fullName>
+                    <default>false</default>
+                    <label>1. Revenue</label>
+                </value>
+                <value>
+                    <fullName>2. Cost of Revenue- Direct</fullName>
+                    <default>false</default>
+                    <label>2. Cost of Revenue- Direct</label>
+                </value>
+                <value>
+                    <fullName>4. Cost of Revenue- Commissions</fullName>
+                    <default>false</default>
+                    <label>4. Cost of Revenue- Commissions</label>
+                </value>
+                <value>
+                    <fullName>3. Cost of Revenue- Indirect</fullName>
+                    <default>false</default>
+                    <label>3. Cost of Revenue- Indirect</label>
+                </value>
+                <value>
+                    <fullName>5. Marketing and Sales Expenses</fullName>
+                    <default>false</default>
+                    <label>5. Marketing and Sales Expenses</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>GL Account</label>
+    <listViews>
+        <fullName>AcctSeed__All1</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <columns>AcctSeed__Bank__c</columns>
+        <columns>Subtotal__c</columns>
+        <columns>BalSheet_Type__c</columns>
+        <columns>IS_Grouping__c</columns>
+        <columns>IncStmt_Type__c</columns>
+        <columns>AcctSeed__Mileage_Account__c</columns>
+        <columns>AcctSeed__Billing_Description__c</columns>
+        <columns>AcctSeed__Used_in_Expense_Reports__c</columns>
+        <columns>AcctSeed__Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Balance_Sheet</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <columns>AcctSeed__Sub_Type_1__c</columns>
+        <columns>AcctSeed__Sub_Type_2__c</columns>
+        <columns>AcctSeed__Bank__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Balance Sheet</value>
+        </filters>
+        <label>Balance Sheet</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Cash_Flow_Categories</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <columns>AcctSeed__Sub_Type_1__c</columns>
+        <columns>AcctSeed__Sub_Type_2__c</columns>
+        <columns>AcctSeed__Bank__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Cash Flow</value>
+        </filters>
+        <label>Cash Flow Categories</label>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Expense</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <columns>AcctSeed__Sub_Type_1__c</columns>
+        <columns>AcctSeed__Sub_Type_2__c</columns>
+        <columns>AcctSeed__Bank__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Expense</value>
+        </filters>
+        <label>Expense</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AcctSeed__Revenue</fullName>
+        <columns>NAME</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <columns>AcctSeed__Sub_Type_1__c</columns>
+        <columns>AcctSeed__Sub_Type_2__c</columns>
+        <columns>AcctSeed__Bank__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Revenue</value>
+        </filters>
+        <label>Revenue</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>GL_Accounts_Income_and_Expenses</fullName>
+        <columns>NAME</columns>
+        <columns>BalSheet_Type__c</columns>
+        <columns>IncStmt_Type__c</columns>
+        <columns>AcctSeed__Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AcctSeed__Type__c</field>
+            <operation>equals</operation>
+            <value>Revenue,Expense</value>
+        </filters>
+        <label>GL Accounts Income and Expenses</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>GL Account Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>GL Accounts</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>AcctSeed__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Bank__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Used_in_Expense_Reports__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AcctSeed__Mileage_Account__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>AcctSeed__Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Active__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Bank__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Used_in_Expense_Reports__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>AcctSeed__Mileage_Account__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Active__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Bank__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Used_in_Expense_Reports__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>AcctSeed__Mileage_Account__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AcctSeed__Type__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Active__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Bank__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Used_in_Expense_Reports__c</searchFilterFields>
+        <searchFilterFields>AcctSeed__Mileage_Account__c</searchFilterFields>
+        <searchResultsAdditionalFields>AcctSeed__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Bank__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Used_in_Expense_Reports__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AcctSeed__Mileage_Account__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AcctSeed__Mileage_Acccount_Require_Rate</fullName>
+        <active>true</active>
+        <description>Require a mileage rate if the GL Account is a mileage account</description>
+        <errorConditionFormula>AcctSeed__Mileage_Account__c = true &amp;&amp; ISBLANK( AcctSeed__Mileage_Rate__c )</errorConditionFormula>
+        <errorDisplayField>AcctSeed__Mileage_Rate__c</errorDisplayField>
+        <errorMessage>You must specify a mileage rate for a mileage account.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>GL_Detail_Report</fullName>
+        <availability>online</availability>
+        <description>This shows the transactions for the selected GL account.</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>GL Detail Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O80000004EzQe?pv0={!AcctSeed__GL_Account__c.Id}</url>
+    </webLinks>
+</CustomObject>

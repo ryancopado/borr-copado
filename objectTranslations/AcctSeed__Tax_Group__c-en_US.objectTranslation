@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>AcctSeed__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Roll up summary of all the Tax Rate percentages of the child Tax Rate records. --></help>
+        <label><!-- Combined Tax Rate --></label>
+        <name>AcctSeed__Combined_Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to map the Tax Group to an external system such as the Accounting Seed Avalara VAT Reporting integration. --></help>
+        <label><!-- External Id --></label>
+        <name>AcctSeed__External_Id2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates whether the Payable Line (as well as the entire Payable) should create a reverse-charge accounting transaction. See Avalara VAT Reporting documentation for more information about how reverse-charge accounting works. --></help>
+        <label><!-- Reverse-Charge --></label>
+        <name>AcctSeed__Reverse_Charge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate Count --></label>
+        <name>AcctSeed__Tax_Rate_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Sales for use on a Billing.  Select Purchase for use on a Payable.  Select Sales and Purchase for use on both. --></help>
+        <label><!-- Tax Type --></label>
+        <name>AcctSeed__Tax_Type__c</name>
+        <picklistValues>
+            <masterLabel>Purchase</masterLabel>
+            <translation><!-- Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales and Purchase</masterLabel>
+            <translation><!-- Sales and Purchase --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The External ID field can only be set at the time of creation. It cannot be updated or modified. --></errorMessage>
+        <name>AcctSeed__ExternalIDNotEditable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reverse-Charge is not allowed to be checked if the External ID field is blank. --></errorMessage>
+        <name>AcctSeed__ReverseChargeNotAllowedIfExternalIDBlank</name>
+    </validationRules>
+</CustomObjectTranslation>

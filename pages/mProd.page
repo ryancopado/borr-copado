@@ -1,0 +1,42 @@
+<apex:page standardController="Monthly_Production__c" extensions="prodUpdate">
+    <apex:sectionHeader title="Monthly Production Edit" subtitle="New Monthly Production"/>
+        <apex:form id="form"> 
+            <apex:pageBlock title="Monthly Production Edit" mode="edit" id="block" mode="edit">   
+                <apex:pageBlockButtons >     
+                    <apex:commandButton value="Save"  action="{!saves}"/><apex:commandButton value="Cancel"  action="{!cancel}"/>
+                </apex:pageBlockButtons> 
+                <apex:pageBlockSection columns="2" title="Information" collapsible="false">       
+                    <apex:inputField value="{!Monthly_Production__c.Contract__c}"/>                                                      
+                    <apex:inputField value="{!Monthly_Production__c.Month__c}" required="true"/>
+                 </apex:pageBlockSection>   
+                    <apex:pageBlockSection title="Prodution Update Edit" columns="1">
+                        <apex:pageBlockTable value="{!pus}" var="a" id="rows">
+                            <apex:column ><apex:inputField value="{!a.Inverter__c}" required="true" />
+                                <apex:facet name="header">Inverter</apex:facet>
+                            </apex:column> 
+                            <apex:column ><apex:inputField value="{!a.kWh_lifetime__c}" required="true" />
+                                <apex:facet name="header">kWh</apex:facet>
+                            </apex:column>
+                            <apex:column ><apex:inputField value="{!a.H_Total__c}" />
+                                <apex:facet name="header">Total Hours Running</apex:facet>
+                            </apex:column>
+                            <apex:column ><apex:inputField value="{!a.Temperature__c}" />
+                                <apex:facet name="header">Temperature (degrees F)</apex:facet>
+                            </apex:column>
+                            <apex:column ><apex:inputField value="{!a.Irradiance__c}" />
+                                <apex:facet name="header">Irradiance</apex:facet>
+                            </apex:column>
+                            <apex:column ><apex:inputField value="{!a.Report_Date__c}" required="true"/>
+                                <apex:facet name="header">Date Read</apex:facet>
+                            </apex:column> 
+                        </apex:pageBlockTable>
+                        <apex:actionFunction name="Add" action="{!add}" rerender="rows" status="outStatus"/>
+                        <apex:actionFunction name="Reset" action="{!reset}" rerender="rows" status="outStatus" immediate="true"/>
+                        <apex:pageBlockSection columns="2">
+                            <apex:image value="{!$Resource.plus}" onclick="Add()"/><apex:image value="{!$Resource.minus}" onclick="Reset()" rendered="false"/>
+                            <apex:actionStatus startText="(.................working.................)" stopText="" id="outStatus" onstop="Reset"/> 
+                        </apex:pageBlockSection>
+                 </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

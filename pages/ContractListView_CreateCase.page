@@ -1,0 +1,10 @@
+<apex:page standardController="Contract" recordSetVar="selectedContracts" extensions="ContractListView_CreateCaseCtlExt" tabStyle="Contract" action="{!createCase}">
+	
+	<apex:form >
+		<apex:sectionHeader title="Case Edit" subtitle="New Case"/>
+		<apex:pageMessages />
+		<br/>
+		Click&nbsp;<apex:outputLink value="/apex/Case_ContractListView">here</apex:outputLink> to return to the previous page.
+	</apex:form>
+	
+</apex:page>

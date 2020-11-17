@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Customer_Satisfaction__c$Name</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Project__c</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Reccomend_Borrego__c</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Communication__c</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Customer_Service__c</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Quality_of_Work_Performed__c</field>
+    </columns>
+    <columns>
+        <field>Customer_Satisfaction__c$Use_as_a_Reference__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Op Metrics - Customer Survey</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Customer_Satisfaction__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Customer_Satisfaction__c$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Customer_Satisfaction__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

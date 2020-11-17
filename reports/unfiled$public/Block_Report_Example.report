@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>x</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CHILD_NAME</field>
+        </columns>
+        <format>Summary</format>
+        <name>Billings with Billing Lines block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntityCustomEntity$AcctSeed__Billing__c$AcctSeed__Billing_Line__c</reportType>
+        <scope>team</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>CUST_CREATED_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>x</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CHILD_NAME</field>
+        </columns>
+        <columns>
+            <field>FK_NAME</field>
+        </columns>
+        <format>Summary</format>
+        <name>Billings with Billing Cash Recei block 2</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntityCustomEntity$AcctSeed__Billing__c$AcctSeed__Billing_Cash_Receipt__c@AcctSeed__Billing_Cash_Receipt__c.AcctSeed__Cash_Receipt__c</reportType>
+        <scope>team</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>CUST_CREATED_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>x</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Block Report - Example</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctSeed__Billing__c$AcctSeed__Billing_Line__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

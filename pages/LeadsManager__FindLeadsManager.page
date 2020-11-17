@@ -1,0 +1,7 @@
+<apex:page controller="LeadsManager.FindLeadsManager" action="{!getRelatedLeadManeger}">
+    <apex:outputPanel >
+        No related Leads-Companies found.<BR/>
+        Please check the website or the email address.<BR/>
+        <apex:outputLink value="{!$CurrentPage.parameters.retURL}">Return to previous page.</apex:outputLink>
+    </apex:outputPanel>
+</apex:page>

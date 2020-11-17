@@ -1,0 +1,55 @@
+<template>
+  <template if:true={loaded}>
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+      <h4 class="title slds-text-heading--medium">
+        Mass Create Product Transfer
+      </h4>
+    </div>
+
+    <template if:true={showDetails}>
+      <div
+        style="margin-top: 1%; margin-left: 1%; margin-right: 1%; margin-bottom: 15%;"
+      >
+        <c-product-transfer-detail
+          product-transfer-detail={productTransferDetail}
+        ></c-product-transfer-detail>
+      </div>
+    </template>
+    <template if:true={showLines}>
+      <c-product-transfer-lines
+        record-id={recordId}
+        product-transfer-detail={productTransferDetail}
+      ></c-product-transfer-lines>
+    </template>
+
+    <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+      <lightning-button
+        label="Cancel"
+        onclick={handleCancel}
+        class="slds-m-right_x-small"
+      ></lightning-button>
+
+      <template if:true={showDetails}>
+        <lightning-button
+          label="Save &amp; Next"
+          onclick={saveAndNext}
+        ></lightning-button>
+      </template>
+
+      <template if:true={showLines}>
+        <lightning-button
+          label="Save &amp; Create"
+          class="slds-m-right_x-small"
+          onclick={saveAndCreate}
+        ></lightning-button>
+        <lightning-button
+          label="Save &amp; New"
+          onclick={saveAndNew}
+        ></lightning-button>
+      </template>
+    </div>
+  </template>
+  <template if:false={loaded}>
+    <lightning-spinner alternative-text="loading"></lightning-spinner>
+  </template>
+</template>

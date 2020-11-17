@@ -1,0 +1,513 @@
+<apex:page showHeader="true" sidebar="false" controller="QGMB.vfQueryGuruGrid" extensions="QGMB.remoteUtils">
+    <script src="../../soap/ajax/32.0/connection.js" type="text/javascript"></script>
+    <script src="../../soap/ajax/32.0/apex.js" type="text/javascript"></script>
+    <!-- Note: we are using an older library due to bugs (jiterring in filter menu diplay) in latest V1.11.1 -->
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_ui_1_10_4_custom, '/css/redmond/jquery-ui-1.10.4.custom.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_jqGrid_4_6_0, '/css/ui.jqgrid.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jquery_jqGrid_4_6_0, '/plugins/ui.multiselect.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.select2_3_5_1_zip, '/select2-3.5.1/select2.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jstree, '/themes/default/style.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.jNotify, '/jquery/jNotify.jquery.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Font_Awesome_master, '/Font-Awesome-master/css/font-awesome.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Sweetalert_master, '/sweetalert-master/lib/sweet-alert.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.tipped_4_2_1_light, '/tipped-4.2.1-light/css/tipped/tipped.css')}" />
+    <c:cCommonStyles2 />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_1_11_1_min)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_ui_1_10_4_custom, '/js/jquery-ui-1.10.4.custom.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/plugins/ui.multiselect.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/js/i18n/grid.locale-en.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jquery_jqGrid_4_6_0, '/js/jquery.jqGrid.src.js')}" />
+    <!-- <apex:includeScript value="{!URLFOR($Resource.sugar_1_4_1_custom_min_js)}"  />  -->
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__Lo_Dash_2_4_1)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__select2_3_5_1_zip, '/select2-3.5.1/select2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__vkbeautify)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jNotify, '/jquery/jNotify.jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jsTree, '/jstree.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__sweetalert_master, '/sweetalert-master/lib/sweet-alert.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__tipped_4_2_1_light, '/tipped-4.2.1-light/js/tipped/tipped.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__jsonfn)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__spin_min)}" />
+    <apex:outputPanel id="globalVars">
+        <apex:include pageName="QGMB__variablesController" />
+        <!-- < c :cVariablesController /> This does not work with refreshing variables via fnReadCache()-->
+    </apex:outputPanel>
+    <script type="text/javascript">
+    var activePage = 'dispQueryGuruGrid';
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__gridQG)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__describeLayout)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__describeObj)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__gridScripts)}" />
+    <!-- <apex:includeScript value="{!URLFOR($Resource.listViewScripts)}"  />  why do we need this listViewScripts here? -->
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__exportExcel)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__advancedQuery2)}" />
+    <apex:includeScript value="{!URLFOR($Resource.QGMB__qryMgmtRel)}" />
+    <style type="text/css">
+    .no-close .ui-dialog-titlebar-close {
+        display: none;
+        /*hide close button (X)  from jquery dialogue */
+    }
+    </style>
+    <c:cCommonQG />
+    <script type="text/javascript">
+    $j = jQuery.noConflict();
+
+    // Actually invoke the code to prepare & execute the query that was defined in the caller Button/Link
+    $j(document).ready(function() {
+            DEBUG && console.log('Document ready dispQueryGuruGrid ');
+            DEBUG && console.log('doc ready, allBtnPrmsJSON: ', gridDef.allBtnPrmsJSON); //gridDef was initialized from APEX controller
+            // Ready to start processing/displaying the Grid, after class constructor has ben executed
+            setTimeout(function() { // Create some delay - seems to help avoidig the error with ts.grid.hdiv
+                retrieveDisplayQry(); 
+                DEBUG && console.log('after retrieveDisplayQry');
+            }, 750); // in milliseconds 
+            DEBUG && console.log('after retrieveDisplayQry');
+        }) //.ready()
+    </script>
+    <!--    <apex:sectionHeader title="Contact Search using AccountID" subtitle="Search Contact" /> -->
+    <apex:outputPanel id="panelMsg" layout="block">
+        <apex:pageMessages id="pageMessages" showDetail="true" />
+    </apex:outputPanel>
+    <apex:pageBlock mode="maindetail">
+        <div class="modal">
+            <i class="fa fa-spinner fa-spin fa-lg"></i> <span id="progresstext">Testing text... </span>
+            <div class="meter animate">
+                <span id="progressbar" style="width:0"><span></span></span>
+            </div>
+            <br/>
+            <br/>
+            <i class="fa fa-exclamation-triangle fa-lg"></i> This may take a few minutes. Please be patient.
+            <br/>
+            <br/>
+            <i class="fa fa-info-circle fa-lg"></i> You may see a warning dialog when opening the file in Excel. Unfortunately, this is due to system limitations. Simply click Okay to view the report.
+        </div>
+        <!-- title="My Content" -->
+        <!-- <apex:pageBlockSection title="My Content Section" columns="1" /> -->
+        <apex:form id="qform">
+            <!--Example on how to call a APEX method from JS, via actionFunction (APEX method in the page Controller) . Example: Invoke using a button -->
+            <!--apex:actionFunction name="dispMsg" action="{!dispErr}"  rerender="pageMessages" status="myStatus"-->
+            <apex:actionFunction name="dispMsg" action="{!dispErr}" rerender="panelMsg, pageMessages">
+                <apex:param name="errMsg" value=""></apex:param>
+                <apex:param name="errDetail" value=""></apex:param>
+                <apex:param name="errSeverity" value="INFO"></apex:param>
+            </apex:actionFunction>
+            <!-- param value given when function is invoked -->
+            <apex:actionFunction name="fnReadCacheRL" action="{!fnReadCache}" rerender="globalVars" oncomplete="doPrepUserRL();">
+                <apex:param name="qryName" value=""></apex:param>
+                <apex:param name="qrySource" value=""></apex:param>
+                <apex:param name="enableCache" value=""></apex:param>
+                <apex:param name="advancedQuery" value=""></apex:param>
+                <apex:param name="userDefQueryName" value=""></apex:param>
+            </apex:actionFunction>
+            <!--             <apex:outputPanel id="out">
+                <apex:outputText value="Hello " />
+                <apex:actionStatus startText="requesting..." id="myStatus">
+                    <apex:facet name="stop">{!username}</apex:facet>
+                </apex:actionStatus>
+            </apex:outputPanel> 
+-->
+            <!--             <apex:pageBlockSection title="Search Contact for the Account"
+                collapsible="false" columns="1">
+                <table width="100%">
+                    <tr>
+                        <td><h3>Enter Account Name</h3>
+                            <input type="text" id="query" />&nbsp;&nbsp;&nbsp; 
+                            <input type="button" value="getQuery Test" class="btn" onclick="getQuery();" />&nbsp;&nbsp;&nbsp; 
+                            <input type="button" value="test_describeLayout" class="btn" onclick="test_describeLayout();" />&nbsp;&nbsp;&nbsp; 
+                            <input type="button" value="dispErr" class="btn" onclick="dispErr('789','abc');" />&nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </apex:pageBlocksection> 
+-->
+        </apex:form>
+        <!--        <apex:pageBlockSection title="Contacts in Response"
+            collapsible="false" rendered="true"> -->
+        <div id="response" style="font-size: 16px; width: 300px; font-family: monospace; font-stretch: expanded" />
+        <div class="controlsDiv">
+            Max Records:
+            <select id="qryLimit" style="width:80px; text-align:right; ">
+                <option value="500"> 500</option>
+                <option value="1000"> 1000</option>
+                <option value="2500"> 2500</option>
+                <option value="5000"> 5000</option>
+                <option value="10000">10000</option>
+                <option value="20000">20000</option>
+                <option value="30000">30000</option>
+                <option value="40000">40000</option>
+                <option value="50000">50000</option>
+            </select>
+            <input type="submit" value="Show Results" id="doListViewGrid" style="margin-left: 5px;" />
+            <input type="submit" value="Edit Query" id="advancedQuery" style="display: none;" />
+            <input type="submit" value="Reset" id="resetQuery" style="display: none;" />
+            <i id="eye1" class="fa fa-filter fa-2x"></i>
+            <input type="submit" value="Clear Cache" id="clearCache" style="display: none;" />
+            <input type="submit" value="Manage Custom Queries" id="manageq" />
+            <i id="question1" class="fa fa-question-circle fa-2x"></i><i id="question2" class="fa fa-question-circle fa-2x"></i>
+            <i id="eye1" class="fa fa-filter fa-2x"></i>
+        </div>
+        <div id="saveQueryDialog" title="Save Custom Query" style="display:none">
+            <div class="error"></div>
+            <b>Name:</b>
+            <br/>
+            <input required="required" id="queryName" type="text" maxlength="255" />
+            <br/>
+            <br/>
+            <b>Description:</b>
+            <br/>
+            <textarea maxlength="32000" name="qdescr" id="queryDescription" cols="30" rows="10"></textarea>
+            <br/>
+            <br/>
+            <b>Public: </b>
+            <input type="checkbox" id="queryIsPublic" />
+        </div>
+        <div id="manageQueryDialog" title="Load and Manage Queries" style="display:none">
+            <!-- <div id="userQueryTree"></div> -->
+            <div class="queryContainer toolbar" style="position:fixed; width:750px">
+                <i class="fa fa-search fa-lg"></i>
+                <input type="search" placeholder="Enter search text..." />
+                <select id="baseObjSel">
+                </select>
+                <button id="clearBOS">Clear</button>
+            </div>
+            <div id="queryList"></div>
+        </div>
+        <div class="advancedq" style="display:none; outline: 0;" tabindex="-1">
+            <div class="toolbar">
+                <form action="">
+                    <button id="runq" style="color:#E17009">Run</button>
+                    <button id="closeq">Return to Grid</button>
+                    <button id="clearq">Clear</button>
+                    <!--apex:outputText rendered="{ ! isQryMgmtBeta}"-->
+                    <button id="saveq">Save</button>
+                    <button id="saveasq">Save As</button>
+                    <button id="expertq">Expert Mode</button>
+                    <!--/apex:outputText-->
+                    <i id="toolbartip" class="fa fa-question-circle fa-lg"></i>
+                    <!-- <button id="manageq">Load and Manage</button> -->
+                </form>
+                <div id="queryNameDiv">
+                    <br/>
+                    <b>Custom Query Name: </b><span></span>
+                </div>
+            </div>
+            <div class="accordion">
+                <ul>
+                    <li><a href="#filterByConditions">Filter by Conditions <i class="fa fa-info-circle fa-lg ctrl1Help"></i></a></li>
+                    <li><a href="#resultSortOrder">Change Result Sorting Order <i class="fa fa-info-circle fa-lg ctrl2Help"></i></a></li>
+                    <li><a href="#fieldsToView">Select Fields to View <i class="fa fa-info-circle fa-lg ctrl3Help"></i></a></li>
+                    <li class="expert"><a href="#grpByFlds">Group Results by Fields <i class="fa fa-info-circle fa-lg ctrl4Help"></i></a></li>
+                    <li class="expert"><a href="#advancedConf">Advanced Configuration <i class="fa fa-info-circle fa-lg ctrl5Help"></i></a></li>
+                    <li class="expert"><a href="#viewGenQuery">View Generated Query <i class="fa fa-info-circle fa-lg ctrl6Help"></i></a></li>
+                </ul>
+                <div id="filterByConditions">
+                    <div class="columnContainer">
+                        <div class="column" id="treecolumn">
+                            <h2>Select a field from </h2><span id="treePath"></span>
+                            <br/>
+                            <br/><i class="fa fa-search fa-lg"></i>
+                            <input type="search" placeholder="Search fields" id="jsTreeRow_q" /><span id="fieldCtrlHelp" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                            <br/>
+                            <br/>
+                            <div id="treesContainer">
+                                <div id="jsTreeRow"></div>
+                            </div>
+                            <span id="noResultsFound">No results found!<br/></span>
+                            <br/>
+                            <button id="goBackTree">Go back</button>
+                            <button id="clearField">Clear</button><span id="fieldBtnHelp" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span>
+                        </div>
+                        <div class="column disabled" id="condcolumn">
+                            <h2>Choose an operator</h2>
+                            <br/>
+                            <br/>
+                            <div id="conditionTree"></div>
+                        </div>
+                        <div class="column disabled" id="valcolumn">
+                            <h2>Enter a value</h2>
+                            <br/>
+                            <br/>
+                            <input class="filterValue" type="text" />
+                            <input class="filterValue" type="checkbox" style="display:none" />
+                            <input class="filterValue" id="spinner" style="display:none" />
+                            <input class="filterValue" id="datepicker" style="display:none" />
+                            <div id="datepickerDiv" style="display:none">
+                                <br/> Or select a special date:
+                                <br/>
+                                <br/>
+                                <select class="specialDate">
+                                    <option></option>
+                                    <option value="YESTERDAY">Yesterday</option>
+                                    <option value="TODAY">Today</option>
+                                    <option value="LAST_WEEK">Last Week</option>
+                                    <option value="THIS_WEEK">This Week</option>
+                                    <option value="NEXT_WEEK">Next Week</option>
+                                    <option value="LAST_MONTH">Last Month</option>
+                                    <option value="THIS_MONTH">This Month</option>
+                                    <option value="NEXT_MONTH">Next Month</option>
+                                    <option value="LAST_90_DAYS">Last 90 Days</option>
+                                    <option value="NEXT_90_DAYS">Next 90 Days</option>
+                                    <option value="LAST_N_DAYS">Last N Days</option>
+                                    <option value="NEXT_N_DAYS">Next N Days</option>
+                                    <option value="LAST_QUARTER">Last Quarter</option>
+                                    <option value="THIS_QUARTER">This Quarter</option>
+                                    <option value="NEXT_QUARTER">Next Quarter</option>
+                                    <option value="LAST_N_QUARTERS">Last N Quarters</option>
+                                    <option value="NEXT_N_QUARTERS">Next N Quarters</option>
+                                    <option value="LAST_YEAR">Last Year</option>
+                                    <option value="THIS_YEAR">This Year</option>
+                                    <option value="NEXT_YEAR">Next Year</option>
+                                    <option value="LAST_N_YEARS">Last N Years</option>
+                                    <option value="NEXT_N_YEARS">Next N Years</option>
+                                    <option value="LAST_FISCAL_QUARTER">Last Fiscal Quarter</option>
+                                    <option value="THIS_FISCAL_QUARTER">This Fiscal Quarter</option>
+                                    <option value="NEXT_FISCAL_QUARTER">Next Fiscal Quarter</option>
+                                    <option value="LAST_N_FISCAL_QUARTERS">Last N Fiscal Quarters</option>
+                                    <option value="NEXT_N_FISCAL_QUARTERS">Next N Fiscal Quarters</option>
+                                    <option value="LAST_FISCAL_YEAR">Last Fiscal Year</option>
+                                    <option value="THIS_FISCAL_YEAR">This Fiscal Year</option>
+                                    <option value="NEXT_FISCAL_YEAR">Next Fiscal Year</option>
+                                    <option value="LAST_N_FISCAL_YEARS">Last N Fiscal Years</option>
+                                    <option value="NEXT_N_FISCAL_YEARS">Next N Fiscal Years</option>
+                                </select>
+                                <br/>
+                                <br/>
+                                <div id="N_input" style="display:none">
+                                    Enter a number:
+                                    <br/>
+                                    <input type="number" style="width:100px" />
+                                </div>
+                            </div>
+                            <div class="filterValue picklist">
+                                <input type="hidden" id="picklist" />
+                            </div>
+                            <br/>
+                            <br/>
+                            <span id="filterNote"><i class="fa fa-lg fa-bullhorn"></i>
+                                <span id="filterType"></span></span>
+                        </div>
+                        <input type="button" id="addCondition" value="Add Condition" style="float:right;margin-bottom:10px" />
+                        <br/>
+                        <br/>
+                    </div>
+                    <div style="clear:both"></div>
+                    <!-- <div style="clear:both"></div><br/> -->
+                    <div style="height:1px;border-top:1px solid #D9DFE2;"></div>
+                    <br/>
+                    <h2>Your conditions</h2><i id="condHelp" class="fa fa-question-circle fa-lg"></i>
+                    <br/>
+                    <br/>
+                    <div class="conditions">
+                        <div class="table">
+                            <div class="item">
+                                <div class="num">#</div>
+                                <div class="fieldname">Field Name</div>
+                                <div class="operator">Operator</div>
+                                <div class="value">Value</div>
+                                <div class="actions">Actions</div>
+                            </div>
+                        </div>
+                        <div style="display:none" class="noconds">No added conditions yet. Create one above!</div>
+                    </div>
+                    <br/>
+                    <div class="condFilterSpan"><span class="condText">Condition Filtering Pattern</span><i id="filterHelp" class="fa fa-question-circle fa-lg"></i>
+                        <input type="text" id="conditionFormat" disabled="disabled" />
+                        <button id="editSaveCondPtrn">Edit</button>
+                        <button id="cancelPtrnEdit" style="display:none">Cancel</button>
+                    </div>
+                </div>
+                <div id="resultSortOrder">
+                    <div class="columnContainer2">
+                        <div class="column2" id="treecolumn2">
+                            <h2>Select a field from </h2><span id="treePath2"></span>
+                            <br/>
+                            <br/>
+                            <i class="fa fa-search fa-lg"></i>
+                            <input type="search" placeholder="Search fields" id="jsTreeRow_q2" /> <span id="fieldCtrlHelp2" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                            <br/>
+                            <br/>
+                            <div id="treesContainer2">
+                                <div id="2jsTreeRow"></div>
+                            </div>
+                            <span id="noResultsFound2">No results found!<br/></span>
+                            <br/>
+                            <button id="goBackTree2">Go back</button>
+                            <button id="clearField2">Clear</button>
+                            <!-- <span id="fieldBtnHelp2" class="help" style="top:7px">Help for these buttons<i class="fa fa-question-circle fa-lg"></i></span> -->
+                        </div>
+                        <div class="column2 disabled" id="condcolumn2">
+                            <form>
+                                <!-- order by asc/desc -->
+                                <!-- nulls first/last -->
+                                <h2>Configure</h2>
+                                <br/>
+                                <br/>
+                                <h3>Sort Order</h3>
+                                <br/>
+                                <input type="radio" required="required" name="sortorder" id="asc" value="asc" />
+                                <label for="asc">Ascending</label>
+                                <br/>
+                                <input type="radio" required="required" name="sortorder" id="desc" value="desc" />
+                                <label for="desc">Descending</label>
+                                <br/>
+                                <br/>
+                                <h3>Empty Field Location</h3>
+                                <br/>
+                                <input type="radio" name="null_loc" id="first" value="first" />
+                                <label for="first">Beginning</label>
+                                <br/>
+                                <input type="radio" name="null_loc" id="last" value="last" />
+                                <label for="last">End</label>
+                                <br/>
+                                <br/>
+                                <input type="submit" id="addCondition2" value="Add Order" />
+                            </form>
+                        </div>
+                        <div class="column2 disabled" id="valcolumn2">
+                            <h2>Your sort order</h2><i id="sortHelp" class="fa fa-question-circle fa-lg"></i> <button id="sortOrderClear">Clear</button>
+                            <br/>
+                            <br/>
+                            <div class="droppable ui-state-default">
+                                <i class="fa fa-trash fa-lg"></i>
+                            </div>
+                            <ul id="sortable">
+                                <li class="ui-state-default" id="defaultsortable">No fields added!</li>
+                            </ul>
+                            <div class="droppable ui-state-default">
+                                <i class="fa fa-trash fa-lg"></i>
+                            </div>
+                            <!--    <div id="droppable" class="ui-widget-header">
+                         <p>Drop here</p>
+                         </div> -->
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div id="fieldsToView">
+                    <div class="columnContainer3">
+                        <div class="column3" id="treecolumn3">
+                            <h2>Select a field from </h2><span id="treePath3"></span>
+                            <br/>
+                            <br/>
+                            <i class="fa fa-search fa-lg"></i>
+                            <input type="search" placeholder="Search fields" id="jsTreeRow_q3" /> <span id="fieldCtrlHelp3" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                            <br/>
+                            <br/>
+                            <div id="treesContainer3">
+                                <div id="3jsTreeRow"></div>
+                            </div>
+                            <span id="noResultsFound3">No results found!<br/></span>
+                            <br/>
+                            <button id="goBackTree3">Go back</button>
+                            <button id="clearField3">Clear</button>
+                        </div>
+                        <div class="column3 disabled" id="valcolumn3">
+                            <h2>Your selected fields</h2><i id="sortHelp3" class="fa fa-question-circle fa-lg"></i> <button id="selFldsClear">Clear</button>
+                            <br/>
+                            <br/>
+                            <div class="droppable3 ui-state-default">
+                                <i class="fa fa-trash fa-lg"></i>
+                            </div>
+                            <ul id="sortable3">
+                                <li class="ui-state-default" id="defaultsortable3">No fields added!</li>
+                            </ul>
+                            <div class="droppable3 ui-state-default">
+                                <i class="fa fa-trash fa-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <apex:outputText rendered="{!isBetaAdvancedQuery}">
+                    <div id="grpByFlds" class="expert">
+                        <div class="columnContainer4">
+                            <div class="column4" id="treecolumn4">
+                                <h2>Select a field from </h2><span id="treePath4"></span>
+                                <br/>
+                                <br/>
+                                <i class="fa fa-search fa-lg"></i>
+                                <input type="search" placeholder="Search fields" id="jsTreeRow_q4" /> <span id="fieldCtrlHelp4" class="help" style="top:4px">Help for this control<i class="fa fa-question-circle fa-lg"></i></span>
+                                <br/>
+                                <br/>
+                                <div id="treesContainer4">
+                                    <div id="4jsTreeRow"></div>
+                                </div>
+                                <span id="noResultsFound4">No results found!<br/></span>
+                                <br/>
+                                <button id="goBackTree4">Go back</button>
+                                <button id="clearField4">Clear</button>
+                            </div>
+                            <div class="column4 disabled" id="valcolumn4">
+                                <h2>Your selected fields</h2><i id="sortHelp4" class="fa fa-question-circle fa-lg"></i> <button id="grpFldsClr">Clear</button>
+                                <br/>
+                                <br/>
+                                <div class="droppable4 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                                <ul id="sortable4">
+                                    <li class="ui-state-default" id="defaultsortable3">No fields added!</li>
+                                </ul>
+                                <div class="droppable4 ui-state-default">
+                                    <i class="fa fa-trash fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <input type="radio" name="grouping" id="regularGroup" checked="checked" selected="selected" />
+                        <label for="regularGroup">Don't Show Subtotals</label>
+                        <br/>
+                        <input type="radio" name="grouping" id="rollup" />
+                        <label for="rollup">Show Hierarchial Subtotals</label>
+                        <br/>
+                        <input type="radio" name="grouping" id="cube" />
+                        <label for="cube">Show Combinatorical Subtotals</label>
+                        <br/>
+                        <span id="grpOptHelp" class="help" style="top:4px; float:none"><i class="fa fa-info-circle fa-lg"></i> About these options</span>
+                    </div>
+                </apex:outputText>
+                <div id="advancedConf" class="expert">
+                    Query Scope:
+                    <select name="queryScope" id="queryScope">
+                        <option value="" selected="">Default</option>
+                        <option value="Everything">Everything</option>
+                        <option value="Mine">Mine</option>
+                        <option value="Queue">Queue</option>
+                        <option value="Delegated">Delegated</option>
+                        <option value="MyTerritory">My Territory</option>
+                        <option value="MyTeamTerritory">My Team Territory</option>
+                        <option value="Team">Team</option>
+                    </select> <i id="scopeTooltip" class="fa fa-question"></i>
+                    <br/>
+                    <label for="queryAllRows">Query All Rows:</label>
+                    <input type="checkbox" id="queryAllRows" /> <i id='queryAllTooltip' class="fa fa-question"></i>
+                    <br/>
+                    <span class="queryAllOptions">
+                            <span style="color:gray; font-size:10px"><i class="fa fa-warning"></i> Filtering by deleted or archived records is not always available and may be automatically disabled.</span>
+                    <br/>
+                    <label for="viewDelRecs">Display Deleted Records:</label>
+                    <input checked="checked" type="checkbox" id="viewDelRecs" /> <i id="delTooltip" class="fa fa-question"></i>
+                    <br/>
+                    <label for="viewArcRecs">Display Archived Records:</label>
+                    <input checked="checked" type="checkbox" id="viewArcRecs" /> <i id="arcTooltip" class="fa fa-question"></i>
+                    <br/>
+                    <label for="viewRegRecs">Display Standard Records:</label>
+                    <input checked="checked" type="checkbox" id="viewRegRecs" /> <i id="stdTooltip" class="fa fa-question"></i>
+                    </span>
+                </div>
+                <div id="viewGenQuery" class="expert">
+                    <textarea id="generatedQuery" readonly="readonly"></textarea>
+                    <button id="selectQuery">Select All</button>
+                </div>
+            </div>
+        </div>
+        <div id="gridContainer">
+            <table id="pdata"></table>
+            <div id="gridPager"></div>
+        </div>
+        <!-- </apex:pageBlocksection> -->
+        <c:cGridFooter isBetaExcel="{!isBetaExcel}" />
+        <!-- <c:cGridFooter isBetaExcel="true" /> -->
+    </apex:pageblock>
+    <!-- below is used as placeholder for Excel Export function-->
+    <iframe id="txtArea1" style="display:none"></iframe>
+</apex:page>

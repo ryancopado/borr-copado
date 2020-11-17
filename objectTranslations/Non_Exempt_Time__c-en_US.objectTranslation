@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Non-Exempt Time</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Non-Exempt Time</value>
+    </caseValues>
+    <fields>
+        <help><!-- by checking this box you are stating that you have read and understand the field below &quot;Disclaimer&quot;.  This is visible only upon saving the record. --></help>
+        <label><!-- Disclaimer Acknowledgment --></label>
+        <name>Disclaimer_Acknowledgment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclaimer --></label>
+        <name>Disclaimer__c</name>
+    </fields>
+    <fields>
+        <help><!-- pulls employee&apos;s department from their user profile. --></help>
+        <label><!-- Employee Department --></label>
+        <name>EmployeeDepartment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Name --></label>
+        <name>Employee_Name__c</name>
+        <relationshipLabel><!-- Non-Exempt Time --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Friday Break --></label>
+        <name>Friday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday End Time --></label>
+        <name>Friday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Friday Holiday Total --></label>
+        <name>Friday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Friday Lunch Taken --></label>
+        <name>Friday_Lunch_Taken__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Friday OT Hours Worked --></label>
+        <name>Friday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Friday PW Hours Worked --></label>
+        <name>Friday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Friday Shift Worked --></label>
+        <name>Friday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Friday Standard Hours Worked --></label>
+        <name>Friday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Start Time --></label>
+        <name>Friday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Friday Total Hours Worked --></label>
+        <name>Friday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Friday Vacation/Sick Total --></label>
+        <name>Friday_Vacation_Sick_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- checks off via workflow when HR Manager approves time entry --></help>
+        <label><!-- HR Approved --></label>
+        <name>HR_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- looks to see if any days of the week include hours &gt; 8 if employee works in Southern or Northern CA, or total hours per week &gt; 40 for other regions --></help>
+        <label><!-- Has Overtime been reached? --></label>
+        <name>Has_Overtime_been_reached__c</name>
+    </fields>
+    <fields>
+        <help><!-- box automatically is checked if any of the days of week total hours are greater than 8, or if the total hours for the week exceed 40. --></help>
+        <label><!-- Includes Overtime --></label>
+        <name>Includes_Overtime__c</name>
+    </fields>
+    <fields>
+        <help><!-- checks off via a workflow when manager approves time entry --></help>
+        <label><!-- Manager Approved --></label>
+        <name>Manager_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Monday Break --></label>
+        <name>Monday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday End Time --></label>
+        <name>Monday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Monday Holiday Total --></label>
+        <name>Monday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours.  Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Monday Lunch --></label>
+        <name>Monday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Monday OT Hours Worked --></label>
+        <name>Monday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Monday PW Hours Worked --></label>
+        <name>Monday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Monday Shift Worked --></label>
+        <name>Monday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Monday Standard Hours Worked --></label>
+        <name>Monday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Start Time --></label>
+        <name>Monday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Monday Total Hours Worked --></label>
+        <name>Monday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Monday Vacation/Sick Total --></label>
+        <name>Monday_Vacation_Sick_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Must say &quot;YES&quot; to be able to submit for approval. Make sure to check check off the Disclaimer Acknowledgment checkbox before submitting for approval. --></help>
+        <label><!-- OK to Submit? --></label>
+        <name>OK_to_Submit__c</name>
+    </fields>
+    <fields>
+        <help><!-- If CA Employee, sums all hours per day worked over 8 hours for each day. If not CA Employee, sums hours for week over 40. --></help>
+        <label><!-- OT Hours for Week --></label>
+        <name>OT_Hours_for_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Saturday Break --></label>
+        <name>Saturday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday End Time --></label>
+        <name>Saturday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Saturday Holiday Total --></label>
+        <name>Saturday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Saturday Lunch --></label>
+        <name>Saturday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Saturday OT Hours Worked --></label>
+        <name>Saturday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Saturday PW Hours Worked --></label>
+        <name>Saturday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Saturday Shift Worked --></label>
+        <name>Saturday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Saturday Standard Hours Worked --></label>
+        <name>Saturday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Start Time --></label>
+        <name>Saturday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Saturday Total Hours Worked --></label>
+        <name>Saturday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Saturday Vacation/Sick Total --></label>
+        <name>Saturday_Vacation_Sick_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Sunday Break --></label>
+        <name>Sunday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday End Time --></label>
+        <name>Sunday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Sunday Holiday Total --></label>
+        <name>Sunday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Sunday Lunch --></label>
+        <name>Sunday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Sunday OT Hours Worked --></label>
+        <name>Sunday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Sunday PW Hours Worked --></label>
+        <name>Sunday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Sunday Shift Worked --></label>
+        <name>Sunday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Sunday Standard Hours Worked --></label>
+        <name>Sunday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Start Time --></label>
+        <name>Sunday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Sunday Total Hours Worked --></label>
+        <name>Sunday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Sunday Vacation/Sick Total --></label>
+        <name>Sunday_Vacation_Sick_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Thursday Break --></label>
+        <name>Thursday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday End Time --></label>
+        <name>Thursday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Thursday Holiday Total --></label>
+        <name>Thursday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Thursday Lunch --></label>
+        <name>Thursday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Thursday OT Hours Worked --></label>
+        <name>Thursday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Thursday PW Hours Worked --></label>
+        <name>Thursday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Thursday Shift Worked --></label>
+        <name>Thursday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Thursday Standard Hours Worked --></label>
+        <name>Thursday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Start Time --></label>
+        <name>Thursday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Thursday Total Hours Worked --></label>
+        <name>Thursday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Thursday Vacation/Sick Total --></label>
+        <name>Thursday_Vacation_Sick_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- using looking glass to select the correct Time Card week in which you are entering time for --></help>
+        <label><!-- Time Card Week --></label>
+        <name>Time_Card_Week__c</name>
+        <relationshipLabel><!-- Non-Exempt Time --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Sums up all Holiday Hours for the Week --></help>
+        <label><!-- Total Holiday Hours --></label>
+        <name>TotalHolidayHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates total hours worked for the week based on values entered per day in sections below, total work hours + total holiday hours --></help>
+        <label><!-- Total Hours for Week --></label>
+        <name>TotalHoursforWeek__c</name>
+    </fields>
+    <fields>
+        <help><!-- total non-holiday hours for the entire time period/week --></help>
+        <label><!-- Total Work Hours --></label>
+        <name>TotalWorkHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- calculates total hours worked for the week based on values entered per day in sections below --></help>
+        <label><!-- Total Hours for Week --></label>
+        <name>Total_Hours_for_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sums up the Vacation/Sick hours for each day in the time card week time period --></help>
+        <label><!-- Total Vacation/Sick Hours for Week --></label>
+        <name>Total_Vacation_Sick_Hours_for_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Tuesday Break --></label>
+        <name>Tuesday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday End Time --></label>
+        <name>Tuesday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Tuesday Holiday Total --></label>
+        <name>Tuesday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Tuesday Lunch --></label>
+        <name>Tuesday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Tuesday OT Hours Worked --></label>
+        <name>Tuesday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Tuesday PW Hours Worked --></label>
+        <name>Tuesday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Tuesday Shift Worked --></label>
+        <name>Tuesday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Tuesday Standard Hours Worked --></label>
+        <name>Tuesday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Start Time --></label>
+        <name>Tuesday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Tuesday Total Hours Worked --></label>
+        <name>Tuesday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Tuesday Vacation/Sick Total --></label>
+        <name>Tuesday_Vacation_Sick__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits. --></help>
+        <label><!-- Wednesday Break --></label>
+        <name>Wednesday_Break__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday End Time --></label>
+        <name>Wednesday_End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- total holiday hours for this day rolled up from related service visits --></help>
+        <label><!-- Wednesday Holiday Total --></label>
+        <name>Wednesday_Holiday_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00. --></help>
+        <label><!-- Wednesday Lunch --></label>
+        <name>Wednesday_Lunch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Daily OT Hours worked, for CA only --></help>
+        <label><!-- Wednesday OT Hours Worked --></label>
+        <name>Wednesday_OT_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup of PW Hours listed on the SV for this day --></help>
+        <label><!-- Wednesday PW Hours Worked --></label>
+        <name>Wednesday_PW_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- entry should include time day started and time day ended, such as 8:30-5:30 --></help>
+        <label><!-- Wednesday Shift Worked --></label>
+        <name>Wednesday_Shift_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Non- PW hours worked --></help>
+        <label><!-- Wednesday Standard Hours Worked --></label>
+        <name>Wednesday_Standard_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Start Time --></label>
+        <name>Wednesday_Start_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8 --></help>
+        <label><!-- Wednesday Total Hours Worked --></label>
+        <name>Wednesday_Total_Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Vacation or Sick hours for this day rolled up from related Admin Service Visits. --></help>
+        <label><!-- Wednesday Vacation/Sick Total --></label>
+        <name>Wednesday_Vacation_Sick_Total__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You need to save your record to view the disclaimer field before you check off your acknowledgement --></errorMessage>
+        <name>disclaimer</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Recalculate_NonExempt_Timecard --></label>
+        <name>Recalculate_NonExempt_Timecard</name>
+    </webLinks>
+</CustomObjectTranslation>

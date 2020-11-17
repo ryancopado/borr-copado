@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- This is the amount field mapping.It allows customers to set which field they use as the amount (In some cases the standard opportunity amount field is not the one used) --></help>
+        <label><!-- Amount Field Mapping --></label>
+        <name>DMAPP__Amount_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the number (in minutes) controlling the regularity of chatter notifications as users update their Dealmaker Opportunities. No more than 1 chatter notification can be generated within this time duration for each type of update on an opportunity. --></help>
+        <label><!-- Chatter Snooze Time --></label>
+        <name>DMAPP__Chatter_Snooze_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field allows us to specify  query where clause which restricts which opportunities are considered by the Create Shadow Opp Bulk Job. By default the batch job creates shadow opportunities for all open opportunities , if shadow opportunity creation is --></help>
+        <label><!-- Bulk enable - advanced query settings --></label>
+        <name>DMAPP__Create_Shadow_Opp_Job_Query_Restriction__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field controls whether or not Dealmaker Triggers will create a &apos;shadow&apos; Dealmaker Opportunity during the execution on an Opportunity Insert. If checked the Dealmaker triggers will automatically create a shadow opportunity when the opportunity is crea --></help>
+        <label><!-- Auto enable Dealmaker for new Opps --></label>
+        <name>DMAPP__Create_Shadow_Opp_during_Opp_Upsert__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field affects the behavior of the batch job which is run after install to create Dealmaker shadow opportunities. If this flag is checked the batch job will only create shadow opportunities for open opportunities as opposed to for open opportunities a --></help>
+        <label><!-- Bulk enable Dealmaker for open Opps only --></label>
+        <name>DMAPP__Create_Shadow_Opp_for_Open_Only__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to disable Chatter updates for Dealmaker pages. --></help>
+        <label><!-- Salesforce Chatter Disabled --></label>
+        <name>DMAPP__Disable_Chatter__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting allows an admin to disable the ability to click to dial from the Mobile Political Map and Mobile Smart Call Planner contact detail pages --></help>
+        <label><!-- Disable Click to Dial On Contact Detail --></label>
+        <name>DMAPP__Disable_Click_to_Dial_On_Contact_Detail__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting allows an admin to disable the ability to click to email from the Mobile Political Map and Mobile Smart Call Planner contact detail pages --></help>
+        <label><!-- Disable Click to Email on Contact Detail --></label>
+        <name>DMAPP__Disable_Click_to_Email_on_Contact_Detail__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting allows us to selective disable Dealmaker triggers should that be required. The value of this field should be a comma separated list of trigger names. This field should only be used by TAS group administrators --></help>
+        <label><!-- Disabled Trigger List --></label>
+        <name>DMAPP__Disabled_Trigger_List__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable the Contact Profile Image --></help>
+        <label><!-- Enable Contact Profile Image --></label>
+        <name>DMAPP__Enable_Contact_Profile_Image__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting controls whether or not Dealmaker will stamp its model objects with an external DealmakerID which facilitates migration. --></help>
+        <label><!-- Enable Dealmaker ID Stamping --></label>
+        <name>DMAPP__Enable_Dealmaker_ID_Stamping__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable Field Level Security --></help>
+        <label><!-- Enable FLS --></label>
+        <name>DMAPP__Enable_FLS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to enable Max for Dealmaker opportunities. --></help>
+        <label><!-- Enable MAX in SOM --></label>
+        <name>DMAPP__Enable_MAX_in_SOM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable New Chatter (using SF widget) --></help>
+        <label><!-- Use Dealmaker Chatter Inline --></label>
+        <name>DMAPP__Enable_New_Chatter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Team View+ Coaching --></label>
+        <name>DMAPP__Enable_Team_View_Plus_Coaching__c</name>
+    </fields>
+    <fields>
+        <help><!-- This settings contains a configurable url for the altify feedback form --></help>
+        <label><!-- Feedback Form Url --></label>
+        <name>DMAPP__Feedback_Form_Url__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify the base URL for the help links --></help>
+        <label><!-- Help URL base --></label>
+        <name>DMAPP__Help_URL_base__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is QA Test Org --></label>
+        <name>DMAPP__Is_QA_Test_Org__c</name>
+    </fields>
+    <fields>
+        <help><!-- The URL for Max insights in Smart Opportunity Manager. It must include the parameters {{objectId}} and {{insightType}} as shown here:
+
+/apex/insights?objectid={{objectId}}#/view/{{insightType}} --></help>
+        <label><!-- MAX SOM URL --></label>
+        <name>DMAPP__MAX_SOM_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Record Type Name --></label>
+        <name>DMAPP__Master_Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mock Today --></label>
+        <name>DMAPP__Mock_Today__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is currently being used to control the behavior when Dealmaker makes updates to the Salesforce opportunity. This setting should be left unticked unless otherwise instructed by your TAS Group engagement manager. --></help>
+        <label><!-- Run_Opportunity_Update_Without_Sharing --></label>
+        <name>DMAPP__Run_Opportunity_Update_Without_Sharing__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting uses Apex Controllers to invoke the Reports / Analytics API rather than REST API calls.  In professional edition orgs the REST API is not accessible. --></help>
+        <label><!-- Temp1 --></label>
+        <name>DMAPP__Temp1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario
+
+Check to disable value map in AM. --></help>
+        <label><!-- Temp2 --></label>
+        <name>DMAPP__Temp2__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is currently being used to control the behavior when Dealmaker makes updates to the Salesforce opportunity. This setting should be left unticked unless otherwise instructed by your TAS Group engagement manager. --></help>
+        <label><!-- Temp3 --></label>
+        <name>DMAPP__Temp3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr1 --></label>
+        <name>DMAPP__TempStr1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr2 --></label>
+        <name>DMAPP__TempStr2__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting uses Apex Controllers to invoke the Reports / Analytics API rather than REST API calls.  In professional edition orgs the REST API is not accessible. --></help>
+        <label><!-- Use Apex API for Reports --></label>
+        <name>DMAPP__Use_Apex_API_for_Reports__c</name>
+    </fields>
+</CustomObjectTranslation>

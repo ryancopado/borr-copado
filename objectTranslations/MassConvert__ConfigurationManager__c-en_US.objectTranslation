@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Accounts Auto Convert Condition --></label>
+        <name>MassConvert__AccountsAutoConvertCondition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accounts Filter Criteria --></label>
+        <name>MassConvert__AccountsFilterCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Accounts Matching Criteria as Value --></label>
+        <name>MassConvert__AccountsMatchingCriteriaContainsValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Always Create New Account --></label>
+        <name>MassConvert__AlwaysCreateNewAccount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Example Text : Status = &apos;Contacted&apos; And LeadSource = &apos;Purchased List&apos; --></help>
+        <label><!-- Leads Auto Convert Condition --></label>
+        <name>MassConvert__AutoConvertCondition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Size --></label>
+        <name>MassConvert__BatchSize__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use 1 condition at a time:
+1. where Account.Name in: Lead.Name OR Account.ExternalId__c in :Lead.ExternalId__c
+2. where Account.Name in: Lead.Name AND Account.ExternalId__c in :Lead.ExternalId__c --></help>
+        <label><!-- Accounts Matching Criteria --></label>
+        <name>MassConvert__CustomCriteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Custom Criteria to Identify Existing Account --></help>
+        <label><!-- Enable Custom Account Matching Criteria --></label>
+        <name>MassConvert__EnableCustomCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Person Accounts --></label>
+        <name>MassConvert__EnablePersonAccounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generic Domains --></label>
+        <name>MassConvert__GenericDomains__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Opportunity --></label>
+        <name>MassConvert__IsCreateOpportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- License Key --></label>
+        <name>MassConvert__Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for identifying matching leads when auto-converting leads based on a newly created account --></help>
+        <label><!-- Leads Matching Criteria --></label>
+        <name>MassConvert__LeadsMatchingCriteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Settings --></label>
+        <name>MassConvert__RecordTypeSettings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Trigger On Accounts --></label>
+        <name>MassConvert__TriggerOnAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Trigger On Leads --></label>
+        <name>MassConvert__TriggerOnLead__c</name>
+    </fields>
+</CustomObjectTranslation>

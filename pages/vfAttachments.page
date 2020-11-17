@@ -1,0 +1,71 @@
+<apex:page standardController="PSD__c" extensions="clsPSDAttachments">
+  <apex:detail relatedList="true"/> 
+  <apex:form >
+
+    <script>
+    
+    function DeleteAttachment(ID){
+    
+      var answer = confirm("Are You sure?")
+        if (answer){
+              DeleteAttachment(ID);
+        }
+    
+    }
+    
+    
+    </script>
+
+    <apex:actionFunction name="DeleteAttachment" action="{!DeleteAttachment}" reRender="MsgSection">    
+         <apex:param name="AttachmentID" assignTo="{!AttachmentID}" value="" />
+    </apex:actionFunction>
+
+     <apex:pageblock >
+     
+         <apex:pageMessages id="MsgSection"></apex:pageMessages>
+          
+          <apex:pageBlockButtons location="Top" >
+          
+          <apex:commandButton action="{!AttachNewFile}" value="Attach File"  />
+          
+          </apex:pageBlockButtons>
+
+          <apex:pageblockSection columns="1"> 
+          
+                   
+              <apex:pageBlockTable value="{!Attachments}" Var="Att">
+              
+                  <apex:column headerValue="Action">
+                  
+                  <apex:outputLink target="_Top" value="/apex/vfEditAttachMent">                      
+                      Edit
+                      <apex:param name="Id" value="{!Att.Attachment.id}"/>
+                  </apex:outputLink>&nbsp;|&nbsp;
+                  <apex:outputLink target="_Top" value="/apex/vfAttachmentView">
+                      View
+                      <apex:param name="Id" value="{!Att.Attachment.id}"/>                      
+                  </apex:outputLink>&nbsp;|&nbsp;
+                  <apex:commandLink onclick="return DeleteAttachment({!Att.Attachment.id});">
+                      Del
+                  </apex:commandLink>
+                  
+                  </apex:column>
+              
+                  <apex:column headerValue="File Name">
+                      <apex:outputLink target="_Top" value="/{!Att.Attachment.id}">
+                          {!Att.Attachment.Name}
+                      </apex:outputLink>
+                  </apex:column>
+        <!--          <apex:column value="{!Att.Attachment.Type}" headerValue="Type"/>-->
+                  <apex:column value="{!Att.Attachment.BodyLength}" headerValue="Size"/>
+                  <apex:column value="{!Att.FileAttachment.WorkDesign__c }" headerValue="Working Design"/>  
+                  <apex:column value="{!Att.Attachment.LastModifiedDate}" headerValue="Last Modified"/>  
+                  <apex:column value="{!Att.Attachment.CreatedById}" headerValue="Created By"/> 
+              </apex:pageBlockTable>
+          
+          </apex:pageblockSection>
+      </apex:pageblock>
+      
+  </apex:form>
+  
+</apex:page>

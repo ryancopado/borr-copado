@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Filtered Look up to Salesforce account based on Accounting Status Field. --></help>
+        <label><!-- Customer --></label>
+        <name>AcctSeed__Account__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to specify accounting period for financial reporting. Accounting period must have a value of Open. --></help>
+        <label><!-- Accounting  Period --></label>
+        <name>AcctSeed__Accounting_Period__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Accounting Year --></label>
+        <name>AcctSeed__Accounting_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of money received in a check or electronic deposit. --></help>
+        <label><!-- Amount --></label>
+        <name>AcctSeed__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of the cash receipt that has been specifically allocated to customer billings. --></help>
+        <label><!-- Applied Amount --></label>
+        <name>AcctSeed__Applied_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cash Receipt Amount minus Applied amount. --></help>
+        <label><!-- Balance --></label>
+        <name>AcctSeed__Balance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upon posting a debit entry will be made to this account and a corresponding credit entry will be made to the AR Control account set in the Accounting Settings Tab. --></help>
+        <label><!-- Bank Account --></label>
+        <name>AcctSeed__Bank_Account__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Deposit --></label>
+        <name>AcctSeed__Bank_Deposit__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Id --></label>
+        <name>AcctSeed__Bank_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated bank reconciliation this cash receipt was cleared. --></help>
+        <label><!-- Bank Reconciliation --></label>
+        <name>AcctSeed__Bank_Reconciliation__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bank Transaction --></label>
+        <name>AcctSeed__Bank_Transaction__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to categorize records in Cash Flow Statement. --></help>
+        <label><!-- Cash Flow Category --></label>
+        <name>AcctSeed__Cash_Flow_Category__c</name>
+        <relationshipLabel><!-- Cash Receipts (Cash Flow Category) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date this cash receipt was cleared in the associated bank reconciliation. --></help>
+        <label><!-- Cleared Date --></label>
+        <name>AcctSeed__Cleared_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the purpose is Customer Receipt or Customer Prepayment then the credit will always be to the AR Control GL Account. For purposes other than these two the user can elect which GL account to credit when posting here. --></help>
+        <label><!-- Credit GL Account --></label>
+        <name>AcctSeed__Credit_GL_Account__c</name>
+        <relationshipLabel><!-- Cash Receipts (Credit GL Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The currency conversion rate for the currency. --></help>
+        <label><!-- Currency Conversion Rate --></label>
+        <name>AcctSeed__Currency_Conversion_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>AcctSeed__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Branch</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of GL Account Variable 1. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_1__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Business Unit</label>
+        <lookupFilter>
+            <errorMessage><!-- The Accounting Variable must have a Type of GL Account Variable 2. --></errorMessage>
+        </lookupFilter>
+        <name>AcctSeed__GL_Account_Variable_2__c</name>
+        <relationshipLabel><!-- Cash Receipts (GL Account Variable 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label>Team</label>
+        <name>AcctSeed__GL_Account_Variable_3__c</name>
+        <relationshipLabel><!-- Cash Receipts (GL Account Variable 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Traditional Sub-General Ledger account segment used to report on divisions, departments, geographies, cost centers, profit centers or business units. --></help>
+        <label><!-- GL Variable 4 --></label>
+        <name>AcctSeed__GL_Account_Variable_4__c</name>
+        <relationshipLabel><!-- Cash Receipts (GL Account Variable 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The amount normalized to the base currency. This is Amount divided by the Currency Conversion Rate. --></help>
+        <label><!-- Ledger Amount --></label>
+        <name>AcctSeed__Ledger_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the associated ledger. --></help>
+        <label><!-- Ledger --></label>
+        <name>AcctSeed__Ledger__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billings Applied To --></label>
+        <name>AcctSeed__Number_of_Billing_Cash_Receipts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Customer check number or electronic transaction reference to be used in working through collection issues with your customers. This should be a number that is referenced in their system or by a bank --></help>
+        <label><!-- Reference --></label>
+        <name>AcctSeed__Payment_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>AcctSeed__Product__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Line Item</label>
+        <name>AcctSeed__Project_Task__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>AcctSeed__Project__c</name>
+        <relationshipLabel><!-- Cash Receipts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Purpose__c</name>
+        <picklistValues>
+            <masterLabel>Customer Prepayment</masterLabel>
+            <translation><!-- Customer Prepayment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Receipt</masterLabel>
+            <translation><!-- Customer Receipt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Receipt</masterLabel>
+            <translation><!-- Other Receipt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Refund</masterLabel>
+            <translation><!-- Vendor Refund --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receipt Date --></label>
+        <name>AcctSeed__Receipt_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- A value of &quot;Posted&quot; indicates the record is final and a debit and credit line have been entered into the transaction object for the Cash Receipt. --></help>
+        <label><!-- Posting Status --></label>
+        <name>AcctSeed__Status__c</name>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>ProjectName__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The accounting period must be open to create a record --></errorMessage>
+        <name>AcctSeed__Accounting_Period_Open_New_Record</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The cash receipt balance cannot be less than 0 --></errorMessage>
+        <name>AcctSeed__Balance_Must_Be_Positive</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot edit the amount or vendor for a cash receipt that has been applied to a billing. In order to edit delete any associated billing cash receipt records. --></errorMessage>
+        <name>AcctSeed__Cannot_Edit_If_Billing_Cash_Receipts</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A cash receipt can not be for a negative amount --></errorMessage>
+        <name>AcctSeed__Cash_Receipt_Can_Not_be_Negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 3&quot;. --></errorMessage>
+        <name>AcctSeed__GL_Account_Variable_3_Correct_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Accounting Variable must have a Type of &quot;GL Account Variable 4&quot;. --></errorMessage>
+        <name>AcctSeed__GL_Account_Variable_4_Correct_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A project task is required if a project is selected. --></errorMessage>
+        <name>AcctSeed__Project_Task_Required_With_Project</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Accounting_Period</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Bank_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Payment_Reference</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value --></errorMessage>
+        <name>AcctSeed__Value_for_Receipt_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Apply --></label>
+        <name>AcctSeed__Apply</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Apply_Unapply --></label>
+        <name>AcctSeed__Apply_Unapply</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post --></label>
+        <name>AcctSeed__Post</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Cash_Receipts --></label>
+        <name>AcctSeed__Post_Cash_Receipts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost --></label>
+        <name>AcctSeed__Unpost</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Unpost_Cash_Receipts --></label>
+        <name>AcctSeed__Unpost_Cash_Receipts</name>
+    </webLinks>
+</CustomObjectTranslation>

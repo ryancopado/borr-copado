@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Goals</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Goals</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the Annual Goal that this Quarterly Milestone supports --></help>
+        <label><!-- Annual Goal --></label>
+        <name>AnnualGoal__c</name>
+    </fields>
+    <fields>
+        <help><!-- captures the date that the ED tracker was approved, auto updated via approval process --></help>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- select strategic priority that best aligns with your strategic goals --></help>
+        <label><!-- Annual Strategic Initiatives --></label>
+        <name>BorregoStrategicObjectives__c</name>
+        <picklistValues>
+            <masterLabel>Borrego Academy</masterLabel>
+            <translation><!-- Borrego Academy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Borrego Positioning System (BPS)</masterLabel>
+            <translation><!-- Borrego Positioning System (BPS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other initiative</masterLabel>
+            <translation><!-- Other initiative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Triad</masterLabel>
+            <translation><!-- Project Triad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Kaizen</masterLabel>
+            <translation><!-- Regional Kaizen --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- recommend goals to be SMART goals (Specific, Measurable, Agreed-Upon, Realistic, Time-Based)
+describe the milestone you will accomplish this quarter --></help>
+        <label><!-- Description of Milestone --></label>
+        <name>DescriptionofGoal__c</name>
+    </fields>
+    <fields>
+        <help><!-- filled in by WF upon Goal creation --></help>
+        <label><!-- EGT Email --></label>
+        <name>EGT_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter general comments on the goal if needed --></help>
+        <label><!-- Employee Comments --></label>
+        <name>EmployeeComments__c</name>
+    </fields>
+    <fields>
+        <help><!-- relationship for employee to log goals quarterly, annually --></help>
+        <label><!-- Employee Goal Tracker --></label>
+        <name>EmployeeDevelopmentTracker__c</name>
+        <relationshipLabel><!-- Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- for manager to check off that this specific goal was completed --></help>
+        <label><!-- Goal Completed --></label>
+        <name>GoalCompleted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Updated when the EGT is submitted for Approval and/or Approved. --></help>
+        <label><!-- Goal Status --></label>
+        <name>Goal_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- defines what type of goal it is for the employee --></help>
+        <label><!-- Goal Type --></label>
+        <name>Goal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Developmental</masterLabel>
+            <translation><!-- Developmental --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- field used to indicate that goals were approved - auto updated by approval process field update --></help>
+        <label><!-- Goals Approved --></label>
+        <name>GoalsApproved__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the KPI or Metric you will use to know if you have completed this goal? --></help>
+        <label><!-- How to Measure Success --></label>
+        <name>How_to_Measure_Success__c</name>
+    </fields>
+    <fields>
+        <help><!-- allows for the manager to comment on this goal --></help>
+        <label><!-- Manager Comments --></label>
+        <name>Manager_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- If other Initiatives is selected from Annual Strategic Initiatives please select from these additional options --></help>
+        <label><!-- Other Initiatives --></label>
+        <name>OtherInitiatives__c</name>
+        <picklistValues>
+            <masterLabel>Become the industry leader in lead time</masterLabel>
+            <translation><!-- Become the industry leader in lead time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Empower our people to be the most capable team</masterLabel>
+            <translation><!-- Empower our people to be the most capable team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Give customers total transparency and clarity</masterLabel>
+            <translation><!-- Give customers total transparency and clarity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grow to $500M in 5-years and $1B in 10-years</masterLabel>
+            <translation><!-- Grow to $500M in 5-years and $1B in 10-years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- defines which quarter you will be focused on accomplishing this goal --></help>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Target date of completion for Goal --></help>
+        <label><!-- Target Completion Date --></label>
+        <name>TargetCompletionDate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only the manager listed on the Employee Development Tracker can edit this field. --></errorMessage>
+        <name>Locks_Down_Manager_Comments</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Once Goals are approved you cannot edit Goal Name, Goal Description or How Goals are Measured. --></errorMessage>
+        <name>No_Editing_Goals_once_approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Annual Strategic Initiative includes the value of Other Initiatives, please provide additional information by selecting a value from the Other Initiatives picklist. --></errorMessage>
+        <name>Other_Initiative_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If you are creating a Strategic Goal you must align the goal with a Borrego Strategic Goal --></errorMessage>
+        <name>Strategic_Goals_Requires_Borrego_Strat</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Back_to_EGT --></label>
+        <name>Back_to_EGT</name>
+    </webLinks>
+</CustomObjectTranslation>

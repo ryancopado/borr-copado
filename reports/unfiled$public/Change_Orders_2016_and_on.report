@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Purchase_Order2__c</field>
+    </columns>
+    <columns>
+        <field>FK_$AcctSeed__Project__c.Project_Kickoff_Date__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Budget_Line_Item2__c</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Subject__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Con_Req__c.Amount_Requested__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_$AcctSeed__Project__c.Branch__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Boston,Mid Atlantic,Midwest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Con_Req__c.Budget_Line_Item2__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>additional engineering/professional services,development costs,utility costs - fees,utility upgrades,permit,civil engineering,affiliate</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Change Orders - 2016 and on</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Con_Req__c@Con_Req__c.ASProject__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-06-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,27 @@
+<apex:page standardController="AcctSeed__Project__c" recordSetVar="selectedProjects" extensions="ProjectListView_CreateCaseCtl" tabStyle="Contract" >
+    
+    <apex:form id="theForm">
+        <apex:pageMessages />
+        
+        <apex:pageBlock >
+            <apex:sectionHeader title="Select Contract"/>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageblockTable value="{!contractDisplayList}" var="c">
+                <apex:column >
+                    <apex:commandButton value="Create Case" action="{!c.createCase}"/>
+                </apex:column>
+                <apex:column headerValue="Contract Number">
+                    <apex:outputLink value="/{!c.contrct.Id}" target="_blank">{!c.contrct.ContractNumber}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!c.contrct.ASProject__c}"/>
+                <apex:column value="{!c.contrct.Type__c}"/>
+                <apex:column value="{!c.contrct.Contract_Status__c}"/>
+            </apex:pageblockTable>         
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.CreateContactRecord__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_pmetdec</targetReference>
+            </connector>
+            <label>User Checkbox</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_1_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>100</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_1_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_1_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.CreateContactRecord__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <description>auto creates employee contact record upon creation a new SF user record</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Alternative Incentive Comp&quot;), &quot;aB5340000008QHN&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: PV Engineer 2&quot;), &quot;aB5340000008QHS&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: PV Engineer 3&quot;), &quot;aB5340000008QHX&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: VP&quot;), &quot;aB5340000008QHh&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Executive&quot;), &quot;aB5340000008QHm&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Site Superintendent 1&quot;), &quot;aB5340000008QH1&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Project Manager 2&quot;), &quot;aB5340000008QH2&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Senior PM&quot;), &quot;aB5340000008QH3&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Professional Support 2&quot;), &quot;aB5340000008QH4&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: Manager&quot;), &quot;aB5340000008QH5&quot;,
+IF(
+ISPICKVAL(
+[User].Job_Level__c , &quot;JL: PV Engineer 1&quot;), &quot;aB5340000008QH6&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: O&amp;M Tech 3&quot;), &quot;aB5340000008QH7&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Site Superintendent 2&quot;), &quot;aB5340000008QH8&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Principal Engineer&quot;), &quot;aB5340000008QH9&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Support Staff 2&quot;), &quot;aB5340000008QHA&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Professional Support 1&quot;), &quot;aB5340000008QHB&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Support Staff 1&quot;), &quot;aB5340000008QHC&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Jr. Professional Engineer&quot;), &quot;aB5340000008QHD&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Professional Engineer&quot;), &quot;aB5340000008QHE&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Sr. Professional Engineer&quot;), &quot;aB5340000008QHF&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Professional Support 3&quot;), &quot;aB5340000008QHG&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Director&quot;), &quot;aB5340000008QHH&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Support Staff 3&quot;), &quot;aB5340000008QHI&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: O&amp;M Tech 2&quot;), &quot;aB5340000008QHJ&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: Site Superintendent 3&quot;), &quot;aB5340000008QHK&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: APM/Project Manager 1&quot;), &quot;aB5340000008QHL&quot;,
+IF(
+ISPICKVAL([User].Job_Level__c , &quot;JL: O&amp;M Tech 1&quot;), &quot;aB5340000008QHM&quot;,
+
+NULL)))))))))))))))))))))))))))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_7430837673</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Alternative Incentive Comp&quot;), &quot;aB5340000008QHN&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: PV Engineer 2&quot;), &quot;aB5340000008QHS&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: PV Engineer 3&quot;), &quot;aB5340000008QHX&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: VP&quot;), &quot;aB5340000008QHh&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Executive&quot;), &quot;aB5340000008QHm&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Site Superintendent 1&quot;), &quot;aB5340000008QH1&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Project Manager 2&quot;), &quot;aB5340000008QH2&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Senior PM&quot;), &quot;aB5340000008QH3&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Professional Support 2&quot;), &quot;aB5340000008QH4&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: Manager&quot;), &quot;aB5340000008QH5&quot;,
+IF(
+ISPICKVAL(
+{!myVariable_current.Job_Level__c} , &quot;JL: PV Engineer 1&quot;), &quot;aB5340000008QH6&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: O&amp;M Tech 3&quot;), &quot;aB5340000008QH7&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Site Superintendent 2&quot;), &quot;aB5340000008QH8&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Principal Engineer&quot;), &quot;aB5340000008QH9&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Support Staff 2&quot;), &quot;aB5340000008QHA&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Professional Support 1&quot;), &quot;aB5340000008QHB&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Support Staff 1&quot;), &quot;aB5340000008QHC&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Jr. Professional Engineer&quot;), &quot;aB5340000008QHD&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Professional Engineer&quot;), &quot;aB5340000008QHE&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Sr. Professional Engineer&quot;), &quot;aB5340000008QHF&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Professional Support 3&quot;), &quot;aB5340000008QHG&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Director&quot;), &quot;aB5340000008QHH&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Support Staff 3&quot;), &quot;aB5340000008QHI&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: O&amp;M Tech 2&quot;), &quot;aB5340000008QHJ&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: Site Superintendent 3&quot;), &quot;aB5340000008QHK&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: APM/Project Manager 1&quot;), &quot;aB5340000008QHL&quot;,
+IF(
+ISPICKVAL({!myVariable_current.Job_Level__c} , &quot;JL: O&amp;M Tech 1&quot;), &quot;aB5340000008QHM&quot;,
+
+NULL)))))))))))))))))))))))))))</expression>
+    </formulas>
+    <interviewLabel>Create_Contact_Records_from_User_Record-8_InterviewLabel</interviewLabel>
+    <label>Create Contact Records from User Record</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>User</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordCreates>
+        <name>myRule_1_A1</name>
+        <label>Employee Contact Record</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Account ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>AccountId</field>
+            <value>
+                <stringValue>0013400001UfQpm</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Branch</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Branch__c</field>
+            <value>
+                <elementReference>myVariable_current.Branch__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Department</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Department__c</field>
+            <value>
+                <elementReference>myVariable_current.Department</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Email</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Email</field>
+            <value>
+                <elementReference>myVariable_current.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>First Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>FirstName</field>
+            <value>
+                <elementReference>myVariable_current.FirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Job Levels</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Job_Levels__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Job_Levels__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_7430837673</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Last Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>LastName</field>
+            <value>
+                <elementReference>myVariable_current.LastName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Owner ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012300000009700AAA</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Reports To ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Contact</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ReportsToId</field>
+            <value>
+                <elementReference>myVariable_current.Manager.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>SF Manager User Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>SFManagerUserRecord__c</field>
+            <value>
+                <elementReference>myVariable_current.ManagerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>SF User Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>SF_User_Record__c</field>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Title</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Title</field>
+            <value>
+                <elementReference>myVariable_current.Title</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordCreates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

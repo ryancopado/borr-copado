@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>used for the tracking of hourly time by non-exempt employees
+Stakehold:  Bryan Crofford (HR)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Disclaimer_Acknowledgment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>by checking this box you are stating that you have read and understand the field below &quot;Disclaimer&quot;.  This is visible only upon saving the record.</inlineHelpText>
+        <label>Disclaimer Acknowledgment</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;By submitting my timesheet, I certify that I have accurately recorded all hours worked for this week. I have also taken at least a 30 minute meal period for every five hours of work and the applicable rest periods per Borrego nonexempt guidelines. PLEASE NOTE: The actual time in, time out, and meal periods must be recorded correctly in each field provided. If anything is incorrect, you must notify your supervisor or HR immediately.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Disclaimer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmployeeDepartment__c</fullName>
+        <description>pulls employee&apos;s department from their user profile.</description>
+        <externalId>false</externalId>
+        <formula>Employee_Name__r.Department</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>pulls employee&apos;s department from their user profile.</inlineHelpText>
+        <label>Employee Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employee Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Non_Exempt_Time</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Friday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(((Friday_End_Time__c - Friday_Start_Time__c) *24)- Friday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Friday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Friday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Friday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Friday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_Lunch_Taken__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Friday Lunch Taken</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Friday_Total_Hours_Worked__c &gt; 8), 
+Friday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Friday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Friday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Friday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Friday_Total_Hours_Worked__c -  Friday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Friday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Friday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Friday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Friday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Friday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Friday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HR_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>checks off via workflow when HR Manager approves time entry</inlineHelpText>
+        <label>HR Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Has_Overtime_been_reached__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(OR(ISPICKVAL(Employee_Name__r.Region__c, &quot;Northern CA&quot;),
+ISPICKVAL(Employee_Name__r.Region__c, &quot;Southern CA&quot;)), 
+
+OR(Monday_Total_Hours_Worked__c &gt; 8, 
+Tuesday_Total_Hours_Worked__c &gt; 8, 
+Wednesday_Total_Hours_Worked__c &gt; 8, 
+Thursday_Total_Hours_Worked__c &gt; 8, 
+Friday_Total_Hours_Worked__c &gt; 8, 
+Saturday_Total_Hours_Worked__c &gt; 8, 
+Sunday_Total_Hours_Worked__c &gt; 8,
+Total_Hours_for_Week__c &gt; 40)), &quot;Yes&quot;, 
+
+IF(AND(OR(NOT(ISPICKVAL(Employee_Name__r.Region__c, &quot;Northern CA&quot;)), 
+NOT(ISPICKVAL(Employee_Name__r.Region__c, &quot;Southern CA&quot;))),
+
+Total_Hours_for_Week__c &gt; 40), &quot;Yes&quot;, &quot;No&quot;))</formula>
+        <inlineHelpText>looks to see if any days of the week include hours &gt; 8 if employee works in Southern or Northern CA, or total hours per week &gt; 40 for other regions</inlineHelpText>
+        <label>Has Overtime been reached?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Includes_Overtime__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>box automatically is checked if any of the days of week total hours are greater than 8, or if the total hours for the week exceed 40.</inlineHelpText>
+        <label>Includes Overtime</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Manager_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>checks off via a workflow when manager approves time entry</inlineHelpText>
+        <label>Manager Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Monday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(((Monday_End_Time__c -  Monday_Start_Time__c) *24)- Monday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Monday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Monday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Monday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Monday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours.  Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Monday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Monday_Total_Hours_Worked__c &gt; 8), 
+Monday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Monday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Monday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Monday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Monday_Total_Hours_Worked__c -  Monday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Monday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Monday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Monday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Monday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Monday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OK_to_Submit__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Disclaimer_Acknowledgment__c = TRUE, IMAGE(&quot;/servlet/servlet.FileDownload?file=015800000015Isw&quot;, &quot;WHITE&quot;), 
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=015340000029H4s&quot;, &quot;WHITE&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Must say &quot;YES&quot; to be able to submit for approval. Make sure to check check off the Disclaimer Acknowledgment checkbox before submitting for approval.</inlineHelpText>
+        <label>OK to Submit?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OT_Hours_for_Week__c</fullName>
+        <description>If CA Employee, sums all hours per day worked over 8 hours for each day. If not CA Employee, sums hours for week over 40.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Employee_Name__r.Region__c, &quot;Northern CA&quot;) || 
+  (ISPICKVAL(Employee_Name__r.Region__c, &quot;Southern CA&quot;)),
+
+ Sunday_OT_Hours_Worked__c +
+ Monday_OT_Hours_Worked__c +
+ Tuesday_OT_Hours_Worked__c +
+ Wednesday_OT_Hours_Worked__c +
+ Thursday_OT_Hours_Worked__c +
+ Friday_OT_Hours_Worked__c +
+ Saturday_OT_Hours_Worked__c ,
+
+IF(NOT(ISPICKVAL(Employee_Name__r.Region__c, &quot;Northern CA&quot;)) || 
+   NOT(ISPICKVAL(Employee_Name__r.Region__c, &quot;Southern CA&quot;)) 
+
+   &amp;&amp; Has_Overtime_been_reached__c = &quot;Yes&quot;,
+   Total_Hours_for_Week__c - 40, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If CA Employee, sums all hours per day worked over 8 hours for each day. If not CA Employee, sums hours for week over 40.</inlineHelpText>
+        <label>OT Hours for Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(((Saturday_End_Time__c - Saturday_Start_Time__c) *24)- Saturday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Saturday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Saturday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Saturday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Saturday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Saturday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Saturday_Total_Hours_Worked__c &gt; 8), 
+Saturday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Saturday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Saturday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Saturday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Saturday_Total_Hours_Worked__c -  Saturday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Saturday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Saturday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Saturday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Saturday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saturday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Saturday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(((Sunday_End_Time__c - Sunday_Start_Time__c) *24)- Sunday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Sunday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Sunday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sunday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Sunday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Sunday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF(
+  AND(
+      OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;),
+         ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)),
+         Sunday_Total_Hours_Worked__c  &gt; 8),
+  Sunday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Sunday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Sunday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Sunday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Sunday_Total_Hours_Worked__c -  Sunday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Sunday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Sunday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sunday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Sunday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sunday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Sunday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(((Thursday_End_Time__c - Thursday_Start_Time__c) *24)- Thursday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Thursday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Thursday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Thursday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Thursday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Thursday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Thursday_Total_Hours_Worked__c &gt; 8), 
+Thursday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Thursday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Thursday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Thursday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Thursday_Total_Hours_Worked__c -  Thursday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Thursday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Thursday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Thursday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Thursday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thursday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Thursday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Card_Week__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>using looking glass to select the correct Time Card week in which you are entering time for</inlineHelpText>
+        <label>Time Card Week</label>
+        <referenceTo>AcctSeed__Time_Card_Period__c</referenceTo>
+        <relationshipLabel>Non-Exempt Time</relationshipLabel>
+        <relationshipName>Non_Exempt_Time</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TotalHolidayHours__c</fullName>
+        <description>Sums up all Holiday Hours for the Week</description>
+        <externalId>false</externalId>
+        <formula>Sunday_Holiday_Total__c + Monday_Holiday_Total__c +  Tuesday_Holiday_Total__c +  Wednesday_Holiday_Total__c +  Thursday_Holiday_Total__c +  Friday_Holiday_Total__c +  Saturday_Holiday_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sums up all Holiday Hours for the Week</inlineHelpText>
+        <label>Total Holiday Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalHoursforWeek__c</fullName>
+        <description>calculates total hours worked for the week based on values entered per day in sections below, total work hours + total holiday hours</description>
+        <externalId>false</externalId>
+        <formula>(Monday_Total_Hours_Worked__c +  Monday_Holiday_Total__c)+
+ (Tuesday_Total_Hours_Worked__c+  Tuesday_Holiday_Total__c ) + 
+(Wednesday_Total_Hours_Worked__c+ Wednesday_Holiday_Total__c ) + 
+(Thursday_Total_Hours_Worked__c+ Thursday_Holiday_Total__c ) + 
+( Friday_Total_Hours_Worked__c+ Friday_Holiday_Total__c ) + 
+( Saturday_Total_Hours_Worked__c+  Saturday_Holiday_Total__c ) + 
+(Sunday_Total_Hours_Worked__c +  Sunday_Holiday_Total__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>calculates total hours worked for the week based on values entered per day in sections below, total work hours + total holiday hours</inlineHelpText>
+        <label>Total Hours for Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalWorkHours__c</fullName>
+        <description>total non-holiday hours for the entire time period/week</description>
+        <externalId>false</externalId>
+        <formula>Monday_Total_Hours_Worked__c + Tuesday_Total_Hours_Worked__c+ Wednesday_Total_Hours_Worked__c+ Thursday_Total_Hours_Worked__c+ Friday_Total_Hours_Worked__c+ Saturday_Total_Hours_Worked__c+ 
+Sunday_Total_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>total non-holiday hours for the entire time period/week</inlineHelpText>
+        <label>Total Work Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_for_Week__c</fullName>
+        <externalId>false</externalId>
+        <formula>Monday_Total_Hours_Worked__c + Tuesday_Total_Hours_Worked__c+ Wednesday_Total_Hours_Worked__c+ Thursday_Total_Hours_Worked__c+ Friday_Total_Hours_Worked__c+ Saturday_Total_Hours_Worked__c+ 
+Sunday_Total_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>calculates total hours worked for the week based on values entered per day in sections below</inlineHelpText>
+        <label>Total Hours for Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Vacation_Sick_Hours_for_Week__c</fullName>
+        <description>Sums up the Vacation/Sick hours for each day in the time card week time period</description>
+        <externalId>false</externalId>
+        <formula>Monday_Vacation_Sick_Total__c + 
+Tuesday_Vacation_Sick__c + 
+Wednesday_Vacation_Sick_Total__c + 
+Thursday_Vacation_Sick_Total__c + 
+Friday_Vacation_Sick_Total__c + 
+Saturday_Vacation_Sick_Total__c + 
+Sunday_Vacation_Sick_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sums up the Vacation/Sick hours for each day in the time card week time period</inlineHelpText>
+        <label>Total Vacation/Sick Hours for Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+((( Tuesday_End_Time__c  - Tuesday_Start_Time__c) *24)- Tuesday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Tuesday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Tuesday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Tuesday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Tuesday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Tuesday_Total_Hours_Worked__c &gt; 8), 
+Tuesday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Tuesday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Tuesday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Tuesday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Tuesday_Total_Hours_Worked__c -  Tuesday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Tuesday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Tuesday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Tuesday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tuesday_Vacation_Sick__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Tuesday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Break__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+(((Wednesday_End_Time__c - Wednesday_Start_Time__c) *24)- Wednesday_Total_Hours_Worked__c)&gt;0, &quot;Yes&quot;, &quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates hours in between Work Started and Work Ended not spent at a Service Visit, i.e. time in between Service Visits.</inlineHelpText>
+        <label>Wednesday Break</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_End_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Wednesday End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Holiday_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>total holiday hours for this day rolled up from related service visits</inlineHelpText>
+        <label>Wednesday Holiday Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Lunch__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Each employee must take a lunch every day that they work more than six hours. Entry should represent the actual time lunch was taken such as 12:30 - 1:00.</inlineHelpText>
+        <label>Wednesday Lunch</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_OT_Hours_Worked__c</fullName>
+        <description>Daily OT Hours worked, for CA only</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+OR(ISPICKVAL(Employee_Name__r.Branch__c, &quot;So Cal&quot;), 
+ISPICKVAL(Employee_Name__r.Branch__c, &quot;Nor Cal&quot;)), 
+Wednesday_Total_Hours_Worked__c &gt; 8), 
+Wednesday_Total_Hours_Worked__c - 8, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Daily OT Hours worked, for CA only</inlineHelpText>
+        <label>Wednesday OT Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_PW_Hours_Worked__c</fullName>
+        <description>Rollup of PW Hours listed on the SV for this day</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup of PW Hours listed on the SV for this day</inlineHelpText>
+        <label>Wednesday PW Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Shift_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>entry should include time day started and time day ended, such as 8:30-5:30</inlineHelpText>
+        <label>Wednesday Shift Worked</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Standard_Hours_Worked__c</fullName>
+        <description>Non- PW hours worked</description>
+        <externalId>false</externalId>
+        <formula>Wednesday_Total_Hours_Worked__c -  Wednesday_PW_Hours_Worked__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Non- PW hours worked</inlineHelpText>
+        <label>Wednesday Standard Hours Worked</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Wednesday Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Total_Hours_Worked__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Represents the Total Hours worked, not including breaks. If you worked 8:30-5:30 with an hour of lunch, this would say 8</inlineHelpText>
+        <label>Wednesday Total Hours Worked</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wednesday_Vacation_Sick_Total__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Vacation or Sick hours for this day rolled up from related Admin Service Visits.</inlineHelpText>
+        <label>Wednesday Vacation/Sick Total</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Non-Exempt Time</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Name__c</columns>
+        <columns>Time_Card_Week__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>This_Year</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Name__c</columns>
+        <columns>Time_Card_Week__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>This Year</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>NET# {00000000}</displayFormat>
+        <label>Non-Exempt Time Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Non-Exempt Time</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>disclaimer</fullName>
+        <active>true</active>
+        <description>requires user to save record before editing</description>
+        <errorConditionFormula>AND (ISNEW(),  Disclaimer_Acknowledgment__c = TRUE)</errorConditionFormula>
+        <errorDisplayField>Disclaimer_Acknowledgment__c</errorDisplayField>
+        <errorMessage>You need to save your record to view the disclaimer field before you check off your acknowledgement</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Recalculate_NonExempt_Timecard</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Recalculate NonExempt Timecard</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+var x =&apos;{!Non_Exempt_Time__c.Employee_NameId__c}&apos;; 
+alert(x);
+var y = &apos;{!Non_Exempt_Time__c.Time_Card_WeekId__c}&apos;;
+alert(y);
+
+
+
+a=sforce.apex.execute(&quot;NonExemptRecalculation&quot;, &quot;Timecardrecalculation&quot;,{Employeename:x ,Timecardweek:y});
+alert(a);
+window.location.reload();</url>
+    </webLinks>
+</CustomObject>

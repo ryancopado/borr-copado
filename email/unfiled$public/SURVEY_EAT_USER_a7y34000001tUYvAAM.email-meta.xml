@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the default email invitation template for survey: Borrego Solar O&amp;M Portfolio Customer Survey - Q1/2019</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Please complete this survey:] Borrego Solar O&amp;M Portfolio Customer Survey - ...</name>
+    <style>none</style>
+    <subject>Please complete this survey: Borrego Solar O&amp;M Portfolio Customer Survey - Q1/2019</subject>
+    <textOnly>Please complete this survey at:&lt;br/&gt;{!IF(User.Id != null,IF(Case.Id != null,&apos;http://borregosolar.force.com/timbasurveys__survey?id=a7y34000001tUYvAAM&amp;uId=&apos; + User.Id + &apos;&amp;case_id=&apos; + Case.Id + &apos;&amp;wf=yes&apos;,&apos;http://borregosolar.force.com/timbasurveys__survey?id=a7y34000001tUYvAAM&amp;uId=&apos; + User.Id + &apos;&amp;wf=yes&apos;),&apos;&apos;)}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

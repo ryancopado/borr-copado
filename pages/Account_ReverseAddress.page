@@ -1,0 +1,15 @@
+<apex:page standardController="Account" recordSetVar="selectedAccounts" extensions="Account_WhitePagesProCtlExt" tabStyle="Account" action="{!reverseAddress}">
+    
+    <apex:form >
+        <apex:sectionHeader title="Account Edit" subtitle="Lookup from Address" />
+        <apex:pageMessages />
+        
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

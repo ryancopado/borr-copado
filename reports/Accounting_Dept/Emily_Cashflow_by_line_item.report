@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AcctSeed__Account_Payable_Line__c$Non_Taxable_Amountformula__c</field>
+    </columns>
+    <columns>
+        <field>AcctSeed__Account_Payable_Line__c$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AcctSeed__Account_Payable_Line__c$AcctSeed__Project__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>134 brook</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AcctSeed__Account_Payable_Line__c$Payment_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Paid,Partially Paid</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable_Line__c$Accounting_Period__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable_Line__c$AcctSeed__Project_Task__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable_Line__c$Vendor__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctSeed__Account_Payable_Line__c$Payment_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Emily Cashflow by line item</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AP_Lines__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AcctSeed__Account_Payable_Line__c$CreatedDate</dateColumn>
+        <endDate>2018-03-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Daily Job Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Daily Job Reports</value>
+    </caseValues>
+    <fields>
+        <help><!-- This should be the date of the daily report. --></help>
+        <label><!-- Date of Report --></label>
+        <name>Date_of_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the day of the week for the daily report. --></help>
+        <label><!-- Day of Week --></label>
+        <name>Day_of_Week__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday</masterLabel>
+            <translation><!-- Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Insert all Inspections and Meetings that occurred on this day. --></help>
+        <label><!-- Inspections and Meetings --></label>
+        <name>Inspections_and_Meetings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Number --></label>
+        <name>Job_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Insert Activities that must be addressed to stay or schedule, that are a safety concern or a client request/concern that must be addressed immediately. --></help>
+        <label><!-- Open Items Needing Attention --></label>
+        <name>Open_Items_Needing_Attention__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Manager --></label>
+        <name>Project_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Daily Job Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Insert today&apos;s activities that have impacted or will change the current schedule and how they will impact the current schedule. --></help>
+        <label><!-- Schedule --></label>
+        <name>Schedule__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this section to note the following: 
+1. Subcontractor/Visitor 
+2. Number of men 
+3. Hours worked 
+4. General description of tasks performed or purpose of visit --></help>
+        <label><!-- Subcontractor --></label>
+        <name>Subcontractor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a short description of the weather for the day. --></help>
+        <label><!-- Weather --></label>
+        <name>Weather__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

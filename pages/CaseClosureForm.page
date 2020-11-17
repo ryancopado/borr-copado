@@ -1,0 +1,156 @@
+<apex:page standardController="Case" extensions="CaseClosureFormController" tabStyle="Case" action="{!initEmailAddresses}">
+    
+    <apex:form >
+
+        <apex:outputPanel rendered="{!showPreview=false}" >
+            <apex:sectionHeader title="Case: create and send Service Report" subtitle="{!ccfCase.CaseNumber}" />
+
+            <apex:pageBlock mode="edit" title="Service Report Email">
+                <apex:pageMessages />
+                
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton value="Preview Service Report" action="{!previewCaseClosure}"/>
+                    <apex:commandButton value="Send Service Report" action="{!sendCaseClosure}"/>
+                    <apex:commandButton value="Cancel" action="{!cancelCaseclosure}"/>
+                </apex:pageBlockButtons>
+                
+                <apex:outputPanel rendered="{!noEmailRecipients}" >
+                    <p>
+                    <b><font color="red">Send Service Report Error: No email recipients entered!</font></b>
+                    </p>
+                    <br/>
+                </apex:outputPanel>
+                
+                <apex:pageBlockSection title="Email" columns="1" >
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Email Subject" />
+                        <apex:outputText value="{!email_subject}" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Email Body" />
+                        <apex:outputText value="{!email_body}" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection title="Send Email To" columns="1" id="emailto__list">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Users" for="user__email" title="Select/deselect Salesforce Users below." />
+                        <apex:outputText value="{!userEmailAddresses}" id="user__email"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Contacts/Other Email Addresses" for="contact__email" title="Add Salesforce Contacts below or enter email addresses here separated by a semi-colon." />
+                        <apex:inputText value="{!contactEmailAddresses}" size="100" id="contact__email"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem />
+                </apex:pageBlockSection>
+                
+            </apex:pageBlock>
+            
+            <apex:pageBlock title="Select Email Recipient" mode="edit" >
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton value="Select Email Recipient" action="{!selectEmailRecipients}" rerender="out,contact__list,emailto__list," status="status" />
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection columns="2" >
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value=" " />
+                        <apex:outputText value="Select/deselect multiple Users" style="font-weight:bold;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value=" " />
+                        <apex:outputText value="Select Contacts one at a time" style="font-weight:bold;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Users" for="user__list"/>
+                        <apex:selectList value="{!selectedToUsers}" multiselect="true" size="10" id="user__list">
+                            <apex:selectOptions value="{!allUsers}"/>
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!ccfCase.Contacts__c}" id="contact__list"/>
+                    <apex:pageBlockSectionItem />
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+<!-- The outputPanel below is for debug purposes
+            <apex:outputPanel id="out">
+                <apex:actionstatus id="status" startText="testing...">
+                    <apex:facet name="stop">
+                        <apex:outputPanel >
+                            <p>You have selected:</p>
+                            <apex:dataList value="{!emailTo}" var="c">{!c}</apex:dataList>
+                        </apex:outputPanel>
+                    </apex:facet>
+                </apex:actionstatus>
+            </apex:outputPanel>
+-->
+            <!-- Debug code to display what has been selected -->
+            <!-- 
+            <apex:pageBlock title="Attachments Selected" mode="edit" id="Selected_Att">
+                <apex:pageBlockSection columns="1">
+                    <apex:dataTable value="{!selectedATTWs}" var="s" cellspacing="10px">
+                        <apex:column headervalue="Attachment Name" value="{!s.att.Name}" />
+                    </apex:dataTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            -->
+            
+            <apex:pageBlock title="Select Attachments to Include" mode="edit" id="Att_To_Select">
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Preview Service Report" action="{!previewCaseClosure}"/>
+                    <apex:commandButton value="Send Service Report" action="{!sendCaseClosure}"/>
+                    <apex:commandButton value="Cancel" action="{!cancelCaseclosure}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection columns="1" >
+                    <apex:pageBlockTable value="{!attachments}" var="a" >
+                        <apex:column >
+                            <apex:facet name="header">
+                                <apex:inputCheckbox >
+                                    <apex:actionSupport event="onclick" action="{!getSelected}" onsubmit="checkAll(this)" rerender="Selected_Att,Att_To_Select"/>
+                                </apex:inputCheckbox>
+                            </apex:facet>
+                            <apex:inputCheckbox value="{!a.selected}" id="checkedone">
+                                <apex:actionSupport event="onclick" action="{!getSelected}" rerender="Selected_Att,Att_To_Select"/>
+                            </apex:inputCheckbox>
+                        </apex:column>
+                        <apex:column headerValue="Name" value="{!a.att.Name}" />
+                        <apex:column headerValue="Description" value="{!a.att.Description}" />
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                
+                 <!--    --> 
+                <apex:pageBlockSection columns="1" title="Select Files to Include"  id="file_To_Select" >
+                    <apex:pageBlockTable value="{!Files}" var="b" >
+                        <apex:column >
+                      <apex:facet name="header">
+                                <apex:inputCheckbox >
+                                    <apex:actionSupport event="onclick" action="{!getSelectedfiles}" onsubmit="checkAll(this)" rerender="Selected_Att,file_To_Select"/>
+                                </apex:inputCheckbox>
+                            </apex:facet>
+                            <apex:inputCheckbox value="{!b.selectfile}" id="checkedone">
+                                <apex:actionSupport event="onclick" action="{!getSelectedfiles}" rerender="Selected_Att,file_To_Select"/>
+                            </apex:inputCheckbox>
+                        </apex:column>
+                        <apex:column headerValue="Name" value="{!b.files.ContentDocument.title}" />
+                     <!--  <apex:column headerValue="Description" value="{!b.files.Description}" /> headerValue="Name"  -->
+                        </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                
+                        <!--  -->
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!showPreview}">
+            <apex:include pageName="CaseClosureFormPDF" />
+        </apex:outputPanel>
+
+    </apex:form>
+    
+    <script>
+        function checkAll(cb) {
+            var inputElem = document.getElementsByTagName("input");
+            for(var i=0; i<inputElem.length; i++) {
+                if(inputElem[i].id.indexOf("checkedone")!=-1)
+                    inputElem[i].checked = cb.checked;
+            }
+        }   
+    </script>
+    
+</apex:page>

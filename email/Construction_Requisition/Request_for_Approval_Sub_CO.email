@@ -1,0 +1,13 @@
+{!Con_Req__c.CreatedBy}  has submitted a Subcontractor Change Order for approval
+
+Project: {!Con_Req__c.Project__c}
+PO Number: {!Con_Req__c.Purchase_Order__c}
+Original Unit Price: {!Con_Req__c.Original_Unit_Price__c}
+Amount Requested: {!Con_Req__c.Amount_Requested__c}
+Change Order Notes: {!Con_Req__c.Change_Order_Notes__c}
+
+{!ApprovalRequest.Comments} 
+{!ApprovalRequest.Process_Approver} 
+
+Please approve or deny this request: 
+{!ApprovalRequest.Internal_URL}

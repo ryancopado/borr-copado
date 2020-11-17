@@ -1,0 +1,46 @@
+<apex:page standardController="Production_Modeling__c" extensions="ProductionModeling_WeatherStation" tabStyle="Production_Modeling__c" >
+	
+	<apex:sectionHeader title="Production Modeling Edit" subtitle="New Production Model" />
+	
+	<apex:form >
+		
+		<apex:pageBlock title="Production Modeling Edit">
+			
+			<apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Information" columns="2">
+                <apex:inputField value="{!Production_Modeling__c.name}" required="TRUE"/>
+                <apex:inputField value="{!Production_Modeling__c.Opportunity__c}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!Production_Modeling__c.Status__c}"/>
+                <apex:inputField value="{!Production_Modeling__c.Design_Link__c}"/>
+                <apex:inputField value="{!Production_Modeling__c.Production_Modeling_Stage__c}" required="TRUE"/>
+                <apex:inputField value="{!Production_Modeling__c.PSD_Revision__c}"/>
+                <apex:inputField value="{!Production_Modeling__c.Project__c}"/>
+                <apex:inputField value="{!Production_Modeling__c.Design_Tool_Link__c}"/>
+                <apex:inputField value="{!Production_Modeling__c.Project_Manager__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Modeling Assumptions" columns="2">
+            	<apex:inputField value="{!Production_Modeling__c.System_Size__c}" required="TRUE"/>
+            	<apex:inputField value="{!Production_Modeling__c.Weather_Station_Used__c}" required="TRUE" />
+            	<apex:inputField value="{!Production_Modeling__c.Number_of_Washings__c}"/>
+            	<apex:outputField value="{!Production_Modeling__c.Current_Approved_Weather_Station__c}" />
+            	<apex:inputField value="{!Production_Modeling__c.Percent_of_Downtime_Modeled__c}" required="TRUE"/>
+            	<apex:inputField value="{!Production_Modeling__c.Weather_Station_Notes__c}"/>
+            	<apex:inputField value="{!Production_Modeling__c.Additional_Derating_Loss__c}" required="TRUE"/>
+            	<apex:inputField value="{!Production_Modeling__c.Raw_Annual_Production__c}" required="TRUE"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+            	<apex:inputField value="{!Production_Modeling__c.Notes__c}"/>
+            </apex:pageBlockSection>
+            
+		</apex:pageBlock>
+		
+	</apex:form>
+	
+</apex:page>

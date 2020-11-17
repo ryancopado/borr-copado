@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>WorkOrder$Name</field>
+    </columns>
+    <columns>
+        <field>WorkOrder.WorkOrderLineItems$Name</field>
+    </columns>
+    <columns>
+        <field>WorkOrder.WorkOrderLineItems.Checklists_del__r$Name</field>
+    </columns>
+    <columns>
+        <field>WorkOrder.WorkOrderLineItems$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>WorkOrder.WorkOrderLineItems$Checklist_Record_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2nd PM Combiner Box</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>WorkOrder.WorkOrderLineItems$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>2nd PM combiner checklists</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Work_Orders_with_Line_Items_and_Checklists__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>WorkOrder.WorkOrderLineItems$CreatedDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>WorkOrder$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

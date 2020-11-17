@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>PSD_Revision__c$Name</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$Opportunity__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$Submitted_Date__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$IEI_Expected_Completed_Date__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$IEI_PSD_Completion_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>PSD_Revision__c$Hours__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>PSD_Revision__c$Days_Open__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$IEI_Designer__c</field>
+    </columns>
+    <columns>
+        <field>PSD_Revision__c$PSD_Apps_Engineer__c</field>
+    </columns>
+    <description>Applications Engineers - On Time Delivery - PSD Revisions</description>
+    <filter>
+        <criteriaItems>
+            <column>PSD_Revision__c$Revision_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Draft Layout,Sold,Working Design</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>AE OTD - PSD Rev</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>PSD_Revisions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>PSD_Revision__c$Opportunity__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>PSD_Revision__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_PREVCUR2Y</interval>
+    </timeFrameFilter>
+</Report>

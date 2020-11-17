@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>SubmittalNewVFPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Submittal_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Submittal_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Assigned_To__c</fields>
+        <fields>Status__c</fields>
+        <fields>Date_Received__c</fields>
+        <fields>Requested_Response_Date__c</fields>
+        <label>Submittal Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>APM_PC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>APM/PC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubmittalsAPM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Account.Name</formula>
+        <inlineHelpText>Account that the noted contact is related to.</inlineHelpText>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Approver</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Auto -fills when Submittal is auto created for Electrical Materials based on IEE on related Site, or PEM should fill this in with the User the Submittal is assigned to.</description>
+        <externalId>false</externalId>
+        <label>Assigned To:</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Submittals1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of your business here</inlineHelpText>
+        <label>Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC3__c</fullName>
+        <externalId>false</externalId>
+        <label>CC 3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC4__c</fullName>
+        <externalId>false</externalId>
+        <label>CC 4</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC_1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter an email address that you would like to be CC&apos;d</inlineHelpText>
+        <label>CC 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC_2__c</fullName>
+        <externalId>false</externalId>
+        <label>CC 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Email address of the related contact as listed in Salesforce.</inlineHelpText>
+        <label>Contact Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select the contact from the account.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Submittals_1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the submittal request was received from the field.</inlineHelpText>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Drawing_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>Drawing Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter your email address here</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enable_Reminder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Initial Submission for Sub Portal Submittals triggers a time based workflow email alert</description>
+        <externalId>false</externalId>
+        <label>Enable Reminder</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_Contact__c</fullName>
+        <description>Subcontractor enters their name and account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter your name here</inlineHelpText>
+        <label>Contact Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Important_Notice__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=01534000002GXAg&quot;, &quot;WHITE&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Important Notice:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Your point of contact at Borrego for this Submittal. Will populate once the Submittal is saved.</inlineHelpText>
+        <label>Borrego Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Submittals_User</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Closed_Date__c</fullName>
+        <description>This is a hidden field used for reporting only. This is filled in using a field update when the record is submitted for approval.</description>
+        <externalId>false</externalId>
+        <label>Issue Closed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Number__c</fullName>
+        <description>This field was created to make a &quot;Common Field&quot; for the Issue Tracker Joined Report.</description>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Issue Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Submitted_Date__c</fullName>
+        <description>This is a hidden field used for reporting only. This is filled in using a field update when the record is submitted for approval.</description>
+        <externalId>false</externalId>
+        <label>Issue Submitted Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Tracker__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the issue tracker number that the submittal is associated with.</inlineHelpText>
+        <label>Issue Tracker</label>
+        <referenceTo>Request_for_Information_RFI__c</referenceTo>
+        <relationshipLabel>Submittals</relationshipLabel>
+        <relationshipName>Submittals_1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Notes_and_Additional_Information__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this section to add detailed notes regarding the submittal.</inlineHelpText>
+        <label>Notes and Additional Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter your phone number here</inlineHelpText>
+        <label>Phone</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Pulls the Product from the Project Product</description>
+        <externalId>false</externalId>
+        <formula>Project_Product__r.Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the Product from the related Project Product.</inlineHelpText>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proj_Eng_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Proj. Eng. Manager/Ops SDE</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubmittalsPEM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Link__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is hidden and is filled in a by a trigger. We need this so we can automatically link the records to the related project so we have clean related lists on the project layout.</description>
+        <externalId>false</externalId>
+        <label>Project Link</label>
+        <referenceTo>AcctSeed__Project__c</referenceTo>
+        <relationshipLabel>Submittals</relationshipLabel>
+        <relationshipName>Submittals</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubmittalsPM</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.ASProject__r.Name</formula>
+        <inlineHelpText>Project related to the submittal.</inlineHelpText>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Project_Products__c.Project__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Project_Link__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Project_Products__c</referenceTo>
+        <relationshipLabel>Submittals</relationshipLabel>
+        <relationshipName>Submittals</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Team__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Project Manager: &quot; +   Project_Manager__r.FirstName + &quot; &quot; + Project_Manager__r.LastName + BR() +
+&quot;Proj. Eng. Manager: &quot; + Proj_Eng_Manager__r.FirstName + &quot; &quot; + Proj_Eng_Manager__r.LastName + BR() +
+&quot;APM/PC: &quot; + APM_PC__r.FirstName + &quot; &quot; + APM_PC__r.LastName + BR() +
+&quot;Site Superintendent: &quot; + Site_Super__r.FirstName + &quot; &quot; + Site_Super__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Team:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Re_assigned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marked TRUE when the Re-assign button is pushed. Routes Submittal email communication flow.</description>
+        <externalId>false</externalId>
+        <label>Re-assigned</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rejected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rejected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Response_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The target date that you are asking the approver to respond by.</inlineHelpText>
+        <label>Requested Response Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The response details to the submittal submitted from the approver. Must be filled out before Submittal can be complete.</inlineHelpText>
+        <label>Response</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selected_Users__c</fullName>
+        <externalId>false</externalId>
+        <label>Selected Users</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Site_Super__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site Super</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SubmittalsSS</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Site_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Site__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site__c</referenceTo>
+        <relationshipLabel>Submittals</relationshipLabel>
+        <relationshipName>Submittals</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Specification_Reference__c</fullName>
+        <externalId>false</externalId>
+        <label>Specification Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c,&quot;Approval Pending&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=0154C0000005IRV&quot;, &quot;Submitted Pending1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Rejected&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=0154C0000005IRQ&quot;, &quot;Rejected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;New&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=0154C0000005IR6&quot;, &quot;New&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved as Corrected&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=015800000014vhz&quot;, &quot;Approved as Corrected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Approved&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=015800000014vi4&quot;, &quot;Approved&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Re-assigned&quot;),IMAGE( &quot;https://c.cs61.content.force.com/servlet/servlet.FileDownload?file=0154C0000005IRa&quot;, &quot;Re-assigned&quot;),
+&quot;&quot;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Highlight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Highlight__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c,&quot;Approval Pending&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=015800000014viY&quot;, &quot;Submitted Pending1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Rejected&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=01534000002GSq8&quot;, &quot;Rejected1&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Cancelled&quot;),IMAGE( &quot;https://c.na29.salesforce.com/servlet/servlet.FileDownload?file=0158000000151bq&quot;, &quot;Cancelled&quot;),
+IF(ISPICKVAL(Status__c,&quot;New&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=01534000002GSpe&quot;, &quot;New&quot;), 
+IF(ISPICKVAL(Status__c,&quot;Revise and Resubmit&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=015800000014viT&quot;, &quot;Revise and Resubmit1&quot;),
+IF(ISPICKVAL(Status__c,&quot;Approved as Corrected&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=015800000014vhz&quot;, &quot;Approved as Corrected1&quot;),
+IF(ISPICKVAL(Status__c,&quot;Approved&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=015800000014vi4&quot;, &quot;Approved&quot;),  
+IF(ISPICKVAL(Status__c,&quot;Re-assigned&quot;),IMAGE( &quot;https://c.na29.content.force.com/servlet/servlet.FileDownload?file=0154C0000005IRa&quot;, &quot;Re-assigned&quot;),
+&quot;&quot;))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This changes based on the status of the submittal.</inlineHelpText>
+        <label>Status Highlight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to track and manage the status of the submittal.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Not Approved</fullName>
+                    <default>false</default>
+                    <label>Not Approved</label>
+                </value>
+                <value>
+                    <fullName>Revise and Resubmit</fullName>
+                    <default>false</default>
+                    <label>Revise and Resubmit</label>
+                </value>
+                <value>
+                    <fullName>Approved as Corrected</fullName>
+                    <default>false</default>
+                    <label>Approved as Corrected</label>
+                </value>
+                <value>
+                    <fullName>Approval Pending</fullName>
+                    <default>false</default>
+                    <label>Approval Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Submitted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When Sub Submits a Submittal, this box become TRUE. Used in Process to submit for approval</description>
+        <externalId>false</externalId>
+        <label>Sub Submitted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Subject_1__c</fullName>
+        <description>Free text entry as opposed to the formula Subject field from the parent ISS. Used by Subcontractors in portal.</description>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>Field used as a Common field for Issue Tracker joined report</description>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.Subject__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subject</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submittal_Link__c</fullName>
+        <description>Takes the name from the Issue Tracker. Used in Subcontractor Portal</description>
+        <externalId>false</externalId>
+        <formula>Issue_Tracker__r.Submittal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Submittal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submittal_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the appropriate Submittal type</inlineHelpText>
+        <label>Submittal Type:</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AC Electrical</fullName>
+                    <default>false</default>
+                    <label>AC Electrical</label>
+                </value>
+                <value>
+                    <fullName>DC Electrical</fullName>
+                    <default>false</default>
+                    <label>DC Electrical</label>
+                </value>
+                <value>
+                    <fullName>Civil Materials</fullName>
+                    <default>false</default>
+                    <label>Civil Materials</label>
+                </value>
+                <value>
+                    <fullName>Structural Materials</fullName>
+                    <default>false</default>
+                    <label>Structural Materials</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitted_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submitted for Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Track__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Issue_Tracker__r.Track__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Track</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Submittal</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Submittal Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Submittals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Cant_Submit_Blank_Form</fullName>
+        <active>true</active>
+        <description>Prevents the Submittal from being submitted if the required fields are not filled out.</description>
+        <errorConditionFormula>Sub_Submitted__c = TRUE
+&amp;&amp;
+ISBLANK( External_Contact__c )</errorConditionFormula>
+        <errorMessage>You cannot submit the form until it has been filled out.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reassigned_cannot_be_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Assigned_To__c )
+&amp;&amp;
+ISPICKVAL( Status__c, &quot;Re-assigned&quot; )</errorConditionFormula>
+        <errorDisplayField>Assigned_To__c</errorDisplayField>
+        <errorMessage>You cannot re-assign the Submittal until you select some to assign it to.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Requested_Response_Greater_Than_24_Hours</fullName>
+        <active>false</active>
+        <description>Do not allow the requested response date to be set &lt;= TODAY().  Made inactive as of Sprint 2018.06 c</description>
+        <errorConditionFormula>AND(ISPICKVAL( Status__c,&quot;New&quot;), 
+ ISCHANGED(Requested_Response_Date__c) ,
+ Requested_Response_Date__c  &lt;= TODAY())</errorConditionFormula>
+        <errorDisplayField>Requested_Response_Date__c</errorDisplayField>
+        <errorMessage>The requested Response Date has to be at least 1 day from today.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Mass_Attach_Files</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Mass Attach Files</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/dropzone__AttachFiles?id={!Submittal_1__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Re_assign</fullName>
+        <availability>online</availability>
+        <description>Push this button to re-assign the Submittal to another PE</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Re-assign</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+
+try { 
+var newRecords = []; 
+var c = new sforce.SObject(&quot;Submittal_1__c&quot;); 
+c.id =&quot;{!Submittal_1__c.Id}&quot;; 
+c.Status__c = &quot;Re-assigned&quot;;
+newRecords.push(c); 
+result = sforce.connection.update(newRecords); 
+
+if( result[0].getBoolean( &quot;success&quot; ) ) { 
+window.location.reload(); 
+} 
+else { 
+alert( &quot;An error has occurred. Error:&quot; + result ); 
+} 
+} 
+catch( e ) { 
+alert( &quot;An unexpected error has occurred. Error:&quot; + e ); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+
+try { 
+var newRecords = []; 
+var c = new sforce.SObject(&quot;Submittal_1__c&quot;); 
+c.id =&quot;{!Submittal_1__c.Id}&quot;; 
+c.Status__c = &quot;Rejected&quot;; 
+newRecords.push(c); 
+result = sforce.connection.update(newRecords); 
+
+if( result[0].getBoolean( &quot;success&quot; ) ) { 
+window.location.reload(); 
+} 
+else { 
+alert( &quot;An error has occurred. Error:&quot; + result ); 
+} 
+} 
+catch( e ) { 
+alert( &quot;An unexpected error has occurred. Error:&quot; + e ); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit2</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit2</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+
+try { 
+var newRecords = []; 
+var c = new sforce.SObject(&quot;Submittal_1__c&quot;); 
+c.id =&quot;{!Submittal_1__c.Id}&quot;; 
+c.Sub_Submitted__c = true; 
+c.Submitted_for_Approval__c = true;
+c.Status__c = &quot;Approval Pending&quot;; 
+newRecords.push(c); 
+result = sforce.connection.update(newRecords); 
+
+if( result[0].getBoolean( &quot;success&quot; ) ) { 
+window.location.reload(); 
+} 
+else { 
+alert( &quot;An error has occurred. Error:&quot; + result ); 
+} 
+} 
+catch( e ) { 
+alert( &quot;An unexpected error has occurred. Error:&quot; + e ); 
+}
+
+{!Submittal_1__c.Status__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Custom</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+
+try { 
+var newRecords = []; 
+var c = new sforce.SObject(&quot;Submittal_1__c&quot;); 
+c.id =&quot;{!Submittal_1__c.Id}&quot;; 
+c.Sub_Submitted__c = true; 
+c.Submitted_for_Approval__c = true;
+newRecords.push(c); 
+result = sforce.connection.update(newRecords); 
+
+if( result[0].getBoolean( &quot;success&quot; ) ) { 
+window.location.reload(); 
+} 
+else { 
+alert( &quot;An error has occurred. Error:&quot; + result ); 
+} 
+} 
+catch( e ) { 
+alert( &quot;An unexpected error has occurred. Error:&quot; + e ); 
+}</url>
+    </webLinks>
+</CustomObject>

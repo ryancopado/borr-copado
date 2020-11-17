@@ -1,0 +1,19 @@
+<apex:page standardController="AcctSeed__Billing__c" recordSetVar="billings" extensions="MassSubmitController">
+    <apex:form >
+        <apex:pageMessages rendered="true" id="errMsg" showDetail="false"/>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!billings}" var="b">
+                <apex:column value="{!b.Name}"/>
+                <apex:column value="{!b.AcctSeed__Customer__c}"/>
+                <apex:column value="{!b.AcctSeed__Accounting_Period__c}"/>
+                <apex:column value="{!b.AcctSeed__Billing_Format__c}"/>
+                <apex:column value="{!b.AcctSeed__Proprietary_Billing_Number__c}"/>
+                <apex:column value="{!b.AcctSeed__Total__c}"/>
+            </apex:pageBlockTable>
+            
+            <apex:inputField id="Account" value="{!billing.User__c}"  />
+            <apex:commandButton value="Submit" action="{!submit}"/>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

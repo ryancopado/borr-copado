@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Internal_Employees</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>excludes contractors and portal users from user list views</description>
+        <label>Internal Employees</label>
+        <sharedTo>
+            <group>Internal</group>
+        </sharedTo>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>Email</field>
+            <operation>contains</operation>
+            <value>borregosolar.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Email</field>
+            <operation>equals</operation>
+            <value>borrego@sepisolar.com</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Website_Admin</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>gives Hunter Cross ability to see all users to troubleshoot issues with Leads and our Borrego website</description>
+        <label>Website Admin</label>
+        <sharedTo>
+            <role>Marketing_and_Communications_Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Internal</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

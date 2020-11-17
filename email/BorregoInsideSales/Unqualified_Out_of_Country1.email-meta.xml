@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>BorregoLogo</letterhead>
+    <name>Unqualified- Out of Country</name>
+    <style>freeForm</style>
+    <subject>Borrego Solar: Thank you for your inquiry</subject>
+    <textOnly>Dear {!Lead.FirstName}, 
+
+Thank you for your interest in Borrego Solar. Unfortunately we currently only offer
+our services to areas within the United States.  We also only sell solar
+system components to customers we install systems for.  To find a solar
+company by country please refer to this website: 
+
+http://www.enf.cn/
+ 
+Good luck and thanks for your commitment to creating a clean energy future. Have a great day! 
+
+Sincerely,
+
+{!Lead.OwnerFullName}
+
+{!Lead.OwnerPhone}
+
+{!Lead.OwnerEmail}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

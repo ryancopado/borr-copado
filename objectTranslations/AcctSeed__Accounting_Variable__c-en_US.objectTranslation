@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Active allows for selection of the variable in several filtered lookups. --></help>
+        <label><!-- Active --></label>
+        <name>AcctSeed__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to determine GL Account Variables 1-4 and Time Card Variables 1-2. --></help>
+        <label><!-- Type --></label>
+        <name>AcctSeed__Type__c</name>
+        <picklistValues>
+            <masterLabel>GL Account Variable 1</masterLabel>
+            <translation><!-- GL Account Variable 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL Account Variable 2</masterLabel>
+            <translation><!-- GL Account Variable 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL Account Variable 3</masterLabel>
+            <translation><!-- GL Account Variable 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL Account Variable 4</masterLabel>
+            <translation><!-- GL Account Variable 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Time Card Variable 1</masterLabel>
+            <translation><!-- Time Card Variable 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Time Card Variable 2</masterLabel>
+            <translation><!-- Time Card Variable 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Accounting Variables --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by trigger.  Used by the time card functionality to link a Site record to a Time Card Line. --></help>
+        <label><!-- Site --></label>
+        <name>Site__c</name>
+        <relationshipLabel><!-- Accounting Variables --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,22 @@
+<apex:page standardController="SFDC_Project__c" extensions="pvFieldsUpdate" id="page">
+    <apex:sectionHeader title="Update PV Direct Fields" />
+	<apex:pageMessage severity="info" title="Click the button below to update PV Direct fields, cost items, and invoices." 
+                          strength="1"/>
+	<apex:pageMessage severity="warning" title="Warning:  This action can not be undone!" 
+                          strength="3"/>
+	<apex:form >                          
+		<apex:pageBlock title="Update PV Direct Fields" mode="edit" id="block" >   
+	        <apex:pageBlockButtons >     
+	            <apex:commandButton action="{!pvFieldsUpdate}" value="Update Fields Now"/>
+	            <apex:commandButton action="{!cancel}" value="Cancel"/> 
+	        </apex:pageBlockButtons>
+	        <apex:pageMessage severity="info" title="The following PV Direct Project fields will be recalculated:
+	        		Cost To Borrego (Feasibility), Total Billings (Feasibility), Total Invoiced (Feasibility),
+	        		Total Outstanding (Feasibility), Cost To Customer (Feasibility), Margin (Feasibility)."
+	            			strength="1"/>
+			<apex:pageMessage severity="info" title="The following PV Direct Project Invoice fields will be recalculated:
+	        		Total Charges, Total Cost Invoice."
+	            			strength="1"/>
+		</apex:pageBlock>
+	</apex:form>  
+</apex:page>

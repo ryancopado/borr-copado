@@ -1,0 +1,54 @@
+<apex:page Controller="ProcessInstanceWorkItemNewSubtController" >
+
+<style>
+        
+        /* === Hides Action Column for Approval History === */
+        
+        
+        [class$='actionColumn']
+        
+        {display:none}
+        
+
+        /* === END === */
+
+.bRelatedList .bPageBlock .pbButton {
+white-space: normal;
+visibility: hidden;
+}
+
+</style>
+<apex:form >
+     <apex:pageblock >
+     
+         <apex:pageBlockButtons location="bottom">
+                 <apex:commandButton value="Approved" action="{!Approved}"/>
+                 <apex:commandButton value="Rejected" action="{!Rejected}"/>
+                 <apex:commandButton value="Cancel" action="{!Cancel}"/>   
+                 <apex:commandButton value="Revise and Resubmit" action="{!ReviseandResubmit}"/>  
+                 <apex:commandButton value="Approved as Corrected" action="{!ApprovedasCorrected}"/>                                 
+         </apex:pageblockButtons>
+         
+         <apex:pageBlockSection columns="1">
+         
+             
+             <apex:outputField value="{!Submitt.Name}"/>
+             <apex:outputField value="{!Submitt.Contact__c}"/>
+             <apex:outputField value="{!Submitt.Date_Received__c}"/>                                       
+             <apex:outputField value="{!Submitt.Notes_and_Additional_Information__c}"/>                      
+              <apex:pageBlockSectionItem >
+              
+                 <apex:outputLabel >Comment</apex:outputLabel>
+                 <apex:inputTextarea value="{!comment}" />
+             </apex:pageBlockSectionItem>                                                                                   
+         </apex:pageBlockSection>
+        
+     </apex:pageblock>
+</apex:form>
+     <apex:relatedList list="ProcessSteps" subject="{!Submitt.Id}" />
+     
+
+
+
+
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page title="Einstein Dataset" standardController="sharinpix__EinsteinDataset__c" extensions="sharinpix.EinsteinDatasetController" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" showHeader="false">
+  <html>
+    <head>
+    <script type="text/javascript" src="{! URLFOR($Resource.PrefixedBootstrap, 'jquery-3.1.1.slim.min.js') }"/>
+    <script>
+      $(document).ready(function(){
+        document.getElementById('iframe').onload = function() {
+          this.contentWindow.postMessage({ token: "{!JSENCODE(albumToken)}" }, '{!JSENCODE(domain)}');
+        }
+      });
+    </script>
+    </head>
+    <body>
+      <iframe id="iframe" src="{! HTMLENCODE(domain + '/post_message') }" height="500px" width="100%" style="border: 0"/>
+    </body>
+  </html>
+</apex:page>

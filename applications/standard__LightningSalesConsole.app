@@ -140,6 +140,284 @@
     <navType>Console</navType>
     <profileActionOverrides>
         <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
         <content>Lead_Record_Page1</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Lead</pageOrSobjectType>
@@ -182,6 +460,267 @@
         <recordType>Lead.O_M_Biz_Dev</recordType>
         <type>Flexipage</type>
         <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter External User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Free User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Free User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Moderator User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Moderator User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Customer Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Customer Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Customer Portal Manager Custom</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Customer Portal Manager Custom</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>data.com</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>data.com</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Subcontractor Test Community Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Subcontractor Test Community Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Partner Community User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Partner Community User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Premier Support User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Premier Support User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>ReadOnly</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>ReadOnly</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -256,1495 +795,201 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Ops Center</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>HR- non Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>HR- non Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Legal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Legal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Finance</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>HR- non Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>HR- non Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Ops Center</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Ops Center</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sales Ops Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sales- Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sales- Standard</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Standard</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sys Admin w/o HR</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sys Admin- CEO</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Warranty Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Claim_Case</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Case</pageOrSobjectType>
-        <recordType>Case.EPC_Warranty_Claim</recordType>
-        <type>Flexipage</type>
-        <profile>Warranty Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>ReadOnly</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>ReadOnly</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Resources Group</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Resources Group</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Ops Center</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Marketing</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
         <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
+        <profile>MarketingProfile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sales Ops Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sales Ops Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <content>Project_Task_Record_Home1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sales- Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sales- Standard</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
+        <profile>Standard</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sys Admin w/o HR</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
         <type>Flexipage</type>
         <profile>Sys Admin- CEO</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
+        <content>Project_Task_Record_Home1</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Warranty Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Warranty Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
+        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>MarketingProfile</profile>
     </profileActionOverrides>
@@ -1852,6 +1097,357 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Project_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
+        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Accounts Payable</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
         <content>EPC_Sales_Development_Opportunity</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
@@ -2040,932 +1636,12 @@
         <profile>Sales- Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Slice_and_Dice</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
         <actionName>Tab</actionName>
         <content>EPC_Sales_Manager_Home_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.EmploymentApplicant</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.Standard</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.NonEmployee</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.Standard_Proposal</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Contact_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contact</pageOrSobjectType>
-        <recordType>Contact.Employee</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFP_Response</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Proposal_Request_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
-        <recordType>Proposal_Request__c.RFQ</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Billing_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Task_Record_Home1</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project_Task__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project_Task__c.Budget_Line_Item</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AcctSeedERP__Project</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>EPC_Sales_Project_Page</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AcctSeed__Project__c</pageOrSobjectType>
-        <recordType>AcctSeed__Project__c.AS_Commercial_Project</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -3169,6 +1845,708 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>HR- Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>HR- Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>HR- non Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>HR- non Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Ops Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- General</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering - Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.EmploymentApplicant</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>EPC_Sales_Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.Standard</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
         <content>Issue_Tracker_Spec_Submittal_Lightning_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Request_for_Information_RFI__c</pageOrSobjectType>
@@ -3285,6 +2663,634 @@
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>EPC_Marketing_Sales_Ops</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>EPC_Marketing_Sales_Ops</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Ops Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Warranty Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Claim_Case</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.EPC_Warranty_Claim</recordType>
+        <type>Flexipage</type>
+        <profile>Warranty Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Finance</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>HR- Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>HR- Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>HR- non Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>HR- non Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Ops Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Ops Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>President</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Procurement</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>ReadOnly</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>ReadOnly</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Resources Group</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.NonEmployee</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
         <actionName>View</actionName>
         <content>Issue_Tracker_RFI_LIghtning_Page_Layout</content>
         <formFactor>Large</formFactor>
@@ -3364,6 +3370,798 @@
         <recordType>Request_for_Information_RFI__c.Incoming</recordType>
         <type>Flexipage</type>
         <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Controller</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Accounting- Staff Accountant</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Integration User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Integration User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Integration User2</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Integration User2</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Security User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Analytics Cloud Security User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>B2BMA Integration User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>B2BMA Integration User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - COO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego - PM (Read Only)</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Borrego-Dir of Ops READ ONLY</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>BorregoCustomerSurvey Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>BorregoCustomerSurvey Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>CalendarAnything Service Visits Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>CalendarAnything Service Visits Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter External User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Apps Engineer</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Civil</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Outsource</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Engineering- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>FSL Optimization</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>FSL Optimization</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>GLC</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>GLC</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Resources Group</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Resources Group</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>RFI Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>RFI Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Subcontractor Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Subcontractor Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>webtoleadattachment Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>webtoleadattachment Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Resources Group</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales - O&amp;M Business Development</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>SolutionManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Warranty Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Warranty Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Employee</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -3535,6 +4333,160 @@
         <recordType>Request_for_Information_RFI__c.Outgoing_RFI</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Sales Ops Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Sales- Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Standard</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFP_Response</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin- CEO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Proposal_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Proposal_Request__c</pageOrSobjectType>
+        <recordType>Proposal_Request__c.RFQ</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -3795,483 +4747,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>RFI Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>RFI Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales - O&amp;M Business Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sales- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter External User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Moderator User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Moderator User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Subcontractor Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Subcontractor Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin- CEO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Customer Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Customer Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Customer Portal Manager Custom</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Customer Portal Manager Custom</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>data.com</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>data.com</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>webtoleadattachment Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>webtoleadattachment Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering - Development</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Apps Engineer</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Outsource</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Engineering- Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>FSL Optimization</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>FSL Optimization</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>GLC</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>GLC</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>Gold Partner User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -4327,96 +4802,6 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Accounts Payable</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- General</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Controller</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -4506,132 +4891,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Accounting- Staff Accountant</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Integration User2</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Integration User2</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Security User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Analytics Cloud Security User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>B2BMA Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>B2BMA Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - COO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>Marketing</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -4660,96 +4919,6 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego - PM (Read Only)</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Borrego-Dir of Ops READ ONLY</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>BorregoCustomerSurvey Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>BorregoCustomerSurvey Profile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -4799,33 +4968,6 @@
     <profileActionOverrides>
         <actionName>View</actionName>
         <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>CalendarAnything Service Visits Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>CalendarAnything Service Visits Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter External User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
@@ -4867,148 +5009,6 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>O&amp;M Subcontractor Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Subcontractor Test Community Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Subcontractor Test Community Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Partner Community User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Partner Community User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Premier Support User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Premier Support User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>President</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Procurement</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>ReadOnly</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>ReadOnly</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Resources Group</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Resources Group</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>EPC_Marketing_Sales_Ops</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>EPC_Marketing_Sales_Ops</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Sales Ops Manager</profile>
     </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>SFDC_Purchase_Requisition__c</tabs>

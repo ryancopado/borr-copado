@@ -25,69 +25,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>HR- Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>HR- non Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Legal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Longroad Community Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>LongRoad Energy Customer Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Marketing</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>Accounting- Accounts Payable</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -232,69 +169,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Customer Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Manager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Ops Center</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Subcontractor Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>O&amp;M Subcontractor Test Community Profile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>BorregoCustomerSurvey Profile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -314,6 +188,15 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>Chatter External User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Free User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -476,6 +359,123 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>History Tracker Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>HR- Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>HR- non Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Legal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Longroad Community Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>LongRoad Energy Customer Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Marketing</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Customer Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Ops Center</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Subcontractor Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>O&amp;M Subcontractor Test Community Profile</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>

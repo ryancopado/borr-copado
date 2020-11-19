@@ -270,15 +270,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>Engineering- Civil</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>Engineering- Manager</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -531,7 +522,7 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>RFI Portal</profile>
+        <profile>Engineering- Civil</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -631,6 +622,15 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>webtoleadattachment Profile</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>RFI Portal</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>Tab</actionName>

@@ -903,7 +903,7 @@ IF(AND(CountofInternalLabor__c&gt;0, Countofnoninternal__c = 0), &quot;Internal 
         <fullName>OK_to_Submit_for_Approval__c</fullName>
         <externalId>false</externalId>
         <formula>IF( ISPICKVAL(  SBQQ__Status__c , &quot;In Review&quot; ),
-IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV63&amp;oid=00D2f0000000oMw&amp;lastMod=1586786941000&quot;, &quot;ALREADY SUBMITTED&quot;),
+IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV63&amp;oid=00D7A0000009d9W&amp;lastMod=1586786941000&quot;, &quot;ALREADY SUBMITTED&quot;),
 
 IF(
  OR(
@@ -913,8 +913,8 @@ ISBLANK( Site_State__c ),
 ISBLANK( Site_Zip__c ),
 ISBLANK( TEXT( Type_of_Work__c ) )
 ),
-IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV5y&amp;oid=00D2f0000000oMw&amp;lastMod=1586787030000&quot;, &quot;NO&quot;),
-IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV5t&amp;oid=00D2f0000000oMw&amp;lastMod=1586786979000&quot;, &quot;YES&quot;)
+IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV5y&amp;oid=00D7A0000009d9W&amp;lastMod=1586787030000&quot;, &quot;NO&quot;),
+IMAGE(&quot;/servlet/servlet.ImageServer?id=0152H000002BV5t&amp;oid=00D7A0000009d9W&amp;lastMod=1586786979000&quot;, &quot;YES&quot;)
 
 
 

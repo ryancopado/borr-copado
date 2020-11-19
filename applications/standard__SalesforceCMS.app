@@ -30,51 +30,6 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Moderator User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>CTO</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Customer Portal</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
         <profile>Accounting- Analyst</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -228,6 +183,51 @@
         <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
+        <profile>Chatter Free User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Chatter Moderator User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>ContractManager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>CTO</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Customer Portal</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
         <profile>Customer Portal Manager Custom</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -238,6 +238,24 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>data.com</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Gold Partner User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Project_Hypothesis</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
+        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
+        <type>Flexipage</type>
+        <profile>Guest License User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -319,24 +337,6 @@
         <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
         <type>Flexipage</type>
         <profile>GLC</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Gold Partner User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Project_Hypothesis</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Contract_Committee_Submittal__c</pageOrSobjectType>
-        <recordType>Contract_Committee_Submittal__c.Project_Hypothesis</recordType>
-        <type>Flexipage</type>
-        <profile>Guest License User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>

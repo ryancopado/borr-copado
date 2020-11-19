@@ -37,6 +37,15 @@
     <label>EPC Project Management</label>
     <navType>Standard</navType>
     <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Warranty_Registration_Contract</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contract</pageOrSobjectType>
+        <recordType>Contract.Warranty_Registration</recordType>
+        <type>Flexipage</type>
+        <profile>Sys Admin w/o HR</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
         <actionName>Tab</actionName>
         <content>Project_Manager_APM</content>
         <formFactor>Large</formFactor>
@@ -330,15 +339,6 @@
         <actionName>View</actionName>
         <content>Warranty_Registration_Contract</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Contract</pageOrSobjectType>
-        <recordType>Contract.Warranty_Registration</recordType>
-        <type>Flexipage</type>
-        <profile>Sys Admin w/o HR</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Warranty_Registration_Contract</content>
-        <formFactor>Large</formFactor>
         <pageOrSobjectType>Contract</pageOrSobjectType>
         <recordType>Contract.Warranty_Registration</recordType>
         <type>Flexipage</type>

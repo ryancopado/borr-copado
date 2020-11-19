@@ -429,6 +429,14 @@
                 <name>CO_Needs_Customer_Approval</name>
                 <type>Alert</type>
             </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>CO_Needs_Customer_Approval</name>
+                <type>Alert</type>
+            </actions>
             <timeLength>21</timeLength>
             <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
         </workflowTimeTriggers>
@@ -438,14 +446,6 @@
                 <type>Alert</type>
             </actions>
             <timeLength>7</timeLength>
-            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-        <workflowTimeTriggers>
-            <actions>
-                <name>CO_Needs_Customer_Approval</name>
-                <type>Alert</type>
-            </actions>
-            <timeLength>14</timeLength>
             <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
         </workflowTimeTriggers>
     </rules>

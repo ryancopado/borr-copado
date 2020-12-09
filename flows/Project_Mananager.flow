@@ -205,7 +205,7 @@
 )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_5_A1_1421128302</name>
+        <name>formula_6_myRule_5_A1_4677934518</name>
         <dataType>String</dataType>
         <expression>IF( NOT( ISBLANK( {!myVariable_current.Project_Finance_Manager__c} )),
 {!myVariable_current.Project_Finance_Manager__r.FirstName} + &quot; &quot; + {!myVariable_current.Project_Finance_Manager__r.LastName} ,
@@ -310,7 +310,6 @@ OR(
             <value>
                 <stringValue>AND(
 NOT( ISBLANK( [Site__c].Project__c )),
-NOT( ISBLANK([Site__c].Project__r.Ops_Division__c )),
 [Site__c].Project__r.ofSites__c = 1 ,
 CONTAINS( [Site__c].Project__r.Ops_Division__r.Name , &quot;Dev&quot; )
 )</stringValue>
@@ -320,12 +319,11 @@ CONTAINS( [Site__c].Project__r.Ops_Division__r.Name , &quot;Dev&quot; )
         <dataType>Boolean</dataType>
         <expression>AND(
 NOT( ISBLANK( {!myVariable_current.Project__c} )),
-NOT( ISBLANK({!myVariable_current.Project__r.Ops_Division__c} )),
 {!myVariable_current.Project__r.ofSites__c} = 1 ,
 CONTAINS( {!myVariable_current.Project__r.Ops_Division__r.Name} , &quot;Dev&quot; )
 )</expression>
     </formulas>
-    <interviewLabel>Project_Mananager-12_InterviewLabel</interviewLabel>
+    <interviewLabel>Project_Mananager-6_InterviewLabel</interviewLabel>
     <label>Site Updates</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -382,7 +380,7 @@ CONTAINS( {!myVariable_current.Project__r.Ops_Division__r.Name} , &quot;Dev&quot
         <locationX>100</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myDecision2</targetReference>
+            <targetReference>myRule_1_A2</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -484,6 +482,90 @@ CONTAINS( {!myVariable_current.Project__r.Ops_Division__r.Name} , &quot;Dev&quot
             </value>
         </inputAssignments>
         <object>AcctSeed__Project__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Site__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A2</name>
+        <label>Mary&apos;s test field update</label>
+        <locationX>100</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myDecision2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Mary&apos;s New Field</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Mary_s_New_Field__c</field>
+            <value>
+                <stringValue>Updated</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Site__c</object>
     </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
@@ -633,13 +715,13 @@ CONTAINS( {!myVariable_current.Project__r.Ops_Division__r.Name} , &quot;Dev&quot
             </processMetadataValues>
             <field>Project_Finance_Director__c</field>
             <value>
-                <elementReference>formula_6_myRule_5_A1_1421128302</elementReference>
+                <elementReference>formula_6_myRule_5_A1_4677934518</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

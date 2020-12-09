@@ -46,7 +46,7 @@ public class ProjectCreate {
         }
         Opportunity[] opp  = [select Id, OwnerId, Approximate_Install_Date__c,Utility_Company__c, 
                                 Name, AccountId, Rebate_Assigned_To__c, Expected_Rebate__c, 
-                                Type, StageName,Team__c,Record_Type_Name__c,Branch__r.Name from Opportunity where Id in :optIds];
+                                Type, StageName,Team__c,Record_Type_Name__c,Branch__r.Name,Storage_Direct_COGS__c from Opportunity where Id in :optIds];
                                 //Type, StageName, Picasa_Album__c from Opportunity where Id in :optIds];
                                 
         Opportunity oppvalues= new Opportunity();
@@ -114,6 +114,7 @@ public class ProjectCreate {
                         p.Job_Number__c=countP1(p,Team,salesSegmentName);
                         //p.RecordTypeId = comm.Id;
                         //p.Picasa_Album__c = oppmap.get(p.AcctSeed__Opportunity__c).Picasa_Album__c;
+                        p.Storage_Budgeted_Expense_RH__c =oppmap.get(p.AcctSeed__Opportunity__c).Storage_Direct_COGS__c;   
                     }
                     if(oppmap.get(p.AcctSeed__Opportunity__c).Type == 'Consulting Services') {           
                         //p.Branch__c = acctmap.get(oppmap.get(p.AcctSeed__Opportunity__c).AccountId).Branch__c;

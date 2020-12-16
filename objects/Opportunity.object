@@ -8700,6 +8700,18 @@ IF(AND(CloseDate  &gt;=  DATE(2013, 01, 05),
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>Rich_Test_Field__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Test Field for Copado Deployments</inlineHelpText>
+        <label>Rich Test Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Road_Block_To_Closing__c</fullName>
         <externalId>false</externalId>
         <label>Road Block To Closing</label>
@@ -43511,7 +43523,6 @@ ISPICKVAL(StageName, &quot;LOI Signed&quot;),
 DATEVALUE(CreatedDate) &gt;( DATE(2018,9,26)) ,
 OR(
 ISPICKVAL(Utility_Company__c ,&quot;&quot;), 
-ISPICKVAL(Utility_Zone__c ,&quot;&quot;), 
 ISPICKVAL(RFP__c  ,&quot;&quot;),
 ISBLANK(Estimated_PB3_Submission_Date__c ))
 )</errorConditionFormula>
